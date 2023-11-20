@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Object;
-using FishNet.Object.Synchronizing;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class Door : NetworkBehaviour, IDoor
+public class Door : MonoBehaviour, IDoor
 {
     [SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
     [SerializeField] float rotationAngle = -90;
@@ -15,31 +13,42 @@ public class Door : NetworkBehaviour, IDoor
     [SerializeField] bool colliderWhenOpen = false;
     
     float lastMoveStartedTime = 0;
-    Vector3 startRotation;
+    Quaternion startRotation;
     Collider[] colliders;
-    [ReadOnly][SyncVar] bool lockState;
-    [ShowNativeProperty] bool Opened => transform.rotation.eulerAngles != startRotation;
+    [ReadOnly] bool lockState;
+    [ShowNativeProperty] bool Opened => transform.rotation != startRotation;
 
-    void Awake(){
-        colliders = GetComponentsInChildren<Collider>();
-    }
-    public override void OnStartServer()
+    private void Awake()
     {
-        base.OnStartServer();
-        startRotation = transform.rotation.eulerAngles;
+        colliders = GetComponentsInChildren<Collider>();
+        startRotation = transform.rotation;
         if (beginOpen){
             LocalOpen();
         }
     }
     void Update()
     {
-        if (base.IsServer)
-        {
-            ServerUpdate();
-        }
         ResolveColliders();
+        ResolveAutoClose();
     }
-    [ServerRpc(RequireOwnership = false)]
+
+    private void ResolveAutoClose()
+    {
+        if (!autoCloseTime)
+        {
+            return;
+        }
+        if (!CanChangeState())
+        {
+            return;
+        }
+        if (Time.time - autoCloseTime - moveTime < lastMoveStartedTime)
+        {
+            return;
+        }
+        LocalClose();
+    }
+
     public void LockState(bool lockState){
         this.lockState = lockState;
     }
@@ -55,18 +64,6 @@ public class Door : NetworkBehaviour, IDoor
         }
     }
 
-    void ServerUpdate(){
-        if (!autoCloseTime){
-            return;
-        }
-        if (!CanChangeState()){
-            return;
-        }
-        if (Time.time - autoCloseTime - moveTime < lastMoveStartedTime){
-            return;
-        }
-        LocalClose();
-    }
     public virtual bool CanCharacterUse(ICharacter character, bool onInteract){
         return true;
     }
@@ -81,7 +78,6 @@ public class Door : NetworkBehaviour, IDoor
         return true;
     }
     
-    [ServerRpc(RequireOwnership = false)]
     private void ChangeState()
     {
         if (!CanChangeState()){
@@ -94,14 +90,14 @@ public class Door : NetworkBehaviour, IDoor
         }
         LocalOpen();
     }
-    [ServerRpc(RequireOwnership = false)]
+
     public void Open(){
         if (!CanChangeState()){
             return;
         }
         LocalOpen();
     }
-    [ServerRpc(RequireOwnership = false)]
+
     public void Close(){
         if (!CanChangeState()){
             return;
@@ -110,9 +106,6 @@ public class Door : NetworkBehaviour, IDoor
     }
     private void LocalOpen()
     {
-        if (!base.IsServer){
-            return;
-        }
         if (Opened){
             return;
         }
@@ -120,9 +113,6 @@ public class Door : NetworkBehaviour, IDoor
     }
     private void LocalClose()
     {
-        if (!base.IsServer){
-            return;
-        }
         if (!Opened)
         {
             return;
@@ -132,9 +122,6 @@ public class Door : NetworkBehaviour, IDoor
 
     private void Rotate(float angle)
     {
-        if (!base.IsServer){
-            return;
-        }
         LeanTween.cancel(gameObject);
         lastMoveStartedTime = Time.time;
         transform.LeanRotateAroundLocal(rotationAxis.normalized, angle, moveTime);

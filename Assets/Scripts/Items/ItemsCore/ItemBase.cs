@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Object;
 using UnityEngine;
 
-public abstract class ItemBase : NetworkBehaviour, IItem
+public abstract class ItemBase : MonoBehaviour, IItem
 {
     List<IItemObserver> observers = new();
 

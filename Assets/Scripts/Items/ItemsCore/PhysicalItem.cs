@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Connection;
-using FishNet.Object;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Analytics;
 
-public class PhysicalItem : NetworkBehaviour, IItemObserver
+public class PhysicalItem : MonoBehaviour, IItemObserver
 {
     [SerializeField] Vector3 equipPos;
     [SerializeField] Vector3 equipRotation;
@@ -23,71 +21,48 @@ public class PhysicalItem : NetworkBehaviour, IItemObserver
         equipRotation = transform.localRotation.eulerAngles;
     }
 #endif
-    public override void OnStartServer()
+    private void Awake()
     {
-        base.OnStartServer();
         rigidbody = GetComponent<Rigidbody>();
     }
     public void Use(ICharacter character, bool alternative = false)
     {
 
     }
-    [ServerRpc(RequireOwnership = false)]
-    public void ServerOnPickup(Transform root)
+    public void OnPickup(ICharacter character)
     {
         gameObject.SetActive(false);
-        NetworkObject.SetParent(root.GetComponent<NetworkObject>());
-        transform.SetParent(root);
+        transform.SetParent(character.GetAimTransform());
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;     
         rigidbody.isKinematic = true; 
     }
-    [ServerRpc(RequireOwnership = false)]
-    public void ServerOnEquip()
+
+    public void OnEquip(ICharacter character)
     {
         gameObject.SetActive(true);
         transform.LeanMoveLocal(equipPos, equipTime);
         transform.localRotation = Quaternion.Euler(equipRotation);
         transform.localScale *= equipScaleChange;
     }
-    [ServerRpc(RequireOwnership = false)]
-    public void ServerOnDeequip()
+
+    public void OnDeequip(ICharacter character)
     {
         gameObject.SetActive(false);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity; 
-        transform.localScale *= 1 / equipScaleChange;  
-    }
-    [ServerRpc(RequireOwnership = false)]
-    public void ServerOnDrop(Vector3 force)
-    {
-        gameObject.SetActive(true);   
-        transform.SetParent(null);
-        NetworkObject.UnsetParent();
-        rigidbody.isKinematic = false;
-        rigidbody.AddForce(force, ForceMode.Impulse); 
-        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        General.CallAfterSeconds(() => rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete, ContinuousCollisionDetectionTimeOnThrow);
-    }
-
-    public void OnPickup(ICharacter character)
-    {
-        ServerOnPickup(character.GetAimTransform());
-    }
-
-    public void OnEquip(ICharacter character)
-    {
-        ServerOnEquip();
-    }
-
-    public void OnDeequip(ICharacter character)
-    {
-        ServerOnDeequip();
+        transform.localScale *= 1 / equipScaleChange; 
     }
 
     public void OnDrop(ICharacter character, Vector3 force)
     {
-        ServerOnDrop(force);
+        gameObject.SetActive(true);   
+        transform.SetParent(null);
+        rigidbody.isKinematic = false;
+        rigidbody.AddForce(force, ForceMode.Impulse); 
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        General.CallAfterSeconds(() => rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete, ContinuousCollisionDetectionTimeOnThrow);
+
     }
 
     public void HoldUse(ICharacter character, bool alternative = false)

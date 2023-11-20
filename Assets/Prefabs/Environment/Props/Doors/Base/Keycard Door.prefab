@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5570238899085348224, guid: 5c56b8f548c2445629d34fa65926b516,
@@ -21,7 +22,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _networkBehaviours.Array.data[0]
       value: 
-      objectReference: {fileID: 6818603549672841007}
+      objectReference: {fileID: 0}
     - target: {fileID: -5570238899085348224, guid: 5c56b8f548c2445629d34fa65926b516,
         type: 3}
       propertyPath: _networkBehaviours.Array.data[1]
@@ -109,19 +110,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5224223268250175953, guid: 5c56b8f548c2445629d34fa65926b516, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2681556452588820980, guid: 5c56b8f548c2445629d34fa65926b516,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3158975414220095769}
   m_SourcePrefab: {fileID: 100100000, guid: 5c56b8f548c2445629d34fa65926b516, type: 3}
---- !u!114 &5016666591816495867 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -5570238899085348224, guid: 5c56b8f548c2445629d34fa65926b516,
-    type: 3}
-  m_PrefabInstance: {fileID: 8587324988128673915}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5916186155665611151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5916186155665611151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2681556452588820980, guid: 5c56b8f548c2445629d34fa65926b516,
@@ -140,22 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9aff525e0740f19e790f7c6881878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 1
-  _addedNetworkObject: {fileID: 5016666591816495867}
-  _networkObjectCache: {fileID: 5016666591816495867}
   rotationAxis: {x: 0, y: 1, z: 0}
   rotationAngle: -90
   moveTime: 0.75
+  beginOpen: 0
+  autoCloseTime:
+    enabled: 0
+    value: 0
+  colliderWhenOpen: 0
   accessLevel: {fileID: 0}
---- !u!114 &6818603549672841007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2993984838509879124, guid: 5c56b8f548c2445629d34fa65926b516,
-    type: 3}
-  m_PrefabInstance: {fileID: 8587324988128673915}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5916186155665611151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

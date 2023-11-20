@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FishNet;
-using FishNet.Managing.Server;
 using UnityEngine;
 
 public class HealingItem : ItemBase
@@ -27,7 +25,6 @@ public class HealingItem : ItemBase
             character.AddStatusEffect(healOvertime.Value);
         }
         character.RemoveItem(this);
-        InstanceFinder.ServerManager.Despawn(gameObject);
         Destroy(gameObject);
     }
 

@@ -1,26 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Component.Transforming;
-using FishNet.Connection;
-using FishNet.Object;
-using FishNet.Object.Synchronizing;
 using NaughtyAttributes;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.Events;
 
-public partial class Character : NetworkBehaviour, ICharacter
+public partial class Character : MonoBehaviour, ICharacter
 {
     [SerializeField] Transform aim;
     CharacterEvents characterEvents = new CharacterEvents(); 
-    [SyncVar] Role role;
-    NetworkTransform netTransform;
+    Role role;
 
     void Awake(){
         inventory = GetComponent<IInventory>();
         inventory.OnInventoryChange.AddListener(characterEvents.onInventoryChange.Invoke);
-        netTransform = GetComponent<NetworkTransform>();
         characterController = GetComponent<CharacterController>();
         firstPersonController = GetComponent<FirstPersonController>();
         SetFirstPersonController();

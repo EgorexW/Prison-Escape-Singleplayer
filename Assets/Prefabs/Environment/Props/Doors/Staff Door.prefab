@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 7380190251520299343}
     m_Modifications:
     - target: {fileID: 143170, guid: 27b2bb42c14d1c9428d3fd44cc99028a, type: 3}
@@ -56,12 +57,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b2bb42c14d1c9428d3fd44cc99028a, type: 3}
+--- !u!4 &2859977013311876256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 460966, guid: 27b2bb42c14d1c9428d3fd44cc99028a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2859977013311808518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4854175114563465055
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5570238899085348224, guid: 5c56b8f548c2445629d34fa65926b516,
@@ -150,6 +161,13 @@ PrefabInstance:
       value: Staff Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2681556452588633616, guid: 5c56b8f548c2445629d34fa65926b516,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2859977013311876256}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c56b8f548c2445629d34fa65926b516, type: 3}
 --- !u!4 &7380190251520299343 stripped
 Transform:

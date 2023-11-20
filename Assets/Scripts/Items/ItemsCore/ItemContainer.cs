@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Object;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemContainer : NetworkBehaviour, IInteractive
+public class ItemContainer : MonoBehaviour, IInteractive
 {
     [SerializeField] [RequireInterface(typeof(IItem))] Object item;
     [SerializeField] float holdDuration = 1f;

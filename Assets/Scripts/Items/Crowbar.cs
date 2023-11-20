@@ -18,7 +18,6 @@ public class Crowbar : ItemBase, IKeycard
         door.Open();
         door.LockState(true);
         character.RemoveItem(this);
-        Despawn(gameObject);
     }
     public bool HasAccess(AccessLevel requestedAccessLevel)
     {

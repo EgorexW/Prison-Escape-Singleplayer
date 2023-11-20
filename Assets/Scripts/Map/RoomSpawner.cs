@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using FishNet.Object;
 using UnityEngine;
 
-public class RoomSpawner : NetworkBehaviour
+public class RoomSpawner : MonoBehaviour
 {
     [SerializeField] Transform dir;
     [SerializeField] RoomTrait[] traits;
@@ -13,7 +12,6 @@ public class RoomSpawner : NetworkBehaviour
         room = Instantiate(room, transform.parent);
         SpawnableRoom spawnableRoom = room.GetComponent<SpawnableRoom>();
         spawnableRoom.SetPos(transform.position, dir.position - transform.position);
-        Spawn(room);
         Destroy(gameObject);
     }
     public bool HasTrait(Trait trait){

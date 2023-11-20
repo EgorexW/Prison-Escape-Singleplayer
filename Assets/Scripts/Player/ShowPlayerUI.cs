@@ -1,23 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Object;
 using UnityEngine;
 
 [RequireComponent(requiredComponent: typeof(ICharacter))]
-public class ShowPlayerUI : NetworkBehaviour
+public class ShowPlayerUI : MonoBehaviour
 {
     ICharacter character;
     GameObject playerStuff;
     ItemsUI itemsUI;
     HealthBarUI healthBarUI;
 
-    public override void OnStartClient()
+    private void Awake()
     {
-        base.OnStartClient();
-        if (!IsOwner){
-            return;
-        }
         GetReferences();
         // Debug.Log("Awake Called");
         character.GetCharacterEvents().onInventoryChange.AddListener(ShowInventory);

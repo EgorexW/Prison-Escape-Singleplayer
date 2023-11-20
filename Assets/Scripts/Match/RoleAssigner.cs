@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FishNet.Component.Transforming;
-using FishNet.Connection;
-using FishNet.Object;
 using UnityEngine;
 
 public class RoleAssigner : MonoBehaviour
