@@ -1,0 +1,17 @@
+{
+    "name": "StatusEffects",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b084e5342407d4bd1a2dcb619c0696a3",
+        "GUID:2cb540ca1944047b9a1598f5ef75bc6e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
+  m_Name: Guards Quarters Table 2
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - value: 2
+    Object: {fileID: 3882893351632694812, guid: d1775755d730143969281ada5252c380,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3882893351632694812, guid: 980d74fc2bf504cc081251b2b98c36b5,
+      type: 3}
