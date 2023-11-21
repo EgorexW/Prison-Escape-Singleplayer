@@ -9,7 +9,7 @@ public class RoomGenerator : MonoBehaviour
 
     private void Awake()
     {
-        if (!seed){
+        if (seed){
             Random.InitState(seed);
         }
         GenerateRooms(GetComponent<RoomChooser>().ChooseRooms());

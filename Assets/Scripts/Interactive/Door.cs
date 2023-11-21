@@ -16,11 +16,14 @@ public class Door : MonoBehaviour, IDoor
     Quaternion startRotation;
     Collider[] colliders;
     [ReadOnly] bool lockState;
-    [ShowNativeProperty] bool Opened => transform.rotation != startRotation;
+    [ShowNativeProperty] float CurrentRotToStartRot => 0;
+    [ShowNativeProperty] bool Opened => startRotation != transform.rotation;
 
-    private void Awake()
-    {
+    void Awake(){
         colliders = GetComponentsInChildren<Collider>();
+    }
+    private void Start()
+    {
         startRotation = transform.rotation;
         if (beginOpen){
             LocalOpen();
