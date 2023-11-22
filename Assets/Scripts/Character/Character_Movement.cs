@@ -11,9 +11,12 @@ public partial class Character{
     float speedMod = 1;
 
     CharacterController characterController;
-    FirstPersonController firstPersonController;
+    IMover firstPersonController;
 
     void SetFirstPersonController(){
+        if (firstPersonController == null){
+            return;
+        }
         firstPersonController.MoveSpeed = GetMoveSpeed;
         firstPersonController.SprintSpeed = GetSprintSpeed;
     }

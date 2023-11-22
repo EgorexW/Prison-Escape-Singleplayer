@@ -9,11 +9,10 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
 #endif
-	public class FirstPersonController : MonoBehaviour
+	public class FirstPersonController : MonoBehaviour, IMover
 	{
-		public delegate float Speed();
-		public Speed MoveSpeed;
-		public Speed SprintSpeed;
+		public Speed MoveSpeed { get; set; }
+		public Speed SprintSpeed  { get; set; }
 		[Header("Player")]
 		[Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
@@ -85,7 +84,7 @@ namespace StarterAssets
 			}
 		}
 
-		private void Awake()
+        private void Awake()
 		{
 			// get a reference to our main camera
 			if (_mainCamera == null)

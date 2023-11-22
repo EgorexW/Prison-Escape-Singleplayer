@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Prison Escape Singleplayer.sln"
+    "dotnet.defaultSolution": "Prison Escape Singleplayer.sln",
+    "dotnet.preferCSharpExtension": true
 }

@@ -9,7 +9,6 @@ public partial class Character
 
     public IInteractive GetInteractive(){
         RaycastHit[] raycasts = new RaycastHit[10];
-        Debug.Log(aim);
         Physics.RaycastNonAlloc(new Ray(aim.position, aim.forward), raycasts, maxInteractDis);
         IInteractive interactive = new DummyInteractive();
         foreach(RaycastHit raycast in raycasts){

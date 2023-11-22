@@ -19,18 +19,18 @@ public class Weapon : ItemBase
         lastShotTime = Time.time;
         RaycastHit[] raycasts = Physics.RaycastAll(character.GetAimTransform().position, character.GetAimTransform().forward, range);
         Debug.DrawRay(character.GetAimTransform().position, character.GetAimTransform().forward * 10, Color.red, 1f);
-        Debug.Log("Raycast count " + raycasts.Length);
+        // Debug.Log("Raycast count " + raycasts.Length);
         foreach (RaycastHit raycast in raycasts)
         {
-            Debug.Log("Hit", raycast.collider);
+            // Debug.Log("Hit", raycast.collider);
             if (!raycast.collider.TryGetComponent(out IDamagable damagable)){
                 continue;
             }
-            Debug.Log("Hit IDamagable", raycast.collider);
+            // Debug.Log("Hit IDamagable", raycast.collider);
             if (damagable == character){
                 continue;
             }
-            Debug.Log("Damaged IDamagable", raycast.collider);
+            // Debug.Log("Damaged IDamagable", raycast.collider);
             damagable.Damage(damage);
             if (damagable is not ICharacter){
                 return;

@@ -10,13 +10,13 @@ public partial class Character : MonoBehaviour, ICharacter
 {
     [SerializeField] Transform aim;
     CharacterEvents characterEvents = new CharacterEvents(); 
-    Role role;
+    [SerializeField] Role role;
 
     void Awake(){
         inventory = GetComponent<IInventory>();
         inventory.OnInventoryChange.AddListener(characterEvents.onInventoryChange.Invoke);
         characterController = GetComponent<CharacterController>();
-        firstPersonController = GetComponent<FirstPersonController>();
+        firstPersonController = GetComponent<IMover>();
         SetFirstPersonController();
     }
     public IStatusEffect[] GetStatusEffects(){

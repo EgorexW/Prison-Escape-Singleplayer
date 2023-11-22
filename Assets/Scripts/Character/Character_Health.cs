@@ -5,17 +5,20 @@ using UnityEngine;
 
 public partial class Character
 {
-    [ReadOnly] Health health;
+    [SerializeField] Health health = new Health(100, 100, 100);
 
     public void Damage(Damage damage)
     {   
-        UpdateHealth();
         health.Damage(damage);
+        UpdateHealth();
+        if (health.health == 0){
+            Die();
+        }
     }
     public void Heal(Damage damage)
     {
-        UpdateHealth();
         health.Heal(damage);
+        UpdateHealth();
     }
     private void Die()
     {

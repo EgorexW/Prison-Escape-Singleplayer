@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &1335316925429042145
 GameObject:
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &2270871401134883441
 GameObject:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &4457570130471262560
 GameObject:
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &5067185967732955340
 GameObject:
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &5567110795494647637
 GameObject:
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &5647092676599382500
 GameObject:
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1 &8626309743268630632
 GameObject:
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
-  spawnChance: 0.25
+  spawnChance: 0.3
   randomRotation: 1
 --- !u!1001 &1471784542367764511
 PrefabInstance:

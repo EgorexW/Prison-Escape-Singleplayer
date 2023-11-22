@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea05b75359c2d41b2ab7a285036e1246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getGameObject: {fileID: 0}
+  getGameObject: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   spawnChance: 0.1
   randomRotation: 1
 --- !u!1 &4736302877855859074
@@ -303,10 +303,6 @@ PrefabInstance:
       value: SM_Env_Wall_Interior_Door_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 426702, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 426702, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
@@ -316,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426702, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.25
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 426702, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -346,10 +342,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1204941877296241230, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
-    - {fileID: 1550806411950272984, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
-    - {fileID: 5034278083407435169, guid: 4340bf7831a342844b8ae33dba40ce1c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

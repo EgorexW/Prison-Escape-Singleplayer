@@ -281,6 +281,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aim: {fileID: 4135013735270702856}
+  role: {fileID: 0}
+  health:
+    health: 100
+    maxHealth: 100
+    absoluteMaxHealth: 100
   maxInteractDis: 3
   moveSpeed: 4
   sprintSpeedMod: 2

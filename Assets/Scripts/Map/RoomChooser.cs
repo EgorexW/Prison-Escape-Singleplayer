@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RoomChooser : MonoBehaviour
 {
+    const int MaxGenerationLoops = 1000;
+
     [SerializeField] List<Room> necessaryRooms;
     [SerializeField] List<Room> optionalRooms;
     
@@ -14,18 +16,18 @@ public class RoomChooser : MonoBehaviour
         List<Room> rooms = new();
         Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
+        List<Room> optionalRoomsTmp = new List<Room>(optionalRooms);
         while (rooms.Count < spawners.Count){
-            Debug.Assert(optionalRooms.Count > 0, "Not enought rooms", this);
-            Room optionalRoom = optionalRooms[Random.Range(0, optionalRooms.Count)];
+            Debug.Assert(optionalRoomsTmp.Count > 0, "Not enought rooms", this);
+            Room optionalRoom = optionalRoomsTmp[Random.Range(0, optionalRoomsTmp.Count)];
             rooms.Add(optionalRoom);
-            optionalRooms.Remove(optionalRoom);
+            optionalRoomsTmp.Remove(optionalRoom);
         }
         rooms.Shuffle();
         spawners.Shuffle();
-        // float startTime = Time.unscaledTime;
+        int nr = 0;
         while (rooms.Count > 0)
         {   
-            // Debug.Log(Time.unscaledTime);
             Room room = rooms[0];  
             bool matched = false;     
             foreach (RoomSpawner spawner in spawners.ToArray())
@@ -53,7 +55,11 @@ public class RoomChooser : MonoBehaviour
                 matchedRoomsWithSpawners.Add(spawner, room);
                 break;
             }
-            // Debug.Assert(Time.unscaledTime - startTime > MaxGenerationTime, "Generation timed out");
+            nr ++;
+            if (nr > MaxGenerationLoops){
+                Debug.LogWarning("Generation looped out", this);
+                return null;
+            }
         }
         return matchedRoomsWithSpawners;
     }

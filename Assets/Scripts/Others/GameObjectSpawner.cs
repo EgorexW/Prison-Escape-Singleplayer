@@ -27,6 +27,6 @@ public class GameObjectSpawner : MonoBehaviour
             rotation = Random.rotationUniform;
         }
         Instantiate(gameObject, transform.position, rotation, transform.parent);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
