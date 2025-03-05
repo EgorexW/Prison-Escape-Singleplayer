@@ -375,8 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectCollection: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab,
-    type: 2}
+  lootTable: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5647092676599382500
@@ -454,8 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectCollection: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab,
-    type: 2}
+  lootTable: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &9218381800087781705
@@ -1009,6 +1007,17 @@ PrefabInstance:
         type: 3}
       propertyPath: beginOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 854933986948507278, guid: 0d60bff58086f4bceaf54d61af29360a,
+        type: 3}
+      propertyPath: accessLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f,
+        type: 2}
+    - target: {fileID: 854933986948507278, guid: 0d60bff58086f4bceaf54d61af29360a,
+        type: 3}
+      propertyPath: beginOpenChance
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}

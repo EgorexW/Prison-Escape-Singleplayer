@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, IDoor
 {
-    [SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
-    [SerializeField] float rotationAngle = -90;
-    [SerializeField] float moveTime = 0.75f;
-    [SerializeField] bool beginOpen = false;
+    Vector3 rotationAxis = new Vector3(0, 1, 0);
+    float rotationAngle = -90;
+    float moveTime = 0.75f;
+    bool colliderWhenOpen = false;
+    
+    [Range(0, 1)][SerializeField] float beginOpenChance = 0;
     [SerializeField] Optional<float> autoCloseTime;
-    [SerializeField] bool colliderWhenOpen = false;
+    [SerializeField] AccessLevel accessLevel;
     
     float lastMoveStartedTime = 0;
     Quaternion startRotation;
@@ -22,7 +24,7 @@ public class Door : MonoBehaviour, IDoor
     private void Start()
     {
         startRotation = transform.rotation;
-        if (beginOpen){
+        if (Random.value < beginOpenChance){
             LocalOpen();
         }
     }
@@ -62,10 +64,6 @@ public class Door : MonoBehaviour, IDoor
         {
             collider.isTrigger = Opened;
         }
-    }
-
-    public virtual bool CanCharacterUse(Character character, bool onInteract){
-        return true;
     }
     public bool CanChangeState(){
         if (Time.time - lastMoveStartedTime < moveTime)
@@ -135,5 +133,24 @@ public class Door : MonoBehaviour, IDoor
     }
     public float GetHoldDuration(){
         return 0;
+    }
+
+    public bool CanCharacterUse(Character character, bool onInteract)
+    {
+        if (accessLevel == null){
+            return true;
+        }
+        Item item = character.GetHeldItem();
+        if (item is not IKeycard){
+            return false;
+        }
+        IKeycard keycard = (IKeycard)item;
+        if (onInteract)
+        {
+            if (!keycard.CanOpenWhenHeld()){
+                return false;
+            }
+        }
+        return keycard.HasAccess(accessLevel);
     }
 }
