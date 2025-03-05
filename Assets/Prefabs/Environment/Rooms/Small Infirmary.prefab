@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6825627877188135206}
-  - component: {fileID: 8080555077854588101}
   m_Layer: 0
   m_Name: LootSpawner (3)
   m_TagString: Untagged
@@ -32,21 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8080555077854588101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680221986704251978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea05b75359c2d41b2ab7a285036e1246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getGameObject: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
-  spawnChance: 0.9
-  randomRotation: 1
 --- !u!1 &2270871401134883441
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5933538223805950271}
-  - component: {fileID: 5416998741283902518}
   m_Layer: 0
   m_Name: LootSpawner (2)
   m_TagString: Untagged
@@ -207,21 +190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5416998741283902518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3478495859659003369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea05b75359c2d41b2ab7a285036e1246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getGameObject: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
-  spawnChance: 0.9
-  randomRotation: 1
 --- !u!1 &5250270296777298191
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +199,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6899147790232667031}
-  - component: {fileID: 352608094510937291}
   m_Layer: 0
   m_Name: LootSpawner (1)
   m_TagString: Untagged
@@ -254,21 +221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &352608094510937291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250270296777298191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea05b75359c2d41b2ab7a285036e1246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getGameObject: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
-  spawnChance: 0.9
-  randomRotation: 1
 --- !u!1 &5647092676599382500
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870813100079485001}
-  - component: {fileID: 3766682721866971732}
   m_Layer: 0
   m_Name: LootSpawner
   m_TagString: Untagged
@@ -332,21 +283,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3766682721866971732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706233582063228560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea05b75359c2d41b2ab7a285036e1246, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getGameObject: {fileID: 11400000, guid: cf8988136f0e4448ea0987372e77dcdd, type: 2}
-  spawnChance: 0.9
-  randomRotation: 1
 --- !u!1001 &289711154614518542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,7 +981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2073966619468174045, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,

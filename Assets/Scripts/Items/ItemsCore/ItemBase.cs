@@ -12,9 +12,10 @@ public abstract class ItemBase : MonoBehaviour, IItem
     }
     public virtual Sprite GetPortrait()
     {
-        Texture2D tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
-        Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
-        return sprite;
+        // Texture2D tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
+        // Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
+        // return sprite;
+        return null;
     }
     public virtual void OnDeequip(ICharacter character)
     {
