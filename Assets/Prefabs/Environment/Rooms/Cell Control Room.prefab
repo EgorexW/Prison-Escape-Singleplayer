@@ -340,6 +340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1272948398042798656}
+  - component: {fileID: 4469559686881581974}
   m_Layer: 0
   m_Name: LootSpawner (1)
   m_TagString: Untagged
@@ -362,6 +363,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4469559686881581974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5567110795494647637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5647092676599382500
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870813100079485001}
+  - component: {fileID: 1461945787395276280}
   m_Layer: 0
   m_Name: LootSpawner
   m_TagString: Untagged
@@ -424,6 +442,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8828483854997162358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461945787395276280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706233582063228560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &9218381800087781705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Cell Control
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

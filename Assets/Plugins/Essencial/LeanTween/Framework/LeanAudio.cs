@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using System.Collections.Generic;
 
 public class LeanAudioStream {
 
@@ -40,7 +39,7 @@ public class LeanAudio : object {
 	public static float[] generatedWaveDistances;
 	public static int generatedWaveDistancesCount = 0;
 
-	private static float[] longList;
+	static float[] longList;
 
 	public static LeanAudioOptions options(){
 		if(generatedWaveDistances==null){
@@ -84,7 +83,7 @@ public class LeanAudio : object {
 		return createAudioFromWave( generatedWavePtsLength, options );
 	}
 
-	private static int createAudioWave( AnimationCurve volume, AnimationCurve frequency, LeanAudioOptions options ){
+	static int createAudioWave( AnimationCurve volume, AnimationCurve frequency, LeanAudioOptions options ){
 		float time = volume[ volume.length - 1 ].time;
 		int listLength = 0;
 		// List<float> list = new List<float>();
@@ -145,7 +144,7 @@ public class LeanAudio : object {
 		return listLength;
 	}
 
-	private static AudioClip createAudioFromWave( int waveLength, LeanAudioOptions options ){
+	static AudioClip createAudioFromWave( int waveLength, LeanAudioOptions options ){
 		float time = longList[ waveLength - 2 ];
 		float[] audioArr = new float[ (int)(options.frequencyRate*time) ];
 
@@ -235,7 +234,7 @@ public class LeanAudio : object {
 		return audioClip;
 	}
 
-	private static void OnAudioSetPosition(int newPosition) {
+	static void OnAudioSetPosition(int newPosition) {
         
     }
 

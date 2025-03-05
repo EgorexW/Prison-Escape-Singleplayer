@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealingItem : ItemBase
+public class HealingItem : Item
 {
     [SerializeField] Damage heal;
     [SerializeField] Optional<HealOvertime> healOvertime;
     [SerializeField] float useTime;
-    ICharacter character;
+    Character character;
     float startUseTime = Mathf.Infinity;
 
     void Update(){
@@ -28,14 +25,14 @@ public class HealingItem : ItemBase
         Destroy(gameObject);
     }
 
-    public override void Use(ICharacter character, bool alternative = false)
+    public override void Use(Character character, bool alternative = false)
     {
         if (!alternative){
             Use(character);
         } else {
             StopUse();
         }
-        void Use(ICharacter character)
+        void Use(Character character)
         {
             this.character = character;
             base.Use(character);

@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputPresenter : MonoBehaviour
 {
-    ICharacter character;
+    [SerializeField] [GetComponent] Character character;
     InputAction useAction;
     private InputAction alternativeUseAction;
 
     void Awake(){
-        character = GetComponent<ICharacter>();
+        character = GetComponent<Character>();
         InputActionMap inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("DropItem").performed += DropEquipedItem;
         inputActions.FindAction("ChangeItem").performed += ChangeItem;
@@ -79,7 +78,7 @@ public class PlayerInputPresenter : MonoBehaviour
         if (!context.performed){
             return;
         }
-        List<IItem> items = character.GetInventory().GetItems();
+        var items = character.GetInventory().GetItems();
         if (items.Count == 0){
             return;
         }

@@ -1,11 +1,15 @@
 public interface IInteractive{
-    public void Interact(ICharacter character);
-    public float GetHoldDuration();
+    public void Interact(Character character);
+
+    public float GetHoldDuration()
+    {
+        return 1;
+    }
 }
 
 public struct DummyInteractive : IInteractive
 {
-    public readonly void Interact(ICharacter character)
+    public readonly void Interact(Character character)
     {
         
     }

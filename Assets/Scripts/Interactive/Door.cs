@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IDoor
@@ -15,9 +12,9 @@ public class Door : MonoBehaviour, IDoor
     float lastMoveStartedTime = 0;
     Quaternion startRotation;
     Collider[] colliders;
-    [ReadOnly] bool lockState;
-    [ShowNativeProperty] float CurrentRotToStartRot => 0;
-    [ShowNativeProperty] bool Opened => startRotation != transform.rotation;
+    bool lockState;
+    float CurrentRotToStartRot => 0;
+    bool Opened => startRotation != transform.rotation;
 
     void Awake(){
         colliders = GetComponentsInChildren<Collider>();
@@ -67,7 +64,7 @@ public class Door : MonoBehaviour, IDoor
         }
     }
 
-    public virtual bool CanCharacterUse(ICharacter character, bool onInteract){
+    public virtual bool CanCharacterUse(Character character, bool onInteract){
         return true;
     }
     public bool CanChangeState(){
@@ -130,7 +127,7 @@ public class Door : MonoBehaviour, IDoor
         transform.LeanRotateAroundLocal(rotationAxis.normalized, angle, moveTime);
     }
 
-    public virtual void Interact(ICharacter character){
+    public virtual void Interact(Character character){
         if (!CanCharacterUse(character, true)){
             return;
         }

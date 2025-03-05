@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu()]
 public class AccessLevel : ScriptableObject
 {
-    [SerializeField][OnValueChanged("RecalculateAccessLevels")] AccessLevel[] inheretedAccessLevels = new AccessLevel[0];
+    [SerializeField][OnValueChanged("SelfRecalculateAccessLevels")] AccessLevel[] inheretedAccessLevels = new AccessLevel[0];
 
     [ReadOnly][SerializeField] List<AccessLevel> allInheretedAccessLevels = new();
 
@@ -13,13 +13,13 @@ public class AccessLevel : ScriptableObject
         if (accessLevel == this){
             return true;
         }
-        RecalculateAccessLevels();  
+        SelfRecalculateAccessLevels();  
         if (allInheretedAccessLevels.Contains(accessLevel)){
             return true;
         }
         return false;
     }
-    void RecalculateAccessLevels(){
+    void SelfRecalculateAccessLevels(){
         allInheretedAccessLevels.Clear();
         RecalculateAccessLevels(this);
     }

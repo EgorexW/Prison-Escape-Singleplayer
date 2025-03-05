@@ -7,7 +7,10 @@ public struct Optional<T>
     [SerializeField] bool enabled;
     [SerializeField] T value;
 
-    public bool Enabled => enabled;
+    public bool Enabled{
+        get => enabled;
+        set => enabled = value;
+    }
     public T Value => value;
 
     public Optional(T initialValue)
@@ -27,7 +30,6 @@ public struct Optional<T>
         this.enabled = enabled;
         value = initialValue;
     }
-
     // conversion operators
     public static implicit operator Optional<T>(T v) {
         return new Optional<T>(v);

@@ -45,6 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6427210291886615046}
+  - component: {fileID: 8836123513924988937}
   m_Layer: 0
   m_Name: LootSpawner
   m_TagString: Untagged
@@ -67,6 +68,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8987059337000601885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8836123513924988937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066793874389400840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: ed801e8be5e9841f598b806153f79eb6,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &1461749711240939357
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093238902825149108}
+  - component: {fileID: 6367113761003234328}
   m_Layer: 0
   m_Name: LootSpawner (1)
   m_TagString: Untagged
@@ -98,6 +116,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8987059337000601885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6367113761003234328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461749711240939357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: ed801e8be5e9841f598b806153f79eb6,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &2116076440801052412
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5602966054293899728}
+  - component: {fileID: 5035438783440842883}
   m_Layer: 0
   m_Name: LootSpawner (3)
   m_TagString: Untagged
@@ -160,6 +195,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7636712633906721158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5035438783440842883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184476523854667258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &2270871401134883441
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 459647905843883624}
+  - component: {fileID: 3100824708058563617}
   m_Layer: 0
   m_Name: LootSpawner (6)
   m_TagString: Untagged
@@ -317,6 +369,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5398411901962323602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3100824708058563617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2930011378409791129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &3302826684301696424
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 337122758536639539}
+  - component: {fileID: 3107939062998725467}
   m_Layer: 0
   m_Name: LootSpawner (3)
   m_TagString: Untagged
@@ -379,6 +448,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5398411901962323602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3107939062998725467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338678463868484898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &3705194994025220443
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3163249250751244852}
+  - component: {fileID: 6250494995227280946}
   m_Layer: 0
   m_Name: LootSpawner (3)
   m_TagString: Untagged
@@ -410,6 +496,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7709694839871216277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6250494995227280946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705194994025220443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &4366398870296189371
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97368507591666263}
+  - component: {fileID: 1005397308290235045}
   m_Layer: 0
   m_Name: LootSpawner (2)
   m_TagString: Untagged
@@ -441,6 +544,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1846036912738540242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005397308290235045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366398870296189371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &4423496744753431980
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6684879708929788455}
+  - component: {fileID: 834393745423175605}
   m_Layer: 0
   m_Name: LootSpawner (4)
   m_TagString: Untagged
@@ -552,6 +672,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1846036912738540242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834393745423175605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897231774404521337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5109338074781486828
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7670815981685613771}
+  - component: {fileID: 768586271716239804}
   m_Layer: 0
   m_Name: LootSpawner (4)
   m_TagString: Untagged
@@ -583,6 +720,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7636712633906721158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768586271716239804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5109338074781486828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5208416709100076458
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8448456906762144590}
+  - component: {fileID: 1252371480891430321}
   m_Layer: 0
   m_Name: LootSpawner (5)
   m_TagString: Untagged
@@ -614,6 +768,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7709694839871216277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1252371480891430321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208416709100076458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5216846544625642561
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2043559897653017888}
+  - component: {fileID: 3036916829351666648}
   m_Layer: 0
   m_Name: LootSpawner (3)
   m_TagString: Untagged
@@ -681,6 +852,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1846036912738540242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3036916829351666648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228577934975219129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5636611343744822146
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5170069804691416883}
+  - component: {fileID: 8392821750396904272}
   m_Layer: 0
   m_Name: LootSpawner (6)
   m_TagString: Untagged
@@ -712,6 +900,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7636712633906721158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8392821750396904272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636611343744822146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5647092676599382500
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129171191284918528}
+  - component: {fileID: 7037144210740935558}
   m_Layer: 0
   m_Name: LootSpawner (6)
   m_TagString: Untagged
@@ -774,6 +979,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7709694839871216277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7037144210740935558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655816880613115718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &5993172103318353227
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +1004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5276915201620119228}
+  - component: {fileID: 3875195205442988203}
   m_Layer: 0
   m_Name: LootSpawner (6)
   m_TagString: Untagged
@@ -805,6 +1027,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1846036912738540242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3875195205442988203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993172103318353227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &6128292168463807515
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +1087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 82334532095851764}
+  - component: {fileID: 5636966051869612926}
   m_Layer: 0
   m_Name: LootSpawner (5)
   m_TagString: Untagged
@@ -871,6 +1110,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1846036912738540242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5636966051869612926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246529812730196487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &6285912170559011326
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +1135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516697914641053510}
+  - component: {fileID: 779311981587022100}
   m_Layer: 0
   m_Name: LootSpawner (2)
   m_TagString: Untagged
@@ -902,6 +1158,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7709694839871216277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779311981587022100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285912170559011326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &6369074922446844695
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +1183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7105392332928296288}
+  - component: {fileID: 7772921503426322786}
   m_Layer: 0
   m_Name: LootSpawner (4)
   m_TagString: Untagged
@@ -933,6 +1206,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7709694839871216277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7772921503426322786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369074922446844695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &6682832715488834386
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +1231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6285925378424168795}
+  - component: {fileID: 1588385374710062399}
   m_Layer: 0
   m_Name: LootSpawner (5)
   m_TagString: Untagged
@@ -964,6 +1254,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7636712633906721158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1588385374710062399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6682832715488834386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &7140658858556003011
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6440378122204388953}
+  - component: {fileID: 592475292421162734}
   m_Layer: 0
   m_Name: LootSpawner (2)
   m_TagString: Untagged
@@ -995,6 +1302,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5398411901962323602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592475292421162734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140658858556003011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &7212591347577987745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6268458584527205584}
+  - component: {fileID: 1436942489096331546}
   m_Layer: 0
   m_Name: LootSpawner (5)
   m_TagString: Untagged
@@ -1062,6 +1386,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5398411901962323602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436942489096331546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709635031016745955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &7767518311549640131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7714368296621003000}
+  - component: {fileID: 3911253915781804646}
   m_Layer: 0
   m_Name: LootSpawner (4)
   m_TagString: Untagged
@@ -1093,6 +1434,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5398411901962323602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3911253915781804646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767518311549640131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1 &8662098943105838462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5666482639789889763}
+  - component: {fileID: 4763103269495675439}
   m_Layer: 0
   m_Name: LootSpawner (2)
   m_TagString: Untagged
@@ -1161,6 +1519,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7636712633906721158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4763103269495675439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8945642503546376136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectCollection: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a,
+    type: 2}
+  spawnChance: 1
+  randomRotation: 1
 --- !u!1001 &787413560212147757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2155,6 +2529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

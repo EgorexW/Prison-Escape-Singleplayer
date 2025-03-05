@@ -2,7 +2,7 @@ using UnityEngine.Audio;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
 	public AudioMixerGroup mixerGroup;
 
-	[Expandable]
+	[InlineEditor]
 	public Sound[] sounds;
 	List<AudioSource> audioSources = new List<AudioSource>();
 

@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1566828201896218042}
     m_Modifications:
     - target: {fileID: 184040, guid: 5e41505804200314f8239458ca194166, type: 3}
@@ -56,12 +57,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e41505804200314f8239458ca194166, type: 3}
+--- !u!4 &87734558384649753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 474350, guid: 5e41505804200314f8239458ca194166,
+    type: 3}
+  m_PrefabInstance: {fileID: 87734558384835319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3364596009862160045
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
@@ -72,7 +83,7 @@ PrefabInstance:
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: equipPos.x
-      value: 0.152
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
@@ -176,7 +187,19 @@ PrefabInstance:
       propertyPath: <AssetPathHash>k__BackingField
       value: 13646615654148699334
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 87734558384649753}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7419262105431511422}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!1 &335257844892964924 stripped
 GameObject:
@@ -196,9 +219,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipPos: {x: 0.18, y: -0.286, z: 0.66}
+  equipRotation: {x: -2.607, y: -4.494, z: 0.205}
+  equipScaleChange: 1
+  equipTime: 0.5
   damage:
     damage: 5
     permanentDamage: 1
+  statusEffectsApplied: []
+  range: 100
   fireRate: 5
 --- !u!4 &1566828201896218042 stripped
 Transform:

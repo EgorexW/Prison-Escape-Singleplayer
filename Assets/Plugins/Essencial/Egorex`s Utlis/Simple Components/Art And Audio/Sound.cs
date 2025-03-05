@@ -16,7 +16,7 @@ public class Sound : ScriptableObject{
 	public float pitchVariance = .1f;
 
 	public bool loop = false;
-	public bool canOverride = false;
+	public bool canOverride = true;
 
 	public AudioMixerGroup mixerGroup;
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Paralized : IStatusEffect
@@ -14,23 +12,23 @@ public class Paralized : IStatusEffect
         this.speedMod = speedMod;
     }
 
-    public bool CanAddCopy(ICharacter character, IStatusEffect copy)
+    public bool CanAddCopy(Character character, IStatusEffect copy)
     {
         character.RemoveStatusEffect(this);
         return true;
     }
 
-    public void OnApply(ICharacter character)
+    public void OnApply(Character character)
     {
         character.ModSpeed(speedMod.Evaluate(timePassed/time));
     }
 
-    public void OnRemove(ICharacter character)
+    public void OnRemove(Character character)
     {
         character.ModSpeed(1/speedMod.Evaluate(timePassed-Time.deltaTime/time));
     }
 
-    public void OnUpdate(ICharacter character)
+    public void OnUpdate(Character character)
     {
         timePassed += Time.deltaTime;
         if (time <= timePassed){

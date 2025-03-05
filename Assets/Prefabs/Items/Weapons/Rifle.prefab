@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1566828201896218042}
     m_Modifications:
     - target: {fileID: 199910, guid: 8be86b86610077a47be3a9a99fc8f89e, type: 3}
@@ -56,12 +57,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be86b86610077a47be3a9a99fc8f89e, type: 3}
+--- !u!4 &411290648767871876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 410062, guid: 8be86b86610077a47be3a9a99fc8f89e,
+    type: 3}
+  m_PrefabInstance: {fileID: 411290648767494730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3364596009862160045
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
@@ -109,7 +120,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _networkObjectCache
       value: 
-      objectReference: {fileID: 5328173055780108422}
+      objectReference: {fileID: 0}
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: _componentIndexCache
@@ -176,6 +187,17 @@ PrefabInstance:
       value: 5832113173485269520
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 411290648767871876}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7419262105431511422}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!1 &335257844892964924 stripped
 GameObject:
@@ -195,9 +217,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipPos: {x: 0.152, y: -0.286, z: 0.66}
+  equipRotation: {x: -2.607, y: -4.494, z: 0.205}
+  equipScaleChange: 1
+  equipTime: 0.5
   damage:
     damage: 2
     permanentDamage: 1
+  statusEffectsApplied: []
+  range: 100
   fireRate: 20
 --- !u!4 &1566828201896218042 stripped
 Transform:
@@ -205,15 +233,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3364596009862160045}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5328173055780108422 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7439958767343724075, guid: 587a029206b6d4bccbdfca11e16e072a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3364596009862160045}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335257844892964924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -25,9 +24,6 @@ public class ObjectWithValue<T> : ObjectWithValue, IComparable<ObjectWithValue<T
         this.Object = obj.Object;
     }
     // conversion operators
-    public static implicit operator ObjectWithValue<T>(T v) {
-        return new ObjectWithValue<T>(1, v);
-    }
     public static implicit operator T(ObjectWithValue<T> o) {
         return o.Object;
     }
@@ -51,10 +47,7 @@ public class ObjectWithValue<T> : ObjectWithValue, IComparable<ObjectWithValue<T
     // equal operators
     public static bool operator ==(ObjectWithValue<T> lhs, ObjectWithValue<T> rhs) {
         if (lhs is null){
-            if (rhs is null){
-                return true;
-            }
-            return false;
+            return rhs is null;
         }
         if (rhs is null){
             return false;
@@ -98,7 +91,7 @@ public class ObjectWithValue<T> : ObjectWithValue, IComparable<ObjectWithValue<T
         if (other == null){
             return 1;
         }
-        return (int)(value - other.value);
+        return Mathf.RoundToInt(10 * (value - other.value));
     }
 }
 

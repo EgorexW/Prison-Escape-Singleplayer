@@ -1,18 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
-public class WeightedChance
+public static class WeightedChance
 {
-    public static ObjectWithValue<T> GetWeightedRoll<T>(ObjectWithValue<T>[] weightedChances)
+    public static ObjectWithValue<T> GetWeightedRoll<T>(List<ObjectWithValue<T>> weightedChances)
     {
         ObjectWithValue<T> win = null;
         float totalWeight = 0;
 
         foreach(ObjectWithValue<T> weightedChance in weightedChances)
         {
-            totalWeight += weightedChance.value;
+            totalWeight += Mathf.Max(weightedChance.value, 0);
         }
 
         float roll = Random.Range(0, totalWeight);

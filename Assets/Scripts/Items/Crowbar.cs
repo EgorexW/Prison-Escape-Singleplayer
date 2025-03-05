@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Crowbar : ItemBase, IKeycard
+public class Crowbar : Item, IKeycard
 {
     [SerializeField] AccessLevel accessLevel;
 
-    public override void Use(ICharacter character, bool alternative = false){
+    public override void Use(Character character, bool alternative = false){
         IInteractive interactive = character.GetInteractive();
         if (interactive is not IDoor){
             return;

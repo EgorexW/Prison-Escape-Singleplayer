@@ -1,12 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Inventory : MonoBehaviour, IInventory
+public class Inventory : MonoBehaviour
 {
-    List<IItem> items = new();
+    List<Item> items = new();
     [SerializeField] int size = 1;
     UnityEvent onInventoryChange = new();
     public UnityEvent OnInventoryChange => onInventoryChange;
@@ -14,7 +12,7 @@ public class Inventory : MonoBehaviour, IInventory
     public bool CanAddItem(){
         return items.Count < size;
     }
-    public void AddItem(IItem item = null)
+    public void AddItem(Item item = null)
     {
         if (items.Count >= size){
             return;
@@ -22,12 +20,12 @@ public class Inventory : MonoBehaviour, IInventory
         items.Add(item);
         onInventoryChange.Invoke();
     }
-    public List<IItem> GetItems()
+    public List<Item> GetItems()
     {
         return new(items);
     }
 
-    public void RemoveItem(IItem item)
+    public void RemoveItem(Item item)
     {
         items.Remove(item);
         onInventoryChange.Invoke();

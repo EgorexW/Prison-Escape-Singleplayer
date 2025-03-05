@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 
 [System.Serializable]
 public class Animation
@@ -9,11 +7,11 @@ public class Animation
     public string name;
     public AnimationCell[] animationCells;
 #if UNITY_EDITOR
-    [OnValueChanged("SetCellsDuration")][AllowNesting]
+    [OnValueChanged("SetCellsDuration")]
     [SerializeField] float defaultCellDuration;
 #endif
     public bool loop = true;
-    [HideIf("loop")][AllowNesting]
+    [HideIf("loop")]
     public Sprite spriteOnEnd;
     float index = 0;
     float cycleDuration = -10;

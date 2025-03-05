@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class PlayAudio : MonoBehaviour
 {
-    [SerializeField] Sound sound;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] Sound sound;
 
     void Awake()
     {
         if (audioSource == null){
-            audioSource = GetComponent<AudioSource>();
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
     void Reset(){
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null){
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     public virtual void Play(){

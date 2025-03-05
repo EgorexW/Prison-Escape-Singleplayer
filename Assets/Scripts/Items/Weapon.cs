@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : ItemBase
+public class Weapon : Item
 {
     [SerializeField] Damage damage = 1;
     [SerializeField] StatusEffectContainer[] statusEffectsApplied;
@@ -11,7 +9,7 @@ public class Weapon : ItemBase
 
     float lastShotTime;
 
-    public override void HoldUse(ICharacter character, bool alternative = false){
+    public override void HoldUse(Character character, bool alternative = false){
         base.HoldUse(character);
         if (Time.time - lastShotTime < 1/fireRate){
             return;
@@ -27,15 +25,12 @@ public class Weapon : ItemBase
                 continue;
             }
             // Debug.Log("Hit IDamagable", raycast.collider);
-            if (damagable == character){
-                continue;
-            }
             // Debug.Log("Damaged IDamagable", raycast.collider);
             damagable.Damage(damage);
-            if (damagable is not ICharacter){
+            if (damagable is not Character){
                 return;
             }
-            ICharacter hitCharacter = (ICharacter)damagable;
+            Character hitCharacter = (Character)damagable;
             foreach (StatusEffectContainer statusEffectApplied in statusEffectsApplied)
             {
                 hitCharacter.AddStatusEffect(statusEffectApplied.GetStatusEffect());

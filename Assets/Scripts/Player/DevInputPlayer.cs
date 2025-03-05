@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DevInputPlayer : MonoBehaviour
 {
-    private ICharacter character;
+    [SerializeField][Required] Character character;
 
     void Awake(){
-        character = GetComponent<ICharacter>();
         InputActionMap inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("DevKey1").performed += UseDevKey1;
         inputActions.FindAction("DevKey2").performed += UseDevKey2;

@@ -1,5 +1,3 @@
-using System;
-
 public interface IMover
 {
     Speed MoveSpeed { get; set; }

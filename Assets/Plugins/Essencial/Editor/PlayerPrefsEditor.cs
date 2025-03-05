@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
- 
+
 public class PlayerPrefsEditor : EditorWindow {
  
     [MenuItem("Edit/Player Prefs")]
@@ -14,11 +13,11 @@ public class PlayerPrefsEditor : EditorWindow {
     }
  
     public enum FieldType { String,Integer,Float }
- 
-    private FieldType fieldType = FieldType.String;
-    private string setKey = "";
-    private string setVal = "";
-    private string error = null;
+
+    FieldType fieldType = FieldType.String;
+    string setKey = "";
+    string setVal = "";
+    string error = null;
  
     void OnGUI() {
  

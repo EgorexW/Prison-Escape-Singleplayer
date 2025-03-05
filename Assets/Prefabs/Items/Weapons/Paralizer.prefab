@@ -53,7 +53,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2342946, guid: d47233789418c9d4ea37ef839215fd35, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1d37e4bf10e1e4bb99e9dde8b4b3c85e, type: 2}
     m_RemovedComponents: []
@@ -114,12 +114,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _addedNetworkObject
       value: 
-      objectReference: {fileID: 5328173055780108422}
+      objectReference: {fileID: 0}
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: _networkObjectCache
       value: 
-      objectReference: {fileID: 5328173055780108422}
+      objectReference: {fileID: 0}
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: _componentIndexCache
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7439958767343724075, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
-      propertyPath: _networkBehaviours.Array.data[3]
+      propertyPath: '_networkBehaviours.Array.data[3]'
       value: 
       objectReference: {fileID: 7419262105431511422}
     m_RemovedComponents: []
@@ -226,9 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 3
-  _addedNetworkObject: {fileID: 5328173055780108422}
-  _networkObjectCache: {fileID: 5328173055780108422}
+  equipPos: {x: 0.152, y: -0.286, z: 0.66}
+  equipRotation: {x: -2.607, y: -4.494, z: 0.205}
+  equipScaleChange: 1
+  equipTime: 0.5
   damage:
     damage: 10
     permanentDamage: 0
@@ -242,15 +243,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3364596009862160045}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5328173055780108422 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7439958767343724075, guid: 587a029206b6d4bccbdfca11e16e072a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3364596009862160045}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335257844892964924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

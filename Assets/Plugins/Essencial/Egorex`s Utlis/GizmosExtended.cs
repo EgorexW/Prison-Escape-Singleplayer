@@ -106,8 +106,7 @@ namespace GizmosExtended
 				forward = Vector3.Slerp(up, -up, 0.5f),
 				right = Vector3.Cross(up, forward).normalized * radius;
 
-			Matrix4x4 matrix = new Matrix4x4()
-			{
+			Matrix4x4 matrix = new Matrix4x4{
 				m00 = right.x,
 				m10 = right.y,
 				m20 = right.z,
@@ -384,7 +383,7 @@ namespace GizmosExtended
 
 		#region Handles
 #if UNITY_EDITOR
-		private static bool IsHandleHackAvailable =>
+		static bool IsHandleHackAvailable =>
 			UnityEditor.SceneView.currentDrawingSceneView != null ||
 			(Application.isPlaying && Camera.main != null);
 #else
@@ -502,7 +501,7 @@ namespace GizmosExtended
 #endif
 		}
 
-		private struct HandleColorScope : System.IDisposable
+		struct HandleColorScope : System.IDisposable
 		{
 			Color oldColor;
 			public HandleColorScope(Color color)
@@ -629,19 +628,19 @@ namespace GizmosExtended
 		}
 
 		//This should work for all cast types
-		private static Vector3 CastCenterOnCollision(Vector3 origin, Vector3 direction, float hitInfoDistance)
+		static Vector3 CastCenterOnCollision(Vector3 origin, Vector3 direction, float hitInfoDistance)
 		{
 			return origin + (direction.normalized * hitInfoDistance);
 		}
 
-		private static Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation)
+		static Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation)
 		{
 			Vector3 direction = point - pivot;
 			return pivot + rotation * direction;
 		}
 
 		[System.Obsolete("Use DrawBox", true)]
-		private static void DrawLocalCube(ref Color color, ref Vector3 lbb, ref Vector3 rbb, ref Vector3 lbf, ref Vector3 rbf, ref Vector3 lub, ref Vector3 rub, ref Vector3 luf, ref Vector3 ruf)
+		static void DrawLocalCube(ref Color color, ref Vector3 lbb, ref Vector3 rbb, ref Vector3 lbf, ref Vector3 rbf, ref Vector3 lub, ref Vector3 rub, ref Vector3 luf, ref Vector3 ruf)
 		{
 			using (new ColorScope(color))
 			{

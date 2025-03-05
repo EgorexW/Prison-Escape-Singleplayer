@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Keycard : ItemBase, IKeycard
+public class Keycard : Item, IKeycard
 {
     [SerializeField] AccessLevel accessLevel;
     [SerializeField] Sprite sprite;

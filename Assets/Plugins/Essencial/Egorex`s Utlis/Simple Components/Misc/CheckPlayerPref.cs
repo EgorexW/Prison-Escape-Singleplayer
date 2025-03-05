@@ -1,30 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine.Events;
 
-public enum CompareType{
-    Bigger,
-    Smaller,
-    Equal
-}
 public class CheckPlayerPref : MonoBehaviour
 {
     [SerializeField] string prefName;
-    [SerializeField] PrefType prefType;
+    [SerializeField] ObjectType prefType;
     [ShowIf("IsInt")]
     [SerializeField] int nrInt;
     [SerializeField] bool IsInt{
         get {
-            return prefType == PrefType.Int;
+            return prefType == ObjectType.Int;
         }
     }
     [ShowIf("IsFloat")]
     [SerializeField] float nrFloat;
     [SerializeField] bool IsFloat{
         get {
-            return prefType == PrefType.Float;
+            return prefType == ObjectType.Float;
         }
     }
     [HideIf("IsString")]
@@ -33,14 +26,14 @@ public class CheckPlayerPref : MonoBehaviour
     [SerializeField] string text;
     [SerializeField] bool IsString{
         get {
-            return prefType == PrefType.String;
+            return prefType == ObjectType.String;
         }
     }
-    [Foldout("Events")]
+    [FoldoutGroup("Events")]
     public UnityEvent onTrue;
-    [Foldout("Events")]
+    [FoldoutGroup("Events")]
     public UnityEvent onFalse;
-    [Foldout("Events")]
+    [FoldoutGroup("Events")]
     public UnityEvent<bool> onCheck;
 
     public void Check(){
@@ -52,13 +45,13 @@ public class CheckPlayerPref : MonoBehaviour
     public bool GetCheck(UnityAction<bool> callback = null){
         bool result = false;
         switch (prefType){
-            case PrefType.Int:
+            case ObjectType.Int:
                 result = CheckInt();
                 break;
-            case PrefType.Float:
+            case ObjectType.Float:
                 result = CheckFloat();
                 break;
-            case PrefType.String:
+            case ObjectType.String:
                 result = CheckString();
                 break;
         }

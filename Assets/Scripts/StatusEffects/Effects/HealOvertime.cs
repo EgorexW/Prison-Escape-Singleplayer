@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -10,22 +8,22 @@ public class HealOvertime : IStatusEffect
     public float totalTime;
     float startTime;
 
-    public bool CanAddCopy(ICharacter character, IStatusEffect copy)
+    public bool CanAddCopy(Character character, IStatusEffect copy)
     {
         return true;
     }
 
-    public void OnApply(ICharacter character)
+    public void OnApply(Character character)
     {
         startTime = Time.time;
     }
 
-    public void OnRemove(ICharacter character)
+    public void OnRemove(Character character)
     {
         
     }
 
-    public void OnUpdate(ICharacter character)
+    public void OnUpdate(Character character)
     {
         character.Heal(overAllHeal * Time.deltaTime * (1/totalTime));
         if (Time.time - startTime >= totalTime){

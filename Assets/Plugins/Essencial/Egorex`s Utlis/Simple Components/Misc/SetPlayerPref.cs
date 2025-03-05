@@ -1,49 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
-using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
-enum PrefType{
-    Int,
-    Float,
-    String
-}
 public class SetPlayerPref : MonoBehaviour
 {
     [SerializeField] string prefName;
-    [SerializeField] PrefType prefType;
+    [SerializeField] ObjectType prefType;
     [ShowIf("IsInt")]
     [SerializeField] int nrInt;
     [SerializeField] bool IsInt{
         get {
-            return prefType == PrefType.Int;
+            return prefType == ObjectType.Int;
         }
     }
     [ShowIf("IsFloat")]
     [SerializeField] float nrFloat;
     [SerializeField] bool IsFloat{
         get {
-            return prefType == PrefType.Float;
+            return prefType == ObjectType.Float;
         }
     }
     [ShowIf("IsString")]
     [SerializeField] string text;
     public bool IsString{
         get {
-            return prefType == PrefType.String;
+            return prefType == ObjectType.String;
         }
     }
 
     public void Set(){
         switch (prefType){
-            case PrefType.Int:
+            case ObjectType.Int:
                 SetInt();
                 break;
-            case PrefType.Float:
+            case ObjectType.Float:
                 SetFloat();
                 break;
-            case PrefType.String:
+            case ObjectType.String:
                 SetString();
                 break;
         }

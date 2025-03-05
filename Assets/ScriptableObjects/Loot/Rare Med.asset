@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Rare Med
   m_EditorClassIdentifier: 
+  spawnChance: 0.3
   gameObjects:
   - value: 5
     Object: {fileID: 3882893351632694812, guid: b5767e7e4804843efb03043532e08380,
