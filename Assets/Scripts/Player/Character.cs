@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public partial class Character : MonoBehaviour
+public partial class Character : MonoBehaviour, IDamagable
 {
     [SerializeField] Transform aim;
     CharacterEvents characterEvents = new CharacterEvents(); 

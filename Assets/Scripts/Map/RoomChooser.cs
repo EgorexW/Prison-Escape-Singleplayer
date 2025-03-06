@@ -31,6 +31,9 @@ public class RoomChooser : MonoBehaviour
             rooms.Add(optionalRoom);
             optionalRoomsTmp.Remove(optionalRoom);
         }
+        while (rooms.Count < spawners.Count){
+            rooms.Add(fillerRoom);
+        }
         rooms.Shuffle();
         spawners.Shuffle();
         int nr = 0;

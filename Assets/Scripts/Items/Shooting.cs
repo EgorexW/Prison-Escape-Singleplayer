@@ -1,0 +1,40 @@
+using Sirenix.OdinInspector;
+using UnityEngine;
+
+public class Shooting : MonoBehaviour
+{
+    [SerializeField] bool log;
+    
+    [SerializeField] Damage damage = 1;
+    [SerializeField] float fireRate = 20;
+    [SerializeField] int ammo = 20;
+    
+    [BoxGroup("Config")][SerializeField] LayerMask aimColliderLayerMask;
+    [BoxGroup("Config")][SerializeField] Transform vfxHitGreen;
+    [BoxGroup("Config")][SerializeField] Transform vfxHitRed;
+    
+    float lastShotTime;
+
+    public void Shoot(Ray ray)
+    {
+        if (Time.time - lastShotTime < 1/fireRate){
+            return;
+        }
+        if (ammo < 1){
+            return;
+        }
+        ammo--;
+        lastShotTime = Time.time;
+        Transform hitTransform = null;
+        Vector3 hitPos = Vector3.zero;
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask)) {
+            hitPos = raycastHit.point;
+            hitTransform = raycastHit.transform;
+        }
+        if (hitTransform == null) return;
+        var damagable = hitTransform.GetComponent<IDamagable>();
+        if (log) Debug.Log("Hit Object:" + hitTransform.gameObject.name, hitTransform.gameObject);
+        Instantiate(damagable != null ? vfxHitGreen : vfxHitRed, hitPos, Quaternion.identity);
+        damagable?.Damage(damage);
+    }
+}

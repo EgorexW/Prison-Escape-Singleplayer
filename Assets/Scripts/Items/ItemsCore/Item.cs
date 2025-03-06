@@ -8,8 +8,8 @@ public class Item : MonoBehaviour, IInteractive
     [SerializeField] float equipScaleChange = 1f;
     [SerializeField] float equipTime = 0.5f;
 
-    private Rigidbody rigidbody;
-    private const float ContinuousCollisionDetectionTimeOnThrow = 2f;
+    new Rigidbody rigidbody;
+    const float CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW = 2f;
 
 #if UNITY_EDITOR
     [Button]
@@ -20,7 +20,7 @@ public class Item : MonoBehaviour, IInteractive
     }
 #endif
 
-    private void Awake()
+    void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
     }
@@ -78,7 +78,7 @@ public class Item : MonoBehaviour, IInteractive
         General.CallAfterSeconds(() =>
         {
             rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
-        }, ContinuousCollisionDetectionTimeOnThrow);
+        }, CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW);
     }
 
     public virtual Sprite GetPortrait()

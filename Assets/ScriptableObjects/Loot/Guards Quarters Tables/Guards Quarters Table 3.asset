@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Guards Quarters Table 3
   m_EditorClassIdentifier: 
+  spawnChance: 1
   gameObjects:
   - value: 0
-    Object: {fileID: 335257844892964924, guid: 3eaa751876919462cbfc6948e845ac05, type: 3}
+    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}

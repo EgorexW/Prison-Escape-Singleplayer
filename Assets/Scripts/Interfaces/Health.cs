@@ -18,9 +18,7 @@ public struct Health
         Damage(-damage);
     }
     public void Damage(Damage damage){
-        Debug.Log(health);
         health -= damage.damage;
-        Debug.Log(health);
         maxHealth -= damage.permanentDamage;
         maxHealth = Mathf.Clamp(maxHealth, 0, absoluteMaxHealth);
         health = Mathf.Clamp(health, 0, maxHealth);

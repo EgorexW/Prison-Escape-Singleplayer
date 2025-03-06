@@ -14,7 +14,7 @@ public class CelingLight : MonoBehaviour, IDamagable
 
     public void Heal(Damage damage)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public Health GetHealth()
