@@ -226,9 +226,18 @@ MonoBehaviour:
   damage:
     damage: 5
     permanentDamage: 1
-  statusEffectsApplied: []
   range: 100
   fireRate: 5
+  aimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 961
+  debugTransform: {fileID: 0}
+  pfBulletProjectile: {fileID: 0}
+  spawnBulletPosition: {fileID: 0}
+  vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+    type: 3}
+  vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,
+    type: 3}
 --- !u!4 &1566828201896218042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,

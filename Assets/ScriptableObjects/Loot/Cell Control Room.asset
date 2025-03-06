@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Cell Control Room
   m_EditorClassIdentifier: 
+  spawnChance: 1
   gameObjects:
   - value: 2
     Object: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be, type: 3}
   - value: 1
-    Object: {fileID: 7414882915481570139, guid: fb82b47959c6740a8bbb5346a1f7c1bb,
+    Object: {fileID: 7414882915481570139, guid: a287bdfe7d95f43dfbfdbfe9ae38965f,
       type: 3}

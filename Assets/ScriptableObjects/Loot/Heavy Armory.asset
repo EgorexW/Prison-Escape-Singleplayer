@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Heavy Armory
   m_EditorClassIdentifier: 
+  spawnChance: 1
   gameObjects:
-  - value: 1
+  - value: 3
     Object: {fileID: 335257844892964924, guid: d02c5e0ce8cb1485490f0b88694e8a30, type: 3}
+  - value: 1
+    Object: {fileID: 7414882915481570139, guid: 83e341954b8c14810918f6f11d9c2499,
+      type: 3}

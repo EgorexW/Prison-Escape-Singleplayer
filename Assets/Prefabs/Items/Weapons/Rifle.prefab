@@ -224,9 +224,14 @@ MonoBehaviour:
   damage:
     damage: 2
     permanentDamage: 1
-  statusEffectsApplied: []
   range: 100
   fireRate: 20
+  ammo: 200
+  aimColliderLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  vfxHitGreen: {fileID: 0}
+  vfxHitRed: {fileID: 0}
 --- !u!4 &1566828201896218042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,

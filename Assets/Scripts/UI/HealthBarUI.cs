@@ -17,7 +17,7 @@ public class HealthBarUI : MonoBehaviour
             maxHealthSlider.maxValue = maxValue;
         }
         healthSlider.value = health;
-        maxHealthSlider.value = maxHealth;
+        maxHealthSlider.value = maxValue - maxHealth;
         text.text = Mathf.Round(health).ToString();
     }
 }

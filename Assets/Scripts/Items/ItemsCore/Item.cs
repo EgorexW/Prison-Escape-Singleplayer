@@ -5,65 +5,80 @@ public class Item : MonoBehaviour, IInteractive
 {
     [SerializeField] Vector3 equipPos;
     [SerializeField] Vector3 equipRotation;
-    [SerializeField] float equipScaleChange = 1;
+    [SerializeField] float equipScaleChange = 1f;
     [SerializeField] float equipTime = 0.5f;
-    new Rigidbody rigidbody;
-    const float ContinuousCollisionDetectionTimeOnThrow = 2f;
+
+    private Rigidbody rigidbody;
+    private const float ContinuousCollisionDetectionTimeOnThrow = 2f;
 
 #if UNITY_EDITOR
     [Button]
-    void CopyFromTransform(){
+    void CopyFromTransform()
+    {
         equipPos = transform.localPosition;
         equipRotation = transform.localRotation.eulerAngles;
     }
 #endif
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
     }
+
     public void Interact(Character character)
     {
         character.PickupItem(this);
     }
+
     public virtual void Use(Character character, bool alternative = false)
     {
-
+        // Implement item usage behavior here.
     }
 
     public void OnPickup(Character character)
     {
-        gameObject.SetActive(false);
+        // Disable physics and attach to character
+        gameObject.SetActive(false); // Ensure item is active
         transform.SetParent(character.GetAimTransform());
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;     
-        rigidbody.isKinematic = true; 
+        transform.localRotation = Quaternion.identity;
+        rigidbody.isKinematic = true; // Disable physics while holding
     }
 
     public void OnEquip(Character character)
     {
+        // Ensure item is visible and move it into the equipped position
         gameObject.SetActive(true);
-        transform.LeanMoveLocal(equipPos, equipTime);
+        transform.SetParent(character.GetAimTransform()); // Ensure it's parented to the character's aim position
+        transform.LeanMoveLocal(equipPos, equipTime); // Smooth movement to equip position
         transform.localRotation = Quaternion.Euler(equipRotation);
-        transform.localScale *= equipScaleChange;
+        transform.localScale = Vector3.one * equipScaleChange; // Scale change
     }
 
     public void OnDeequip(Character character)
     {
-        gameObject.SetActive(false);
+        // Hide item and reset transform when unequipped
+        gameObject.SetActive(false); // Disable item visibility
+        transform.SetParent(null); // Remove parent
         transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity; 
-        transform.localScale *= 1 / equipScaleChange; 
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one; // Reset scale
     }
 
     public void OnDrop(Character character, Vector3 force)
     {
-        gameObject.SetActive(true);   
-        transform.SetParent(null);
-        rigidbody.isKinematic = false;
-        rigidbody.AddForce(force, ForceMode.Impulse); 
-        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        General.CallAfterSeconds(() => rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete, ContinuousCollisionDetectionTimeOnThrow);
+        // Activate item, reset position, and add force
+        gameObject.SetActive(true);
+        transform.SetParent(null); // Detach from character
+        rigidbody.isKinematic = false; // Enable physics
+        rigidbody.AddForce(force, ForceMode.Impulse); // Add force for throwing
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous; // Enable continuous collision detection
 
+        // Reset collision detection mode after a delay
+        General.CallAfterSeconds(() =>
+        {
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        }, ContinuousCollisionDetectionTimeOnThrow);
     }
 
     public virtual Sprite GetPortrait()
@@ -75,11 +90,11 @@ public class Item : MonoBehaviour, IInteractive
 
     public virtual void HoldUse(Character character, bool alternative = false)
     {
-
+        // Implement hold use behavior here, if necessary
     }
 
     public void StopUse(Character character, bool alternative = false)
     {
-
+        // Implement stop use behavior here, if necessary
     }
 }

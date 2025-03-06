@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class AccessLevel : ScriptableObject
 {
-    [SerializeField][OnValueChanged("SelfRecalculateAccessLevels")] AccessLevel[] inheretedAccessLevels = new AccessLevel[0];
+    [SerializeField] [OnValueChanged("SelfRecalculateAccessLevels")] List<AccessLevel> inheretedAccessLevels;
 
     [ReadOnly][SerializeField] List<AccessLevel> allInheretedAccessLevels = new();
 
@@ -36,7 +37,7 @@ public class AccessLevel : ScriptableObject
             RecalculateAccessLevels(accessLevel);
         }
     }
-    public AccessLevel[] GetInheretedAccessLevels(){
+    public List<AccessLevel> GetInheretedAccessLevels(){
         return inheretedAccessLevels;
     }
 }

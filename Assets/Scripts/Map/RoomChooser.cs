@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class RoomChooser : MonoBehaviour
@@ -8,7 +9,14 @@ public class RoomChooser : MonoBehaviour
 
     [SerializeField] List<Room> necessaryRooms;
     [SerializeField] List<Room> optionalRooms;
+    int necessaryRoomsCount => necessaryRooms.Count;
+    [ShowInInspector] int allRooms => necessaryRooms.Count + optionalRooms.Count;
     
+    [SerializeField][MinMaxSlider("necessaryRoomsCount", "allRooms")] Vector2Int roomsToSpawn = new(10, 15);
+
+    [SerializeField] Room fillerRoom;
+
+    [ShowInInspector] int roomSpawners => GetComponentsInChildren<RoomSpawner>().Length;
     public Dictionary<RoomSpawner, Room> ChooseRooms()
     {
         List<RoomSpawner> spawners = new(GetComponentsInChildren<RoomSpawner>());
@@ -16,7 +24,8 @@ public class RoomChooser : MonoBehaviour
         Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
         List<Room> optionalRoomsTmp = new List<Room>(optionalRooms);
-        while (rooms.Count < spawners.Count){
+        int roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
+        while (rooms.Count < roomsNr){
             Debug.Assert(optionalRoomsTmp.Count > 0, "Not enought rooms", this);
             Room optionalRoom = optionalRoomsTmp[Random.Range(0, optionalRoomsTmp.Count)];
             rooms.Add(optionalRoom);
