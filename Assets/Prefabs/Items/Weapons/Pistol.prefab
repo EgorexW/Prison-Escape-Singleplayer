@@ -200,6 +200,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7419262105431511422}
+    - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2820933438102179484}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!1 &335257844892964924 stripped
 GameObject:
@@ -223,17 +227,28 @@ MonoBehaviour:
   equipRotation: {x: -2.607, y: -4.494, z: 0.205}
   equipScaleChange: 1
   equipTime: 0.5
+  shooting: {fileID: 2820933438102179484}
+--- !u!114 &2820933438102179484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335257844892964924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c7a1155c9f492a83444fcde09057b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: 0
   damage:
     damage: 5
     permanentDamage: 1
-  range: 100
   fireRate: 5
+  ammo: 20
   aimColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 961
-  debugTransform: {fileID: 0}
-  pfBulletProjectile: {fileID: 0}
-  spawnBulletPosition: {fileID: 0}
+    m_Bits: 833
   vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
     type: 3}
   vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,

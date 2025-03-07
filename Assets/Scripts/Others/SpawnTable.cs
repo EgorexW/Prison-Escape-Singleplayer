@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class LootTable : ScriptableObject, IGetGameObject
+public class SpawnTable : ScriptableObject, IGetGameObject
 {
     [Range(0, 1)] public float spawnChance = 1; 
     [SerializeField] List<ObjectWithValue<Object>> gameObjects;

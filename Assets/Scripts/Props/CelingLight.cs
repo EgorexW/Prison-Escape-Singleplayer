@@ -12,13 +12,5 @@ public class CelingLight : MonoBehaviour, IDamagable
         meshRenderer.material = destroyedMaterial;
     }
 
-    public void Heal(Damage damage)
-    {
-        
-    }
-
-    public Health GetHealth()
-    {
-        return new Health();
-    }
+    public Health Health => new(1);
 }

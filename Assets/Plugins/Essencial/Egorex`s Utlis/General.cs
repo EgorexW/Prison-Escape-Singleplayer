@@ -44,12 +44,20 @@ public class General : MonoBehaviour
         }
         return Vector2.zero;
     }
-    public static Vector2[] GetVectorsList(){
-        return new[]{
+    public static List<Vector2> Get4MainDirections2D(){
+        return new List<Vector2>{
             Vector2.right,
             Vector2.left,
             Vector2.up,
             Vector2.down
+        };
+    }
+    public static List<Vector3> Get4MainDirections3D(){
+        return new List<Vector3>{
+            Vector3.right,
+            Vector3.left,
+            Vector3.forward,
+            Vector3.back
         };
     }
     public static float GetAngleFromVector(Vector2 dir){

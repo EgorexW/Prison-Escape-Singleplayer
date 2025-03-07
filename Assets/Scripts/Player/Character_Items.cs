@@ -1,15 +1,31 @@
+using Sirenix.OdinInspector;
+using UnityEngine;
+
 public partial class Character
 {
-    const int ThrowPower = 10;
+    [SerializeField][Required] Transform itemSlot;
+    
+    [ShowInInspector] Item equipedItem = null;
+    
+    const int THROW_POWER = 10;
+    const float CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW = 2f;
+    
     Inventory inventory;
-    Item equipedItem = null;
 
     public void PickupItem(Item item){
         if (!inventory.CanAddItem()){
             return;
         }
         inventory.AddItem(item);
-        item.OnPickup(this);
+        
+        item.gameObject.SetActive(false);
+        item.Rigidbody.isKinematic = true;
+        item.Rigidbody.linearVelocity = Vector3.zero;
+        item.Rigidbody.angularVelocity = Vector3.zero;
+        item.transform.SetParent(itemSlot);
+        item.transform.localPosition = Vector3.zero;
+        item.transform.localRotation = Quaternion.identity;
+        
         if (equipedItem == null){
             EquipItem(item);
         }
@@ -28,20 +44,32 @@ public partial class Character
             }
         }
         RemoveItem(item);
-        item.OnDrop(this, aim.forward * ThrowPower);
+        
+        Vector3 force = aim.forward * THROW_POWER;
+        item.gameObject.SetActive(true);
+        item.transform.SetParent(null); // Detach from character
+        item.Rigidbody.isKinematic = false; // Enable physics
+        item.Rigidbody.AddForce(force, ForceMode.Impulse); // Add force for throwing
+        item.Rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous; // Enable continuous collision detection
+
+        // Reset collision detection mode after a delay
+        General.CallAfterSeconds(() =>
+        {
+            item.Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        }, CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW);
     }
     public void EquipItem(Item item)
     {
         DeequipItem();
         equipedItem = item;
-        equipedItem.OnEquip(this);
+        equipedItem.gameObject.SetActive(true);
     }
     public void DeequipItem()
     {
         if (equipedItem == null){
             return;
         }
-        equipedItem.OnDeequip(this);
+        equipedItem.gameObject.SetActive(false);
         equipedItem = null;
     }
     public void DropItem(){

@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 public class LootSpawner : MonoBehaviour
 { 
-    [FormerlySerializedAs("gameObjectCollection")] [SerializeField] LootTable lootTable;
+    [FormerlySerializedAs("lootTable")] [FormerlySerializedAs("gameObjectCollection")] [SerializeField] SpawnTable spawnTable;
     [SerializeField][Range(0, 1)] float spawnChance = 1;
     [SerializeField] bool randomRotation = true;
 
@@ -13,10 +13,10 @@ public class LootSpawner : MonoBehaviour
 
     protected void SpawnGameObject()
     {
-        if (Random.value > spawnChance * lootTable.spawnChance){
+        if (Random.value > spawnChance * spawnTable.spawnChance){
             return;
         }
-        GameObject gameObject = lootTable.GetGameObject();
+        GameObject gameObject = spawnTable.GetGameObject();
         if (gameObject == null){
             Debug.LogWarning("GameObject is null", this);
             return;

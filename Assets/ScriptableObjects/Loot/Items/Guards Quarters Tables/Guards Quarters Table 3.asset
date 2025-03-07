@@ -15,4 +15,4 @@ MonoBehaviour:
   spawnChance: 1
   gameObjects:
   - value: 0
-    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
+    Object: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be, type: 3}

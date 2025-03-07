@@ -4,6 +4,8 @@ public partial class Character
 {
     [SerializeField] Health health = new Health(100, 100, 100);
 
+    public Health Health => health;
+
     public void Damage(Damage damage)
     {   
         health.Damage(damage);
@@ -21,13 +23,9 @@ public partial class Character
     {
         Destroy(gameObject);
     }
-    
+
     private void UpdateHealth()
     {
         characterEvents.onHealthChange.Invoke();
-    }
-    public Health GetHealth()
-    {
-        return health;
     }
 }

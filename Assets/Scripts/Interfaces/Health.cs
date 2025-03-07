@@ -7,7 +7,9 @@ public struct Health
     public float health;
     public float maxHealth;
     public float absoluteMaxHealth;
-
+    
+    public bool Alive => health > 0;
+    public Health(float health) : this(health, health, health) {}
     public Health(float health, float maxHealth, float absoluteMaxHealth)
     {
         this.health = health;

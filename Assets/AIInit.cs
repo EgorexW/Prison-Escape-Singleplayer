@@ -1,0 +1,24 @@
+using Nrjwolf.Tools.AttachAttributes;
+using Sirenix.OdinInspector;
+using UnityEngine;
+
+[RequireComponent(typeof(MainAI))]
+public class AIInit : MonoBehaviour
+{
+    [SerializeField] float initDelay = 2;
+    
+    [SerializeField][GetComponent] MainAI mainAI;
+    
+    [SerializeField][Required] AINodes nodes;
+    
+    [SerializeField][Required] AIMultipleSpawner corridorSpawner;
+    void Start()
+    {
+        General.CallAfterSeconds(Init, initDelay);
+    }
+
+    void Init()
+    {
+        corridorSpawner.Spawn(nodes.CorridorNodes, mainAI);
+    }
+}

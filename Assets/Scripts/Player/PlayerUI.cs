@@ -25,7 +25,7 @@ class PlayerUI : MonoBehaviour
 
     private void ShowHealth()
     {
-        healthBarUI.SetHealth(character.GetHealth());
+        healthBarUI.SetHealth(character.Health);
     }
 
     void ShowInventory(){

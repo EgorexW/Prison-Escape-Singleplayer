@@ -3,17 +3,19 @@ using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Shooting))]
 [RequireComponent(typeof(TargetsSeeing))]
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, IDamagable, IAIObject
 {
-    public List<GameObject> targets;
-    
     [SerializeField][GetComponent] TargetsSeeing seeing;
     [GetComponent][SerializeField] Shooting shooting;
     
     [SerializeField][Required] Transform shootPoint;
+
+    [SerializeField] Health health;
+    public Health Health => health;
     
     [SerializeField] float rotationSpeed = 0.5f;
     [SerializeField] float angleToStartShooting = 0.1f;
@@ -26,6 +28,9 @@ public class Turret : MonoBehaviour
     
     
     State state = State.Idle;
+    MainAI mainAI;
+
+    List<GameObject> Targets => mainAI.Targets;
     
     GameObject currentTarget;
 
@@ -38,7 +43,7 @@ public class Turret : MonoBehaviour
     void CheckForTargets()
     {
         GameObject foundTarget = null;
-        foreach (var target in targets){
+        foreach (var target in Targets){
             var result = seeing.CheckTargetVisible(target);
             if (result){
                 foundTarget = target;
@@ -75,5 +80,18 @@ public class Turret : MonoBehaviour
     {
         Ray ray = new Ray(shootPoint.position, transform.forward);
         shooting.Shoot(ray);
+    }
+
+    public void Damage(Damage damage)
+    {
+        health.Damage(damage);
+        if (!health.Alive){
+            Destroy(gameObject);
+        }
+    }
+
+    public void Init(MainAI mainAI)
+    {
+        this.mainAI = mainAI;
     }
 }

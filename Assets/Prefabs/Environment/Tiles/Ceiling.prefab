@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1617407120945862394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6661531238293705055}
+  - component: {fileID: 6068006475070148303}
+  m_Layer: 3
+  m_Name: AI Corridor Node
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6661531238293705055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617407120945862394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: -3, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3802575135088560125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6068006475070148303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617407120945862394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eda4f59682a467884ee56f7e6e16e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &2155093787635435970
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +75,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1831336726415229206}
+  - {fileID: 6661531238293705055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1831336726415392304
@@ -103,54 +149,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 140794, guid: 8e1453f2d149dee4ba34b7befeb6cab0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5837837270219965111}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1453f2d149dee4ba34b7befeb6cab0, type: 3}
 --- !u!4 &1831336726415229206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458534, guid: 8e1453f2d149dee4ba34b7befeb6cab0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1831336726415392304}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1831336726415514570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 140794, guid: 8e1453f2d149dee4ba34b7befeb6cab0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1831336726415392304}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5837837270219965111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831336726415514570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c3848735d0848bf8165d134737073f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAwake:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1831336726417565728}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!23 &1831336726417565728 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2315792, guid: 8e1453f2d149dee4ba34b7befeb6cab0,
     type: 3}
   m_PrefabInstance: {fileID: 1831336726415392304}
   m_PrefabAsset: {fileID: 0}
