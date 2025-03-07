@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}
       propertyPath: m_Name
-      value: Fake Pistol
+      value: Weak Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 1566828201896218042, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}
@@ -249,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 2820933438102179484, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}
       propertyPath: ammo
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5328173055780108422, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}

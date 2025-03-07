@@ -11,11 +11,16 @@ class PlayerUI : MonoBehaviour
     [GetComponentInChildren][SerializeField] HealthBarUI healthBarUI;
     [GetComponentInChildren][SerializeField] ItemsUI itemsUI;
     [Required][SerializeField] MetricBar staminaBarUI;
+    [Required][SerializeField] MetricBar progressBarUI;
 
     void Awake()
     {
-        character.GetCharacterEvents().onInventoryChange.AddListener(ShowInventory);
-        character.GetCharacterEvents().onHealthChange.AddListener(ShowHealth);
+        character.onInventoryChange.AddListener(ShowInventory);
+        character.onHealthChange.AddListener(ShowHealth);
+        character.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t/d));
+        character.onFinishInteraction.AddListener(() => progressBarUI.Hide());
+        
+        progressBarUI.Hide();
     }
 
     void Update()

@@ -8,7 +8,8 @@ public class AccessLevel : ScriptableObject
 {
     [SerializeField] [OnValueChanged("SelfRecalculateAccessLevels")] List<AccessLevel> inheretedAccessLevels;
 
-    [ReadOnly][SerializeField] List<AccessLevel> allInheretedAccessLevels = new();
+    [ReadOnly][ShowInInspector] HashSet<AccessLevel> allAccessLevelsContainingThis = new();
+    [ReadOnly][ShowInInspector] HashSet<AccessLevel> allInheretedAccessLevels = new();
 
     public bool HasAccess(AccessLevel accessLevel){
         if (accessLevel == this){
@@ -34,6 +35,7 @@ public class AccessLevel : ScriptableObject
                 continue;
             }
             allInheretedAccessLevels.Add(accessLevel);
+            accessLevel.allAccessLevelsContainingThis.Add(this);
             RecalculateAccessLevels(accessLevel);
         }
     }

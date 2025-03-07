@@ -3,12 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MetricBar : MonoBehaviour
+public class MetricBar : UIElement
 {
     [SerializeField][Required] Slider slider;
     [SerializeField] TextMeshProUGUI text;
     
     public void Set(float value, float maxValue = -1){
+        Show();
         if (maxValue > 0){
             slider.maxValue = maxValue;
         }

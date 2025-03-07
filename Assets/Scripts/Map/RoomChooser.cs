@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class RoomChooser : MonoBehaviour
+public class RoomChooser : SerializedMonoBehaviour
 {
-    const int MaxGenerationLoops = 1000;
+    const int MAX_GENERATION_LOOPS = 1000;
 
-    [SerializeField] List<Room> necessaryRooms;
-    [SerializeField] List<Room> optionalRooms;
+    [SerializeField] List<Room> necessaryRooms = new List<Room>();
+    [SerializeField] Dictionary<Room, int> optionalRooms = new();
     int necessaryRoomsCount => necessaryRooms.Count;
-    [ShowInInspector] int allRooms => necessaryRooms.Count + optionalRooms.Count;
+    int optionalRoomsCount => optionalRooms.Sum(x => x.Value);
+    [ShowInInspector] int allRooms => necessaryRoomsCount + optionalRoomsCount;
     
     [SerializeField][MinMaxSlider("necessaryRoomsCount", "allRooms")] Vector2Int roomsToSpawn = new(10, 15);
 
@@ -23,13 +26,11 @@ public class RoomChooser : MonoBehaviour
         List<Room> rooms = new();
         Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
-        List<Room> optionalRoomsTmp = new List<Room>(optionalRooms);
         int roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
         while (rooms.Count < roomsNr){
-            Debug.Assert(optionalRoomsTmp.Count > 0, "Not enought rooms", this);
-            Room optionalRoom = optionalRoomsTmp[Random.Range(0, optionalRoomsTmp.Count)];
+            Room optionalRoom = optionalRooms.WeightedRandom();
             rooms.Add(optionalRoom);
-            optionalRoomsTmp.Remove(optionalRoom);
+            optionalRooms[optionalRoom]--;
         }
         while (rooms.Count < spawners.Count){
             rooms.Add(fillerRoom);
@@ -67,7 +68,7 @@ public class RoomChooser : MonoBehaviour
                 break;
             }
             nr ++;
-            if (nr > MaxGenerationLoops){
+            if (nr > MAX_GENERATION_LOOPS){
                 Debug.LogWarning("Generation looped out", this);
                 return null;
             }

@@ -1,9 +1,15 @@
 using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public partial class Character
 {   
     [SerializeField] float maxInteractDis = 3;
+
+    [FoldoutGroup("Events")] public UnityEvent<float, float> onHoldInteraction;
+    [FoldoutGroup("Events")] public UnityEvent onFinishInteraction;
+    
     Coroutine holdCoroutine;
 
     public IInteractive GetInteractive(){
@@ -26,9 +32,7 @@ public partial class Character
         }
         return interactive;
     }
-    public void Interact(){
-        Interact(0);
-    }
+
     public void Interact(float duration = 0){
         IInteractive interactive = GetInteractive();
         if (interactive.GetHoldDuration() > duration){
@@ -38,9 +42,11 @@ public partial class Character
             holdCoroutine = StartCoroutine(HoldCoroutine(interactive));
             return;
         }
+        onFinishInteraction.Invoke();
         interactive.Interact(this);
     }
     public void CancelInteract(){
+        onFinishInteraction.Invoke();
         if (holdCoroutine == null){
             return;
         }
@@ -50,6 +56,7 @@ public partial class Character
     public IEnumerator HoldCoroutine(IInteractive interactive){
         float time = 0;
         while (time <= interactive.GetHoldDuration()){
+            onHoldInteraction.Invoke(time, interactive.GetHoldDuration());
             time += Time.deltaTime;
             yield return null;
         }

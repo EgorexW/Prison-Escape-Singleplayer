@@ -9,7 +9,7 @@
                     "name": "DevKey3",
                     "type": "Button",
                     "id": "6266934f-9100-4295-9d75-e91fdfc9bbed",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -72,7 +72,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "5061696f-555f-4c4a-9ae3-c43d437c9b63",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -99,7 +99,7 @@
                     "name": "Use",
                     "type": "Button",
                     "id": "f72d6261-f938-483c-ba49-463b7329d04f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -210,6 +210,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "ChangeItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "00849db1-c5dd-4d72-ac38-d2883937faae",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
                     "action": "ChangeItem",
                     "isComposite": false,
                     "isPartOfComposite": false

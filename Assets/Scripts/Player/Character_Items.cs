@@ -1,11 +1,14 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public partial class Character
 {
     [SerializeField][Required] Transform itemSlot;
     
     [ShowInInspector] Item equipedItem = null;
+
+    [FoldoutGroup("Events")] public readonly UnityEvent onInventoryChange = new();
     
     const int THROW_POWER = 10;
     const float CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW = 2f;
@@ -19,9 +22,9 @@ public partial class Character
         inventory.AddItem(item);
         
         item.gameObject.SetActive(false);
-        item.Rigidbody.isKinematic = true;
         item.Rigidbody.linearVelocity = Vector3.zero;
         item.Rigidbody.angularVelocity = Vector3.zero;
+        item.Rigidbody.isKinematic = true;
         item.transform.SetParent(itemSlot);
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;

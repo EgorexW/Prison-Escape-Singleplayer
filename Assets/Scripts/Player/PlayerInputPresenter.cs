@@ -26,7 +26,7 @@ public class PlayerInputPresenter : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context){
         if (context.performed){
-            character.Interact();
+            character.Interact(0);
         }
         if (context.canceled){
             character.CancelInteract();
