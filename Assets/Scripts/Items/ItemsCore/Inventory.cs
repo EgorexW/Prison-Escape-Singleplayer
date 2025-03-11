@@ -12,11 +12,12 @@ public class Inventory : MonoBehaviour
     public bool CanAddItem(){
         return items.Count < size;
     }
-    public void AddItem(Item item = null)
+    public void AddItem(Item item)
     {
-        if (items.Count >= size){
+        if (!CanAddItem()){
             return;
         }
+        item.isHeld = true;
         items.Add(item);
         onInventoryChange.Invoke();
     }
@@ -27,6 +28,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
+        item.isHeld = false;
         items.Remove(item);
         onInventoryChange.Invoke();
     }

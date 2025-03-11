@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ObjectRoot : MonoBehaviour
 {
-    [SerializeField] List<Component> componentsList = new(); // List of Component
+    [ShowInInspector] List<Component> componentsList = new(); // List of Component
     
     Dictionary<Type, object> components = new();
     

@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 94800fe834354490f8e6f9f77dda5dab, type: 2}
-  spawnChance: 1
+  spawnChance: 0.5
   randomRotation: 1
 --- !u!1001 &891966344016946116
 PrefabInstance:

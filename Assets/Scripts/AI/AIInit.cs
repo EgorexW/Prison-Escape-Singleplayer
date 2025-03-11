@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,8 +11,6 @@ public class AIInit : MonoBehaviour
     [SerializeField][GetComponent] MainAI mainAI;
     
     [SerializeField][Required] AINodes nodes;
-    
-    [SerializeField][Required] AIMultipleSpawner corridorSpawner;
     void Start()
     {
         General.CallAfterSeconds(Init, initDelay);
@@ -19,6 +18,8 @@ public class AIInit : MonoBehaviour
 
     void Init()
     {
-        corridorSpawner.Spawn(nodes.CorridorNodes, mainAI);
+        foreach (var spawner in GetComponentsInChildren<AISpawner>()){
+            spawner.Spawn(nodes.CorridorNodes, mainAI);
+        }
     }
 }

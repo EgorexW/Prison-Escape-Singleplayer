@@ -221,10 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipPos: {x: 0.152, y: -0.286, z: 0.66}
-  equipRotation: {x: -2.607, y: -4.494, z: 0.205}
-  equipScaleChange: 1
-  equipTime: 0.5
   shooting: {fileID: 2820933438102179484}
 --- !u!114 &2820933438102179484
 MonoBehaviour:
@@ -240,13 +236,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   damage:
-    damage: 2
+    damage: 5
     permanentDamage: 1
   fireRate: 20
   ammo: 200
   aimColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 833
+    m_Bits: 841
   vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
     type: 3}
   vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,

@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+[System.Flags] 
 public enum Direction{
-    Left,
-    Right,
-    Up,
-    Down
+    Left = 1 << 0,
+    Right = 1 << 1,
+    Up = 1 << 2,
+    Down = 1 << 3
 }
 
 public class General : MonoBehaviour
@@ -164,7 +165,7 @@ public class General : MonoBehaviour
     public static TComponent GetRootComponent<TComponent>(Transform transform, bool mustBeFound = true)
     {
         var objectRoot = GetObjectRoot(transform, mustBeFound);
-        if (objectRoot == null) return default;
+        if (objectRoot == null) return transform.GetComponent<TComponent>();
         TComponent component = objectRoot.GetRootComponent<TComponent>();
         Debug.Assert(!mustBeFound || component != null, typeof(TComponent) + " is null", transform);
         return component;

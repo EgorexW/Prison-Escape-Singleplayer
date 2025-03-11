@@ -159,7 +159,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 8956418541344127572}
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
   destroyedMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
-  chanceToStartBroken: 0.1
+  chanceToStartBroken: 0.2
 --- !u!1001 &8956418541346228014
 PrefabInstance:
   m_ObjectHideFlags: 0

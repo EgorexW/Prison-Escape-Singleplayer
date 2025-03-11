@@ -244,7 +244,7 @@ MonoBehaviour:
   ammo: 30
   aimColliderLayerMask:
     serializedVersion: 2
-    m_Bits: 833
+    m_Bits: 841
   vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
     type: 3}
   vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,

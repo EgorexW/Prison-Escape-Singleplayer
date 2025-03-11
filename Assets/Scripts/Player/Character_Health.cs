@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public partial class Character
 {
+    [SerializeField] bool log;
+    
     [SerializeField] Health health = new Health(100, 100, 100);
 
     [FoldoutGroup("Events")] public readonly UnityEvent onHealthChange = new(); 
@@ -12,6 +14,7 @@ public partial class Character
 
     public void Damage(Damage damage)
     {   
+        if (log) Debug.Log(damage, this);
         health.Damage(damage);
         UpdateHealth();
         if (health.health == 0){
@@ -25,7 +28,7 @@ public partial class Character
     }
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void UpdateHealth()

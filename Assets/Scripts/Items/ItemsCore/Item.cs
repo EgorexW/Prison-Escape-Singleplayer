@@ -1,9 +1,11 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Item : MonoBehaviour, IInteractive
+public class Item : MonoBehaviour, IInteractive, IDamagable
 {
     public Rigidbody Rigidbody { get; private set; }
+
+    public bool isHeld = false;
     
     
     void Awake()
@@ -37,4 +39,14 @@ public class Item : MonoBehaviour, IInteractive
     {
         // Implement stop use behavior here, if necessary
     }
+
+    public void Damage(Damage damage)
+    {
+        if (isHeld){
+            return;
+        }
+        gameObject.SetActive(false);
+    }
+
+    public Health Health => new Health(1);
 }

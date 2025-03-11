@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
+  spawnTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
   spawnChance: 0.5
   randomRotation: 1
 --- !u!1 &2091520365622531938
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
+  spawnTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
   spawnChance: 0.5
   randomRotation: 1
 --- !u!1 &2116076440801052412
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
-  spawnChance: 0.9
+  spawnTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
+  spawnChance: 1
   randomRotation: 1
 --- !u!1 &3302826684301696424
 GameObject:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
+  spawnTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
   spawnChance: 0.5
   randomRotation: 1
 --- !u!1 &8187730630288736936
@@ -502,8 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
-  spawnChance: 0.9
+  spawnTable: {fileID: 11400000, guid: debcf4c22a6ca4f98a840b3f005f7e6f, type: 2}
+  spawnChance: 1
   randomRotation: 1
 --- !u!1 &8662098943105838462
 GameObject:

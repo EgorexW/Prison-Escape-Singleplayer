@@ -72,6 +72,7 @@ public partial class Character
         if (equipedItem == null){
             return;
         }
+        equipedItem.StopUse(this);
         equipedItem.gameObject.SetActive(false);
         equipedItem = null;
     }

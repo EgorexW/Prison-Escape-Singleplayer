@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Flashlight
   m_EditorClassIdentifier: 
+  spawnChance: 1
   gameObjects:
   - value: 5
     Object: {fileID: 1320489578685439507, guid: 246dae85a393746ef8970f66cb1c5e8c,
       type: 3}
-  - value: 1
+  - value: 2
     Object: {fileID: 1320489578685439507, guid: 903c48d2e63d042798b2925238719029,
       type: 3}

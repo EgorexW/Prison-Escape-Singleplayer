@@ -1,9 +1,10 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class LootSpawner : MonoBehaviour
 { 
-    [FormerlySerializedAs("lootTable")] [FormerlySerializedAs("gameObjectCollection")] [SerializeField] SpawnTable spawnTable;
+    [InlineEditor][FormerlySerializedAs("lootTable")] [FormerlySerializedAs("gameObjectCollection")] [SerializeField] SpawnTable spawnTable;
     [SerializeField][Range(0, 1)] float spawnChance = 1;
     [SerializeField] bool randomRotation = true;
 

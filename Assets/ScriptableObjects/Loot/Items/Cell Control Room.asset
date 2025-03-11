@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChance: 1
   gameObjects:
-  - value: 2
-    Object: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be, type: 3}
-  - value: 1
+  - value: 5
+    Object: {fileID: 11400000, guid: 1c007281c56e74b14aacf464745ead7a, type: 2}
+  - value: 5
     Object: {fileID: 7414882915481570139, guid: a287bdfe7d95f43dfbfdbfe9ae38965f,
+      type: 3}
+  - value: 3
+    Object: {fileID: 7414882915481570139, guid: fb82b47959c6740a8bbb5346a1f7c1bb,
+      type: 3}
+  - value: 1
+    Object: {fileID: 335257844892964924, guid: d02c5e0ce8cb1485490f0b88694e8a30, type: 3}
+  - value: 1
+    Object: {fileID: 7414882915481570139, guid: 98f3fbf740f4544478d8803a50b62550,
       type: 3}

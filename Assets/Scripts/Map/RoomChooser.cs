@@ -27,10 +27,11 @@ public class RoomChooser : SerializedMonoBehaviour
         Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
         int roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
+        var optionalRoomsLeft = new Dictionary<Room, int>(optionalRooms);
         while (rooms.Count < roomsNr){
-            Room optionalRoom = optionalRooms.WeightedRandom();
+            Room optionalRoom = optionalRoomsLeft.WeightedRandom();
             rooms.Add(optionalRoom);
-            optionalRooms[optionalRoom]--;
+            optionalRoomsLeft[optionalRoom]--;
         }
         while (rooms.Count < spawners.Count){
             rooms.Add(fillerRoom);
