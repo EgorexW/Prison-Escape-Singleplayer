@@ -36,53 +36,6 @@ Transform:
   - {fileID: 5170069804691416883}
   m_Father: {fileID: 8001002191492065884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1066793874389400840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6427210291886615046}
-  - component: {fileID: 8836123513924988937}
-  m_Layer: 0
-  m_Name: LootSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6427210291886615046
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066793874389400840}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1.5, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8987059337000601885}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8836123513924988937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066793874389400840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: ed801e8be5e9841f598b806153f79eb6, type: 2}
-  spawnChance: 1
-  randomRotation: 1
 --- !u!1 &1461749711240939357
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: ed801e8be5e9841f598b806153f79eb6, type: 2}
+  spawnTable: {fileID: 11400000, guid: ed801e8be5e9841f598b806153f79eb6, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &2116076440801052412
@@ -205,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
+  spawnTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &2270871401134883441
@@ -294,7 +247,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6427210291886615046}
   - {fileID: 1093238902825149108}
   m_Father: {fileID: 8001002191492065884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
+  spawnTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &3302826684301696424
@@ -456,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
+  spawnTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &3705194994025220443
@@ -503,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
+  spawnTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &4366398870296189371
@@ -550,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
+  spawnTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &4423496744753431980
@@ -677,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
+  spawnTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5109338074781486828
@@ -724,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
+  spawnTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5208416709100076458
@@ -771,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
+  spawnTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5216846544625642561
@@ -854,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
+  spawnTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5636611343744822146
@@ -901,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
+  spawnTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5647092676599382500
@@ -979,7 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
+  spawnTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &5993172103318353227
@@ -1026,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
+  spawnTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &6128292168463807515
@@ -1108,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
+  spawnTable: {fileID: 11400000, guid: f8f060b8147fa466ea5d45348292a944, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &6285912170559011326
@@ -1155,7 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
+  spawnTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &6369074922446844695
@@ -1202,7 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
+  spawnTable: {fileID: 11400000, guid: cd556eaee665d47a1b220a0be5b29183, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &6682832715488834386
@@ -1249,7 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
+  spawnTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &7140658858556003011
@@ -1296,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
+  spawnTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &7212591347577987745
@@ -1379,7 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
+  spawnTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &7767518311549640131
@@ -1426,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
+  spawnTable: {fileID: 11400000, guid: a88d4aba2e1174ffdb1f6aaace1a4ef8, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1 &8662098943105838462
@@ -1510,7 +1462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd90d93f6a91f4be980829fb3096d663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
+  spawnTable: {fileID: 11400000, guid: 0491ad5481a624e929285802f69c640a, type: 2}
   spawnChance: 1
   randomRotation: 1
 --- !u!1001 &787413560212147757

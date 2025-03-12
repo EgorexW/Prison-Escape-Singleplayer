@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Shooting))]
 [RequireComponent(typeof(TargetsSeeing))]
-public class Turret : MonoBehaviour, IDamagable, IAIObject
+public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
 {
     [SerializeField][GetComponent] TargetsSeeing seeing;
     [GetComponent][SerializeField] Shooting shooting;
@@ -15,10 +15,12 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject
     [SerializeField][Required] Transform shootPoint;
 
     [SerializeField] Health health;
-    public Health Health => health;
+    [SerializeField] float empResistance = 1;
     
     [SerializeField] float rotationSpeed = 0.5f;
     [SerializeField] float angleToStartShooting = 0.1f;
+
+    public Health Health => health;
     
     enum State
     {
@@ -86,12 +88,18 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject
     {
         health.Damage(damage);
         if (!health.Alive){
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
     public void Init(MainAI mainAI)
     {
         this.mainAI = mainAI;
+    }
+
+    public void EmpHit(float strenght)
+    {
+        enabled = false;
+        General.CallAfterSeconds(() => enabled = true, strenght/empResistance);
     }
 }

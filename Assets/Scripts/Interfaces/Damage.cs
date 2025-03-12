@@ -1,6 +1,8 @@
 using System;
+using Sirenix.OdinInspector;
 
 [Serializable]
+[BoxGroup, InlineProperty]
 public struct Damage{
     public float damage;
     public float permanentDamage;

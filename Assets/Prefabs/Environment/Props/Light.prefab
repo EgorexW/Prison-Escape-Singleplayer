@@ -47,7 +47,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
-  m_Range: 40
+  m_Range: 15
   m_SpotAngle: 120
   m_InnerSpotAngle: 90
   m_CookieSize: 10
@@ -158,8 +158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 8956418541344127572}
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
-  destroyedMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
-  chanceToStartBroken: 0.2
+  offMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
+  chanceToStartUnpowered: 0.4
+  empResistance: 0.5
 --- !u!1001 &8956418541346228014
 PrefabInstance:
   m_ObjectHideFlags: 0

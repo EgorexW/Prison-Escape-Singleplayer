@@ -72,7 +72,7 @@ public class PlayerInputPresenter : MonoBehaviour
         if (!context.performed){
             return;
         }
-        character.DropItem();
+        character.ThrowItem();
     }
     void ChangeItem(InputAction.CallbackContext context){
         if (!context.performed){

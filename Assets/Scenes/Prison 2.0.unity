@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.4
+  m_ReflectionIntensity: 0.6
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 453294466}
   - component: {fileID: 453294468}
   - component: {fileID: 453294467}
+  - component: {fileID: 453294469}
   m_Layer: 0
   m_Name: 'World '
   m_TagString: Untagged
@@ -929,6 +930,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corridorNodes: []
+--- !u!114 &453294469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453294465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f0a692b162b4e909693f198ebb6094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetTime: 10
 --- !u!4 &462139715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3802575135088560125, guid: 2868741193813461686dd7d3301e6622,
@@ -2775,6 +2789,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 558fae02564484ca3b5cd71e0988b7e5, type: 2}
   - {fileID: 11400000, guid: 558fae02564484ca3b5cd71e0988b7e5, type: 2}
   - {fileID: 11400000, guid: a0e61e53d2803492aa2bfd530210967f, type: 2}
+  - {fileID: 11400000, guid: b30211e7cb7fe430d8a87032a3a40265, type: 2}
+  - {fileID: 11400000, guid: 953e7f83b8d7647d29fd54ffe8cbcd56, type: 2}
   roomsToSpawn: {x: 20, y: 25}
   fillerRoom: {fileID: 11400000, guid: 074c5284a85c84b47ae0155ae5fb4cfc, type: 2}
 --- !u!114 &965157631
@@ -6922,6 +6938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733557815}
+  - component: {fileID: 1733557816}
   m_Layer: 0
   m_Name: Corridors
   m_TagString: Untagged
@@ -6947,6 +6964,22 @@ Transform:
   - {fileID: 1455789503}
   m_Father: {fileID: 453294466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733557816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733557814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbcc6b58375654513bbd7415887a9c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initDelay: 1
+  nodes: {fileID: 453294468}
+  spawnTable: {fileID: 11400000, guid: 7d5fb71aa0f9f419abfca70c61d28bc3, type: 2}
+  doorSpawns: {x: 5, y: 10}
 --- !u!4 &1734149949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470596, guid: 8fd8f3f29fdf6cf4c9c7e1dd047bc74c,
@@ -9508,6 +9541,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name
@@ -9707,6 +9745,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name
@@ -10532,6 +10575,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name
@@ -10987,6 +11035,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name
@@ -11060,6 +11113,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name
@@ -12191,6 +12249,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3662507281950504899}
     m_Modifications:
+    - target: {fileID: 2195086458400936699, guid: aac0e1b7aebda4d43acc632b96270f4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4736302877855859073, guid: aac0e1b7aebda4d43acc632b96270f4c,
         type: 3}
       propertyPath: m_RootOrder
@@ -12255,6 +12318,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cell (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753120450194012955, guid: aac0e1b7aebda4d43acc632b96270f4c,
+        type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7,
+        type: 2}
+    - target: {fileID: 8753120450194012955, guid: aac0e1b7aebda4d43acc632b96270f4c,
+        type: 3}
+      propertyPath: spawnChance
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12480,6 +12554,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 224319862}
     m_Modifications:
+    - target: {fileID: 8393294447291966907, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
+        type: 3}
+      propertyPath: chanceToStartUnpowered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956418541346116668, guid: 1ba540d59dbf44a6788586ebfc4b37bd,
         type: 3}
       propertyPath: m_Name

@@ -1,11 +1,12 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Item : MonoBehaviour, IInteractive, IDamagable
+public abstract class Item : MonoBehaviour, IInteractive, IDamagable
 {
     public Rigidbody Rigidbody { get; private set; }
 
-    public bool isHeld = false;
+    [ReadOnly] public bool isHeld = false;
+    [ReadOnly] public bool pickupable = true;
     
     
     void Awake()
@@ -15,6 +16,9 @@ public class Item : MonoBehaviour, IInteractive, IDamagable
 
     public void Interact(Character character)
     {
+        if (!pickupable){
+            return;
+        }
         character.PickupItem(this);
     }
 

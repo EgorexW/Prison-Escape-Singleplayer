@@ -15,8 +15,4 @@ MonoBehaviour:
   inheretedAccessLevels:
   - {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
   - {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856, type: 2}
-  allInheretedAccessLevels:
-  - {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
-  - {fileID: 11400000, guid: 5557b43a770db470a90f1b7e7fb36f3a, type: 2}
-  - {fileID: 11400000, guid: 855b66565622d4555ab044bad6cab919, type: 2}
-  - {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856, type: 2}
+  - {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953, type: 2}

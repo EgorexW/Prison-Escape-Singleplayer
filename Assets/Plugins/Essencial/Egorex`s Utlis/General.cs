@@ -23,9 +23,6 @@ public class General : MonoBehaviour
         }
         return instance;
     }
-    public static void EnableAfterSeconds(GameObject gameObject, float seconds){
-        GetInstance().StartCoroutine(EnableAfterSecondsCoroutine(gameObject, seconds));
-    }
     public static void StartAfterSeconds(MonoBehaviour monoBehaviour, IEnumerator coroutine, float seconds){
         GetInstance().StartCoroutine(StartAfterSecondsCoroutine(monoBehaviour, coroutine, seconds));
     }
@@ -94,13 +91,6 @@ public class General : MonoBehaviour
         }
         monoBehaviour.StartCoroutine(coroutine);
     }
-    static IEnumerator EnableAfterSecondsCoroutine(GameObject gameObject, float seconds){
-        yield return new WaitForSeconds(seconds);
-        if (gameObject == null){
-            yield break;
-        }
-        gameObject.SetActive(true);
-    }
     static IEnumerator CallAfterSecondsCoroutine(UnityAction action, float seconds){
         yield return new WaitForSeconds(seconds);
         action.Invoke();
@@ -164,8 +154,12 @@ public class General : MonoBehaviour
     }
     public static TComponent GetRootComponent<TComponent>(Transform transform, bool mustBeFound = true)
     {
-        var objectRoot = GetObjectRoot(transform, mustBeFound);
-        if (objectRoot == null) return transform.GetComponent<TComponent>();
+        var objectRoot = GetObjectRoot(transform, false);
+        if (objectRoot == null){
+            var localComponent = transform.GetComponent<TComponent>();
+            Debug.Assert(!mustBeFound || localComponent != null, typeof(TComponent) + " is null", transform);
+            return localComponent;
+        }
         TComponent component = objectRoot.GetRootComponent<TComponent>();
         Debug.Assert(!mustBeFound || component != null, typeof(TComponent) + " is null", transform);
         return component;
@@ -222,6 +216,18 @@ public class General : MonoBehaviour
     public static int RandomRange(Vector2Int vector)
     {
         return UnityEngine.Random.Range(vector.x, vector.y);
+    }
+
+    public static HashSet<T> GetUniqueRootComponents<T>(Collider[] colliders)
+    {
+        var components = new HashSet<T>();
+        foreach (var obj in colliders){
+            var component = GetRootComponent<T>(obj.gameObject, false);
+            if (component != null){
+                components.Add(component);
+            }
+        }
+        return components;
     }
 }
 

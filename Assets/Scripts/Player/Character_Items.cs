@@ -39,7 +39,7 @@ public partial class Character
         }
         inventory.RemoveItem(item);
     }
-    public void DropItem(Item item = null){
+    public void ThrowItem(Item item = null){
         if (item == null){
             item = GetHeldItem();
             if (item == null){
@@ -76,8 +76,8 @@ public partial class Character
         equipedItem.gameObject.SetActive(false);
         equipedItem = null;
     }
-    public void DropItem(){
-        DropItem(equipedItem);
+    public void ThrowItem(){
+        ThrowItem(equipedItem);
     }
     public void UseHeldItem(bool alternative = false){
         if (equipedItem == null){

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu()]
+[InlineEditor]
 public class SpawnTable : ScriptableObject, IGetGameObject
 {
     [Range(0, 1)] public float spawnChance = 1; 

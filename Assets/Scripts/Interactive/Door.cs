@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IDoor
@@ -76,6 +77,7 @@ public class Door : MonoBehaviour, IDoor
         return true;
     }
     
+    [Button]
     private void ChangeState()
     {
         if (!CanChangeState()){

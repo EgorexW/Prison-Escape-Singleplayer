@@ -6,26 +6,19 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class AccessLevel : ScriptableObject
 {
-    [SerializeField] [OnValueChanged("SelfRecalculateAccessLevels")] List<AccessLevel> inheretedAccessLevels;
+    [SerializeField] List<AccessLevel> inheretedAccessLevels;
 
-    [ReadOnly][ShowInInspector] HashSet<AccessLevel> allAccessLevelsContainingThis = new();
-    [ReadOnly][ShowInInspector] HashSet<AccessLevel> allInheretedAccessLevels = new();
+    [ShowInInspector] HashSet<AccessLevel> AllAccessLevels => GetAllAccessLevels(this);
 
     public bool HasAccess(AccessLevel accessLevel){
         if (accessLevel == this){
             return true;
         }
-        SelfRecalculateAccessLevels();  
-        if (allInheretedAccessLevels.Contains(accessLevel)){
-            return true;
-        }
-        return false;
+        return GetAllAccessLevels(this).Contains(accessLevel);
     }
-    void SelfRecalculateAccessLevels(){
-        allInheretedAccessLevels.Clear();
-        RecalculateAccessLevels(this);
-    }
-    void RecalculateAccessLevels(AccessLevel mainAccessLevel){
+    HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
+    {
+        HashSet<AccessLevel> allInheretedAccessLevels = new();
         foreach(AccessLevel accessLevel in mainAccessLevel.GetInheretedAccessLevels()){
             if (accessLevel == null){
                 Debug.LogWarning("Access Level is null", this);
@@ -35,9 +28,9 @@ public class AccessLevel : ScriptableObject
                 continue;
             }
             allInheretedAccessLevels.Add(accessLevel);
-            accessLevel.allAccessLevelsContainingThis.Add(this);
-            RecalculateAccessLevels(accessLevel);
+            GetAllAccessLevels(accessLevel);
         }
+        return allInheretedAccessLevels;
     }
     public List<AccessLevel> GetInheretedAccessLevels(){
         return inheretedAccessLevels;

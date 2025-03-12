@@ -11,7 +11,7 @@ public class AISpawner : MonoBehaviour
     [BoxGroup("Spawn Conditions")][SerializeField] AINodeType nodeTypesAllowed;
     // [BoxGroup("Spawn Conditions")] [SerializeField] bool alignWithConnections = true;
     
-    public void Spawn(List<AINode> nodes, MainAI mainAI)
+    public void Spawn(List<CorridorLevelNode> nodes, MainAI mainAI)
     {
         var spawnNr = Random.Range(spawnCount.x, spawnCount.y);
         while (true){

@@ -10,7 +10,7 @@ public class AIInit : MonoBehaviour
     
     [SerializeField][GetComponent] MainAI mainAI;
     
-    [SerializeField][Required] AINodes nodes;
+    [SerializeField][Required] LevelNodes nodes;
     void Start()
     {
         General.CallAfterSeconds(Init, initDelay);

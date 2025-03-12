@@ -10,11 +10,16 @@ public static class MyExtentions{
             (list[i], list[r]) = (list[r], list[i]);
         }
     }
-    public static T Random<T>(this List<T> list){
+    public static T Random<T>(this List<T> list, bool pop = false){
         if (list.Count < 1){
             return default;
         }
-        return list[UnityEngine.Random.Range(0, list.Count)];
+        var i = UnityEngine.Random.Range(0, list.Count);
+        var obj = list[i];
+        if (pop){
+            list.RemoveAt(i);
+        }
+        return obj;
     }
     public static T WeightedRandom<T>(this Dictionary<T, int> list){
         T win = default;
