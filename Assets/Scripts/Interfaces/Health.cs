@@ -16,8 +16,10 @@ public struct Health
         this.maxHealth = maxHealth;
         this.absoluteMaxHealth = absoluteMaxHealth;
     }
-    public void Heal(Damage damage){
-        Damage(-damage);
+    public void Heal(Damage damage)
+    {
+        damage.Invert();
+        Damage(damage);
     }
     public void Damage(Damage damage){
         health -= damage.damage;

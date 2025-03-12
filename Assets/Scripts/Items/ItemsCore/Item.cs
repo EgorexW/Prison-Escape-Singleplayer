@@ -1,14 +1,15 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour, IInteractive, IDamagable
+public abstract class Item : MonoBehaviour, IDamagable, IInteractive
 {
     public Rigidbody Rigidbody { get; private set; }
 
     [ReadOnly] public bool isHeld = false;
     [ReadOnly] public bool pickupable = true;
-    
-    
+    public float holdDuration;
+
+
     void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
@@ -53,4 +54,5 @@ public abstract class Item : MonoBehaviour, IInteractive, IDamagable
     }
 
     public Health Health => new Health(1);
+    public float HoldDuration => holdDuration;
 }

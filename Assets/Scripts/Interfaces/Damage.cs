@@ -11,6 +11,11 @@ public struct Damage{
 
     }
 
+    public void Invert()
+    {
+        damage = -damage;
+        permanentDamage = -permanentDamage;
+    }
     public Damage(float damage, float permanentDamage){
         this.damage = damage;
         this.permanentDamage = permanentDamage;

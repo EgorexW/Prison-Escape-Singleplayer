@@ -1,6 +1,5 @@
-public interface IDoor : IInteractive
+public interface IDoor
 {
-    bool CanCharacterUse(Character character, bool v);
-    void LockState(bool v);
+    void SetLockState(bool v);
     void Open();
 }

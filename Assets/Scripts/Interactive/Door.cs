@@ -1,12 +1,13 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IDoor
+public class Door : MonoBehaviour, IDoor, IInteractive
 {
-    Vector3 rotationAxis = new Vector3(0, 1, 0);
-    float rotationAngle = -90;
-    float moveTime = 0.75f;
-    bool colliderWhenOpen = false;
+    [FoldoutGroup("BasicConfig")][SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
+    [FoldoutGroup("BasicConfig")][SerializeField] float rotationAngle = -90;
+    [FoldoutGroup("BasicConfig")] public bool colliderWhenOpen = false;
+    [FoldoutGroup("BasicConfig")] public float moveTime = 0.75f;
+    [FoldoutGroup("BasicConfig")] public float holdDuration = 0;
     
     [Range(0, 1)][SerializeField] float beginOpenChance = 0;
     [SerializeField] Optional<float> autoCloseTime;
@@ -18,6 +19,7 @@ public class Door : MonoBehaviour, IDoor
     bool lockState;
     float CurrentRotToStartRot => 0;
     bool Opened => startRotation != transform.rotation;
+    public float HoldDuration => holdDuration;
 
     void Awake(){
         colliders = GetComponentsInChildren<Collider>();
@@ -52,7 +54,7 @@ public class Door : MonoBehaviour, IDoor
         LocalClose();
     }
 
-    public void LockState(bool lockState){
+    public void SetLockState(bool lockState){
         this.lockState = lockState;
     }
     private void ResolveColliders()
@@ -127,17 +129,13 @@ public class Door : MonoBehaviour, IDoor
         transform.LeanRotateAroundLocal(rotationAxis.normalized, angle, moveTime);
     }
 
-    public virtual void Interact(Character character){
-        if (!CanCharacterUse(character, true)){
+    public void Interact(Character character){
+        if (!CanCharacterUse(character)){
             return;
         }
         ChangeState();
     }
-    public float GetHoldDuration(){
-        return 0;
-    }
-
-    public bool CanCharacterUse(Character character, bool onInteract)
+    public bool CanCharacterUse(Character character)
     {
         if (accessLevel == null){
             return true;
@@ -147,12 +145,6 @@ public class Door : MonoBehaviour, IDoor
             return false;
         }
         IKeycard keycard = (IKeycard)item;
-        if (onInteract)
-        {
-            if (!keycard.CanOpenWhenHeld()){
-                return false;
-            }
-        }
         return keycard.HasAccess(accessLevel);
     }
 }

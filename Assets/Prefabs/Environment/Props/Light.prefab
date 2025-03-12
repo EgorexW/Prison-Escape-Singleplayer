@@ -156,11 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9163c31b91f4de89046fd9ddcbbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addSelfToPowerSystem: 1
+  empResistance: 0.5
+  onPowerChange:
+    m_PersistentCalls:
+      m_Calls: []
   meshRenderer: {fileID: 8956418541344127572}
+  light: {fileID: 8129136385310666625}
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
   offMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
-  chanceToStartUnpowered: 0.4
-  empResistance: 0.5
+  flickerPeriod: {x: 0.05, y: 1}
 --- !u!1001 &8956418541346228014
 PrefabInstance:
   m_ObjectHideFlags: 0

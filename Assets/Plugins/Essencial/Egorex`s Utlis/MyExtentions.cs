@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,28 +22,25 @@ public static class MyExtentions{
         }
         return obj;
     }
-    public static T WeightedRandom<T>(this Dictionary<T, int> list){
-        T win = default;
+    public static T WeightedRandom<T, TNr>(this Dictionary<T, TNr> list) where TNr : IConvertible{
         float totalWeight = 0;
 
         foreach(var weightedChance in list)
         {
-            totalWeight += Mathf.Max(weightedChance.Value, 0);
+            totalWeight += Mathf.Max(Convert.ToSingle(weightedChance.Value), 0);
         }
 
         float roll = UnityEngine.Random.Range(0, totalWeight);
 
         foreach(var weightedChance in list)
         {
-            if (roll <= weightedChance.Value)
-            {
-                win = weightedChance.Key;
-                break;
+            if (roll <= Convert.ToSingle(weightedChance.Value)){
+                return weightedChance.Key;
             }
-            roll -= weightedChance.Value;
+            roll -= Convert.ToSingle(weightedChance.Value);
         }
-
-        return win;
+        Debug.LogWarning("Invalid Weights");
+        return default;
     }
     public static List<T> Copy<T>(this List<T> list){
         return new List<T>(list);

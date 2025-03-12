@@ -35,7 +35,7 @@ public partial class Character
 
     public void Interact(float duration = 0){
         IInteractive interactive = GetInteractive();
-        if (interactive.GetHoldDuration() > duration){
+        if (interactive.HoldDuration > duration){
             if (holdCoroutine != null){
                 return;
             }
@@ -55,8 +55,8 @@ public partial class Character
     }
     public IEnumerator HoldCoroutine(IInteractive interactive){
         float time = 0;
-        while (time <= interactive.GetHoldDuration()){
-            onHoldInteraction.Invoke(time, interactive.GetHoldDuration());
+        while (time <= interactive.HoldDuration){
+            onHoldInteraction.Invoke(time, interactive.HoldDuration);
             time += Time.deltaTime;
             yield return null;
         }

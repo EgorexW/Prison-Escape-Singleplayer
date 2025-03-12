@@ -1,10 +1,7 @@
 public interface IInteractive{
     public void Interact(Character character);
 
-    public float GetHoldDuration()
-    {
-        return 1;
-    }
+    public float HoldDuration { get; }
 }
 
 public struct DummyInteractive : IInteractive
@@ -13,7 +10,6 @@ public struct DummyInteractive : IInteractive
     {
         
     }
-    public readonly float GetHoldDuration(){
-        return 0;
-    }
+
+    public float HoldDuration => 0;
 }

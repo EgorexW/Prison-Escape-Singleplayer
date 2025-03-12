@@ -19,7 +19,9 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
     
     [SerializeField] float rotationSpeed = 0.5f;
     [SerializeField] float angleToStartShooting = 0.1f;
+    [SerializeField] float fireRateLossPerDmg = 0.08f;
 
+    public float EmpResistance => empResistance;
     public Health Health => health;
     
     enum State
@@ -46,8 +48,8 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
     {
         GameObject foundTarget = null;
         foreach (var target in Targets){
-            var result = seeing.CheckTargetVisible(target);
-            if (result){
+            var result = seeing.CheckTargetVisibility(target);
+            if (result > 0){
                 foundTarget = target;
             }
         }
@@ -65,7 +67,8 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
 
     void Aim()
     {
-        if (!seeing.CheckTargetVisible(currentTarget)){
+        var targetVisibility = seeing.CheckTargetVisibility(currentTarget);
+        if (targetVisibility <= 0){
             state = State.Idle;
             return;
         }
@@ -75,7 +78,7 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
         if (Vector3.Angle(direction, transform.forward) < angleToStartShooting){
             Shoot();
         }
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed * targetVisibility);
     }
 
     void Shoot()
@@ -87,6 +90,7 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
     public void Damage(Damage damage)
     {
         health.Damage(damage);
+        shooting.fireRate -= damage.damage * fireRateLossPerDmg;
         if (!health.Alive){
             gameObject.SetActive(false);
         }
@@ -96,6 +100,7 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
     {
         this.mainAI = mainAI;
     }
+
 
     public void EmpHit(float strenght)
     {

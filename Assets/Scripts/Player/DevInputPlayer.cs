@@ -13,7 +13,7 @@ public class DevInputPlayer : MonoBehaviour
         inputActions.FindAction("DevKey3").performed += UseDevKey3;
     }
     void UseDevKey1(InputAction.CallbackContext context){
-        character.Damage(new Damage(10, 5));
+        character.Heal(new Damage(100, 50));
     }
     void UseDevKey2(InputAction.CallbackContext context){
 

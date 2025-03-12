@@ -5,9 +5,9 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] bool log;
     
-    [SerializeField] Damage damage = 1;
-    [SerializeField] float fireRate = 20;
-    [SerializeField] int ammo = 20;
+    public Damage damage = 1;
+    public  float fireRate = 20;
+    public  int ammo = 20;
     
     [BoxGroup("Config")][SerializeField] LayerMask aimColliderLayerMask;
     [BoxGroup("Config")][SerializeField] Transform vfxHitGreen;

@@ -45,14 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b18fc62f2e3e4fdda6da040ecf4c069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdDuration: 0
   rotationAxis: {x: 0, y: 1, z: 0}
   rotationAngle: -90
+  colliderWhenOpen: 0
   moveTime: 0.75
-  beginOpen: 0
+  beginOpenChance: 0
   autoCloseTime:
     enabled: 0
     value: 0
-  colliderWhenOpen: 0
+  accessLevel: {fileID: 0}
 --- !u!65 &451488850007173251
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -84,11 +84,13 @@ MonoBehaviour:
   shooting: {fileID: 6215390146370773748}
   shootPoint: {fileID: 5964577051961725496}
   health:
-    health: 100
-    maxHealth: 100
-    absoluteMaxHealth: 100
-  rotationSpeed: 5
+    health: 50
+    maxHealth: 50
+    absoluteMaxHealth: 50
+  empResistance: 1
+  rotationSpeed: 70
   angleToStartShooting: 5
+  fireRateLossPerDmg: 0.08
 --- !u!114 &6215390146370773748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   maxAngle: 80
-  maxDis: 15
+  maxDis: 20
+  seePoint: {fileID: 5964577051961725496}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 833
 --- !u!64 &6989874103477987488
 MeshCollider:
   m_ObjectHideFlags: 0

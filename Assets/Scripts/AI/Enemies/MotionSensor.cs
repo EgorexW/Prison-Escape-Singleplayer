@@ -12,6 +12,7 @@ public class MotionSensor : MonoBehaviour, IDamagable, IElectric
     [SerializeField] bool working = true;
     
     public Health Health => new Health(1);
+    public float EmpResistance => empResistance;
 
     public UnityEvent onActivation;
 
@@ -33,7 +34,8 @@ public class MotionSensor : MonoBehaviour, IDamagable, IElectric
         }
         onActivation.Invoke();
     }
-    
+
+
     public void EmpHit(float strenght)
     {
         laser.SetActive(false);
