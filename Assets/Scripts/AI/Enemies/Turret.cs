@@ -7,86 +7,20 @@ using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Shooting))]
 [RequireComponent(typeof(TargetsSeeing))]
-public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
+public class Turret : TurretBase, IDamagable, IElectric, IAIObject
 {
-    [SerializeField][GetComponent] TargetsSeeing seeing;
-    [GetComponent][SerializeField] Shooting shooting;
-    
-    [SerializeField][Required] Transform shootPoint;
-
     [SerializeField] Health health;
     [SerializeField] float empResistance = 1;
-    
-    [SerializeField] float rotationSpeed = 0.5f;
-    [SerializeField] float angleToStartShooting = 0.1f;
+
     [SerializeField] float fireRateLossPerDmg = 0.08f;
 
     public float EmpResistance => empResistance;
     public Health Health => health;
+    public AIObjectType aiType => AIObjectType.Turret;
     
-    enum State
-    {
-        Idle,
-        Aiming
-    }
-    
-    
-    State state = State.Idle;
     MainAI mainAI;
 
-    List<GameObject> Targets => mainAI.Targets;
     
-    GameObject currentTarget;
-
-    void Update()
-    {
-        if (state == State.Idle) CheckForTargets();
-        if (state == State.Aiming) Aim();
-    }
-
-    void CheckForTargets()
-    {
-        GameObject foundTarget = null;
-        foreach (var target in Targets){
-            var result = seeing.CheckTargetVisibility(target);
-            if (result > 0){
-                foundTarget = target;
-            }
-        }
-        if (foundTarget != null){
-            StartAiming(foundTarget);
-        }
-    }
-
-    void StartAiming(GameObject foundTarget)
-    {
-        state = State.Aiming;
-        currentTarget = foundTarget;
-        Aim();
-    }
-
-    void Aim()
-    {
-        var targetVisibility = seeing.CheckTargetVisibility(currentTarget);
-        if (targetVisibility <= 0){
-            state = State.Idle;
-            return;
-        }
-        var direction = currentTarget.transform.position - transform.position;
-        direction.y = 0;
-        var targetRotation = Quaternion.LookRotation(direction);
-        if (Vector3.Angle(direction, transform.forward) < angleToStartShooting){
-            Shoot();
-        }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed * targetVisibility);
-    }
-
-    void Shoot()
-    {
-        Ray ray = new Ray(shootPoint.position, transform.forward);
-        shooting.Shoot(ray);
-    }
-
     public void Damage(Damage damage)
     {
         health.Damage(damage);
@@ -96,9 +30,15 @@ public class Turret : MonoBehaviour, IDamagable, IAIObject, IElectric
         }
     }
 
+    protected override void StartAiming(GameObject target)
+    {
+        mainAI.IncreaseAwareness(this);
+        base.StartAiming(target);
+    }
     public void Init(MainAI mainAI)
     {
         this.mainAI = mainAI;
+        targets = mainAI.Targets;
     }
 
 

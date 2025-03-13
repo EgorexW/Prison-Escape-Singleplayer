@@ -151,7 +151,7 @@ namespace Nrjwolf.Tools.Editor.AttachAttributes
         {
             property.objectReferenceValue = FindObjectsOfTypeByName(property.GetPropertyType());
         }
-
+        
         public UnityEngine.Object FindObjectsOfTypeByName(string aClassName)
         {
             var assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
@@ -161,7 +161,7 @@ namespace Nrjwolf.Tools.Editor.AttachAttributes
                 for (int n = 0; n < types.Length; n++)
                 {
                     if (typeof(UnityEngine.Object).IsAssignableFrom(types[n]) && aClassName == types[n].Name)
-                        return UnityEngine.Object.FindObjectOfType(types[n]);
+                        return UnityEngine.Object.FindFirstObjectByType(types[n]);
                 }
             }
             return new UnityEngine.Object();

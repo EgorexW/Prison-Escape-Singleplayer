@@ -83,13 +83,14 @@ MonoBehaviour:
   seeing: {fileID: 8961306183702515901}
   shooting: {fileID: 6215390146370773748}
   shootPoint: {fileID: 5964577051961725496}
+  rotationSpeed: 70
+  angleToStartShooting: 5
+  targets: []
   health:
     health: 50
     maxHealth: 50
     absoluteMaxHealth: 50
   empResistance: 1
-  rotationSpeed: 70
-  angleToStartShooting: 5
   fireRateLossPerDmg: 0.08
 --- !u!114 &6215390146370773748
 MonoBehaviour:

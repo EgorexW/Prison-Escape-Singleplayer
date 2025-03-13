@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class PoweredLight : PoweredDevice, IDamagable
 {
     [Required][SerializeField] MeshRenderer meshRenderer;
-    [GetComponent] [SerializeField] Light light;
+    [GetComponent] [SerializeField] new Light light;
 
     [Required][SerializeField] Material defaultMaterial;
     [FormerlySerializedAs("destroyedMaterial")] [Required][SerializeField] Material offMaterial;
