@@ -33,7 +33,7 @@ public class SpawnCorridorDoors : MonoBehaviour
     {
         var possibleSpawns = new HashSet<PossibleSpawn>();
         foreach (var node in nodes.CorridorNodes){
-            foreach (var connection in node.GetCorridorConnections()){
+            foreach (var connection in node.SameTypeConnections){
                 PossibleSpawn possibleSpawn = new PossibleSpawn{
                     pos = node.transform.position + connection,
                     rotation = Quaternion.LookRotation(connection.normalized)

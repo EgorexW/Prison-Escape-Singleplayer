@@ -1,10 +1,14 @@
 using System.Collections.Generic;
+using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(AIAggro))]
 public class MainAI : SerializedMonoBehaviour
 {
+    [SerializeField][GetComponent] AIAggro aiPlayerAggro;
+    
     [SerializeField] List<GameObject> targets;
 
     [SerializeField] Dictionary<AIObjectType, float> awarenessIncreaseForType = new();
@@ -24,9 +28,12 @@ public class MainAI : SerializedMonoBehaviour
 
     public void IncreaseAwareness(IAIObject aiObject)
     {
-        if (lastAwarenessIncreaseTime[aiObject] != 0 || Time.time - lastAwarenessIncreaseTime[aiObject] < awarenessIncreaseResetTime){
-            playerAwareness += awarenessIncreaseForType[aiObject.aiType];
+        if (lastAwarenessIncreaseTime.ContainsKey(aiObject)){
+            if (Time.time - lastAwarenessIncreaseTime[aiObject] < awarenessIncreaseResetTime){
+                return;
+            }
         }
+        playerAwareness += awarenessIncreaseForType[aiObject.aiType];
         lastAwarenessIncreaseTime[aiObject] = Time.time;
         ResolveAwarenessChange();
     }
@@ -39,8 +46,9 @@ public class MainAI : SerializedMonoBehaviour
         }
     }
 
+    [Button]
     void AggroOnPlayer()
     {
-        
+        aiPlayerAggro.Aggro(targets);
     }
 }

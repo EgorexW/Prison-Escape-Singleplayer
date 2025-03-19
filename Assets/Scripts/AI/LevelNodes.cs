@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(ObjectRoot))]
 public class LevelNodes : MonoBehaviour
 {
-    [SerializeField] List<CorridorLevelNode> corridorNodes;
+    [SerializeField] List<LevelNode> corridorNodes;
     
-    public List<CorridorLevelNode> CorridorNodes => corridorNodes;
+    public List<LevelNode> CorridorNodes => corridorNodes;
 
-    public void AddNode(CorridorLevelNode node)
+    public void AddNode(LevelNode node)
     {
         corridorNodes.Add(node);
     }
