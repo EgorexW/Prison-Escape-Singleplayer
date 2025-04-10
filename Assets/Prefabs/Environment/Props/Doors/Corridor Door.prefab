@@ -515,7 +515,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2739953631478601777}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf64e79574b441119328a5ef81ad5800, type: 3}
   m_Name: 
@@ -543,14 +543,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b18fc62f2e3e4fdda6da040ecf4c069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 1
   rotationAxis: {x: 0, y: 1, z: 0}
   rotationAngle: -90
-  colliderWhenOpen: 0
-  moveTime: 0.75
-  beginOpenChance: 0.1
+  colliderWhenOpen: 1
+  moveTime: 2
+  holdDuration: 3
+  beginOpenChance: 0.7
   autoCloseTime:
-    enabled: 1
+    enabled: 0
     value: 10
   accessLevel: {fileID: 0}
 --- !u!4 &2739953631478904663 stripped

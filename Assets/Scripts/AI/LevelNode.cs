@@ -9,12 +9,14 @@ using UnityEngine.Serialization;
 public class LevelNode : MonoBehaviour
 {
     const float COLLIDER_CHECK_SIZE = 0.1f;
+    const float DISTANCE = 7;
 
     [FormerlySerializedAs("LayerMask")] [SerializeField] LayerMask layerMask;
     
     [SerializeField] NodeType nodeType = NodeType.Corridor;
     
     [HideInEditorMode][ShowInInspector] List<LevelNode> neighboringNodes = null;
+
     void Start()
     {
         General.GetObjectRoot(transform)?.GetComponent<LevelNodes>().AddNode(this);
@@ -25,17 +27,30 @@ public class LevelNode : MonoBehaviour
         if (neighboringNodes != null){
             return neighboringNodes;
         }
+        GenerateNeighbours();
+        return neighboringNodes;
+    }
+
+    [Button]
+    void GenerateNeighbours()
+    {
         neighboringNodes = new();
         foreach (var direction in General.Get4MainDirections3D()){
-            var raycast = Physics.Raycast(transform.position, direction.normalized, out var raycastHit, direction.magnitude * 2,
+            // Debug.Log("Checking direction: " + direction, this);
+            var raycast = Physics.Raycast(transform.position, direction, out var raycastHit, DISTANCE,
                 layerMask);
-            if (!raycast) continue;
-            var levelNode = raycastHit.transform.GetComponent<LevelNode>();
-            if (levelNode != null){
-                neighboringNodes.Add(levelNode);
+            Debug.DrawRay(transform.position, direction * DISTANCE, Color.red, 2);
+            if (!raycast){
+                // Debug.Log("No collider hit", this);
+                continue;
             }
+            var levelNode = raycastHit.transform.GetComponent<LevelNode>();
+            if (levelNode == null){
+                // Debug.Log("No level node hit", this);
+                continue;
+            }
+            neighboringNodes.Add(levelNode);
         }
-        return neighboringNodes;
     }
 
     public List<Vector3> SameTypeConnections =>GetNeighboringNodes()

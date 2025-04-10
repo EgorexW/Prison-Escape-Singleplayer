@@ -4,10 +4,8 @@ using UnityEngine;
 
 class AIAggro : MonoBehaviour
 {
-    [Required][SerializeField] AIChaser aiChaser;
-
     public void Aggro(List<GameObject> targets)
     {
-        aiChaser.Init(targets[0]);
+        
     }
 }
