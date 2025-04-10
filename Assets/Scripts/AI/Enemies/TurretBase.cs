@@ -28,7 +28,7 @@ public class TurretBase : MonoBehaviour
         Aiming
     }
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         startRotation = transform.rotation;
     }

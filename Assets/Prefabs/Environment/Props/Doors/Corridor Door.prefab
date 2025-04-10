@@ -515,19 +515,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2739953631478601777}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf64e79574b441119328a5ef81ad5800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addSelfToPowerSystem: 1
-  empResistance: 2
-  onPowerChange:
-    m_PersistentCalls:
-      m_Calls: []
   door: {fileID: 2615499628553078194}
-  minimalPowerOpenTime: 2
-  noPowerOpenTime: 5
   workingLights:
   - {fileID: 2629614068127469853}
   - {fileID: 733418080324658156}
@@ -547,12 +540,15 @@ MonoBehaviour:
   rotationAngle: -90
   colliderWhenOpen: 1
   moveTime: 2
-  holdDuration: 3
+  holdDuration: 2
   beginOpenChance: 0.7
   autoCloseTime:
     enabled: 0
     value: 10
   accessLevel: {fileID: 0}
+  onOpen:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2739953631478904663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 437760, guid: 3b07c06d4f626c34896163d5fab059a3,

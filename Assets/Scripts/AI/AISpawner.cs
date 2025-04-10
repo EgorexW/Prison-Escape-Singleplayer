@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class AISpawner : MonoBehaviour
+public class AISpawner : MonoBehaviour, IAISpawner
 {
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] Vector2Int spawnCount = new Vector2Int(5, 10);
@@ -11,17 +11,17 @@ public class AISpawner : MonoBehaviour
     [BoxGroup("Spawn Conditions")][SerializeField] CorridorNodeType nodeTypesAllowed;
     // [BoxGroup("Spawn Conditions")] [SerializeField] bool alignWithConnections = true;
     
-    public void Spawn(List<LevelNode> nodes, MainAI mainAI)
+    public void Spawn(List<LevelNode> levelNodes, MainAI mainAI)
     {
         var spawnNr = Random.Range(spawnCount.x, spawnCount.y);
         while (true){
-            if (nodes.Count == 0) break;
-            var node = nodes.Random();
-            nodes.Remove(node);
+            if (levelNodes.Count == 0) break;
+            var node = levelNodes.Random();
+            levelNodes.Remove(node);
             if (!nodeTypesAllowed.HasFlag(node.CorridorNodeType)) continue;
             var rotation = Quaternion.LookRotation(node.Directions.Random());
             var obj = Instantiate(spawnTable.GetGameObject(), node.transform.position,  rotation, transform);
-            var aiObject = obj.GetComponent<IAIObject>();
+            var aiObject = obj.GetComponentInChildren<IAIObject>();
             if (aiObject != null){
                 mainAI.AddObject(aiObject);
             }

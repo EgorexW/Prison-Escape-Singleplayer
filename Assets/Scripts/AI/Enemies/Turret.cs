@@ -19,8 +19,13 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     public AIObjectType aiType => AIObjectType.Turret;
     
     MainAI mainAI;
+    PlayerMark playerMark;
 
-    
+    protected override void Awake()
+    {
+        base.Awake();
+        playerMark = PlayerMark.Inactive;
+    }
     public void Damage(Damage damage)
     {
         health.Damage(damage);
@@ -32,7 +37,14 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
 
     protected override void StartAiming(GameObject target)
     {
-        mainAI.IncreaseAwareness(this);
+        if (playerMark.Active){
+            playerMark.time = Time.time;
+            playerMark.position = target.transform.position;
+        }
+        else{
+            playerMark = new PlayerMark(target.transform.position);
+            mainAI.PlayerNoticed(playerMark);
+        }
         base.StartAiming(target);
     }
     public void Init(MainAI mainAI)

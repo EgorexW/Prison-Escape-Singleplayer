@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour, IDoor, IInteractive
 {
@@ -18,6 +19,8 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     Collider[] colliders;
     bool lockState;
     float CurrentRotToStartRot => 0;
+
+    [FoldoutGroup("Events")] public UnityEvent onOpen;
     bool Opened => startRotation != transform.rotation;
     public float HoldDuration => holdDuration;
 
@@ -43,15 +46,11 @@ public class Door : MonoBehaviour, IDoor, IInteractive
         {
             return;
         }
-        if (!CanChangeState())
-        {
-            return;
-        }
         if (Time.time - autoCloseTime - moveTime < lastMoveStartedTime)
         {
             return;
         }
-        LocalClose();
+        Close();
     }
 
     public void SetLockState(bool lockState){
@@ -82,21 +81,19 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     [Button]
     private void ChangeState()
     {
-        if (!CanChangeState()){
-            return;
-        }
         if (Opened)
         {
-            LocalClose();
+            Close();
             return;
         }
-        LocalOpen();
+        Open();
     }
 
     public void Open(){
         if (!CanChangeState()){
             return;
         }
+        onOpen.Invoke();
         LocalOpen();
     }
 

@@ -14,6 +14,7 @@ public class DevInputPlayer : MonoBehaviour
     }
     void UseDevKey1(InputAction.CallbackContext context){
         character.Heal(new Damage(100, 50));
+        
     }
     void UseDevKey2(InputAction.CallbackContext context){
 

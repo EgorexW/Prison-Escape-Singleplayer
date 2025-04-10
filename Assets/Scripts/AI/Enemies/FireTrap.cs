@@ -12,13 +12,14 @@ public class FireTrap : MonoBehaviour, IAIObject
 
     [SerializeField] Damage damage;
     
-    public AIObjectType aiType => AIObjectType.Trap;
+    // public AIObjectType aiType => AIObjectType.Trap;
 
     MainAI mainAI;
 
     public void Activate()
     {
-        mainAI.IncreaseAwareness(this);
+        var playerMark = new PlayerMark(transform.position, 2);
+        mainAI.PlayerNoticed(playerMark);
         Collider[] objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);

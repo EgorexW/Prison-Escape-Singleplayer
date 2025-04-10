@@ -18,8 +18,13 @@ public class AIInit : MonoBehaviour
 
     void Init()
     {
-        foreach (var spawner in GetComponentsInChildren<AISpawner>()){
+        foreach (var spawner in GetComponentsInChildren<IAISpawner>()){
             spawner.Spawn(nodes.CorridorNodes, mainAI);
         }
     }
+}
+
+interface IAISpawner
+{
+    void Spawn(List<LevelNode> levelNodes, MainAI mainAI);
 }

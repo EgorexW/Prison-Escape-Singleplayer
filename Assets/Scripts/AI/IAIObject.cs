@@ -1,6 +1,6 @@
 public interface IAIObject
 {
-    AIObjectType aiType{ get; }
+    // AIObjectType aiType{ get; }
     
     void Init(MainAI mainAI);
 }

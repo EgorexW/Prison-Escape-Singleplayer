@@ -7,33 +7,29 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Door))]
-public class VaultDoor : PoweredDevice
+public class VaultDoor : MonoBehaviour, IAIObject
 {
     [GetComponent][SerializeField] Door door;
 
-    [SerializeField] float minimalPowerOpenTime = 2;
-    [SerializeField] float noPowerOpenTime = 10;
+    [HideInInspector][SerializeField] List<GameObject> workingLights;
 
-    [SerializeField] List<GameObject> workingLights;
-
-    float doorBaseOpenTime;
-
+    // float doorBaseOpenTime;
+    MainAI mainAI;
+    
     void Awake()
     {
-        doorBaseOpenTime = door.HoldDuration;
+        door.onOpen.AddListener(OnDoorOpen);
+        // doorBaseOpenTime = door.HoldDuration;
     }
 
-    public override void SetPower(PowerLevel power)
+    void OnDoorOpen()
     {
-        base.SetPower(power);
-        door.holdDuration = power switch{
-            PowerLevel.FullPower => doorBaseOpenTime,
-            PowerLevel.MinimalPower => doorBaseOpenTime * minimalPowerOpenTime,
-            PowerLevel.NoPower => doorBaseOpenTime * noPowerOpenTime,
-            _ => throw new ArgumentOutOfRangeException(nameof(power), power, null)
-        };
-        foreach (var lightTmp in workingLights){
-            lightTmp.SetActive(power != PowerLevel.NoPower);
-        }
+        PlayerMark playerMark = new PlayerMark(transform.position, 0.5f);
+        mainAI.PlayerNoticed(playerMark);
+    }
+
+    public void Init(MainAI mainAI)
+    {
+        this.mainAI = mainAI;
     }
 }
