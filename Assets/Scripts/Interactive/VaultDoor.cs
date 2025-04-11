@@ -25,7 +25,7 @@ public class VaultDoor : MonoBehaviour, IAIObject
     void OnDoorOpen()
     {
         PlayerMark playerMark = new PlayerMark(transform.position, 0.5f);
-        mainAI.PlayerNoticed(playerMark);
+        mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
     }
 
     public void Init(MainAI mainAI)

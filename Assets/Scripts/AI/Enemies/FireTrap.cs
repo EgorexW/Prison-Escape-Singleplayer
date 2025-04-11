@@ -19,7 +19,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     public void Activate()
     {
         var playerMark = new PlayerMark(transform.position, 2);
-        mainAI.PlayerNoticed(playerMark);
+        mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
         Collider[] objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);

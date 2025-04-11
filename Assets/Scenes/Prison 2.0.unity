@@ -4142,7 +4142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 8904d09204ac04467b62e053b6c53867, type: 2}
-  spawnCount: {x: 2, y: 4}
+  spawnCount: {x: 8, y: 10}
   nodeTypesAllowed: 14
 --- !u!1 &1435372344
 GameObject:
@@ -4413,7 +4413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: edad5bf07a4534060a54c383931435df, type: 2}
-  spawnCount: {x: 5, y: 10}
+  spawnCount: {x: 20, y: 25}
   nodeTypesAllowed: 1
 --- !u!4 &1547577004 stripped
 Transform:
@@ -4640,7 +4640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 7d5fb71aa0f9f419abfca70c61d28bc3, type: 2}
-  doorSpawns: {x: 5, y: 10}
+  doorSpawns: {x: 15, y: 20}
 --- !u!1 &1732147767
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         }
         else{
             playerMark = new PlayerMark(target.transform.position);
-            mainAI.PlayerNoticed(playerMark);
+            mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
         }
         base.StartAiming(target);
     }

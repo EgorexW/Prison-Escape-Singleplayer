@@ -21,6 +21,7 @@ public class AIInit : MonoBehaviour
         foreach (var spawner in GetComponentsInChildren<IAISpawner>()){
             spawner.Spawn(nodes.CorridorNodes, mainAI);
         }
+        mainAI.Init();
     }
 }
 
