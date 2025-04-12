@@ -47,10 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 7714404102179766837, guid: 43bea58b778f14d2da0cd4411b60d58a,
     type: 3}
+  motionSensor: {fileID: 6739941799562078867}
   areaSize: {x: 4.907213, y: 6.77345, z: 4.636619}
   damage:
     damage: 50
     permanentDamage: 40
+  stats:
+    energyCost: 1
 --- !u!1001 &868633462085981551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
         type: 3}
       propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
         type: 3}
@@ -160,3 +163,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 868633462085981551}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6739941799562078867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
+    type: 3}
+  m_PrefabInstance: {fileID: 868633462085981551}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58513367f47b545f793944a569afae9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

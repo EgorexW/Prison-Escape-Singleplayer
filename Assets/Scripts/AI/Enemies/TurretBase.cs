@@ -33,7 +33,7 @@ public class TurretBase : MonoBehaviour
         startRotation = transform.rotation;
     }
 
-    void Update()
+    protected void Update()
     {
         if (state == TurretBase.State.Idle){
             CheckForTargets();

@@ -84,6 +84,8 @@ public class LevelNode : MonoBehaviour
     }
 }
 
+// TODO Make it detect rooms
+
 enum NodeType
 {
     Corridor,

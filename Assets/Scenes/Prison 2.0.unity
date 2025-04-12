@@ -1457,6 +1457,8 @@ GameObject:
   - component: {fileID: 545099424}
   - component: {fileID: 545099422}
   - component: {fileID: 545099425}
+  - component: {fileID: 545099427}
+  - component: {fileID: 545099426}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -1517,10 +1519,51 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  defaultErrorRadius: 200
+    SerializationNodes:
+    - Name: objects
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[IAIObject, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  aiPlayerMarking: {fileID: 545099427}
+  aiObjects: {fileID: 545099426}
   targets:
   - {fileID: 8616685848057766947}
+--- !u!114 &545099426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545099421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e57fbcf058b43038067bf126eba85c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainAI: {fileID: 545099425}
+  energy: 15
+  updateInterval: 20
+--- !u!114 &545099427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545099421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d6c5fec3c34c668e4c259f7607e895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultErrorRadius: 200
   onPlayerApproximatePosChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4640,7 +4683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 7d5fb71aa0f9f419abfca70c61d28bc3, type: 2}
-  doorSpawns: {x: 15, y: 20}
+  doorSpawns: {x: 10, y: 15}
 --- !u!1 &1732147767
 GameObject:
   m_ObjectHideFlags: 0

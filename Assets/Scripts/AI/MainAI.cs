@@ -7,15 +7,17 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(AIPlayerMarking), typeof(AIObjects))]
 public class MainAI : SerializedMonoBehaviour
 {
     [GetComponent] public AIPlayerMarking aiPlayerMarking;
+    [GetComponent] public AIObjects aiObjects;
     
     [SerializeField] List<GameObject> targets;
 
     public List<GameObject> Targets => targets;
 
-    List<IAIObject> objects = new List<IAIObject>();
+    public List<IAIObject> objects = new List<IAIObject>();
 
     protected void Update()
     {
@@ -27,11 +29,9 @@ public class MainAI : SerializedMonoBehaviour
         aiObject.Init(this);
         objects.Add(aiObject);
     }
-    
-    public void Init()
+
+    public void RemoveObject(IAIObject aiObject)
     {
-                
+        objects.Remove(aiObject);
     }
 }
-
-

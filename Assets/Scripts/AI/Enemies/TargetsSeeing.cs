@@ -21,6 +21,7 @@ class TargetsSeeing : MonoBehaviour
         var angle = Vector3.Angle(direction, transform.forward);
         if (angle > maxAngle){
             if (log) Debug.Log("Target too far to the side, angle: " + angle);
+            // TODO Seems to detect mostly to the right side
             return 0;
         }
         var ray = new Ray(transform.position, direction);

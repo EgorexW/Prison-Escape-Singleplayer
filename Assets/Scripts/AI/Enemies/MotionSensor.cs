@@ -38,7 +38,15 @@ public class MotionSensor : MonoBehaviour, IDamagable, IElectric
 
     public void EmpHit(float strenght)
     {
-        laser.SetActive(false);
-        General.CallAfterSeconds(() => laser.SetActive(true), strenght/empResistance);
+        if (!laser.activeSelf){
+            return;
+        }
+        SetActive(false);
+        General.CallAfterSeconds(() => SetActive(true), strenght/empResistance);
+    }
+
+    public void SetActive(bool active)
+    {
+        laser.SetActive(active);
     }
 }

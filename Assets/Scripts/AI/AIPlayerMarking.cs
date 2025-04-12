@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AIPlayerMarking
+public class AIPlayerMarking : MonoBehaviour
 {
     [SerializeField] float defaultErrorRadius = 20;
     [ShowInInspector] List<PlayerMark> playerMarks = new List<PlayerMark>();
@@ -12,6 +12,8 @@ public class AIPlayerMarking
     [FoldoutGroup("Events")]
     public UnityEvent<PlayerApproximatePos> onPlayerApproximatePosChanged;
 
+    public PlayerApproximatePos LastApproximatePos{ get; private set; } = PlayerApproximatePos.Global;
+    
     const int UPDATEMARKSINTERVAL = 100;
 
     public void Update()
@@ -30,8 +32,8 @@ public class AIPlayerMarking
     void UpdatePlayerMarks()
     {
         playerMarks.RemoveAll(mark => !mark.Active);
-        var pos = GetPlayerApproximatePos();
-        onPlayerApproximatePosChanged.Invoke(pos);
+        LastApproximatePos = GetPlayerApproximatePos();
+        onPlayerApproximatePosChanged.Invoke(LastApproximatePos);
     }
 
     PlayerApproximatePos GetPlayerApproximatePos()
@@ -60,6 +62,12 @@ public class AIPlayerMarking
 [Serializable]
 public struct PlayerApproximatePos
 {
+    public static PlayerApproximatePos Global = new PlayerApproximatePos()
+    {
+        pos = Vector3.zero,
+        totalIntensity = 0,
+        errorRadius = float.MaxValue
+    };
     public Vector3 pos;
     public float totalIntensity;
     public float errorRadius;

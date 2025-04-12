@@ -1,21 +1,36 @@
+using System;
 using System.Collections.Generic;
+using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class FireTrap : MonoBehaviour, IAIObject
 {
-    [SerializeField][Required] GameObject effectPrefab;
+    [SerializeField] [Required] GameObject effectPrefab;
     
     [SerializeField] 
     [PropertyRange(0.1f, 20f)]
     public Vector3 areaSize = new Vector3(5, 5, 5);
 
     [SerializeField] Damage damage;
+    [SerializeField] AIObjectStats stats;
+    public AIObjectStats Stats => stats;
     
-    // public AIObjectType aiType => AIObjectType.Trap;
-
+    List<MotionSensor> motionSensor;
     MainAI mainAI;
+    
+    public GameObject GameObject => gameObject;
 
+    protected void Awake()
+    {
+        motionSensor = new List<MotionSensor>(GetComponentsInChildren<MotionSensor>());
+        motionSensor.ForEach(sensor => sensor.onActivation.AddListener(Activate));
+    }
+
+    public void SetActive(bool active)
+    {
+        motionSensor.ForEach(sensor => sensor.SetActive(active));
+    }
     public void Activate()
     {
         var playerMark = new PlayerMark(transform.position, 2);
@@ -28,6 +43,7 @@ public class FireTrap : MonoBehaviour, IAIObject
         {
             damagable.Damage(damage);
         }
+        mainAI.RemoveObject(this);
         gameObject.SetActive(false);
     }
 
