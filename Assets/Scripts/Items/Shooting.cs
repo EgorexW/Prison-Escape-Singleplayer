@@ -6,8 +6,9 @@ public class Shooting : MonoBehaviour
     [SerializeField] bool log;
     
     public Damage damage = 1;
-    public  float fireRate = 20;
-    public  int ammo = 20;
+    public float fireRate = 20;
+    public int ammo = 20;
+    public Noise noisePerShot = new (1);
     
     [BoxGroup("Config")][SerializeField] LayerMask aimColliderLayerMask;
     [BoxGroup("Config")][SerializeField] Transform vfxHitGreen;
@@ -25,6 +26,9 @@ public class Shooting : MonoBehaviour
         }
         ammo--;
         lastShotTime = Time.time;
+        noisePerShot.source = gameObject;
+        noisePerShot.pos = transform.position;
+        General.GetRootComponent<INoiseReciver>(transform, false)?.ReceiveNoise(noisePerShot);
         Transform hitTransform = null;
         Vector3 hitPos = Vector3.zero;
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask)) {

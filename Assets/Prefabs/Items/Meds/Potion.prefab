@@ -253,10 +253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f156148c457847b6bb2a69c853da62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipPos: {x: 0.174, y: -0.239, z: 0.702}
-  equipRotation: {x: -16.222, y: 56.546, z: -20.356}
-  equipScaleChange: 1
-  equipTime: 0.5
+  isHeld: 0
+  pickupable: 1
+  holdDuration: 1
+  useTime: 0.5
   heal:
     damage: 0
     permanentDamage: 0
@@ -267,4 +267,3 @@ MonoBehaviour:
         damage: 50
         permanentDamage: 50
       totalTime: 50
-  useTime: 0.5

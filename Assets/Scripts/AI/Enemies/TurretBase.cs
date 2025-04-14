@@ -14,13 +14,13 @@ public class TurretBase : MonoBehaviour
     [SerializeField] float rotationSpeed = 0.5f;
     [SerializeField] float defaultRotationSpeed = 0.5f;
     [SerializeField] float angleToStartShooting = 0.1f;
-    [SerializeField] bool defaultToStartRotation;
     
-    [ShowIfInType(type = typeof(TurretBase))] public List<GameObject> targets;
     
+    [ShowIfInType(type = typeof(TurretBase))] public List<AITarget> targets;
+    
+    protected Quaternion defaultRotation;
     State state = State.Idle;
     GameObject currentTarget;
-    Quaternion startRotation;
 
     protected enum State
     {
@@ -30,7 +30,7 @@ public class TurretBase : MonoBehaviour
 
     protected virtual void Awake()
     {
-        startRotation = transform.rotation;
+        defaultRotation = transform.rotation;
     }
 
     protected void Update()
@@ -44,10 +44,7 @@ public class TurretBase : MonoBehaviour
 
     void RotateToDefault()
     {
-        if (!defaultToStartRotation){
-            return;
-        }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, startRotation, Time.deltaTime * rotationSpeed * defaultRotationSpeed);
+        transform.rotation = General.RotateLeftOrRight(transform.rotation, defaultRotation, Time.deltaTime * rotationSpeed * defaultRotationSpeed);
     }
 
     void CheckForTargets()
@@ -84,7 +81,7 @@ public class TurretBase : MonoBehaviour
         if (Vector3.Angle(direction, transform.forward) < angleToStartShooting){
             Shoot();
         }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed * targetVisibility);
+        transform.rotation = General.RotateLeftOrRight(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed * targetVisibility);
     }
 
     void Shoot()

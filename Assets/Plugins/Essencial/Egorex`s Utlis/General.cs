@@ -229,6 +229,11 @@ public class General : MonoBehaviour
         }
         return components;
     }
+    public static Quaternion RotateLeftOrRight(Quaternion rotation, Quaternion targetRotation, float delta)
+    {
+        var flatDefaultRotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+        return Quaternion.RotateTowards(rotation, flatDefaultRotation, delta);
+    }
 }
 
 public interface INamed

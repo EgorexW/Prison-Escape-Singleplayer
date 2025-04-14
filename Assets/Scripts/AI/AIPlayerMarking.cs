@@ -6,13 +6,19 @@ using UnityEngine.Events;
 
 public class AIPlayerMarking : MonoBehaviour
 {
-    [SerializeField] float defaultErrorRadius = 20;
+    [SerializeField] float defaultErrorRadius = 200;
+    [SerializeField] float markIntensityNoise = 1;
+    [SerializeField] float minErrorRadius = 50;
+    
     [ShowInInspector] List<PlayerMark> playerMarks = new List<PlayerMark>();
 
     [FoldoutGroup("Events")]
     public UnityEvent<PlayerApproximatePos> onPlayerApproximatePosChanged;
 
-    public PlayerApproximatePos LastApproximatePos{ get; private set; } = PlayerApproximatePos.Global;
+    [FoldoutGroup("Events")] public UnityEvent<PlayerMark> onPlayerMarkAdded;
+
+
+    [ShowInInspector] public PlayerApproximatePos LastApproximatePos{ get; private set; } = PlayerApproximatePos.Global;
     
     const int UPDATEMARKSINTERVAL = 100;
 
@@ -26,6 +32,7 @@ public class AIPlayerMarking : MonoBehaviour
     public void PlayerNoticed(PlayerMark playerMark)
     {
         playerMarks.Add(playerMark);
+        onPlayerMarkAdded.Invoke(playerMark);
         UpdatePlayerMarks();
     }
 
@@ -50,12 +57,20 @@ public class AIPlayerMarking : MonoBehaviour
         if (totalIntensity > 0){
             weightedPosition /= totalIntensity;
         }
+
+        weightedPosition.y = 0;
+        
         return new PlayerApproximatePos
         {
             pos = weightedPosition,
             totalIntensity = totalIntensity,
-            errorRadius = defaultErrorRadius / totalIntensity
+            errorRadius = Mathf.Max(defaultErrorRadius / totalIntensity, minErrorRadius)
         };
+    }
+
+    public void PlayerMadeNoise(Noise arg0)
+    {
+        PlayerNoticed(new PlayerMark(arg0.pos, arg0.intensity * markIntensityNoise));
     }
 }
 

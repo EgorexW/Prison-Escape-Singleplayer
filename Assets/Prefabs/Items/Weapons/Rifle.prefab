@@ -221,6 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHeld: 0
+  pickupable: 1
+  holdDuration: 1
   shooting: {fileID: 2820933438102179484}
 --- !u!114 &2820933438102179484
 MonoBehaviour:
@@ -240,6 +243,10 @@ MonoBehaviour:
     permanentDamage: 1
   fireRate: 20
   ammo: 200
+  noisePerShot:
+    intensity: 1
+    source: {fileID: 0}
+    pos: {x: 0, y: 0, z: 0}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 841

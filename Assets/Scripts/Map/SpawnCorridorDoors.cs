@@ -12,7 +12,12 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
     public void Spawn(List<LevelNode> levelNodes, MainAI mainAI)
     {
         var possibleSpawns = GetPossibleSpawns(levelNodes);
+        // Debug.Log("Possible spawns: " + possibleSpawns.Count);
         var spawnsLeft = General.RandomRange(doorSpawns);
+        if (spawnsLeft > possibleSpawns.Count){
+            Debug.LogWarning($"No more nodes to spawn on, spawns left: {spawnsLeft - possibleSpawns.Count}", this);
+            spawnsLeft = possibleSpawns.Count;
+        }
         while (spawnsLeft > 0){
             var choosenSpawn = possibleSpawns.Random(true);
             var door = Instantiate(spawnTable.GetGameObject(), choosenSpawn.pos, choosenSpawn.rotation, transform);
@@ -26,17 +31,21 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
 
     List<PossibleSpawn> GetPossibleSpawns(List<LevelNode> levelNodes)
     {
-        var possibleSpawns = new HashSet<PossibleSpawn>();
+        var possibleSpawns = new List<PossibleSpawn>();
+        // Debug.Log("Level nodes: " + levelNodes.Count);
         foreach (var node in levelNodes){
             foreach (var connection in node.SameTypeConnections){
                 PossibleSpawn possibleSpawn = new PossibleSpawn{
                     pos = node.transform.position + connection/2,
                     rotation = Quaternion.LookRotation(connection.normalized)
                 };
+                if (possibleSpawns.Any(x => Vector3.Distance(x.pos, possibleSpawn.pos) < 0.5f)){
+                    continue;
+                }
                 possibleSpawns.Add(possibleSpawn);
             }
         }
-        return possibleSpawns.ToList();
+        return possibleSpawns;
     }
 }
 

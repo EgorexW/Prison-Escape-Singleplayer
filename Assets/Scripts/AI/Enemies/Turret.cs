@@ -4,30 +4,41 @@ using UnityEngine;
 [RequireComponent(typeof(TargetsSeeing))]
 public class Turret : TurretBase, IDamagable, IElectric, IAIObject
 {
-    [SerializeField] GameObject workingLight; 
+    const float UNDERGROUND_HIDE_OFFSET = 3;
+    const float HIDE_TIME = 1f;
     
+    [SerializeField] GameObject workingLight;
+
     [SerializeField] Health health;
     [SerializeField] float empResistance = 1;
     [SerializeField] float fireRateLossPerDmg = 0.08f;
     [SerializeField] AIObjectStats stats;
     
-    
     MainAI mainAI;
     PlayerMark playerMark;
-    
-    public GameObject GameObject => gameObject;
+    float startPosY;
 
     protected override void Awake()
     {
         base.Awake();
+        startPosY = transform.position.y;
         playerMark = PlayerMark.Inactive;
     }
+
+    public GameObject GameObject => gameObject;
 
     public AIObjectStats Stats => stats;
 
 
     public void SetActive(bool active)
     {
+        LeanTween.cancel(gameObject);
+        if (active){
+            transform.LeanMoveY(startPosY, HIDE_TIME);
+        }
+        else{
+            transform.LeanMoveY(startPosY - UNDERGROUND_HIDE_OFFSET, HIDE_TIME);
+        }
         workingLight?.SetActive(active);
         enabled = active;
     }
@@ -36,6 +47,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     {
         this.mainAI = mainAI;
         targets = mainAI.Targets;
+        mainAI.aiPlayerMarking.onPlayerApproximatePosChanged.AddListener(OnPlayerPosChanged);
     }
 
     public Health Health => health;
@@ -58,6 +70,11 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     {
         enabled = false;
         General.CallAfterSeconds(() => enabled = true, strenght / empResistance);
+    }
+
+    void OnPlayerPosChanged(PlayerApproximatePos pos)
+    {
+        defaultRotation = Quaternion.LookRotation(pos.pos - transform.position);
     }
 
     protected override void StartAiming(GameObject target)

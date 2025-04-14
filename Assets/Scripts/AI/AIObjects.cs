@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nrjwolf.Tools.AttachAttributes;
@@ -9,26 +10,37 @@ public class AIObjects : MonoBehaviour
     [GetComponent] public MainAI mainAI;
 
     [SerializeField] float energy = 20;
-    [SerializeField] int updateInterval = 15;
+    [SerializeField] int updateInterval = 120;
+    [SerializeField] int minUpdateInterval = 20;
+    [SerializeField] float energyIncreasePerUpdate;
 
-    float lastUpdateTime;
+    float lastUpdateTime = 0;
+
+    void Awake()
+    {
+        lastUpdateTime = -minUpdateInterval;
+    }
 
     void Update()
     {
         if (lastUpdateTime + updateInterval < Time.time){
-            lastUpdateTime = Time.time;
             ResetObjects(mainAI.objects, mainAI.aiPlayerMarking.LastApproximatePos);
         }
     }
 
-    void ResetObjects(List<IAIObject> objects, PlayerApproximatePos playerApproximatePos)
+    public void ResetObjects(List<IAIObject> objects, PlayerApproximatePos playerApproximatePos)
     {
+        if (lastUpdateTime + minUpdateInterval > Time.time){
+            return;
+        }
+        lastUpdateTime = Time.time;
         foreach (var aiObject in objects) aiObject.SetActive(false);
         objects.Shuffle();
         var localEnergy = AllocateEnergy(objects, energy, true);
         if (localEnergy < 0){
             AllocateEnergy(objects, localEnergy);
         }
+        energy += energyIncreasePerUpdate;
     }
 
     float AllocateEnergy(List<IAIObject> objects, float localEnergy, bool checkIfInRange = false)

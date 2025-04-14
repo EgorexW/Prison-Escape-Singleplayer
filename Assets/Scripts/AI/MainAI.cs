@@ -13,11 +13,27 @@ public class MainAI : SerializedMonoBehaviour
     [GetComponent] public AIPlayerMarking aiPlayerMarking;
     [GetComponent] public AIObjects aiObjects;
     
-    [SerializeField] List<GameObject> targets;
+    [SerializeField] List<AITarget> targets;
 
-    public List<GameObject> Targets => targets;
+    [SerializeField] float intensityForImmediateObjectsReset = 3;
+    
+    public List<AITarget> Targets => targets;
 
     public List<IAIObject> objects = new List<IAIObject>();
+
+    void Awake()
+    {
+        aiPlayerMarking.onPlayerMarkAdded.AddListener(OnPlayerMarkAdded);
+        foreach (var target in targets){
+            target.onReceiveNoise.AddListener(aiPlayerMarking.PlayerMadeNoise);
+        }
+    }
+    void OnPlayerMarkAdded(PlayerMark arg0)
+    {
+        if (aiPlayerMarking.LastApproximatePos.totalIntensity > intensityForImmediateObjectsReset){
+            aiObjects.ResetObjects(objects, aiPlayerMarking.LastApproximatePos);
+        }
+    }
 
     protected void Update()
     {

@@ -25,6 +25,9 @@ class TargetsSeeing : MonoBehaviour
             return 0;
         }
         var ray = new Ray(transform.position, direction);
+        if (log){
+            Debug.DrawRay(ray.origin, ray.direction * maxDis, Color.red, 0.1f);
+        }
         if (!Physics.Raycast(ray, out var hit, maxDis, layerMask)){
             if (log) Debug.Log("Raycast failed");
             return 0;
