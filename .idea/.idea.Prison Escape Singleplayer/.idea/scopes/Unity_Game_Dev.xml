@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Unity Game Dev" pattern="file:Assets/Scripts/*||file:Assets/Scripts//*" />
+</component>
