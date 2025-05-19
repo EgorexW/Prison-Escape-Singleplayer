@@ -2,9 +2,7 @@ using System;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
 public class PoweredLight : PoweredDevice, IDamagable
 {

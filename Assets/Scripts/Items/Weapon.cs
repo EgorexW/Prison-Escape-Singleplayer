@@ -1,5 +1,4 @@
 using Nrjwolf.Tools.AttachAttributes;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(Shooting))]

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

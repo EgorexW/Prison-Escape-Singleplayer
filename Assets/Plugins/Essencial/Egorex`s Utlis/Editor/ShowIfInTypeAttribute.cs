@@ -1,9 +1,6 @@
-using Sirenix.OdinInspector;
 using System;
-using System.Linq;
 using Sirenix.OdinInspector.Editor;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 [AttributeUsage(AttributeTargets.Field)]
 public class ShowIfInTypeAttribute : PropertyAttribute
