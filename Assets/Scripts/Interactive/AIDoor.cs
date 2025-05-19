@@ -12,6 +12,7 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     [SerializeField] float longDurationMultiplier = 3;
     [SerializeField] AIObjectStats stats;
+    [SerializeField] float noticedScore = 1;
 
     MainAI mainAI;
     float baseDuration;
@@ -44,7 +45,6 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     void OnDoorOpen()
     {
-        var playerMark = new PlayerMark(transform.position, 0.5f);
-        mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
+        mainAI.PlayerNoticed(noticedScore);
     }
 }

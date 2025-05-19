@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using Editor = UnityEditor.Editor;
 
 [CustomEditor(typeof(FireTrap))]
 public class AreaEditor : Editor

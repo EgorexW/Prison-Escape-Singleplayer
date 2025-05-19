@@ -14,11 +14,12 @@ public class FireTrap : MonoBehaviour, IAIObject
 
     [SerializeField] Damage damage;
     [SerializeField] AIObjectStats stats;
+    [SerializeField] float noticedScore = 2;
     public AIObjectStats Stats => stats;
     
     List<MotionSensor> motionSensor;
     MainAI mainAI;
-    
+
     public GameObject GameObject => gameObject;
 
     protected void Awake()
@@ -33,8 +34,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     }
     public void Activate()
     {
-        var playerMark = new PlayerMark(transform.position, 2);
-        mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
+        mainAI.PlayerNoticed(noticedScore);
         Collider[] objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);

@@ -15,14 +15,12 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     [SerializeField] AIObjectStats stats;
     
     MainAI mainAI;
-    PlayerMark playerMark;
     float startPosY;
 
     protected override void Awake()
     {
         base.Awake();
         startPosY = transform.position.y;
-        playerMark = PlayerMark.Inactive;
     }
 
     public GameObject GameObject => gameObject;
@@ -47,7 +45,6 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     {
         this.mainAI = mainAI;
         targets = mainAI.Targets;
-        mainAI.aiPlayerMarking.onPlayerApproximatePosChanged.AddListener(OnPlayerPosChanged);
     }
 
     public Health Health => health;
@@ -72,21 +69,8 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         General.CallAfterSeconds(() => enabled = true, strenght / empResistance);
     }
 
-    void OnPlayerPosChanged(PlayerApproximatePos pos)
-    {
-        defaultRotation = Quaternion.LookRotation(pos.pos - transform.position);
-    }
-
     protected override void StartAiming(GameObject target)
     {
-        if (playerMark.Active){
-            playerMark.time = Time.time;
-            playerMark.position = target.transform.position;
-        }
-        else{
-            playerMark = new PlayerMark(target.transform.position);
-            mainAI.aiPlayerMarking.PlayerNoticed(playerMark);
-        }
         base.StartAiming(target);
     }
 }

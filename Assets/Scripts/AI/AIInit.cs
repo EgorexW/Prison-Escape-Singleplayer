@@ -21,7 +21,7 @@ public class AIInit : MonoBehaviour
         foreach (var spawner in GetComponentsInChildren<IAISpawner>()){
             spawner.Spawn(nodes.CorridorNodes.Copy(), mainAI);
         }
-        mainAI.aiObjects.ResetObjects(mainAI.objects, mainAI.aiPlayerMarking.LastApproximatePos);
+        mainAI.ResolveObjects();
     }
 }
 
