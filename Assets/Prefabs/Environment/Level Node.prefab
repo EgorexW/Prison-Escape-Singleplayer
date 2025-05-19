@@ -109,12 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eda4f59682a467884ee56f7e6e16e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerMask:
+  layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  connections:
-  - {fileID: 2239359883978377049}
-  - {fileID: 8023646665595915578}
+  nodeType: 0
 --- !u!65 &2075976466409310653
 BoxCollider:
   m_ObjectHideFlags: 0

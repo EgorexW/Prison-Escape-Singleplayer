@@ -7,14 +7,13 @@ using UnityEngine.Serialization;
 
 public class LevelNode : MonoBehaviour
 {
-    const float COLLIDER_CHECK_SIZE = 0.1f;
     const float DISTANCE = 7;
 
     [FormerlySerializedAs("LayerMask")] [SerializeField] LayerMask layerMask;
     
     [SerializeField] NodeType nodeType = NodeType.Corridor;
     
-    [HideInEditorMode][ShowInInspector] List<LevelNode> neighboringNodes = null;
+    [ShowInInspector] List<LevelNode> neighboringNodes = null;
 
     void Start()
     {
@@ -38,7 +37,7 @@ public class LevelNode : MonoBehaviour
             // Debug.Log("Checking direction: " + direction, this);
             var raycast = Physics.Raycast(transform.position, direction, out var raycastHit, DISTANCE,
                 layerMask);
-            Debug.DrawRay(transform.position, direction * DISTANCE, Color.red, 2);
+            // Debug.DrawRay(transform.position, direction * DISTANCE, Color.red, 2);
             if (!raycast){
                 // Debug.Log("No collider hit", this);
                 continue;
@@ -52,7 +51,7 @@ public class LevelNode : MonoBehaviour
         }
     }
 
-    public List<Vector3> SameTypeConnections =>GetNeighboringNodes()
+    public List<Vector3> SameTypeConnections => GetNeighboringNodes()
                 .Where(input => input.nodeType == nodeType)
                 .Select(input => input.transform.position - transform.position)
                 .ToList();
