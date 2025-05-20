@@ -52,7 +52,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         if (health.Alive){
             return;
         }
-        AIDirector.RemoveObject(this);
+        AIDirector.i.RemoveObject(this);
         gameObject.SetActive(false);
     }
 

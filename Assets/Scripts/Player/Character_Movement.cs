@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -32,7 +33,9 @@ public partial class Player{
     public float SprintSpeed()
     {
         var canSprint = stamina > 0;
-        if (!canSprint) return moveSpeed * speedMod;
+        if (!canSprint){
+            return moveSpeed * speedMod;
+        }
         stamina -= staminaUseRate * Time.deltaTime;
         return moveSpeed * speedMod * sprintSpeedMod;
     }
@@ -50,5 +53,10 @@ public partial class Player{
     public void ModSpeed(float mod)
     {
         speedMod *= mod;
+    }
+
+    public bool GetContainingNode()
+    {
+        throw new NotImplementedException();
     }
 }

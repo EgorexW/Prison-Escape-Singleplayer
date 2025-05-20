@@ -151,5 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   pickupable: 1
+  discoveryOnFirstPickup:
+    enabled: 1
+    value:
+      score: 1
   holdDuration: 1
   accessLevel: {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}

@@ -7,6 +7,8 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
 
     [ReadOnly] public bool isHeld = false;
     [ReadOnly] public bool pickupable = true;
+
+    [SerializeField] Optional<Discovery> discoveryOnFirstPickup;
     public float holdDuration;
 
 
@@ -19,6 +21,10 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
     {
         if (!pickupable){
             return;
+        }
+        if (discoveryOnFirstPickup){
+            AIDirector.i.PlayerDiscovery(discoveryOnFirstPickup);
+            discoveryOnFirstPickup.Enabled = false;
         }
         player.PickupItem(this);
     }

@@ -23,7 +23,7 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
             var door = Instantiate(spawnTable.GetGameObject(), choosenSpawn.pos, choosenSpawn.rotation, transform);
             var aiObject = door.GetComponentInChildren<IAIObject>();
             if (aiObject != null){
-                AIDirector.AddObject(aiObject);
+                AIDirector.i.AddObject(aiObject);
             }
             spawnsLeft--;
         }

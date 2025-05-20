@@ -273,7 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b0734d3b21449b490ff921ea4cce87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aim: {fileID: 4135013737309117823}
   log: 0
   health:
     health: 100
@@ -291,6 +290,7 @@ MonoBehaviour:
   sprintSpeedMod: 1.5
   staminaUseRate: 0.15
   staminaRegenRate: 0.05
+  aim: {fileID: 4135013737309117823}
 --- !u!114 &134446979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfa756cbf417456dbccee0a84fa415c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 134446977}
+  player: {fileID: 134446977}
 --- !u!1 &164942507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initDelay: 1
-  mainAI: {fileID: 545099425}
+  aiDirector: {fileID: 545099425}
   nodes: {fileID: 453294468}
 --- !u!4 &545099424
 Transform:
@@ -1379,21 +1379,8 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: objects
-      Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[IAIObject, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  targets:
-  - {fileID: 8997996946667749019}
+    SerializationNodes: []
+  player: {fileID: 134446977}
   baseEnergy: 20
   playerScoreMultiplier: 1
 --- !u!1 &549698525
@@ -8207,7 +8194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   baseLevelNodes: {fileID: 453294468}
-  mainAI: {fileID: 545099425}
+  aiDirector: {fileID: 545099425}
   player: {fileID: 8616685848057766947}
   roomsObjectPool: {fileID: 1454113326}
   aiObjectPool: {fileID: 1690046434}
@@ -9197,7 +9184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f123100f304b94af852365abfe8055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 134446977}
+  player: {fileID: 134446977}
   healthBarUI: {fileID: 3374533246960844035}
   itemsUI: {fileID: 1574877574143516277}
   staminaBarUI: {fileID: 1634742315}
@@ -14782,7 +14769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb45d32cb543472dad0d777d05ed316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 134446977}
+  player: {fileID: 134446977}
   map: {fileID: 2071625441}
 --- !u!1001 &6419772086281850171
 PrefabInstance:

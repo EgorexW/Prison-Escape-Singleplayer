@@ -6,29 +6,57 @@ using UnityEngine;
 
 public class AIDirector : SerializedMonoBehaviour
 {
+    public static AIDirector i { get; private set; }
+
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     
     [SerializeField] float baseEnergy = 20;
     [SerializeField] float playerScoreMultiplier = 1;
+    [SerializeField] float immediateUpdateThreshold = 5;
     
-    static float playerScore;
+    float playerScore;
 
-    static List<IAIObject> objects = new List<IAIObject>();
-    
-    
-    public static void AddObject(IAIObject aiObject)
+    List<IAIObject> objects = new List<IAIObject>();
+
+    void Awake()
+    {
+        if (i != null && i != this){
+            Debug.LogWarning("There was another instance", this);
+            Destroy(gameObject);
+            return;
+        }
+        i = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Update()
+    {
+        TryObjectsUpdate();
+    }
+
+    void TryObjectsUpdate()
+    {
+        if (player.GetContainingNode()){
+            
+        }
+    }
+
+    public void AddObject(IAIObject aiObject)
     {
         objects.Add(aiObject);
     }
 
-    public static void RemoveObject(IAIObject aiObject)
+    public void RemoveObject(IAIObject aiObject)
     {
         objects.Remove(aiObject);
     }
 
-    public static void PlayerNoticed(Discovery discovery)
+    public void PlayerDiscovery(Discovery discovery)
     {
         playerScore += discovery.score;
+        if (discovery.score > immediateUpdateThreshold){
+            ResolveObjects();
+        }
     }
     
     public void ResolveObjects()
