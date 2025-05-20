@@ -12,11 +12,13 @@ public class FireTrap : MonoBehaviour, IAIObject
 
     [SerializeField] Damage damage;
     [SerializeField] AIObjectStats stats;
-    [SerializeField] float noticedScore = 2;
+    [SerializeField] Discovery noticedScore = new Discovery(){
+        score = 2
+    };
     public AIObjectStats Stats => stats;
     
     List<MotionSensor> motionSensor;
-    MainAI mainAI;
+    AIDirector aiDirector;
 
     public GameObject GameObject => gameObject;
     public bool IsActive{ get; private set; }
@@ -34,7 +36,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     }
     public void Activate()
     {
-        mainAI.PlayerNoticed(noticedScore);
+        aiDirector.PlayerNoticed(noticedScore);
         var objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
@@ -43,12 +45,12 @@ public class FireTrap : MonoBehaviour, IAIObject
         {
             damagable.Damage(damage);
         }
-        mainAI.RemoveObject(this);
+        aiDirector.RemoveObject(this);
         gameObject.SetActive(false);
     }
 
-    public void Init(MainAI mainAI)
+    public void Init(AIDirector aiDirector)
     {
-        this.mainAI = mainAI;
+        this.aiDirector = aiDirector;
     }
 }

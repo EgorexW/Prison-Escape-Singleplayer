@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class MainAI : SerializedMonoBehaviour
+public class AIDirector : SerializedMonoBehaviour
 {
     [SerializeField] List<AITarget> targets;
     
@@ -16,6 +17,18 @@ public class MainAI : SerializedMonoBehaviour
 
     float playerScore;
 
+    void Start()
+    {
+        ResolveTargets();
+    }
+
+    void ResolveTargets()
+    {
+        foreach (var target in targets){
+            target.onReceiveDiscovery.AddListener(PlayerNoticed);
+        }
+    }
+
     public void AddObject(IAIObject aiObject)
     {
         aiObject.Init(this);
@@ -27,9 +40,9 @@ public class MainAI : SerializedMonoBehaviour
         objects.Remove(aiObject);
     }
 
-    public void PlayerNoticed(float noticedScore)
+    public void PlayerNoticed(Discovery discovery)
     {
-        playerScore += noticedScore;
+        playerScore += discovery.score;
     }
     
     public void ResolveObjects()

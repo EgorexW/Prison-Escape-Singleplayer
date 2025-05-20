@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4596076005008082806}
   m_Layer: 0
-  m_Name: Outer
+  m_Name: Exterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8005682517975608309}
   m_Layer: 0
-  m_Name: Inner
+  m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

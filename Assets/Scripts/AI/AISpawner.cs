@@ -10,7 +10,7 @@ public class AISpawner : MonoBehaviour, IAISpawner
     [BoxGroup("Spawn Conditions")] [SerializeField] CorridorNodeType nodeTypesAllowed;
     // [BoxGroup("Spawn Conditions")] [SerializeField] bool alignWithConnections = true;
 
-    public void Spawn(List<LevelNode> levelNodes, MainAI mainAI)
+    public void Spawn(List<LevelNode> levelNodes, AIDirector aiDirector)
     {
         var spawnNr = Random.Range(spawnCount.x, spawnCount.y);
         while (true){
@@ -27,7 +27,7 @@ public class AISpawner : MonoBehaviour, IAISpawner
             var obj = Instantiate(spawnTable.GetGameObject(), node.transform.position, rotation, transform);
             var aiObject = obj.GetComponentInChildren<IAIObject>();
             if (aiObject != null){
-                mainAI.AddObject(aiObject);
+                aiDirector.AddObject(aiObject);
             }
             spawnNr--;
             if (spawnNr == 0){

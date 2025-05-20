@@ -11,9 +11,9 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     [SerializeField] float longDurationMultiplier = 3;
     [SerializeField] AIObjectStats stats;
-    [SerializeField] float noticedScore = 1;
+    [SerializeField] Discovery noticedScore = new Discovery(){ score = 1};
 
-    MainAI mainAI;
+    AIDirector aiDirector;
     float baseDuration;
 
     public GameObject GameObject => gameObject;
@@ -40,13 +40,13 @@ public class AIDoor : MonoBehaviour, IAIObject
     }
 
 
-    public void Init(MainAI mainAI)
+    public void Init(AIDirector aiDirector)
     {
-        this.mainAI = mainAI;
+        this.aiDirector = aiDirector;
     }
 
     void OnDoorOpen()
     {
-        mainAI.PlayerNoticed(noticedScore);
+        aiDirector.PlayerNoticed(noticedScore);
     }
 }

@@ -9,7 +9,7 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
 
     [SerializeField] Vector2Int doorSpawns = new(5, 10);
 
-    public void Spawn(List<LevelNode> levelNodes, MainAI mainAI)
+    public void Spawn(List<LevelNode> levelNodes, AIDirector aiDirector)
     {
         var possibleSpawns = GetPossibleSpawns(levelNodes);
         // Debug.Log("Possible spawns: " + possibleSpawns.Count);
@@ -23,7 +23,7 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
             var door = Instantiate(spawnTable.GetGameObject(), choosenSpawn.pos, choosenSpawn.rotation, transform);
             var aiObject = door.GetComponentInChildren<IAIObject>();
             if (aiObject != null){
-                mainAI.AddObject(aiObject);
+                aiDirector.AddObject(aiObject);
             }
             spawnsLeft--;
         }

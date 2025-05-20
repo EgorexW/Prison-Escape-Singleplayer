@@ -14,7 +14,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     [SerializeField] float fireRateLossPerDmg = 0.08f;
     [SerializeField] AIObjectStats stats;
     
-    MainAI mainAI;
+    AIDirector aiDirector;
     float startPosY;
 
     protected override void Awake()
@@ -43,10 +43,10 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         enabled = active;
     }
 
-    public void Init(MainAI mainAI)
+    public void Init(AIDirector aiDirector)
     {
-        this.mainAI = mainAI;
-        targets = mainAI.Targets;
+        this.aiDirector = aiDirector;
+        targets = aiDirector.Targets;
     }
 
     public Health Health => health;
@@ -58,7 +58,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         if (health.Alive){
             return;
         }
-        mainAI.RemoveObject(this);
+        aiDirector.RemoveObject(this);
         gameObject.SetActive(false);
     }
 

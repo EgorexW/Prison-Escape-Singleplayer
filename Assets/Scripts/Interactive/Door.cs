@@ -14,13 +14,13 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     [SerializeField] Optional<float> autoCloseTime;
     [SerializeField] AccessLevel accessLevel;
     [SerializeField] bool pernamentUnlock = true;
+    [SerializeField] Discovery discoveryOnUnlock;
     
     public bool LockState{ get; set; }
     
     float lastMoveStartedTime = -Mathf.Infinity;
     Quaternion startRotation;
     Collider[] colliders;
-    float CurrentRotToStartRot => 0;
 
     [FoldoutGroup("Events")] public UnityEvent onOpen;
     bool Opened => startRotation != transform.rotation;
@@ -72,7 +72,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     }
 
     public void Open(){
-        if (!CanChangeState() && Opened){
+        if (!CanChangeState() || Opened){
             return;
         }
         onOpen.Invoke();
@@ -80,7 +80,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     }
 
     public void Close(){
-        if (!CanChangeState() && !Opened){
+        if (!CanChangeState() || !Opened){
             return;
         }
         Rotate(false);
@@ -98,9 +98,10 @@ public class Door : MonoBehaviour, IDoor, IInteractive
         if (colliderWhenOpen){
             return;
         }
-        foreach (var collider1 in colliders)
+        // ReSharper disable once LocalVariableHidesMember
+        foreach (var collider in colliders)
         {
-            collider1.isTrigger = open;
+            collider.isTrigger = open;
         }
     }
 
@@ -116,6 +117,16 @@ public class Door : MonoBehaviour, IDoor, IInteractive
             return true;
         }
         var item = character.GetHeldItem();
-        return item is IKeycard keycard && keycard.HasAccess(accessLevel);
+        if (item is not IKeycard keycard){
+            return false;
+        }
+        if (!keycard.HasAccess(accessLevel)){
+            return false;
+        }
+        if (pernamentUnlock){
+            accessLevel = null;
+        }
+        
+        return true;
     }
 }
