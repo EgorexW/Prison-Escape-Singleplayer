@@ -14,6 +14,8 @@ public class MapUI : MonoBehaviour
     [BoxGroup("References")][Required][SerializeField] GameObject container;
     
     [SerializeField] float scale = 0.1f;
+    
+    const float AI_OBJECT_SIZE = 3;
 
     void Awake()
     {
@@ -27,7 +29,8 @@ public class MapUI : MonoBehaviour
     }
     public void GenerateMap(LevelNodes levelNodes, List<IAIObject> aiObjects)
     {
-        var trueScale = scale * GetComponent<RectTransform>().sizeDelta.x;
+        var rect = Mathf.Min(GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
+        var trueScale = scale * rect;
         DrawRooms(levelNodes, trueScale);
         DrawAIObjects(aiObjects, trueScale);
     }
@@ -39,11 +42,13 @@ public class MapUI : MonoBehaviour
         {
             var aiObject = aiObjects[i];
             var obj = aiObjectPool.GetActiveObjs()[i];
-            var pos = new Vector3(aiObject.GameObject.transform.position.x, aiObject.GameObject.transform.position.z) * trueScale;
+            var position = aiObject.GameObject.transform.position;
+            var pos = new Vector3(position.x, position.z) * trueScale;
             obj.transform.localPosition = pos;
-            obj.GetComponent<RectTransform>().sizeDelta = Vector2.one * trueScale;
+            obj.GetComponent<RectTransform>().sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;
         }
     }
+
 
     void DrawRooms(LevelNodes levelNodes, float trueScale)
     {
