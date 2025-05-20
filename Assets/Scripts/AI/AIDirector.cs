@@ -13,7 +13,9 @@ public class AIDirector : SerializedMonoBehaviour
     [SerializeField] float baseEnergy = 20;
     [SerializeField] float playerScoreMultiplier = 1;
     [SerializeField] float immediateUpdateThreshold = 5;
-    
+    [SerializeField] float timeBetweenObjectUpdates = 30;
+
+    float lastObjectUpdate;
     float playerScore;
 
     List<IAIObject> objects = new List<IAIObject>();
@@ -36,8 +38,12 @@ public class AIDirector : SerializedMonoBehaviour
 
     void TryObjectsUpdate()
     {
-        if (player.GetContainingNode()){
-            
+        if (Time.time - lastObjectUpdate < timeBetweenObjectUpdates){
+            return;
+        }
+        LevelNode node = player.GetContainingNode();
+        if (node.nodeType == NodeType.Room){
+            ResolveObjects();
         }
     }
 
@@ -61,13 +67,14 @@ public class AIDirector : SerializedMonoBehaviour
     
     public void ResolveObjects()
     {
+        lastObjectUpdate = Time.time;
         foreach (var aiObject in objects) aiObject.SetActive(false);
         objects.Shuffle();
         var localEnergy = CalculateEnergy();
         foreach (var aiObject1 in objects.Where(aiObject => aiObject.Stats.energyCost <= localEnergy)){
             aiObject1.SetActive(true);
-            // Debug.DrawRay(aiObject1.GameObject.transform.position, Vector3.up * 100, Color.red, 1);
             localEnergy -= aiObject1.Stats.energyCost;
+            // Debug.DrawRay(aiObject1.GameObject.transform.position, Vector3.up * 100, Color.red, 1);
         }
     }
 

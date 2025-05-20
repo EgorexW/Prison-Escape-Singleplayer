@@ -109,25 +109,17 @@ public class General : MonoBehaviour
     {
         return new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
     }
-    public static TComponent GetComponentFromRaycast<TComponent>(RaycastHit2D raycast){
-        return GetComponentFromCollider<TComponent>(raycast.collider);
-    }
-    public static TComponent GetComponentFromCollider<TComponent>(Collider2D collider){
+
+    public static TComponent GetComponentFromCollider<TComponent>(Component collider){
         if (collider == null){
             return default;
         }
         return !collider.TryGetComponent(out TComponent component) ? default : component;
     }
-    public static GameObject GetGameObjectFromRaycast(RaycastHit2D raycast){
-        return GetGameObjectFromCollider(raycast.collider);
-    }
 
-    static GameObject GetGameObjectFromCollider(Collider2D collider)
+    static GameObject GetGameObjectFromCollider(Component collider)
     {
-        if (collider == null){
-            return null;
-        }
-        return collider.gameObject;
+        return collider == null ? null : collider.gameObject;
     }
 
     public static void WorldText(string text, Vector2 pos, float size, float time = 0.01f){

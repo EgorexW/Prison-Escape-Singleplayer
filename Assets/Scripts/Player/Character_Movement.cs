@@ -55,8 +55,14 @@ public partial class Player{
         speedMod *= mod;
     }
 
-    public bool GetContainingNode()
+    public LevelNode GetContainingNode()
     {
-        throw new NotImplementedException();
+        Collider[] colliders = new Collider[1];
+        Physics.OverlapBoxNonAlloc(transform.position, 0.1f * Vector3.one, colliders, Quaternion.identity, LayerMask.GetMask("Level Node"));
+        var node = General.GetComponentFromCollider<LevelNode>(colliders[0]);
+        if (node == null){
+            Debug.LogWarning("Player node is null", this);
+        }
+        return node;
     }
 }
