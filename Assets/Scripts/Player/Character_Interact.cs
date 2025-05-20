@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public partial class Character
+public partial class Player
 {   
     [SerializeField] float maxInteractDis = 3;
 

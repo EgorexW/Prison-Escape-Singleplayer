@@ -18,7 +18,6 @@ public class FireTrap : MonoBehaviour, IAIObject
     public AIObjectStats Stats => stats;
     
     List<MotionSensor> motionSensor;
-    AIDirector aiDirector;
 
     public GameObject GameObject => gameObject;
     public bool IsActive{ get; private set; }
@@ -36,7 +35,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     }
     public void Activate()
     {
-        aiDirector.PlayerNoticed(noticedScore);
+        AIDirector.PlayerNoticed(noticedScore);
         var objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
@@ -45,12 +44,7 @@ public class FireTrap : MonoBehaviour, IAIObject
         {
             damagable.Damage(damage);
         }
-        aiDirector.RemoveObject(this);
+        AIDirector.RemoveObject(this);
         gameObject.SetActive(false);
-    }
-
-    public void Init(AIDirector aiDirector)
-    {
-        this.aiDirector = aiDirector;
     }
 }

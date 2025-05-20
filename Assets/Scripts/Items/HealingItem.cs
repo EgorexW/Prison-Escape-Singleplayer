@@ -7,11 +7,11 @@ public class HealingItem : UseableItem
 
     protected override void Apply()
     {
-        character.Heal(heal);
+        player.Heal(heal);
         if (healOvertime){
-            character.AddStatusEffect(healOvertime.Value);
+            player.AddStatusEffect(healOvertime.Value);
         }
-        character.RemoveItem(this);
+        player.RemoveItem(this);
         Destroy(gameObject);
     }
 }

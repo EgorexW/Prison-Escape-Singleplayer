@@ -9,7 +9,7 @@ public class AIInit : MonoBehaviour
 {
     [SerializeField] float initDelay = 2;
     
-    [FormerlySerializedAs("mainAI")] [SerializeField][GetComponent] AIDirector aiDirector;
+    [SerializeField][GetComponent] AIDirector aiDirector;
     
     [SerializeField][Required] LevelNodes nodes;
     void Start()
@@ -20,7 +20,7 @@ public class AIInit : MonoBehaviour
     void Init()
     {
         foreach (var spawner in GetComponentsInChildren<IAISpawner>()){
-            spawner.Spawn(nodes.CorridorNodes.Copy(), aiDirector);
+            spawner.Spawn(nodes.CorridorNodes.Copy());
         }
         aiDirector.ResolveObjects();
     }
@@ -28,5 +28,5 @@ public class AIInit : MonoBehaviour
 
 interface IAISpawner
 {
-    void Spawn(List<LevelNode> levelNodes, AIDirector aiDirector);
+    void Spawn(List<LevelNode> levelNodes);
 }

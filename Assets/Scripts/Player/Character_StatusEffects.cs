@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public partial class Character
+public partial class Player
 {
     List<IStatusEffect> statusEffects = new();
     void Update(){

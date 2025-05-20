@@ -15,15 +15,15 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
         Rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Interact(Character character)
+    public void Interact(Player player)
     {
         if (!pickupable){
             return;
         }
-        character.PickupItem(this);
+        player.PickupItem(this);
     }
 
-    public virtual void Use(Character character, bool alternative = false)
+    public virtual void Use(Player player, bool alternative = false)
     {
         // Implement item usage behavior here.
     }
@@ -35,12 +35,12 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
         return sprite;
     }
 
-    public virtual void HoldUse(Character character, bool alternative = false)
+    public virtual void HoldUse(Player player, bool alternative = false)
     {
         // Implement hold use behavior here, if necessary
     }
 
-    public void StopUse(Character character, bool alternative = false)
+    public void StopUse(Player player, bool alternative = false)
     {
         // Implement stop use behavior here, if necessary
     }

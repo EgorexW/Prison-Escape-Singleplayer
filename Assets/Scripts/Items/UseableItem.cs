@@ -3,33 +3,33 @@ using UnityEngine;
 public abstract class UseableItem : Item
 {
     [SerializeField] float useTime;
-    protected Character character;
+    protected Player player;
     float startUseTime = Mathf.Infinity;
 
     void Update(){
-        if (character == null){
+        if (player == null){
             return;
         }
         if (Time.time - startUseTime < useTime){
-            character.onHoldInteraction.Invoke(Time.time - startUseTime, useTime);
+            player.onHoldInteraction.Invoke(Time.time - startUseTime, useTime);
             return;
         }
-        character.onFinishInteraction.Invoke();
+        player.onFinishInteraction.Invoke();
         Apply();
     }
 
     protected abstract void Apply();
 
-    public override void Use(Character character, bool alternative = false)
+    public override void Use(Player player, bool alternative = false)
     {
         if (!alternative){
-            this.character = character;
-            base.Use(character);
+            this.player = player;
+            base.Use(player);
             startUseTime = Time.time;
         } else{
-            base.StopUse(character);
-            character.onFinishInteraction.Invoke();
-            this.character = null;
+            base.StopUse(player);
+            player.onFinishInteraction.Invoke();
+            this.player = null;
             startUseTime = Mathf.Infinity;
         }
     }

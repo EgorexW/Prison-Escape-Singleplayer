@@ -8,26 +8,26 @@ public class HealOvertime : IStatusEffect
     public float totalTime;
     float startTime;
 
-    public bool CanAddCopy(Character character, IStatusEffect copy)
+    public bool CanAddCopy(Player player, IStatusEffect copy)
     {
         return true;
     }
 
-    public void OnApply(Character character)
+    public void OnApply(Player player)
     {
         startTime = Time.time;
     }
 
-    public void OnRemove(Character character)
+    public void OnRemove(Player player)
     {
         
     }
 
-    public void OnUpdate(Character character)
+    public void OnUpdate(Player player)
     {
-        character.Heal(overAllHeal * Time.deltaTime * (1/totalTime));
+        player.Heal(overAllHeal * Time.deltaTime * (1/totalTime));
         if (Time.time - startTime >= totalTime){
-            character.RemoveStatusEffect(this);
+            player.RemoveStatusEffect(this);
         }
     }
 }

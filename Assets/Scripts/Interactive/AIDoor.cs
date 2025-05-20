@@ -47,6 +47,6 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     void OnDoorOpen()
     {
-        aiDirector.PlayerNoticed(noticedScore);
+        AIDirector.PlayerNoticed(noticedScore);
     }
 }

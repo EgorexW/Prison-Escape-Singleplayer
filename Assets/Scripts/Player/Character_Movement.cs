@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public partial class Character{
+public partial class Player{
     [Tooltip("Move speed of the character in m/s")]
     public float moveSpeed = 4.0f;
     [Tooltip("Sprint speed of the character in m/s")]

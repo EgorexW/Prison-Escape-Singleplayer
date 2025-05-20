@@ -6,41 +6,27 @@ using UnityEngine;
 
 public class AIDirector : SerializedMonoBehaviour
 {
-    [SerializeField] List<AITarget> targets;
+    [BoxGroup("References")] [Required] [SerializeField] Player player;
     
     [SerializeField] float baseEnergy = 20;
     [SerializeField] float playerScoreMultiplier = 1;
     
-    public List<AITarget> Targets => targets;
+    static float playerScore;
 
-    public List<IAIObject> objects = new List<IAIObject>();
-
-    float playerScore;
-
-    void Start()
+    static List<IAIObject> objects = new List<IAIObject>();
+    
+    
+    public static void AddObject(IAIObject aiObject)
     {
-        ResolveTargets();
-    }
-
-    void ResolveTargets()
-    {
-        foreach (var target in targets){
-            target.onReceiveDiscovery.AddListener(PlayerNoticed);
-        }
-    }
-
-    public void AddObject(IAIObject aiObject)
-    {
-        aiObject.Init(this);
         objects.Add(aiObject);
     }
 
-    public void RemoveObject(IAIObject aiObject)
+    public static void RemoveObject(IAIObject aiObject)
     {
         objects.Remove(aiObject);
     }
 
-    public void PlayerNoticed(Discovery discovery)
+    public static void PlayerNoticed(Discovery discovery)
     {
         playerScore += discovery.score;
     }

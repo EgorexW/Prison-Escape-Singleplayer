@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public partial class Character : MonoBehaviour, IDamagable
+public partial class Player : MonoBehaviour, IDamagable
 {
     [SerializeField] Transform aim;
 

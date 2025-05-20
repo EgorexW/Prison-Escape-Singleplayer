@@ -6,9 +6,9 @@ public class Weapon : Item
 {
     [GetComponent][SerializeField] Shooting shooting;
     
-    public override void HoldUse(Character character, bool alternative = false)
+    public override void HoldUse(Player player, bool alternative = false)
     {
-        base.HoldUse(character, alternative);
+        base.HoldUse(player, alternative);
         var screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         var ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         shooting.Shoot(ray);

@@ -1,10 +1,11 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class DevInputPlayer : MonoBehaviour
 {
-    [SerializeField][Required] Character character;
+    [FormerlySerializedAs("character")] [SerializeField][Required] Player player;
     [SerializeField][Required] MapUI map;
 
     void Awake(){
@@ -14,7 +15,7 @@ public class DevInputPlayer : MonoBehaviour
         inputActions.FindAction("DevKey3").performed += UseDevKey3;
     }
     void UseDevKey1(InputAction.CallbackContext context){
-        character.Heal(new Damage(100, 100));
+        player.Heal(new Damage(100, 100));
         
     }
     void UseDevKey2(InputAction.CallbackContext context){

@@ -43,12 +43,6 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         enabled = active;
     }
 
-    public void Init(AIDirector aiDirector)
-    {
-        this.aiDirector = aiDirector;
-        targets = aiDirector.Targets;
-    }
-
     public Health Health => health;
 
     public void Damage(Damage damage)
@@ -58,7 +52,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         if (health.Alive){
             return;
         }
-        aiDirector.RemoveObject(this);
+        AIDirector.RemoveObject(this);
         gameObject.SetActive(false);
     }
 

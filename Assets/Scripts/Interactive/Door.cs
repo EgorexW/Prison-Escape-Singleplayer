@@ -105,18 +105,18 @@ public class Door : MonoBehaviour, IDoor, IInteractive
         }
     }
 
-    public void Interact(Character character){
-        if (!CanCharacterUse(character)){
+    public void Interact(Player player){
+        if (!CanCharacterUse(player)){
             return;
         }
         ChangeState();
     }
-    public bool CanCharacterUse(Character character)
+    public bool CanCharacterUse(Player player)
     {
         if (accessLevel == null){
             return true;
         }
-        var item = character.GetHeldItem();
+        var item = player.GetHeldItem();
         if (item is not IKeycard keycard){
             return false;
         }

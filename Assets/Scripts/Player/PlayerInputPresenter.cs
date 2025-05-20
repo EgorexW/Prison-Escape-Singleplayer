@@ -1,15 +1,16 @@
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerInputPresenter : MonoBehaviour
 {
-    [SerializeField] [GetComponent] Character character;
+    [FormerlySerializedAs("character")] [SerializeField] [GetComponent] Player player;
     InputAction useAction;
     private InputAction alternativeUseAction;
 
     void Awake(){
-        character = GetComponent<Character>();
+        player = GetComponent<Player>();
         var inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("DropItem").performed += DropEquipedItem;
         inputActions.FindAction("ChangeItem").performed += ChangeItem;
@@ -25,43 +26,43 @@ public class PlayerInputPresenter : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context){
         if (context.performed){
-            character.Interact(0);
+            player.Interact(0);
         }
         if (context.canceled){
-            character.CancelInteract();
+            player.CancelInteract();
         }
     }
     private void StopUse(InputAction.CallbackContext context)
     {
-        character.StopUseHeldItem();
+        player.StopUseHeldItem();
     }
 
     private void Use(InputAction.CallbackContext context)
     {
-        character.UseHeldItem();
+        player.UseHeldItem();
     }
 
     void HoldUse(InputAction action){
         if (!action.IsPressed()){
             return;
         }
-        character.HoldUseHeldItem();
+        player.HoldUseHeldItem();
     }
     private void AlternativeStopUse(InputAction.CallbackContext context)
     {
-        character.StopUseHeldItem(true);
+        player.StopUseHeldItem(true);
     }
 
     private void AlternativeUse(InputAction.CallbackContext context)
     {
-        character.UseHeldItem(true);
+        player.UseHeldItem(true);
     }
 
     void AlternativeHoldUse(InputAction action){
         if (!action.IsPressed()){
             return;
         }
-        character.HoldUseHeldItem(true);
+        player.HoldUseHeldItem(true);
     }
     void Update(){
         HoldUse(useAction);
@@ -71,17 +72,17 @@ public class PlayerInputPresenter : MonoBehaviour
         if (!context.performed){
             return;
         }
-        character.ThrowItem();
+        player.ThrowItem();
     }
     void ChangeItem(InputAction.CallbackContext context){
         if (!context.performed){
             return;
         }
-        var items = character.GetInventory().GetItems();
+        var items = player.GetInventory().GetItems();
         if (items.Count == 0){
             return;
         }
-        var index = items.IndexOf(character.GetHeldItem());
+        var index = items.IndexOf(player.GetHeldItem());
         index += 1;
         while(index < 0){
             index += items.Count;
@@ -89,6 +90,6 @@ public class PlayerInputPresenter : MonoBehaviour
         while (index >= items.Count){
             index -= items.Count;
         }
-        character.EquipItem(items[index]);
+        player.EquipItem(items[index]);
     }
 }

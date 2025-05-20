@@ -3,8 +3,6 @@ using UnityEngine;
 
 public interface IAIObject
 {
-    void Init(AIDirector aiDirector);
-    
     public AIObjectStats Stats { get; }
     void SetActive(bool active);
     
