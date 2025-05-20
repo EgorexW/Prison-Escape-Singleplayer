@@ -62,7 +62,7 @@ namespace Pathfinding.Util {
 #else
 			// Fire up a bunch of threads to scan the graph in parallel
 			waitEvents = new ManualResetEvent[threadCount];
-			for (int i = 0; i < waitEvents.Length; i++) {
+			for (var i = 0; i < waitEvents.Length; i++) {
 				waitEvents[i] = new ManualResetEvent(false);
 #if NETFX_CORE
 				// Need to make a copy here, otherwise it may refer to some other index when the task actually runs.

@@ -127,7 +127,7 @@ namespace Pathfinding {
 			// This modifier only supports ABPaths (doesn't make much sense for other paths anyway)
 			if (p == null || p.vectorPath.Count == 0) return;
 
-			bool singleNode = false;
+			var singleNode = false;
 
 			if (p.vectorPath.Count == 1 && !addPoints) {
 				// Duplicate first point
@@ -140,8 +140,8 @@ namespace Pathfinding {
 			// Which connection the start/end point was on (only used for the Connection mode)
 			int closestStartConnection, closestEndConnection;
 
-			Vector3 pStart = Snap(p, exactStartPoint, true, out forceAddStartPoint, out closestStartConnection);
-			Vector3 pEnd = Snap(p, exactEndPoint, false, out forceAddEndPoint, out closestEndConnection);
+			var pStart = Snap(p, exactStartPoint, true, out forceAddStartPoint, out closestStartConnection);
+			var pEnd = Snap(p, exactEndPoint, false, out forceAddEndPoint, out closestEndConnection);
 
 			// This is a special case when the path is only a single node and the Connection mode is used.
 			// (forceAddStartPoint/forceAddEndPoint is only used for the Connection mode)
@@ -230,7 +230,7 @@ namespace Pathfinding {
 					// Loop through all neighbours
 					// Do it in reverse order because the length of the connectionBuffer
 					// will change during iteration
-					for (int i = connectionBuffer.Count - 1; i >= 0; i--) {
+					for (var i = connectionBuffer.Count - 1; i >= 0; i--) {
 						var neighbour = connectionBuffer[i];
 						if (!path.CanTraverse(neighbour)) continue;
 
@@ -261,7 +261,7 @@ namespace Pathfinding {
 		}
 
 		protected Vector3 GetClampedPoint (Vector3 from, Vector3 to, GraphNode hint) {
-			Vector3 point = to;
+			var point = to;
 			RaycastHit hit;
 
 			if (useRaycasting && Physics.Linecast(from, to, out hit, mask)) {

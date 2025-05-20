@@ -20,10 +20,10 @@ public class QuitButton : MonoBehaviour
 #if UNITY_EDITOR
     void Reset()
     {
-        if (!TryGetComponent<Button>(out Button button)){
+        if (!TryGetComponent<Button>(out var button)){
             return;
         }
-        for(int i = 0; i < button.onClick.GetPersistentEventCount(); i++){
+        for(var i = 0; i < button.onClick.GetPersistentEventCount(); i++){
             if (button.onClick.GetPersistentMethodName(i) == "Play"){
                 return;
             }

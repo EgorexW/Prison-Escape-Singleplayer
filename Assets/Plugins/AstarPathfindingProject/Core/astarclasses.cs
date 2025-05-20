@@ -46,7 +46,7 @@ namespace Pathfinding {
 		public static int ColorHash () {
 			var hash = SolidColor.GetHashCode() ^ UnwalkableNode.GetHashCode() ^ BoundsHandles.GetHashCode() ^ ConnectionLowLerp.GetHashCode() ^ ConnectionHighLerp.GetHashCode() ^ MeshEdgeColor.GetHashCode();
 
-			for (int i = 0; i < AreaColors.Length; i++) hash = 7*hash ^ AreaColors[i].GetHashCode();
+			for (var i = 0; i < AreaColors.Length; i++) hash = 7*hash ^ AreaColors[i].GetHashCode();
 			return hash;
 		}
 
@@ -661,8 +661,8 @@ namespace Pathfinding {
 			if (trackChangedNodes) {
 				if (changedNodes == null) return;
 
-				int counter = 0;
-				for (int i = 0; i < changedNodes.Count; i++) {
+				var counter = 0;
+				for (var i = 0; i < changedNodes.Count; i++) {
 					changedNodes[i].Penalty = backupData[counter];
 					counter++;
 					// Restore the flags, but not the HierarchicalNodeIndex as that could screw up some internal datastructures
@@ -851,10 +851,10 @@ namespace Pathfinding {
 
 		/// <summary>Draws some debug lines representing the rect</summary>
 		public void DebugDraw (GraphTransform transform, Color color) {
-			Vector3 p1 = transform.Transform(new Vector3(xmin, 0, ymin));
-			Vector3 p2 = transform.Transform(new Vector3(xmin, 0, ymax));
-			Vector3 p3 = transform.Transform(new Vector3(xmax, 0, ymax));
-			Vector3 p4 = transform.Transform(new Vector3(xmax, 0, ymin));
+			var p1 = transform.Transform(new Vector3(xmin, 0, ymin));
+			var p2 = transform.Transform(new Vector3(xmin, 0, ymax));
+			var p3 = transform.Transform(new Vector3(xmax, 0, ymax));
+			var p4 = transform.Transform(new Vector3(xmax, 0, ymin));
 
 			Debug.DrawLine(p1, p2, color);
 			Debug.DrawLine(p2, p3, color);

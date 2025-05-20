@@ -36,7 +36,7 @@ public class ObjectWithValue<T> : ObjectWithValue, IComparable<ObjectWithValue<T
         return (int)o.value;
     }
     public static ObjectWithValue<T>[] CopyArray(ObjectWithValue<T>[] array){
-        List<ObjectWithValue<T>> list = new List<ObjectWithValue<T>>();
+        var list = new List<ObjectWithValue<T>>();
         foreach (var item in array)
         {
             list.Add(new ObjectWithValue<T>(item));

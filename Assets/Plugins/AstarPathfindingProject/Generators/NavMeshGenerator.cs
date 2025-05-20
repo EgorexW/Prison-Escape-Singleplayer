@@ -110,7 +110,7 @@ namespace Pathfinding {
 		}
 
 		public static void UpdateArea (GraphUpdateObject o, INavmeshHolder graph) {
-			Bounds bounds = graph.transform.InverseTransform(o.bounds);
+			var bounds = graph.transform.InverseTransform(o.bounds);
 
 			// Bounding rectangle with integer coordinates
 			var irect = new IntRect(
@@ -133,16 +133,16 @@ namespace Pathfinding {
 			graph.GetNodes(_node => {
 				var node = _node as TriangleMeshNode;
 
-				bool inside = false;
+				var inside = false;
 
-				int allLeft = 0;
-				int allRight = 0;
-				int allTop = 0;
-				int allBottom = 0;
+				var allLeft = 0;
+				var allRight = 0;
+				var allTop = 0;
+				var allBottom = 0;
 
 				// Check bounding box rect in XZ plane
-				for (int v = 0; v < 3; v++) {
-					Int3 p = node.GetVertexInGraphSpace(v);
+				for (var v = 0; v < 3; v++) {
+					var p = node.GetVertexInGraphSpace(v);
 
 					if (irect.Contains(p.x, p.z)) {
 						inside = true;
@@ -160,11 +160,11 @@ namespace Pathfinding {
 				}
 
 				// Check if the polygon edges intersect the bounding rect
-				for (int v = 0; v < 3; v++) {
-					int v2 = v > 1 ? 0 : v+1;
+				for (var v = 0; v < 3; v++) {
+					var v2 = v > 1 ? 0 : v+1;
 
-					Int3 vert1 = node.GetVertexInGraphSpace(v);
-					Int3 vert2 = node.GetVertexInGraphSpace(v2);
+					var vert1 = node.GetVertexInGraphSpace(v);
+					var vert2 = node.GetVertexInGraphSpace(v2);
 
 					if (VectorMath.SegmentsIntersectXZ(a, b, vert1, vert2)) { inside = true; break; }
 					if (VectorMath.SegmentsIntersectXZ(a, c, vert1, vert2)) { inside = true; break; }
@@ -181,12 +181,12 @@ namespace Pathfinding {
 					return;
 				}
 
-				int allAbove = 0;
-				int allBelow = 0;
+				var allAbove = 0;
+				var allBelow = 0;
 
 				// Check y coordinate
-				for (int v = 0; v < 3; v++) {
-					Int3 p = node.GetVertexInGraphSpace(v);
+				for (var v = 0; v < 3; v++) {
+					var p = node.GetVertexInGraphSpace(v);
 					if (p.y < ymin) allBelow++;
 					if (p.y > ymax) allAbove++;
 				}
@@ -204,7 +204,7 @@ namespace Pathfinding {
 		/// <summary>Scans the graph using the path to an .obj mesh</summary>
 		[System.Obsolete("Set the mesh to ObjImporter.ImportFile(...) and scan the graph the normal way instead")]
 		public void ScanInternal (string objMeshPath) {
-			Mesh mesh = ObjImporter.ImportFile(objMeshPath);
+			var mesh = ObjImporter.ImportFile(objMeshPath);
 
 			if (mesh == null) {
 				Debug.LogError("Couldn't read .obj file at '"+objMeshPath+"'");
@@ -232,13 +232,13 @@ namespace Pathfinding {
 			yield return new Progress(0.0f, "Transforming Vertices");
 
 			forcedBoundsSize = sourceMesh.bounds.size * scale;
-			Vector3[] vectorVertices = sourceMesh.vertices;
+			var vectorVertices = sourceMesh.vertices;
 			var intVertices = ListPool<Int3>.Claim(vectorVertices.Length);
 			var matrix = Matrix4x4.TRS(-sourceMesh.bounds.min * scale, Quaternion.identity, Vector3.one * scale);
 			// Convert the vertices to integer coordinates and also position them in graph space
 			// so that the minimum of the bounding box of the mesh is at the origin
 			// (the vertices will later be transformed to world space)
-			for (int i = 0; i < vectorVertices.Length; i++) {
+			for (var i = 0; i < vectorVertices.Length; i++) {
 				intVertices.Add((Int3)matrix.MultiplyPoint3x4(vectorVertices[i]));
 			}
 

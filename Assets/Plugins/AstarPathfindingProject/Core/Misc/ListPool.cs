@@ -52,7 +52,7 @@ namespace Pathfinding.Util {
 #else
 			lock (pool) {
 				if (pool.Count > 0) {
-					List<T> ls = pool[pool.Count-1];
+					var ls = pool[pool.Count-1];
 					pool.RemoveAt(pool.Count-1);
 					inPool.Remove(ls);
 					return ls;
@@ -70,9 +70,9 @@ namespace Pathfinding.Util {
 			// Otherwise take the largest one or if there are no lists in the pool
 			// then allocate a new one with the desired capacity
 			List<T> list = null;
-			int listIndex = -1;
+			var listIndex = -1;
 
-			for (int i = 0; i < pool.Count && i < MaxCapacitySearchLength; i++) {
+			for (var i = 0; i < pool.Count && i < MaxCapacitySearchLength; i++) {
 				// ith last item
 				var candidate = pool[pool.Count-1-i];
 
@@ -135,8 +135,8 @@ namespace Pathfinding.Util {
 		public static void Warmup (int count, int size) {
 			lock (pool) {
 				var tmp = new List<T>[count];
-				for (int i = 0; i < count; i++) tmp[i] = Claim(size);
-				for (int i = 0; i < count; i++) Release(tmp[i]);
+				for (var i = 0; i < count; i++) tmp[i] = Claim(size);
+				for (var i = 0; i < count; i++) Release(tmp[i]);
 			}
 		}
 

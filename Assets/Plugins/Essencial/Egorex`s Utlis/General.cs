@@ -60,7 +60,7 @@ public class General : MonoBehaviour
     }
     public static float GetAngleFromVector(Vector2 dir){
         dir = dir.normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (angle < 0){
             angle += 360;
         }
@@ -75,7 +75,7 @@ public class General : MonoBehaviour
     public static Vector3 GetMouseWorldPos(Vector3 mousePos)
     {
         Debug.Assert(Camera.main != null, "Camera.main == null");
-        Vector3 pos = Camera.main.ScreenToWorldPoint(mousePos);
+        var pos = Camera.main.ScreenToWorldPoint(mousePos);
         pos.z = 0;
         return pos;
     }
@@ -96,10 +96,10 @@ public class General : MonoBehaviour
         action.Invoke();
     }
     public static string TimeToString(float nr){
-        int minutes = Mathf.FloorToInt(nr/60);
-        float seconds = nr - minutes * 60;
+        var minutes = Mathf.FloorToInt(nr/60);
+        var seconds = nr - minutes * 60;
         seconds = Mathf.Round(seconds);
-        string text = minutes + ":" + seconds;
+        var text = minutes + ":" + seconds;
         if (seconds < 10){
             text = minutes + ":0" + seconds; 
         }
@@ -135,13 +135,13 @@ public class General : MonoBehaviour
     }
     public static void WorldText(string text, Vector2 pos, float size, float time, Color color)
     {
-        GameObject gameObject = new GameObject("WorldText"){
+        var gameObject = new GameObject("WorldText"){
             transform ={
                 position = pos
             },
             hideFlags = HideFlags.HideInHierarchy
         };
-        TextMeshPro textMeshPro = gameObject.AddComponent<TextMeshPro>();
+        var textMeshPro = gameObject.AddComponent<TextMeshPro>();
         textMeshPro.color = color;
         textMeshPro.text = text;
         textMeshPro.fontSize = size;
@@ -160,14 +160,14 @@ public class General : MonoBehaviour
             Debug.Assert(!mustBeFound || localComponent != null, typeof(TComponent) + " is null", transform);
             return localComponent;
         }
-        TComponent component = objectRoot.GetRootComponent<TComponent>();
+        var component = objectRoot.GetRootComponent<TComponent>();
         Debug.Assert(!mustBeFound || component != null, typeof(TComponent) + " is null", transform);
         return component;
     }
 
     public static ObjectRoot GetObjectRoot(Transform transform, bool mustBeFound = true)
     {
-        Transform checkedTransform = transform;
+        var checkedTransform = transform;
         ObjectRoot objectRoot;
         while (true){
             if (checkedTransform.TryGetComponent(out objectRoot)){

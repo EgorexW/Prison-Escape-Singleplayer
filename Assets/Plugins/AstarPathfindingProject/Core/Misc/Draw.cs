@@ -14,7 +14,7 @@ namespace Pathfinding.Util {
 		}
 
 		public void Polyline (System.Collections.Generic.List<Vector3> points, Color color, bool cycle = false) {
-			for (int i = 0; i < points.Count - 1; i++) {
+			for (var i = 0; i < points.Count - 1; i++) {
 				Line(points[i], points[i+1], color);
 			}
 			if (cycle && points.Count > 1) Line(points[points.Count - 1], points[0], color);
@@ -27,16 +27,16 @@ namespace Pathfinding.Util {
 		}
 
 		public void CircleXZ (Vector3 center, float radius, Color color, float startAngle = 0f, float endAngle = 2*Mathf.PI) {
-			int steps = 40;
+			var steps = 40;
 
 #if UNITY_EDITOR
 			if (gizmos) steps = (int)Mathf.Clamp(Mathf.Sqrt(radius / UnityEditor.HandleUtility.GetHandleSize((UnityEngine.Gizmos.matrix * matrix).MultiplyPoint3x4(center))) * 25, 4, 40);
 #endif
 			while (startAngle > endAngle) startAngle -= 2*Mathf.PI;
 
-			Vector3 prev = new Vector3(Mathf.Cos(startAngle)*radius, 0, Mathf.Sin(startAngle)*radius);
-			for (int i = 0; i <= steps; i++) {
-				Vector3 c = new Vector3(Mathf.Cos(Mathf.Lerp(startAngle, endAngle, i/(float)steps))*radius, 0, Mathf.Sin(Mathf.Lerp(startAngle, endAngle, i/(float)steps))*radius);
+			var prev = new Vector3(Mathf.Cos(startAngle)*radius, 0, Mathf.Sin(startAngle)*radius);
+			for (var i = 0; i <= steps; i++) {
+				var c = new Vector3(Mathf.Cos(Mathf.Lerp(startAngle, endAngle, i/(float)steps))*radius, 0, Mathf.Sin(Mathf.Lerp(startAngle, endAngle, i/(float)steps))*radius);
 				Line(center + prev, center + c, color);
 				prev = c;
 			}
@@ -66,23 +66,23 @@ namespace Pathfinding.Util {
 		}
 
 		public void Bezier (Vector3 a, Vector3 b, Color color) {
-			Vector3 dir = b - a;
+			var dir = b - a;
 
 			if (dir == Vector3.zero) return;
 
-			Vector3 normal = Vector3.Cross(Vector3.up, dir);
-			Vector3 normalUp = Vector3.Cross(dir, normal);
+			var normal = Vector3.Cross(Vector3.up, dir);
+			var normalUp = Vector3.Cross(dir, normal);
 
 			normalUp = normalUp.normalized;
 			normalUp *= dir.magnitude*0.1f;
 
-			Vector3 p1c = a + normalUp;
-			Vector3 p2c = b + normalUp;
+			var p1c = a + normalUp;
+			var p2c = b + normalUp;
 
-			Vector3 prev = a;
-			for (int i = 1; i <= 20; i++) {
-				float t = i/20.0f;
-				Vector3 p = AstarSplines.CubicBezier(a, p1c, p2c, b, t);
+			var prev = a;
+			for (var i = 1; i <= 20; i++) {
+				var t = i/20.0f;
+				var p = AstarSplines.CubicBezier(a, p1c, p2c, b, t);
 				Line(prev, p, color);
 				prev = p;
 			}

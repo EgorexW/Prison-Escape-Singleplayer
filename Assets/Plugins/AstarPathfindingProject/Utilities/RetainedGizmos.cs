@@ -134,7 +134,7 @@ namespace Pathfinding.Util {
 			}
 
 			void SubmitMeshes (RetainedGizmos gizmos, ulong hash) {
-				for (int i = 0; i < meshes.Count; i++) {
+				for (var i = 0; i < meshes.Count; i++) {
 					gizmos.meshes.Add(new MeshWithHash { hash = hash, mesh = meshes[i], lines = false });
 					gizmos.existingHashes.Add(hash);
 				}
@@ -143,12 +143,12 @@ namespace Pathfinding.Util {
 			void SubmitLines (RetainedGizmos gizmos, ulong hash) {
 				// Unity only supports 65535 vertices per mesh. 65532 used because MaxLineEndPointsPerBatch needs to be even.
 				const int MaxLineEndPointsPerBatch = 65532/2;
-				int batches = (lines.Count + MaxLineEndPointsPerBatch - 1)/MaxLineEndPointsPerBatch;
+				var batches = (lines.Count + MaxLineEndPointsPerBatch - 1)/MaxLineEndPointsPerBatch;
 
-				for (int batch = 0; batch < batches; batch++) {
-					int startIndex = MaxLineEndPointsPerBatch * batch;
-					int endIndex = Mathf.Min(startIndex + MaxLineEndPointsPerBatch, lines.Count);
-					int lineEndPointCount = endIndex - startIndex;
+				for (var batch = 0; batch < batches; batch++) {
+					var startIndex = MaxLineEndPointsPerBatch * batch;
+					var endIndex = Mathf.Min(startIndex + MaxLineEndPointsPerBatch, lines.Count);
+					var lineEndPointCount = endIndex - startIndex;
 					UnityEngine.Assertions.Assert.IsTrue(lineEndPointCount % 2 == 0);
 
 					// Use pooled lists to avoid excessive allocations
@@ -159,7 +159,7 @@ namespace Pathfinding.Util {
 					var tris = ListPool<int>.Claim(lineEndPointCount*3);
 					// Loop through each endpoint of the lines
 					// and add 2 vertices for each
-					for (int j = startIndex; j < endIndex; j++) {
+					for (var j = startIndex; j < endIndex; j++) {
 						var vertex = (Vector3)lines[j];
 						vertices.Add(vertex);
 						vertices.Add(vertex);
@@ -173,7 +173,7 @@ namespace Pathfinding.Util {
 
 					// Loop through each line and add
 					// one normal for each vertex
-					for (int j = startIndex; j < endIndex; j += 2) {
+					for (var j = startIndex; j < endIndex; j += 2) {
 						var lineDir = (Vector3)(lines[j+1] - lines[j]);
 						// Store the line direction in the normals.
 						// A line consists of 4 vertices. The line direction will be used to
@@ -297,7 +297,7 @@ namespace Pathfinding.Util {
 		/// Also draws any new meshes that have been added since FinalizeDraw was last called.
 		/// </summary>
 		public void DrawExisting () {
-			for (int i = 0; i < meshes.Count; i++) {
+			for (var i = 0; i < meshes.Count; i++) {
 				usedHashes.Add(meshes[i].hash);
 			}
 		}
@@ -320,11 +320,11 @@ namespace Pathfinding.Util {
 
 			Profiler.BeginSample("Draw Retained Gizmos");
 			// First surfaces, then lines
-			for (int matIndex = 0; matIndex <= 1; matIndex++) {
+			for (var matIndex = 0; matIndex <= 1; matIndex++) {
 				var mat = matIndex == 0 ? surfaceMaterial : lineMaterial;
-				for (int pass = 0; pass < mat.passCount; pass++) {
+				for (var pass = 0; pass < mat.passCount; pass++) {
 					mat.SetPass(pass);
-					for (int i = 0; i < meshes.Count; i++) {
+					for (var i = 0; i < meshes.Count; i++) {
 						if (meshes[i].lines == (mat == lineMaterial) && GeometryUtility.TestPlanesAABB(planes, meshes[i].mesh.bounds)) {
 							Graphics.DrawMeshNow(meshes[i].mesh, Matrix4x4.identity);
 						}

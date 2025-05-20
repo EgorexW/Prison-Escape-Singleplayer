@@ -24,10 +24,10 @@ public class RoomChooser : SerializedMonoBehaviour
         List<Room> rooms = new();
         Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
-        int roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
+        var roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
         var optionalRoomsLeft = new Dictionary<Room, int>(optionalRooms);
         while (rooms.Count < roomsNr){
-            Room optionalRoom = optionalRoomsLeft.WeightedRandom();
+            var optionalRoom = optionalRoomsLeft.WeightedRandom();
             rooms.Add(optionalRoom);
             optionalRoomsLeft[optionalRoom]--;
         }
@@ -36,12 +36,12 @@ public class RoomChooser : SerializedMonoBehaviour
         }
         rooms.Shuffle();
         spawners.Shuffle();
-        int nr = 0;
+        var nr = 0;
         while (rooms.Count > 0)
         {   
-            Room room = rooms[0];  
-            bool matched = false;     
-            foreach (RoomSpawner spawner in spawners.ToArray())
+            var room = rooms[0];  
+            var matched = false;     
+            foreach (var spawner in spawners.ToArray())
             {
                 if (!spawner.HasTraits(room.traits)){
                     continue;
@@ -55,7 +55,7 @@ public class RoomChooser : SerializedMonoBehaviour
             if (matched){
                 continue;
             }
-            foreach (RoomSpawner spawner in matchedRoomsWithSpawners.Keys.ToArray())
+            foreach (var spawner in matchedRoomsWithSpawners.Keys.ToArray())
             {
                 if (!spawner.HasTraits(room.traits)){
                     continue;

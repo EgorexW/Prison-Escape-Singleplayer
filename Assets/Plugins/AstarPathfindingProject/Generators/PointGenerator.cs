@@ -137,7 +137,7 @@ namespace Pathfinding {
 		public override void GetNodes (System.Action<GraphNode> action) {
 			if (nodes == null) return;
 			var count = nodeCount;
-			for (int i = 0; i < count; i++) action(nodes[i]);
+			for (var i = 0; i < count; i++) action(nodes[i]);
 		}
 
 		public override NNInfoInternal GetNearest (Vector3 position, NNConstraint constraint, GraphNode hint) {
@@ -153,16 +153,16 @@ namespace Pathfinding {
 			var iposition = (Int3)position;
 
 
-			float maxDistSqr = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistanceSqr : float.PositiveInfinity;
+			var maxDistSqr = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistanceSqr : float.PositiveInfinity;
 			maxDistSqr *= Int3.FloatPrecision * Int3.FloatPrecision;
 
 			var nnInfo = new NNInfoInternal(null);
-			long minDist = long.MaxValue;
-			long minConstDist = long.MaxValue;
+			var minDist = long.MaxValue;
+			var minConstDist = long.MaxValue;
 
-			for (int i = 0; i < nodeCount; i++) {
-				PointNode node = nodes[i];
-				long dist = (iposition - node.position).sqrMagnitudeLong;
+			for (var i = 0; i < nodeCount; i++) {
+				var node = nodes[i];
+				var dist = (iposition - node.position).sqrMagnitudeLong;
 
 				if (dist < minDist) {
 					minDist = dist;
@@ -188,7 +188,7 @@ namespace Pathfinding {
 			var bestDist = float.PositiveInfinity;
 
 			if (conns != null) {
-				for (int i = 0; i < conns.Length; i++) {
+				for (var i = 0; i < conns.Length; i++) {
 					var connectionMidpoint = ((UnityEngine.Vector3)conns[i].node.position + nodePos) * 0.5f;
 					var closestPoint = VectorMath.ClosestPointOnSegment(nodePos, connectionMidpoint, position);
 					var dist = (closestPoint - position).sqrMagnitude;
@@ -269,7 +269,7 @@ namespace Pathfinding {
 
 		/// <summary>Recursively counds children of a transform</summary>
 		protected static int CountChildren (Transform tr) {
-			int c = 0;
+			var c = 0;
 
 			foreach (Transform child in tr) {
 				c++;
@@ -337,7 +337,7 @@ namespace Pathfinding {
 		protected virtual PointNode[] CreateNodes (int count) {
 			var nodes = new PointNode[count];
 
-			for (int i = 0; i < nodeCount; i++) nodes[i] = new PointNode(active);
+			for (var i = 0; i < nodeCount; i++) nodes[i] = new PointNode(active);
 			return nodes;
 		}
 
@@ -346,7 +346,7 @@ namespace Pathfinding {
 
 			if (root == null) {
 				// If there is no root object, try to find nodes with the specified tag instead
-				GameObject[] gos = searchTag != null? GameObject.FindGameObjectsWithTag(searchTag) : null;
+				var gos = searchTag != null? GameObject.FindGameObjectsWithTag(searchTag) : null;
 
 				if (gos == null) {
 					nodes = new PointNode[0];
@@ -358,7 +358,7 @@ namespace Pathfinding {
 					nodeCount = gos.Length;
 					nodes = CreateNodes(nodeCount);
 
-					for (int i = 0; i < gos.Length; i++) {
+					for (var i = 0; i < gos.Length; i++) {
 						nodes[i].position = (Int3)gos[i].transform.position;
 						nodes[i].Walkable = true;
 						nodes[i].gameObject = gos[i].gameObject;
@@ -370,7 +370,7 @@ namespace Pathfinding {
 					nodeCount = root.childCount;
 					nodes = CreateNodes(nodeCount);
 
-					int c = 0;
+					var c = 0;
 					foreach (Transform child in root) {
 						nodes[c].position = (Int3)child.position;
 						nodes[c].Walkable = true;
@@ -382,7 +382,7 @@ namespace Pathfinding {
 					nodeCount = CountChildren(root);
 					nodes = CreateNodes(nodeCount);
 
-					int startID = 0;
+					var startID = 0;
 					AddChildren(ref startID, root);
 				}
 			}
@@ -426,7 +426,7 @@ namespace Pathfinding {
 				const int YieldEveryNNodes = 512;
 
 				// Loop through all nodes and add connections to other nodes
-				for (int i = 0; i < nodeCount; i++) {
+				for (var i = 0; i < nodeCount; i++) {
 					if (i % YieldEveryNNodes == 0) {
 						yield return new Progress(i/(float)nodeCount, "Connecting nodes");
 					}
@@ -434,10 +434,10 @@ namespace Pathfinding {
 					connections.Clear();
 					var node = nodes[i];
 					// Only brute force is available in the free version
-					for (int j = 0; j < nodeCount; j++) {
+					for (var j = 0; j < nodeCount; j++) {
 						if (i == j) continue;
 
-						PointNode other = nodes[j];
+						var other = nodes[j];
 						float dist;
 						if (IsValidConnection(node, other, out dist)) {
 							connections.Add(new Connection(
@@ -513,8 +513,8 @@ namespace Pathfinding {
 			if (root != null) {
 				DrawChildren(this, root);
 			} else if (!string.IsNullOrEmpty(searchTag)) {
-				GameObject[] gos = GameObject.FindGameObjectsWithTag(searchTag);
-				for (int i = 0; i < gos.Length; i++) {
+				var gos = GameObject.FindGameObjectsWithTag(searchTag);
+				for (var i = 0; i < gos.Length; i++) {
 					Gizmos.DrawCube(gos[i].transform.position, Vector3.one*UnityEditor.HandleUtility.GetHandleSize(gos[i].transform.position)*0.1F);
 				}
 			}
@@ -560,7 +560,7 @@ namespace Pathfinding {
 
 			// Length prefixed array of nodes
 			ctx.writer.Write(nodeCount);
-			for (int i = 0; i < nodeCount; i++) {
+			for (var i = 0; i < nodeCount; i++) {
 				// -1 indicates a null field
 				if (nodes[i] == null) ctx.writer.Write(-1);
 				else {
@@ -571,7 +571,7 @@ namespace Pathfinding {
 		}
 
 		protected override void DeserializeExtraInfo (GraphSerializationContext ctx) {
-			int count = ctx.reader.ReadInt32();
+			var count = ctx.reader.ReadInt32();
 
 			if (count == -1) {
 				nodes = null;
@@ -581,7 +581,7 @@ namespace Pathfinding {
 			nodes = new PointNode[count];
 			nodeCount = count;
 
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				if (ctx.reader.ReadInt32() == -1) continue;
 				nodes[i] = new PointNode(active);
 				nodes[i].DeserializeNode(ctx);

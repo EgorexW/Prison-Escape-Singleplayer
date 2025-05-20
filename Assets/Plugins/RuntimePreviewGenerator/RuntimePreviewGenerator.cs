@@ -190,7 +190,7 @@ public static class RuntimePreviewGenerator
 	private static Texture2D GenerateMaterialPreviewInternal( Material material, PrimitiveType previewPrimitive, Shader shader, string replacementTag, int width, int height )
 #endif
 	{
-		GameObject previewModel = GameObject.CreatePrimitive( previewPrimitive );
+		var previewModel = GameObject.CreatePrimitive( previewPrimitive );
 		previewModel.gameObject.hideFlags = HideFlags.HideAndDontSave;
 		previewModel.GetComponent<Renderer>().sharedMaterial = material;
 
@@ -271,13 +271,13 @@ public static class RuntimePreviewGenerator
 			GetLayerRecursively( previewObject );
 		}
 
-		bool isStatic = IsStatic( model );
-		bool wasActive = previewObject.gameObject.activeSelf;
-		Vector3 prevPos = previewObject.position;
-		Quaternion prevRot = previewObject.rotation;
+		var isStatic = IsStatic( model );
+		var wasActive = previewObject.gameObject.activeSelf;
+		var prevPos = previewObject.position;
+		var prevRot = previewObject.rotation;
 
 #if UNITY_2018_2_OR_NEWER
-		bool asyncOperationStarted = false;
+		var asyncOperationStarted = false;
 #endif
 
 #if DEBUG_BOUNDS
@@ -298,8 +298,8 @@ public static class RuntimePreviewGenerator
 			if( !wasActive )
 				previewObject.gameObject.SetActive( true );
 
-			Quaternion cameraRotation = Quaternion.LookRotation( previewObject.rotation * m_previewDirection, previewObject.up );
-			Bounds previewBounds = new Bounds();
+			var cameraRotation = Quaternion.LookRotation( previewObject.rotation * m_previewDirection, previewObject.up );
+			var previewBounds = new Bounds();
 			if( !CalculateBounds( previewObject, shouldIgnoreParticleSystems, cameraRotation, out previewBounds ) )
 			{
 #if UNITY_2018_2_OR_NEWER
@@ -337,12 +337,12 @@ public static class RuntimePreviewGenerator
 
 			renderCamera.farClipPlane = ( renderCamera.transform.position - previewBounds.center ).magnitude + ( m_useLocalBounds ? ( previewBounds.extents.z * 1.01f ) : previewBounds.size.magnitude );
 
-			RenderTexture activeRT = RenderTexture.active;
+			var activeRT = RenderTexture.active;
 			RenderTexture renderTexture = null;
 			try
 			{
-				int supersampledWidth = Mathf.RoundToInt( width * m_renderSupersampling );
-				int supersampledHeight = Mathf.RoundToInt( height * m_renderSupersampling );
+				var supersampledWidth = Mathf.RoundToInt( width * m_renderSupersampling );
+				var supersampledHeight = Mathf.RoundToInt( height * m_renderSupersampling );
 
 				renderTexture = RenderTexture.GetTemporary( supersampledWidth, supersampledHeight, 16 );
 				RenderTexture.active = renderTexture;
@@ -394,7 +394,7 @@ public static class RuntimePreviewGenerator
 							{
 								Debug.LogWarning( "Async thumbnail request failed, falling back to conventional method" );
 
-								RenderTexture _activeRT = RenderTexture.active;
+								var _activeRT = RenderTexture.active;
 								try
 								{
 									RenderTexture.active = renderTexture;
@@ -465,7 +465,7 @@ public static class RuntimePreviewGenerator
 					previewObject.rotation = prevRot;
 				}
 
-				int index = 0;
+				var index = 0;
 				SetLayerRecursively( previewObject, ref index );
 			}
 
@@ -487,13 +487,13 @@ public static class RuntimePreviewGenerator
 		renderersList.Clear();
 		target.GetComponentsInChildren( renderersList );
 
-		Quaternion inverseCameraRotation = Quaternion.Inverse( cameraRotation );
-		Vector3 localBoundsMin = new Vector3( float.MaxValue - 1f, float.MaxValue - 1f, float.MaxValue - 1f );
-		Vector3 localBoundsMax = new Vector3( float.MinValue + 1f, float.MinValue + 1f, float.MinValue + 1f );
+		var inverseCameraRotation = Quaternion.Inverse( cameraRotation );
+		var localBoundsMin = new Vector3( float.MaxValue - 1f, float.MaxValue - 1f, float.MaxValue - 1f );
+		var localBoundsMax = new Vector3( float.MinValue + 1f, float.MinValue + 1f, float.MinValue + 1f );
 
 		bounds = new Bounds();
-		bool hasBounds = false;
-		for( int i = 0; i < renderersList.Count; i++ )
+		var hasBounds = false;
+		for( var i = 0; i < renderersList.Count; i++ )
 		{
 			if( !renderersList[i].enabled )
 				continue;
@@ -505,7 +505,7 @@ public static class RuntimePreviewGenerator
 			if( m_useLocalBounds )
 			{
 #if UNITY_2021_2_OR_NEWER
-				Bounds localBounds = renderersList[i].localBounds;
+				var localBounds = renderersList[i].localBounds;
 #else
 				MeshFilter meshFilter = renderersList[i].GetComponent<MeshFilter>();
 				if( !meshFilter || !meshFilter.sharedMesh )
@@ -514,17 +514,17 @@ public static class RuntimePreviewGenerator
 				Bounds localBounds = meshFilter.sharedMesh.bounds;
 #endif
 
-				Transform transform = renderersList[i].transform;
+				var transform = renderersList[i].transform;
 				localBoundsMinMax[0] = localBounds.min;
 				localBoundsMinMax[1] = localBounds.max;
 
-				for( int x = 0; x < 2; x++ )
+				for( var x = 0; x < 2; x++ )
 				{
-					for( int y = 0; y < 2; y++ )
+					for( var y = 0; y < 2; y++ )
 					{
-						for( int z = 0; z < 2; z++ )
+						for( var z = 0; z < 2; z++ )
 						{
-							Vector3 point = inverseCameraRotation * transform.TransformPoint( new Vector3( localBoundsMinMax[x].x, localBoundsMinMax[y].y, localBoundsMinMax[z].z ) );
+							var point = inverseCameraRotation * transform.TransformPoint( new Vector3( localBoundsMinMax[x].x, localBoundsMinMax[y].y, localBoundsMinMax[z].z ) );
 							localBoundsMin = Vector3.Min( localBoundsMin, point );
 							localBoundsMax = Vector3.Max( localBoundsMax, point );
 						}
@@ -551,23 +551,23 @@ public static class RuntimePreviewGenerator
 	// Moves camera in a way such that it will encapsulate bounds perfectly
 	public static void CalculateCameraPosition( Camera camera, Bounds bounds, float padding = 0f )
 	{
-		Transform cameraTR = camera.transform;
+		var cameraTR = camera.transform;
 
-		Vector3 cameraDirection = cameraTR.forward;
-		float aspect = camera.aspect;
+		var cameraDirection = cameraTR.forward;
+		var aspect = camera.aspect;
 
 		if( padding != 0f )
 			bounds.size *= 1f + padding * 2f; // Padding applied to both edges, hence multiplied by 2
 
-		Vector3 boundsCenter = bounds.center;
-		Vector3 boundsExtents = bounds.extents;
-		Vector3 boundsSize = 2f * boundsExtents;
+		var boundsCenter = bounds.center;
+		var boundsExtents = bounds.extents;
+		var boundsSize = 2f * boundsExtents;
 
 		// Calculate corner points of the Bounds
 		if( m_useLocalBounds )
 		{
-			Matrix4x4 localBoundsMatrix = Matrix4x4.TRS( boundsCenter, camera.transform.rotation, Vector3.one );
-			Vector3 point = boundsExtents;
+			var localBoundsMatrix = Matrix4x4.TRS( boundsCenter, camera.transform.rotation, Vector3.one );
+			var point = boundsExtents;
 			boundingBoxPoints[0] = localBoundsMatrix.MultiplyPoint3x4( point );
 			point.x -= boundsSize.x;
 			boundingBoxPoints[1] = localBoundsMatrix.MultiplyPoint3x4( point );
@@ -586,7 +586,7 @@ public static class RuntimePreviewGenerator
 		}
 		else
 		{
-			Vector3 point = boundsCenter + boundsExtents;
+			var point = boundsCenter + boundsExtents;
 			boundingBoxPoints[0] = point;
 			point.x -= boundsSize.x;
 			boundingBoxPoints[1] = point;
@@ -611,9 +611,9 @@ public static class RuntimePreviewGenerator
 			float minX = float.PositiveInfinity, minY = float.PositiveInfinity;
 			float maxX = float.NegativeInfinity, maxY = float.NegativeInfinity;
 
-			for( int i = 0; i < boundingBoxPoints.Length; i++ )
+			for( var i = 0; i < boundingBoxPoints.Length; i++ )
 			{
-				Vector3 localPoint = cameraTR.InverseTransformPoint( boundingBoxPoints[i] );
+				var localPoint = cameraTR.InverseTransformPoint( boundingBoxPoints[i] );
 				if( localPoint.x < minX )
 					minX = localPoint.x;
 				if( localPoint.x > maxX )
@@ -624,7 +624,7 @@ public static class RuntimePreviewGenerator
 					maxY = localPoint.y;
 			}
 
-			float distance = boundsExtents.magnitude + 1f;
+			var distance = boundsExtents.magnitude + 1f;
 			camera.orthographicSize = Mathf.Max( maxY - minY, ( maxX - minX ) / aspect ) * 0.5f;
 			cameraTR.position = boundsCenter - cameraDirection * distance;
 		}
@@ -632,14 +632,14 @@ public static class RuntimePreviewGenerator
 		{
 			Vector3 cameraUp = cameraTR.up, cameraRight = cameraTR.right;
 
-			float verticalFOV = camera.fieldOfView * 0.5f;
-			float horizontalFOV = Mathf.Atan( Mathf.Tan( verticalFOV * Mathf.Deg2Rad ) * aspect ) * Mathf.Rad2Deg;
+			var verticalFOV = camera.fieldOfView * 0.5f;
+			var horizontalFOV = Mathf.Atan( Mathf.Tan( verticalFOV * Mathf.Deg2Rad ) * aspect ) * Mathf.Rad2Deg;
 
 			// Normals of the camera's frustum planes
-			Vector3 topFrustumPlaneNormal = Quaternion.AngleAxis( 90f + verticalFOV, -cameraRight ) * cameraDirection;
-			Vector3 bottomFrustumPlaneNormal = Quaternion.AngleAxis( 90f + verticalFOV, cameraRight ) * cameraDirection;
-			Vector3 rightFrustumPlaneNormal = Quaternion.AngleAxis( 90f + horizontalFOV, cameraUp ) * cameraDirection;
-			Vector3 leftFrustumPlaneNormal = Quaternion.AngleAxis( 90f + horizontalFOV, -cameraUp ) * cameraDirection;
+			var topFrustumPlaneNormal = Quaternion.AngleAxis( 90f + verticalFOV, -cameraRight ) * cameraDirection;
+			var bottomFrustumPlaneNormal = Quaternion.AngleAxis( 90f + verticalFOV, cameraRight ) * cameraDirection;
+			var rightFrustumPlaneNormal = Quaternion.AngleAxis( 90f + horizontalFOV, cameraUp ) * cameraDirection;
+			var leftFrustumPlaneNormal = Quaternion.AngleAxis( 90f + horizontalFOV, -cameraUp ) * cameraDirection;
 
 			// Credit for algorithm: https://stackoverflow.com/a/66113254/2373034
 			// 1. Find edge points of the bounds using the camera's frustum planes
@@ -648,7 +648,7 @@ public static class RuntimePreviewGenerator
 			//    If we move the camera along horizontalIntersection, the bounds will always with the camera's width perfectly (similar effect goes for verticalIntersection)
 			// 4. Find the closest line segment between these two lines (horizontalIntersection and verticalIntersection) and place the camera at the farthest point on that line
 			int leftmostPoint = -1, rightmostPoint = -1, topmostPoint = -1, bottommostPoint = -1;
-			for( int i = 0; i < boundingBoxPoints.Length; i++ )
+			for( var i = 0; i < boundingBoxPoints.Length; i++ )
 			{
 				if( leftmostPoint < 0 && IsOutermostPointInDirection( i, leftFrustumPlaneNormal ) )
 					leftmostPoint = i;
@@ -660,8 +660,8 @@ public static class RuntimePreviewGenerator
 					bottommostPoint = i;
 			}
 
-			Ray horizontalIntersection = GetPlanesIntersection( new Plane( leftFrustumPlaneNormal, boundingBoxPoints[leftmostPoint] ), new Plane( rightFrustumPlaneNormal, boundingBoxPoints[rightmostPoint] ) );
-			Ray verticalIntersection = GetPlanesIntersection( new Plane( topFrustumPlaneNormal, boundingBoxPoints[topmostPoint] ), new Plane( bottomFrustumPlaneNormal, boundingBoxPoints[bottommostPoint] ) );
+			var horizontalIntersection = GetPlanesIntersection( new Plane( leftFrustumPlaneNormal, boundingBoxPoints[leftmostPoint] ), new Plane( rightFrustumPlaneNormal, boundingBoxPoints[rightmostPoint] ) );
+			var verticalIntersection = GetPlanesIntersection( new Plane( topFrustumPlaneNormal, boundingBoxPoints[topmostPoint] ), new Plane( bottomFrustumPlaneNormal, boundingBoxPoints[bottommostPoint] ) );
 
 			Vector3 closestPoint1, closestPoint2;
 			FindClosestPointsOnTwoLines( horizontalIntersection, verticalIntersection, out closestPoint1, out closestPoint2 );
@@ -673,8 +673,8 @@ public static class RuntimePreviewGenerator
 	// Returns whether or not the given point is the outermost point in the given direction among all points of the bounds
 	private static bool IsOutermostPointInDirection( int pointIndex, Vector3 direction )
 	{
-		Vector3 point = boundingBoxPoints[pointIndex];
-		for( int i = 0; i < boundingBoxPoints.Length; i++ )
+		var point = boundingBoxPoints[pointIndex];
+		for( var i = 0; i < boundingBoxPoints.Length; i++ )
 		{
 			if( i != pointIndex && Vector3.Dot( direction, boundingBoxPoints[i] - point ) > 0 )
 				return false;
@@ -687,8 +687,8 @@ public static class RuntimePreviewGenerator
 	// Returns the intersection line of the 2 planes
 	private static Ray GetPlanesIntersection( Plane p1, Plane p2 )
 	{
-		Vector3 p3Normal = Vector3.Cross( p1.normal, p2.normal );
-		float det = p3Normal.sqrMagnitude;
+		var p3Normal = Vector3.Cross( p1.normal, p2.normal );
+		var det = p3Normal.sqrMagnitude;
 
 		return new Ray( ( ( Vector3.Cross( p3Normal, p2.normal ) * p1.distance ) + ( Vector3.Cross( p1.normal, p3Normal ) * p2.distance ) ) / det, p3Normal );
 	}
@@ -697,21 +697,21 @@ public static class RuntimePreviewGenerator
 	// Returns the edge points of the closest line segment between 2 lines
 	private static void FindClosestPointsOnTwoLines( Ray line1, Ray line2, out Vector3 closestPointLine1, out Vector3 closestPointLine2 )
 	{
-		Vector3 line1Direction = line1.direction;
-		Vector3 line2Direction = line2.direction;
+		var line1Direction = line1.direction;
+		var line2Direction = line2.direction;
 
-		float a = Vector3.Dot( line1Direction, line1Direction );
-		float b = Vector3.Dot( line1Direction, line2Direction );
-		float e = Vector3.Dot( line2Direction, line2Direction );
+		var a = Vector3.Dot( line1Direction, line1Direction );
+		var b = Vector3.Dot( line1Direction, line2Direction );
+		var e = Vector3.Dot( line2Direction, line2Direction );
 
-		float d = a * e - b * b;
+		var d = a * e - b * b;
 
-		Vector3 r = line1.origin - line2.origin;
-		float c = Vector3.Dot( line1Direction, r );
-		float f = Vector3.Dot( line2Direction, r );
+		var r = line1.origin - line2.origin;
+		var c = Vector3.Dot( line1Direction, r );
+		var f = Vector3.Dot( line2Direction, r );
 
-		float s = ( b * f - c * e ) / d;
-		float t = ( a * f - c * b ) / d;
+		var s = ( b * f - c * e ) / d;
+		var t = ( a * f - c * b ) / d;
 
 		closestPointLine1 = line1.origin + line1Direction * s;
 		closestPointLine2 = line2.origin + line2Direction * t;
@@ -740,7 +740,7 @@ public static class RuntimePreviewGenerator
 		if( obj.gameObject.isStatic )
 			return true;
 
-		for( int i = 0; i < obj.childCount; i++ )
+		for( var i = 0; i < obj.childCount; i++ )
 		{
 			if( IsStatic( obj.GetChild( i ) ) )
 				return true;
@@ -752,21 +752,21 @@ public static class RuntimePreviewGenerator
 	private static void SetLayerRecursively( Transform obj )
 	{
 		obj.gameObject.layer = PREVIEW_LAYER;
-		for( int i = 0; i < obj.childCount; i++ )
+		for( var i = 0; i < obj.childCount; i++ )
 			SetLayerRecursively( obj.GetChild( i ) );
 	}
 
 	private static void GetLayerRecursively( Transform obj )
 	{
 		layersList.Add( obj.gameObject.layer );
-		for( int i = 0; i < obj.childCount; i++ )
+		for( var i = 0; i < obj.childCount; i++ )
 			GetLayerRecursively( obj.GetChild( i ) );
 	}
 
 	private static void SetLayerRecursively( Transform obj, ref int index )
 	{
 		obj.gameObject.layer = layersList[index++];
-		for( int i = 0; i < obj.childCount; i++ )
+		for( var i = 0; i < obj.childCount; i++ )
 			SetLayerRecursively( obj.GetChild( i ), ref index );
 	}
 }

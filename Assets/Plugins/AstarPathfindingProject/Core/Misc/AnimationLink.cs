@@ -26,13 +26,13 @@ namespace Pathfinding {
 		}
 
 		static Transform SearchRec (Transform tr, string name) {
-			int childCount = tr.childCount;
+			var childCount = tr.childCount;
 
-			for (int i = 0; i < childCount; i++) {
-				Transform ch = tr.GetChild(i);
+			for (var i = 0; i < childCount; i++) {
+				var ch = tr.GetChild(i);
 				if (ch.name == name) return ch;
 				else {
-					Transform rec = SearchRec(ch, name);
+					var rec = SearchRec(ch, name);
 					if (rec != null) return rec;
 				}
 			}
@@ -44,25 +44,25 @@ namespace Pathfinding {
 			endPosition = transform.position;
 			if (referenceMesh == null) return;
 
-			GameObject ob = GameObject.Instantiate(referenceMesh, transform.position, transform.rotation) as GameObject;
+			var ob = GameObject.Instantiate(referenceMesh, transform.position, transform.rotation) as GameObject;
 			ob.hideFlags = HideFlags.HideAndDontSave;
 
-			Transform root = SearchRec(ob.transform, boneRoot);
+			var root = SearchRec(ob.transform, boneRoot);
 			if (root == null) throw new System.Exception("Could not find root transform");
 
-			Animation anim = ob.GetComponent<Animation>();
+			var anim = ob.GetComponent<Animation>();
 			if (anim == null) anim = ob.AddComponent<Animation>();
 
-			for (int i = 0; i < sequence.Length; i++) {
+			for (var i = 0; i < sequence.Length; i++) {
 				anim.AddClip(sequence[i].clip, sequence[i].clip.name);
 			}
 
-			Vector3 prevOffset = Vector3.zero;
-			Vector3 position = transform.position;
-			Vector3 firstOffset = Vector3.zero;
+			var prevOffset = Vector3.zero;
+			var position = transform.position;
+			var firstOffset = Vector3.zero;
 
-			for (int i = 0; i < sequence.Length; i++) {
-				LinkClip c = sequence[i];
+			for (var i = 0; i < sequence.Length; i++) {
+				var c = sequence[i];
 				if (c == null) {
 					endPosition = position;
 					return;
@@ -71,10 +71,10 @@ namespace Pathfinding {
 				anim[c.clip.name].enabled = true;
 				anim[c.clip.name].weight = 1;
 
-				for (int repeat = 0; repeat < c.loopCount; repeat++) {
+				for (var repeat = 0; repeat < c.loopCount; repeat++) {
 					anim[c.clip.name].normalizedTime = 0;
 					anim.Sample();
-					Vector3 soffset = root.position - transform.position;
+					var soffset = root.position - transform.position;
 
 					if (i > 0) {
 						position += prevOffset - soffset;
@@ -82,18 +82,18 @@ namespace Pathfinding {
 						firstOffset = soffset;
 					}
 
-					for (int t = 0; t <= 20; t++) {
-						float tf = t/20.0f;
+					for (var t = 0; t <= 20; t++) {
+						var tf = t/20.0f;
 						anim[c.clip.name].normalizedTime = tf;
 						anim.Sample();
-						Vector3 tmp = position + (root.position-transform.position) + c.velocity*tf*c.clip.length;
+						var tmp = position + (root.position-transform.position) + c.velocity*tf*c.clip.length;
 						trace.Add(tmp);
 					}
 					position = position + c.velocity*1*c.clip.length;
 
 					anim[c.clip.name].normalizedTime = 1;
 					anim.Sample();
-					Vector3 eoffset = root.position - transform.position;
+					var eoffset = root.position - transform.position;
 					prevOffset = eoffset;
 				}
 
@@ -110,11 +110,11 @@ namespace Pathfinding {
 
 		public override void OnDrawGizmosSelected () {
 			base.OnDrawGizmosSelected();
-			List<Vector3> buffer = Pathfinding.Util.ListPool<Vector3>.Claim();
-			Vector3 endPosition = Vector3.zero;
+			var buffer = Pathfinding.Util.ListPool<Vector3>.Claim();
+			var endPosition = Vector3.zero;
 			CalculateOffsets(buffer, out endPosition);
 			Gizmos.color = Color.blue;
-			for (int i = 0; i < buffer.Count-1; i++) {
+			for (var i = 0; i < buffer.Count-1; i++) {
 				Gizmos.DrawLine(buffer[i], buffer[i+1]);
 			}
 		}

@@ -13,7 +13,7 @@ public class SpawnTable : ScriptableObject, IGetGameObject
         if (gameObjects.Count == 0){
             return null;
         }
-        ObjectWithValue<Object> rolledObj = WeightedChance.GetWeightedRoll<Object>(gameObjects);
+        var rolledObj = WeightedChance.GetWeightedRoll<Object>(gameObjects);
         if (rolledObj.Object is GameObject){
             return rolledObj.Object as GameObject;
         }

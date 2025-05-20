@@ -43,7 +43,7 @@ public class CheckPlayerPref : MonoBehaviour
         GetCheck(callback);
     }
     public bool GetCheck(UnityAction<bool> callback = null){
-        bool result = false;
+        var result = false;
         switch (prefType){
             case ObjectType.Int:
                 result = CheckInt();
@@ -67,7 +67,7 @@ public class CheckPlayerPref : MonoBehaviour
         return result;
     }
     public bool CheckInt(){
-        int value = PlayerPrefs.GetInt(prefName, 0);
+        var value = PlayerPrefs.GetInt(prefName, 0);
         switch (compareType){
             case CompareType.Bigger:
                 return value > nrInt;
@@ -79,7 +79,7 @@ public class CheckPlayerPref : MonoBehaviour
         return false;
     }
     public bool CheckFloat(){
-        float value = PlayerPrefs.GetFloat(prefName, 0f);
+        var value = PlayerPrefs.GetFloat(prefName, 0f);
         switch (compareType){
             case CompareType.Bigger:
                 return value > nrInt;
@@ -91,7 +91,7 @@ public class CheckPlayerPref : MonoBehaviour
         return false;
     }
     public bool CheckString(){
-        string value = PlayerPrefs.GetString(prefName, "");
+        var value = PlayerPrefs.GetString(prefName, "");
         return value == text;
     }
 }

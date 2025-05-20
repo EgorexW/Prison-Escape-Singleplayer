@@ -14,13 +14,13 @@ namespace Pathfinding.Legacy {
 				foreach (var tg in targets) {
 					var comp = tg as Component;
 					var components = comp.gameObject.GetComponents<Component>();
-					int index = System.Array.IndexOf(components, comp);
+					var index = System.Array.IndexOf(components, comp);
 					var newRVO = Undo.AddComponent(comp.gameObject, upgradeType);
 					foreach (var field in newRVO.GetType().GetFields(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)) {
 						field.SetValue(newRVO, field.GetValue(comp));
 					}
 					Undo.DestroyObjectImmediate(comp);
-					for (int i = components.Length - 1; i > index; i--) UnityEditorInternal.ComponentUtility.MoveComponentUp(newRVO);
+					for (var i = components.Length - 1; i > index; i--) UnityEditorInternal.ComponentUtility.MoveComponentUp(newRVO);
 				}
 			}
 			EditorGUILayout.EndVertical();

@@ -28,7 +28,7 @@ namespace UnitySweeper
                 {
                     using (var reader = new StreamReader(XMP_PATH))
                     {
-                        XmlSerializer serialize = new XmlSerializer(typeof(List<TypeDate>));
+                        var serialize = new XmlSerializer(typeof(List<TypeDate>));
                         return (List<TypeDate>) serialize.Deserialize(reader);
                     }
                 }
@@ -39,7 +39,7 @@ namespace UnitySweeper
             {
                 using (var writer = new StreamWriter(XMP_PATH))
                 {
-                    XmlSerializer serialize = new XmlSerializer(typeof(List<TypeDate>));
+                    var serialize = new XmlSerializer(typeof(List<TypeDate>));
                     serialize.Serialize(writer, value);
                 }
             }
@@ -149,9 +149,9 @@ namespace UnitySweeper
 
         List<string> CodeList(string path)
         {
-            string[] codes = Directory.GetFiles(path, "*.cs", SearchOption.AllDirectories);
+            var codes = Directory.GetFiles(path, "*.cs", SearchOption.AllDirectories);
 
-            List<string> needUpdateFileList = new List<string>();
+            var needUpdateFileList = new List<string>();
 
             foreach (var code in codes)
             {
@@ -206,7 +206,7 @@ namespace UnitySweeper
                         }
                     }
 
-                    string typeName = type.IsGenericTypeDefinition
+                    var typeName = type.IsGenericTypeDefinition
                         ? type.GetGenericTypeDefinition().Name.Split('`')[0]
                         : type.Name;
                     if (type.IsClass)
@@ -258,18 +258,18 @@ namespace UnitySweeper
         {
             const string assemblyDll = "Library/ScriptAssemblies/Assembly-CSharp.dll";
             const string assemblyDllEditor = "Library/ScriptAssemblies/Assembly-CSharp-Editor.dll";
-            string path2Project = Environment.CurrentDirectory;
+            var path2Project = Environment.CurrentDirectory;
             
-            List<Type> alltypes = new List<Type>();
+            var alltypes = new List<Type>();
 
             if (File.Exists(assemblyDll))
             {
-                string absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyDll));
+                var absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyDll));
                 alltypes.AddRange(Assembly.LoadFile(absPath).GetTypes());
             }
             if (isSaveEditorCode && File.Exists(assemblyDllEditor))
             {
-                string absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyDllEditor));
+                var absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyDllEditor));
                 alltypes.AddRange(Assembly.LoadFile(absPath).GetTypes());
             }
 
@@ -280,17 +280,17 @@ namespace UnitySweeper
         {
             const string assemblyFirstpassDll = "Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll";
             const string assemblyFirstpassEditorDll = "Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll";
-            string path2Project = Environment.CurrentDirectory;
+            var path2Project = Environment.CurrentDirectory;
         
-            List<Type> alltypes = new List<Type>();
+            var alltypes = new List<Type>();
             if (File.Exists(assemblyFirstpassDll))
             {
-                string absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyFirstpassDll));
+                var absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyFirstpassDll));
                 alltypes.AddRange(Assembly.LoadFile(absPath).GetTypes());
             }
             if (isSaveEditorCode && File.Exists(assemblyFirstpassEditorDll))
             {
-                string absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyFirstpassEditorDll));
+                var absPath = Path.GetFullPath(Path.Combine(path2Project, @assemblyFirstpassEditorDll));
                 alltypes.AddRange(Assembly.LoadFile(absPath).GetTypes());
             }
             return alltypes;
@@ -354,16 +354,16 @@ namespace UnitySweeper
                     }
                 }
 
-                string match = string.Empty;
+                var match = string.Empty;
 
                 if (type.IsGenericTypeDefinition)
                 {
-                    string typeName = type.GetGenericTypeDefinition().Name.Split('`')[0];
+                    var typeName = type.GetGenericTypeDefinition().Name.Split('`')[0];
                     match = string.Format("[!|&\\]\\[\\.\\s<(]{0}[\\.\\s\\n\\r>,<(){{]", typeName);
                 }
                 else
                 {
-                    string typeName = type.Name.Split('`')[0].Replace("Attribute", "");
+                    var typeName = type.Name.Split('`')[0].Replace("Attribute", "");
                     match = string.Format("[!|&\\]\\[\\.\\s<(]{0}[\\.\\s\\n\\r>,<(){{\\]]", typeName);
 
 

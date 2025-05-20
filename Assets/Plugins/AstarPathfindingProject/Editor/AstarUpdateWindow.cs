@@ -12,7 +12,7 @@ namespace Pathfinding {
 
 		public static AstarUpdateWindow Init (Version version, string summary) {
 			// Get existing open window or if none, make a new one:
-			AstarUpdateWindow window = EditorWindow.GetWindow<AstarUpdateWindow>(true, "", true);
+			var window = EditorWindow.GetWindow<AstarUpdateWindow>(true, "", true);
 
 			window.position = new Rect(Screen.currentResolution.width/2 - 300, Mathf.Max(5, Screen.currentResolution.height/3 - 150), 600, 400);
 			window.version = version;
@@ -62,7 +62,7 @@ namespace Pathfinding {
 
 			GUILayout.BeginVertical();
 
-			Color col = GUI.color;
+			var col = GUI.color;
 			GUI.backgroundColor *= new Color(0.5f,  1f, 0.5f);
 			if (GUILayout.Button("Take me to the download page!", GUILayout.Height(30), GUILayout.MaxWidth(300))) {
 				Application.OpenURL(AstarUpdateChecker.GetURL("download"));

@@ -61,8 +61,8 @@ namespace Pathfinding {
 		void InversePrevious () {
 			// Remove previous penalty
 			if (prevNodes != null) {
-				bool warnPenalties = false;
-				for (int i = 0; i < prevNodes.Count; i++) {
+				var warnPenalties = false;
+				for (var i = 0; i < prevNodes.Count; i++) {
 					if (prevNodes[i].Penalty < prevPenalty) {
 						warnPenalties = true;
 						prevNodes[i].Penalty = 0;
@@ -83,8 +83,8 @@ namespace Pathfinding {
 			if (destroyed) return;
 
 			if (nodes != null) {
-				int rndStart = rnd.Next(randomStep);
-				for (int i = rndStart; i < nodes.Count; i += rnd.Next(1, randomStep)) {
+				var rndStart = rnd.Next(randomStep);
+				for (var i = rndStart; i < nodes.Count; i += rnd.Next(1, randomStep)) {
 					nodes[i].Penalty = (uint)(nodes[i].Penalty+penalty);
 					prevNodes.Add(nodes[i]);
 				}

@@ -85,7 +85,7 @@ namespace Pathfinding {
 #if DECREASE_KEY
 			// Clear all heap indices
 			// This is important to avoid bugs
-			for (int i = 0; i < numberOfItems; i++) {
+			for (var i = 0; i < numberOfItems; i++) {
 				heap[i].node.heapIndex = NotInHeap;
 			}
 #endif
@@ -104,7 +104,7 @@ namespace Pathfinding {
 		/// <summary>Expands to a larger backing array when the current one is too small</summary>
 		void Expand () {
 			// 65533 == 1 mod 4 and slightly smaller than 1<<16 = 65536
-			int newSize = System.Math.Max(heap.Length+4, System.Math.Min(65533, (int)System.Math.Round(heap.Length*growthFactor)));
+			var newSize = System.Math.Max(heap.Length+4, System.Math.Min(65533, (int)System.Math.Round(heap.Length*growthFactor)));
 
 			// Make sure the size has remainder 1 when divided by D
 			// This allows us to always guarantee that indices used in the Remove method
@@ -153,12 +153,12 @@ namespace Pathfinding {
 			// we know the final index, that's just a waste of CPU cycles)
 			int bubbleIndex = index;
 			// Update F value, it might have changed since the node was originally added to the heap
-			uint nodeF = node.F = node.node.F;
-			uint nodeG = node.node.G;
+			var nodeF = node.F = node.node.F;
+			var nodeG = node.node.G;
 
 			while (bubbleIndex != 0) {
 				// Parent node of the bubble node
-				int parentIndex = (bubbleIndex-1) / D;
+				var parentIndex = (bubbleIndex-1) / D;
 
 				if (nodeF < heap[parentIndex].F || (SortGScores && nodeF == heap[parentIndex].F && nodeG > heap[parentIndex].node.G)) {
 					// Swap the bubble node and parent node
@@ -182,7 +182,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns the node with the lowest F score from the heap</summary>
 		public PathNode Remove () {
-			PathNode returnItem = heap[0].node;
+			var returnItem = heap[0].node;
 
 #if DECREASE_KEY
 			returnItem.heapIndex = NotInHeap;
@@ -200,8 +200,8 @@ namespace Pathfinding {
 			// Trickle upwards
 			while (true) {
 				parent = swapIndex;
-				uint swapF = swapItem.F;
-				int pd = parent * D + 1;
+				var swapF = swapItem.F;
+				var pd = parent * D + 1;
 
 				// If this holds, then the indices used
 				// below are guaranteed to not throw an index out of bounds
@@ -209,10 +209,10 @@ namespace Pathfinding {
 				if (pd <= numberOfItems) {
 					// Loading all F scores here instead of inside the if statements
 					// reduces data dependencies and improves performance
-					uint f0 = heap[pd+0].F;
-					uint f1 = heap[pd+1].F;
-					uint f2 = heap[pd+2].F;
-					uint f3 = heap[pd+3].F;
+					var f0 = heap[pd+0].F;
+					var f1 = heap[pd+1].F;
+					var f2 = heap[pd+2].F;
+					var f3 = heap[pd+3].F;
 
 					// The common case is that all children of a node are present
 					// so the first comparison in each if statement below
@@ -266,8 +266,8 @@ namespace Pathfinding {
 		}
 
 		void Validate () {
-			for (int i = 1; i < numberOfItems; i++) {
-				int parentIndex = (i-1)/D;
+			for (var i = 1; i < numberOfItems; i++) {
+				var parentIndex = (i-1)/D;
 				if (heap[parentIndex].F > heap[i].F) {
 					throw new System.Exception("Invalid state at " + i + ":" +  parentIndex + " ( " + heap[parentIndex].F + " > " + heap[i].F + " ) ");
 				}
@@ -288,12 +288,12 @@ namespace Pathfinding {
 			int changes = 0;
 #endif
 
-			for (int i = 2; i < numberOfItems; i++) {
-				int bubbleIndex = i;
+			for (var i = 2; i < numberOfItems; i++) {
+				var bubbleIndex = i;
 				var node = heap[i];
-				uint nodeF = node.F;
+				var nodeF = node.F;
 				while (bubbleIndex != 1) {
-					int parentIndex = bubbleIndex / D;
+					var parentIndex = bubbleIndex / D;
 
 					if (nodeF < heap[parentIndex].F) {
 						heap[bubbleIndex] = heap[parentIndex];

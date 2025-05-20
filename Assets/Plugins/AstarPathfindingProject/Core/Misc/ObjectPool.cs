@@ -74,7 +74,7 @@ namespace Pathfinding.Util {
 #else
 			lock (pool) {
 				if (pool.Count > 0) {
-					T ls = pool[pool.Count-1];
+					var ls = pool[pool.Count-1];
 					pool.RemoveAt(pool.Count-1);
 					inPool.Remove(ls);
 					return ls;

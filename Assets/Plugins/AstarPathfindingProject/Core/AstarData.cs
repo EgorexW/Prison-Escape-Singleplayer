@@ -187,8 +187,8 @@ namespace Pathfinding {
 
 		PathProcessor.GraphUpdateLock AssertSafe (bool onlyAddingGraph = false) {
 			if (graphStructureLocked.Count > 0) {
-				bool allowAdding = true;
-				for (int i = 0; i < graphStructureLocked.Count; i++) allowAdding &= graphStructureLocked[i];
+				var allowAdding = true;
+				for (var i = 0; i < graphStructureLocked.Count; i++) allowAdding &= graphStructureLocked[i];
 				if (!(onlyAddingGraph && allowAdding)) throw new System.InvalidOperationException("Graphs cannot be added, removed or serialized while the graph structure is locked. This is the case when a graph is currently being scanned and when executing graph updates and work items.\nHowever as a special case, graphs can be added inside work items.");
 			}
 
@@ -222,7 +222,7 @@ namespace Pathfinding {
 		/// See: graph-updates (view in online documentation for working links)
 		/// </summary>
 		public void GetNodes (System.Action<GraphNode> callback) {
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] != null) graphs[i].GetNodes(callback);
 			}
 		}
@@ -292,7 +292,7 @@ namespace Pathfinding {
 			sr.OpenSerialize();
 			sr.SerializeGraphs(graphs);
 			sr.SerializeExtraInfo();
-			byte[] bytes = sr.CloseSerialize();
+			var bytes = sr.CloseSerialize();
 			checksum = sr.GetChecksum();
 #if ASTARDEBUG
 			Debug.Log("Got a whole bunch of data, "+bytes.Length+" bytes");
@@ -311,7 +311,7 @@ namespace Pathfinding {
 		/// <summary>Destroys all graphs and sets graphs to null</summary>
 		void ClearGraphs () {
 			if (graphs == null) return;
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] != null) {
 					((IGraphInternals)graphs[i]).OnDestroy();
 					graphs[i].active = null;
@@ -386,13 +386,13 @@ namespace Pathfinding {
 			sr.DeserializeExtraInfo();
 
 			//Assign correct graph indices.
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] == null) continue;
 				graphs[i].GetNodes(node => node.GraphIndex = (uint)i);
 			}
 
-			for (int i = 0; i < graphs.Length; i++) {
-				for (int j = i+1; j < graphs.Length; j++) {
+			for (var i = 0; i < graphs.Length; i++) {
+				for (var j = i+1; j < graphs.Length; j++) {
 					if (graphs[i] != null && graphs[j] != null && graphs[i].guid == graphs[j].guid) {
 						Debug.LogWarning("Guid Conflict when importing graphs additively. Imported graph will get a new Guid.\nThis message is (relatively) harmless.");
 						graphs[i].guid = Pathfinding.Util.Guid.NewGuid();
@@ -464,7 +464,7 @@ namespace Pathfinding {
 		/// </summary>
 		[System.Obsolete("If really necessary. Use System.Type.GetType instead.")]
 		public System.Type GetGraphType (string type) {
-			for (int i = 0; i < graphTypes.Length; i++) {
+			for (var i = 0; i < graphTypes.Length; i++) {
 				if (graphTypes[i].Name == type) {
 					return graphTypes[i];
 				}
@@ -483,7 +483,7 @@ namespace Pathfinding {
 		public NavGraph CreateGraph (string type) {
 			Debug.Log("Creating Graph of type '"+type+"'");
 
-			for (int i = 0; i < graphTypes.Length; i++) {
+			for (var i = 0; i < graphTypes.Length; i++) {
 				if (graphTypes[i].Name == type) {
 					return CreateGraph(graphTypes[i]);
 				}
@@ -512,7 +512,7 @@ namespace Pathfinding {
 		public NavGraph AddGraph (string type) {
 			NavGraph graph = null;
 
-			for (int i = 0; i < graphTypes.Length; i++) {
+			for (var i = 0; i < graphTypes.Length; i++) {
 				if (graphTypes[i].Name == type) {
 					graph = CreateGraph(graphTypes[i]);
 				}
@@ -535,7 +535,7 @@ namespace Pathfinding {
 		public NavGraph AddGraph (System.Type type) {
 			NavGraph graph = null;
 
-			for (int i = 0; i < graphTypes.Length; i++) {
+			for (var i = 0; i < graphTypes.Length; i++) {
 				if (System.Type.Equals(graphTypes[i], type)) {
 					graph = CreateGraph(graphTypes[i]);
 				}
@@ -557,9 +557,9 @@ namespace Pathfinding {
 			var graphLock = AssertSafe(true);
 
 			// Try to fill in an empty position
-			bool foundEmpty = false;
+			var foundEmpty = false;
 
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] == null) {
 					graphs[i] = graph;
 					graph.graphIndex = (uint)i;
@@ -605,7 +605,7 @@ namespace Pathfinding {
 			((IGraphInternals)graph).OnDestroy();
 			graph.active = null;
 
-			int i = System.Array.IndexOf(graphs, graph);
+			var i = System.Array.IndexOf(graphs, graph);
 			if (i != -1) graphs[i] = null;
 
 			UpdateShortcuts();
@@ -626,13 +626,13 @@ namespace Pathfinding {
 		public static NavGraph GetGraph (GraphNode node) {
 			if (node == null) return null;
 
-			AstarPath script = AstarPath.active;
+			var script = AstarPath.active;
 			if (script == null) return null;
 
-			AstarData data = script.data;
+			var data = script.data;
 			if (data == null || data.graphs == null) return null;
 
-			uint graphIndex = node.GraphIndex;
+			var graphIndex = node.GraphIndex;
 
 			if (graphIndex >= data.graphs.Length) {
 				return null;
@@ -644,7 +644,7 @@ namespace Pathfinding {
 		/// <summary>Returns the first graph which satisfies the predicate. Returns null if no graph was found.</summary>
 		public NavGraph FindGraph (System.Func<NavGraph, bool> predicate) {
 			if (graphs != null) {
-				for (int i = 0; i < graphs.Length; i++) {
+				for (var i = 0; i < graphs.Length; i++) {
 					if (graphs[i] != null && predicate(graphs[i])) {
 						return graphs[i];
 					}
@@ -674,7 +674,7 @@ namespace Pathfinding {
 		/// </summary>
 		public IEnumerable FindGraphsOfType (System.Type type) {
 			if (graphs == null) yield break;
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] != null && System.Type.Equals(graphs[i].GetType(), type)) {
 					yield return graphs[i];
 				}
@@ -691,7 +691,7 @@ namespace Pathfinding {
 		/// </summary>
 		public IEnumerable GetUpdateableGraphs () {
 			if (graphs == null) yield break;
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] is IUpdatableGraph) {
 					yield return graphs[i];
 				}
@@ -709,7 +709,7 @@ namespace Pathfinding {
 		[System.Obsolete("Obsolete because it is not used by the package internally and the use cases are few. Iterate through the graphs array instead.")]
 		public IEnumerable GetRaycastableGraphs () {
 			if (graphs == null) yield break;
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] is IRaycastableGraph) {
 					yield return graphs[i];
 				}

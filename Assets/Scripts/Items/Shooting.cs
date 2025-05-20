@@ -30,8 +30,8 @@ public class Shooting : MonoBehaviour
         noisePerShot.pos = transform.position;
         General.GetRootComponent<INoiseReciver>(transform, false)?.ReceiveNoise(noisePerShot);
         Transform hitTransform = null;
-        Vector3 hitPos = Vector3.zero;
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask)) {
+        var hitPos = Vector3.zero;
+        if (Physics.Raycast(ray, out var raycastHit, 999f, aimColliderLayerMask)) {
             hitPos = raycastHit.point;
             hitTransform = raycastHit.transform;
         }

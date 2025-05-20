@@ -135,7 +135,7 @@ namespace Pathfinding {
 		/// <summary>Schedules graph updates internally</summary>
 		void QueueGraphUpdatesInternal () {
 			while (graphUpdateQueue.Count > 0) {
-				GraphUpdateObject ob = graphUpdateQueue.Dequeue();
+				var ob = graphUpdateQueue.Dequeue();
 				if (ob.internalStage != GraphUpdateObject.STAGE_PENDING) {
 					Debug.LogError("Expected remaining graph updates to be pending");
 					continue;
@@ -143,7 +143,7 @@ namespace Pathfinding {
 				ob.internalStage = 0;
 
 				foreach (IUpdatableGraph g in astar.data.GetUpdateableGraphs()) {
-					NavGraph gr = g as NavGraph;
+					var gr = g as NavGraph;
 					if (ob.nnConstraint == null || ob.nnConstraint.SuitableGraph(astar.data.GetGraphIndex(gr), gr)) {
 						var guo = new GUOSingle();
 						guo.order = GraphUpdateOrder.GraphUpdate;
@@ -202,9 +202,9 @@ namespace Pathfinding {
 
 		bool ProcessRegularUpdates (bool force) {
 			while (graphUpdateQueueRegular.Count > 0) {
-				GUOSingle s = graphUpdateQueueRegular.Peek();
+				var s = graphUpdateQueueRegular.Peek();
 
-				GraphUpdateThreading threading = s.graph.CanUpdateAsync(s.obj);
+				var threading = s.graph.CanUpdateAsync(s.obj);
 
 #if UNITY_WEBGL
 				// Never use multithreading in WebGL
@@ -290,9 +290,9 @@ namespace Pathfinding {
 
 		void ProcessPostUpdates () {
 			while (graphUpdateQueuePost.Count > 0) {
-				GUOSingle s = graphUpdateQueuePost.Dequeue();
+				var s = graphUpdateQueuePost.Dequeue();
 
-				GraphUpdateThreading threading = s.graph.CanUpdateAsync(s.obj);
+				var threading = s.graph.CanUpdateAsync(s.obj);
 
 				if ((threading & GraphUpdateThreading.UnityPost) != 0) {
 					try {
@@ -343,7 +343,7 @@ namespace Pathfinding {
 #endif
 					// Note that no locking is required here because the main thread
 					// cannot access it until asyncGraphUpdatesComplete is signaled
-					GUOSingle aguo = graphUpdateQueueAsync.Dequeue();
+					var aguo = graphUpdateQueueAsync.Dequeue();
 
 					try {
 						if (aguo.order == GraphUpdateOrder.GraphUpdate) {

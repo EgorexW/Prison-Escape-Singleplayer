@@ -85,7 +85,7 @@ namespace Pathfinding {
 		/// For layered grid graphs it is an O(n) operation.
 		/// </summary>
 		public virtual int CountNodes () {
-			int count = 0;
+			var count = 0;
 
 			GetNodes(node => count++);
 			return count;
@@ -93,7 +93,7 @@ namespace Pathfinding {
 
 		/// <summary>Calls a delegate with all nodes in the graph until the delegate returns false</summary>
 		public void GetNodes (System.Func<GraphNode, bool> action) {
-			bool cont = true;
+			var cont = true;
 
 			GetNodes(node => {
 				if (cont) cont &= action(node);
@@ -213,17 +213,17 @@ namespace Pathfinding {
 			// This is a default implementation and it is pretty slow
 			// Graphs usually override this to provide faster and more specialised implementations
 
-			float maxDistSqr = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistanceSqr : float.PositiveInfinity;
+			var maxDistSqr = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistanceSqr : float.PositiveInfinity;
 
-			float minDist = float.PositiveInfinity;
+			var minDist = float.PositiveInfinity;
 			GraphNode minNode = null;
 
-			float minConstDist = float.PositiveInfinity;
+			var minConstDist = float.PositiveInfinity;
 			GraphNode minConstNode = null;
 
 			// Loop through all nodes and find the closest suitable node
 			GetNodes(node => {
-				float dist = (position-(Vector3)node.position).sqrMagnitude;
+				var dist = (position-(Vector3)node.position).sqrMagnitude;
 
 				if (dist < minDist) {
 					minDist = dist;

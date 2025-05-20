@@ -15,7 +15,7 @@ namespace Pathfinding {
 		public static void SetGridGraph (int graphIndex, GridGraph graph) {
 			if (_gridGraphs.Length <= graphIndex) {
 				var gg = new GridGraph[graphIndex+1];
-				for (int i = 0; i < _gridGraphs.Length; i++) gg[i] = _gridGraphs[i];
+				for (var i = 0; i < _gridGraphs.Length; i++) gg[i] = _gridGraphs[i];
 				_gridGraphs = gg;
 			}
 
@@ -128,7 +128,7 @@ namespace Pathfinding {
 
 		public override GridNodeBase GetNeighbourAlongDirection (int direction) {
 			if (HasConnectionInDirection(direction)) {
-				GridGraph gg = GetGridGraph(GraphIndex);
+				var gg = GetGridGraph(GraphIndex);
 				return gg.nodes[NodeInGridIndex+gg.neighbourOffsets[direction]];
 			}
 			return null;
@@ -138,7 +138,7 @@ namespace Pathfinding {
 			if (alsoReverse) {
 				// Note: This assumes that all connections are bidirectional
 				// which should hold for all grid graphs unless some custom code has been added
-				for (int i = 0; i < 8; i++) {
+				for (var i = 0; i < 8; i++) {
 					var other = GetNeighbourAlongDirection(i) as GridNode;
 					if (other != null) {
 						// Remove reverse connection. See doc for GridGraph.neighbourOffsets to see which indices are used for what.
@@ -155,14 +155,14 @@ namespace Pathfinding {
 		}
 
 		public override void GetConnections (System.Action<GraphNode> action) {
-			GridGraph gg = GetGridGraph(GraphIndex);
+			var gg = GetGridGraph(GraphIndex);
 
-			int[] neighbourOffsets = gg.neighbourOffsets;
-			GridNode[] nodes = gg.nodes;
+			var neighbourOffsets = gg.neighbourOffsets;
+			var nodes = gg.nodes;
 
-			for (int i = 0; i < 8; i++) {
+			for (var i = 0; i < 8; i++) {
 				if (HasConnectionInDirection(i)) {
-					GridNode other = nodes[NodeInGridIndex + neighbourOffsets[i]];
+					var other = nodes[NodeInGridIndex + neighbourOffsets[i]];
 					if (other != null) action(other);
 				}
 			}
@@ -179,11 +179,11 @@ namespace Pathfinding {
 			p = gg.transform.InverseTransform(p);
 
 			// Calculate graph position of this node
-			int x = NodeInGridIndex % gg.width;
-			int z = NodeInGridIndex / gg.width;
+			var x = NodeInGridIndex % gg.width;
+			var z = NodeInGridIndex / gg.width;
 
 			// Handle the y coordinate separately
-			float y = gg.transform.InverseTransform((Vector3)position).y;
+			var y = gg.transform.InverseTransform((Vector3)position).y;
 
 			var closestInGraphSpace = new Vector3(Mathf.Clamp(p.x, x, x+1f), y, Mathf.Clamp(p.z, z, z+1f));
 
@@ -194,14 +194,14 @@ namespace Pathfinding {
 		public override bool GetPortal (GraphNode other, List<Vector3> left, List<Vector3> right, bool backwards) {
 			if (backwards) return true;
 
-			GridGraph gg = GetGridGraph(GraphIndex);
-			int[] neighbourOffsets = gg.neighbourOffsets;
-			GridNode[] nodes = gg.nodes;
+			var gg = GetGridGraph(GraphIndex);
+			var neighbourOffsets = gg.neighbourOffsets;
+			var nodes = gg.nodes;
 
-			for (int i = 0; i < 4; i++) {
+			for (var i = 0; i < 4; i++) {
 				if (HasConnectionInDirection(i) && other == nodes[NodeInGridIndex + neighbourOffsets[i]]) {
-					Vector3 middle = ((Vector3)(position + other.position))*0.5f;
-					Vector3 cross = Vector3.Cross(gg.collision.up, (Vector3)(other.position-position));
+					var middle = ((Vector3)(position + other.position))*0.5f;
+					var cross = Vector3.Cross(gg.collision.up, (Vector3)(other.position-position));
 					cross.Normalize();
 					cross *= gg.nodeSize*0.5f;
 					left.Add(middle - cross);
@@ -210,26 +210,26 @@ namespace Pathfinding {
 				}
 			}
 
-			for (int i = 4; i < 8; i++) {
+			for (var i = 4; i < 8; i++) {
 				if (HasConnectionInDirection(i) && other == nodes[NodeInGridIndex + neighbourOffsets[i]]) {
-					bool rClear = false;
-					bool lClear = false;
+					var rClear = false;
+					var lClear = false;
 					if (HasConnectionInDirection(i-4)) {
-						GridNode n2 = nodes[NodeInGridIndex + neighbourOffsets[i-4]];
+						var n2 = nodes[NodeInGridIndex + neighbourOffsets[i-4]];
 						if (n2.Walkable && n2.HasConnectionInDirection((i-4+1)%4)) {
 							rClear = true;
 						}
 					}
 
 					if (HasConnectionInDirection((i-4+1)%4)) {
-						GridNode n2 = nodes[NodeInGridIndex + neighbourOffsets[(i-4+1)%4]];
+						var n2 = nodes[NodeInGridIndex + neighbourOffsets[(i-4+1)%4]];
 						if (n2.Walkable && n2.HasConnectionInDirection(i-4)) {
 							lClear = true;
 						}
 					}
 
-					Vector3 middle = ((Vector3)(position + other.position))*0.5f;
-					Vector3 cross = Vector3.Cross(gg.collision.up, (Vector3)(other.position-position));
+					var middle = ((Vector3)(position + other.position))*0.5f;
+					var cross = Vector3.Cross(gg.collision.up, (Vector3)(other.position-position));
 					cross.Normalize();
 					cross *= gg.nodeSize*1.4142f;
 					left.Add(middle - (lClear ? cross : Vector3.zero));
@@ -242,20 +242,20 @@ namespace Pathfinding {
 		}
 
 		public override void UpdateRecursiveG (Path path, PathNode pathNode, PathHandler handler) {
-			GridGraph gg = GetGridGraph(GraphIndex);
+			var gg = GetGridGraph(GraphIndex);
 
-			int[] neighbourOffsets = gg.neighbourOffsets;
-			GridNode[] nodes = gg.nodes;
+			var neighbourOffsets = gg.neighbourOffsets;
+			var nodes = gg.nodes;
 
 			pathNode.UpdateG(path);
 			handler.heap.Add(pathNode);
 
-			ushort pid = handler.PathID;
+			var pid = handler.PathID;
 			var index = NodeInGridIndex;
-			for (int i = 0; i < 8; i++) {
+			for (var i = 0; i < 8; i++) {
 				if (HasConnectionInDirection(i)) {
-					GridNode other = nodes[index + neighbourOffsets[i]];
-					PathNode otherPN = handler.GetPathNode(other);
+					var other = nodes[index + neighbourOffsets[i]];
+					var otherPN = handler.GetPathNode(other);
 					if (otherPN.parent == pathNode && otherPN.pathID == pid) other.UpdateRecursiveG(path, otherPN, handler);
 				}
 			}
@@ -267,24 +267,24 @@ namespace Pathfinding {
 
 
 		public override void Open (Path path, PathNode pathNode, PathHandler handler) {
-			GridGraph gg = GetGridGraph(GraphIndex);
+			var gg = GetGridGraph(GraphIndex);
 
-			ushort pid = handler.PathID;
+			var pid = handler.PathID;
 
 			{
-				int[] neighbourOffsets = gg.neighbourOffsets;
-				uint[] neighbourCosts = gg.neighbourCosts;
-				GridNode[] nodes = gg.nodes;
+				var neighbourOffsets = gg.neighbourOffsets;
+				var neighbourCosts = gg.neighbourCosts;
+				var nodes = gg.nodes;
 				var index = NodeInGridIndex;
 
-				for (int i = 0; i < 8; i++) {
+				for (var i = 0; i < 8; i++) {
 					if (HasConnectionInDirection(i)) {
-						GridNode other = nodes[index + neighbourOffsets[i]];
+						var other = nodes[index + neighbourOffsets[i]];
 						if (!path.CanTraverse(other)) continue;
 
-						PathNode otherPN = handler.GetPathNode(other);
+						var otherPN = handler.GetPathNode(other);
 
-						uint tmpCost = neighbourCosts[i];
+						var tmpCost = neighbourCosts[i];
 
 						// Check if the other node has not yet been visited by this path
 						if (otherPN.pathID != pid) {

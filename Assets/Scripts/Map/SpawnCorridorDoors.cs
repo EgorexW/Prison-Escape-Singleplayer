@@ -35,7 +35,7 @@ public class SpawnCorridorDoors : MonoBehaviour, IAISpawner
         // Debug.Log("Level nodes: " + levelNodes.Count);
         foreach (var node in levelNodes){
             foreach (var connection in node.SameTypeConnections){
-                PossibleSpawn possibleSpawn = new PossibleSpawn{
+                var possibleSpawn = new PossibleSpawn{
                     pos = node.transform.position + connection/2,
                     rotation = Quaternion.LookRotation(connection.normalized)
                 };

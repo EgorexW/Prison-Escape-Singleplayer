@@ -93,7 +93,7 @@ namespace Pathfinding {
 			queue = new ThreadControlQueue(processors);
 			pathHandlers = new PathHandler[processors];
 
-			for (int i = 0; i < processors; i++) {
+			for (var i = 0; i < processors; i++) {
 				pathHandlers[i] = new PathHandler(i, processors);
 			}
 
@@ -105,7 +105,7 @@ namespace Pathfinding {
 				threads = new Thread[processors];
 
 				// Start lots of threads
-				for (int i = 0; i < processors; i++) {
+				for (var i = 0; i < processors; i++) {
 					var pathHandler = pathHandlers[i];
 					threads[i] = new Thread(() => CalculatePathsThreaded(pathHandler));
 #if !UNITY_SWITCH || UNITY_EDITOR
@@ -218,7 +218,7 @@ namespace Pathfinding {
 		/// <summary>Calls 'Join' on each of the threads to block until they have completed</summary>
 		public void JoinThreads () {
 			if (threads != null) {
-				for (int i = 0; i < threads.Length; i++) {
+				for (var i = 0; i < threads.Length; i++) {
 					if (!threads[i].Join(200)) {
 						Debug.LogError("Could not terminate pathfinding thread["+i+"] in 200ms, trying Thread.Abort");
 						threads[i].Abort();
@@ -230,7 +230,7 @@ namespace Pathfinding {
 		/// <summary>Calls 'Abort' on each of the threads</summary>
 		public void AbortThreads () {
 			if (threads == null) return;
-			for (int i = 0; i < threads.Length; i++) {
+			for (var i = 0; i < threads.Length; i++) {
 				if (threads[i] != null && threads[i].IsAlive) threads[i].Abort();
 			}
 		}
@@ -252,7 +252,7 @@ namespace Pathfinding {
 				throw new System.Exception("Trying to initialize a node when it is not safe to initialize any nodes. Must be done during a graph update. See http://arongranberg.com/astar/docs/graph-updates.php#direct");
 			}
 
-			for (int i = 0; i < pathHandlers.Length; i++) {
+			for (var i = 0; i < pathHandlers.Length; i++) {
 				pathHandlers[i].InitializeNode(node);
 			}
 
@@ -271,7 +271,7 @@ namespace Pathfinding {
 
 			nodeIndexPool.Push(node.NodeIndex);
 
-			for (int i = 0; i < pathHandlers.Length; i++) {
+			for (var i = 0; i < pathHandlers.Length; i++) {
 				pathHandlers[i].DestroyNode(node);
 			}
 
@@ -297,16 +297,16 @@ namespace Pathfinding {
 			// Max number of ticks we are allowed to continue working in one run.
 			// One tick is 1/10000 of a millisecond.
 			// We need to check once in a while if the thread should be stopped.
-			long maxTicks = (long)(10*10000);
-			long targetTick = System.DateTime.UtcNow.Ticks + maxTicks;
+			var maxTicks = (long)(10*10000);
+			var targetTick = System.DateTime.UtcNow.Ticks + maxTicks;
 			while (true) {
 				// The path we are currently calculating
-				Path path = queue.Pop();
+				var path = queue.Pop();
 #if UNITY_2017_3_OR_NEWER
 				profilingSampler.Begin();
 #endif
 				// Access the internal implementation methods
-				IPathInternals ipath = (IPathInternals)path;
+				var ipath = (IPathInternals)path;
 
 				// Trying to prevent simple modding to allow more than one thread
 				if (pathHandler.threadID > 0) {
@@ -326,7 +326,7 @@ namespace Pathfinding {
 				}
 
 				// Tick for when the path started, used for calculating how long time the calculation took
-				long startTicks = System.DateTime.UtcNow.Ticks;
+				var startTicks = System.DateTime.UtcNow.Ticks;
 
 				// Prepare the path
 				ipath.Prepare();
@@ -432,8 +432,8 @@ namespace Pathfinding {
 		/// </summary>
 		IEnumerator CalculatePaths (PathHandler pathHandler) {
 			// Max number of ticks before yielding/sleeping
-			long maxTicks = (long)(astar.maxFrameTime*10000);
-			long targetTick = System.DateTime.UtcNow.Ticks + maxTicks;
+			var maxTicks = (long)(astar.maxFrameTime*10000);
+			var targetTick = System.DateTime.UtcNow.Ticks + maxTicks;
 
 			while (true) {
 				// The path we are currently calculating
@@ -442,7 +442,7 @@ namespace Pathfinding {
 				AstarProfiler.StartProfile("Path Queue");
 
 				// Try to get the next path to be calculated
-				bool blockedBefore = false;
+				var blockedBefore = false;
 				while (p == null) {
 					try {
 						p = queue.PopNoBlock(blockedBefore);
@@ -462,7 +462,7 @@ namespace Pathfinding {
 
 				AstarProfiler.StartProfile("Path Calc");
 
-				IPathInternals ip = (IPathInternals)p;
+				var ip = (IPathInternals)p;
 
 				// Max number of ticks we are allowed to continue working in one run
 				// One tick is 1/10000 of a millisecond
@@ -480,7 +480,7 @@ namespace Pathfinding {
 				if (tmpOnPathPreSearch != null) tmpOnPathPreSearch(p);
 
 				// Tick for when the path started, used for calculating how long time the calculation took
-				long startTicks = System.DateTime.UtcNow.Ticks;
+				var startTicks = System.DateTime.UtcNow.Ticks;
 				long totalTicks = 0;
 
 				AstarProfiler.StartFastProfile(8);

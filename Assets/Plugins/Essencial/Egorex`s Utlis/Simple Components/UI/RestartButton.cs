@@ -10,7 +10,7 @@ public class RestartButton : MonoBehaviour
     [SerializeField] protected bool async = false;
     public void Restart()
     {
-        int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        var sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         if (async){
             SceneManager.LoadSceneAsync(sceneBuildIndex);
         } else {
@@ -20,10 +20,10 @@ public class RestartButton : MonoBehaviour
 #if UNITY_EDITOR
     void Reset()
     {
-        if (!TryGetComponent<Button>(out Button button)){
+        if (!TryGetComponent<Button>(out var button)){
             return;
         }
-        for (int i = 0; i < button.onClick.GetPersistentEventCount(); i++){
+        for (var i = 0; i < button.onClick.GetPersistentEventCount(); i++){
             if (button.onClick.GetPersistentMethodName(i) == "Restart"){
                 return;
             }

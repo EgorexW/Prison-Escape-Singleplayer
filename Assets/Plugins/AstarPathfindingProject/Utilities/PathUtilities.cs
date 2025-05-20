@@ -44,8 +44,8 @@ namespace Pathfinding {
 		public static bool IsPathPossible (List<GraphNode> nodes) {
 			if (nodes.Count == 0) return true;
 
-			uint area = nodes[0].Area;
-			for (int i = 0; i < nodes.Count; i++) if (!nodes[i].Walkable || nodes[i].Area != area) return false;
+			var area = nodes[0].Area;
+			for (var i = 0; i < nodes.Count; i++) if (!nodes[i].Walkable || nodes[i].Area != area) return false;
 			return true;
 		}
 
@@ -75,10 +75,10 @@ namespace Pathfinding {
 
 			// Make sure that the first node can reach all other nodes
 			var reachable = GetReachableNodes(nodes[0], tagMask);
-			bool result = true;
+			var result = true;
 
 			// Make sure that the first node can reach all other nodes
-			for (int i = 1; i < nodes.Count; i++) {
+			for (var i = 1; i < nodes.Count; i++) {
 				if (!reachable.Contains(nodes[i])) {
 					result = false;
 					break;
@@ -114,8 +114,8 @@ namespace Pathfinding {
 		/// <param name="filter">Optional filter for which nodes to search. You can combine this with tagMask = -1 to make the filter determine everything.
 		///      Only walkable nodes are searched regardless of the filter. If the filter function returns false the node will be treated as unwalkable.</param>
 		public static List<GraphNode> GetReachableNodes (GraphNode seed, int tagMask = -1, System.Func<GraphNode, bool> filter = null) {
-			Stack<GraphNode> dfsStack = StackPool<GraphNode>.Claim();
-			List<GraphNode> reachable = ListPool<GraphNode>.Claim();
+			var dfsStack = StackPool<GraphNode>.Claim();
+			var reachable = ListPool<GraphNode>.Claim();
 
 			/// <summary>TODO: Pool</summary>
 			var map = new HashSet<GraphNode>();
@@ -200,9 +200,9 @@ namespace Pathfinding {
 			que.Clear();
 			map.Clear();
 
-			List<GraphNode> result = ListPool<GraphNode>.Claim();
+			var result = ListPool<GraphNode>.Claim();
 
-			int currentDist = -1;
+			var currentDist = -1;
 			System.Action<GraphNode> callback;
 			if (tagMask == -1) {
 				callback = node => {
@@ -229,7 +229,7 @@ namespace Pathfinding {
 			callback(seed);
 
 			while (que.Count > 0) {
-				GraphNode n = que.Dequeue();
+				var n = que.Dequeue();
 				currentDist = map[n];
 
 				if (currentDist >= depth) break;
@@ -260,29 +260,29 @@ namespace Pathfinding {
 		/// See: Pathfinding.Util.ListPool
 		/// </summary>
 		public static List<Vector3> GetSpiralPoints (int count, float clearance) {
-			List<Vector3> pts = ListPool<Vector3>.Claim(count);
+			var pts = ListPool<Vector3>.Claim(count);
 
 			// The radius of the smaller circle used for generating the involute of a circle
 			// Calculated from the separation distance between the turns
-			float a = clearance/(2*Mathf.PI);
+			var a = clearance/(2*Mathf.PI);
 			float t = 0;
 
 
 			pts.Add(InvoluteOfCircle(a, t));
 
-			for (int i = 0; i < count; i++) {
-				Vector3 prev = pts[pts.Count-1];
+			for (var i = 0; i < count; i++) {
+				var prev = pts[pts.Count-1];
 
 				// d = -t0/2 + sqrt( t0^2/4 + 2d/a )
 				// Minimum angle (radians) which would create an arc distance greater than clearance
-				float d = -t/2 + Mathf.Sqrt(t*t/4 + 2*clearance/a);
+				var d = -t/2 + Mathf.Sqrt(t*t/4 + 2*clearance/a);
 
 				// Binary search for separating this point and the previous one
-				float mn = t + d;
-				float mx = t + 2*d;
+				var mn = t + d;
+				var mx = t + 2*d;
 				while (mx - mn > 0.01f) {
-					float mid = (mn + mx)/2;
-					Vector3 p = InvoluteOfCircle(a, mid);
+					var mid = (mn + mx)/2;
+					var p = InvoluteOfCircle(a, mid);
 					if ((p - prev).sqrMagnitude < clearance*clearance) {
 						mn = mid;
 					} else {
@@ -320,11 +320,11 @@ namespace Pathfinding {
 		public static void GetPointsAroundPointWorld (Vector3 p, IRaycastableGraph g, List<Vector3> previousPoints, float radius, float clearanceRadius) {
 			if (previousPoints.Count == 0) return;
 
-			Vector3 avg = Vector3.zero;
-			for (int i = 0; i < previousPoints.Count; i++) avg += previousPoints[i];
+			var avg = Vector3.zero;
+			for (var i = 0; i < previousPoints.Count; i++) avg += previousPoints[i];
 			avg /= previousPoints.Count;
 
-			for (int i = 0; i < previousPoints.Count; i++) previousPoints[i] -= avg;
+			for (var i = 0; i < previousPoints.Count; i++) previousPoints[i] -= avg;
 
 			GetPointsAroundPoint(p, g, previousPoints, radius, clearanceRadius);
 		}
@@ -353,7 +353,7 @@ namespace Pathfinding {
 
 			if (graph == null) throw new System.ArgumentException("g is not a NavGraph");
 
-			NNInfoInternal nn = graph.GetNearestForce(center, NNConstraint.Default);
+			var nn = graph.GetNearestForce(center, NNConstraint.Default);
 			center = nn.clampedPosition;
 
 			if (nn.node == null) {
@@ -366,20 +366,20 @@ namespace Pathfinding {
 			radius = Mathf.Max(radius, 1.4142f*clearanceRadius*Mathf.Sqrt(previousPoints.Count)); //Mathf.Sqrt(previousPoints.Count*clearanceRadius*2));
 			clearanceRadius *= clearanceRadius;
 
-			for (int i = 0; i < previousPoints.Count; i++) {
-				Vector3 dir = previousPoints[i];
-				float magn = dir.magnitude;
+			for (var i = 0; i < previousPoints.Count; i++) {
+				var dir = previousPoints[i];
+				var magn = dir.magnitude;
 
 				if (magn > 0) dir /= magn;
 
-				float newMagn = radius;//magn > radius ? radius : magn;
+				var newMagn = radius;//magn > radius ? radius : magn;
 				dir *= newMagn;
 
 				GraphHitInfo hit;
 
-				int tests = 0;
+				var tests = 0;
 				while (true) {
-					Vector3 pt = center + dir;
+					var pt = center + dir;
 
 					if (g.Linecast(center, pt, nn.node, out hit)) {
 						if (hit.point == Vector3.zero) {
@@ -396,12 +396,12 @@ namespace Pathfinding {
 						}
 					}
 
-					bool worked = false;
+					var worked = false;
 
-					for (float q = 0.1f; q <= 1.0f; q += 0.05f) {
-						Vector3 qt = Vector3.Lerp(center, pt, q);
+					for (var q = 0.1f; q <= 1.0f; q += 0.05f) {
+						var qt = Vector3.Lerp(center, pt, q);
 						worked = true;
-						for (int j = 0; j < i; j++) {
+						for (var j = 0; j < i; j++) {
 							if ((previousPoints[j] - qt).sqrMagnitude < clearanceRadius) {
 								worked = false;
 								break;
@@ -448,7 +448,7 @@ namespace Pathfinding {
 			if (nodes == null) throw new System.ArgumentNullException("nodes");
 			if (nodes.Count == 0) throw new System.ArgumentException("no nodes passed");
 
-			List<Vector3> pts = ListPool<Vector3>.Claim(count);
+			var pts = ListPool<Vector3>.Claim(count);
 
 			// Square
 			clearanceRadius *= clearanceRadius;
@@ -459,12 +459,12 @@ namespace Pathfinding {
 #endif
 				) {
 				// Accumulated area of all nodes
-				List<float> accs = ListPool<float>.Claim(nodes.Count);
+				var accs = ListPool<float>.Claim(nodes.Count);
 
 				// Total area of all nodes so far
 				float tot = 0;
 
-				for (int i = 0; i < nodes.Count; i++) {
+				for (var i = 0; i < nodes.Count; i++) {
 					var surfaceArea = nodes[i].SurfaceArea();
 					// Ensures that even if the nodes have a surface area of 0, a random one will still be picked
 					// instead of e.g always picking the first or the last one.
@@ -473,11 +473,11 @@ namespace Pathfinding {
 					accs.Add(tot);
 				}
 
-				for (int i = 0; i < count; i++) {
+				for (var i = 0; i < count; i++) {
 					//Pick point
-					int testCount = 0;
-					int testLimit = 10;
-					bool worked = false;
+					var testCount = 0;
+					var testLimit = 10;
+					var worked = false;
 
 					while (!worked) {
 						worked = true;
@@ -491,8 +491,8 @@ namespace Pathfinding {
 						}
 
 						// Pick a random node among the ones in the list weighted by their area
-						float tg = Random.value*tot;
-						int v = accs.BinarySearch(tg);
+						var tg = Random.value*tot;
+						var v = accs.BinarySearch(tg);
 						if (v < 0) v = ~v;
 
 						if (v >= nodes.Count) {
@@ -506,7 +506,7 @@ namespace Pathfinding {
 
 						// Test if it is some distance away from the other points
 						if (clearanceRadius > 0) {
-							for (int j = 0; j < pts.Count; j++) {
+							for (var j = 0; j < pts.Count; j++) {
 								if ((pts[j]-p).sqrMagnitude < clearanceRadius) {
 									worked = false;
 									break;
@@ -525,7 +525,7 @@ namespace Pathfinding {
 				ListPool<float>.Release(ref accs);
 			} else {
 				// Fast path, assumes all nodes have the same area (usually zero)
-				for (int i = 0; i < count; i++) {
+				for (var i = 0; i < count; i++) {
 					pts.Add((Vector3)nodes[Random.Range(0, nodes.Count)].RandomPointOnSurface());
 				}
 			}

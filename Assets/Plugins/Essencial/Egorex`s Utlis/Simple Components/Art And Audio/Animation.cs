@@ -18,8 +18,8 @@ public class Animation
 
 #if UNITY_EDITOR
     void SetCellsDuration(){
-        float cellDuration = defaultCellDuration;
-        for (int i = 0; i < animationCells.Length; i++)
+        var cellDuration = defaultCellDuration;
+        for (var i = 0; i < animationCells.Length; i++)
         {
             animationCells[i].duration = cellDuration;
         }
@@ -34,7 +34,7 @@ public class Animation
     }
     public Sprite GetNextFrame(float timeSinceLastFrame){
         index += timeSinceLastFrame;
-        float indexTmp = index;
+        var indexTmp = index;
         Sprite frame = null;
         foreach (var animationCell in animationCells){
             if (indexTmp <= animationCell.duration){

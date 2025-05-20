@@ -23,7 +23,7 @@ public class ButtonsUI<T> : ObjectsUI
         this.callback = callback;
         SetCount(objects.Count);
         var activeObjs = GetActiveObjs();
-        for (int i = 0; i < objects.Count; i++){
+        for (var i = 0; i < objects.Count; i++){
             var activeObj = activeObjs[i];
             var button = activeObj.GetComponent<ObjectButton<T>>();
             button.SetObject(objects[i]);

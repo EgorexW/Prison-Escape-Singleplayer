@@ -53,7 +53,7 @@ namespace Pathfinding {
 
 		/// <summary>Get a specific vertex in the tile</summary>
 		public Int3 GetVertex (int index) {
-			int idx = index & NavmeshBase.VertexIndexMask;
+			var idx = index & NavmeshBase.VertexIndexMask;
 
 			return verts[idx];
 		}
@@ -69,7 +69,7 @@ namespace Pathfinding {
 
 		public void GetNodes (System.Action<GraphNode> action) {
 			if (nodes == null) return;
-			for (int i = 0; i < nodes.Length; i++) action(nodes[i]);
+			for (var i = 0; i < nodes.Length; i++) action(nodes[i]);
 		}
 	}
 }

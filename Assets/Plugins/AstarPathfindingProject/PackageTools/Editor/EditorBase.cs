@@ -98,8 +98,8 @@ namespace Pathfinding {
 			serializedObject.ApplyModifiedProperties();
 			if (targets.Length == 1 && (target as MonoBehaviour).enabled) {
 				var attr = target.GetType().GetCustomAttributes(typeof(UniqueComponentAttribute), true);
-				for (int i = 0; i < attr.Length; i++) {
-					string tag = (attr[i] as UniqueComponentAttribute).tag;
+				for (var i = 0; i < attr.Length; i++) {
+					var tag = (attr[i] as UniqueComponentAttribute).tag;
 					foreach (var other in (target as MonoBehaviour).GetComponents<MonoBehaviour>()) {
 						if (!other.enabled || other == target) continue;
 						if (other.GetType().GetCustomAttributes(typeof(UniqueComponentAttribute), true).Select(c => (c as UniqueComponentAttribute).tag == tag).Any()) {
@@ -112,7 +112,7 @@ namespace Pathfinding {
 
 		protected virtual void Inspector () {
 			// Basically the same as DrawDefaultInspector, but with tooltips
-			bool enterChildren = true;
+			var enterChildren = true;
 
 			for (var prop = serializedObject.GetIterator(); prop.NextVisible(enterChildren); enterChildren = false) {
 				PropertyField(prop.propertyPath);
@@ -120,7 +120,7 @@ namespace Pathfinding {
 		}
 
 		protected SerializedProperty FindProperty (string name) {
-			if (!props.TryGetValue(name, out SerializedProperty res)) res = props[name] = serializedObject.FindProperty(name);
+			if (!props.TryGetValue(name, out var res)) res = props[name] = serializedObject.FindProperty(name);
 			if (res == null) throw new System.ArgumentException(name);
 			return res;
 		}
@@ -184,7 +184,7 @@ namespace Pathfinding {
 			var contextClick = IsContextClick();
 			EditorGUI.BeginChangeCheck();
 			EditorGUI.showMixedValue = prop.hasMultipleDifferentValues;
-			int newVal = EditorGUILayout.Popup(content, prop.propertyType == SerializedPropertyType.Enum ? prop.enumValueIndex : prop.intValue, options);
+			var newVal = EditorGUILayout.Popup(content, prop.propertyType == SerializedPropertyType.Enum ? prop.enumValueIndex : prop.intValue, options);
 			if (EditorGUI.EndChangeCheck()) {
 				if (prop.propertyType == SerializedPropertyType.Enum) prop.enumValueIndex = newVal;
 				else prop.intValue = newVal;
@@ -201,7 +201,7 @@ namespace Pathfinding {
 			var contextClick = IsContextClick();
 			EditorGUI.BeginChangeCheck();
 			EditorGUI.showMixedValue = prop.hasMultipleDifferentValues;
-			int newVal = EditorGUILayout.MaskField(content, prop.intValue, options);
+			var newVal = EditorGUILayout.MaskField(content, prop.intValue, options);
 			if (EditorGUI.EndChangeCheck()) {
 				prop.intValue = newVal;
 			}

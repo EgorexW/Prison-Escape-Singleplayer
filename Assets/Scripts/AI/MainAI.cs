@@ -36,7 +36,7 @@ public class MainAI : SerializedMonoBehaviour
     {
         foreach (var aiObject in objects) aiObject.SetActive(false);
         objects.Shuffle();
-        float localEnergy = CalculateEnergy();
+        var localEnergy = CalculateEnergy();
         foreach (var aiObject1 in objects.Where(aiObject => aiObject.Stats.energyCost <= localEnergy)){
             aiObject1.SetActive(true);
             // Debug.DrawRay(aiObject1.GameObject.transform.position, Vector3.up * 100, Color.red, 1);

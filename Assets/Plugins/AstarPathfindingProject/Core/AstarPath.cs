@@ -660,7 +660,7 @@ public class AstarPath : VersionedMonoBehaviour {
 	public string[] GetTagNames () {
 		if (tagNames == null || tagNames.Length != 32) {
 			tagNames = new string[32];
-			for (int i = 0; i < tagNames.Length; i++) {
+			for (var i = 0; i < tagNames.Length; i++) {
 				tagNames[i] = ""+i;
 			}
 			tagNames[0] = "Basic Ground";
@@ -697,7 +697,7 @@ public class AstarPath : VersionedMonoBehaviour {
 			nextFreePathID++;
 
 			if (On65KOverflow != null) {
-				System.Action tmp = On65KOverflow;
+				var tmp = On65KOverflow;
 				On65KOverflow = null;
 				tmp();
 			}
@@ -709,8 +709,8 @@ public class AstarPath : VersionedMonoBehaviour {
 		debugFloor = float.PositiveInfinity;
 		debugRoof = float.NegativeInfinity;
 
-		bool ignoreSearchTree = !showSearchTree || debugPathData == null;
-		for (int i = 0; i < graphs.Length; i++) {
+		var ignoreSearchTree = !showSearchTree || debugPathData == null;
+		for (var i = 0; i < graphs.Length; i++) {
 			if (graphs[i] != null && graphs[i].drawGizmos) {
 				graphs[i].GetNodes(node => {
 					if (node.Walkable && (ignoreSearchTree || Pathfinding.Util.GraphGizmoHelper.InSearchTree(node, debugPathData, debugPathID))) {
@@ -790,7 +790,7 @@ public class AstarPath : VersionedMonoBehaviour {
 
 			Profiler.BeginSample("Graph.OnDrawGizmos");
 			// Loop through all graphs and draw their gizmos
-			for (int i = 0; i < graphs.Length; i++) {
+			for (var i = 0; i < graphs.Length; i++) {
 				if (graphs[i] != null && graphs[i].drawGizmos)
 					graphs[i].OnDrawGizmos(gizmos, showNavGraphs);
 			}
@@ -827,7 +827,7 @@ public class AstarPath : VersionedMonoBehaviour {
 	/// </summary>
 	private void LogPathResults (Path path) {
 		if (logPathResults != PathLog.None && (path.error || logPathResults != PathLog.OnlyErrors)) {
-			string debug = (path as IPathInternals).DebugString(logPathResults);
+			var debug = (path as IPathInternals).DebugString(logPathResults);
 
 			if (logPathResults == PathLog.InGame) {
 				inGameDebugPath = debug;
@@ -1193,8 +1193,8 @@ public class AstarPath : VersionedMonoBehaviour {
 		return 0;
 #else
 		if (count == ThreadCount.AutomaticLowLoad || count == ThreadCount.AutomaticHighLoad) {
-			int logicalCores = Mathf.Max(1, SystemInfo.processorCount);
-			int memory = SystemInfo.systemMemorySize;
+			var logicalCores = Mathf.Max(1, SystemInfo.processorCount);
+			var memory = SystemInfo.systemMemorySize;
 
 			if (memory <= 0) {
 				Debug.LogError("Machine reporting that is has <= 0 bytes of RAM. This is definitely not true, assuming 1 GiB");
@@ -1262,7 +1262,7 @@ public class AstarPath : VersionedMonoBehaviour {
 
 	/// <summary>Initializes the <see cref="pathProcessor"/> field</summary>
 	void InitializePathProcessor () {
-		int numThreads = CalculateThreadCount(threadCount);
+		var numThreads = CalculateThreadCount(threadCount);
 
 		// Outside of play mode everything is synchronous, so no threads are used.
 		if (!Application.isPlaying) numThreads = 0;
@@ -1273,8 +1273,8 @@ public class AstarPath : VersionedMonoBehaviour {
 			numThreads = 1;
 		}
 
-		int numProcessors = Mathf.Max(numThreads, 1);
-		bool multithreaded = numThreads > 0;
+		var numProcessors = Mathf.Max(numThreads, 1);
+		var multithreaded = numThreads > 0;
 		pathProcessor = new PathProcessor(this, pathReturnQueue, numProcessors, multithreaded);
 
 		pathProcessor.OnPathPreSearch += path => {
@@ -1681,7 +1681,7 @@ public class AstarPath : VersionedMonoBehaviour {
 			GraphModifier.FindAllModifiers();
 		}
 
-		int startFrame = Time.frameCount;
+		var startFrame = Time.frameCount;
 
 		yield return new Progress(0.05F, "Pre processing graphs");
 
@@ -1707,21 +1707,21 @@ public class AstarPath : VersionedMonoBehaviour {
 		var watch = System.Diagnostics.Stopwatch.StartNew();
 
 		// Destroy previous nodes
-		for (int i = 0; i < graphsToScan.Length; i++) {
+		for (var i = 0; i < graphsToScan.Length; i++) {
 			if (graphsToScan[i] != null) {
 				((IGraphInternals)graphsToScan[i]).DestroyAllNodes();
 			}
 		}
 
 		// Loop through all graphs and scan them one by one
-		for (int i = 0; i < graphsToScan.Length; i++) {
+		for (var i = 0; i < graphsToScan.Length; i++) {
 			// Skip null graphs
 			if (graphsToScan[i] == null) continue;
 
 			// Just used for progress information
 			// This graph will advance the progress bar from minp to maxp
-			float minp = Mathf.Lerp(0.1F, 0.8F, (float)(i)/(graphsToScan.Length));
-			float maxp = Mathf.Lerp(0.1F, 0.8F, (float)(i+0.95F)/(graphsToScan.Length));
+			var minp = Mathf.Lerp(0.1F, 0.8F, (float)(i)/(graphsToScan.Length));
+			var maxp = Mathf.Lerp(0.1F, 0.8F, (float)(i+0.95F)/(graphsToScan.Length));
 
 			var progressDescriptionPrefix = "Scanning graph " + (i+1) + " of " + graphsToScan.Length + " - ";
 
@@ -2040,13 +2040,13 @@ public class AstarPath : VersionedMonoBehaviour {
 		// Cache property lookup
 		var graphs = this.graphs;
 
-		float minDist = float.PositiveInfinity;
-		NNInfoInternal nearestNode = new NNInfoInternal();
-		int nearestGraph = -1;
+		var minDist = float.PositiveInfinity;
+		var nearestNode = new NNInfoInternal();
+		var nearestGraph = -1;
 
 		if (graphs != null) {
-			for (int i = 0; i < graphs.Length; i++) {
-				NavGraph graph = graphs[i];
+			for (var i = 0; i < graphs.Length; i++) {
+				var graph = graphs[i];
 
 				// Check if this graph should be searched
 				if (graph == null || !constraint.SuitableGraph(i, graph)) {
@@ -2065,7 +2065,7 @@ public class AstarPath : VersionedMonoBehaviour {
 					nnInfo = graph.GetNearest(position, constraint);
 				}
 
-				GraphNode node = nnInfo.node;
+				var node = nnInfo.node;
 
 				// No node found in this graph
 				if (node == null) {
@@ -2073,7 +2073,7 @@ public class AstarPath : VersionedMonoBehaviour {
 				}
 
 				// Distance to the closest point on the node from the requested position
-				float dist = ((Vector3)nnInfo.clampedPosition-position).magnitude;
+				var dist = ((Vector3)nnInfo.clampedPosition-position).magnitude;
 
 				if (prioritizeGraphs && dist < prioritizeGraphsLimit) {
 					// The node is close enough, choose this graph and discard all others
@@ -2105,7 +2105,7 @@ public class AstarPath : VersionedMonoBehaviour {
 
 		if (!fullGetNearestSearch && nearestNode.node != null && !constraint.Suitable(nearestNode.node)) {
 			// Otherwise, perform a check to force the graphs to check for a suitable node
-			NNInfoInternal nnInfo = graphs[nearestGraph].GetNearestForce(position, constraint);
+			var nnInfo = graphs[nearestGraph].GetNearestForce(position, constraint);
 
 			if (nnInfo.node != null) {
 				nearestNode = nnInfo;
@@ -2127,20 +2127,20 @@ public class AstarPath : VersionedMonoBehaviour {
 	public GraphNode GetNearest (Ray ray) {
 		if (graphs == null) return null;
 
-		float minDist = Mathf.Infinity;
+		var minDist = Mathf.Infinity;
 		GraphNode nearestNode = null;
 
-		Vector3 lineDirection = ray.direction;
-		Vector3 lineOrigin = ray.origin;
+		var lineDirection = ray.direction;
+		var lineOrigin = ray.origin;
 
-		for (int i = 0; i < graphs.Length; i++) {
-			NavGraph graph = graphs[i];
+		for (var i = 0; i < graphs.Length; i++) {
+			var graph = graphs[i];
 
 			graph.GetNodes(node => {
-				Vector3 pos = (Vector3)node.position;
-				Vector3 p = lineOrigin+(Vector3.Dot(pos-lineOrigin, lineDirection)*lineDirection);
+				var pos = (Vector3)node.position;
+				var p = lineOrigin+(Vector3.Dot(pos-lineOrigin, lineDirection)*lineDirection);
 
-				float tmp = Mathf.Abs(p.x-pos.x);
+				var tmp = Mathf.Abs(p.x-pos.x);
 				tmp *= tmp;
 				if (tmp > minDist) return;
 
@@ -2148,7 +2148,7 @@ public class AstarPath : VersionedMonoBehaviour {
 				tmp *= tmp;
 				if (tmp > minDist) return;
 
-				float dist = (p-pos).sqrMagnitude;
+				var dist = (p-pos).sqrMagnitude;
 
 				if (dist < minDist) {
 					minDist = dist;

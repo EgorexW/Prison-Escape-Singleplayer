@@ -141,7 +141,7 @@ namespace Pathfinding {
 			// and then do it over several frames
 			// (hence the IEnumerator coroutine)
 			// to avoid too large FPS drops
-			IEnumerator ie = UpdateGraphCoroutine();
+			var ie = UpdateGraphCoroutine();
 			AstarPath.active.AddWorkItem(new AstarWorkItem(
 				(context, force) => {
 				// If force is true we need to calculate all steps at once
@@ -170,7 +170,7 @@ namespace Pathfinding {
 		IEnumerator UpdateGraphCoroutine () {
 			// Find the direction that we want to move the graph in.
 			// Calcuculate this in graph space (where a distance of one is the size of one node)
-			Vector3 dir = PointToGraphSpace(target.position) - PointToGraphSpace(graph.center);
+			var dir = PointToGraphSpace(target.position) - PointToGraphSpace(graph.center);
 
 			// Snap to a whole number of nodes
 			dir.x = Mathf.Round(dir.x);
@@ -181,18 +181,18 @@ namespace Pathfinding {
 			if (dir == Vector3.zero) yield break;
 
 			// Number of nodes to offset in each direction
-			Int2 offset = new Int2(-Mathf.RoundToInt(dir.x), -Mathf.RoundToInt(dir.z));
+			var offset = new Int2(-Mathf.RoundToInt(dir.x), -Mathf.RoundToInt(dir.z));
 
 			// Move the center (this is in world units, so we need to convert it back from graph space)
 			graph.center += graph.transform.TransformVector(dir);
 			graph.UpdateTransform();
 
 			// Cache some variables for easier access
-			int width = graph.width;
-			int depth = graph.depth;
+			var width = graph.width;
+			var depth = graph.depth;
 			GridNodeBase[] nodes;
 			// Layers are required when handling LayeredGridGraphs
-			int layers = graph.LayerCount;
+			var layers = graph.LayerCount;
 			nodes = graph.nodes;
 
 			// Create a temporary buffer required for the calculations
@@ -203,18 +203,18 @@ namespace Pathfinding {
 			// Check if we have moved less than a whole graph width all directions
 			// If we have moved more than this we can just as well recalculate the whole graph
 			if (Mathf.Abs(offset.x) <= width && Mathf.Abs(offset.y) <= depth) {
-				IntRect recalculateRect = new IntRect(0, 0, offset.x, offset.y);
+				var recalculateRect = new IntRect(0, 0, offset.x, offset.y);
 
 				// If offset.x < 0, adjust the rect
 				if (recalculateRect.xmin > recalculateRect.xmax) {
-					int tmp2 = recalculateRect.xmax;
+					var tmp2 = recalculateRect.xmax;
 					recalculateRect.xmax = width + recalculateRect.xmin;
 					recalculateRect.xmin = width + tmp2;
 				}
 
 				// If offset.y < 0, adjust the rect
 				if (recalculateRect.ymin > recalculateRect.ymax) {
-					int tmp2 = recalculateRect.ymax;
+					var tmp2 = recalculateRect.ymax;
 					recalculateRect.ymax = depth + recalculateRect.ymin;
 					recalculateRect.ymin = depth + tmp2;
 				}
@@ -228,12 +228,12 @@ namespace Pathfinding {
 				// Offset each node by the #offset variable
 				// nodes which would end up outside the graph
 				// will wrap around to the other side of it
-				for (int l = 0; l < layers; l++) {
-					int layerOffset = l*width*depth;
-					for (int z = 0; z < depth; z++) {
-						int pz = z*width;
-						int tz = ((z+offset.y + depth)%depth)*width;
-						for (int x = 0; x < width; x++) {
+				for (var l = 0; l < layers; l++) {
+					var layerOffset = l*width*depth;
+					for (var z = 0; z < depth; z++) {
+						var pz = z*width;
+						var tz = ((z+offset.y + depth)%depth)*width;
+						for (var x = 0; x < width; x++) {
 							buffer[tz + ((x+offset.x + width) % width)] = nodes[layerOffset + pz + x];
 						}
 					}
@@ -242,10 +242,10 @@ namespace Pathfinding {
 
 					// Copy the nodes back to the graph
 					// and set the correct indices
-					for (int z = 0; z < depth; z++) {
-						int pz = z*width;
-						for (int x = 0; x < width; x++) {
-							int newIndex = pz + x;
+					for (var z = 0; z < depth; z++) {
+						var pz = z*width;
+						for (var x = 0; x < width; x++) {
+							var newIndex = pz + x;
 							var node = buffer[newIndex];
 							if (node != null) node.NodeInGridIndex = newIndex;
 							nodes[layerOffset + newIndex] = node;
@@ -262,7 +262,7 @@ namespace Pathfinding {
 							xmax = recalculateRect.xmax;
 						}
 
-						for (int x = xmin; x < xmax; x++) {
+						for (var x = xmin; x < xmax; x++) {
 							var node = buffer[pz + x];
 							if (node != null) {
 								// Clear connections on all nodes that are wrapped and placed on the other side of the graph.
@@ -279,16 +279,16 @@ namespace Pathfinding {
 
 				// The calculation will only update approximately this number of
 				// nodes per frame. This is used to keep CPU load per frame low
-				int yieldEvery = 1000;
+				var yieldEvery = 1000;
 				// To avoid the update taking too long, make yieldEvery somewhat proportional to the number of nodes that we are going to update
-				int approxNumNodesToUpdate = Mathf.Max(Mathf.Abs(offset.x), Mathf.Abs(offset.y)) * Mathf.Max(width, depth);
+				var approxNumNodesToUpdate = Mathf.Max(Mathf.Abs(offset.x), Mathf.Abs(offset.y)) * Mathf.Max(width, depth);
 				yieldEvery = Mathf.Max(yieldEvery, approxNumNodesToUpdate/10);
-				int counter = 0;
+				var counter = 0;
 
 				// Recalculate the nodes
 				// Take a look at the image in the docs for the UpdateGraph method
 				// to see which nodes are being recalculated.
-				for (int z = 0; z < depth; z++) {
+				for (var z = 0; z < depth; z++) {
 					int xmin, xmax;
 					if (z >= recalculateRect.ymin && z < recalculateRect.ymax) {
 						xmin = 0;
@@ -298,7 +298,7 @@ namespace Pathfinding {
 						xmax = recalculateRect.xmax;
 					}
 
-					for (int x = xmin; x < xmax; x++) {
+					for (var x = xmin; x < xmax; x++) {
 						graph.RecalculateCell(x, z, false, false);
 					}
 
@@ -310,7 +310,7 @@ namespace Pathfinding {
 					}
 				}
 
-				for (int z = 0; z < depth; z++) {
+				for (var z = 0; z < depth; z++) {
 					int xmin, xmax;
 					if (z >= connectionRect.ymin && z < connectionRect.ymax) {
 						xmin = 0;
@@ -320,7 +320,7 @@ namespace Pathfinding {
 						xmax = connectionRect.xmax;
 					}
 
-					for (int x = xmin; x < xmax; x++) {
+					for (var x = xmin; x < xmax; x++) {
 						graph.CalculateConnections(x, z);
 					}
 
@@ -337,19 +337,19 @@ namespace Pathfinding {
 				// Calculate all connections for the nodes along the boundary
 				// of the graph, these always need to be updated
 				/// <summary>TODO: Optimize to not traverse all nodes in the graph, only those at the edges</summary>
-				for (int z = 0; z < depth; z++) {
-					for (int x = 0; x < width; x++) {
+				for (var z = 0; z < depth; z++) {
+					for (var x = 0; x < width; x++) {
 						if (x == 0 || z == 0 || x == width-1 || z == depth-1) graph.CalculateConnections(x, z);
 					}
 				}
 			} else {
 				// The calculation will only update approximately this number of
 				// nodes per frame. This is used to keep CPU load per frame low
-				int yieldEvery = Mathf.Max(depth*width / 20, 1000);
-				int counter = 0;
+				var yieldEvery = Mathf.Max(depth*width / 20, 1000);
+				var counter = 0;
 				// Just update all nodes
-				for (int z = 0; z < depth; z++) {
-					for (int x = 0; x < width; x++) {
+				for (var z = 0; z < depth; z++) {
+					for (var x = 0; x < width; x++) {
 						graph.RecalculateCell(x, z);
 					}
 					counter += width;
@@ -360,8 +360,8 @@ namespace Pathfinding {
 				}
 
 				// Recalculate the connections of all nodes
-				for (int z = 0; z < depth; z++) {
-					for (int x = 0; x < width; x++) {
+				for (var z = 0; z < depth; z++) {
+					for (var x = 0; x < width; x++) {
 						graph.CalculateConnections(x, z);
 					}
 					counter += width;

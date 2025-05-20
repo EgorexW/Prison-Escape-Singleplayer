@@ -23,7 +23,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 
 		void Awake(){
-			InputActionMap playerInput = GetComponent<PlayerInput>().actions.FindActionMap("Player");
+			var playerInput = GetComponent<PlayerInput>().actions.FindActionMap("Player");
 			playerInput.FindAction("Move").performed += OnMove;
 			playerInput.FindAction("Look").performed += OnLook;
 			playerInput.FindAction("Jump").performed += OnJump;

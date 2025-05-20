@@ -359,7 +359,7 @@ namespace Pathfinding {
 			handler.heap.Add(pathNode);
 
 			GetConnections((GraphNode other) => {
-				PathNode otherPN = handler.GetPathNode(other);
+				var otherPN = handler.GetPathNode(other);
 				if (otherPN.parent == pathNode && otherPN.pathID == handler.PathID) other.UpdateRecursiveG(path, otherPN, handler);
 			});
 		}
@@ -457,7 +457,7 @@ namespace Pathfinding {
 		/// </summary>
 		public virtual bool ContainsConnection (GraphNode node) {
 			// Simple but slow default implementation
-			bool contains = false;
+			var contains = false;
 
 			GetConnections(neighbour => {
 				contains |= neighbour == node;
@@ -600,7 +600,7 @@ namespace Pathfinding {
 		public override void ClearConnections (bool alsoReverse) {
 			// Remove all connections to this node from our neighbours
 			if (alsoReverse && connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					// Null check done here because NavmeshTile.Destroy
 					// requires it for some optimizations it does
 					// Normally connection elements are never null
@@ -616,11 +616,11 @@ namespace Pathfinding {
 
 		public override void GetConnections (System.Action<GraphNode> action) {
 			if (connections == null) return;
-			for (int i = 0; i < connections.Length; i++) action(connections[i].node);
+			for (var i = 0; i < connections.Length; i++) action(connections[i].node);
 		}
 
 		public override bool ContainsConnection (GraphNode node) {
-			for (int i = 0; i < connections.Length; i++) if (connections[i].node == node) return true;
+			for (var i = 0; i < connections.Length; i++) if (connections[i].node == node) return true;
 			return false;
 		}
 
@@ -629,9 +629,9 @@ namespace Pathfinding {
 
 			handler.heap.Add(pathNode);
 
-			for (int i = 0; i < connections.Length; i++) {
-				GraphNode other = connections[i].node;
-				PathNode otherPN = handler.GetPathNode(other);
+			for (var i = 0; i < connections.Length; i++) {
+				var other = connections[i].node;
+				var otherPN = handler.GetPathNode(other);
 				if (otherPN.parent == pathNode && otherPN.pathID == handler.PathID) {
 					other.UpdateRecursiveG(path, otherPN, handler);
 				}
@@ -671,7 +671,7 @@ namespace Pathfinding {
 
 			// Check if we already have a connection to the node
 			if (connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					if (connections[i].node == node) {
 						// Just update the cost for the existing connection
 						connections[i].cost = cost;
@@ -685,10 +685,10 @@ namespace Pathfinding {
 			}
 
 			// Create new arrays which include the new connection
-			int connLength = connections != null ? connections.Length : 0;
+			var connLength = connections != null ? connections.Length : 0;
 
 			var newconns = ArrayPool<Connection>.ClaimWithExactLength(connLength+1);
-			for (int i = 0; i < connLength; i++) {
+			for (var i = 0; i < connLength; i++) {
 				newconns[i] = connections[i];
 			}
 
@@ -714,16 +714,16 @@ namespace Pathfinding {
 			if (connections == null) return;
 
 			// Iterate through all connections and check if there are any to the node
-			for (int i = 0; i < connections.Length; i++) {
+			for (var i = 0; i < connections.Length; i++) {
 				if (connections[i].node == node) {
 					// Create new arrays which have the specified node removed
-					int connLength = connections.Length;
+					var connLength = connections.Length;
 
 					var newconns = ArrayPool<Connection>.ClaimWithExactLength(connLength-1);
-					for (int j = 0; j < i; j++) {
+					for (var j = 0; j < i; j++) {
 						newconns[j] = connections[j];
 					}
-					for (int j = i+1; j < connLength; j++) {
+					for (var j = i+1; j < connLength; j++) {
 						newconns[j-1] = connections[j];
 					}
 
@@ -770,7 +770,7 @@ namespace Pathfinding {
 			var hash = base.GetGizmoHashCode();
 
 			if (connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					hash ^= 17 * connections[i].GetHashCode();
 				}
 			}
@@ -782,7 +782,7 @@ namespace Pathfinding {
 				ctx.writer.Write(-1);
 			} else {
 				ctx.writer.Write(connections.Length);
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					ctx.SerializeNodeReference(connections[i].node);
 					ctx.writer.Write(connections[i].cost);
 					ctx.writer.Write(connections[i].shapeEdge);
@@ -791,14 +791,14 @@ namespace Pathfinding {
 		}
 
 		public override void DeserializeReferences (GraphSerializationContext ctx) {
-			int count = ctx.reader.ReadInt32();
+			var count = ctx.reader.ReadInt32();
 
 			if (count == -1) {
 				connections = null;
 			} else {
 				connections = ArrayPool<Connection>.ClaimWithExactLength(count);
 
-				for (int i = 0; i < count; i++) {
+				for (var i = 0; i < count; i++) {
 					connections[i] = new Connection(
 						ctx.DeserializeNodeReference(),
 						ctx.reader.ReadUInt32(),

@@ -55,7 +55,7 @@ namespace Pathfinding.Util {
 				return ClaimWithExactLength(0);
 			}
 
-			int bucketIndex = 0;
+			var bucketIndex = 0;
 			while ((1 << bucketIndex) < minimumLength && bucketIndex < 30) {
 				bucketIndex++;
 			}
@@ -93,7 +93,7 @@ namespace Pathfinding.Util {
 		/// </summary>
 		public static T[] ClaimWithExactLength (int length) {
 #if !ASTAR_NO_POOLING
-			bool isPowerOfTwo = length != 0 && (length & (length - 1)) == 0;
+			var isPowerOfTwo = length != 0 && (length & (length - 1)) == 0;
 			if (isPowerOfTwo) {
 				// Will return the correct array length
 				return Claim(length);
@@ -101,7 +101,7 @@ namespace Pathfinding.Util {
 
 			if (length <= MaximumExactArrayLength) {
 				lock (pool) {
-					Stack<T[]> stack = exactPool[length];
+					var stack = exactPool[length];
 					if (stack != null && stack.Count > 0) {
 						var array = stack.Pop();
 #if !ASTAR_OPTIMIZE_POOLING
@@ -127,7 +127,7 @@ namespace Pathfinding.Util {
 			}
 
 #if !ASTAR_NO_POOLING
-			bool isPowerOfTwo = array.Length != 0 && (array.Length & (array.Length - 1)) == 0;
+			var isPowerOfTwo = array.Length != 0 && (array.Length & (array.Length - 1)) == 0;
 			if (!isPowerOfTwo && !allowNonPowerOfTwo && array.Length != 0) throw new System.ArgumentException("Length is not a power of 2");
 
 			lock (pool) {
@@ -137,7 +137,7 @@ namespace Pathfinding.Util {
 				}
 #endif
 				if (isPowerOfTwo) {
-					int bucketIndex = 0;
+					var bucketIndex = 0;
 					while ((1 << bucketIndex) < array.Length && bucketIndex < 30) {
 						bucketIndex++;
 					}
@@ -148,7 +148,7 @@ namespace Pathfinding.Util {
 
 					pool[bucketIndex].Push(array);
 				} else if (array.Length <= MaximumExactArrayLength) {
-					Stack<T[]> stack = exactPool[array.Length];
+					var stack = exactPool[array.Length];
 					if (stack == null) stack = exactPool[array.Length] = new Stack<T[]>();
 					stack.Push(array);
 				}
@@ -169,7 +169,7 @@ namespace Pathfinding.Util {
 		public static T[] ToArrayFromPool<T>(this List<T> list) {
 			var arr = ArrayPool<T>.ClaimWithExactLength(list.Count);
 
-			for (int i = 0; i < arr.Length; i++) {
+			for (var i = 0; i < arr.Length; i++) {
 				arr[i] = list[i];
 			}
 			return arr;

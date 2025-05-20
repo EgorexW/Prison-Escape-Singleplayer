@@ -68,7 +68,7 @@ namespace Nrjwolf.Tools.Editor.AttachAttributes
                 return;
             }
 
-            bool isPropertyValueNull = property.objectReferenceValue == null;
+            var isPropertyValueNull = property.objectReferenceValue == null;
 
             // Change GUI color
             var prevColor = GUI.color;
@@ -117,7 +117,7 @@ namespace Nrjwolf.Tools.Editor.AttachAttributes
     {
         public override void UpdateProperty(SerializedProperty property, GameObject go, Type type)
         {
-            GetComponentInChildrenAttribute labelAttribute = (GetComponentInChildrenAttribute)attribute;
+            var labelAttribute = (GetComponentInChildrenAttribute)attribute;
             if (labelAttribute.ChildName == null)
             {
                 property.objectReferenceValue = go.GetComponentInChildren(type, labelAttribute.IncludeInactive);
@@ -155,10 +155,10 @@ namespace Nrjwolf.Tools.Editor.AttachAttributes
         public UnityEngine.Object FindObjectsOfTypeByName(string aClassName)
         {
             var assemblies = System.AppDomain.CurrentDomain.GetAssemblies();
-            for (int i = 0; i < assemblies.Length; i++)
+            for (var i = 0; i < assemblies.Length; i++)
             {
                 var types = assemblies[i].GetTypes();
-                for (int n = 0; n < types.Length; n++)
+                for (var n = 0; n < types.Length; n++)
                 {
                     if (typeof(UnityEngine.Object).IsAssignableFrom(types[n]) && aClassName == types[n].Name)
                         return UnityEngine.Object.FindFirstObjectByType(types[n]);

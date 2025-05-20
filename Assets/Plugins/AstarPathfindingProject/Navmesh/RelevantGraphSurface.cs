@@ -67,7 +67,7 @@ namespace Pathfinding {
 		/// Required to be able to use the position property reliably.
 		/// </summary>
 		public static void UpdateAllPositions () {
-			RelevantGraphSurface c = root;
+			var c = root;
 
 			while (c != null) { c.UpdatePosition(); c = c.Next; }
 		}
@@ -75,7 +75,7 @@ namespace Pathfinding {
 		public static void FindAllGraphSurfaces () {
 			var srf = GameObject.FindObjectsOfType(typeof(RelevantGraphSurface)) as RelevantGraphSurface[];
 
-			for (int i = 0; i < srf.Length; i++) {
+			for (var i = 0; i < srf.Length; i++) {
 				srf[i].OnDisable();
 				srf[i].OnEnable();
 			}

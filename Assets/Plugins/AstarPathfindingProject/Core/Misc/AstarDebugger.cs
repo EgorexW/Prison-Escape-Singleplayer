@@ -104,7 +104,7 @@ namespace Pathfinding {
 			graph = new GraphPoint[graphBufferSize];
 
 			if (Time.unscaledDeltaTime > 0) {
-				for (int i = 0; i < fpsDrops.Length; i++) {
+				for (var i = 0; i < fpsDrops.Length; i++) {
 					fpsDrops[i] = 1F / Time.unscaledDeltaTime;
 				}
 			}
@@ -128,7 +128,7 @@ namespace Pathfinding {
 			}
 
 			public void Print (StringBuilder text) {
-				int totCreated = getTotalCreated();
+				var totCreated = getTotalCreated();
 
 				if (totCreated > 0) {
 					text.Append("\n").Append(("  " + name).PadRight(25)).Append(getSize()).Append("/").Append(totCreated);
@@ -142,7 +142,7 @@ namespace Pathfinding {
 			if (Time.unscaledDeltaTime <= 0.0001f)
 				return;
 
-			int collCount = System.GC.CollectionCount(0);
+			var collCount = System.GC.CollectionCount(0);
 
 			if (lastCollectNum != collCount) {
 				lastCollectNum = collCount;
@@ -154,11 +154,11 @@ namespace Pathfinding {
 
 			allocMem = (int)System.GC.GetTotalMemory(false);
 
-			bool collectEvent = allocMem < peakAlloc;
+			var collectEvent = allocMem < peakAlloc;
 			peakAlloc = !collectEvent ? allocMem : peakAlloc;
 
 			if (Time.realtimeSinceStartup - lastAllocSet > 0.3F || !Application.isPlaying) {
-				int diff = allocMem - lastAllocMemory;
+				var diff = allocMem - lastAllocMemory;
 				lastAllocMemory = allocMem;
 				lastAllocSet = Time.realtimeSinceStartup;
 				delayedDeltaTime = Time.unscaledDeltaTime;
@@ -170,7 +170,7 @@ namespace Pathfinding {
 
 			if (Application.isPlaying) {
 				fpsDrops[Time.frameCount % fpsDrops.Length] = Time.unscaledDeltaTime > 0.00001f ? 1F / Time.unscaledDeltaTime : 0;
-				int graphIndex = Time.frameCount % graph.Length;
+				var graphIndex = Time.frameCount % graph.Length;
 				graph[graphIndex].fps = Time.unscaledDeltaTime < 0.00001f ? 1F / Time.unscaledDeltaTime : 0;
 				graph[graphIndex].collectEvent = collectEvent;
 				graph[graphIndex].memory = allocMem;
@@ -181,18 +181,18 @@ namespace Pathfinding {
 
 
 				float minMem = float.PositiveInfinity, maxMem = 0, minFPS = float.PositiveInfinity, maxFPS = 0;
-				for (int i = 0; i < graph.Length; i++) {
+				for (var i = 0; i < graph.Length; i++) {
 					minMem = Mathf.Min(graph[i].memory, minMem);
 					maxMem = Mathf.Max(graph[i].memory, maxMem);
 					minFPS = Mathf.Min(graph[i].fps, minFPS);
 					maxFPS = Mathf.Max(graph[i].fps, maxFPS);
 				}
 
-				int currentGraphIndex = Time.frameCount % graph.Length;
+				var currentGraphIndex = Time.frameCount % graph.Length;
 
-				Matrix4x4 m = Matrix4x4.TRS(new Vector3((cam.pixelWidth - graphWidth)/2f, graphOffset, 1), Quaternion.identity, new Vector3(graphWidth, graphHeight, 1));
+				var m = Matrix4x4.TRS(new Vector3((cam.pixelWidth - graphWidth)/2f, graphOffset, 1), Quaternion.identity, new Vector3(graphWidth, graphHeight, 1));
 
-				for (int i = 0; i < graph.Length-1; i++) {
+				for (var i = 0; i < graph.Length-1; i++) {
 					if (i == currentGraphIndex) continue;
 
 					DrawGraphLine(i, m, i/(float)graph.Length, (i+1)/(float)graph.Length, Mathf.InverseLerp(minMem, maxMem, graph[i].memory), Mathf.InverseLerp(minMem, maxMem, graph[i+1].memory), Color.blue);
@@ -260,16 +260,16 @@ namespace Pathfinding {
 					text.Append("FPS".PadRight(25)).Append(delayedFPS.ToString("0.0 fps"));
 
 
-					float minFps = Mathf.Infinity;
+					var minFps = Mathf.Infinity;
 
-					for (int i = 0; i < fpsDrops.Length; i++) if (fpsDrops[i] < minFps) minFps = fpsDrops[i];
+					for (var i = 0; i < fpsDrops.Length; i++) if (fpsDrops[i] < minFps) minFps = fpsDrops[i];
 
 					text.AppendLine();
 					text.Append(("Lowest fps (last " + fpsDrops.Length + ")").PadRight(25)).Append(minFps.ToString("0.0"));
 				}
 
 				if (showPathProfile) {
-					AstarPath astar = AstarPath.active;
+					var astar = AstarPath.active;
 
 					text.AppendLine();
 
@@ -286,7 +286,7 @@ namespace Pathfinding {
 
 						text.Append("\nPool Sizes (size/total created)");
 
-						for (int i = 0; i < debugTypes.Length; i++) {
+						for (var i = 0; i < debugTypes.Length; i++) {
 							debugTypes[i].Print(text);
 						}
 					}
@@ -308,7 +308,7 @@ namespace Pathfinding {
 
 			if (showGraph) {
 				float minMem = float.PositiveInfinity, maxMem = 0, minFPS = float.PositiveInfinity, maxFPS = 0;
-				for (int i = 0; i < graph.Length; i++) {
+				for (var i = 0; i < graph.Length; i++) {
 					minMem = Mathf.Min(graph[i].memory, minMem);
 					maxMem = Mathf.Max(graph[i].memory, maxMem);
 					minFPS = Mathf.Min(graph[i].fps, minFPS);

@@ -147,7 +147,7 @@ namespace Pathfinding {
 
 		/// <summary>Internal method to clean up node data</summary>
 		public void DestroyNode (GraphNode node) {
-			PathNode pn = GetPathNode(node);
+			var pn = GetPathNode(node);
 
 			// Clean up references to help the GC
 			pn.node = null;
@@ -162,11 +162,11 @@ namespace Pathfinding {
 		/// <summary>Internal method to initialize node data</summary>
 		public void InitializeNode (GraphNode node) {
 			//Get the index of the node
-			int ind = node.NodeIndex;
+			var ind = node.NodeIndex;
 
 			if (ind >= nodes.Length) {
 				// Grow by a factor of 2
-				PathNode[] newNodes = new PathNode[System.Math.Max(128, nodes.Length*2)];
+				var newNodes = new PathNode[System.Math.Max(128, nodes.Length*2)];
 				nodes.CopyTo(newNodes, 0);
 				// Initialize all PathNode instances at once
 				// It is important that we do this here and don't for example leave the entries as NULL and initialize
@@ -174,7 +174,7 @@ namespace Pathfinding {
 				// to each other in memory (most systems use some kind of bumb-allocator) and this improves cache locality
 				// and reduces false sharing (which would happen if we allocated PathNodes for the different threads close
 				// to each other). This has been profiled to give around a 4% difference in overall pathfinding performance.
-				for (int i = nodes.Length; i < newNodes.Length; i++) newNodes[i] = new PathNode();
+				for (var i = nodes.Length; i < newNodes.Length; i++) newNodes[i] = new PathNode();
 				nodes = newNodes;
 			}
 
@@ -199,7 +199,7 @@ namespace Pathfinding {
 		/// See: Pathfinding.PathNode.pathID
 		/// </summary>
 		public void ClearPathIDs () {
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				if (nodes[i] != null) nodes[i].pathID = 0;
 			}
 		}

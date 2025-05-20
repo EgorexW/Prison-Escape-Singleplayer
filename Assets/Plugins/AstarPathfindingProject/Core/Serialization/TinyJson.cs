@@ -57,7 +57,7 @@ namespace Pathfinding.Serialization {
 			} else if (obj is System.Collections.IList) {
 				output.Append("[");
 				var arr = obj as System.Collections.IList;
-				for (int i = 0; i < arr.Count; i++) {
+				for (var i = 0; i < arr.Count; i++) {
 					if (i != 0)
 						output.Append(", ");
 					Serialize(arr[i]);
@@ -72,7 +72,7 @@ namespace Pathfinding.Serialization {
 				var optIn = typeInfo.GetCustomAttributes(typeof(JsonOptInAttribute), true).Length > 0;
 #endif
 				output.Append("{");
-				bool earlier = false;
+				var earlier = false;
 
 				while (true) {
 #if NETFX_CORE
@@ -250,7 +250,7 @@ namespace Pathfinding.Serialization {
 				}
 				return result;
 			} else if (tpInfo.IsArray) {
-				List<System.Object> ls = new List<System.Object>();
+				var ls = new List<System.Object>();
 				Eat("[");
 				while (!TryEat(']')) {
 					ls.Add(Deserialize(tp.GetElementType()));
@@ -301,12 +301,12 @@ namespace Pathfinding.Serialization {
 			}
 
 			if (fieldName != "Name") throw new Exception("Expected 'Name' field");
-			string name = EatField();
+			var name = EatField();
 
 			if (name == null) return null;
 
 			if (EatField() != "Type") throw new Exception("Expected 'Type' field");
-			string typename = EatField();
+			var typename = EatField();
 
 			// Remove assembly information
 			if (typename.IndexOf(',') != -1) {
@@ -326,7 +326,7 @@ namespace Pathfinding.Serialization {
 			EatWhitespace();
 			if ((char)reader.Peek() == '"') {
 				if (EatField() != "GUID") throw new Exception("Expected 'GUID' field");
-				string guid = EatField();
+				var guid = EatField();
 
 				if (contextRoot != null) {
 					foreach (var helper in contextRoot.GetComponentsInChildren<UnityReferenceHelper>(true)) {
@@ -359,9 +359,9 @@ namespace Pathfinding.Serialization {
 			// Note: calling LoadAll with an empty string will make it load the whole resources folder, which is probably a bad idea.
 			if (!string.IsNullOrEmpty(name)) {
 				// Try to load from resources
-				UnityEngine.Object[] objs = Resources.LoadAll(name, type);
+				var objs = Resources.LoadAll(name, type);
 
-				for (int i = 0; i < objs.Length; i++) {
+				for (var i = 0; i < objs.Length; i++) {
 					if (objs[i].name == name || objs.Length == 1) {
 						return objs[i];
 					}
@@ -378,7 +378,7 @@ namespace Pathfinding.Serialization {
 
 		void Eat (string s) {
 			EatWhitespace();
-			for (int i = 0; i < s.Length; i++) {
+			for (var i = 0; i < s.Length; i++) {
 				var c = (char)reader.Read();
 				if (c != s[i]) {
 					throw new Exception("Expected '" + s[i] + "' found '" + c + "'\n\n..." + reader.ReadLine());
@@ -389,7 +389,7 @@ namespace Pathfinding.Serialization {
 		System.Text.StringBuilder builder = new System.Text.StringBuilder();
 		string EatUntil (string c, bool inString) {
 			builder.Length = 0;
-			bool escape = false;
+			var escape = false;
 			while (true) {
 				var readInt = reader.Peek();
 				if (!escape && (char)readInt == '"') {

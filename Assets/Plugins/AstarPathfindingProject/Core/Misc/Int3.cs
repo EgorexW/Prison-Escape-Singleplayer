@@ -126,7 +126,7 @@ namespace Pathfinding {
 
 		/// <summary>Angle between the vectors in radians</summary>
 		public static float Angle (Int3 lhs, Int3 rhs) {
-			double cos = Dot(lhs, rhs)/ ((double)lhs.magnitude*(double)rhs.magnitude);
+			var cos = Dot(lhs, rhs)/ ((double)lhs.magnitude*(double)rhs.magnitude);
 
 			cos = cos < -1 ? -1 : (cos > 1 ? 1 : cos);
 			return (float)System.Math.Acos(cos);

@@ -127,11 +127,11 @@ namespace Pathfinding {
 			lastCheckTime = Time.realtimeSinceStartup;
 			if (colliderEnabled) {
 				// The current bounds of the collider
-				Bounds newBounds = bounds;
+				var newBounds = bounds;
 				var newRotation = tr.rotation;
 
-				Vector3 minDiff = prevBounds.min - newBounds.min;
-				Vector3 maxDiff = prevBounds.max - newBounds.max;
+				var minDiff = prevBounds.min - newBounds.min;
+				var maxDiff = prevBounds.max - newBounds.max;
 
 				var extents = newBounds.extents.magnitude;
 				// This is the distance that a point furthest out on the bounding box
@@ -191,9 +191,9 @@ namespace Pathfinding {
 				pendingGraphUpdates.Enqueue(guo);
 				AstarPath.active.UpdateGraphs(guo);
 			} else {
-				Bounds newBounds = bounds;
+				var newBounds = bounds;
 
-				Bounds merged = newBounds;
+				var merged = newBounds;
 				merged.Encapsulate(prevBounds);
 
 				// Check what seems to be fastest, to update the union of prevBounds and newBounds in a single request

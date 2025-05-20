@@ -48,7 +48,7 @@ namespace Pathfinding {
 					}
 				} else if (EditorUtility.IsPersistent(obj)) {
 					if (assetsMustBeInResourcesFolder) {
-						string path = AssetDatabase.GetAssetPath(obj).Replace("\\", "/");
+						var path = AssetDatabase.GetAssetPath(obj).Replace("\\", "/");
 						var rg = new System.Text.RegularExpressions.Regex(@"Resources/.*$");
 
 						if (!rg.IsMatch(path)) {
@@ -58,8 +58,8 @@ namespace Pathfinding {
 									AssetDatabase.Refresh();
 								}
 
-								string ext = System.IO.Path.GetExtension(path);
-								string error = AssetDatabase.MoveAsset(path, "Assets/Resources/"+obj.name+ext);
+								var ext = System.IO.Path.GetExtension(path);
+								var error = AssetDatabase.MoveAsset(path, "Assets/Resources/"+obj.name+ext);
 
 								if (error == "") {
 									path = AssetDatabase.GetAssetPath(obj);
@@ -71,7 +71,7 @@ namespace Pathfinding {
 
 						if (!AssetDatabase.IsMainAsset(obj) && obj.name != AssetDatabase.LoadMainAssetAtPath(path).name) {
 							if (FixLabel("Due to technical reasons, the main asset must\nhave the same name as the referenced asset")) {
-								string error = AssetDatabase.RenameAsset(path, obj.name);
+								var error = AssetDatabase.RenameAsset(path, obj.name);
 								if (error != "") {
 									Debug.LogError("Couldn't rename asset - "+error);
 								}
@@ -86,7 +86,7 @@ namespace Pathfinding {
 
 		/// <summary>Draws common graph settings</summary>
 		public void OnBaseInspectorGUI (NavGraph target) {
-			int penalty = EditorGUILayout.IntField(new GUIContent("Initial Penalty", "Initial Penalty for nodes in this graph. Set during Scan."), (int)target.initialPenalty);
+			var penalty = EditorGUILayout.IntField(new GUIContent("Initial Penalty", "Initial Penalty for nodes in this graph. Set during Scan."), (int)target.initialPenalty);
 
 			if (penalty < 0) penalty = 0;
 			target.initialPenalty = (uint)penalty;
@@ -102,9 +102,9 @@ namespace Pathfinding {
 
 		/// <summary>Draws a thin separator line</summary>
 		public static void Separator () {
-			GUIStyle separator = AstarPathEditor.astarSkin.FindStyle("PixelBox3Separator") ?? new GUIStyle();
+			var separator = AstarPathEditor.astarSkin.FindStyle("PixelBox3Separator") ?? new GUIStyle();
 
-			Rect r = GUILayoutUtility.GetRect(new GUIContent(), separator);
+			var r = GUILayoutUtility.GetRect(new GUIContent(), separator);
 
 			if (Event.current.type == EventType.Repaint) {
 				separator.Draw(r, false, false, false, false);
@@ -133,7 +133,7 @@ namespace Pathfinding {
 			GUILayout.BeginHorizontal();
 			GUILayout.Space(13*EditorGUI.indentLevel);
 			value = GUILayout.Toggle(value, "", GUILayout.Width(10));
-			GUIStyle boxHeader = AstarPathEditor.astarSkin.FindStyle("CollisionHeader");
+			var boxHeader = AstarPathEditor.astarSkin.FindStyle("CollisionHeader");
 			if (GUILayout.Button(label, boxHeader, GUILayout.Width(100))) {
 				value = !value;
 			}

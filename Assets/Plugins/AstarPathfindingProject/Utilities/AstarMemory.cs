@@ -28,7 +28,7 @@ namespace Pathfinding.Util {
 			}
 
 			int block = 32, index = 0;
-			int length = Math.Min(block, array.Length);
+			var length = Math.Min(block, array.Length);
 
 			//Fill the initial array
 			while (index < length) {
@@ -71,7 +71,7 @@ namespace Pathfinding.Util {
 			}
 
 			int block = 32, index = 0;
-			int length = Math.Min(block, totalSize);
+			var length = Math.Min(block, totalSize);
 
 			//Fill the initial array
 			while (index < length) {
@@ -100,7 +100,7 @@ namespace Pathfinding.Util {
 
 		/// <summary>Swaps the variables a and b</summary>
 		public static void Swap<T>(ref T a, ref T b) {
-			T tmp = a;
+			var tmp = a;
 
 			a = b;
 			b = tmp;

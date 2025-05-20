@@ -45,7 +45,7 @@ class InterfaceObjectDrawer : PropertyDrawer
         GUIContent label
     )
     {
-        SerializedProperty objectProperty = property.FindPropertyRelative("interfaceObject");
+        var objectProperty = property.FindPropertyRelative("interfaceObject");
 
         // position.width -= 45;
         EditorGUI.PropertyField(position, objectProperty, label, true);

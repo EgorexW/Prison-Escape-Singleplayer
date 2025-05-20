@@ -13,23 +13,23 @@ namespace Pathfinding.Util {
 
 		public Guid (byte[] bytes) {
 			// Pack 128 bits into 2 longs
-			ulong a = ((ulong)bytes[0] << 8*0) |
-					  ((ulong)bytes[1] << 8*1) |
-					  ((ulong)bytes[2] << 8*2) |
-					  ((ulong)bytes[3] << 8*3) |
-					  ((ulong)bytes[4] << 8*4) |
-					  ((ulong)bytes[5] << 8*5) |
-					  ((ulong)bytes[6] << 8*6) |
-					  ((ulong)bytes[7] << 8*7);
+			var a = ((ulong)bytes[0] << 8*0) |
+			        ((ulong)bytes[1] << 8*1) |
+			        ((ulong)bytes[2] << 8*2) |
+			        ((ulong)bytes[3] << 8*3) |
+			        ((ulong)bytes[4] << 8*4) |
+			        ((ulong)bytes[5] << 8*5) |
+			        ((ulong)bytes[6] << 8*6) |
+			        ((ulong)bytes[7] << 8*7);
 
-			ulong b = ((ulong)bytes[8] <<  8*0) |
-					  ((ulong)bytes[9] <<  8*1) |
-					  ((ulong)bytes[10] << 8*2) |
-					  ((ulong)bytes[11] << 8*3) |
-					  ((ulong)bytes[12] << 8*4) |
-					  ((ulong)bytes[13] << 8*5) |
-					  ((ulong)bytes[14] << 8*6) |
-					  ((ulong)bytes[15] << 8*7);
+			var b = ((ulong)bytes[8] <<  8*0) |
+			        ((ulong)bytes[9] <<  8*1) |
+			        ((ulong)bytes[10] << 8*2) |
+			        ((ulong)bytes[11] << 8*3) |
+			        ((ulong)bytes[12] << 8*4) |
+			        ((ulong)bytes[13] << 8*5) |
+			        ((ulong)bytes[14] << 8*6) |
+			        ((ulong)bytes[15] << 8*7);
 
 			// Need to swap endianness on e.g Wii U
 			_a = System.BitConverter.IsLittleEndian ? a : SwapEndianness(a);
@@ -43,19 +43,19 @@ namespace Pathfinding.Util {
 			if (str.Length < 32)
 				throw new System.FormatException("Invalid Guid format");
 
-			int counter = 0;
-			int i = 0;
-			int offset = 15*4;
+			var counter = 0;
+			var i = 0;
+			var offset = 15*4;
 
 			for (; counter < 16; i++) {
 				if (i >= str.Length)
 					throw new System.FormatException("Invalid Guid format. String too short");
 
-				char c = str[i];
+				var c = str[i];
 				if (c == '-') continue;
 
 				//Neat trick, perhaps a bit slow, but one will probably not use Guid parsing that much
-				int value = hex.IndexOf(char.ToUpperInvariant(c));
+				var value = hex.IndexOf(char.ToUpperInvariant(c));
 				if (value == -1)
 					throw new System.FormatException("Invalid Guid format : "+c+" is not a hexadecimal character");
 
@@ -70,11 +70,11 @@ namespace Pathfinding.Util {
 				if (i >= str.Length)
 					throw new System.FormatException("Invalid Guid format. String too short");
 
-				char c = str[i];
+				var c = str[i];
 				if (c == '-') continue;
 
 				//Neat trick, perhaps a bit slow, but one will probably not use Guid parsing that much
-				int value = hex.IndexOf(char.ToUpperInvariant(c));
+				var value = hex.IndexOf(char.ToUpperInvariant(c));
 				if (value == -1)
 					throw new System.FormatException("Invalid Guid format : "+c+" is not a hexadecimal character");
 
@@ -106,10 +106,10 @@ namespace Pathfinding.Util {
 		public byte[] ToByteArray () {
 			var bytes = new byte[16];
 
-			byte[] ba = System.BitConverter.GetBytes(!System.BitConverter.IsLittleEndian ? SwapEndianness(_a) : _a);
-			byte[] bb = System.BitConverter.GetBytes(!System.BitConverter.IsLittleEndian ? SwapEndianness(_b) : _b);
+			var ba = System.BitConverter.GetBytes(!System.BitConverter.IsLittleEndian ? SwapEndianness(_a) : _a);
+			var bb = System.BitConverter.GetBytes(!System.BitConverter.IsLittleEndian ? SwapEndianness(_b) : _b);
 
-			for (int i = 0; i < 8; i++) {
+			for (var i = 0; i < 8; i++) {
 				bytes[i] = ba[i];
 				bytes[i+8] = bb[i];
 			}
@@ -142,7 +142,7 @@ namespace Pathfinding.Util {
 		}
 
 		public override int GetHashCode () {
-			ulong ab = _a ^ _b;
+			var ab = _a ^ _b;
 
 			return (int)(ab >> 32) ^ (int)ab;
 		}

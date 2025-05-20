@@ -80,9 +80,9 @@ namespace Pathfinding {
 		}
 
 		InspectorGridMode DetermineGridType (GridGraph graph) {
-			bool hex = IsHexagonal(graph);
-			bool iso = IsIsometric(graph);
-			bool adv = IsAdvanced(graph);
+			var hex = IsHexagonal(graph);
+			var iso = IsIsometric(graph);
+			var adv = IsAdvanced(graph);
 
 			if (adv || (hex && iso)) return InspectorGridMode.Advanced;
 			if (hex) return InspectorGridMode.Hexagonal;
@@ -107,7 +107,7 @@ namespace Pathfinding {
 		};
 
 		void DrawFirstSection (GridGraph graph) {
-			float prevRatio = graph.aspectRatio;
+			var prevRatio = graph.aspectRatio;
 
 			DrawInspectorMode(graph);
 
@@ -125,7 +125,7 @@ namespace Pathfinding {
 				EditorGUILayout.BeginHorizontal();
 				EditorGUILayout.BeginVertical();
 				graph.inspectorHexagonSizeMode = (InspectorGridHexagonNodeSize)EditorGUILayout.EnumPopup(new GUIContent("Hexagon Dimension"), graph.inspectorHexagonSizeMode);
-				float hexagonSize = GridGraph.ConvertNodeSizeToHexagonSize(graph.inspectorHexagonSizeMode, graph.nodeSize);
+				var hexagonSize = GridGraph.ConvertNodeSizeToHexagonSize(graph.inspectorHexagonSizeMode, graph.nodeSize);
 				hexagonSize = (float)System.Math.Round(hexagonSize, 5);
 				newNodeSize = GridGraph.ConvertHexagonSizeToNodeSize(graph.inspectorHexagonSizeMode, EditorGUILayout.FloatField(hexagonSizeContents[(int)graph.inspectorHexagonSizeMode], hexagonSize));
 				EditorGUILayout.EndVertical();
@@ -134,7 +134,7 @@ namespace Pathfinding {
 			} else {
 				newNodeSize = EditorGUILayout.FloatField(new GUIContent("Node size", "The size of a single node. The size is the side of the node square in world units"), graph.nodeSize);
 			}
-			bool nodeSizeChanged = EditorGUI.EndChangeCheck();
+			var nodeSizeChanged = EditorGUI.EndChangeCheck();
 
 			newNodeSize = newNodeSize <= 0.01F ? 0.01F : newNodeSize;
 
@@ -198,7 +198,7 @@ namespace Pathfinding {
 
 			GUILayout.EndVertical();
 
-			Rect lockRect = GUILayoutUtility.GetRect(lockStyle.fixedWidth, lockStyle.fixedHeight);
+			var lockRect = GUILayoutUtility.GetRect(lockStyle.fixedWidth, lockStyle.fixedHeight);
 
 			GUILayout.EndHorizontal();
 
@@ -224,7 +224,7 @@ namespace Pathfinding {
 			var isometricValues = new [] { 0f, GridGraph.StandardIsometricAngle, GridGraph.StandardDimetricAngle };
 			var isometricOption = isometricValues.Length;
 
-			for (int i = 0; i < isometricValues.Length; i++) {
+			for (var i = 0; i < isometricValues.Length; i++) {
 				if (Mathf.Approximately(graph.isometricAngle, isometricValues[i])) {
 					isometricOption = i;
 				}
@@ -409,8 +409,8 @@ namespace Pathfinding {
 
 			collision.collisionCheck = ToggleGroup("Collision testing", collision.collisionCheck);
 			if (collision.collisionCheck) {
-				string[] colliderOptions = collision.use2D ? new [] { "Circle", "Point" } : new [] { "Sphere", "Capsule", "Ray" };
-				int[] colliderValues = collision.use2D ? new [] { 0, 2 } : new [] { 0, 1, 2 };
+				var colliderOptions = collision.use2D ? new [] { "Circle", "Point" } : new [] { "Sphere", "Capsule", "Ray" };
+				var colliderValues = collision.use2D ? new [] { 0, 2 } : new [] { 0, 1, 2 };
 				// In 2D the Circle (Sphere) mode will replace both the Sphere and the Capsule modes
 				// However make sure that the original value is still stored in the grid graph in case the user changes back to the 3D mode in the inspector.
 				var tp = collision.type;
@@ -471,9 +471,9 @@ namespace Pathfinding {
 			var width = 4;
 			// The DrawAAPolyLine method does not draw a centered line unfortunately
 			//radius -= width/2;
-			for (int i = 0; i < arcBuffer.Length; i++) {
-				float t = i * 1.0f / (arcBuffer.Length-1);
-				float angle = Mathf.Lerp(startAngle, endAngle, t);
+			for (var i = 0; i < arcBuffer.Length; i++) {
+				var t = i * 1.0f / (arcBuffer.Length-1);
+				var angle = Mathf.Lerp(startAngle, endAngle, t);
 				arcBuffer[i] = new Vector3(center.x + radius * Mathf.Cos(angle), center.y + radius * Mathf.Sin(angle), 0);
 			}
 			Handles.DrawAAPolyLine(EditorResourceHelper.HandlesAALineTexture, width, arcBuffer);
@@ -490,8 +490,8 @@ namespace Pathfinding {
 				DrawLine(a, b);
 			} else {
 				var dist = (b - a).magnitude;
-				int steps = Mathf.RoundToInt(dist / dashLength);
-				for (int i = 0; i < steps; i++) {
+				var steps = Mathf.RoundToInt(dist / dashLength);
+				for (var i = 0; i < steps; i++) {
 					var t1 = i * 1.0f / (steps-1);
 					var t2 = (i + 0.5f) * 1.0f / (steps-1);
 					DrawLine(Vector2.Lerp(a, b, t1), Vector2.Lerp(a, b, t2));
@@ -522,7 +522,7 @@ namespace Pathfinding {
 			// Draw Flat plane with capsule/sphere/line above
 
 			Handles.color = Color.white;
-			int gridWidthInNodes = collision.type == ColliderType.Ray ? 3 : Mathf.Max(3, RoundUpToNextOddNumber(collision.diameter + 0.5f));
+			var gridWidthInNodes = collision.type == ColliderType.Ray ? 3 : Mathf.Max(3, RoundUpToNextOddNumber(collision.diameter + 0.5f));
 			if (interpolatedGridWidthInNodes == -1) interpolatedGridWidthInNodes = gridWidthInNodes;
 			if (Mathf.Abs(interpolatedGridWidthInNodes - gridWidthInNodes) < 0.01f) interpolatedGridWidthInNodes = gridWidthInNodes;
 			else editor.Repaint();
@@ -537,7 +537,7 @@ namespace Pathfinding {
 			var scale = gridWidth / (nodeSize * interpolatedGridWidthInNodes);
 			var diameter = collision.type == ColliderType.Ray ? 0.05f : collision.diameter * nodeSize;
 			var interpolatedGridScale = gridWidthInNodes * nodeSize * scale;
-			for (int i = 0; i <= gridWidthInNodes; i++) {
+			for (var i = 0; i <= gridWidthInNodes; i++) {
 				var c = i*1.0f/gridWidthInNodes;
 				DrawLine(gridCenter + new Vector2(c - 0.5f, -0.5f) * interpolatedGridScale, gridCenter + new Vector2(c - 0.5f, 0.5f) * interpolatedGridScale);
 				DrawLine(gridCenter + new Vector2(-0.5f, c - 0.5f) * interpolatedGridScale, gridCenter + new Vector2(0.5f, c - 0.5f) * interpolatedGridScale);
@@ -558,7 +558,7 @@ namespace Pathfinding {
 			var interpolatedGridSideScale = gridWidthInNodes * nodeSize * sideScale;
 
 			DrawLine(sideBase + new Vector2(-interpolatedGridSideScale * 0.5f, 0), sideBase + new Vector2(interpolatedGridSideScale * 0.5f, 0));
-			for (int i = 0; i <= gridWidthInNodes; i++) {
+			for (var i = 0; i <= gridWidthInNodes; i++) {
 				var c = i*1.0f/gridWidthInNodes;
 				DrawArc(sideBase + new Vector2(c - 0.5f, 0) * interpolatedGridSideScale, 2, 0, Mathf.PI*2);
 			}
@@ -609,7 +609,7 @@ namespace Pathfinding {
 			gridPivotSelectBackground = gridPivotSelectBackground ?? AstarPathEditor.astarSkin.FindStyle("GridPivotSelectBackground");
 			gridPivotSelectButton = gridPivotSelectButton ?? AstarPathEditor.astarSkin.FindStyle("GridPivotSelectButton");
 
-			Rect r = GUILayoutUtility.GetRect(19, 19, gridPivotSelectBackground);
+			var r = GUILayoutUtility.GetRect(19, 19, gridPivotSelectBackground);
 
 			// I have no idea why... but this is required for it to work well
 			r.y -= 14;
@@ -646,7 +646,7 @@ namespace Pathfinding {
 		static readonly Vector3[] handlePoints = new [] { new Vector3(0.0f, 0, 0.5f), new Vector3(1.0f, 0, 0.5f), new Vector3(0.5f, 0, 0.0f), new Vector3(0.5f, 0, 1.0f) };
 
 		public override void OnSceneGUI (NavGraph target) {
-			Event e = Event.current;
+			var e = Event.current;
 
 			var graph = target as GridGraph;
 
@@ -677,12 +677,12 @@ namespace Pathfinding {
 			if (Tools.current == Tool.Scale) {
 				const float HandleScale = 0.1f;
 
-				Vector3 mn = Vector3.zero;
-				Vector3 mx = Vector3.zero;
+				var mn = Vector3.zero;
+				var mx = Vector3.zero;
 				EditorGUI.BeginChangeCheck();
-				for (int i = 0; i < handlePoints.Length; i++) {
+				for (var i = 0; i < handlePoints.Length; i++) {
 					var ps = currentTransform.Transform(handlePoints[i]);
-					Vector3 p = savedTransform.InverseTransform(Handles.Slider(ps, ps - center, HandleScale*HandleUtility.GetHandleSize(ps), cap, 0));
+					var p = savedTransform.InverseTransform(Handles.Slider(ps, ps - center, HandleScale*HandleUtility.GetHandleSize(ps), cap, 0));
 
 					// Snap to increments of whole nodes
 					p.x = Mathf.Round(p.x * savedDimensions.x) / savedDimensions.x;

@@ -138,7 +138,7 @@ namespace Pathfinding {
 
 		public override void GetNodes (System.Action<GraphNode> action) {
 			if (nodes == null) return;
-			for (int i = 0; i < nodes.Length; i++) action(nodes[i]);
+			for (var i = 0; i < nodes.Length; i++) action(nodes[i]);
 		}
 
 		/// <summary>
@@ -541,10 +541,10 @@ namespace Pathfinding {
 			if (!node.EdgeNode) {
 				return nodes[node.NodeInGridIndex + neighbourOffsets[dir]];
 			} else {
-				int index = node.NodeInGridIndex;
+				var index = node.NodeInGridIndex;
 				//int z = Math.DivRem (index,Width, out x);
-				int z = index/Width;
-				int x = index - z*Width;
+				var z = index/Width;
+				var x = index - z*Width;
 
 				return GetNodeConnection(index, x, z, dir);
 			}
@@ -555,18 +555,18 @@ namespace Pathfinding {
 			if (!node.EdgeNode) {
 				return true;
 			} else {
-				int index = node.NodeInGridIndex;
-				int z = index/Width;
-				int x = index - z*Width;
+				var index = node.NodeInGridIndex;
+				var z = index/Width;
+				var x = index - z*Width;
 
 				return HasNodeConnection(index, x, z, dir);
 			}
 		}
 
 		public void SetNodeConnection (GridNode node, int dir, bool value) {
-			int index = node.NodeInGridIndex;
-			int z = index/Width;
-			int x = index - z*Width;
+			var index = node.NodeInGridIndex;
+			var z = index/Width;
+			var x = index - z*Width;
 
 			SetNodeConnection(index, x, z, dir, value);
 		}
@@ -581,11 +581,11 @@ namespace Pathfinding {
 			if (!nodes[index].HasConnectionInDirection(dir)) return null;
 
 			/// <summary>TODO: Mark edge nodes and only do bounds checking for them</summary>
-			int nx = x + neighbourXOffsets[dir];
+			var nx = x + neighbourXOffsets[dir];
 			if (nx < 0 || nx >= Width) return null; /// <summary>TODO: Modify to get adjacent grid graph here</summary>
-			int nz = z + neighbourZOffsets[dir];
+			var nz = z + neighbourZOffsets[dir];
 			if (nz < 0 || nz >= Depth) return null;
-			int nindex = index + neighbourOffsets[dir];
+			var nindex = index + neighbourOffsets[dir];
 
 			return nodes[nindex];
 		}
@@ -613,9 +613,9 @@ namespace Pathfinding {
 			if (!nodes[index].HasConnectionInDirection(dir)) return false;
 
 			/// <summary>TODO: Mark edge nodes and only do bounds checking for them</summary>
-			int nx = x + neighbourXOffsets[dir];
+			var nx = x + neighbourXOffsets[dir];
 			if (nx < 0 || nx >= Width) return false; /// <summary>TODO: Modify to get adjacent grid graph here</summary>
-			int nz = z + neighbourZOffsets[dir];
+			var nz = z + neighbourZOffsets[dir];
 			if (nz < 0 || nz >= Depth) return false;
 
 			return true;
@@ -791,14 +791,14 @@ namespace Pathfinding {
 			// Calculate the closest node and the closest point on that node
 			position = transform.InverseTransform(position);
 
-			float xf = position.x;
-			float zf = position.z;
-			int x = Mathf.Clamp((int)xf, 0, width-1);
-			int z = Mathf.Clamp((int)zf, 0, depth-1);
+			var xf = position.x;
+			var zf = position.z;
+			var x = Mathf.Clamp((int)xf, 0, width-1);
+			var z = Mathf.Clamp((int)zf, 0, depth-1);
 
 			var nn = new NNInfoInternal(nodes[z*width+x]);
 
-			float y = transform.InverseTransform((Vector3)nodes[z*width+x].position).y;
+			var y = transform.InverseTransform((Vector3)nodes[z*width+x].position).y;
 			nn.clampedPosition = transform.Transform(new Vector3(Mathf.Clamp(xf, x, x+1f), y, Mathf.Clamp(zf, z, z+1f)));
 
 			return nn;
@@ -810,32 +810,32 @@ namespace Pathfinding {
 			}
 
 			// Position in global space
-			Vector3 globalPosition = position;
+			var globalPosition = position;
 
 			// Position in graph space
 			position = transform.InverseTransform(position);
 
 			// Find the coordinates of the closest node
-			float xf = position.x;
-			float zf = position.z;
-			int x = Mathf.Clamp((int)xf, 0, width-1);
-			int z = Mathf.Clamp((int)zf, 0, depth-1);
+			var xf = position.x;
+			var zf = position.z;
+			var x = Mathf.Clamp((int)xf, 0, width-1);
+			var z = Mathf.Clamp((int)zf, 0, depth-1);
 
 			// Closest node
-			GridNode node = nodes[x+z*width];
+			var node = nodes[x+z*width];
 
 			GridNode minNode = null;
-			float minDist = float.PositiveInfinity;
-			int overlap = getNearestForceOverlap;
+			var minDist = float.PositiveInfinity;
+			var overlap = getNearestForceOverlap;
 
-			Vector3 clampedPosition = Vector3.zero;
+			var clampedPosition = Vector3.zero;
 			var nn = new NNInfoInternal(null);
 
 			// If the closest node was suitable
 			if (constraint == null || constraint.Suitable(node)) {
 				minNode = node;
 				minDist = ((Vector3)minNode.position-globalPosition).sqrMagnitude;
-				float y = transform.InverseTransform((Vector3)node.position).y;
+				var y = transform.InverseTransform((Vector3)node.position).y;
 				clampedPosition = transform.Transform(new Vector3(Mathf.Clamp(xf, x, x+1f), y, Mathf.Clamp(zf, z, z+1f)));
 			}
 
@@ -849,28 +849,28 @@ namespace Pathfinding {
 			}
 
 			// Search up to this distance
-			float maxDist = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistance : float.PositiveInfinity;
-			float maxDistSqr = maxDist*maxDist;
+			var maxDist = constraint == null || constraint.constrainDistance ? AstarPath.active.maxNearestNodeDistance : float.PositiveInfinity;
+			var maxDistSqr = maxDist*maxDist;
 
 			// Search a square/spiral pattern around the point
-			for (int w = 1;; w++) {
+			for (var w = 1;; w++) {
 				//Check if the nodes are within distance limit
 				if (nodeSize*w > maxDist) {
 					break;
 				}
 
-				bool anyInside = false;
+				var anyInside = false;
 
 				int nx;
-				int nz = z+w;
-				int nz2 = nz*width;
+				var nz = z+w;
+				var nz2 = nz*width;
 
 				// Side 1 on the square
 				for (nx = x-w; nx <= x+w; nx++) {
 					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) continue;
 					anyInside = true;
 					if (constraint == null || constraint.Suitable(nodes[nx+nz2])) {
-						float dist = ((Vector3)nodes[nx+nz2].position-globalPosition).sqrMagnitude;
+						var dist = ((Vector3)nodes[nx+nz2].position-globalPosition).sqrMagnitude;
 						if (dist < minDist && dist < maxDistSqr) {
 							// Minimum distance so far
 							minDist = dist;
@@ -890,7 +890,7 @@ namespace Pathfinding {
 					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) continue;
 					anyInside = true;
 					if (constraint == null || constraint.Suitable(nodes[nx+nz2])) {
-						float dist = ((Vector3)nodes[nx+nz2].position-globalPosition).sqrMagnitude;
+						var dist = ((Vector3)nodes[nx+nz2].position-globalPosition).sqrMagnitude;
 						if (dist < minDist && dist < maxDistSqr) {
 							minDist = dist;
 							minNode = nodes[nx+nz2];
@@ -906,7 +906,7 @@ namespace Pathfinding {
 					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) continue;
 					anyInside = true;
 					if (constraint == null || constraint.Suitable(nodes[nx+nz*width])) {
-						float dist = ((Vector3)nodes[nx+nz*width].position-globalPosition).sqrMagnitude;
+						var dist = ((Vector3)nodes[nx+nz*width].position-globalPosition).sqrMagnitude;
 						if (dist < minDist && dist < maxDistSqr) {
 							minDist = dist;
 							minNode = nodes[nx+nz*width];
@@ -922,7 +922,7 @@ namespace Pathfinding {
 					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) continue;
 					anyInside = true;
 					if (constraint == null || constraint.Suitable(nodes[nx+nz*width])) {
-						float dist = ((Vector3)nodes[nx+nz*width].position-globalPosition).sqrMagnitude;
+						var dist = ((Vector3)nodes[nx+nz*width].position-globalPosition).sqrMagnitude;
 						if (dist < minDist && dist < maxDistSqr) {
 							minDist = dist;
 							minNode = nodes[nx+nz*width];
@@ -971,10 +971,10 @@ namespace Pathfinding {
 			neighbourOffsets[6] = width-1;
 			neighbourOffsets[7] = -width-1;
 
-			uint straightCost = (uint)Mathf.RoundToInt(nodeSize*Int3.Precision);
+			var straightCost = (uint)Mathf.RoundToInt(nodeSize*Int3.Precision);
 
 			// Diagonals normally cost sqrt(2) (approx 1.41) times more
-			uint diagonalCost = uniformEdgeCosts ? straightCost : (uint)Mathf.RoundToInt(nodeSize*Mathf.Sqrt(2F)*Int3.Precision);
+			var diagonalCost = uniformEdgeCosts ? straightCost : (uint)Mathf.RoundToInt(nodeSize*Mathf.Sqrt(2F)*Int3.Precision);
 
 			neighbourCosts[0] = straightCost;
 			neighbourCosts[1] = straightCost;
@@ -1041,8 +1041,8 @@ namespace Pathfinding {
 
 			// Create all nodes
 			nodes = new GridNode[width*depth];
-			for (int z = 0; z < depth; z++) {
-				for (int x = 0; x < width; x++) {
+			for (var z = 0; z < depth; z++) {
+				for (var x = 0; x < width; x++) {
 					var index = z*width+x;
 					var node = nodes[index] = new GridNode(active);
 					node.GraphIndex = graphIndex;
@@ -1057,11 +1057,11 @@ namespace Pathfinding {
 			collision.Initialize(transform, nodeSize);
 
 
-			int progressCounter = 0;
+			var progressCounter = 0;
 
 			const int YieldEveryNNodes = 1000;
 
-			for (int z = 0; z < depth; z++) {
+			for (var z = 0; z < depth; z++) {
 				// Yield with a progress value at most every N nodes
 				if (progressCounter >= YieldEveryNNodes) {
 					progressCounter = 0;
@@ -1070,7 +1070,7 @@ namespace Pathfinding {
 
 				progressCounter += width;
 
-				for (int x = 0; x < width; x++) {
+				for (var x = 0; x < width; x++) {
 					// Updates the position of the node
 					// and a bunch of other things
 					RecalculateCell(x, z);
@@ -1079,7 +1079,7 @@ namespace Pathfinding {
 
 			progressCounter = 0;
 
-			for (int z = 0; z < depth; z++) {
+			for (var z = 0; z < depth; z++) {
 				// Yield with a progress value at most every N nodes
 				if (progressCounter >= YieldEveryNNodes) {
 					progressCounter = 0;
@@ -1088,7 +1088,7 @@ namespace Pathfinding {
 
 				progressCounter += width;
 
-				for (int x = 0; x < width; x++) {
+				for (var x = 0; x < width; x++) {
 					// Recalculate connections to other nodes
 					CalculateConnections(x, z);
 				}
@@ -1142,7 +1142,7 @@ namespace Pathfinding {
 
 			// Calculate the actual position using physics raycasting (if enabled)
 			// walkable will be set to false if no ground was found (unless that setting has been disabled)
-			Vector3 position = collision.CheckHeight((Vector3)node.position, out hit, out walkable);
+			var position = collision.CheckHeight((Vector3)node.position, out hit, out walkable);
 			node.position = (Int3)position;
 
 			if (resetPenalties) {
@@ -1162,7 +1162,7 @@ namespace Pathfinding {
 			if (walkable && useRaycastNormal && collision.heightCheck) {
 				if (hit.normal != Vector3.zero) {
 					// Take the dot product to find out the cosinus of the angle it has (faster than Vector3.Angle)
-					float angle = Vector3.Dot(hit.normal.normalized, collision.up);
+					var angle = Vector3.Dot(hit.normal.normalized, collision.up);
 
 					// Add penalty based on normal
 					if (penaltyAngle && resetPenalties) {
@@ -1170,7 +1170,7 @@ namespace Pathfinding {
 					}
 
 					// Cosinus of the max slope
-					float cosAngle = Mathf.Cos(maxSlope*Mathf.Deg2Rad);
+					var cosAngle = Mathf.Cos(maxSlope*Mathf.Deg2Rad);
 
 					// Check if the ground is flat enough to stand on
 					if (angle < cosAngle) {
@@ -1199,14 +1199,14 @@ namespace Pathfinding {
 
 			if (neighbours == NumNeighbours.Six) {
 				// Check the 6 hexagonal connections
-				for (int i = 0; i < 6; i++) {
+				for (var i = 0; i < 6; i++) {
 					if (!HasNodeConnection(node, hexagonNeighbourIndices[i])) {
 						return true;
 					}
 				}
 			} else {
 				// Check the four axis aligned connections
-				for (int i = 0; i < 4; i++) {
+				for (var i = 0; i < 4; i++) {
 					if (!HasNodeConnection(node, i)) {
 						return true;
 					}
@@ -1239,10 +1239,10 @@ namespace Pathfinding {
 			if (gnode.Walkable && gnode.Tag >= erosionFirstTag && gnode.Tag < erosionFirstTag + iteration) {
 				if (neighbours == NumNeighbours.Six) {
 					// Check the 6 hexagonal connections
-					for (int i = 0; i < 6; i++) {
+					for (var i = 0; i < 6; i++) {
 						var other = gnode.GetNeighbourAlongDirection(hexagonNeighbourIndices[i]);
 						if (other != null) {
-							uint tag = other.Tag;
+							var tag = other.Tag;
 							if (tag > erosionFirstTag + iteration || tag < erosionFirstTag) {
 								other.Tag = (uint)(erosionFirstTag+iteration);
 							}
@@ -1250,10 +1250,10 @@ namespace Pathfinding {
 					}
 				} else {
 					// Check the four axis aligned connections
-					for (int i = 0; i < 4; i++) {
+					for (var i = 0; i < 4; i++) {
 						var other = gnode.GetNeighbourAlongDirection(i);
 						if (other != null) {
-							uint tag = other.Tag;
+							var tag = other.Tag;
 							if (tag > erosionFirstTag + iteration || tag < erosionFirstTag) {
 								other.Tag = (uint)(erosionFirstTag+iteration);
 							}
@@ -1296,26 +1296,26 @@ namespace Pathfinding {
 			// Get all nodes inside the rectangle
 			var rect = new IntRect(xmin, zmin, xmax - 1, zmax - 1);
 			var nodesInRect = GetNodesInRegion(rect);
-			int nodeCount = nodesInRect.Count;
-			for (int it = 0; it < erodeIterations; it++) {
+			var nodeCount = nodesInRect.Count;
+			for (var it = 0; it < erodeIterations; it++) {
 				if (erosionUseTags) {
 					if (it == 0) {
-						for (int i = 0; i < nodeCount; i++) {
+						for (var i = 0; i < nodeCount; i++) {
 							ErodeNodeWithTagsInit(nodesInRect[i]);
 						}
 					} else {
-						for (int i = 0; i < nodeCount; i++) {
+						for (var i = 0; i < nodeCount; i++) {
 							ErodeNodeWithTags(nodesInRect[i], it);
 						}
 					}
 				} else {
 					// Loop through all nodes and mark as unwalkble the nodes which
 					// have at least one blocked connection to another node
-					for (int i = 0; i < nodeCount; i++) {
+					for (var i = 0; i < nodeCount; i++) {
 						ErodeNode(nodesInRect[i]);
 					}
 
-					for (int i = 0; i < nodeCount; i++) {
+					for (var i = 0; i < nodeCount; i++) {
 						CalculateConnections(nodesInRect[i] as GridNodeBase);
 					}
 				}
@@ -1377,9 +1377,9 @@ namespace Pathfinding {
 		/// </summary>
 		public void CalculateConnectionsForCellAndNeighbours (int x, int z) {
 			CalculateConnections(x, z);
-			for (int i = 0; i < 8; i++) {
-				int nx = x + neighbourXOffsets[i];
-				int nz = z + neighbourZOffsets[i];
+			for (var i = 0; i < 8; i++) {
+				var nx = x + neighbourXOffsets[i];
+				var nz = z + neighbourZOffsets[i];
 
 				// Check if the new position is inside the grid
 				// Bitwise AND (&) is measurably faster than &&
@@ -1406,9 +1406,9 @@ namespace Pathfinding {
 		/// This function will also work for both grid graphs and layered grid graphs.
 		/// </summary>
 		public virtual void CalculateConnections (GridNodeBase node) {
-			int index = node.NodeInGridIndex;
-			int x = index % width;
-			int z = index / width;
+			var index = node.NodeInGridIndex;
+			var x = index % width;
+			var z = index / width;
 
 			CalculateConnections(x, z);
 		}
@@ -1444,18 +1444,18 @@ namespace Pathfinding {
 			}
 
 			// Internal index of where in the graph the node is
-			int index = node.NodeInGridIndex;
+			var index = node.NodeInGridIndex;
 
 			if (neighbours == NumNeighbours.Four || neighbours == NumNeighbours.Eight) {
 				// Bitpacked connections
 				// bit 0 is set if connection 0 is enabled
 				// bit 1 is set if connection 1 is enabled etc.
-				int conns = 0;
+				var conns = 0;
 
 				// Loop through axis aligned neighbours (down, right, up, left) or (-Z, +X, +Z, -X)
-				for (int i = 0; i < 4; i++) {
-					int nx = x + neighbourXOffsets[i];
-					int nz = z + neighbourZOffsets[i];
+				for (var i = 0; i < 4; i++) {
+					var nx = x + neighbourXOffsets[i];
+					var nz = z + neighbourZOffsets[i];
 
 					// Check if the new position is inside the grid
 					// Bitwise AND (&) is measurably faster than &&
@@ -1471,12 +1471,12 @@ namespace Pathfinding {
 				}
 
 				// Bitpacked diagonal connections
-				int diagConns = 0;
+				var diagConns = 0;
 
 				// Add in the diagonal connections
 				if (neighbours == NumNeighbours.Eight) {
 					if (cutCorners) {
-						for (int i = 0; i < 4; i++) {
+						for (var i = 0; i < 4; i++) {
 							// If at least one axis aligned connection
 							// is adjacent to this diagonal, then we can add a connection.
 							// Bitshifting is a lot faster than calling node.HasConnectionInDirection.
@@ -1486,13 +1486,13 @@ namespace Pathfinding {
 							// and i+1-4 at the same time. Either i+1 or i+1-4 will be in the range
 							// from 0 to 4 (exclusive)
 							if (((conns >> i | conns >> (i+1) | conns >> (i+1-4)) & 1) != 0) {
-								int directionIndex = i+4;
+								var directionIndex = i+4;
 
-								int nx = x + neighbourXOffsets[directionIndex];
-								int nz = z + neighbourZOffsets[directionIndex];
+								var nx = x + neighbourXOffsets[directionIndex];
+								var nz = z + neighbourZOffsets[directionIndex];
 
 								if (nx >= 0 & nz >= 0 & nx < width & nz < depth) {
-									GridNode other = nodes[index+neighbourOffsets[directionIndex]];
+									var other = nodes[index+neighbourOffsets[directionIndex]];
 
 									if (IsValidConnection(node, other)) {
 										diagConns |= 1 << directionIndex;
@@ -1501,13 +1501,13 @@ namespace Pathfinding {
 							}
 						}
 					} else {
-						for (int i = 0; i < 4; i++) {
+						for (var i = 0; i < 4; i++) {
 							// If exactly 2 axis aligned connections is adjacent to this connection
 							// then we can add the connection
 							// We don't need to check if it is out of bounds because if both of
 							// the other neighbours are inside the bounds this one must be too
 							if ((conns >> i & 1) != 0 && ((conns >> (i+1) | conns >> (i+1-4)) & 1) != 0) {
-								GridNode other = nodes[index+neighbourOffsets[i+4]];
+								var other = nodes[index+neighbourOffsets[i+4]];
 
 								if (IsValidConnection(node, other)) {
 									diagConns |= 1 << (i+4);
@@ -1527,11 +1527,11 @@ namespace Pathfinding {
 				node.ResetConnectionsInternal();
 
 				// Loop through all possible neighbours and try to connect to them
-				for (int j = 0; j < hexagonNeighbourIndices.Length; j++) {
+				for (var j = 0; j < hexagonNeighbourIndices.Length; j++) {
 					var i = hexagonNeighbourIndices[j];
 
-					int nx = x + neighbourXOffsets[i];
-					int nz = z + neighbourZOffsets[i];
+					var nx = x + neighbourXOffsets[i];
+					var nz = z + neighbourZOffsets[i];
 
 					if (nx >= 0 & nz >= 0 & nx < width & nz < depth) {
 						var other = nodes[index+neighbourOffsets[i]];
@@ -1554,15 +1554,15 @@ namespace Pathfinding {
 				var trans = CalculateTransform();
 				helper.builder.DrawWireCube(trans, bounds, Color.white);
 
-				int nodeCount = nodes != null ? nodes.Length : -1;
+				var nodeCount = nodes != null ? nodes.Length : -1;
 
 				if (drawNodes && width*depth*LayerCount != nodeCount) {
 					var color = new Color(1, 1, 1, 0.2f);
-					for (int z = 0; z < d; z++) {
+					for (var z = 0; z < d; z++) {
 						helper.builder.DrawLine(trans.Transform(new Vector3(0, 0, z)), trans.Transform(new Vector3(w, 0, z)), color);
 					}
 
-					for (int x = 0; x < w; x++) {
+					for (var x = 0; x < w; x++) {
 						helper.builder.DrawLine(trans.Transform(new Vector3(x, 0, 0)), trans.Transform(new Vector3(x, 0, d)), color);
 					}
 				}
@@ -1577,16 +1577,16 @@ namespace Pathfinding {
 			// for large graphs. However just checking if any mesh needs to be updated is relatively fast. So we just store
 			// a hash together with the mesh and rebuild the mesh when necessary.
 			const int chunkWidth = 32;
-			GridNodeBase[] allNodes = ArrayPool<GridNodeBase>.Claim(chunkWidth*chunkWidth*LayerCount);
-			for (int cx = width/chunkWidth; cx >= 0; cx--) {
-				for (int cz = depth/chunkWidth; cz >= 0; cz--) {
+			var allNodes = ArrayPool<GridNodeBase>.Claim(chunkWidth*chunkWidth*LayerCount);
+			for (var cx = width/chunkWidth; cx >= 0; cx--) {
+				for (var cz = depth/chunkWidth; cz >= 0; cz--) {
 					Profiler.BeginSample("Hash");
 					var allNodesCount = GetNodesInRegion(new IntRect(cx*chunkWidth, cz*chunkWidth, (cx+1)*chunkWidth - 1, (cz+1)*chunkWidth - 1), allNodes);
 					var hasher = new RetainedGizmos.Hasher(active);
 					hasher.AddHash(showMeshOutline ? 1 : 0);
 					hasher.AddHash(showMeshSurface ? 1 : 0);
 					hasher.AddHash(showNodeConnections ? 1 : 0);
-					for (int i = 0; i < allNodesCount; i++) {
+					for (var i = 0; i < allNodesCount; i++) {
 						hasher.HashNode(allNodes[i]);
 					}
 					Profiler.EndSample();
@@ -1595,7 +1595,7 @@ namespace Pathfinding {
 						Profiler.BeginSample("Rebuild Retained Gizmo Chunk");
 						using (var helper = gizmos.GetGizmoHelper(active, hasher)) {
 							if (showNodeConnections) {
-								for (int i = 0; i < allNodesCount; i++) {
+								for (var i = 0; i < allNodesCount; i++) {
 									// Don't bother drawing unwalkable nodes
 									if (allNodes[i].Walkable) {
 										helper.DrawConnections(allNodes[i]);
@@ -1619,9 +1619,9 @@ namespace Pathfinding {
 		/// </summary>
 		void CreateNavmeshSurfaceVisualization (GridNodeBase[] nodes, int nodeCount, GraphGizmoHelper helper) {
 			// Count the number of nodes that we will render
-			int walkable = 0;
+			var walkable = 0;
 
-			for (int i = 0; i < nodeCount; i++) {
+			for (var i = 0; i < nodeCount; i++) {
 				if (nodes[i].Walkable) walkable++;
 			}
 
@@ -1635,9 +1635,9 @@ namespace Pathfinding {
 			// Get arrays that have room for all vertices/colors (the array might be larger)
 			var vertices = ArrayPool<Vector3>.Claim(walkable*verticesPerNode);
 			var colors = ArrayPool<Color>.Claim(walkable*verticesPerNode);
-			int baseIndex = 0;
+			var baseIndex = 0;
 
-			for (int i = 0; i < nodeCount; i++) {
+			for (var i = 0; i < nodeCount; i++) {
 				var node = nodes[i];
 				if (!node.Walkable) continue;
 
@@ -1645,7 +1645,7 @@ namespace Pathfinding {
 				// Don't bother drawing transparent nodes
 				if (nodeColor.a <= 0.001f) continue;
 
-				for (int dIndex = 0; dIndex < neighbourIndices.Length; dIndex++) {
+				for (var dIndex = 0; dIndex < neighbourIndices.Length; dIndex++) {
 					// For neighbours != Six
 					// n2 -- n3
 					// |     |
@@ -1666,7 +1666,7 @@ namespace Pathfinding {
 					}
 
 					// Position in graph space of the vertex
-					Vector3 p = new Vector3(node.XCoordinateInGrid + 0.5f, 0, node.ZCoordinateInGrid + 0.5f);
+					var p = new Vector3(node.XCoordinateInGrid + 0.5f, 0, node.ZCoordinateInGrid + 0.5f);
 					// Offset along diagonal to get the correct XZ coordinates
 					p.x += (neighbourXOffsets[d] + neighbourXOffsets[nextD]) * offsetMultiplier;
 					p.z += (neighbourZOffsets[d] + neighbourZOffsets[nextD]) * offsetMultiplier;
@@ -1700,12 +1700,12 @@ namespace Pathfinding {
 				}
 
 				// Set all colors for the node
-				for (int j = 0; j < verticesPerNode; j++) {
+				for (var j = 0; j < verticesPerNode; j++) {
 					colors[baseIndex + j] = nodeColor;
 				}
 
 				// Draw the outline of the node
-				for (int j = 0; j < neighbourIndices.Length; j++) {
+				for (var j = 0; j < neighbourIndices.Length; j++) {
 					var other = node.GetNeighbourAlongDirection(neighbourIndices[(j+1) % neighbourIndices.Length]);
 					// Just a tie breaker to make sure we don't draw the line twice.
 					// Using NodeInGridIndex instead of NodeIndex to make the gizmos deterministic for a given grid layout.
@@ -1739,14 +1739,14 @@ namespace Pathfinding {
 			// all nodes that might be inside the bounds
 
 			bounds = transform.InverseTransform(bounds);
-			Vector3 min = bounds.min;
-			Vector3 max = bounds.max;
+			var min = bounds.min;
+			var max = bounds.max;
 
-			int minX = Mathf.RoundToInt(min.x-0.5F);
-			int maxX = Mathf.RoundToInt(max.x-0.5F);
+			var minX = Mathf.RoundToInt(min.x-0.5F);
+			var maxX = Mathf.RoundToInt(max.x-0.5F);
 
-			int minZ = Mathf.RoundToInt(min.z-0.5F);
-			int maxZ = Mathf.RoundToInt(max.z-0.5F);
+			var minZ = Mathf.RoundToInt(min.z-0.5F);
+			var maxZ = Mathf.RoundToInt(max.z-0.5F);
 
 			var originalRect = new IntRect(minX, minZ, maxX, maxZ);
 
@@ -1813,9 +1813,9 @@ namespace Pathfinding {
 			var inArea = ListPool<GraphNode>.Claim(rect.Width*rect.Height);
 
 			// Loop through all nodes in the rectangle
-			for (int x = rect.xmin; x <= rect.xmax; x++) {
-				for (int z = rect.ymin; z <= rect.ymax; z++) {
-					int index = z*width+x;
+			for (var x = rect.xmin; x <= rect.xmax; x++) {
+				for (var z = rect.ymin; z <= rect.ymax; z++) {
+					var index = z*width+x;
 
 					GraphNode node = nodes[index];
 
@@ -1849,9 +1849,9 @@ namespace Pathfinding {
 			var inArea = ListPool<GraphNode>.Claim(rect.Width*rect.Height);
 
 
-			for (int z = rect.ymin; z <= rect.ymax; z++) {
+			for (var z = rect.ymin; z <= rect.ymax; z++) {
 				var zw = z*Width;
-				for (int x = rect.xmin; x <= rect.xmax; x++) {
+				for (var x = rect.xmin; x <= rect.xmax; x++) {
 					inArea.Add(nodes[zw + x]);
 				}
 			}
@@ -1881,8 +1881,8 @@ namespace Pathfinding {
 
 			if (buffer.Length < rect.Width*rect.Height) throw new System.ArgumentException("Buffer is too small");
 
-			int counter = 0;
-			for (int z = rect.ymin; z <= rect.ymax; z++, counter += rect.Width) {
+			var counter = 0;
+			for (var z = rect.ymin; z <= rect.ymax; z++, counter += rect.Width) {
 				System.Array.Copy(nodes, z*Width + rect.xmin, buffer, counter, rect.Width);
 			}
 
@@ -1921,14 +1921,14 @@ namespace Pathfinding {
 			// Then convert that to a rectangle which contains
 			// all nodes that might be inside the bounds
 			var bounds = transform.InverseTransform(o.bounds);
-			Vector3 min = bounds.min;
-			Vector3 max = bounds.max;
+			var min = bounds.min;
+			var max = bounds.max;
 
-			int minX = Mathf.RoundToInt(min.x-0.5F);
-			int maxX = Mathf.RoundToInt(max.x-0.5F);
+			var minX = Mathf.RoundToInt(min.x-0.5F);
+			var maxX = Mathf.RoundToInt(max.x-0.5F);
 
-			int minZ = Mathf.RoundToInt(min.z-0.5F);
-			int maxZ = Mathf.RoundToInt(max.z-0.5F);
+			var minZ = Mathf.RoundToInt(min.z-0.5F);
+			var maxZ = Mathf.RoundToInt(max.z-0.5F);
 
 			//We now have coordinates in local space (i.e 1 unit = 1 node)
 			originalRect = new IntRect(minX, minZ, maxX, maxZ);
@@ -1945,7 +1945,7 @@ namespace Pathfinding {
 			if (o.updatePhysics && !o.modifyWalkability) {
 				// Add the collision.diameter margin for physics calls
 				if (collision.collisionCheck) {
-					Vector3 margin = new Vector3(collision.diameter, 0, collision.diameter)*0.5F;
+					var margin = new Vector3(collision.diameter, 0, collision.diameter)*0.5F;
 
 					min -= margin*1.02F;//0.02 safety margin, physics is rarely very accurate
 					max += margin*1.02F;
@@ -1990,11 +1990,11 @@ namespace Pathfinding {
 			var gridRect = new IntRect(0, 0, width-1, depth-1);
 
 			// Clamp the rect to the grid bounds
-			IntRect clampedRect = IntRect.Intersection(affectRect, gridRect);
+			var clampedRect = IntRect.Intersection(affectRect, gridRect);
 
 			// Mark nodes that might be changed
-			for (int z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
-				for (int x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
+			for (var z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
+				for (var x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
 					o.WillUpdateNode(nodes[z*width+x]);
 				}
 			}
@@ -2005,8 +2005,8 @@ namespace Pathfinding {
 
 				clampedRect = IntRect.Intersection(physicsRect, gridRect);
 
-				for (int z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
-					for (int x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
+				for (var z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
+					for (var x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
 						RecalculateCell(x, z, o.resetPenaltyOnPhysics, false);
 					}
 				}
@@ -2015,11 +2015,11 @@ namespace Pathfinding {
 			//Apply GUO
 
 			clampedRect = IntRect.Intersection(originalRect, gridRect);
-			for (int z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
-				for (int x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
-					int index = z*width+x;
+			for (var z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
+				for (var x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
+					var index = z*width+x;
 
-					GridNode node = nodes[index];
+					var node = nodes[index];
 
 					if (o.bounds.Contains((Vector3)node.position)) {
 						if (willChangeWalkability) {
@@ -2041,16 +2041,16 @@ namespace Pathfinding {
 			// Recalculate connections
 			if (willChangeWalkability && erosion == 0) {
 				clampedRect = IntRect.Intersection(affectRect, gridRect);
-				for (int x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
-					for (int z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
+				for (var x = clampedRect.xmin; x <= clampedRect.xmax; x++) {
+					for (var z = clampedRect.ymin; z <= clampedRect.ymax; z++) {
 						CalculateConnections(x, z);
 					}
 				}
 			} else if (willChangeWalkability && erosion > 0) {
 				clampedRect = IntRect.Union(originalRect, physicsRect);
 
-				IntRect erosionRect1 = clampedRect.Expand(erosion);
-				IntRect erosionRect2 = erosionRect1.Expand(erosion);
+				var erosionRect1 = clampedRect.Expand(erosion);
+				var erosionRect2 = erosionRect1.Expand(erosion);
 
 				erosionRect1 = IntRect.Intersection(erosionRect1, gridRect);
 				erosionRect2 = IntRect.Intersection(erosionRect2, gridRect);
@@ -2066,13 +2066,13 @@ namespace Pathfinding {
 				// * all nodes inside erosionRect2 (but outside erosionRect1) will be reset to previous walkability
 				//     after calculation since their erosion might not be correctly calculated (nodes outside erosionRect2 might have an effect)
 
-				for (int x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
-					for (int z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
-						int index = z*width+x;
+				for (var x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
+					for (var z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
+						var index = z*width+x;
 
-						GridNode node = nodes[index];
+						var node = nodes[index];
 
-						bool tmp = node.Walkable;
+						var tmp = node.Walkable;
 						node.Walkable = node.WalkableErosion;
 
 						if (!erosionRect1.Contains(x, z)) {
@@ -2082,8 +2082,8 @@ namespace Pathfinding {
 					}
 				}
 
-				for (int x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
-					for (int z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
+				for (var x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
+					for (var z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
 						CalculateConnections(x, z);
 					}
 				}
@@ -2091,13 +2091,13 @@ namespace Pathfinding {
 				// Erode the walkable area
 				ErodeWalkableArea(erosionRect2.xmin, erosionRect2.ymin, erosionRect2.xmax+1, erosionRect2.ymax+1);
 
-				for (int x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
-					for (int z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
+				for (var x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
+					for (var z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
 						if (erosionRect1.Contains(x, z)) continue;
 
-						int index = z*width+x;
+						var index = z*width+x;
 
-						GridNode node = nodes[index];
+						var node = nodes[index];
 
 						//Restore temporarily stored data
 						node.Walkable = node.TmpWalkable;
@@ -2105,8 +2105,8 @@ namespace Pathfinding {
 				}
 
 				// Recalculate connections of all affected nodes
-				for (int x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
-					for (int z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
+				for (var x = erosionRect2.xmin; x <= erosionRect2.xmax; x++) {
+					for (var z = erosionRect2.ymin; z <= erosionRect2.ymax; z++) {
 						CalculateConnections(x, z);
 					}
 				}
@@ -2125,14 +2125,14 @@ namespace Pathfinding {
 			if (neighbours == NumNeighbours.Eight || neighbours == NumNeighbours.Six || dir < 4) {
 				return HasNodeConnection(node, dir);
 			} else {
-				int dir1 = (dir-4-1) & 0x3;
-				int dir2 = (dir-4+1) & 0x3;
+				var dir1 = (dir-4-1) & 0x3;
+				var dir2 = (dir-4+1) & 0x3;
 
 				if (!HasNodeConnection(node, dir1) || !HasNodeConnection(node, dir2)) {
 					return false;
 				} else {
-					GridNode n1 = nodes[node.NodeInGridIndex+neighbourOffsets[dir1]];
-					GridNode n2 = nodes[node.NodeInGridIndex+neighbourOffsets[dir2]];
+					var n1 = nodes[node.NodeInGridIndex+neighbourOffsets[dir1]];
+					var n2 = nodes[node.NodeInGridIndex+neighbourOffsets[dir2]];
 
 					if (!n1.Walkable || !n2.Walkable) {
 						return false;
@@ -2154,13 +2154,13 @@ namespace Pathfinding {
 
 			ctx.writer.Write(nodes.Length);
 
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				nodes[i].SerializeNode(ctx);
 			}
 		}
 
 		protected override void DeserializeExtraInfo (GraphSerializationContext ctx) {
-			int count = ctx.reader.ReadInt32();
+			var count = ctx.reader.ReadInt32();
 
 			if (count == -1) {
 				nodes = null;
@@ -2169,7 +2169,7 @@ namespace Pathfinding {
 
 			nodes = new GridNode[count];
 
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				nodes[i] = new GridNode(active);
 				nodes[i].DeserializeNode(ctx);
 			}
@@ -2215,8 +2215,8 @@ namespace Pathfinding {
 				return;
 			}
 
-			for (int z = 0; z < depth; z++) {
-				for (int x = 0; x < width; x++) {
+			for (var z = 0; z < depth; z++) {
+				for (var x = 0; x < width; x++) {
 					var node = nodes[z*width+x];
 
 					if (node == null) {

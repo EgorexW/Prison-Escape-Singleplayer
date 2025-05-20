@@ -60,7 +60,7 @@ namespace Pathfinding {
 				return;
 			}
 
-			List<Vector3> funnelPath = ListPool<Vector3>.Claim();
+			var funnelPath = ListPool<Vector3>.Claim();
 
 			// Split the path into different parts (separated by custom links)
 			// and run the funnel algorithm on each of them in turn
@@ -76,7 +76,7 @@ namespace Pathfinding {
 				return;
 			}
 
-			for (int i = 0; i < parts.Count; i++) {
+			for (var i = 0; i < parts.Count; i++) {
 				var part = parts[i];
 				if (!part.isLink) {
 					var portals = Funnel.ConstructFunnelPortals(p.path, part);

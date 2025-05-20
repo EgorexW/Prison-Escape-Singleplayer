@@ -17,12 +17,12 @@ public class LootSpawner : MonoBehaviour
         if (Random.value > spawnChance * spawnTable.spawnChance){
             return;
         }
-        GameObject gameObject = spawnTable.GetGameObject();
+        var gameObject = spawnTable.GetGameObject();
         if (gameObject == null){
             Debug.LogWarning("GameObject is null", this);
             return;
         }
-        Quaternion rotation = transform.rotation;
+        var rotation = transform.rotation;
         if (randomRotation){
             rotation = Random.rotationUniform;
         }

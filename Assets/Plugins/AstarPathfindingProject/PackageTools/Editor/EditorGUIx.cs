@@ -55,7 +55,7 @@ namespace Pathfinding {
 
 		void Tick () {
 			if (Event.current.type == EventType.Repaint) {
-				float deltaTime = Time.realtimeSinceStartup-lastUpdate;
+				var deltaTime = Time.realtimeSinceStartup-lastUpdate;
 
 				// Right at the start of a transition the deltaTime will
 				// not be reliable, so use a very small value instead
@@ -69,7 +69,7 @@ namespace Pathfinding {
 				lastUpdate = Time.realtimeSinceStartup;
 
 
-				float targetValue = open ? 1F : 0F;
+				var targetValue = open ? 1F : 0F;
 				if (!Mathf.Approximately(targetValue, value)) {
 					value += deltaTime*animationSpeed*Mathf.Sign(targetValue-value);
 					value = Mathf.Clamp01(value);
@@ -188,7 +188,7 @@ namespace Pathfinding {
 			if (EditorGUILayout.Foldout(foldout, label)) {
 				EditorGUI.indentLevel++;
 				GUILayout.BeginVertical();
-				for (int i = 0; i < tagMask.Count; i++) {
+				for (var i = 0; i < tagMask.Count; i++) {
 					tagMask[i] = EditorGUILayout.TagField(tagMask[i]);
 				}
 				GUILayout.BeginHorizontal();
@@ -219,9 +219,9 @@ namespace Pathfinding {
 			if (!layerNames.TryGetValue(selected.value, out currentLayerNames)) {
 				var layers = Pathfinding.Util.ListPool<string>.Claim();
 
-				int emptyLayers = 0;
-				for (int i = 0; i < 32; i++) {
-					string layerName = LayerMask.LayerToName(i);
+				var emptyLayers = 0;
+				for (var i = 0; i < 32; i++) {
+					var layerName = LayerMask.LayerToName(i);
 
 					if (layerName != "") {
 						for (; emptyLayers > 0; emptyLayers--) layers.Add("Layer "+(i-emptyLayers));

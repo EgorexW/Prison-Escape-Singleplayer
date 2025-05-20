@@ -240,8 +240,8 @@ namespace Pathfinding {
 				var polygonCollider = GetComponent<PolygonCollider2D>();
 				if (polygonCollider != null) {
 					var points2D = polygonCollider.points;
-					Vector3[] pts = new Vector3[points2D.Length];
-					for (int i = 0; i < pts.Length; i++) {
+					var pts = new Vector3[points2D.Length];
+					for (var i = 0; i < pts.Length; i++) {
 						var p = points2D[i] + polygonCollider.offset;
 						pts[i] = new Vector3(p.x, 0, p.y);
 					}
@@ -264,7 +264,7 @@ namespace Pathfinding {
 				if (legacyMode && !legacyUseWorldSpace) {
 					// Used for compatibility with older versions
 					var worldPoints = new Vector3[points.Length];
-					for (int i = 0; i < points.Length; i++) worldPoints[i] = transform.TransformPoint(points[i]);
+					for (var i = 0; i < points.Length; i++) worldPoints[i] = transform.TransformPoint(points[i]);
 					shape = new GraphUpdateShape(worldPoints, convex, Matrix4x4.identity, minBoundsHeight);
 				} else {
 					shape = new GraphUpdateShape(points, convex, legacyMode && legacyUseWorldSpace ? Matrix4x4.identity : transform.localToWorldMatrix, minBoundsHeight);
@@ -301,12 +301,12 @@ namespace Pathfinding {
 
 		/// <summary>Draws some gizmos</summary>
 		void OnDrawGizmos (bool selected) {
-			Color c = selected ? new Color(227/255f, 61/255f, 22/255f, 1.0f) : new Color(227/255f, 61/255f, 22/255f, 0.9f);
+			var c = selected ? new Color(227/255f, 61/255f, 22/255f, 1.0f) : new Color(227/255f, 61/255f, 22/255f, 0.9f);
 
 			if (selected) {
 				Gizmos.color = Color.Lerp(c, new Color(1, 1, 1, 0.2f), 0.9f);
 
-				Bounds b = GetBounds();
+				var b = GetBounds();
 				Gizmos.DrawCube(b.center, b.size);
 				Gizmos.DrawWireCube(b.center, b.size);
 			}
@@ -317,7 +317,7 @@ namespace Pathfinding {
 
 			Gizmos.color = c;
 
-			Matrix4x4 matrix = legacyMode && legacyUseWorldSpace ? Matrix4x4.identity : transform.localToWorldMatrix;
+			var matrix = legacyMode && legacyUseWorldSpace ? Matrix4x4.identity : transform.localToWorldMatrix;
 
 			if (convex) {
 				c.r -= 0.1f;
@@ -328,7 +328,7 @@ namespace Pathfinding {
 			}
 
 			if (selected || !convex) {
-				for (int i = 0; i < points.Length; i++) {
+				for (var i = 0; i < points.Length; i++) {
 					Gizmos.DrawLine(matrix.MultiplyPoint3x4(points[i]), matrix.MultiplyPoint3x4(points[(i+1)%points.Length]));
 				}
 			}
@@ -338,7 +338,7 @@ namespace Pathfinding {
 
 				Gizmos.color = selected ? new Color(227/255f, 61/255f, 22/255f, 1.0f) : new Color(227/255f, 61/255f, 22/255f, 0.9f);
 
-				for (int i = 0; i < convexPoints.Length; i++) {
+				for (var i = 0; i < convexPoints.Length; i++) {
 					Gizmos.DrawLine(matrix.MultiplyPoint3x4(convexPoints[i]), matrix.MultiplyPoint3x4(convexPoints[(i+1)%convexPoints.Length]));
 				}
 			}
@@ -348,7 +348,7 @@ namespace Pathfinding {
 			if (selected && pts != null && pts.Length > 0) {
 				Gizmos.color = new Color(1, 1, 1, 0.2f);
 				float miny = pts[0].y, maxy = pts[0].y;
-				for (int i = 0; i < pts.Length; i++) {
+				for (var i = 0; i < pts.Length; i++) {
 					miny = Mathf.Min(miny, pts[i].y);
 					maxy = Mathf.Max(maxy, pts[i].y);
 				}
@@ -356,7 +356,7 @@ namespace Pathfinding {
 				miny -= extraHeight;
 				maxy += extraHeight;
 
-				for (int i = 0; i < pts.Length; i++) {
+				for (var i = 0; i < pts.Length; i++) {
 					var next = (i+1) % pts.Length;
 					var p1 = matrix.MultiplyPoint3x4(pts[i] + Vector3.up*(miny - pts[i].y));
 					var p2 = matrix.MultiplyPoint3x4(pts[i] + Vector3.up*(maxy - pts[i].y));
@@ -378,7 +378,7 @@ namespace Pathfinding {
 				legacyMode = false;
 				if (legacyUseWorldSpace) {
 					legacyUseWorldSpace = false;
-					for (int i = 0; i < points.Length; i++) {
+					for (var i = 0; i < points.Length; i++) {
 						points[i] = transform.InverseTransformPoint(points[i]);
 					}
 					RecalcConvex();

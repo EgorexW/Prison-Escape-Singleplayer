@@ -97,7 +97,7 @@ namespace Pathfinding {
 		static Bounds GetBounds (Vector3[] points, Vector3 right, Vector3 up, Vector3 forward, Vector3 origin, float minimumHeight) {
 			if (points == null || points.Length == 0) return new Bounds();
 			float miny = points[0].y, maxy = points[0].y;
-			for (int i = 0; i < points.Length; i++) {
+			for (var i = 0; i < points.Length; i++) {
 				miny = Mathf.Min(miny, points[i].y);
 				maxy = Mathf.Max(maxy, points[i].y);
 			}
@@ -105,9 +105,9 @@ namespace Pathfinding {
 			miny -= extraHeight;
 			maxy += extraHeight;
 
-			Vector3 min = right * points[0].x + up * points[0].y + forward * points[0].z;
-			Vector3 max = min;
-			for (int i = 0; i < points.Length; i++) {
+			var min = right * points[0].x + up * points[0].y + forward * points[0].z;
+			var max = min;
+			for (var i = 0; i < points.Length; i++) {
 				var p = right * points[i].x + forward * points[i].z;
 				var p1 = p + up * miny;
 				var p2 = p + up * maxy;

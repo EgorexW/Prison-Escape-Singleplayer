@@ -4,15 +4,15 @@ public partial class Character
 {
     List<IStatusEffect> statusEffects = new();
     void Update(){
-        foreach (IStatusEffect statusEffect in statusEffects.ToArray())
+        foreach (var statusEffect in statusEffects.ToArray())
         {
             statusEffect.OnUpdate(this);
         }
     }
 
     public void AddStatusEffect(IStatusEffect statusEffect){
-        bool canAdd = true;
-        foreach (IStatusEffect existingStatusEffect in statusEffects.FindAll(status => status.GetType() == statusEffect.GetType()))
+        var canAdd = true;
+        foreach (var existingStatusEffect in statusEffects.FindAll(status => status.GetType() == statusEffect.GetType()))
         {
             if (!existingStatusEffect.CanAddCopy(this, statusEffect)){
                 canAdd = false;

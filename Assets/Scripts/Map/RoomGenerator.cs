@@ -11,10 +11,10 @@ public class RoomGenerator : MonoBehaviour
         if (seed){
             Random.InitState(seed);
         }
-        RoomChooser roomChooser = GetComponent<RoomChooser>();
-        for (int i = 0; i < GenerationTries; i++)
+        var roomChooser = GetComponent<RoomChooser>();
+        for (var i = 0; i < GenerationTries; i++)
         {
-            Dictionary<RoomSpawner, Room> choosenRooms = roomChooser.ChooseRooms();
+            var choosenRooms = roomChooser.ChooseRooms();
             if (choosenRooms != null){
                 GenerateRooms(choosenRooms);
                 return;
@@ -23,7 +23,7 @@ public class RoomGenerator : MonoBehaviour
         Debug.LogError("Generation Failed", this);
     }
     void GenerateRooms(Dictionary<RoomSpawner, Room> matchedRoomWithSpawner){
-        foreach (KeyValuePair<RoomSpawner, Room> match in matchedRoomWithSpawner)
+        foreach (var match in matchedRoomWithSpawner)
         {
             match.Key.SpawnRoom(match.Value.GetGameObject());
         }

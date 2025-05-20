@@ -11,7 +11,7 @@ namespace Pathfinding.Util {
 
 			hash ^= 2166136261U;
 
-			for (int i = 0; i < arr.Length; i++)
+			for (var i = 0; i < arr.Length; i++)
 				hash = (hash ^ arr[i]) * prime;
 
 			return hash;

@@ -48,7 +48,7 @@ public partial class Character
         }
         RemoveItem(item);
         
-        Vector3 force = aim.forward * THROW_POWER;
+        var force = aim.forward * THROW_POWER;
         item.gameObject.SetActive(true);
         item.transform.SetParent(null); // Detach from character
         item.Rigidbody.isKinematic = false; // Enable physics

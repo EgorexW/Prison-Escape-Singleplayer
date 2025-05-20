@@ -123,11 +123,11 @@ namespace Pathfinding {
 				return path;
 			}
 
-			int pointCounter = 0;
-			for (int i = 0; i < path.Count-1; i++) {
+			var pointCounter = 0;
+			for (var i = 0; i < path.Count-1; i++) {
 				//pointCounter += Mathf.FloorToInt ((path[i]-path[i+1]).magnitude / maxSegmentLength)+1;
 
-				float dist = (path[i]-path[i+1]).magnitude;
+				var dist = (path[i]-path[i+1]).magnitude;
 				//In order to avoid floating point errors as much as possible, and in lack of a better solution
 				//loop through it EXACTLY as the other code further down will
 				for (float t = 0; t <= dist; t += maxSegmentLength) {
@@ -135,27 +135,27 @@ namespace Pathfinding {
 				}
 			}
 
-			List<Vector3> subdivided = ListPool<Vector3>.Claim(pointCounter);
+			var subdivided = ListPool<Vector3>.Claim(pointCounter);
 
 			// Set first velocity
-			Vector3 preEndVel = (path[1]-path[0]).normalized;
+			var preEndVel = (path[1]-path[0]).normalized;
 
-			for (int i = 0; i < path.Count-1; i++) {
-				float dist = (path[i]-path[i+1]).magnitude;
+			for (var i = 0; i < path.Count-1; i++) {
+				var dist = (path[i]-path[i+1]).magnitude;
 
-				Vector3 startVel1 = preEndVel;
-				Vector3 endVel1 = i < path.Count-2 ? ((path[i+2]-path[i+1]).normalized - (path[i]-path[i+1]).normalized).normalized : (path[i+1]-path[i]).normalized;
+				var startVel1 = preEndVel;
+				var endVel1 = i < path.Count-2 ? ((path[i+2]-path[i+1]).normalized - (path[i]-path[i+1]).normalized).normalized : (path[i+1]-path[i]).normalized;
 
-				Vector3 startVel = startVel1 * dist * factor;
-				Vector3 endVel = endVel1 * dist * factor;
+				var startVel = startVel1 * dist * factor;
+				var endVel = endVel1 * dist * factor;
 
-				Vector3 start = path[i];
-				Vector3 end = path[i+1];
+				var start = path[i];
+				var end = path[i+1];
 
-				float onedivdist = 1F / dist;
+				var onedivdist = 1F / dist;
 
 				for (float t = 0; t <= dist; t += maxSegmentLength) {
-					float t2 = t * onedivdist;
+					var t2 = t * onedivdist;
 
 					subdivided.Add(GetPointOnCubic(start, end, startVel, endVel, t2));
 				}
@@ -171,10 +171,10 @@ namespace Pathfinding {
 		public static Vector3 GetPointOnCubic (Vector3 a, Vector3 b, Vector3 tan1, Vector3 tan2, float t) {
 			float t2 = t*t, t3 = t2*t;
 
-			float h1 =  2*t3 - 3*t2 + 1;          // calculate basis function 1
-			float h2 = -2*t3 + 3*t2;              // calculate basis function 2
-			float h3 =   t3 -  2*t2 + t;          // calculate basis function 3
-			float h4 =   t3 -  t2;                // calculate basis function 4
+			var h1 =  2*t3 - 3*t2 + 1;          // calculate basis function 1
+			var h2 = -2*t3 + 3*t2;              // calculate basis function 2
+			var h3 =   t3 -  2*t2 + t;          // calculate basis function 3
+			var h4 =   t3 -  t2;                // calculate basis function 4
 
 			return h1*a +                            // multiply and sum all funtions
 				   h2*b +                            // together to build the interpolated
@@ -192,38 +192,38 @@ namespace Pathfinding {
 				return path;
 			}
 
-			int maxLength = (path.Count-2)*(int)Mathf.Pow(2, iterations)+2;
+			var maxLength = (path.Count-2)*(int)Mathf.Pow(2, iterations)+2;
 
-			List<Vector3> subdivided = ListPool<Vector3>.Claim(maxLength);
-			List<Vector3> subdivided2 = ListPool<Vector3>.Claim(maxLength);
+			var subdivided = ListPool<Vector3>.Claim(maxLength);
+			var subdivided2 = ListPool<Vector3>.Claim(maxLength);
 
-			for (int i = 0; i < maxLength; i++) { subdivided.Add(Vector3.zero); subdivided2.Add(Vector3.zero); }
+			for (var i = 0; i < maxLength; i++) { subdivided.Add(Vector3.zero); subdivided2.Add(Vector3.zero); }
 
-			for (int i = 0; i < path.Count; i++) {
+			for (var i = 0; i < path.Count; i++) {
 				subdivided[i] = path[i];
 			}
 
-			for (int iteration = 0; iteration < iterations; iteration++) {
-				int currentPathLength = (path.Count-2)*(int)Mathf.Pow(2, iteration)+2;
+			for (var iteration = 0; iteration < iterations; iteration++) {
+				var currentPathLength = (path.Count-2)*(int)Mathf.Pow(2, iteration)+2;
 
 				//Switch the arrays
-				List<Vector3> tmp = subdivided;
+				var tmp = subdivided;
 				subdivided = subdivided2;
 				subdivided2 = tmp;
 
 				const float nextMultiplier = 1F;
 
-				for (int i = 0; i < currentPathLength-1; i++) {
-					Vector3 current = subdivided2[i];
-					Vector3 next = subdivided2[i+1];
+				for (var i = 0; i < currentPathLength-1; i++) {
+					var current = subdivided2[i];
+					var next = subdivided2[i+1];
 
-					Vector3 normal = Vector3.Cross(next-current, Vector3.up);
+					var normal = Vector3.Cross(next-current, Vector3.up);
 					normal = normal.normalized;
 
-					bool firstRight = false;
-					bool secondRight = false;
-					bool setFirst = false;
-					bool setSecond = false;
+					var firstRight = false;
+					var secondRight = false;
+					var setFirst = false;
+					var setSecond = false;
 					if (i != 0 && !VectorMath.IsColinearXZ(current, next, subdivided2[i-1])) {
 						setFirst = true;
 						firstRight = VectorMath.RightOrColinearXZ(current, next, subdivided2[i-1]);
@@ -264,22 +264,22 @@ namespace Pathfinding {
 				maxSegmentLength = Mathf.Max(maxSegmentLength, 0.005f);
 
 				float pathLength = 0;
-				for (int i = 0; i < path.Count-1; i++) {
+				for (var i = 0; i < path.Count-1; i++) {
 					pathLength += Vector3.Distance(path[i], path[i+1]);
 				}
 
-				int estimatedNumberOfSegments = Mathf.FloorToInt(pathLength / maxSegmentLength);
+				var estimatedNumberOfSegments = Mathf.FloorToInt(pathLength / maxSegmentLength);
 				// Get a list with an initial capacity high enough so that we can add all points
 				subdivided = ListPool<Vector3>.Claim(estimatedNumberOfSegments+2);
 
 				float distanceAlong = 0;
 
 				// Sample points every [maxSegmentLength] world units along the path
-				for (int i = 0; i < path.Count-1; i++) {
+				for (var i = 0; i < path.Count-1; i++) {
 					var start = path[i];
 					var end = path[i+1];
 
-					float length = Vector3.Distance(start, end);
+					var length = Vector3.Distance(start, end);
 
 					while (distanceAlong < length) {
 						subdivided.Add(Vector3.Lerp(start, end, distanceAlong / length));
@@ -299,17 +299,17 @@ namespace Pathfinding {
 					subdivisions = 10;
 				}
 
-				int steps = 1 << subdivisions;
+				var steps = 1 << subdivisions;
 				subdivided = ListPool<Vector3>.Claim((path.Count-1)*steps + 1);
 				Polygon.Subdivide(path, subdivided, steps);
 			}
 
 			if (strength > 0) {
-				for (int it = 0; it < iterations; it++) {
-					Vector3 prev = subdivided[0];
+				for (var it = 0; it < iterations; it++) {
+					var prev = subdivided[0];
 
-					for (int i = 1; i < subdivided.Count-1; i++) {
-						Vector3 tmp = subdivided[i];
+					for (var i = 1; i < subdivided.Count-1; i++) {
+						var tmp = subdivided[i];
 
 						// prev is at this point set to the value that subdivided[i-1] had before this loop started
 						// Move the point closer to the average of the adjacent points
@@ -326,10 +326,10 @@ namespace Pathfinding {
 		public List<Vector3> SmoothBezier (List<Vector3> path) {
 			if (subdivisions < 0) subdivisions = 0;
 
-			int subMult = 1 << subdivisions;
-			List<Vector3> subdivided = ListPool<Vector3>.Claim();
+			var subMult = 1 << subdivisions;
+			var subdivided = ListPool<Vector3>.Claim();
 
-			for (int i = 0; i < path.Count-1; i++) {
+			for (var i = 0; i < path.Count-1; i++) {
 				Vector3 tangent1;
 				Vector3 tangent2;
 				if (i == 0) {
@@ -347,12 +347,12 @@ namespace Pathfinding {
 				tangent1 *= bezierTangentLength;
 				tangent2 *= bezierTangentLength;
 
-				Vector3 v1 = path[i];
-				Vector3 v2 = v1+tangent1;
-				Vector3 v4 = path[i+1];
-				Vector3 v3 = v4+tangent2;
+				var v1 = path[i];
+				var v2 = v1+tangent1;
+				var v4 = path[i+1];
+				var v3 = v4+tangent2;
 
-				for (int j = 0; j < subMult; j++) {
+				for (var j = 0; j < subMult; j++) {
 					subdivided.Add(AstarSplines.CubicBezier(v1, v2, v3, v4, (float)j/subMult));
 				}
 			}

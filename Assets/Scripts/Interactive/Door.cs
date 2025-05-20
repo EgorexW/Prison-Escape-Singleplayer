@@ -98,7 +98,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
         if (colliderWhenOpen){
             return;
         }
-        foreach (Collider collider1 in colliders)
+        foreach (var collider1 in colliders)
         {
             collider1.isTrigger = open;
         }

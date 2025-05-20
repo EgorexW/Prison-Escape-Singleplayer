@@ -27,9 +27,9 @@ public class AudioManager : MonoBehaviour
 			DontDestroyOnLoad(gameObject);
 		}
 
-		foreach (Sound s in sounds)
+		foreach (var s in sounds)
 		{
-			AudioSource source = gameObject.AddComponent<AudioSource>();
+			var source = gameObject.AddComponent<AudioSource>();
 			audioSources.Add(source);
 			source.loop = s.loop;
 
@@ -39,14 +39,14 @@ public class AudioManager : MonoBehaviour
 
 	public void Play(string sound)
 	{
-		int nr = Array.FindIndex(sounds, item => item.name == sound);
+		var nr = Array.FindIndex(sounds, item => item.name == sound);
 		if (nr == -1)
 		{
 			Debug.LogWarning("Sound: " + name + " not found!");
 			return;
 		}
-		Sound s = sounds[nr];
-		AudioSource source = audioSources[nr];
+		var s = sounds[nr];
+		var source = audioSources[nr];
 		if (source.isPlaying && !s.canOverride){
 			return;
 		}
@@ -58,14 +58,14 @@ public class AudioManager : MonoBehaviour
 	}
 	public void Stop(string sound)
 	{
-		int nr = Array.FindIndex(sounds, item => item.name == sound);
+		var nr = Array.FindIndex(sounds, item => item.name == sound);
 		if (nr == -1)
 		{
 			Debug.LogWarning("Sound: " + name + " not found!");
 			return;
 		}
-		Sound s = sounds[nr];
-		AudioSource source = audioSources[nr];
+		var s = sounds[nr];
+		var source = audioSources[nr];
 		source.Stop();
 	}
 

@@ -192,15 +192,15 @@ namespace Pathfinding {
 		public void Apply (bool forceNewCheck) {
 			//TODO
 			//This function assumes that connections from the n1,n2 nodes never need to be removed in the future (e.g because the nodes move or something)
-			NNConstraint nn = NNConstraint.None;
+			var nn = NNConstraint.None;
 
 			nn.distanceXZ = true;
-			int graph = (int)startNode.GraphIndex;
+			var graph = (int)startNode.GraphIndex;
 
 			//Search all graphs but the one which start and end nodes are on
 			nn.graphMask = ~(1 << graph);
 
-			bool same = true;
+			var same = true;
 
 			{
 				var info = AstarPath.active.GetNearest(StartTransform.position, nn);
@@ -228,21 +228,21 @@ namespace Pathfinding {
 			RemoveConnections(startNode);
 			RemoveConnections(endNode);
 
-			uint cost = (uint)Mathf.RoundToInt(((Int3)(StartTransform.position-EndTransform.position)).costMagnitude*costFactor);
+			var cost = (uint)Mathf.RoundToInt(((Int3)(StartTransform.position-EndTransform.position)).costMagnitude*costFactor);
 			startNode.AddConnection(endNode, cost);
 			endNode.AddConnection(startNode, cost);
 
-			Int3 dir = connectedNode2.position - connectedNode1.position;
+			var dir = connectedNode2.position - connectedNode1.position;
 
-			for (int a = 0; a < connectedNode1.GetVertexCount(); a++) {
-				Int3 va1 = connectedNode1.GetVertex(a);
-				Int3 va2 = connectedNode1.GetVertex((a+1) % connectedNode1.GetVertexCount());
+			for (var a = 0; a < connectedNode1.GetVertexCount(); a++) {
+				var va1 = connectedNode1.GetVertex(a);
+				var va2 = connectedNode1.GetVertex((a+1) % connectedNode1.GetVertexCount());
 
 				if (Int3.DotLong((va2-va1).Normal2D(), dir) > 0) continue;
 
-				for (int b = 0; b < connectedNode2.GetVertexCount(); b++) {
-					Int3 vb1 = connectedNode2.GetVertex(b);
-					Int3 vb2 = connectedNode2.GetVertex((b+1) % connectedNode2.GetVertexCount());
+				for (var b = 0; b < connectedNode2.GetVertexCount(); b++) {
+					var vb1 = connectedNode2.GetVertex(b);
+					var vb2 = connectedNode2.GetVertex((b+1) % connectedNode2.GetVertexCount());
 
 					if (Int3.DotLong((vb2-vb1).Normal2D(), dir) < 0) continue;
 
@@ -256,8 +256,8 @@ namespace Pathfinding {
 						if (t2 < t1) {
 							Debug.LogError("Something went wrong! " + t1 + " " + t2 + " " + va1 + " " + va2 + " " + vb1 + " " + vb2+"\nTODO, how can this happen?");
 						} else {
-							Vector3 pa = (Vector3)(va2-va1)*t1 + (Vector3)va1;
-							Vector3 pb = (Vector3)(va2-va1)*t2 + (Vector3)va1;
+							var pa = (Vector3)(va2-va1)*t1 + (Vector3)va1;
+							var pb = (Vector3)(va2-va1)*t2 + (Vector3)va1;
 
 							startNode.portalA = pa;
 							startNode.portalB = pb;
@@ -291,7 +291,7 @@ namespace Pathfinding {
 		}
 
 		public void OnDrawGizmos (bool selected) {
-			Color col = selected ? GizmosColorSelected : GizmosColor;
+			var col = selected ? GizmosColorSelected : GizmosColor;
 
 			if (StartTransform != null) {
 				Draw.Gizmos.CircleXZ(StartTransform.position, 0.4f, col);
@@ -303,7 +303,7 @@ namespace Pathfinding {
 			if (StartTransform != null && EndTransform != null) {
 				Draw.Gizmos.Bezier(StartTransform.position, EndTransform.position, col);
 				if (selected) {
-					Vector3 cross = Vector3.Cross(Vector3.up, (EndTransform.position-StartTransform.position)).normalized;
+					var cross = Vector3.Cross(Vector3.up, (EndTransform.position-StartTransform.position)).normalized;
 					Draw.Gizmos.Bezier(StartTransform.position+cross*0.1f, EndTransform.position+cross*0.1f, col);
 					Draw.Gizmos.Bezier(StartTransform.position-cross*0.1f, EndTransform.position-cross*0.1f, col);
 				}

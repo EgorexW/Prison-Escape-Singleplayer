@@ -8,14 +8,14 @@ public static class WeightedChance
         ObjectWithValue<T> win = null;
         float totalWeight = 0;
 
-        foreach(ObjectWithValue<T> weightedChance in weightedChances)
+        foreach(var weightedChance in weightedChances)
         {
             totalWeight += Mathf.Max(weightedChance.value, 0);
         }
 
-        float roll = Random.Range(0, totalWeight);
+        var roll = Random.Range(0, totalWeight);
 
-        foreach(ObjectWithValue<T> weightedChance in weightedChances)
+        foreach(var weightedChance in weightedChances)
         {
             if (roll <= weightedChance.value)
             {

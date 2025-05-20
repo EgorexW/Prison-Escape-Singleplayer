@@ -108,13 +108,13 @@ namespace Pathfinding {
 		public abstract bool HasConnectionsToAllEightNeighbours { get; }
 
 		public override float SurfaceArea () {
-			GridGraph gg = GridNode.GetGridGraph(GraphIndex);
+			var gg = GridNode.GetGridGraph(GraphIndex);
 
 			return gg.nodeSize*gg.nodeSize;
 		}
 
 		public override Vector3 RandomPointOnSurface () {
-			GridGraph gg = GridNode.GetGridGraph(GraphIndex);
+			var gg = GridNode.GetGridGraph(GraphIndex);
 
 			var graphSpacePosition = gg.transform.InverseTransform((Vector3)position);
 
@@ -126,7 +126,7 @@ namespace Pathfinding {
 
 #if !ASTAR_GRID_NO_CUSTOM_CONNECTIONS
 			if (connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					hash ^= 17 * connections[i].GetHashCode();
 				}
 			}
@@ -163,7 +163,7 @@ namespace Pathfinding {
 		public override bool ContainsConnection (GraphNode node) {
 #if !ASTAR_GRID_NO_CUSTOM_CONNECTIONS
 			if (connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					if (connections[i].node == node) {
 						return true;
 					}
@@ -171,7 +171,7 @@ namespace Pathfinding {
 			}
 #endif
 
-			for (int i = 0; i < 8; i++) {
+			for (var i = 0; i < 8; i++) {
 				if (node == GetNeighbourAlongDirection(i)) {
 					return true;
 				}
@@ -196,7 +196,7 @@ namespace Pathfinding {
 #else
 		/// <summary>Same as <see cref="ClearConnections"/>, but does not clear grid connections, only custom ones (e.g added by <see cref="AddConnection"/> or a NodeLink component)</summary>
 		public void ClearCustomConnections (bool alsoReverse) {
-			if (connections != null) for (int i = 0; i < connections.Length; i++) connections[i].node.RemoveConnection(this);
+			if (connections != null) for (var i = 0; i < connections.Length; i++) connections[i].node.RemoveConnection(this);
 			connections = null;
 			AstarPath.active.hierarchicalGraph.AddDirtyNode(this);
 		}
@@ -206,29 +206,29 @@ namespace Pathfinding {
 		}
 
 		public override void GetConnections (System.Action<GraphNode> action) {
-			if (connections != null) for (int i = 0; i < connections.Length; i++) action(connections[i].node);
+			if (connections != null) for (var i = 0; i < connections.Length; i++) action(connections[i].node);
 		}
 
 		public override void UpdateRecursiveG (Path path, PathNode pathNode, PathHandler handler) {
-			ushort pid = handler.PathID;
+			var pid = handler.PathID;
 
-			if (connections != null) for (int i = 0; i < connections.Length; i++) {
-					GraphNode other = connections[i].node;
-					PathNode otherPN = handler.GetPathNode(other);
+			if (connections != null) for (var i = 0; i < connections.Length; i++) {
+					var other = connections[i].node;
+					var otherPN = handler.GetPathNode(other);
 					if (otherPN.parent == pathNode && otherPN.pathID == pid) other.UpdateRecursiveG(path, otherPN, handler);
 				}
 		}
 
 		public override void Open (Path path, PathNode pathNode, PathHandler handler) {
-			ushort pid = handler.PathID;
+			var pid = handler.PathID;
 
-			if (connections != null) for (int i = 0; i < connections.Length; i++) {
-					GraphNode other = connections[i].node;
+			if (connections != null) for (var i = 0; i < connections.Length; i++) {
+					var other = connections[i].node;
 					if (!path.CanTraverse(other)) continue;
 
-					PathNode otherPN = handler.GetPathNode(other);
+					var otherPN = handler.GetPathNode(other);
 
-					uint tmpCost = connections[i].cost;
+					var tmpCost = connections[i].cost;
 
 					if (otherPN.pathID != pid) {
 						otherPN.parent = pathNode;
@@ -276,7 +276,7 @@ namespace Pathfinding {
 			if (node == null) throw new System.ArgumentNullException();
 
 			if (connections != null) {
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					if (connections[i].node == node) {
 						connections[i].cost = cost;
 						return;
@@ -284,10 +284,10 @@ namespace Pathfinding {
 				}
 			}
 
-			int connLength = connections != null ? connections.Length : 0;
+			var connLength = connections != null ? connections.Length : 0;
 
 			var newconns = new Connection[connLength+1];
-			for (int i = 0; i < connLength; i++) {
+			for (var i = 0; i < connLength; i++) {
 				newconns[i] = connections[i];
 			}
 
@@ -308,15 +308,15 @@ namespace Pathfinding {
 		public override void RemoveConnection (GraphNode node) {
 			if (connections == null) return;
 
-			for (int i = 0; i < connections.Length; i++) {
+			for (var i = 0; i < connections.Length; i++) {
 				if (connections[i].node == node) {
-					int connLength = connections.Length;
+					var connLength = connections.Length;
 
 					var newconns = new Connection[connLength-1];
-					for (int j = 0; j < i; j++) {
+					for (var j = 0; j < i; j++) {
 						newconns[j] = connections[j];
 					}
-					for (int j = i+1; j < connLength; j++) {
+					for (var j = i+1; j < connLength; j++) {
 						newconns[j-1] = connections[j];
 					}
 
@@ -333,7 +333,7 @@ namespace Pathfinding {
 				ctx.writer.Write(-1);
 			} else {
 				ctx.writer.Write(connections.Length);
-				for (int i = 0; i < connections.Length; i++) {
+				for (var i = 0; i < connections.Length; i++) {
 					ctx.SerializeNodeReference(connections[i].node);
 					ctx.writer.Write(connections[i].cost);
 				}
@@ -345,14 +345,14 @@ namespace Pathfinding {
 			if (ctx.meta.version < AstarSerializer.V3_8_3)
 				return;
 
-			int count = ctx.reader.ReadInt32();
+			var count = ctx.reader.ReadInt32();
 
 			if (count == -1) {
 				connections = null;
 			} else {
 				connections = new Connection[count];
 
-				for (int i = 0; i < count; i++) {
+				for (var i = 0; i < count; i++) {
 					connections[i] = new Connection(ctx.DeserializeNodeReference(), ctx.reader.ReadUInt32());
 				}
 			}

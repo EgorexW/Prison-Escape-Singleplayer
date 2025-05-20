@@ -106,7 +106,7 @@ namespace GizmosExtended
 				forward = Vector3.Slerp(up, -up, 0.5f),
 				right = Vector3.Cross(up, forward).normalized * radius;
 
-			Matrix4x4 matrix = new Matrix4x4{
+			var matrix = new Matrix4x4{
 				m00 = right.x,
 				m10 = right.y,
 				m20 = right.z,
@@ -126,7 +126,7 @@ namespace GizmosExtended
 
 			using (new ColorScope(color))
 			{
-				for (int i = 0; i <= 90; i++)
+				for (var i = 0; i <= 90; i++)
 				{
 					nextPoint = position + matrix.MultiplyPoint3x4(
 						new Vector3(
@@ -184,7 +184,7 @@ namespace GizmosExtended
 		/// <param name='angle'>- The angle of the cone.</param>
 		public static void DrawCone(Vector3 position, Vector3 direction, Color color = default(Color), float angle = 45)
 		{
-			float length = direction.magnitude;
+			var length = direction.magnitude;
 			angle = Mathf.Clamp(angle, 0f, 90f);
 
 			Vector3
@@ -193,8 +193,8 @@ namespace GizmosExtended
 				right = Vector3.Cross(forward, up).normalized * length,
 				slerpedVector = Vector3.Slerp(forward, up, angle / 90.0f);
 
-			Plane farPlane = new Plane(-direction, position + forward);
-			Ray distRay = new Ray(position, slerpedVector);
+			var farPlane = new Plane(-direction, position + forward);
+			var distRay = new Ray(position, slerpedVector);
 
 			float dist;
 			farPlane.Raycast(distRay, out dist);
@@ -225,9 +225,9 @@ namespace GizmosExtended
 				angle = Mathf.Abs(angle);
 			if (angle > 0f)
 			{
-				float length = direction.magnitude;
-				float arrowLength = length * Mathf.Clamp01(headLength);
-				Vector3 headDir = direction.normalized * -arrowLength;
+				var length = direction.magnitude;
+				var arrowLength = length * Mathf.Clamp01(headLength);
+				var headDir = direction.normalized * -arrowLength;
 				DrawCone(position + direction, headDir, color, angle);
 			}
 			using (new ColorScope(color))
@@ -278,7 +278,7 @@ namespace GizmosExtended
 					Gizmos.DrawLine(point1 + forward, point2 + forward);
 					Gizmos.DrawLine(point1 - forward, point2 - forward);
 
-					for (int i = 1; i < 26; i++)
+					for (var i = 1; i < 26; i++)
 					{
 						//Start endcap
 						Gizmos.DrawLine(Vector3.Slerp(right, -up, i / 25.0f) + point1, Vector3.Slerp(right, -up, (i - 1) / 25.0f) + point1);
@@ -318,13 +318,13 @@ namespace GizmosExtended
 		/// <remarks>pivot point is start point</remarks>
 		public static void DrawPlane(Vector3 start, Vector3 end, Vector3 upward, float height = 1f, Color color = default(Color))
 		{
-			float width = Vector3.Distance(start, end);
+			var width = Vector3.Distance(start, end);
 			if (Mathf.Approximately(width, 0f))
 				return;
 
 			using (new ColorScope(color))
 			{
-				Quaternion rotation =
+				var rotation =
 					Quaternion.LookRotation(end - start, upward) *
 					Quaternion.Euler(0f, -90f, 0f);
 				Gizmos.matrix = Matrix4x4.TRS(start, rotation, Vector3.one);
@@ -411,15 +411,15 @@ namespace GizmosExtended
 #if UNITY_EDITOR
 			if (IsHandleHackAvailable)
 			{
-				Transform cam = UnityEditor.SceneView.currentDrawingSceneView != null ?
+				var cam = UnityEditor.SceneView.currentDrawingSceneView != null ?
 					UnityEditor.SceneView.currentDrawingSceneView.camera.transform : // Scene View
 					Camera.main.transform; // Only Game View
 				if (Vector3.Dot(cam.forward, position - cam.position) > 0)
 				{
-					Vector3 pos = position;
+					var pos = position;
 					if (offsetX != 0f || offsetY != 0f)
 					{
-						Vector3 camRightVector = cam.right * offsetX; // base on view
+						var camRightVector = cam.right * offsetX; // base on view
 						pos += camRightVector + new Vector3(0f, offsetY, 0f); // base on target
 					}
 
@@ -430,7 +430,7 @@ namespace GizmosExtended
 						else
 						{
 							style = new GUIStyle(GUI.skin.textArea);
-							Color old = style.normal.textColor;
+							var old = style.normal.textColor;
 							style.normal.textColor = color;
 							Handles.Label(pos, text, style);
 							style.normal.textColor = old;
@@ -442,7 +442,7 @@ namespace GizmosExtended
 							Handles.Label(pos, text, style);
 						else
 						{
-							Color old = style.normal.textColor;
+							var old = style.normal.textColor;
 							style.normal.textColor = color;
 							Handles.Label(pos, text, style);
 							style.normal.textColor = old;
@@ -489,12 +489,12 @@ namespace GizmosExtended
 #if UNITY_EDITOR
 			if (IsHandleHackAvailable)
 			{
-				float angle = Vector3.SignedAngle(from, to, axis);
+				var angle = Vector3.SignedAngle(from, to, axis);
 				DrawArc(center, axis, from, angle, radius, color, constantScreenSize);
 				if (label)
 				{
-					float factor = constantScreenSize ? HandleUtility.GetHandleSize(center) : 1f;
-					Vector3 labelPos = center + (Vector3.Lerp(from, to, 0.5f) * factor);
+					var factor = constantScreenSize ? HandleUtility.GetHandleSize(center) : 1f;
+					var labelPos = center + (Vector3.Lerp(from, to, 0.5f) * factor);
 					DrawLabel(labelPos, $"{angle:F2}");
 				}
 			}
@@ -608,8 +608,8 @@ namespace GizmosExtended
 		public static void DrawBoxCastBox(Vector3 origin, Vector3 halfExtents, Quaternion orientation, Vector3 direction, float distance, Color color = default(Color))
 		{
 			direction.Normalize();
-			Box bottomBox = new Box(origin, halfExtents, orientation);
-			Box topBox = new Box(origin + (direction * distance), halfExtents, orientation);
+			var bottomBox = new Box(origin, halfExtents, orientation);
+			var topBox = new Box(origin + (direction * distance), halfExtents, orientation);
 
 			using (new ColorScope(color))
 			{
@@ -635,7 +635,7 @@ namespace GizmosExtended
 
 		static Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Quaternion rotation)
 		{
-			Vector3 direction = point - pivot;
+			var direction = point - pivot;
 			return pivot + rotation * direction;
 		}
 
@@ -669,7 +669,7 @@ namespace GizmosExtended
 		/// <param name='color'>- The color of the cube.</param>
 		public static void DrawLocalCube(Transform transform, Vector3 size, Color color = default(Color), Vector3 center = default(Vector3))
 		{
-			Box box = new Box(transform.position, size * 0.5f, transform.rotation);
+			var box = new Box(transform.position, size * 0.5f, transform.rotation);
 			DrawBox(box, color);
 		}
 

@@ -202,7 +202,7 @@ namespace Pathfinding {
 						Starving();
 					}
 				}
-				Path p = head;
+				var p = head;
 
 				var newHead = head.next;
 				if (newHead == null) {
@@ -274,7 +274,7 @@ namespace Pathfinding {
 					blockedReceivers--;
 				}
 
-				Path p = head;
+				var p = head;
 
 				var newHead = head.next;
 				if (newHead == null) {

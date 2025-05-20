@@ -35,7 +35,7 @@ class PlayerUI : MonoBehaviour
     void ShowInventory(){
         var items = character.GetInventory().GetItems();
         List<ISpriteUI> itemUIs = new();
-        foreach (Item item in items)
+        foreach (var item in items)
         {
             itemUIs.Add(new SpriteUI(item.GetPortrait(), () => character.EquipItem(item)));
         }

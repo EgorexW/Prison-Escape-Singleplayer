@@ -186,11 +186,11 @@ namespace UnitySweeper
             path = path.ToLower();
             searchTerm = searchTerm.ToLower();
 
-            string[] keywords = searchTerm.Split(' ');
+            var keywords = searchTerm.Split(' ');
 
-            foreach (string keyword in keywords)
+            foreach (var keyword in keywords)
             {
-                string curKeyword = keyword;
+                var curKeyword = keyword;
 
                 if (curKeyword.Contains('-'))
                 {
@@ -231,17 +231,17 @@ namespace UnitySweeper
         {
             try
             {
-                string exportDirectory = "BackupUnusedAssets";
+                var exportDirectory = "BackupUnusedAssets";
                 Directory.CreateDirectory(exportDirectory);
                 var files = deleteAssets.Where(item => item.isDelete).Select(item => item.path).ToArray();
-                string backupPackageName = exportDirectory + "/package" + DateTime.Now.ToString("yyyyMMddHHmmss") +
-                                           ".unitypackage";
+                var backupPackageName = exportDirectory + "/package" + DateTime.Now.ToString("yyyyMMddHHmmss") +
+                                        ".unitypackage";
                 EditorUtility.DisplayProgressBar("export package", backupPackageName, 0);
 
                 AssetDatabase.ExportPackage(files, backupPackageName);
 
-                int i = 0;
-                int length = deleteAssets.Count;
+                var i = 0;
+                var length = deleteAssets.Count;
 
                 foreach (var assetPath in files)
                 {

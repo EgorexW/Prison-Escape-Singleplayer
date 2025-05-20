@@ -198,26 +198,26 @@ namespace Pathfinding {
 				}
 			}
 
-			bool mecanim = GameObject.FindObjectOfType(typeof(Animator)) != null;
-			string query = updateURL+
-						   "?v="+AstarPath.Version+
-						   "&pro=0"+
-						   "&check="+updateCheckRate+"&distr="+AstarPath.Distribution+
-						   "&unitypro="+(Application.HasProLicense() ? "1" : "0")+
-						   "&inscene="+(script != null ? "1" : "0")+
-						   "&targetplatform="+EditorUserBuildSettings.activeBuildTarget+
-						   "&devplatform="+Application.platform+
-						   "&mecanim="+(mecanim ? "1" : "0")+
-						   "&hasNavmesh=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "NavMeshGraph") ? 1 : 0) +
-						   "&hasPoint=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "PointGraph") ? 1 : 0) +
-						   "&hasGrid=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "GridGraph") ? 1 : 0) +
-						   "&hasLayered=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "LayerGridGraph") ? 1 : 0) +
-						   "&hasRecast=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "RecastGraph") ? 1 : 0) +
-						   "&hasGrid=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "GridGraph") ? 1 : 0) +
-						   "&hasCustom=" + (script != null && script.data.graphs.Any(g => g != null && !g.GetType().FullName.Contains("Pathfinding.")) ? 1 : 0) +
-						   "&graphCount=" + (script != null ? script.data.graphs.Count(g => g != null) : 0) +
-						   "&unityversion="+Application.unityVersion +
-						   "&branch="+AstarPath.Branch;
+			var mecanim = GameObject.FindObjectOfType(typeof(Animator)) != null;
+			var query = updateURL+
+			            "?v="+AstarPath.Version+
+			            "&pro=0"+
+			            "&check="+updateCheckRate+"&distr="+AstarPath.Distribution+
+			            "&unitypro="+(Application.HasProLicense() ? "1" : "0")+
+			            "&inscene="+(script != null ? "1" : "0")+
+			            "&targetplatform="+EditorUserBuildSettings.activeBuildTarget+
+			            "&devplatform="+Application.platform+
+			            "&mecanim="+(mecanim ? "1" : "0")+
+			            "&hasNavmesh=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "NavMeshGraph") ? 1 : 0) +
+			            "&hasPoint=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "PointGraph") ? 1 : 0) +
+			            "&hasGrid=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "GridGraph") ? 1 : 0) +
+			            "&hasLayered=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "LayerGridGraph") ? 1 : 0) +
+			            "&hasRecast=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "RecastGraph") ? 1 : 0) +
+			            "&hasGrid=" + (script != null && script.data.graphs.Any(g => g.GetType().Name == "GridGraph") ? 1 : 0) +
+			            "&hasCustom=" + (script != null && script.data.graphs.Any(g => g != null && !g.GetType().FullName.Contains("Pathfinding.")) ? 1 : 0) +
+			            "&graphCount=" + (script != null ? script.data.graphs.Count(g => g != null) : 0) +
+			            "&unityversion="+Application.unityVersion +
+			            "&branch="+AstarPath.Branch;
 
 #if UNITY_2018_1_OR_NEWER
 			updateCheckDownload = UnityWebRequest.Get(query);
@@ -246,7 +246,7 @@ namespace Pathfinding {
 			Debug.Log("Result from update check:\n"+result);
 #endif
 
-			string[] splits = result.Split('|');
+			var splits = result.Split('|');
 			latestVersionDescription = splits.Length > 1 ? splits[1] : "";
 
 			if (splits.Length > 4) {
@@ -254,9 +254,9 @@ namespace Pathfinding {
 				var fields = splits.Skip(4).ToArray();
 
 				// Take all pairs of fields
-				for (int i = 0; i < (fields.Length/2)*2; i += 2) {
-					string key = fields[i];
-					string val = fields[i+1];
+				for (var i = 0; i < (fields.Length/2)*2; i += 2) {
+					var key = fields[i];
+					var val = fields[i+1];
 					astarServerData[key] = val;
 				}
 			}

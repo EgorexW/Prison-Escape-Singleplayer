@@ -34,17 +34,17 @@ namespace Pathfinding {
 				return null;
 			}
 
-			meshStruct newMesh = createMeshStruct(filePath);
+			var newMesh = createMeshStruct(filePath);
 			populateMeshStruct(ref newMesh);
 
-			Vector3[] newVerts = new Vector3[newMesh.faceData.Length];
-			Vector2[] newUVs = new Vector2[newMesh.faceData.Length];
-			Vector3[] newNormals = new Vector3[newMesh.faceData.Length];
-			int i = 0;
+			var newVerts = new Vector3[newMesh.faceData.Length];
+			var newUVs = new Vector2[newMesh.faceData.Length];
+			var newNormals = new Vector3[newMesh.faceData.Length];
+			var i = 0;
 			/* The following foreach loops through the facedata and assigns the appropriate vertex, uv, or normal
 			 * for the appropriate Unity mesh array.
 			 */
-			foreach (Vector3 v in newMesh.faceData) {
+			foreach (var v in newMesh.faceData) {
 				newVerts[i] = newMesh.vertices[(int)v.x - 1];
 				if (v.y >= 1)
 					newUVs[i] = newMesh.uv[(int)v.y - 1];
@@ -54,7 +54,7 @@ namespace Pathfinding {
 				i++;
 			}
 
-			Mesh mesh = new Mesh();
+			var mesh = new Mesh();
 
 			mesh.vertices = newVerts;
 			mesh.uv = newUVs;
@@ -72,19 +72,19 @@ namespace Pathfinding {
 #if NETFX_CORE
 			throw new System.NotSupportedException("Method not available on this platform");
 #else
-			int triangles = 0;
-			int vertices = 0;
-			int vt = 0;
-			int vn = 0;
-			int face = 0;
-			meshStruct mesh = new meshStruct();
+			var triangles = 0;
+			var vertices = 0;
+			var vt = 0;
+			var vn = 0;
+			var face = 0;
+			var mesh = new meshStruct();
 			mesh.fileName = filename;
-			StreamReader stream = File.OpenText(filename);
-			string entireText = stream.ReadToEnd();
+			var stream = File.OpenText(filename);
+			var entireText = stream.ReadToEnd();
 			stream.Dispose();
-			using (StringReader reader = new StringReader(entireText))
+			using (var reader = new StringReader(entireText))
 			{
-				string currentText = reader.ReadLine();
+				var currentText = reader.ReadLine();
 				char[] splitIdentifier = { ' ' };
 				string[] brokenString;
 				while (currentText != null) {
@@ -134,24 +134,24 @@ namespace Pathfinding {
 #if NETFX_CORE
 			throw new System.NotSupportedException("Method not available on this platform");
 #else
-			StreamReader stream = File.OpenText(mesh.fileName);
-			string entireText = stream.ReadToEnd();
+			var stream = File.OpenText(mesh.fileName);
+			var entireText = stream.ReadToEnd();
 			stream.Close();
-			using (StringReader reader = new StringReader(entireText))
+			using (var reader = new StringReader(entireText))
 			{
-				string currentText = reader.ReadLine();
+				var currentText = reader.ReadLine();
 
 				char[] splitIdentifier = { ' ' };
 				char[] splitIdentifier2 = { '/' };
 				string[] brokenString;
 				string[] brokenBrokenString;
-				int f = 0;
-				int f2 = 0;
-				int v = 0;
-				int vn = 0;
-				int vt = 0;
-				int vt1 = 0;
-				int vt2 = 0;
+				var f = 0;
+				var f2 = 0;
+				var v = 0;
+				var vn = 0;
+				var vt = 0;
+				var vt1 = 0;
+				var vt2 = 0;
 				while (currentText != null) {
 					if (!currentText.StartsWith("f ") && !currentText.StartsWith("v ") && !currentText.StartsWith("vt ") &&
 						!currentText.StartsWith("vn ") && !currentText.StartsWith("g ") && !currentText.StartsWith("usemtl ") &&
@@ -199,10 +199,10 @@ namespace Pathfinding {
 							break;
 						case "f":
 
-							int j = 1;
-							List<int> intArray = new List<int>();
+							var j = 1;
+							var intArray = new List<int>();
 							while (j < brokenString.Length && ("" + brokenString[j]).Length > 0) {
-								Vector3 temp = new Vector3();
+								var temp = new Vector3();
 								brokenBrokenString = brokenString[j].Split(splitIdentifier2, 3);        //Separate the face into individual components (vert, uv, normal)
 								temp.x = System.Convert.ToInt32(brokenBrokenString[0]);
 								if (brokenBrokenString.Length > 1) {                                    //Some .obj files skip UV and normal

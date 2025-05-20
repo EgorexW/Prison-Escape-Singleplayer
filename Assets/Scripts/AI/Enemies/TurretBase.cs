@@ -85,7 +85,7 @@ public class TurretBase : MonoBehaviour
 
     void Shoot()
     {
-        Ray ray = new Ray(shootPoint.position, transform.forward);
+        var ray = new Ray(shootPoint.position, transform.forward);
         shooting.Shoot(ray);
     }
 }

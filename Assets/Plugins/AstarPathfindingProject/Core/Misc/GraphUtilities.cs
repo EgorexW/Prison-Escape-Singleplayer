@@ -44,7 +44,7 @@ namespace Pathfinding {
 		/// [Open online documentation to see images]
 		/// </summary>
 		public static List<Vector3> GetContours (NavGraph graph) {
-			List<Vector3> result = ListPool<Vector3>.Claim();
+			var result = ListPool<Vector3>.Claim();
 
 			if (graph is INavmesh) {
 				GetContours(graph as INavmesh, (vertices, cycle) => {
@@ -93,18 +93,18 @@ namespace Pathfinding {
 
 				if (node != null) {
 				    // Find out which edges are shared with other nodes
-					for (int j = 0; j < node.connections.Length; j++) {
+					for (var j = 0; j < node.connections.Length; j++) {
 						var other = node.connections[j].node as TriangleMeshNode;
 
 				        // Not necessarily a TriangleMeshNode
 						if (other != null) {
-							int a = node.SharedEdge(other);
+							var a = node.SharedEdge(other);
 							if (a != -1) uses[a] = true;
 						}
 					}
 
 				    // Loop through all edges on the node
-					for (int j = 0; j < 3; j++) {
+					for (var j = 0; j < 3; j++) {
 				        // The edge is not shared with any other node
 				        // I.e it is an exterior edge on the mesh
 						if (!uses[j]) {
@@ -121,8 +121,8 @@ namespace Pathfinding {
 			});
 
 			Polygon.TraceContours(outline, hasInEdge, (chain, cycle) => {
-				List<Int3> vertices = ListPool<Int3>.Claim();
-				for (int i = 0; i < chain.Count; i++) vertices.Add(vertexPositions[chain[i]]);
+				var vertices = ListPool<Int3>.Claim();
+				for (var i = 0; i < chain.Count; i++) vertices.Add(vertexPositions[chain[i]]);
 				results(vertices, cycle);
 			});
 		}
@@ -159,12 +159,12 @@ namespace Pathfinding {
 		/// <param name="nodes">Only these nodes will be searched. If this parameter is null then all nodes in the grid graph will be searched.</param>
 		public static void GetContours (GridGraph grid, System.Action<Vector3[]> callback, float yMergeThreshold, GridNodeBase[] nodes = null) {
 			// Set of all allowed nodes or null if all nodes are allowed
-			HashSet<GridNodeBase> nodeSet = nodes != null ? new HashSet<GridNodeBase>(nodes) : null;
+			var nodeSet = nodes != null ? new HashSet<GridNodeBase>(nodes) : null;
 
 			// Use all nodes if the nodes parameter is null
 			nodes = nodes ?? grid.nodes;
-			int[] neighbourXOffsets = grid.neighbourXOffsets;
-			int[] neighbourZOffsets = grid.neighbourZOffsets;
+			var neighbourXOffsets = grid.neighbourXOffsets;
+			var neighbourZOffsets = grid.neighbourZOffsets;
 			var neighbourIndices = grid.neighbours == NumNeighbours.Six ? GridGraph.hexagonNeighbourIndices : new [] { 0, 1, 2, 3 };
 			var offsetMultiplier = grid.neighbours == NumNeighbours.Six ? 1/3f : 0.5f;
 
@@ -172,23 +172,23 @@ namespace Pathfinding {
 				var trace = ListPool<Vector3>.Claim();
 				var seenStates = new HashSet<int>();
 
-				for (int i = 0; i < nodes.Length; i++) {
+				for (var i = 0; i < nodes.Length; i++) {
 					var startNode = nodes[i];
 					// The third check is a fast check for if the node has connections in all grid directions, if it has then we can skip processing it (unless the nodes parameter was used in which case we have to handle the edge cases)
 					if (startNode != null && startNode.Walkable && (!startNode.HasConnectionsToAllEightNeighbours || nodeSet != null)) {
-						for (int startDir = 0; startDir < neighbourIndices.Length; startDir++) {
-							int startState = (startNode.NodeIndex << 4) | startDir;
+						for (var startDir = 0; startDir < neighbourIndices.Length; startDir++) {
+							var startState = (startNode.NodeIndex << 4) | startDir;
 
 							// Check if there is an obstacle in that direction
 							var startNeighbour = startNode.GetNeighbourAlongDirection(neighbourIndices[startDir]);
 							if ((startNeighbour == null || (nodeSet != null && !nodeSet.Contains(startNeighbour))) && !seenStates.Contains(startState)) {
 								// Start tracing a contour here
 								trace.ClearFast();
-								int dir = startDir;
-								GridNodeBase node = startNode;
+								var dir = startDir;
+								var node = startNode;
 
 								while (true) {
-									int state = (node.NodeIndex << 4) | dir;
+									var state = (node.NodeIndex << 4) | dir;
 									if (state == startState && trace.Count > 0) {
 										break;
 									}
@@ -203,7 +203,7 @@ namespace Pathfinding {
 										var d1 = neighbourIndices[dir];
 
 										// Position in graph space of the vertex
-										Vector3 graphSpacePos = new Vector3(node.XCoordinateInGrid + 0.5f, 0, node.ZCoordinateInGrid + 0.5f);
+										var graphSpacePos = new Vector3(node.XCoordinateInGrid + 0.5f, 0, node.ZCoordinateInGrid + 0.5f);
 										// Offset along diagonal to get the correct XZ coordinates
 										graphSpacePos.x += (neighbourXOffsets[d0] + neighbourXOffsets[d1]) * offsetMultiplier;
 										graphSpacePos.z += (neighbourZOffsets[d0] + neighbourZOffsets[d1]) * offsetMultiplier;

@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
         return time;
     }
     public static string ConvertTimeToString(float time){
-        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        var timeSpan = TimeSpan.FromSeconds(time);
         return timeSpan.ToString("mm':'ss':'f"); 
     }
 }

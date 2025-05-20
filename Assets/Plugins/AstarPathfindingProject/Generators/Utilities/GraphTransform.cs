@@ -87,17 +87,17 @@ namespace Pathfinding.Util {
 
 		public void Transform (Int3[] arr) {
 			if (onlyTranslational) {
-				for (int i = arr.Length - 1; i >= 0; i--) arr[i] += i3translation;
+				for (var i = arr.Length - 1; i >= 0; i--) arr[i] += i3translation;
 			} else {
-				for (int i = arr.Length - 1; i >= 0; i--) arr[i] = (Int3)matrix.MultiplyPoint3x4((Vector3)arr[i]);
+				for (var i = arr.Length - 1; i >= 0; i--) arr[i] = (Int3)matrix.MultiplyPoint3x4((Vector3)arr[i]);
 			}
 		}
 
 		public void Transform (Vector3[] arr) {
 			if (onlyTranslational) {
-				for (int i = arr.Length - 1; i >= 0; i--) arr[i] += translation;
+				for (var i = arr.Length - 1; i >= 0; i--) arr[i] += translation;
 			} else {
-				for (int i = arr.Length - 1; i >= 0; i--) arr[i] = matrix.MultiplyPoint3x4(arr[i]);
+				for (var i = arr.Length - 1; i >= 0; i--) arr[i] = matrix.MultiplyPoint3x4(arr[i]);
 			}
 		}
 
@@ -112,7 +112,7 @@ namespace Pathfinding.Util {
 		}
 
 		public void InverseTransform (Int3[] arr) {
-			for (int i = arr.Length - 1; i >= 0; i--) arr[i] = (Int3)inverseMatrix.MultiplyPoint3x4((Vector3)arr[i]);
+			for (var i = arr.Length - 1; i >= 0; i--) arr[i] = (Int3)inverseMatrix.MultiplyPoint3x4((Vector3)arr[i]);
 		}
 
 		public static GraphTransform operator * (GraphTransform lhs, Matrix4x4 rhs) {
@@ -139,7 +139,7 @@ namespace Pathfinding.Util {
 
 			var min = corners[0];
 			var max = corners[0];
-			for (int i = 1; i < 8; i++) {
+			for (var i = 1; i < 8; i++) {
 				min = Vector3.Min(min, corners[i]);
 				max = Vector3.Max(max, corners[i]);
 			}
@@ -163,7 +163,7 @@ namespace Pathfinding.Util {
 
 			var min = corners[0];
 			var max = corners[0];
-			for (int i = 1; i < 8; i++) {
+			for (var i = 1; i < 8; i++) {
 				min = Vector3.Min(min, corners[i]);
 				max = Vector3.Max(max, corners[i]);
 			}

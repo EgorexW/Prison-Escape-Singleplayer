@@ -24,17 +24,17 @@ namespace Pathfinding.Util {
 			if (slowWhenNotFacingTarget && (forward.x != 0 || forward.y != 0)) {
 				float currentSpeed;
 				var normalizedVelocity = VectorMath.Normalize(velocity, out currentSpeed);
-				float dot = Vector2.Dot(normalizedVelocity, forward);
+				var dot = Vector2.Dot(normalizedVelocity, forward);
 
 				// Lower the speed when the character's forward direction is not pointing towards the desired velocity
 				// 1 when velocity is in the same direction as forward
 				// 0.2 when they point in the opposite directions
-				float directionSpeedFactor = Mathf.Clamp(dot+0.707f, 0.2f, 1.0f);
+				var directionSpeedFactor = Mathf.Clamp(dot+0.707f, 0.2f, 1.0f);
 				currentMaxSpeed *= directionSpeedFactor;
 				currentSpeed = Mathf.Min(currentSpeed, currentMaxSpeed);
 
 				// Angle between the forwards direction of the character and our desired velocity
-				float angle = Mathf.Acos(Mathf.Clamp(dot, -1, 1));
+				var angle = Mathf.Acos(Mathf.Clamp(dot, -1, 1));
 
 				// Clamp the angle to 20 degrees
 				// We cannot keep the velocity exactly in the forwards direction of the character
@@ -44,8 +44,8 @@ namespace Pathfinding.Util {
 				// Allow larger angles when near the end of the path to prevent oscillations.
 				angle = Mathf.Min(angle, (20f + 180f*(1 - slowdownFactor*slowdownFactor))*Mathf.Deg2Rad);
 
-				float sin = Mathf.Sin(angle);
-				float cos = Mathf.Cos(angle);
+				var sin = Mathf.Sin(angle);
+				var cos = Mathf.Cos(angle);
 
 				// Determine if we should rotate clockwise or counter-clockwise to move towards the current velocity
 				sin *= Mathf.Sign(normalizedVelocity.x*forward.y - normalizedVelocity.y*forward.x);
@@ -63,7 +63,7 @@ namespace Pathfinding.Util {
 			// Guard against div by zero
 			if (forwardsAcceleration <= 0) return Vector2.zero;
 
-			float currentSpeed = currentVelocity.magnitude;
+			var currentSpeed = currentVelocity.magnitude;
 
 			// Convert rotation speed to an acceleration
 			// See https://en.wikipedia.org/wiki/Centripetal_force
@@ -78,15 +78,15 @@ namespace Pathfinding.Util {
 			deltaPosition = VectorMath.ComplexMultiplyConjugate(deltaPosition, forwardsVector);
 			targetVelocity = VectorMath.ComplexMultiplyConjugate(targetVelocity, forwardsVector);
 			currentVelocity = VectorMath.ComplexMultiplyConjugate(currentVelocity, forwardsVector);
-			float ellipseSqrFactorX = 1 / (forwardsAcceleration*forwardsAcceleration);
-			float ellipseSqrFactorY = 1 / (sidewaysAcceleration*sidewaysAcceleration);
+			var ellipseSqrFactorX = 1 / (forwardsAcceleration*forwardsAcceleration);
+			var ellipseSqrFactorY = 1 / (sidewaysAcceleration*sidewaysAcceleration);
 
 			// If the target velocity is zero we can use a more fancy approach
 			// and calculate a nicer path.
 			// In particular, this is the case at the end of the path.
 			if (targetVelocity == Vector2.zero) {
 				// Run a binary search over the time to get to the target point.
-				float mn = 0.01f;
+				var mn = 0.01f;
 				float mx = 10;
 				while (mx - mn > 0.01f) {
 					var time = (mx + mn) * 0.5f;
@@ -133,7 +133,7 @@ namespace Pathfinding.Util {
 
 					// Clamp the velocity to the maximum acceleration.
 					// Note that the maximum acceleration constraint is shaped like an ellipse, not like a circle.
-					float ellipseMagnitude = finalAcceleration.x*finalAcceleration.x*ellipseSqrFactorX + finalAcceleration.y*finalAcceleration.y*ellipseSqrFactorY;
+					var ellipseMagnitude = finalAcceleration.x*finalAcceleration.x*ellipseSqrFactorX + finalAcceleration.y*finalAcceleration.y*ellipseSqrFactorY;
 					if (ellipseMagnitude > 1.0f) finalAcceleration /= Mathf.Sqrt(ellipseMagnitude);
 				}
 
@@ -163,7 +163,7 @@ namespace Pathfinding.Util {
 
 				// Clamp the velocity to the maximum acceleration.
 				// Note that the maximum acceleration constraint is shaped like an ellipse, not like a circle.
-				float ellipseMagnitude = finalAcceleration.x*finalAcceleration.x*ellipseSqrFactorX + finalAcceleration.y*finalAcceleration.y*ellipseSqrFactorY;
+				var ellipseMagnitude = finalAcceleration.x*finalAcceleration.x*ellipseSqrFactorX + finalAcceleration.y*finalAcceleration.y*ellipseSqrFactorY;
 				if (ellipseMagnitude > 1.0f) finalAcceleration /= Mathf.Sqrt(ellipseMagnitude);
 
 				return VectorMath.ComplexMultiply(finalAcceleration, forwardsVector);

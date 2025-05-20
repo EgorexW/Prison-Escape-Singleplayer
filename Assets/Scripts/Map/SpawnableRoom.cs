@@ -14,8 +14,8 @@ public class SpawnableRoom : MonoBehaviour
         transform.position = joinPos - (joinPoint.position - transform.position);
     }
     void SetDir(Vector3 dir){
-        Vector3 currentDir = dirPoint.position - joinPoint.position;
-        Quaternion rotation = Quaternion.FromToRotation(currentDir, dir);;
+        var currentDir = dirPoint.position - joinPoint.position;
+        var rotation = Quaternion.FromToRotation(currentDir, dir);;
         transform.rotation *= rotation;
     }
 }

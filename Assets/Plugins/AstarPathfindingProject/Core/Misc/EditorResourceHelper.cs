@@ -54,7 +54,7 @@ namespace Pathfinding {
 			}
 #endif
 
-			string projectPath = Application.dataPath;
+			var projectPath = Application.dataPath;
 
 			if (projectPath.EndsWith("/Assets")) {
 				projectPath = projectPath.Remove(projectPath.Length-("Assets".Length));
@@ -69,12 +69,12 @@ namespace Pathfinding {
 				var dirQueue = new Queue<System.IO.DirectoryInfo>();
 				dirQueue.Enqueue(sdir);
 
-				bool found = false;
+				var found = false;
 				while (dirQueue.Count > 0) {
-					System.IO.DirectoryInfo dir = dirQueue.Dequeue();
+					var dir = dirQueue.Dequeue();
 					if (System.IO.File.Exists(dir.FullName + "/AstarEditorSkinLight.guiskin") || System.IO.File.Exists(dir.FullName + "/AstarEditorSkin.guiskin")) {
 						// Handle windows file paths
-						string path = dir.FullName.Replace('\\', '/');
+						var path = dir.FullName.Replace('\\', '/');
 						found = true;
 						// Remove data path from string to make it relative
 						path = path.Replace(projectPath, "");
@@ -87,7 +87,7 @@ namespace Pathfinding {
 						return true;
 					}
 					var dirs = dir.GetDirectories();
-					for (int i = 0; i < dirs.Length; i++) {
+					for (var i = 0; i < dirs.Length; i++) {
 						dirQueue.Enqueue(dirs[i]);
 					}
 				}

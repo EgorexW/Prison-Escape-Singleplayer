@@ -61,10 +61,10 @@ namespace Pathfinding {
 			if (start < 0 || end < start || end > nodes.Length)
 				throw new System.ArgumentException();
 
-			for (int i = 0; i < tree.Length; i++) {
+			for (var i = 0; i < tree.Length; i++) {
 				var data = tree[i].data;
 				if (data != null) {
-					for (int j = 0; j < LeafArraySize; j++) data[j] = null;
+					for (var j = 0; j < LeafArraySize; j++) data[j] = null;
 					arrayCache.Push(data);
 					tree[i].data = null;
 				}
@@ -89,7 +89,7 @@ namespace Pathfinding {
 
 			if (nodes != null) {
 				tree[index] = new Node();
-				for (int i = 0; i < count; i++) {
+				for (var i = 0; i < count; i++) {
 					buffer.Add(nodes[i]);
 					nodes[i] = null;
 				}
@@ -127,21 +127,21 @@ namespace Pathfinding {
 			if (end - start <= LeafSize) {
 				var leafData = tree[index].data = GetOrCreateList();
 				tree[index].count = (ushort)(end - start);
-				for (int i = start; i < end; i++)
+				for (var i = start; i < end; i++)
 					leafData[i - start] = nodes[i];
 			} else {
 				Int3 mn, mx;
 				mn = mx = nodes[start].position;
-				for (int i = start; i < end; i++) {
+				for (var i = start; i < end; i++) {
 					var p = nodes[i].position;
 					mn = new Int3(System.Math.Min(mn.x, p.x), System.Math.Min(mn.y, p.y), System.Math.Min(mn.z, p.z));
 					mx = new Int3(System.Math.Max(mx.x, p.x), System.Math.Max(mx.y, p.y), System.Math.Max(mx.z, p.z));
 				}
-				Int3 diff = mx - mn;
+				var diff = mx - mn;
 				var axis = diff.x > diff.y ? (diff.x > diff.z ? 0 : 2) : (diff.y > diff.z ? 1 : 2);
 
 				nodes.Sort(start, end - start, comparers[axis]);
-				int mid = (start+end)/2;
+				var mid = (start+end)/2;
 				tree[index].split = (nodes[mid-1].position[axis] + nodes[mid].position[axis] + 1)/2;
 				tree[index].splitAxis = (byte)axis;
 				Build(index*2 + 0, nodes, start, mid);
@@ -161,7 +161,7 @@ namespace Pathfinding {
 
 			// Check if the leaf node is large enough that we need to do some rebalancing
 			if (tree[index].count >= LeafArraySize) {
-				int levelsUp = 0;
+				var levelsUp = 0;
 
 				// Search upwards for nodes that are too large and should be rebalanced
 				// Rebalance the node above the node that had a too large size so that it can
@@ -177,7 +177,7 @@ namespace Pathfinding {
 		/// <summary>Closest node to the point which satisfies the constraint</summary>
 		public GraphNode GetNearest (Int3 point, NNConstraint constraint) {
 			GraphNode best = null;
-			long bestSqrDist = long.MaxValue;
+			var bestSqrDist = long.MaxValue;
 
 			GetNearestInternal(1, point, constraint, ref best, ref bestSqrDist);
 			return best;
@@ -187,7 +187,7 @@ namespace Pathfinding {
 			var data = tree[index].data;
 
 			if (data != null) {
-				for (int i = tree[index].count - 1; i >= 0; i--) {
+				for (var i = tree[index].count - 1; i >= 0; i--) {
 					var dist = (data[i].position - point).sqrMagnitudeLong;
 					if (dist < bestSqrDist && (constraint == null || constraint.Suitable(data[i]))) {
 						bestSqrDist = dist;
@@ -210,14 +210,14 @@ namespace Pathfinding {
 		/// <summary>Closest node to the point which satisfies the constraint</summary>
 		public GraphNode GetNearestConnection (Int3 point, NNConstraint constraint, long maximumSqrConnectionLength) {
 			GraphNode best = null;
-			long bestSqrDist = long.MaxValue;
+			var bestSqrDist = long.MaxValue;
 
 			// Given a found point at a distance of r world units
 			// then any node that has a connection on which a closer point lies must have a squared distance lower than
 			// d^2 < (maximumConnectionLength/2)^2 + r^2
 			// Note: (x/2)^2 = (x^2)/4
 			// Note: (x+3)/4 to round up
-			long offset = (maximumSqrConnectionLength+3)/4;
+			var offset = (maximumSqrConnectionLength+3)/4;
 
 			GetNearestConnectionInternal(1, point, constraint, ref best, ref bestSqrDist, offset);
 			return best;
@@ -228,7 +228,7 @@ namespace Pathfinding {
 
 			if (data != null) {
 				var pointv3 = (UnityEngine.Vector3)point;
-				for (int i = tree[index].count - 1; i >= 0; i--) {
+				for (var i = tree[index].count - 1; i >= 0; i--) {
 					var dist = (data[i].position - point).sqrMagnitudeLong;
 					// Note: the subtraction is important. If we used an addition on the RHS instead the result might overflow as bestSqrDist starts as long.MaxValue
 					if (dist - distanceThresholdOffset < bestSqrDist && (constraint == null || constraint.Suitable(data[i]))) {
@@ -237,13 +237,13 @@ namespace Pathfinding {
 						var conns = (data[i] as PointNode).connections;
 						if (conns != null) {
 							var nodePos = (UnityEngine.Vector3)data[i].position;
-							for (int j = 0; j < conns.Length; j++) {
+							for (var j = 0; j < conns.Length; j++) {
 								// Find the closest point on the connection, but only on this node's side of the connection
 								// This ensures that we will find the closest node with the closest connection.
 								var connectionMidpoint = ((UnityEngine.Vector3)conns[j].node.position + nodePos) * 0.5f;
-								float sqrConnectionDistance = VectorMath.SqrDistancePointSegment(nodePos, connectionMidpoint, pointv3);
+								var sqrConnectionDistance = VectorMath.SqrDistancePointSegment(nodePos, connectionMidpoint, pointv3);
 								// Convert to Int3 space
-								long sqrConnectionDistanceInt = (long)(sqrConnectionDistance*Int3.FloatPrecision*Int3.FloatPrecision);
+								var sqrConnectionDistanceInt = (long)(sqrConnectionDistance*Int3.FloatPrecision*Int3.FloatPrecision);
 								if (sqrConnectionDistanceInt < bestSqrDist) {
 									bestSqrDist = sqrConnectionDistanceInt;
 									best = data[i];
@@ -286,7 +286,7 @@ namespace Pathfinding {
 			var data = tree[index].data;
 
 			if (data != null) {
-				for (int i = tree[index].count - 1; i >= 0; i--) {
+				for (var i = tree[index].count - 1; i >= 0; i--) {
 					var dist = (data[i].position - point).sqrMagnitudeLong;
 					if (dist < sqrRadius) {
 						buffer.Add(data[i]);

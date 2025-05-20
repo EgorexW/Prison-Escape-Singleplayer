@@ -100,7 +100,7 @@ namespace Pathfinding.Util {
 						break;
 					}
 
-					PathNode pathNode = debugData.GetPathNode(node);
+					var pathNode = debugData.GetPathNode(node);
 					float value;
 					if (debugMode == GraphDebugMode.G) {
 						value = pathNode.G;
@@ -139,13 +139,13 @@ namespace Pathfinding.Util {
 		public void DrawTriangles (Vector3[] vertices, Color[] colors, int numTriangles) {
 			var triangles = ListPool<int>.Claim(numTriangles);
 
-			for (int i = 0; i < numTriangles*3; i++) triangles.Add(i);
+			for (var i = 0; i < numTriangles*3; i++) triangles.Add(i);
 			builder.DrawMesh(gizmos, vertices, triangles, colors);
 			ListPool<int>.Release(ref triangles);
 		}
 
 		public void DrawWireTriangles (Vector3[] vertices, Color[] colors, int numTriangles) {
-			for (int i = 0; i < numTriangles; i++) {
+			for (var i = 0; i < numTriangles; i++) {
 				DrawWireTriangle(vertices[i*3+0], vertices[i*3+1], vertices[i*3+2], colors[i*3+0]);
 			}
 		}

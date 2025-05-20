@@ -21,7 +21,7 @@ public class AnimationController : MonoBehaviour
         if (activeAnimation != null && activeAnimation.name == animationName){
             return;
         }
-        Animation animation = Array.Find<Animation>(animations, x => x.name == animationName);
+        var animation = Array.Find<Animation>(animations, x => x.name == animationName);
         if (animation == null){
             Debug.LogWarning("Animation" + animationName + "does not exist");
             return;
@@ -43,8 +43,8 @@ public class AnimationController : MonoBehaviour
         if (activeAnimation == null){
             return;
         }
-        Sprite prevSprite = spriteRenderer.sprite;
-        Sprite newSprite = activeAnimation.GetNextFrame(Time.deltaTime);
+        var prevSprite = spriteRenderer.sprite;
+        var newSprite = activeAnimation.GetNextFrame(Time.deltaTime);
         if (prevSprite != newSprite){
             onNewFrame.Invoke();
         }

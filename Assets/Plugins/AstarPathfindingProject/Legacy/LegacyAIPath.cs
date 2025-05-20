@@ -74,7 +74,7 @@ namespace Pathfinding.Legacy {
 		/// Finally it is returned to the seeker which forwards it to this function.\n
 		/// </summary>
 		protected override void OnPathComplete (Path _p) {
-			ABPath p = _p as ABPath;
+			var p = _p as ABPath;
 
 			if (p == null) throw new System.Exception("This function only handles ABPaths, do not use special path types");
 
@@ -111,18 +111,18 @@ namespace Pathfinding.Legacy {
 				// gets confused because the first point in the path is far away
 				// from the current position (possibly behind it which could cause
 				// the agent to turn around, and that looks pretty bad).
-				Vector3 p1 = Time.time - lastFoundWaypointTime < 0.3f ? lastFoundWaypointPosition : p.originalStartPoint;
-				Vector3 p2 = GetFeetPosition();
-				Vector3 dir = p2-p1;
-				float magn = dir.magnitude;
+				var p1 = Time.time - lastFoundWaypointTime < 0.3f ? lastFoundWaypointPosition : p.originalStartPoint;
+				var p2 = GetFeetPosition();
+				var dir = p2-p1;
+				var magn = dir.magnitude;
 				dir /= magn;
-				int steps = (int)(magn/pickNextWaypointDist);
+				var steps = (int)(magn/pickNextWaypointDist);
 
 #if ASTARDEBUG
 				Debug.DrawLine(p1, p2, Color.red, 1);
 #endif
 
-				for (int i = 0; i <= steps; i++) {
+				for (var i = 0; i <= steps; i++) {
 					CalculateVelocity(p1);
 					p1 += dir;
 				}
@@ -132,7 +132,7 @@ namespace Pathfinding.Legacy {
 		protected override void Update () {
 			if (!canMove) { return; }
 
-			Vector3 dir = CalculateVelocity(GetFeetPosition());
+			var dir = CalculateVelocity(GetFeetPosition());
 
 			//Rotate towards targetDirection (filled in by CalculateVelocity)
 			RotateTowards(targetDirection);
@@ -153,8 +153,8 @@ namespace Pathfinding.Legacy {
 		protected new Vector3 targetDirection;
 
 		protected float XZSqrMagnitude (Vector3 a, Vector3 b) {
-			float dx = b.x-a.x;
-			float dz = b.z-a.z;
+			var dx = b.x-a.x;
+			var dz = b.z-a.z;
 
 			return dx*dx + dz*dz;
 		}
@@ -175,7 +175,7 @@ namespace Pathfinding.Legacy {
 		protected new Vector3 CalculateVelocity (Vector3 currentPosition) {
 			if (path == null || path.vectorPath == null || path.vectorPath.Count == 0) return Vector3.zero;
 
-			List<Vector3> vPath = path.vectorPath;
+			var vPath = path.vectorPath;
 
 			if (vPath.Count == 1) {
 				vPath.Insert(0, currentPosition);
@@ -188,7 +188,7 @@ namespace Pathfinding.Legacy {
 			while (true) {
 				if (currentWaypointIndex < vPath.Count-1) {
 					//There is a "next path segment"
-					float dist = XZSqrMagnitude(vPath[currentWaypointIndex], currentPosition);
+					var dist = XZSqrMagnitude(vPath[currentWaypointIndex], currentPosition);
 					//Mathfx.DistancePointSegmentStrict (vPath[currentWaypointIndex+1],vPath[currentWaypointIndex+2],currentPosition);
 					if (dist < pickNextWaypointDist*pickNextWaypointDist) {
 						lastFoundWaypointPosition = currentPosition;
@@ -202,15 +202,15 @@ namespace Pathfinding.Legacy {
 				}
 			}
 
-			Vector3 dir = vPath[currentWaypointIndex] - vPath[currentWaypointIndex-1];
-			Vector3 targetPosition = CalculateTargetPoint(currentPosition, vPath[currentWaypointIndex-1], vPath[currentWaypointIndex]);
+			var dir = vPath[currentWaypointIndex] - vPath[currentWaypointIndex-1];
+			var targetPosition = CalculateTargetPoint(currentPosition, vPath[currentWaypointIndex-1], vPath[currentWaypointIndex]);
 
 
 			dir = targetPosition-currentPosition;
 			dir.y = 0;
-			float targetDist = dir.magnitude;
+			var targetDist = dir.magnitude;
 
-			float slowdown = Mathf.Clamp01(targetDist / slowdownDistance);
+			var slowdown = Mathf.Clamp01(targetDist / slowdownDistance);
 
 			this.targetDirection = dir;
 
@@ -221,9 +221,9 @@ namespace Pathfinding.Legacy {
 				return Vector3.zero;
 			}
 
-			Vector3 forward = tr.forward;
-			float dot = Vector3.Dot(dir.normalized, forward);
-			float sp = maxSpeed * Mathf.Max(dot, minMoveScale) * slowdown;
+			var forward = tr.forward;
+			var dot = Vector3.Dot(dir.normalized, forward);
+			var sp = maxSpeed * Mathf.Max(dot, minMoveScale) * slowdown;
 
 #if ASTARDEBUG
 			Debug.DrawLine(vPath[currentWaypointIndex-1], vPath[currentWaypointIndex], Color.black);
@@ -248,11 +248,11 @@ namespace Pathfinding.Legacy {
 		protected void RotateTowards (Vector3 dir) {
 			if (dir == Vector3.zero) return;
 
-			Quaternion rot = tr.rotation;
-			Quaternion toTarget = Quaternion.LookRotation(dir);
+			var rot = tr.rotation;
+			var toTarget = Quaternion.LookRotation(dir);
 
 			rot = Quaternion.Slerp(rot, toTarget, turningSpeed*Time.deltaTime);
-			Vector3 euler = rot.eulerAngles;
+			var euler = rot.eulerAngles;
 			euler.z = 0;
 			euler.x = 0;
 			rot = Quaternion.Euler(euler);
@@ -273,16 +273,16 @@ namespace Pathfinding.Legacy {
 			a.y = p.y;
 			b.y = p.y;
 
-			float magn = (a-b).magnitude;
+			var magn = (a-b).magnitude;
 			if (magn == 0) return a;
 
-			float closest = Mathf.Clamp01(VectorMath.ClosestPointOnLineFactor(a, b, p));
-			Vector3 point = (b-a)*closest + a;
-			float distance = (point-p).magnitude;
+			var closest = Mathf.Clamp01(VectorMath.ClosestPointOnLineFactor(a, b, p));
+			var point = (b-a)*closest + a;
+			var distance = (point-p).magnitude;
 
-			float lookAhead = Mathf.Clamp(forwardLook - distance, 0.0F, forwardLook);
+			var lookAhead = Mathf.Clamp(forwardLook - distance, 0.0F, forwardLook);
 
-			float offset = lookAhead / magn;
+			var offset = lookAhead / magn;
 			offset = Mathf.Clamp(offset+closest, 0.0F, 1.0F);
 			return (b-a)*offset + a;
 		}

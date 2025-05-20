@@ -10,7 +10,7 @@ public class PlayerInputPresenter : MonoBehaviour
 
     void Awake(){
         character = GetComponent<Character>();
-        InputActionMap inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
+        var inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("DropItem").performed += DropEquipedItem;
         inputActions.FindAction("ChangeItem").performed += ChangeItem;
         useAction = inputActions.FindAction("Use");
@@ -81,7 +81,7 @@ public class PlayerInputPresenter : MonoBehaviour
         if (items.Count == 0){
             return;
         }
-        int index = items.IndexOf(character.GetHeldItem());
+        var index = items.IndexOf(character.GetHeldItem());
         index += 1;
         while(index < 0){
             index += items.Count;

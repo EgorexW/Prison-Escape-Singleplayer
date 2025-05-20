@@ -139,7 +139,7 @@ namespace Pathfinding {
 		public static ABPath FakePath (List<Vector3> vectorPath, List<GraphNode> nodePath = null) {
 			var path = PathPool.GetPath<ABPath>();
 
-			for (int i = 0; i < vectorPath.Count; i++) path.vectorPath.Add(vectorPath[i]);
+			for (var i = 0; i < vectorPath.Count; i++) path.vectorPath.Add(vectorPath[i]);
 
 			path.completeState = PathCompleteState.Complete;
 			((IPathInternals)path).AdvanceState(PathState.Returned);
@@ -149,7 +149,7 @@ namespace Pathfinding {
 			}
 
 			if (nodePath != null) {
-				for (int i = 0; i < nodePath.Count; i++) path.path.Add(nodePath[i]);
+				for (var i = 0; i < nodePath.Count; i++) path.path.Add(nodePath[i]);
 				if (nodePath.Count > 0) {
 					path.startNode = nodePath[0];
 					path.endNode = nodePath[nodePath.Count - 1];
@@ -279,7 +279,7 @@ namespace Pathfinding {
 					var x2 = gridNode2.NodeInGridIndex % gridGraph.width;
 					var z2 = gridNode2.NodeInGridIndex / gridGraph.width;
 
-					bool wasClose = false;
+					var wasClose = false;
 					switch (gridGraph.neighbours) {
 					case NumNeighbours.Four:
 						if ((x1 == x2 && System.Math.Abs(z1-z2) == 1) || (z1 == z2 && System.Math.Abs(x1-x2) == 1)) {
@@ -301,7 +301,7 @@ namespace Pathfinding {
 						break;
 					case NumNeighbours.Six:
 						// Hexagon graph
-						for (int i = 0; i < 6; i++) {
+						for (var i = 0; i < 6; i++) {
 							var nx = x2 + gridGraph.neighbourXOffsets[GridGraph.hexagonNeighbourIndices[i]];
 							var nz = z2 + gridGraph.neighbourZOffsets[GridGraph.hexagonNeighbourIndices[i]];
 							if (x1 == nx && z1 == nz) {
@@ -353,7 +353,7 @@ namespace Pathfinding {
 			var gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
 
 			// Number of neighbours as an int
-			int mxnum = gridGraph.neighbours == NumNeighbours.Four ? 4 : (gridGraph.neighbours == NumNeighbours.Eight ? 8 : 6);
+			var mxnum = gridGraph.neighbours == NumNeighbours.Four ? 4 : (gridGraph.neighbours == NumNeighbours.Eight ? 8 : 6);
 
 			// Calculate the coordinates of the node
 			var x = gridNode.NodeInGridIndex % gridGraph.width;
@@ -362,7 +362,7 @@ namespace Pathfinding {
 			if (flag != 1 && flag != 2)
 				throw new System.ArgumentOutOfRangeException("flag");
 
-			for (int i = 0; i < mxnum; i++) {
+			for (var i = 0; i < mxnum; i++) {
 				int nx, nz;
 				if (gridGraph.neighbours == NumNeighbours.Six) {
 					// Hexagon graph
@@ -479,7 +479,7 @@ namespace Pathfinding {
 			if (endNode != null) pathHandler.GetPathNode(endNode).flag2 = true;
 
 			// Zero out the properties on the start node
-			PathNode startRNode = pathHandler.GetPathNode(startNode);
+			var startRNode = pathHandler.GetPathNode(startNode);
 			startRNode.node = startNode;
 			startRNode.pathID = pathHandler.PathID;
 			startRNode.parent = null;
@@ -611,7 +611,7 @@ namespace Pathfinding {
 		/// </code>
 		/// </summary>
 		protected override void CalculateStep (long targetTick) {
-			int counter = 0;
+			var counter = 0;
 
 			// Continue to search as long as we haven't encountered an error and we haven't found the target
 			while (CompleteState == PathCompleteState.NotCalculated) {
@@ -692,7 +692,7 @@ namespace Pathfinding {
 
 			if (!error && logMode == PathLog.Heavy) {
 				if (hasEndPoint && endNode != null) {
-					PathNode nodeR = pathHandler.GetPathNode(endNode);
+					var nodeR = pathHandler.GetPathNode(endNode);
 					text.Append("\nEnd Node\n	G: ");
 					text.Append(nodeR.G);
 					text.Append("\n	H: ");
@@ -736,12 +736,12 @@ namespace Pathfinding {
 				return vectorPath[0]-point;
 			}
 
-			float minDist = float.PositiveInfinity;//Mathf.Infinity;
-			int minSegment = 0;
+			var minDist = float.PositiveInfinity;//Mathf.Infinity;
+			var minSegment = 0;
 
-			for (int i = 0; i < vectorPath.Count-1; i++) {
-				Vector3 closest = VectorMath.ClosestPointOnSegment(vectorPath[i], vectorPath[i+1], point);
-				float dist = (closest-point).sqrMagnitude;
+			for (var i = 0; i < vectorPath.Count-1; i++) {
+				var closest = VectorMath.ClosestPointOnSegment(vectorPath[i], vectorPath[i+1], point);
+				var dist = (closest-point).sqrMagnitude;
 				if (dist < minDist) {
 					minDist = dist;
 					minSegment = i;

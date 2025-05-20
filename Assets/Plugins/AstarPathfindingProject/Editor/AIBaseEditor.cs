@@ -62,7 +62,7 @@ namespace Pathfinding {
 			if (isAIPath) {
 				EditorGUI.BeginChangeCheck();
 				var acceleration = FindProperty("maxAcceleration");
-				int acc = acceleration.hasMultipleDifferentValues ? -1 : (acceleration.floatValue >= 0 ? 1 : 0);
+				var acc = acceleration.hasMultipleDifferentValues ? -1 : (acceleration.floatValue >= 0 ? 1 : 0);
 				var nacc = EditorGUILayout.Popup("Max Acceleration", acc, new [] { "Default", "Custom" });
 				if (EditorGUI.EndChangeCheck()) {
 					if (nacc == 0) acceleration.floatValue = -2.5f;
@@ -110,9 +110,9 @@ namespace Pathfinding {
 			}
 
 			var mono = target as MonoBehaviour;
-			mono.TryGetComponent<Rigidbody>(out Rigidbody rigid);
-			mono.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigid2D);
-			mono.TryGetComponent<CharacterController>(out CharacterController controller);
+			mono.TryGetComponent<Rigidbody>(out var rigid);
+			mono.TryGetComponent<Rigidbody2D>(out var rigid2D);
+			mono.TryGetComponent<CharacterController>(out var controller);
 			var canUseGravity = (controller != null && controller.enabled) || ((rigid == null || rigid.isKinematic) && (rigid2D == null || rigid2D.isKinematic));
 
 			var gravity = FindProperty("gravity");
@@ -120,7 +120,7 @@ namespace Pathfinding {
 
 			if (canUseGravity) {
 				EditorGUI.BeginChangeCheck();
-				int grav = gravity.hasMultipleDifferentValues ? -1 : (gravity.vector3Value == Vector3.zero ? 0 : (float.IsNaN(gravity.vector3Value.x) ? 1 : 2));
+				var grav = gravity.hasMultipleDifferentValues ? -1 : (gravity.vector3Value == Vector3.zero ? 0 : (float.IsNaN(gravity.vector3Value.x) ? 1 : 2));
 				var ngrav = EditorGUILayout.Popup("Gravity", grav, new [] { "None", "Use Project Settings", "Custom" });
 				if (EditorGUI.EndChangeCheck()) {
 					if (ngrav == 0) gravity.vector3Value = Vector3.zero;

@@ -8,7 +8,7 @@ public class DevInputPlayer : MonoBehaviour
     [SerializeField][Required] MapUI map;
 
     void Awake(){
-        InputActionMap inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
+        var inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("DevKey1").performed += UseDevKey1;
         inputActions.FindAction("DevKey2").performed += UseDevKey2;
         inputActions.FindAction("DevKey3").performed += UseDevKey3;

@@ -36,7 +36,7 @@ namespace Pathfinding {
 			fastProfileNames[fastProfileNames.Length-2] = "__Control1__";
 			fastProfileNames[fastProfileNames.Length-1] = "__Control2__";
 			fastProfiles = new ProfilePoint[fastProfileNames.Length];
-			for (int i = 0; i < fastProfiles.Length; i++) fastProfiles[i] = new ProfilePoint();
+			for (var i = 0; i < fastProfiles.Length; i++) fastProfiles[i] = new ProfilePoint();
 		}
 
 		[System.Diagnostics.Conditional("ProfileAstar")]
@@ -52,7 +52,7 @@ namespace Pathfinding {
 			 *  Debug.LogError("Can only end profiling for a tag which has already been started (tag was " + tag + ")");
 			 *  return;
 			 * }*/
-			ProfilePoint point = fastProfiles[tag];
+			var point = fastProfiles[tag];
 
 			point.totalCalls++;
 			point.watch.Stop();
@@ -95,7 +95,7 @@ namespace Pathfinding {
 			}
 			//Console.WriteLine ("Profile End - " + tag);
 			//DateTime now = DateTime.UtcNow;
-			ProfilePoint point = profiles[tag];
+			var point = profiles[tag];
 			//point.totalTime += now - point.lastRecorded;
 			++point.totalCalls;
 			point.watch.Stop();
@@ -113,7 +113,7 @@ namespace Pathfinding {
 			startTime = DateTime.UtcNow;
 
 			if (fastProfiles != null) {
-				for (int i = 0; i < fastProfiles.Length; i++) {
+				for (var i = 0; i < fastProfiles.Length; i++) {
 					fastProfiles[i] = new ProfilePoint();
 				}
 			}
@@ -125,25 +125,25 @@ namespace Pathfinding {
 				return;
 
 			StartFastProfile(fastProfiles.Length-2);
-			for (int i = 0; i < 1000; i++) {
+			for (var i = 0; i < 1000; i++) {
 				StartFastProfile(fastProfiles.Length-1);
 				EndFastProfile(fastProfiles.Length-1);
 			}
 			EndFastProfile(fastProfiles.Length-2);
 
-			double avgOverhead = fastProfiles[fastProfiles.Length-2].watch.Elapsed.TotalMilliseconds / 1000.0;
+			var avgOverhead = fastProfiles[fastProfiles.Length-2].watch.Elapsed.TotalMilliseconds / 1000.0;
 
-			TimeSpan endTime = DateTime.UtcNow - startTime;
+			var endTime = DateTime.UtcNow - startTime;
 			var output = new System.Text.StringBuilder();
 			output.Append("============================\n\t\t\t\tProfile results:\n============================\n");
 			output.Append("Name		|	Total Time	|	Total Calls	|	Avg/Call	|	Bytes");
 			//foreach(KeyValuePair<string, ProfilePoint> pair in profiles)
-			for (int i = 0; i < fastProfiles.Length; i++) {
-				string name = fastProfileNames[i];
-				ProfilePoint value = fastProfiles[i];
+			for (var i = 0; i < fastProfiles.Length; i++) {
+				var name = fastProfileNames[i];
+				var value = fastProfiles[i];
 
-				int totalCalls = value.totalCalls;
-				double totalTime = value.watch.Elapsed.TotalMilliseconds - avgOverhead*totalCalls;
+				var totalCalls = value.totalCalls;
+				var totalTime = value.watch.Elapsed.TotalMilliseconds - avgOverhead*totalCalls;
 
 				if (totalCalls < 1) continue;
 
@@ -174,13 +174,13 @@ namespace Pathfinding {
 
 		[System.Diagnostics.Conditional("ProfileAstar")]
 		public static void PrintResults () {
-			TimeSpan endTime = DateTime.UtcNow - startTime;
+			var endTime = DateTime.UtcNow - startTime;
 			var output = new System.Text.StringBuilder();
 
 			output.Append("============================\n\t\t\t\tProfile results:\n============================\n");
 
-			int maxLength = 5;
-			foreach (KeyValuePair<string, ProfilePoint> pair in profiles) {
+			var maxLength = 5;
+			foreach (var pair in profiles) {
 				maxLength = Math.Max(pair.Key.Length, maxLength);
 			}
 
@@ -192,11 +192,11 @@ namespace Pathfinding {
 
 
 			foreach (var pair in profiles) {
-				double totalTime = pair.Value.watch.Elapsed.TotalMilliseconds;
-				int totalCalls = pair.Value.totalCalls;
+				var totalTime = pair.Value.watch.Elapsed.TotalMilliseconds;
+				var totalCalls = pair.Value.totalCalls;
 				if (totalCalls < 1) continue;
 
-				string name = pair.Key;
+				var name = pair.Key;
 
 				output.Append("\n").Append(name.PadRight(maxLength)).Append("| ");
 				output.Append(totalTime.ToString("0.0").PadRight(20)).Append("| ");

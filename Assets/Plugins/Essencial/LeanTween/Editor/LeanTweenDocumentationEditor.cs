@@ -9,17 +9,17 @@ public class LeanTweenDocumentationEditor : Editor {
 	{
 		#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2 && !UNITY_4_3
 		// Loops through all items in case the user has moved the default installation directory
-		string[] guids = AssetDatabase.FindAssets ("LeanTween", null);
-		string documentationPath = "";
-		foreach (string guid in guids){
-			string path = AssetDatabase.GUIDToAssetPath(guid);
+		var guids = AssetDatabase.FindAssets ("LeanTween", null);
+		var documentationPath = "";
+		foreach (var guid in guids){
+			var path = AssetDatabase.GUIDToAssetPath(guid);
 			if(path.IndexOf("classes/LeanTween.html")>=0){
 				documentationPath = path;
 				break;
 			}
 		}
 		documentationPath = documentationPath.Substring(documentationPath.IndexOf("/"));
-		string browserPath = "file://" + Application.dataPath + documentationPath + "#index";
+		var browserPath = "file://" + Application.dataPath + documentationPath + "#index";
 		Application.OpenURL(browserPath);
 
 		#else

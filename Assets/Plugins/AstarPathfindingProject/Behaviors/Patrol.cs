@@ -35,7 +35,7 @@ namespace Pathfinding {
 		void Update () {
 			if (targets.Length == 0) return;
 
-			bool search = false;
+			var search = false;
 
 			// Note: using reachedEndOfPath and pathPending instead of reachedDestination here because
 			// if the destination cannot be reached by the agent, we don't want it to get stuck, we just want it to get as close as possible and then move on.

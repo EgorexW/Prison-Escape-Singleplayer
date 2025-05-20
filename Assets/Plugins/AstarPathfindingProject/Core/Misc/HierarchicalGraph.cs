@@ -115,7 +115,7 @@ namespace Pathfinding {
 			areas.CopyTo(newAreas, 0);
 			dirty.CopyTo(newDirty, 0);
 
-			for (int i = children.Length; i < newChildren.Length; i++) {
+			for (var i = children.Length; i < newChildren.Length; i++) {
 				newChildren[i] = ListPool<GraphNode>.Claim(MaxChildrenPerNode);
 				newConnections[i] = new List<int>();
 				if (i > 0) freeNodeIndices.Push(i);
@@ -152,8 +152,8 @@ namespace Pathfinding {
 					dirtyNodes[numDirtyNodes] = node;
 					numDirtyNodes++;
 				} else {
-					int maxIndex = 0;
-					for (int i = numDirtyNodes - 1; i >= 0; i--) {
+					var maxIndex = 0;
+					for (var i = numDirtyNodes - 1; i >= 0; i--) {
 						if (dirtyNodes[i].Destroyed) {
 							numDirtyNodes--;
 							dirty[dirtyNodes[i].HierarchicalNodeIndex] = 1;
@@ -180,7 +180,7 @@ namespace Pathfinding {
 			freeNodeIndices.Push(hierarchicalNode);
 			var conns = connections[hierarchicalNode];
 
-			for (int i = 0; i < conns.Count; i++) {
+			for (var i = 0; i < conns.Count; i++) {
 				var adjacentHierarchicalNode = conns[i];
 				// If dirty, this node will be removed later anyway, so don't bother doing anything with it.
 				if (dirty[adjacentHierarchicalNode] != 0) continue;
@@ -197,7 +197,7 @@ namespace Pathfinding {
 
 			var nodeChildren = children[hierarchicalNode];
 
-			for (int i = 0; i < nodeChildren.Count; i++) {
+			for (var i = 0; i < nodeChildren.Count; i++) {
 				AddDirtyNode(nodeChildren[i]);
 			}
 
@@ -208,22 +208,22 @@ namespace Pathfinding {
 		public void RecalculateIfNecessary () {
 			if (numDirtyNodes > 0) {
 				Profiler.BeginSample("Recalculate Connected Components");
-				for (int i = 0; i < numDirtyNodes; i++) {
+				for (var i = 0; i < numDirtyNodes; i++) {
 					dirty[dirtyNodes[i].HierarchicalNodeIndex] = 1;
 				}
 
 				// Remove all hierarchical nodes and then build new hierarchical nodes in their place
 				// which take into account the new graph data.
-				for (int i = 1; i < dirty.Length; i++) {
+				for (var i = 1; i < dirty.Length; i++) {
 					if (dirty[i] == 1) RemoveHierarchicalNode(i, true);
 				}
-				for (int i = 1; i < dirty.Length; i++) dirty[i] = 0;
+				for (var i = 1; i < dirty.Length; i++) dirty[i] = 0;
 
-				for (int i = 0; i < numDirtyNodes; i++) {
+				for (var i = 0; i < numDirtyNodes; i++) {
 					dirtyNodes[i].HierarchicalNodeIndex = 0;
 				}
 
-				for (int i = 0; i < numDirtyNodes; i++) {
+				for (var i = 0; i < numDirtyNodes; i++) {
 					var node = dirtyNodes[i];
 					// Be nice to the GC
 					dirtyNodes[i] = null;
@@ -255,11 +255,11 @@ namespace Pathfinding {
 
 		/// <summary>Flood fills the graph of hierarchical nodes and assigns the same area ID to all hierarchical nodes that are in the same connected component</summary>
 		void FloodFill () {
-			for (int i = 0; i < areas.Length; i++) areas[i] = 0;
+			for (var i = 0; i < areas.Length; i++) areas[i] = 0;
 
-			Stack<int> stack = temporaryStack;
-			int currentArea = 0;
-			for (int i = 1; i < areas.Length; i++) {
+			var stack = temporaryStack;
+			var currentArea = 0;
+			for (var i = 1; i < areas.Length; i++) {
 				// Already taken care of
 				if (areas[i] != 0) continue;
 
@@ -267,9 +267,9 @@ namespace Pathfinding {
 				areas[i] = currentArea;
 				stack.Push(i);
 				while (stack.Count > 0) {
-					int node = stack.Pop();
+					var node = stack.Pop();
 					var conns = connections[node];
-					for (int j = conns.Count - 1; j >= 0; j--) {
+					for (var j = conns.Count - 1; j >= 0; j--) {
 						var otherNode = conns[j];
 						// Note: slightly important that this is != currentArea and not != 0 in case there are some connected, but not stongly connected components in the graph (this will happen in only veeery few types of games)
 						if (areas[otherNode] != currentArea) {
@@ -301,7 +301,7 @@ namespace Pathfinding {
 				que.Dequeue().GetConnections(connectionCallback);
 			}
 
-			for (int i = 0; i < currentConnections.Count; i++) {
+			for (var i = 0; i < currentConnections.Count; i++) {
 				connections[currentConnections[i]].Add(hierarchicalNode);
 			}
 
@@ -316,19 +316,19 @@ namespace Pathfinding {
 			if (!gizmos.Draw(hasher)) {
 				var builder = ObjectPool<RetainedGizmos.Builder>.Claim();
 				var centers = ArrayPool<UnityEngine.Vector3>.Claim(areas.Length);
-				for (int i = 0; i < areas.Length; i++) {
-					Int3 center = Int3.zero;
+				for (var i = 0; i < areas.Length; i++) {
+					var center = Int3.zero;
 					var childs = children[i];
 					if (childs.Count > 0) {
-						for (int j = 0; j < childs.Count; j++) center += childs[j].position;
+						for (var j = 0; j < childs.Count; j++) center += childs[j].position;
 						center /= childs.Count;
 						centers[i] = (UnityEngine.Vector3)center;
 					}
 				}
 
-				for (int i = 0; i < areas.Length; i++) {
+				for (var i = 0; i < areas.Length; i++) {
 					if (children[i].Count > 0) {
-						for (int j = 0; j < connections[i].Count; j++) {
+						for (var j = 0; j < connections[i].Count; j++) {
 							if (connections[i][j] > i) {
 								builder.DrawLine(centers[i], centers[connections[i][j]], UnityEngine.Color.black);
 							}

@@ -20,9 +20,9 @@ namespace Pathfinding {
 			// bias and tension controls:
 			// http://local.wasp.uwa.edu.au/~pbourke/miscellaneous/interpolation/
 
-			float percentComplete = elapsedTime;
-			float percentCompleteSquared = percentComplete * percentComplete;
-			float percentCompleteCubed = percentCompleteSquared * percentComplete;
+			var percentComplete = elapsedTime;
+			var percentCompleteSquared = percentComplete * percentComplete;
+			var percentCompleteCubed = percentCompleteSquared * percentComplete;
 
 			return
 				previous * (-0.5F*percentCompleteCubed +
@@ -46,21 +46,21 @@ namespace Pathfinding {
 		/// <summary>Returns a point on a cubic bezier curve. t is clamped between 0 and 1</summary>
 		public static Vector3 CubicBezier (Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t) {
 			t = Mathf.Clamp01(t);
-			float t2 = 1-t;
+			var t2 = 1-t;
 			return t2*t2*t2 * p0 + 3 * t2*t2 * t * p1 + 3 * t2 * t*t * p2 + t*t*t * p3;
 		}
 
 		/// <summary>Returns the derivative for a point on a cubic bezier curve. t is clamped between 0 and 1</summary>
 		public static Vector3 CubicBezierDerivative (Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t) {
 			t = Mathf.Clamp01(t);
-			float t2 = 1-t;
+			var t2 = 1-t;
 			return 3*t2*t2*(p1-p0) + 6*t2*t*(p2 - p1) + 3*t*t*(p3 - p2);
 		}
 
 		/// <summary>Returns the second derivative for a point on a cubic bezier curve. t is clamped between 0 and 1</summary>
 		public static Vector3 CubicBezierSecondDerivative (Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t) {
 			t = Mathf.Clamp01(t);
-			float t2 = 1-t;
+			var t2 = 1-t;
 			return 6*t2*(p2 - 2*p1 + p0) + 6*t*(p3 - 2*p2 + p1);
 		}
 	}
@@ -111,8 +111,8 @@ namespace Pathfinding {
 		/// See: ClosestPointOnLineFactor
 		/// </summary>
 		public static Vector3 ClosestPointOnLine (Vector3 lineStart, Vector3 lineEnd, Vector3 point) {
-			Vector3 lineDirection = Vector3.Normalize(lineEnd - lineStart);
-			float dot = Vector3.Dot(point - lineStart, lineDirection);
+			var lineDirection = Vector3.Normalize(lineEnd - lineStart);
+			var dot = Vector3.Dot(point - lineStart, lineDirection);
 
 			return lineStart + (dot*lineDirection);
 		}
@@ -127,7 +127,7 @@ namespace Pathfinding {
 		/// </summary>
 		public static float ClosestPointOnLineFactor (Vector3 lineStart, Vector3 lineEnd, Vector3 point) {
 			var dir = lineEnd - lineStart;
-			float sqrMagn = dir.sqrMagnitude;
+			var sqrMagn = dir.sqrMagnitude;
 
 			if (sqrMagn <= 0.000001) return 0;
 
@@ -141,7 +141,7 @@ namespace Pathfinding {
 		/// </summary>
 		public static float ClosestPointOnLineFactor (Int3 lineStart, Int3 lineEnd, Int3 point) {
 			var lineDirection = lineEnd - lineStart;
-			float magn = lineDirection.sqrMagnitude;
+			var magn = lineDirection.sqrMagnitude;
 
 			float closestPoint = Int3.Dot((point - lineStart), lineDirection);
 
@@ -174,11 +174,11 @@ namespace Pathfinding {
 		/// </summary>
 		public static Vector3 ClosestPointOnSegment (Vector3 lineStart, Vector3 lineEnd, Vector3 point) {
 			var dir = lineEnd - lineStart;
-			float sqrMagn = dir.sqrMagnitude;
+			var sqrMagn = dir.sqrMagnitude;
 
 			if (sqrMagn <= 0.000001) return lineStart;
 
-			float factor = Vector3.Dot(point - lineStart, dir) / sqrMagn;
+			var factor = Vector3.Dot(point - lineStart, dir) / sqrMagn;
 			return lineStart + Mathf.Clamp01(factor)*dir;
 		}
 
@@ -193,13 +193,13 @@ namespace Pathfinding {
 		public static Vector3 ClosestPointOnSegmentXZ (Vector3 lineStart, Vector3 lineEnd, Vector3 point) {
 			lineStart.y = point.y;
 			lineEnd.y = point.y;
-			Vector3 fullDirection = lineEnd-lineStart;
-			Vector3 fullDirection2 = fullDirection;
+			var fullDirection = lineEnd-lineStart;
+			var fullDirection2 = fullDirection;
 			fullDirection2.y = 0;
-			float magn = fullDirection2.magnitude;
-			Vector3 lineDirection = magn > float.Epsilon ? fullDirection2/magn : Vector3.zero;
+			var magn = fullDirection2.magnitude;
+			var lineDirection = magn > float.Epsilon ? fullDirection2/magn : Vector3.zero;
 
-			float closestPoint = Vector3.Dot((point-lineStart), lineDirection);
+			var closestPoint = Vector3.Dot((point-lineStart), lineDirection);
 			return lineStart+(Mathf.Clamp(closestPoint, 0.0f, fullDirection2.magnitude)*lineDirection);
 		}
 
@@ -210,12 +210,12 @@ namespace Pathfinding {
 		/// TODO: Is this actually approximate? It looks exact.
 		/// </summary>
 		public static float SqrDistancePointSegmentApproximate (int x, int z, int px, int pz, int qx, int qz) {
-			float pqx = (float)(qx - px);
-			float pqz = (float)(qz - pz);
-			float dx = (float)(x - px);
-			float dz = (float)(z - pz);
-			float d = pqx*pqx + pqz*pqz;
-			float t = pqx*dx + pqz*dz;
+			var pqx = (float)(qx - px);
+			var pqz = (float)(qz - pz);
+			var dx = (float)(x - px);
+			var dz = (float)(z - pz);
+			var d = pqx*pqx + pqz*pqz;
+			var t = pqx*dx + pqz*dz;
 
 			if (d > 0)
 				t /= d;
@@ -237,12 +237,12 @@ namespace Pathfinding {
 		/// TODO: Is this actually approximate? It looks exact.
 		/// </summary>
 		public static float SqrDistancePointSegmentApproximate (Int3 a, Int3 b, Int3 p) {
-			float pqx = (float)(b.x - a.x);
-			float pqz = (float)(b.z - a.z);
-			float dx = (float)(p.x - a.x);
-			float dz = (float)(p.z - a.z);
-			float d = pqx*pqx + pqz*pqz;
-			float t = pqx*dx + pqz*dz;
+			var pqx = (float)(b.x - a.x);
+			var pqz = (float)(b.z - a.z);
+			var dx = (float)(p.x - a.x);
+			var dz = (float)(p.z - a.z);
+			var d = pqx*pqx + pqz*pqz;
+			var t = pqx*dx + pqz*dz;
 
 			if (d > 0)
 				t /= d;
@@ -273,15 +273,15 @@ namespace Pathfinding {
 		/// Returns: the shortest squared distance between S1 and S2
 		/// </summary>
 		public static float SqrDistanceSegmentSegment (Vector3 s1, Vector3 e1, Vector3 s2, Vector3 e2) {
-			Vector3 u = e1 - s1;
-			Vector3 v = e2 - s2;
-			Vector3 w = s1 - s2;
+			var u = e1 - s1;
+			var v = e2 - s2;
+			var w = s1 - s2;
 			double a = Vector3.Dot(u, u);           // always >= 0
 			double b = Vector3.Dot(u, v);
 			double c = Vector3.Dot(v, v);           // always >= 0
 			double d = Vector3.Dot(u, w);
 			double e = Vector3.Dot(v, w);
-			double D = a*c - b*b;           // always >= 0
+			var D = a*c - b*b;           // always >= 0
 			double sc, sN, sD = D;          // sc = sN / sD, default sD = D >= 0
 			double tc, tN, tD = D;          // tc = tN / tD, default tD = D >= 0
 
@@ -335,7 +335,7 @@ namespace Pathfinding {
 			tc = (Math.Abs(tN) < 0.00001f ? 0.0 : tN / tD);
 
 			// get the difference of the two closest points
-			Vector3 dP = w + ((float)sc * u) - ((float)tc * v);  // =  S1(sc) - S2(tc)
+			var dP = w + ((float)sc * u) - ((float)tc * v);  // =  S1(sc) - S2(tc)
 
 			return dP.sqrMagnitude;   // return the closest distance
 		}
@@ -456,10 +456,10 @@ namespace Pathfinding {
 			var rhs = c - a;
 			// Take the cross product of lhs and rhs
 			// The magnitude of the cross product will be zero if the points a,b,c are colinear
-			float x = lhs.y * rhs.z - lhs.z * rhs.y;
-			float y = lhs.z * rhs.x - lhs.x * rhs.z;
-			float z = lhs.x * rhs.y - lhs.y * rhs.x;
-			float v = x*x + y*y + z*z;
+			var x = lhs.y * rhs.z - lhs.z * rhs.y;
+			var y = lhs.z * rhs.x - lhs.x * rhs.z;
+			var z = lhs.x * rhs.y - lhs.y * rhs.x;
+			var v = x*x + y*y + z*z;
 
 			// Epsilon not chosen with much thought, just that float.Epsilon was a bit too small.
 			return v <= 0.0000001f;
@@ -467,7 +467,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns if the points are colinear (lie on a straight line)</summary>
 		public static bool IsColinear (Vector2 a, Vector2 b, Vector2 c) {
-			float v = (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y);
+			var v = (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y);
 
 			// Epsilon not chosen with much thought, just that float.Epsilon was a bit too small.
 			return v <= 0.0000001f && v >= -0.0000001f;
@@ -480,7 +480,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns if the points are colinear (lie on a straight line)</summary>
 		public static bool IsColinearXZ (Vector3 a, Vector3 b, Vector3 c) {
-			float v = (b.x-a.x)*(c.z-a.z)-(c.x-a.x)*(b.z-a.z);
+			var v = (b.x-a.x)*(c.z-a.z)-(c.x-a.x)*(b.z-a.z);
 
 			// Epsilon not chosen with much thought, just that float.Epsilon was a bit too small.
 			return v <= 0.0000001f && v >= -0.0000001f;
@@ -488,7 +488,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns if the points are colinear (lie on a straight line)</summary>
 		public static bool IsColinearAlmostXZ (Int3 a, Int3 b, Int3 c) {
-			long v = (long)(b.x - a.x) * (long)(c.z - a.z) - (long)(c.x - a.x) * (long)(b.z - a.z);
+			var v = (long)(b.x - a.x) * (long)(c.z - a.z) - (long)(c.x - a.x) * (long)(b.z - a.z);
 
 			return v > -1 && v < 1;
 		}
@@ -516,19 +516,19 @@ namespace Pathfinding {
 		/// See: IntersectionPoint
 		/// </summary>
 		public static bool SegmentsIntersectXZ (Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2) {
-			Vector3 dir1 = end1-start1;
-			Vector3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				return false;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
-			float u = nom/den;
-			float u2 = nom2/den;
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
+			var u = nom/den;
+			var u2 = nom2/den;
 
 			if (u < 0F || u > 1F || u2 < 0F || u2 > 1F) {
 				return false;
@@ -546,14 +546,14 @@ namespace Pathfinding {
 		/// See: LineIntersectionPointXZ
 		/// </summary>
 		public static Vector3 LineDirIntersectionPointXZ (Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2) {
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				return start1;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float u = nom/den;
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var u = nom/den;
 
 			return start1 + dir1*u;
 		}
@@ -567,15 +567,15 @@ namespace Pathfinding {
 		/// See: LineIntersectionPointXZ
 		/// </summary>
 		public static Vector3 LineDirIntersectionPointXZ (Vector3 start1, Vector3 dir1, Vector3 start2, Vector3 dir2, out bool intersects) {
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				intersects = false;
 				return start1;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float u = nom/den;
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var u = nom/den;
 
 			intersects = true;
 			return start1 + dir1*u;
@@ -588,8 +588,8 @@ namespace Pathfinding {
 		/// TODO: Double check that this actually works
 		/// </summary>
 		public static bool RaySegmentIntersectXZ (Int3 start1, Int3 end1, Int3 start2, Int3 end2) {
-			Int3 dir1 = end1-start1;
-			Int3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
 			long den = dir2.z*dir1.x - dir2.x * dir1.z;
 
@@ -627,8 +627,8 @@ namespace Pathfinding {
 		/// Only the XZ coordinates are used.
 		/// </summary>
 		public static bool LineIntersectionFactorXZ (Int3 start1, Int3 end1, Int3 start2, Int3 end2, out float factor1, out float factor2) {
-			Int3 dir1 = end1-start1;
-			Int3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
 			long den = dir2.z*dir1.x - dir2.x * dir1.z;
 
@@ -656,10 +656,10 @@ namespace Pathfinding {
 		/// Only the XZ coordinates are used.
 		/// </summary>
 		public static bool LineIntersectionFactorXZ (Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out float factor1, out float factor2) {
-			Vector3 dir1 = end1-start1;
-			Vector3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den <= 0.00001f && den >= -0.00001f) {
 				factor1 = 0;
@@ -667,11 +667,11 @@ namespace Pathfinding {
 				return false;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
 
-			float u = nom/den;
-			float u2 = nom2/den;
+			var u = nom/den;
+			var u2 = nom2/den;
 
 			factor1 = u;
 			factor2 = u2;
@@ -691,17 +691,17 @@ namespace Pathfinding {
 		/// NaN is returned if the lines are parallel.
 		/// </summary>
 		public static float LineRayIntersectionFactorXZ (Int3 start1, Int3 end1, Int3 start2, Int3 end2) {
-			Int3 dir1 = end1-start1;
-			Int3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			int den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				return float.NaN;
 			}
 
-			int nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			int nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var nom2 = dir1.x*(start1.z-start2.z) - dir1.z * (start1.x - start2.x);
 
 			if ((float)nom2/den < 0) {
 				return float.NaN;
@@ -717,17 +717,17 @@ namespace Pathfinding {
 		/// -1 is returned if the lines are parallel (note that this is a valid return value if they are not parallel too)
 		/// </summary>
 		public static float LineIntersectionFactorXZ (Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2) {
-			Vector3 dir1 = end1-start1;
-			Vector3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				return -1;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float u = nom/den;
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var u = nom/den;
 
 			return u;
 		}
@@ -741,19 +741,19 @@ namespace Pathfinding {
 
 		/// <summary>Returns the intersection point between the two lines. Lines are treated as infinite. start1 is returned if the lines are parallel</summary>
 		public static Vector3 LineIntersectionPointXZ (Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects) {
-			Vector3 dir1 = end1-start1;
-			Vector3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.z*dir1.x - dir2.x * dir1.z;
+			var den = dir2.z*dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				intersects = false;
 				return start1;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
 
-			float u = nom/den;
+			var u = nom/den;
 
 			intersects = true;
 			return start1 + dir1*u;
@@ -768,19 +768,19 @@ namespace Pathfinding {
 
 		/// <summary>Returns the intersection point between the two lines. Lines are treated as infinite. start1 is returned if the lines are parallel</summary>
 		public static Vector2 LineIntersectionPoint (Vector2 start1, Vector2 end1, Vector2 start2, Vector2 end2, out bool intersects) {
-			Vector2 dir1 = end1-start1;
-			Vector2 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.y*dir1.x - dir2.x * dir1.y;
+			var den = dir2.y*dir1.x - dir2.x * dir1.y;
 
 			if (den == 0) {
 				intersects = false;
 				return start1;
 			}
 
-			float nom = dir2.x*(start1.y-start2.y)- dir2.y*(start1.x-start2.x);
+			var nom = dir2.x*(start1.y-start2.y)- dir2.y*(start1.x-start2.x);
 
-			float u = nom/den;
+			var u = nom/den;
 
 			intersects = true;
 			return start1 + dir1*u;
@@ -792,20 +792,20 @@ namespace Pathfinding {
 		/// The point will be returned along the line [start1, end1] (this matters only for the y coordinate).
 		/// </summary>
 		public static Vector3 SegmentIntersectionPointXZ (Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, out bool intersects) {
-			Vector3 dir1 = end1-start1;
-			Vector3 dir2 = end2-start2;
+			var dir1 = end1-start1;
+			var dir2 = end2-start2;
 
-			float den = dir2.z * dir1.x - dir2.x * dir1.z;
+			var den = dir2.z * dir1.x - dir2.x * dir1.z;
 
 			if (den == 0) {
 				intersects = false;
 				return start1;
 			}
 
-			float nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
-			float nom2 = dir1.x*(start1.z-start2.z) - dir1.z*(start1.x-start2.x);
-			float u = nom/den;
-			float u2 = nom2/den;
+			var nom = dir2.x*(start1.z-start2.z)- dir2.z*(start1.x-start2.x);
+			var nom2 = dir1.x*(start1.z-start2.z) - dir1.z*(start1.x-start2.x);
+			var u = nom/den;
+			var u2 = nom2/den;
 
 			if (u < 0F || u > 1F || u2 < 0F || u2 > 1F) {
 				intersects = false;
@@ -831,7 +831,7 @@ namespace Pathfinding {
 			var L = (a - LMid);
 			var LExt = new Vector3(Math.Abs(L.x), Math.Abs(L.y), Math.Abs(L.z));
 
-			Vector3 extent = bounds.extents;
+			var extent = bounds.extents;
 
 			// Use Separating Axis Test
 			// Separation vector from box center to segment center is LMid, since the line is in box space
@@ -968,7 +968,7 @@ namespace Pathfinding {
 		 * The y component will not be changed.
 		 */
 		public static Vector3 ClampMagnitudeXZ (Vector3 v, float maxMagnitude) {
-			float squaredMagnitudeXZ = v.x*v.x + v.z*v.z;
+			var squaredMagnitudeXZ = v.x*v.x + v.z*v.z;
 
 			if (squaredMagnitudeXZ > maxMagnitude*maxMagnitude && maxMagnitude > 0) {
 				var factor = maxMagnitude / Mathf.Sqrt(squaredMagnitudeXZ);
@@ -998,7 +998,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns a nicely formatted string for the number of bytes (KiB, MiB, GiB etc). Uses decimal names (KB, Mb - 1000) but calculates using binary values (KiB, MiB - 1024)</summary>
 		public static string FormatBytesBinary (int bytes) {
-			double sign = bytes >= 0 ? 1D : -1D;
+			var sign = bytes >= 0 ? 1D : -1D;
 
 			bytes = Mathf.Abs(bytes);
 
@@ -1025,9 +1025,9 @@ namespace Pathfinding {
 		/// Seems like there are only 64 possible colors from studying the code
 		/// </summary>
 		public static Color IntToColor (int i, float a) {
-			int r = Bit(i, 2) + Bit(i, 3) * 2 + 1;
-			int g = Bit(i, 1) + Bit(i, 4) * 2 + 1;
-			int b = Bit(i, 0) + Bit(i, 5) * 2 + 1;
+			var r = Bit(i, 2) + Bit(i, 3) * 2 + 1;
+			var g = Bit(i, 1) + Bit(i, 4) * 2 + 1;
+			var b = Bit(i, 0) + Bit(i, 5) * 2 + 1;
 
 			return new Color(r*0.25F, g*0.25F, b*0.25F, a);
 		}
@@ -1042,9 +1042,9 @@ namespace Pathfinding {
 		public static Color HSVToRGB (float h, float s, float v) {
 			float r = 0, g = 0, b = 0;
 
-			float Chroma = s * v;
-			float Hdash = h / 60.0f;
-			float X = Chroma * (1.0f - System.Math.Abs((Hdash % 2.0f) - 1.0f));
+			var Chroma = s * v;
+			var Hdash = h / 60.0f;
+			var X = Chroma * (1.0f - System.Math.Abs((Hdash % 2.0f) - 1.0f));
 
 			if (Hdash < 1.0f) {
 				r = Chroma;
@@ -1066,7 +1066,7 @@ namespace Pathfinding {
 				b = X;
 			}
 
-			float Min = v - Chroma;
+			var Min = v - Chroma;
 
 			r += Min;
 			g += Min;
@@ -1118,10 +1118,10 @@ namespace Pathfinding {
 		/// \author http://unifycommunity.com/wiki/index.php?title=PolyContainsPoint (Eric5h5)
 		/// </summary>
 		public static bool ContainsPoint (Vector2[] polyPoints, Vector2 p) {
-			int j = polyPoints.Length-1;
-			bool inside = false;
+			var j = polyPoints.Length-1;
+			var inside = false;
 
-			for (int i = 0; i < polyPoints.Length; j = i++) {
+			for (var i = 0; i < polyPoints.Length; j = i++) {
 				if (((polyPoints[i].y <= p.y && p.y < polyPoints[j].y) || (polyPoints[j].y <= p.y && p.y < polyPoints[i].y)) &&
 					(p.x < (polyPoints[j].x - polyPoints[i].x) * (p.y - polyPoints[i].y) / (polyPoints[j].y - polyPoints[i].y) + polyPoints[i].x))
 					inside = !inside;
@@ -1134,10 +1134,10 @@ namespace Pathfinding {
 		/// \author http://unifycommunity.com/wiki/index.php?title=PolyContainsPoint (Eric5h5)
 		/// </summary>
 		public static bool ContainsPointXZ (Vector3[] polyPoints, Vector3 p) {
-			int j = polyPoints.Length-1;
-			bool inside = false;
+			var j = polyPoints.Length-1;
+			var inside = false;
 
-			for (int i = 0; i < polyPoints.Length; j = i++) {
+			for (var i = 0; i < polyPoints.Length; j = i++) {
 				if (((polyPoints[i].z <= p.z && p.z < polyPoints[j].z) || (polyPoints[j].z <= p.z && p.z < polyPoints[i].z)) &&
 					(p.x < (polyPoints[j].x - polyPoints[i].x) * (p.z - polyPoints[i].z) / (polyPoints[j].z - polyPoints[i].z) + polyPoints[i].x))
 					inside = !inside;
@@ -1154,10 +1154,10 @@ namespace Pathfinding {
 		/// See: https://en.wikipedia.org/wiki/Barycentric_coordinate_system
 		/// </summary>
 		public static int SampleYCoordinateInTriangle (Int3 p1, Int3 p2, Int3 p3, Int3 p) {
-			double det = ((double)(p2.z - p3.z)) * (p1.x - p3.x) + ((double)(p3.x - p2.x)) * (p1.z - p3.z);
+			var det = ((double)(p2.z - p3.z)) * (p1.x - p3.x) + ((double)(p3.x - p2.x)) * (p1.z - p3.z);
 
-			double lambda1 = ((((double)(p2.z - p3.z)) * (p.x - p3.x) + ((double)(p3.x - p2.x)) * (p.z - p3.z)) / det);
-			double lambda2 = ((((double)(p3.z - p1.z)) * (p.x - p3.x) + ((double)(p1.x - p3.x)) * (p.z - p3.z)) / det);
+			var lambda1 = ((((double)(p2.z - p3.z)) * (p.x - p3.x) + ((double)(p3.x - p2.x)) * (p.z - p3.z)) / det);
+			var lambda2 = ((((double)(p3.z - p1.z)) * (p.x - p3.x) + ((double)(p1.x - p3.x)) * (p.z - p3.z)) / det);
 
 			return (int)Math.Round(lambda1 * p1.y + lambda2 * p2.y + (1 - lambda1 - lambda2) * p3.y);
 		}
@@ -1173,16 +1173,16 @@ namespace Pathfinding {
 
 			var hull = Pathfinding.Util.ListPool<Vector3>.Claim();
 
-			int pointOnHull = 0;
-			for (int i = 1; i < points.Length; i++) if (points[i].x < points[pointOnHull].x) pointOnHull = i;
+			var pointOnHull = 0;
+			for (var i = 1; i < points.Length; i++) if (points[i].x < points[pointOnHull].x) pointOnHull = i;
 
-			int startpoint = pointOnHull;
-			int counter = 0;
+			var startpoint = pointOnHull;
+			var counter = 0;
 
 			do {
 				hull.Add(points[pointOnHull]);
-				int endpoint = 0;
-				for (int i = 0; i < points.Length; i++) if (endpoint == pointOnHull || !VectorMath.RightOrColinearXZ(points[pointOnHull], points[endpoint], points[i])) endpoint = i;
+				var endpoint = 0;
+				for (var i = 0; i < points.Length; i++) if (endpoint == pointOnHull || !VectorMath.RightOrColinearXZ(points[pointOnHull], points[endpoint], points[i])) endpoint = i;
 
 				pointOnHull = endpoint;
 
@@ -1421,16 +1421,16 @@ namespace Pathfinding {
 		/// <param name="outVertices">Vertices of the output mesh.</param>
 		/// <param name="outTriangles">Triangles of the output mesh.</param>
 		public static void CompressMesh (List<Int3> vertices, List<int> triangles, out Int3[] outVertices, out int[] outTriangles) {
-			Dictionary<Int3, int> firstVerts = cached_Int3_int_dict;
+			var firstVerts = cached_Int3_int_dict;
 
 			firstVerts.Clear();
 
 			// Use cached array to reduce memory allocations
-			int[] compressedPointers = ArrayPool<int>.Claim(vertices.Count);
+			var compressedPointers = ArrayPool<int>.Claim(vertices.Count);
 
 			// Map positions to the first index they were encountered at
-			int count = 0;
-			for (int i = 0; i < vertices.Count; i++) {
+			var count = 0;
+			for (var i = 0; i < vertices.Count; i++) {
 				// Check if the vertex position has already been added
 				// Also check one position up and one down because rounding errors can cause vertices
 				// that should end up in the same position to be offset 1 unit from each other
@@ -1450,14 +1450,14 @@ namespace Pathfinding {
 			outTriangles = new int[triangles.Count];
 
 			// Remap the triangles to the new compressed indices
-			for (int i = 0; i < outTriangles.Length; i++) {
+			for (var i = 0; i < outTriangles.Length; i++) {
 				outTriangles[i] = compressedPointers[triangles[i]];
 			}
 
 			// Create the vertex array or reuse the existing buffer
 			outVertices = new Int3[count];
 
-			for (int i = 0; i < count; i++)
+			for (var i = 0; i < count; i++)
 				outVertices[i] = vertices[i];
 
 			ArrayPool<int>.Release(ref compressedPointers);
@@ -1481,9 +1481,9 @@ namespace Pathfinding {
 			var outlineKeys = ListPool<int>.Claim();
 
 			outlineKeys.AddRange(outline.Keys);
-			for (int k = 0; k <= 1; k++) {
-				bool cycles = k == 1;
-				for (int i = 0; i < outlineKeys.Count; i++) {
+			for (var k = 0; k <= 1; k++) {
+				var cycles = k == 1;
+				for (var i = 0; i < outlineKeys.Count; i++) {
 					var startIndex = outlineKeys[i];
 
 					// Chains (not cycles) need to start at the start of the chain
@@ -1520,8 +1520,8 @@ namespace Pathfinding {
 
 		/// <summary>Divides each segment in the list into subSegments segments and fills the result list with the new points</summary>
 		public static void Subdivide (List<Vector3> points, List<Vector3> result, int subSegments) {
-			for (int i = 0; i < points.Count-1; i++)
-				for (int j = 0; j < subSegments; j++)
+			for (var i = 0; i < points.Count-1; i++)
+				for (var j = 0; j < subSegments; j++)
 					result.Add(Vector3.Lerp(points[i], points[i+1], j / (float)subSegments));
 
 			result.Add(points[points.Count-1]);

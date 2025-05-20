@@ -49,7 +49,7 @@ public class ObjectsUI : CountUI
         if (inactiveObjs.Count < 1){
             CreateObjectUI();
         }
-        GameObject obj = inactiveObjs.Dequeue();
+        var obj = inactiveObjs.Dequeue();
         obj.SetActive(true);
         activeObjs.Add(obj);
         return obj;

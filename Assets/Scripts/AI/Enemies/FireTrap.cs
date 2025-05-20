@@ -35,11 +35,11 @@ public class FireTrap : MonoBehaviour, IAIObject
     public void Activate()
     {
         mainAI.PlayerNoticed(noticedScore);
-        Collider[] objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
+        var objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         effect.transform.localScale = areaSize;
-        foreach (IDamagable damagable in damagablesHit)
+        foreach (var damagable in damagablesHit)
         {
             damagable.Damage(damage);
         }

@@ -68,8 +68,8 @@ namespace Pathfinding {
 		public virtual void Apply () {
 			if (Start == null || End == null || AstarPath.active == null) return;
 
-			GraphNode startNode = AstarPath.active.GetNearest(Start.position).node;
-			GraphNode endNode = AstarPath.active.GetNearest(End.position).node;
+			var startNode = AstarPath.active.GetNearest(Start.position).node;
+			var endNode = AstarPath.active.GetNearest(End.position).node;
 
 			if (startNode == null || endNode == null) return;
 
@@ -79,7 +79,7 @@ namespace Pathfinding {
 				if (!oneWay)
 					endNode.RemoveConnection(startNode);
 			} else {
-				uint cost = (uint)System.Math.Round((startNode.position-endNode.position).costMagnitude*costFactor);
+				var cost = (uint)System.Math.Round((startNode.position-endNode.position).costMagnitude*costFactor);
 
 				startNode.AddConnection(endNode, cost);
 				if (!oneWay)
@@ -96,7 +96,7 @@ namespace Pathfinding {
 #if UNITY_EDITOR
 		[UnityEditor.MenuItem("Edit/Pathfinding/Link Pair %&l")]
 		public static void LinkObjects () {
-			Transform[] tfs = Selection.transforms;
+			var tfs = Selection.transforms;
 			if (tfs.Length == 2) {
 				LinkObjects(tfs[0], tfs[1], false);
 			}
@@ -105,7 +105,7 @@ namespace Pathfinding {
 
 		[UnityEditor.MenuItem("Edit/Pathfinding/Unlink Pair %&u")]
 		public static void UnlinkObjects () {
-			Transform[] tfs = Selection.transforms;
+			var tfs = Selection.transforms;
 			if (tfs.Length == 2) {
 				LinkObjects(tfs[0], tfs[1], true);
 			}
@@ -114,10 +114,10 @@ namespace Pathfinding {
 
 		[UnityEditor.MenuItem("Edit/Pathfinding/Delete Links on Selected %&b")]
 		public static void DeleteLinks () {
-			Transform[] tfs = Selection.transforms;
-			for (int i = 0; i < tfs.Length; i++) {
-				NodeLink[] conns = tfs[i].GetComponents<NodeLink>();
-				for (int j = 0; j < conns.Length; j++) DestroyImmediate(conns[j]);
+			var tfs = Selection.transforms;
+			for (var i = 0; i < tfs.Length; i++) {
+				var conns = tfs[i].GetComponents<NodeLink>();
+				for (var j = 0; j < conns.Length; j++) DestroyImmediate(conns[j]);
 			}
 			SceneView.RepaintAll();
 		}
@@ -125,8 +125,8 @@ namespace Pathfinding {
 		public static void LinkObjects (Transform a, Transform b, bool removeConnection) {
 			NodeLink connecting = null;
 
-			NodeLink[] conns = a.GetComponents<NodeLink>();
-			for (int i = 0; i < conns.Length; i++) {
+			var conns = a.GetComponents<NodeLink>();
+			for (var i = 0; i < conns.Length; i++) {
 				if (conns[i].end == b) {
 					connecting = conns[i];
 					break;
@@ -134,7 +134,7 @@ namespace Pathfinding {
 			}
 
 			conns = b.GetComponents<NodeLink>();
-			for (int i = 0; i < conns.Length; i++) {
+			for (var i = 0; i < conns.Length; i++) {
 				if (conns[i].end == a) {
 					connecting = conns[i];
 					break;

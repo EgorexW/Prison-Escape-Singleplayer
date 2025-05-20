@@ -30,8 +30,8 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
 
     public virtual Sprite GetPortrait()
     {
-        Texture2D tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
-        Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
+        var tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
+        var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
         return sprite;
     }
 

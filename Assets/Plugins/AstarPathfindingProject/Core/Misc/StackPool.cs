@@ -41,7 +41,7 @@ namespace Pathfinding.Util {
 #else
 			lock (pool) {
 				if (pool.Count > 0) {
-					Stack<T> ls = pool[pool.Count-1];
+					var ls = pool[pool.Count-1];
 					pool.RemoveAt(pool.Count-1);
 					return ls;
 				}
@@ -58,8 +58,8 @@ namespace Pathfinding.Util {
 		public static void Warmup (int count) {
 			var tmp = new Stack<T>[count];
 
-			for (int i = 0; i < count; i++) tmp[i] = Claim();
-			for (int i = 0; i < count; i++) Release(tmp[i]);
+			for (var i = 0; i < count; i++) tmp[i] = Claim();
+			for (var i = 0; i < count; i++) Release(tmp[i]);
 		}
 
 		/// <summary>
@@ -72,7 +72,7 @@ namespace Pathfinding.Util {
 			stack.Clear();
 
 			lock (pool) {
-				for (int i = 0; i < pool.Count; i++)
+				for (var i = 0; i < pool.Count; i++)
 					if (pool[i] == stack) UnityEngine.Debug.LogError("The Stack is released even though it is inside the pool");
 
 				pool.Add(stack);

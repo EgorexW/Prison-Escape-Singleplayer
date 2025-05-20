@@ -42,11 +42,11 @@ namespace Pathfinding {
 
 			// Loop through the path and split it into
 			// parts joined by links
-			for (int i = 0; i < nodes.Count; i++) {
+			for (var i = 0; i < nodes.Count; i++) {
 				if (nodes[i] is TriangleMeshNode || nodes[i] is GridNodeBase) {
 					var part = new PathPart();
 					part.startIndex = i;
-					uint currentGraphIndex = nodes[i].GraphIndex;
+					var currentGraphIndex = nodes[i].GraphIndex;
 
 					// Loop up until we find a node in another graph
 					// Ignore NodeLink3 nodes
@@ -123,9 +123,9 @@ namespace Pathfinding {
 			right.Add(part.startPoint);
 
 			// Loop through all nodes in the path (except the last one)
-			for (int i = part.startIndex; i < part.endIndex; i++) {
+			for (var i = part.startIndex; i < part.endIndex; i++) {
 				// Get the portal between path[i] and path[i+1] and add it to the left and right lists
-				bool portalWasAdded = nodes[i].GetPortal(nodes[i+1], left, right, false);
+				var portalWasAdded = nodes[i].GetPortal(nodes[i+1], left, right, false);
 
 				if (!portalWasAdded) {
 					// Fallback, just use the positions of the nodes
@@ -147,13 +147,13 @@ namespace Pathfinding {
 		public static void ShrinkPortals (FunnelPortals portals, float shrink) {
 			if (shrink <= 0.00001f) return;
 
-			for (int i = 0; i < portals.left.Count; i++) {
+			for (var i = 0; i < portals.left.Count; i++) {
 				var left = portals.left[i];
 				var right = portals.right[i];
 
 				var length = (left - right).magnitude;
 				if (length > 0) {
-					float s = Mathf.Min(shrink / length, 0.4f);
+					var s = Mathf.Min(shrink / length, 0.4f);
 					portals.left[i] = Vector3.Lerp(left, right, s);
 					portals.right[i] = Vector3.Lerp(left, right, 1 - s);
 				}
@@ -193,7 +193,7 @@ namespace Pathfinding {
 		/// See: <see cref="Calculate(FunnelPortals,bool,bool)"/>
 		/// </summary>
 		public static void Unwrap (FunnelPortals funnel, Vector2[] left, Vector2[] right) {
-			int startingIndex = 1;
+			var startingIndex = 1;
 			var normal = Vector3.Cross(funnel.right[1] - funnel.left[0], funnel.left[1] - funnel.left[0]);
 
 			// This handles the case when the starting point is colinear with the first portal.
@@ -212,10 +212,10 @@ namespace Pathfinding {
 			// The code below is equivalent to this matrix (but a lot faster)
 			// This represents a rotation around a line in 3D space
 			// Matrix4x4 m = Matrix4x4.TRS(Vector3.zero, Quaternion.FromToRotation(normal, Vector3.forward), Vector3.one) * Matrix4x4.TRS(-funnel.right[0], Quaternion.identity, Vector3.one);
-			Quaternion mRot = Quaternion.FromToRotation(normal, Vector3.forward);
-			Vector3 mOffset = mRot * (-funnel.right[0]);
+			var mRot = Quaternion.FromToRotation(normal, Vector3.forward);
+			var mOffset = mRot * (-funnel.right[0]);
 
-			for (int i = 1; i < funnel.left.Count; i++) {
+			for (var i = 1; i < funnel.left.Count; i++) {
 				if (UnwrapHelper(portalLeft, portalRight, prevPoint, funnel.left[i], ref mRot, ref mOffset)) {
 					prevPoint = portalLeft;
 					portalLeft = funnel.left[i];
@@ -244,7 +244,7 @@ namespace Pathfinding {
 			}
 
 			// Remove duplicate vertices
-			int startIndex = 0;
+			var startIndex = 0;
 			while (left[startIndex + 1] == left[startIndex + 2] && right[startIndex + 1] == right[startIndex + 2]) {
 				// Equivalent to RemoveAt(1) if they would have been lists
 				left[startIndex + 1] = left[startIndex + 0];
@@ -306,13 +306,13 @@ namespace Pathfinding {
 				Unwrap(funnel, leftArr, rightArr);
 			} else {
 				// Copy to arrays
-				for (int i = 0; i < funnel.left.Count; i++) {
+				for (var i = 0; i < funnel.left.Count; i++) {
 					leftArr[i] = ToXZ(funnel.left[i]);
 					rightArr[i] = ToXZ(funnel.right[i]);
 				}
 			}
 
-			int startIndex = FixFunnel(leftArr, rightArr, funnel.left.Count);
+			var startIndex = FixFunnel(leftArr, rightArr, funnel.left.Count);
 			var intermediateResult = ListPool<int>.Claim();
 			if (startIndex == -1) {
 				// If funnel algorithm failed, fall back to a simple line
@@ -326,15 +326,15 @@ namespace Pathfinding {
 			// Get list for the final result
 			var result = ListPool<Vector3>.Claim(intermediateResult.Count);
 
-			Vector2 prev2D = leftArr[0];
+			var prev2D = leftArr[0];
 			var prevIdx = 0;
-			for (int i = 0; i < intermediateResult.Count; i++) {
+			for (var i = 0; i < intermediateResult.Count; i++) {
 				var idx = intermediateResult[i];
 
 				if (splitAtEveryPortal) {
 					// Check intersections with every portal segment
 					var next2D = idx >= 0 ? leftArr[idx] : rightArr[-idx];
-					for (int j = prevIdx + 1; j < System.Math.Abs(idx); j++) {
+					for (var j = prevIdx + 1; j < System.Math.Abs(idx); j++) {
 						var factor = VectorMath.LineIntersectionFactorXZ(FromXZ(leftArr[j]), FromXZ(rightArr[j]), FromXZ(prev2D), FromXZ(next2D));
 						result.Add(Vector3.Lerp(funnel.left[j], funnel.right[j], factor));
 					}
@@ -371,17 +371,17 @@ namespace Pathfinding {
 
 			lastCorner = false;
 
-			int apexIndex = startIndex + 0;
-			int rightIndex = startIndex + 1;
-			int leftIndex = startIndex + 1;
+			var apexIndex = startIndex + 0;
+			var rightIndex = startIndex + 1;
+			var leftIndex = startIndex + 1;
 
-			Vector2 portalApex = left[apexIndex];
-			Vector2 portalLeft = left[leftIndex];
-			Vector2 portalRight = right[rightIndex];
+			var portalApex = left[apexIndex];
+			var portalLeft = left[leftIndex];
+			var portalRight = right[rightIndex];
 
 			funnelPath.Add(apexIndex);
 
-			for (int i = startIndex + 2; i < numPortals; i++) {
+			for (var i = startIndex + 2; i < numPortals; i++) {
 				if (funnelPath.Count >= maxCorners) {
 					return;
 				}
@@ -391,8 +391,8 @@ namespace Pathfinding {
 					break;
 				}
 
-				Vector2 pLeft = left[i];
-				Vector2 pRight = right[i];
+				var pLeft = left[i];
+				var pRight = right[i];
 
 				if (LeftOrColinear(portalRight - portalApex, pRight - portalApex)) {
 					if (portalApex == portalRight || RightOrColinear(portalLeft - portalApex, pRight - portalApex)) {

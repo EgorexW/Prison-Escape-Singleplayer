@@ -255,14 +255,14 @@ namespace Pathfinding {
 			if (pass == ModifierPass.PreProcess) {
 				if (preProcessPath != null) preProcessPath(path);
 
-				for (int i = 0; i < modifiers.Count; i++) modifiers[i].PreProcess(path);
+				for (var i = 0; i < modifiers.Count; i++) modifiers[i].PreProcess(path);
 			} else if (pass == ModifierPass.PostProcess) {
 				Profiler.BeginSample("Running Path Modifiers");
 				// Call delegates if they exist
 				if (postProcessPath != null) postProcessPath(path);
 
 				// Loop through all modifiers and apply post processing
-				for (int i = 0; i < modifiers.Count; i++) modifiers[i].Apply(path);
+				for (var i = 0; i < modifiers.Count; i++) modifiers[i].Apply(path);
 				Profiler.EndSample();
 			}
 		}
@@ -480,7 +480,7 @@ namespace Pathfinding {
 				Gizmos.color = new Color(0.7F, 0.5F, 0.1F, 0.5F);
 
 				if (lastCompletedNodePath != null) {
-					for (int i = 0; i < lastCompletedNodePath.Count-1; i++) {
+					for (var i = 0; i < lastCompletedNodePath.Count-1; i++) {
 						Gizmos.DrawLine((Vector3)lastCompletedNodePath[i].position, (Vector3)lastCompletedNodePath[i+1].position);
 					}
 				}
@@ -489,7 +489,7 @@ namespace Pathfinding {
 			Gizmos.color = new Color(0, 1F, 0, 1F);
 
 			if (lastCompletedVectorPath != null) {
-				for (int i = 0; i < lastCompletedVectorPath.Count-1; i++) {
+				for (var i = 0; i < lastCompletedVectorPath.Count-1; i++) {
 					Gizmos.DrawLine(lastCompletedVectorPath[i], lastCompletedVectorPath[i+1]);
 				}
 			}

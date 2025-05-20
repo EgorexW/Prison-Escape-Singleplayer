@@ -13,18 +13,18 @@ public partial class Character
     Coroutine holdCoroutine;
 
     public IInteractive GetInteractive(){
-        RaycastHit[] raycasts = new RaycastHit[10];
+        var raycasts = new RaycastHit[10];
         Physics.RaycastNonAlloc(new Ray(aim.position, aim.forward), raycasts, maxInteractDis);
         IInteractive interactive = new DummyInteractive();
-        foreach(RaycastHit raycast in raycasts){
+        foreach(var raycast in raycasts){
             if (raycast.collider == null){
                 continue;
             }
-            GameObject gameObject = raycast.collider.gameObject;
+            var gameObject = raycast.collider.gameObject;
             if (raycast.collider.attachedRigidbody != null){
                 gameObject = raycast.collider.attachedRigidbody.gameObject;
             }
-            gameObject.TryGetComponent<IInteractive>(out IInteractive interactiveTmp);
+            gameObject.TryGetComponent<IInteractive>(out var interactiveTmp);
             if (interactiveTmp != null){
                 interactive = interactiveTmp;
                 break;
@@ -34,7 +34,7 @@ public partial class Character
     }
 
     public void Interact(float duration = 0){
-        IInteractive interactive = GetInteractive();
+        var interactive = GetInteractive();
         if (interactive.HoldDuration > duration){
             if (holdCoroutine != null){
                 return;

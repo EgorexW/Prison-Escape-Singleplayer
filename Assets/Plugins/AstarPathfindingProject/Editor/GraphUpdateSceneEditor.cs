@@ -27,7 +27,7 @@ namespace Pathfinding {
 			EditorGUI.BeginChangeCheck();
 
 			// Make sure no point arrays are null
-			for (int i = 0; i < scripts.Length; i++) {
+			for (var i = 0; i < scripts.Length; i++) {
 				scripts[i].points = scripts[i].points ?? new Vector3[0];
 			}
 
@@ -70,7 +70,7 @@ namespace Pathfinding {
 				EditorGUILayout.HelpBox("Legacy mode is enabled because you have upgraded from an earlier version of the A* Pathfinding Project. " +
 					"Disabling legacy mode is recommended but you may have to tweak the point locations or object rotation in some cases", MessageType.Warning);
 				if (GUILayout.Button("Disable Legacy Mode")) {
-					for (int i = 0; i < scripts.Length; i++) {
+					for (var i = 0; i < scripts.Length; i++) {
 						Undo.RecordObject(scripts[i], "Disable Legacy Mode");
 						scripts[i].DisableLegacyMode();
 					}
@@ -87,7 +87,7 @@ namespace Pathfinding {
 			}
 
 			if (GUILayout.Button("Clear all points")) {
-				for (int i = 0; i < scripts.Length; i++) {
+				for (var i = 0; i < scripts.Length; i++) {
 					Undo.RecordObject(scripts[i], "Clear points");
 					scripts[i].points = new Vector3[0];
 					scripts[i].RecalcConvex();
@@ -95,7 +95,7 @@ namespace Pathfinding {
 			}
 
 			if (EditorGUI.EndChangeCheck()) {
-				for (int i = 0; i < scripts.Length; i++) {
+				for (var i = 0; i < scripts.Length; i++) {
 					EditorUtility.SetDirty(scripts[i]);
 				}
 
@@ -109,7 +109,7 @@ namespace Pathfinding {
 			PropertyField("points");
 			if (EditorGUI.EndChangeCheck()) {
 				serializedObject.ApplyModifiedProperties();
-				for (int i = 0; i < scripts.Length; i++) {
+				for (var i = 0; i < scripts.Length; i++) {
 					scripts[i].RecalcConvex();
 				}
 				HandleUtility.Repaint();
@@ -130,7 +130,7 @@ namespace Pathfinding {
 			PropertyField("convex");
 			if (EditorGUI.EndChangeCheck()) {
 				serializedObject.ApplyModifiedProperties();
-				for (int i = 0; i < scripts.Length; i++) {
+				for (var i = 0; i < scripts.Length; i++) {
 					scripts[i].RecalcConvex();
 				}
 				HandleUtility.Repaint();
@@ -192,17 +192,17 @@ namespace Pathfinding {
 				EditorUtility.SetDirty(script);
 			}
 
-			List<Vector3> points = Pathfinding.Util.ListPool<Vector3>.Claim();
+			var points = Pathfinding.Util.ListPool<Vector3>.Claim();
 			points.AddRange(script.points);
 
-			Matrix4x4 invMatrix = script.transform.worldToLocalMatrix;
+			var invMatrix = script.transform.worldToLocalMatrix;
 
-			Matrix4x4 matrix = script.transform.localToWorldMatrix;
-			for (int i = 0; i < points.Count; i++) points[i] = matrix.MultiplyPoint3x4(points[i]);
+			var matrix = script.transform.localToWorldMatrix;
+			for (var i = 0; i < points.Count; i++) points[i] = matrix.MultiplyPoint3x4(points[i]);
 
 
 			if (Tools.current != Tool.View && Event.current.type == EventType.Layout) {
-				for (int i = 0; i < script.points.Length; i++) {
+				for (var i = 0; i < script.points.Length; i++) {
 					HandleUtility.AddControl(-i - 1, HandleUtility.DistanceToLine(points[i], points[i]));
 				}
 			}
@@ -210,13 +210,13 @@ namespace Pathfinding {
 			if (Tools.current != Tool.View)
 				HandleUtility.AddDefaultControl(0);
 
-			for (int i = 0; i < points.Count; i++) {
+			for (var i = 0; i < points.Count; i++) {
 				if (i == selectedPoint && Tools.current == Tool.Move) {
 					Handles.color = PointSelectedColor;
 					SphereCap(-i-1, points[i], Quaternion.identity, HandleUtility.GetHandleSize(points[i])*pointGizmosRadius*2);
 
-					Vector3 pre = points[i];
-					Vector3 post = Handles.PositionHandle(points[i], Quaternion.identity);
+					var pre = points[i];
+					var post = Handles.PositionHandle(points[i], Quaternion.identity);
 					if (pre != post) {
 						Undo.RecordObject(script, "Moved Point");
 						script.points[i] = invMatrix.MultiplyPoint3x4(post);
@@ -228,7 +228,7 @@ namespace Pathfinding {
 			}
 
 			if (Event.current.type == EventType.MouseDown) {
-				int pre = selectedPoint;
+				var pre = selectedPoint;
 				selectedPoint = -(HandleUtility.nearestControl+1);
 				if (pre != selectedPoint) GUI.changed = true;
 			}
@@ -253,10 +253,10 @@ namespace Pathfinding {
 					}
 				} else {
 					// Find the closest segment
-					int insertionIndex = points.Count;
-					float minDist = float.PositiveInfinity;
-					for (int i = 0; i < points.Count; i++) {
-						float dist = HandleUtility.DistanceToLine(points[i], points[(i+1)%points.Count]);
+					var insertionIndex = points.Count;
+					var minDist = float.PositiveInfinity;
+					for (var i = 0; i < points.Count; i++) {
+						var dist = HandleUtility.DistanceToLine(points[i], points[(i+1)%points.Count]);
 						if (dist < minDist) {
 							insertionIndex = i + 1;
 							minDist = dist;
@@ -264,9 +264,9 @@ namespace Pathfinding {
 					}
 
 					var ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
-					System.Object hit = HandleUtility.RaySnap(ray);
-					Vector3 rayhit = Vector3.zero;
-					bool didHit = false;
+					var hit = HandleUtility.RaySnap(ray);
+					var rayhit = Vector3.zero;
+					var didHit = false;
 					if (hit != null) {
 						rayhit = ((RaycastHit)hit).point;
 						didHit = true;

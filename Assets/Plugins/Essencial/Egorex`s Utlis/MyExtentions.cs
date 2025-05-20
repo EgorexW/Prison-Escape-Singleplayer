@@ -30,7 +30,7 @@ public static class MyExtentions{
             totalWeight += Mathf.Max(Convert.ToSingle(weightedChance.Value), 0);
         }
 
-        float roll = UnityEngine.Random.Range(0, totalWeight);
+        var roll = UnityEngine.Random.Range(0, totalWeight);
 
         foreach(var weightedChance in list)
         {

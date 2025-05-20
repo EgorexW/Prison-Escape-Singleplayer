@@ -275,7 +275,7 @@ namespace Pathfinding {
 		/// Finally it is returned to the seeker which forwards it to this function.
 		/// </summary>
 		protected override void OnPathComplete (Path newPath) {
-			ABPath p = newPath as ABPath;
+			var p = newPath as ABPath;
 
 			if (p == null) throw new System.Exception("This function only handles ABPaths, do not use special path types");
 
@@ -339,7 +339,7 @@ namespace Pathfinding {
 
 		/// <summary>Called during either Update or FixedUpdate depending on if rigidbodies are used for movement or not</summary>
 		protected override void MovementUpdateInternal (float deltaTime, out Vector3 nextPosition, out Quaternion nextRotation) {
-			float currentAcceleration = maxAcceleration;
+			var currentAcceleration = maxAcceleration;
 
 			// If negative, calculate the acceleration from the max speed
 			if (currentAcceleration < 0) currentAcceleration *= -maxSpeed;
@@ -358,7 +358,7 @@ namespace Pathfinding {
 			var dir = movementPlane.ToPlane(steeringTarget - currentPosition);
 
 			// Calculate the distance to the end of the path
-			float distanceToEnd = dir.magnitude + Mathf.Max(0, interpolator.remainingDistance);
+			var distanceToEnd = dir.magnitude + Mathf.Max(0, interpolator.remainingDistance);
 
 			// Check if we have reached the target
 			var prevTargetReached = reachedEndOfPath;
@@ -370,7 +370,7 @@ namespace Pathfinding {
 			var forwards = movementPlane.ToPlane(simulatedRotation * (orientation == OrientationMode.YAxisForward ? Vector3.up : Vector3.forward));
 
 			// Check if we have a valid path to follow and some other script has not stopped the character
-			bool stopped = isStopped || (reachedDestination && whenCloseToDestination == CloseToDestinationMode.Stop);
+			var stopped = isStopped || (reachedDestination && whenCloseToDestination == CloseToDestinationMode.Stop);
 			if (interpolator.valid && !stopped) {
 				// How fast to move depending on the distance to the destination.
 				// Move slower as the character gets closer to the destination.
@@ -426,7 +426,7 @@ namespace Pathfinding {
 				// We cannot simply check for equality because some precision may be lost
 				// if any coordinate transformations are used.
 				var difference = movementPlane.ToPlane(clampedPosition - position);
-				float sqrDifference = difference.sqrMagnitude;
+				var sqrDifference = difference.sqrMagnitude;
 				if (sqrDifference > 0.001f*0.001f) {
 					// The agent was outside the navmesh. Remove that component of the velocity
 					// so that the velocity only goes along the direction of the wall, not into it
@@ -466,7 +466,7 @@ namespace Pathfinding {
 
 			if (newGizmoHash != gizmoHash && gizmoHash != 0) lastChangedTime = Time.realtimeSinceStartup;
 			gizmoHash = newGizmoHash;
-			float alpha = alwaysDrawGizmos ? 1 : Mathf.SmoothStep(1, 0, (Time.realtimeSinceStartup - lastChangedTime - 5f)/0.5f) * (UnityEditor.Selection.gameObjects.Length == 1 ? 1 : 0);
+			var alpha = alwaysDrawGizmos ? 1 : Mathf.SmoothStep(1, 0, (Time.realtimeSinceStartup - lastChangedTime - 5f)/0.5f) * (UnityEditor.Selection.gameObjects.Length == 1 ? 1 : 0);
 
 			if (alpha > 0) {
 				// Make sure the scene view is repainted while the gizmos are visible

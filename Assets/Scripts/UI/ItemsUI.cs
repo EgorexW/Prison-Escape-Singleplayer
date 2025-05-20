@@ -8,8 +8,8 @@ public class ItemsUI : MonoBehaviour
     List<ItemUI> itemUIs = new();
 
     public void CreateitemUI(){
-        GameObject gameObjectTmp = Instantiate(prefab, transform);
-        ItemUI itemUI = new ItemUI()
+        var gameObjectTmp = Instantiate(prefab, transform);
+        var itemUI = new ItemUI()
         {
             gameObject = gameObjectTmp,
             image = gameObjectTmp.GetComponentInChildren<Image>(),
@@ -19,11 +19,11 @@ public class ItemsUI : MonoBehaviour
         itemUIs.Add(itemUI);
     }
     public void ShowItems(ISpriteUI[] items){
-        int i = 0;
+        var i = 0;
         while(itemUIs.Count < items.Length){
             CreateitemUI();
         }
-        foreach (ItemUI item in itemUIs)
+        foreach (var item in itemUIs)
         {
             if (items.Length <= i){
                 item.gameObject.SetActive(false);

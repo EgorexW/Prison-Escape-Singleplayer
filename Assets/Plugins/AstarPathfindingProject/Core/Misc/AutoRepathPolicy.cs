@@ -65,13 +65,13 @@ namespace Pathfinding {
 		public virtual bool ShouldRecalculatePath (IAstarAI ai) {
 			if (mode == Mode.Never || float.IsPositiveInfinity(ai.destination.x)) return false;
 
-			float timeSinceLast = Time.time - lastRepathTime;
+			var timeSinceLast = Time.time - lastRepathTime;
 			if (mode == Mode.EveryNSeconds) {
 				return timeSinceLast >= interval;
 			} else {
 				// cost = change in destination / max(distance to destination, radius)
-				float squaredCost = (ai.destination - lastDestination).sqrMagnitude / Mathf.Max((ai.position - lastDestination).sqrMagnitude, ai.radius*ai.radius);
-				float fraction = squaredCost * (sensitivity*sensitivity);
+				var squaredCost = (ai.destination - lastDestination).sqrMagnitude / Mathf.Max((ai.position - lastDestination).sqrMagnitude, ai.radius*ai.radius);
+				var fraction = squaredCost * (sensitivity*sensitivity);
 				if (fraction > 1.0f || float.IsNaN(fraction)) return true;
 
 				if (timeSinceLast >= maximumInterval*(1 - Mathf.Sqrt(fraction))) return true;
@@ -92,7 +92,7 @@ namespace Pathfinding {
 
 		public void DrawGizmos (IAstarAI ai) {
 			if (visualizeSensitivity && !float.IsPositiveInfinity(lastDestination.x)) {
-				float r = Mathf.Sqrt(Mathf.Max((ai.position - lastDestination).sqrMagnitude, ai.radius*ai.radius)/(sensitivity*sensitivity));
+				var r = Mathf.Sqrt(Mathf.Max((ai.position - lastDestination).sqrMagnitude, ai.radius*ai.radius)/(sensitivity*sensitivity));
 				Draw.Gizmos.CircleXZ(lastDestination, r, Color.magenta);
 			}
 		}

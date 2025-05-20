@@ -26,7 +26,7 @@ namespace Pathfinding.Util {
 		public GridLookup (Int2 size) {
 			this.size = size;
 			cells = new Item[size.x*size.y];
-			for (int i = 0; i < cells.Length; i++) cells[i] = new Item();
+			for (var i = 0; i < cells.Length; i++) cells[i] = new Item();
 		}
 
 		internal class Item {
@@ -113,16 +113,16 @@ namespace Pathfinding.Util {
 			if (prev == bounds) return;
 
 			// Remove all
-			for (int i = 0; i < root.items.Count; i++) {
-				Item ob = root.items[i];
+			for (var i = 0; i < root.items.Count; i++) {
+				var ob = root.items[i];
 				ob.prev.next = ob.next;
 				if (ob.next != null) ob.next.prev = ob.prev;
 			}
 
 			root.previousBounds = bounds;
-			int reusedItems = 0;
-			for (int z = bounds.ymin; z <= bounds.ymax; z++) {
-				for (int x = bounds.xmin; x <= bounds.xmax; x++) {
+			var reusedItems = 0;
+			for (var z = bounds.ymin; z <= bounds.ymax; z++) {
+				for (var x = bounds.xmin; x <= bounds.xmax; x++) {
 					Item ob;
 					if (reusedItems < root.items.Count) {
 						ob = root.items[reusedItems];
@@ -140,8 +140,8 @@ namespace Pathfinding.Util {
 				}
 			}
 
-			for (int i = root.items.Count-1; i >= reusedItems; i--) {
-				Item ob = root.items[i];
+			for (var i = root.items.Count-1; i >= reusedItems; i--) {
+				var ob = root.items[i];
 				ob.root = null;
 				ob.next = null;
 				ob.prev = null;
@@ -155,13 +155,13 @@ namespace Pathfinding.Util {
 		/// Note: For better memory usage, consider pooling the list using Pathfinding.Util.ListPool after you are done with it
 		/// </summary>
 		public List<U> QueryRect<U>(IntRect r) where U : class, T {
-			List<U> result = Pathfinding.Util.ListPool<U>.Claim();
+			var result = Pathfinding.Util.ListPool<U>.Claim();
 
 			// Loop through tiles and check which objects are inside them
-			for (int z = r.ymin; z <= r.ymax; z++) {
+			for (var z = r.ymin; z <= r.ymax; z++) {
 				var zs = z*size.x;
-				for (int x = r.xmin; x <= r.xmax; x++) {
-					Item c = cells[x + zs];
+				for (var x = r.xmin; x <= r.xmax; x++) {
+					var c = cells[x + zs];
 					// Note, first item is a dummy, so it is ignored
 					while (c.next != null) {
 						c = c.next;
@@ -175,10 +175,10 @@ namespace Pathfinding.Util {
 			}
 
 			// Reset flags
-			for (int z = r.ymin; z <= r.ymax; z++) {
+			for (var z = r.ymin; z <= r.ymax; z++) {
 				var zs = z*size.x;
-				for (int x = r.xmin; x <= r.xmax; x++) {
-					Item c = cells[x + zs];
+				for (var x = r.xmin; x <= r.xmax; x++) {
+					var c = cells[x + zs];
 					while (c.next != null) {
 						c = c.next;
 						c.root.flag = false;

@@ -6,7 +6,7 @@ public class OnKeyDownRestart : OnKeyDown
     [SerializeField] protected bool async;
     public void Restart()
     {
-        int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        var sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         if (async){
             SceneManager.LoadSceneAsync(sceneBuildIndex);
         } else {

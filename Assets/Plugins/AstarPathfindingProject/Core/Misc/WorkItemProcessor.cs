@@ -184,7 +184,7 @@ namespace Pathfinding {
 			public void Enqueue (T item) {
 				if (Count == buffer.Length) {
 					var newBuffer = new T[buffer.Length*2];
-					for (int i = 0; i < Count; i++) {
+					for (var i = 0; i < Count; i++) {
 						newBuffer[i] = this[i];
 					}
 					buffer = newBuffer;
@@ -275,7 +275,7 @@ namespace Pathfinding {
 				}
 
 				// Peek at first item in the queue
-				AstarWorkItem itm = workItems[0];
+				var itm = workItems[0];
 				bool status;
 
 				try {

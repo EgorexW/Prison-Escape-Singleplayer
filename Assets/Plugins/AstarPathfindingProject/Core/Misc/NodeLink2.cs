@@ -180,8 +180,8 @@ namespace Pathfinding {
 		public void Apply (bool forceNewCheck) {
 			//TODO
 			//This function assumes that connections from the n1,n2 nodes never need to be removed in the future (e.g because the nodes move or something)
-			NNConstraint nn = NNConstraint.None;
-			int graph = (int)startNode.GraphIndex;
+			var nn = NNConstraint.None;
+			var graph = (int)startNode.GraphIndex;
 
 			//Search all graphs but the one which start and end nodes are on
 			nn.graphMask = ~(1 << graph);
@@ -192,7 +192,7 @@ namespace Pathfinding {
 			RemoveConnections(startNode);
 			RemoveConnections(endNode);
 
-			uint cost = (uint)Mathf.RoundToInt(((Int3)(StartTransform.position-EndTransform.position)).costMagnitude*costFactor);
+			var cost = (uint)Mathf.RoundToInt(((Int3)(StartTransform.position-EndTransform.position)).costMagnitude*costFactor);
 			startNode.AddConnection(endNode, cost);
 			endNode.AddConnection(startNode, cost);
 
@@ -230,7 +230,7 @@ namespace Pathfinding {
 		}
 
 		public void OnDrawGizmos (bool selected) {
-			Color color = selected ? GizmosColorSelected : GizmosColor;
+			var color = selected ? GizmosColorSelected : GizmosColor;
 
 			if (StartTransform != null) {
 				Draw.Gizmos.CircleXZ(StartTransform.position, 0.4f, color);
@@ -242,7 +242,7 @@ namespace Pathfinding {
 			if (StartTransform != null && EndTransform != null) {
 				Draw.Gizmos.Bezier(StartTransform.position, EndTransform.position, color);
 				if (selected) {
-					Vector3 cross = Vector3.Cross(Vector3.up, (EndTransform.position-StartTransform.position)).normalized;
+					var cross = Vector3.Cross(Vector3.up, (EndTransform.position-StartTransform.position)).normalized;
 					Draw.Gizmos.Bezier(StartTransform.position+cross*0.1f, EndTransform.position+cross*0.1f, color);
 					Draw.Gizmos.Bezier(StartTransform.position-cross*0.1f, EndTransform.position-cross*0.1f, color);
 				}
@@ -266,9 +266,9 @@ namespace Pathfinding {
 		}
 
 		internal static void DeserializeReferences (Pathfinding.Serialization.GraphSerializationContext ctx) {
-			int count = ctx.reader.ReadInt32();
+			var count = ctx.reader.ReadInt32();
 
-			for (int i = 0; i < count; i++) {
+			for (var i = 0; i < count; i++) {
 				var linkID = ctx.reader.ReadUInt64();
 				var startNode = ctx.DeserializeNodeReference();
 				var endNode = ctx.DeserializeNodeReference();

@@ -6,7 +6,7 @@ public class PlayerPrefsEditor : EditorWindow {
     [MenuItem("Edit/Player Prefs")]
     public static void openWindow() {
  
-        PlayerPrefsEditor window = (PlayerPrefsEditor)EditorWindow.GetWindow(typeof(PlayerPrefsEditor));
+        var window = (PlayerPrefsEditor)EditorWindow.GetWindow(typeof(PlayerPrefsEditor));
         window.titleContent = new GUIContent("Player Prefs");
         window.Show();
  

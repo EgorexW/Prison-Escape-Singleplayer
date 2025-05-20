@@ -17,7 +17,7 @@ public class Sorting
 
     public static ObjectWithValue<T>[] SortArray<T>(ObjectWithValue<T>[] array, int leftIndex, int rightIndex)
     {
-        List<ObjectWithValue<T>> list = new List<ObjectWithValue<T>>(array);
+        var list = new List<ObjectWithValue<T>>(array);
         list.Sort();
         return list.ToArray();
         // var i = leftIndex;
@@ -53,8 +53,8 @@ public class Sorting
 
     public static ObjectWithValue<T> GetHighiestValue<T>(ObjectWithValue<T>[] values)
     {
-        ObjectWithValue<T> highiestValue = values[0];
-        foreach (ObjectWithValue<T> obj in values)
+        var highiestValue = values[0];
+        foreach (var obj in values)
         {          
             if (obj.value > highiestValue.value)
             {

@@ -14,7 +14,7 @@ namespace Pathfinding.Util {
 		/// <summary>Current position</summary>
 		public virtual Vector3 position {
 			get {
-				float t = currentSegmentLength > 0.0001f ? (currentDistance - distanceToSegmentStart) / currentSegmentLength : 0f;
+				var t = currentSegmentLength > 0.0001f ? (currentDistance - distanceToSegmentStart) / currentSegmentLength : 0f;
 				return Vector3.Lerp(path[segmentIndex], path[segmentIndex+1], t);
 			}
 		}
@@ -76,7 +76,7 @@ namespace Pathfinding.Util {
 		public void GetRemainingPath (List<Vector3> buffer) {
 			if (!valid) throw new System.Exception("PathInterpolator is not valid");
 			buffer.Add(position);
-			for (int i = segmentIndex+1; i < path.Count; i++) {
+			for (var i = segmentIndex+1; i < path.Count; i++) {
 				buffer.Add(path[i]);
 			}
 		}
@@ -103,7 +103,7 @@ namespace Pathfinding.Util {
 			totalDistance = 0f;
 
 			var prev = path[0];
-			for (int i = 1; i < path.Count; i++) {
+			for (var i = 1; i < path.Count; i++) {
 				var current = path[i];
 				totalDistance += (current - prev).magnitude;
 				prev = current;
@@ -123,14 +123,14 @@ namespace Pathfinding.Util {
 		public void MoveToClosestPoint (Vector3 point) {
 			if (path == null) return;
 
-			float bestDist = float.PositiveInfinity;
-			float bestFactor = 0f;
-			int bestIndex = 0;
+			var bestDist = float.PositiveInfinity;
+			var bestFactor = 0f;
+			var bestIndex = 0;
 
-			for (int i = 0; i < path.Count-1; i++) {
-				float factor = VectorMath.ClosestPointOnLineFactor(path[i], path[i+1], point);
-				Vector3 closest = Vector3.Lerp(path[i], path[i+1], factor);
-				float dist = (point - closest).sqrMagnitude;
+			for (var i = 0; i < path.Count-1; i++) {
+				var factor = VectorMath.ClosestPointOnLineFactor(path[i], path[i+1], point);
+				var closest = Vector3.Lerp(path[i], path[i+1], factor);
+				var dist = (point - closest).sqrMagnitude;
 
 				if (dist < bestDist) {
 					bestDist = dist;

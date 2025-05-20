@@ -40,7 +40,7 @@ namespace Pathfinding {
 			if (tree != null) ArrayPool<BBTreeBox>.Release(ref tree);
 			if (nodeLookup != null) {
 				// Prevent memory leaks as the pool does not clear the array
-				for (int i = 0; i < nodeLookup.Length; i++) nodeLookup[i] = null;
+				for (var i = 0; i < nodeLookup.Length; i++) nodeLookup[i] = null;
 				ArrayPool<TriangleMeshNode>.Release(ref nodeLookup);
 			}
 			tree = ArrayPool<BBTreeBox>.Claim(0);
@@ -96,7 +96,7 @@ namespace Pathfinding {
 			// It also means we don't have to make a copy of the nodes array since
 			// we do not modify it
 			var permutation = ArrayPool<int>.Claim(nodes.Length);
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				permutation[i] = i;
 			}
 
@@ -104,7 +104,7 @@ namespace Pathfinding {
 			// It turns out that calculating the bounds is a bottleneck and precalculating
 			// the bounds makes it around 3 times faster to build a tree
 			var nodeBounds = ArrayPool<IntRect>.Claim(nodes.Length);
-			for (int i = 0; i < nodes.Length; i++) {
+			for (var i = 0; i < nodes.Length; i++) {
 				Int3 v0, v1, v2;
 				nodes[i].GetVertices(out v0, out v1, out v2);
 
@@ -121,9 +121,9 @@ namespace Pathfinding {
 		}
 
 		static int SplitByX (TriangleMeshNode[] nodes, int[] permutation, int from, int to, int divider) {
-			int mx = to;
+			var mx = to;
 
-			for (int i = from; i < mx; i++) {
+			for (var i = from; i < mx; i++) {
 				if (nodes[permutation[i]].position.x > divider) {
 					mx--;
 					// Swap items i and mx
@@ -137,9 +137,9 @@ namespace Pathfinding {
 		}
 
 		static int SplitByZ (TriangleMeshNode[] nodes, int[] permutation, int from, int to, int divider) {
-			int mx = to;
+			var mx = to;
 
-			for (int i = from; i < mx; i++) {
+			for (var i = from; i < mx; i++) {
 				if (nodes[permutation[i]].position.z > divider) {
 					mx--;
 					// Swap items i and mx
@@ -154,14 +154,14 @@ namespace Pathfinding {
 
 		int RebuildFromInternal (TriangleMeshNode[] nodes, int[] permutation, IntRect[] nodeBounds, int from, int to, bool odd) {
 			var rect = NodeBounds(permutation, nodeBounds, from, to);
-			int box = GetBox(rect);
+			var box = GetBox(rect);
 
 			if (to - from <= MaximumLeafSize) {
 				var nodeOffset = tree[box].nodeOffset = leafNodes*MaximumLeafSize;
 				EnsureNodeCapacity(nodeOffset + MaximumLeafSize);
 				leafNodes++;
 				// Assign all nodes to the array. Note that we also need clear unused slots as the array from the pool may contain any information
-				for (int i = 0; i < MaximumLeafSize; i++) {
+				for (var i = 0; i < MaximumLeafSize; i++) {
 					nodeLookup[nodeOffset + i] = i < to - from ? nodes[permutation[from + i]] : null;
 				}
 				return box;
@@ -170,11 +170,11 @@ namespace Pathfinding {
 			int splitIndex;
 			if (odd) {
 				// X
-				int divider = (rect.xmin + rect.xmax)/2;
+				var divider = (rect.xmin + rect.xmax)/2;
 				splitIndex = SplitByX(nodes, permutation, from, to, divider);
 			} else {
 				// Y/Z
-				int divider = (rect.ymin + rect.ymax)/2;
+				var divider = (rect.ymin + rect.ymax)/2;
 				splitIndex = SplitByZ(nodes, permutation, from, to, divider);
 			}
 
@@ -184,11 +184,11 @@ namespace Pathfinding {
 
 				if (!odd) {
 					// X
-					int divider = (rect.xmin + rect.xmax)/2;
+					var divider = (rect.xmin + rect.xmax)/2;
 					splitIndex = SplitByX(nodes, permutation, from, to, divider);
 				} else {
 					// Y/Z
-					int divider = (rect.ymin + rect.ymax)/2;
+					var divider = (rect.ymin + rect.ymax)/2;
 					splitIndex = SplitByZ(nodes, permutation, from, to, divider);
 				}
 
@@ -209,7 +209,7 @@ namespace Pathfinding {
 		static IntRect NodeBounds (int[] permutation, IntRect[] nodeBounds, int from, int to) {
 			var rect = nodeBounds[permutation[from]];
 
-			for (int j = from + 1; j < to; j++) {
+			for (var j = from + 1; j < to; j++) {
 				var otherRect = nodeBounds[permutation[j]];
 
 				// Equivalent to rect = IntRect.Union(rect, otherRect)
@@ -280,19 +280,19 @@ namespace Pathfinding {
 		}
 
 		void SearchBoxClosestXZ (int boxi, Vector3 p, ref float closestSqrDist, NNConstraint constraint, ref NNInfoInternal nnInfo) {
-			BBTreeBox box = tree[boxi];
+			var box = tree[boxi];
 
 			if (box.IsLeaf) {
 				var nodes = nodeLookup;
-				for (int i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
+				for (var i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
 					var node = nodes[box.nodeOffset+i];
 					// Update the NNInfo
 					DrawDebugNode(node, 0.2f, Color.red);
 
 					if (constraint == null || constraint.Suitable(node)) {
-						Vector3 closest = node.ClosestPointOnNodeXZ(p);
+						var closest = node.ClosestPointOnNodeXZ(p);
 						// XZ squared distance
-						float dist = (closest.x-p.x)*(closest.x-p.x)+(closest.z-p.z)*(closest.z-p.z);
+						var dist = (closest.x-p.x)*(closest.x-p.x)+(closest.z-p.z)*(closest.z-p.z);
 
 						// There's a theoretical case when the closest point is on the edge of a node which may cause the
 						// closest point's xz coordinates to not line up perfectly with p's xz coordinates even though they should
@@ -349,14 +349,14 @@ namespace Pathfinding {
 		}
 
 		void SearchBoxClosest (int boxi, Vector3 p, ref float closestSqrDist, NNConstraint constraint, ref NNInfoInternal nnInfo) {
-			BBTreeBox box = tree[boxi];
+			var box = tree[boxi];
 
 			if (box.IsLeaf) {
 				var nodes = nodeLookup;
-				for (int i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
+				for (var i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
 					var node = nodes[box.nodeOffset+i];
-					Vector3 closest = node.ClosestPointOnNode(p);
-					float dist = (closest-p).sqrMagnitude;
+					var closest = node.ClosestPointOnNode(p);
+					var dist = (closest-p).sqrMagnitude;
 					if (dist < closestSqrDist) {
 						DrawDebugNode(node, 0.2f, Color.red);
 
@@ -415,11 +415,11 @@ namespace Pathfinding {
 		}
 
 		TriangleMeshNode SearchBoxInside (int boxi, Vector3 p, NNConstraint constraint) {
-			BBTreeBox box = tree[boxi];
+			var box = tree[boxi];
 
 			if (box.IsLeaf) {
 				var nodes = nodeLookup;
-				for (int i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
+				for (var i = 0; i < MaximumLeafSize && nodes[box.nodeOffset+i] != null; i++) {
 					var node = nodes[box.nodeOffset+i];
 					if (node.ContainsPoint((Int3)p)) {
 						DrawDebugNode(node, 0.2f, Color.red);
@@ -487,13 +487,13 @@ namespace Pathfinding {
 		}
 
 		void OnDrawGizmos (int boxi, int depth) {
-			BBTreeBox box = tree[boxi];
+			var box = tree[boxi];
 
 			var min = (Vector3) new Int3(box.rect.xmin, 0, box.rect.ymin);
 			var max = (Vector3) new Int3(box.rect.xmax, 0, box.rect.ymax);
 
-			Vector3 center = (min+max)*0.5F;
-			Vector3 size = (max-center)*2;
+			var center = (min+max)*0.5F;
+			var size = (max-center)*2;
 
 			size = new Vector3(size.x, 1, size.z);
 			center.y += depth * 2;
@@ -521,7 +521,7 @@ namespace Pathfinding {
 		static bool RectIntersectsCircle (IntRect r, Vector3 p, float radius) {
 			if (float.IsPositiveInfinity(radius)) return true;
 
-			Vector3 po = p;
+			var po = p;
 			p.x = Math.Max(p.x, r.xmin*Int3.PrecisionFactor);
 			p.x = Math.Min(p.x, r.xmax*Int3.PrecisionFactor);
 			p.z = Math.Max(p.z, r.ymin*Int3.PrecisionFactor);
@@ -533,7 +533,7 @@ namespace Pathfinding {
 
 		/// <summary>Returns distance from p to the rectangle r</summary>
 		static float SquaredRectPointDistance (IntRect r, Vector3 p) {
-			Vector3 po = p;
+			var po = p;
 
 			p.x = Math.Max(p.x, r.xmin*Int3.PrecisionFactor);
 			p.x = Math.Min(p.x, r.xmax*Int3.PrecisionFactor);

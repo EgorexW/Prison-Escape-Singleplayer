@@ -257,7 +257,7 @@ namespace Pathfinding {
 		public float GetTotalLength () {
 			if (vectorPath == null) return float.PositiveInfinity;
 			float tot = 0;
-			for (int i = 0; i < vectorPath.Count-1; i++) tot += Vector3.Distance(vectorPath[i], vectorPath[i+1]);
+			for (var i = 0; i < vectorPath.Count-1; i++) tot += Vector3.Distance(vectorPath[i], vectorPath[i+1]);
 			return tot;
 		}
 
@@ -324,16 +324,16 @@ namespace Pathfinding {
 				h = (uint)(((GetHTarget() - node.position).costMagnitude)*heuristicScale);
 				return h;
 			case Heuristic.Manhattan:
-				Int3 p2 = node.position;
+				var p2 = node.position;
 				h = (uint)((System.Math.Abs(hTarget.x-p2.x) + System.Math.Abs(hTarget.y-p2.y) + System.Math.Abs(hTarget.z-p2.z))*heuristicScale);
 				return h;
 			case Heuristic.DiagonalManhattan:
-				Int3 p = GetHTarget() - node.position;
+				var p = GetHTarget() - node.position;
 				p.x = System.Math.Abs(p.x);
 				p.y = System.Math.Abs(p.y);
 				p.z = System.Math.Abs(p.z);
-				int diag = System.Math.Min(p.x, p.z);
-				int diag2 = System.Math.Max(p.x, p.z);
+				var diag = System.Math.Min(p.x, p.z);
+				var diag2 = System.Math.Max(p.x, p.z);
 				h = (uint)((((14*diag)/10) + (diag2-diag) + p.y) * heuristicScale);
 				return h;
 			}
@@ -586,7 +586,7 @@ namespace Pathfinding {
 		public void Claim (System.Object o) {
 			if (System.Object.ReferenceEquals(o, null)) throw new System.ArgumentNullException("o");
 
-			for (int i = 0; i < claimed.Count; i++) {
+			for (var i = 0; i < claimed.Count; i++) {
 				// Need to use ReferenceEquals because it might be called from another thread
 				if (System.Object.ReferenceEquals(claimed[i], o))
 					throw new System.ArgumentException("You have already claimed the path with that object ("+o+"). Are you claiming the path with the same object twice?");
@@ -625,7 +625,7 @@ namespace Pathfinding {
 		public void Release (System.Object o, bool silent = false) {
 			if (o == null) throw new System.ArgumentNullException("o");
 
-			for (int i = 0; i < claimed.Count; i++) {
+			for (var i = 0; i < claimed.Count; i++) {
 				// Need to use ReferenceEquals because it might be called from another thread
 				if (System.Object.ReferenceEquals(claimed[i], o)) {
 					claimed.RemoveAt(i);
@@ -659,8 +659,8 @@ namespace Pathfinding {
 		/// </summary>
 		protected virtual void Trace (PathNode from) {
 			// Current node we are processing
-			PathNode c = from;
-			int count = 0;
+			var c = from;
+			var count = 0;
 
 			while (c != null) {
 				c = c.parent;
@@ -681,20 +681,20 @@ namespace Pathfinding {
 
 			c = from;
 
-			for (int i = 0; i < count; i++) {
+			for (var i = 0; i < count; i++) {
 				path.Add(c.node);
 				c = c.parent;
 			}
 
 			// Reverse
-			int half = count/2;
-			for (int i = 0; i < half; i++) {
+			var half = count/2;
+			for (var i = 0; i < half; i++) {
 				var tmp = path[i];
 				path[i] = path[count-i-1];
 				path[count - i - 1] = tmp;
 			}
 
-			for (int i = 0; i < count; i++) {
+			for (var i = 0; i < count; i++) {
 				vectorPath.Add((Vector3)path[i].position);
 			}
 		}
@@ -748,7 +748,7 @@ namespace Pathfinding {
 			}
 
 			// Get a cached string builder for this thread
-			System.Text.StringBuilder text = pathHandler.DebugStringBuilder;
+			var text = pathHandler.DebugStringBuilder;
 			text.Length = 0;
 
 			DebugStringPrefix(logMode, text);

@@ -150,16 +150,16 @@ namespace Pathfinding {
 		/// </summary>
 		static void EnableJs () {
 			// Path to the project folder (with /Assets at the end)
-			string projectPath = Application.dataPath;
+			var projectPath = Application.dataPath;
 
 			if (projectPath.EndsWith("/Assets")) {
 				projectPath = projectPath.Remove(projectPath.Length-("Assets".Length));
 			}
 
 			if (!System.IO.Directory.Exists(projectPath + scriptsFolder)) {
-				string error = "Could not enable Js support. AstarPathfindingProject folder did not exist in the default location.\n" +
-							   "If you get this message and the AstarPathfindingProject is not at the root of your Assets folder (i.e at Assets/AstarPathfindingProject)" +
-							   " then you should move it to the root";
+				var error = "Could not enable Js support. AstarPathfindingProject folder did not exist in the default location.\n" +
+				            "If you get this message and the AstarPathfindingProject is not at the root of your Assets folder (i.e at Assets/AstarPathfindingProject)" +
+				            " then you should move it to the root";
 
 				Debug.LogError(error);
 				EditorUtility.DisplayDialog("Could not enable Js support", error, "ok");
@@ -184,7 +184,7 @@ namespace Pathfinding {
 		/// <summary>Disables JS support if it was enabled. This is done by restructuring folders in the project</summary>
 		static void DisableJs () {
 			if (System.IO.Directory.Exists(Application.dataPath+"/Plugins/AstarPathfindingProject")) {
-				string error = AssetDatabase.MoveAsset("Assets/Plugins/AstarPathfindingProject", scriptsFolder);
+				var error = AssetDatabase.MoveAsset("Assets/Plugins/AstarPathfindingProject", scriptsFolder);
 				if (error != "") {
 					Debug.LogError("Couldn't disable Js - "+error);
 				} else {
@@ -197,7 +197,7 @@ namespace Pathfinding {
 			}
 
 			if (System.IO.Directory.Exists(Application.dataPath+"/AstarPathfindingEditor/Editor")) {
-				string error = AssetDatabase.MoveAsset("Assets/AstarPathfindingEditor/Editor", scriptsFolder + "/Editor");
+				var error = AssetDatabase.MoveAsset("Assets/AstarPathfindingEditor/Editor", scriptsFolder + "/Editor");
 				if (error != "") {
 					Debug.LogError("Couldn't disable Js - "+error);
 				} else {
@@ -263,8 +263,8 @@ namespace Pathfinding {
 
 			// Apparently these can sometimes get eaten by unity components
 			// so I catch them here for later use
-			EventType storedEventType = Event.current.type;
-			string storedEventCommand = Event.current.commandName;
+			var storedEventType = Event.current.type;
+			var storedEventCommand = Event.current.commandName;
 
 			DrawMainArea();
 
@@ -353,8 +353,8 @@ namespace Pathfinding {
 			graphsArea.Header("Graphs", ref script.showGraphs);
 
 			if (graphsArea.BeginFade()) {
-				bool anyNonNull = false;
-				for (int i = 0; i < script.graphs.Length; i++) {
+				var anyNonNull = false;
+				for (var i = 0; i < script.graphs.Length; i++) {
 					if (script.graphs[i] != null) {
 						anyNonNull = true;
 						DrawGraph(graphEditors[i]);
@@ -368,7 +368,7 @@ namespace Pathfinding {
 
 				if (addGraphsArea.BeginFade()) {
 					if (graphTypes == null) script.data.FindGraphTypes();
-					for (int i = 0; i < graphTypes.Length; i++) {
+					for (var i = 0; i < graphTypes.Length; i++) {
 						if (graphEditorTypes.ContainsKey(graphTypes[i].Name)) {
 							if (GUILayout.Button(graphEditorTypes[graphTypes[i].Name].displayName)) {
 								addGraphsArea.open = false;
@@ -391,7 +391,7 @@ namespace Pathfinding {
 			DrawOptimizationSettings();
 			DrawAboutArea();
 
-			bool showNavGraphs = EditorGUILayout.Toggle("Show Graphs", script.showNavGraphs);
+			var showNavGraphs = EditorGUILayout.Toggle("Show Graphs", script.showNavGraphs);
 			if (script.showNavGraphs != showNavGraphs) {
 				script.showNavGraphs = showNavGraphs;
 				RepaintSceneView();
@@ -434,8 +434,8 @@ namespace Pathfinding {
 			}
 
 #if !ASTAR_ATAVISM
-			System.Version newVersion = AstarUpdateChecker.latestVersion;
-			bool beta = false;
+			var newVersion = AstarUpdateChecker.latestVersion;
+			var beta = false;
 
 			// Check if either the latest release version or the latest beta version is newer than this version
 			if (FullyDefinedVersion(AstarUpdateChecker.latestVersion) > FullyDefinedVersion(AstarPath.Version) || FullyDefinedVersion(AstarUpdateChecker.latestBetaVersion) > FullyDefinedVersion(AstarPath.Version)) {
@@ -503,7 +503,7 @@ namespace Pathfinding {
 			var graph = graphEditor.target;
 
 			// Graph guid, just used to get a unique value
-			string graphGUIDString = graph.guid.ToString();
+			var graphGUIDString = graph.guid.ToString();
 
 			GUILayout.BeginHorizontal();
 
@@ -534,7 +534,7 @@ namespace Pathfinding {
 				var moveDown = GUILayout.Button(new GUIContent("Down", "Decrease the graph priority"), GUILayout.Width(40));
 
 				if (moveUp || moveDown) {
-					int index = script.data.GetGraphIndex(graph);
+					var index = script.data.GetGraphIndex(graph);
 
 					int next;
 					if (moveUp) {
@@ -548,11 +548,11 @@ namespace Pathfinding {
 					}
 
 					if (next >= 0 && next < script.graphs.Length) {
-						NavGraph tmp = script.graphs[next];
+						var tmp = script.graphs[next];
 						script.graphs[next] = graph;
 						script.graphs[index] = tmp;
 
-						GraphEditor tmpEditor = graphEditors[next];
+						var tmpEditor = graphEditors[next];
 						graphEditors[next] = graphEditors[index];
 						graphEditors[index] = tmpEditor;
 					}
@@ -588,9 +588,9 @@ namespace Pathfinding {
 			graphEditor.infoFadeArea.Begin();
 
 			if (graphEditor.infoFadeArea.BeginFade()) {
-				bool anyNodesNull = false;
-				int total = 0;
-				int numWalkable = 0;
+				var anyNodesNull = false;
+				var total = 0;
+				var numWalkable = 0;
 
 				// Calculate number of nodes in the graph
 				KeyValuePair<float, KeyValuePair<int, int> > pair;
@@ -664,11 +664,11 @@ namespace Pathfinding {
 			if (!LoadStyles()) return;
 
 			// Some GUI controls might change this to Used, so we need to grab it here
-			EventType et = Event.current.type;
+			var et = Event.current.type;
 
 			CheckGraphEditors();
-			for (int i = 0; i < script.graphs.Length; i++) {
-				NavGraph graph = script.graphs[i];
+			for (var i = 0; i < script.graphs.Length; i++) {
+				var graph = script.graphs[i];
 				if (graph != null) {
 					graphEditors[i].OnSceneGUI(graph);
 				}
@@ -711,7 +711,7 @@ namespace Pathfinding {
 
 
 		TextAsset SaveGraphData (byte[] bytes, TextAsset target = null) {
-			string projectPath = System.IO.Path.GetDirectoryName(Application.dataPath) + "/";
+			var projectPath = System.IO.Path.GetDirectoryName(Application.dataPath) + "/";
 
 			string path;
 
@@ -719,14 +719,14 @@ namespace Pathfinding {
 				path = AssetDatabase.GetAssetPath(target);
 			} else {
 				// Find a valid file name
-				int i = 0;
+				var i = 0;
 				do {
 					path = "Assets/GraphCaches/GraphCache" + (i == 0 ? "" : i.ToString()) + ".bytes";
 					i++;
 				} while (System.IO.File.Exists(projectPath+path));
 			}
 
-			string fullPath = projectPath + path;
+			var fullPath = projectPath + path;
 			System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(fullPath));
 			var fileInfo = new System.IO.FileInfo(fullPath);
 			// Make sure we can write to the file
@@ -810,7 +810,7 @@ namespace Pathfinding {
 
 				GUILayout.BeginHorizontal();
 				if (GUILayout.Button("Save to file")) {
-					string path = EditorUtility.SaveFilePanel("Save Graphs", "", "graph.bytes", "bytes");
+					var path = EditorUtility.SaveFilePanel("Save Graphs", "", "graph.bytes", "bytes");
 
 					if (path != "") {
 						var serializationSettings = Pathfinding.Serialization.SerializeSettings.Settings;
@@ -833,11 +833,11 @@ namespace Pathfinding {
 				}
 
 				if (GUILayout.Button("Load from file")) {
-					string path = EditorUtility.OpenFilePanel("Load Graphs", "", "");
+					var path = EditorUtility.OpenFilePanel("Load Graphs", "", "");
 
 					if (path != "") {
 						try {
-							byte[] bytes = Pathfinding.Serialization.AstarSerializer.LoadFromFile(path);
+							var bytes = Pathfinding.Serialization.AstarSerializer.LoadFromFile(path);
 							DeserializeGraphs(bytes);
 						} catch (System.Exception e) {
 							Debug.LogError("Could not load from file at '"+path+"'\n"+e);
@@ -881,7 +881,7 @@ namespace Pathfinding {
 
 			EditorGUI.EndDisabledGroup();
 
-			int threads = AstarPath.CalculateThreadCount(script.threadCount);
+			var threads = AstarPath.CalculateThreadCount(script.threadCount);
 			if (threads > 0) EditorGUILayout.HelpBox("Using " + threads +" thread(s)" + (script.threadCount < 0 ? " on your machine" : "") + ".\n" +
 				"The free version of the A* Pathfinding Project is limited to at most one thread.", MessageType.None);
 			else EditorGUILayout.HelpBox("Using a single coroutine (no threads)" + (script.threadCount < 0 ? " on your machine" : ""), MessageType.None);
@@ -947,7 +947,7 @@ namespace Pathfinding {
 
 		/// <summary>Opens the A* Inspector and shows the section for editing tags</summary>
 		public static void EditTags () {
-			AstarPath astar = GameObject.FindObjectOfType<AstarPath>();
+			var astar = GameObject.FindObjectOfType<AstarPath>();
 
 			if (astar != null) {
 				editTags = true;
@@ -963,9 +963,9 @@ namespace Pathfinding {
 			tagsArea.Header("Tag Names", ref editTags);
 
 			if (tagsArea.BeginFade()) {
-				string[] tagNames = script.GetTagNames();
+				var tagNames = script.GetTagNames();
 
-				for (int i = 0; i < tagNames.Length; i++) {
+				for (var i = 0; i < tagNames.Length; i++) {
 					tagNames[i] = EditorGUILayout.TextField(new GUIContent("Tag "+i, "Name for tag "+i), tagNames[i]);
 					if (tagNames[i] == "") tagNames[i] = ""+i;
 				}
@@ -1064,7 +1064,7 @@ namespace Pathfinding {
 
 			if (colorSettingsArea.BeginFade()) {
 				// Make sure the object is not null
-				AstarColor colors = script.colorSettings = script.colorSettings ?? new AstarColor();
+				var colors = script.colorSettings = script.colorSettings ?? new AstarColor();
 
 				colors._SolidColor = EditorGUILayout.ColorField(new GUIContent("Solid Color", "Color used for the graph when 'Graph Coloring'='Solid Color'"), colors._SolidColor);
 				colors._UnwalkableNode = EditorGUILayout.ColorField("Unwalkable Node", colors._UnwalkableNode);
@@ -1102,7 +1102,7 @@ namespace Pathfinding {
 				if (customAreaColorsOpen) {
 					EditorGUI.indentLevel += 2;
 
-					for (int i = 0; i < colors._AreaColors.Length; i++) {
+					for (var i = 0; i < colors._AreaColors.Length; i++) {
 						GUILayout.BeginHorizontal();
 						colors._AreaColors[i] = EditorGUILayout.ColorField("Area "+i+(i == 0 ? " (not used usually)" : ""), colors._AreaColors[i]);
 						if (GUILayout.Button(new GUIContent("", "Reset to the default color"), astarSkin.FindStyle("SmallReset"), GUILayout.Width(20))) {
@@ -1126,7 +1126,7 @@ namespace Pathfinding {
 
 					if (GUILayout.Button("Remove last") && colors._AreaColors.Length > 0) {
 						var newcols = new Color[colors._AreaColors.Length-1];
-						for (int i = 0; i < colors._AreaColors.Length-1; i++) {
+						for (var i = 0; i < colors._AreaColors.Length-1; i++) {
 							newcols[i] = colors._AreaColors[i];
 						}
 						colors._AreaColors = newcols;
@@ -1155,8 +1155,8 @@ namespace Pathfinding {
 
 				graphEditors = new GraphEditor[script.graphs.Length];
 
-				for (int i = 0; i < script.graphs.Length; i++) {
-					NavGraph graph = script.graphs[i];
+				for (var i = 0; i < script.graphs.Length; i++) {
+					var graph = script.graphs[i];
 
 					if (graph == null) continue;
 
@@ -1167,7 +1167,7 @@ namespace Pathfinding {
 					graphEditors[i] = CreateGraphEditor(graph);
 				}
 			} else {
-				for (int i = 0; i < script.graphs.Length; i++) {
+				for (var i = 0; i < script.graphs.Length; i++) {
 					if (script.graphs[i] == null) continue;
 
 					if (graphEditors[i] == null || graphEditorTypes[script.graphs[i].GetType().Name].editorType != graphEditors[i].GetType()) {
@@ -1231,8 +1231,8 @@ namespace Pathfinding {
 		/// <summary>Hashes the contents of a byte array</summary>
 		static int ByteArrayHash (byte[] arr) {
 			if (arr == null) return -1;
-			int hash = -1;
-			for (int i = 0; i < arr.Length; i++) {
+			var hash = -1;
+			for (var i = 0; i < arr.Length; i++) {
 				hash ^= (arr[i]^i)*3221;
 			}
 			return hash;
@@ -1241,12 +1241,12 @@ namespace Pathfinding {
 		void SerializeIfDataChanged () {
 			uint checksum;
 
-			byte[] bytes = SerializeGraphs(out checksum);
+			var bytes = SerializeGraphs(out checksum);
 
-			int byteHash = ByteArrayHash(bytes);
-			int dataHash = ByteArrayHash(script.data.GetData());
+			var byteHash = ByteArrayHash(bytes);
+			var dataHash = ByteArrayHash(script.data.GetData());
 			//Check if the data is different than the previous data, use checksums
-			bool isDifferent = checksum != ignoredChecksum && dataHash != byteHash;
+			var isDifferent = checksum != ignoredChecksum && dataHash != byteHash;
 
 			//Only save undo if the data was different from the last saved undo
 			if (isDifferent) {
@@ -1264,10 +1264,10 @@ namespace Pathfinding {
 			if (!this) return;
 
 			uint checksum;
-			byte[] bytes = SerializeGraphs(out checksum);
+			var bytes = SerializeGraphs(out checksum);
 
 			//Check if the data is different than the previous data, use checksums
-			bool isDifferent = ByteArrayHash(script.data.GetData()) != ByteArrayHash(bytes);
+			var isDifferent = ByteArrayHash(script.data.GetData()) != ByteArrayHash(bytes);
 
 			if (isDifferent) {
 				HandleUndo();
@@ -1321,7 +1321,7 @@ namespace Pathfinding {
 
 			// Serialize all graph editors
 			var output = new System.Text.StringBuilder();
-			for (int i = 0; i < graphEditors.Length; i++) {
+			for (var i = 0; i < graphEditors.Length; i++) {
 				if (graphEditors[i] == null) continue;
 				output.Length = 0;
 				Pathfinding.Serialization.TinyJsonSerializer.Serialize(graphEditors[i], output);
@@ -1350,7 +1350,7 @@ namespace Pathfinding {
 				// Make sure every graph has a graph editor
 				CheckGraphEditors();
 				// Deserialize editor settings
-				for (int i = 0; i < graphEditors.Length; i++) {
+				for (var i = 0; i < graphEditors.Length; i++) {
 					var data = (graphEditors[i].target as IGraphInternals).SerializedEditorSettings;
 					if (data != null) Pathfinding.Serialization.TinyJsonDeserializer.Deserialize(data, graphEditors[i].GetType(), graphEditors[i], script.gameObject);
 				}
@@ -1411,13 +1411,13 @@ namespace Pathfinding {
 
 				// Iterate through the assembly for classes which inherit from GraphEditor
 				foreach (var type in types) {
-					System.Type baseType = type.BaseType;
+					var baseType = type.BaseType;
 					while (!System.Type.Equals(baseType, null)) {
 						if (System.Type.Equals(baseType, typeof(GraphEditor))) {
-							System.Object[] att = type.GetCustomAttributes(false);
+							var att = type.GetCustomAttributes(false);
 
 							// Loop through the attributes for the CustomGraphEditorAttribute attribute
-							foreach (System.Object attribute in att) {
+							foreach (var attribute in att) {
 								var cge = attribute as CustomGraphEditorAttribute;
 
 								if (cge != null && !System.Type.Equals(cge.graphType, null)) {
