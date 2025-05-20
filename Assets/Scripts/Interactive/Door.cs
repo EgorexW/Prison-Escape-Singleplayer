@@ -13,11 +13,13 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     [Range(0, 1)][SerializeField] float beginOpenChance = 0;
     [SerializeField] Optional<float> autoCloseTime;
     [SerializeField] AccessLevel accessLevel;
+    [SerializeField] bool pernamentUnlock = true;
     
-    float lastMoveStartedTime = 0;
+    public bool LockState{ get; set; }
+    
+    float lastMoveStartedTime = -Mathf.Infinity;
     Quaternion startRotation;
     Collider[] colliders;
-    bool lockState;
     float CurrentRotToStartRot => 0;
 
     [FoldoutGroup("Events")] public UnityEvent onOpen;
@@ -31,51 +33,31 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     {
         startRotation = transform.rotation;
         if (Random.value < beginOpenChance){
-            LocalOpen();
+            Open();
         }
     }
     void Update()
     {
-        ResolveColliders();
         ResolveAutoClose();
     }
 
-    private void ResolveAutoClose()
+    void ResolveAutoClose()
     {
-        if (!autoCloseTime)
-        {
+        if (!autoCloseTime){
             return;
         }
-        if (Time.time - autoCloseTime - moveTime < lastMoveStartedTime)
-        {
+        if (Time.time - autoCloseTime - moveTime < lastMoveStartedTime){
             return;
         }
         Close();
     }
 
-    public void SetLockState(bool lockState){
-        this.lockState = lockState;
-    }
-    private void ResolveColliders()
-    {
-        if (colliderWhenOpen)
-        {
-            return;
-        }
-        foreach (Collider collider in colliders)
-        {
-            collider.isTrigger = Opened;
-        }
-    }
-    public bool CanChangeState(){
+    bool CanChangeState(){
         if (Time.time - lastMoveStartedTime < moveTime)
         {
             return false;
         }
-        if (lockState){
-            return false;
-        }
-        return true;
+        return !LockState;
     }
     
     [Button]
@@ -90,40 +72,36 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     }
 
     public void Open(){
-        if (!CanChangeState()){
+        if (!CanChangeState() && Opened){
             return;
         }
         onOpen.Invoke();
-        LocalOpen();
+        Rotate(true);
     }
 
     public void Close(){
-        if (!CanChangeState()){
+        if (!CanChangeState() && !Opened){
             return;
         }
-        LocalClose();
-    }
-    private void LocalOpen()
-    {
-        if (Opened){
-            return;
-        }
-        Rotate(rotationAngle);
-    }
-    private void LocalClose()
-    {
-        if (!Opened)
-        {
-            return;
-        }
-        Rotate(-rotationAngle);
+        Rotate(false);
     }
 
-    private void Rotate(float angle)
+    private void Rotate(bool open)
     {
         LeanTween.cancel(gameObject);
         lastMoveStartedTime = Time.time;
+        var angle = rotationAngle;
+        if (!open){
+            angle = -angle;
+        }
         transform.LeanRotateAroundLocal(rotationAxis.normalized, angle, moveTime);
+        if (colliderWhenOpen){
+            return;
+        }
+        foreach (Collider collider1 in colliders)
+        {
+            collider1.isTrigger = open;
+        }
     }
 
     public void Interact(Character character){
@@ -137,11 +115,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
         if (accessLevel == null){
             return true;
         }
-        Item item = character.GetHeldItem();
-        if (item is not IKeycard){
-            return false;
-        }
-        IKeycard keycard = (IKeycard)item;
-        return keycard.HasAccess(accessLevel);
+        var item = character.GetHeldItem();
+        return item is IKeycard keycard && keycard.HasAccess(accessLevel);
     }
 }

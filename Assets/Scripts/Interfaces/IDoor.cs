@@ -1,5 +1,5 @@
 public interface IDoor
 {
-    void SetLockState(bool v);
+    bool LockState{ get; set; }
     void Open();
 }

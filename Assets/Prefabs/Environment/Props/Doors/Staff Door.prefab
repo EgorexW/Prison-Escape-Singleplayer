@@ -160,6 +160,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Staff Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5224223268250175953, guid: 5c56b8f548c2445629d34fa65926b516,
+        type: 3}
+      propertyPath: autoCloseTime.value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224223268250175953, guid: 5c56b8f548c2445629d34fa65926b516,
+        type: 3}
+      propertyPath: autoCloseTime.enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
