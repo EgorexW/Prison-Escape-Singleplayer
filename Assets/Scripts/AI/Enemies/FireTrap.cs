@@ -19,6 +19,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     MainAI mainAI;
 
     public GameObject GameObject => gameObject;
+    public bool IsActive{ get; private set; }
 
     protected void Awake()
     {
@@ -28,6 +29,7 @@ public class FireTrap : MonoBehaviour, IAIObject
 
     public void SetActive(bool active)
     {
+        IsActive = active;
         motionSensor.ForEach(sensor => sensor.SetActive(active));
     }
     public void Activate()

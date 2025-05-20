@@ -24,12 +24,14 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     }
 
     public GameObject GameObject => gameObject;
+    public bool IsActive{ get; private set; }
 
     public AIObjectStats Stats => stats;
 
 
     public void SetActive(bool active)
     {
+        IsActive = active;
         LeanTween.cancel(gameObject);
         if (active){
             transform.LeanMoveY(startPosY, HIDE_TIME);

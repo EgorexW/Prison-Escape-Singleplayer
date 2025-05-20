@@ -71,7 +71,7 @@ public class ObjectsUI : CountUI
         SetCount(0);
     }
 
-    protected List<GameObject> GetActiveObjs()
+    public List<GameObject> GetActiveObjs()
     {
         return new(activeObjs);
     }

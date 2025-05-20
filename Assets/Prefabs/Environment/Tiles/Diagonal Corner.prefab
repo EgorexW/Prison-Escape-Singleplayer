@@ -451,6 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4658293404102124436, guid: d1b02505f78e94a6b91d31c03e9430b6,
         type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 4698591721751353018}
+    - target: {fileID: 4658293404102124436, guid: d1b02505f78e94a6b91d31c03e9430b6,
+        type: 3}
       propertyPath: connections.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -478,6 +483,12 @@ PrefabInstance:
       addedObject: {fileID: 861207090387983678}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b02505f78e94a6b91d31c03e9430b6, type: 3}
+--- !u!65 &4698591721751353018 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2075976466409310653, guid: d1b02505f78e94a6b91d31c03e9430b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6772175644348473095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6424230616522092104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 350412617804525903, guid: d1b02505f78e94a6b91d31c03e9430b6,

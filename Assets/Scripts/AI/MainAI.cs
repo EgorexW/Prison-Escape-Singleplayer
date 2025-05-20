@@ -39,7 +39,7 @@ public class MainAI : SerializedMonoBehaviour
         float localEnergy = CalculateEnergy();
         foreach (var aiObject1 in objects.Where(aiObject => aiObject.Stats.energyCost <= localEnergy)){
             aiObject1.SetActive(true);
-            Debug.DrawRay(aiObject1.GameObject.transform.position, Vector3.up * 100, Color.red, 1);
+            // Debug.DrawRay(aiObject1.GameObject.transform.position, Vector3.up * 100, Color.red, 1);
             localEnergy -= aiObject1.Stats.energyCost;
         }
     }
@@ -47,5 +47,10 @@ public class MainAI : SerializedMonoBehaviour
     float CalculateEnergy()
     {
         return baseEnergy + playerScore * playerScoreMultiplier;
+    }
+
+    public List<IAIObject> GetActiveAIObjects()
+    {
+        return objects.Where(aiObject => aiObject.IsActive).ToList();
     }
 }

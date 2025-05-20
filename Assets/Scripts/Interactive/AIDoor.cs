@@ -17,6 +17,8 @@ public class AIDoor : MonoBehaviour, IAIObject
     float baseDuration;
 
     public GameObject GameObject => gameObject;
+    public bool IsActive{ get; private set; }
+
     void Awake()
     {
         door.onOpen.AddListener(OnDoorOpen);
@@ -28,6 +30,7 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     public void SetActive(bool active)
     {
+        IsActive = active;
         if (active){
             door.Close();
         }

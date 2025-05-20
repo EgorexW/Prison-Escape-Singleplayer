@@ -1,19 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(BoxCollider))]
 public class LevelNode : MonoBehaviour
 {
     const float DISTANCE = 7;
+    
+    [GetComponent][SerializeField] BoxCollider boxCollider;
 
     [FormerlySerializedAs("LayerMask")] [SerializeField] LayerMask layerMask;
-    
-    [SerializeField] NodeType nodeType = NodeType.Corridor;
-    
-    [ShowInInspector] List<LevelNode> neighboringNodes = null;
+    public NodeType nodeType = NodeType.Corridor;
+
+    public Bounds Bounds => boxCollider.bounds;
+
+    [HideInEditorMode][ShowInInspector] List<LevelNode> neighboringNodes = null;
 
     void Start()
     {
@@ -63,7 +68,7 @@ public class LevelNode : MonoBehaviour
     [HideInEditorMode][ShowInInspector]
     public List<Vector3> Connections => GetNeighboringNodes().ConvertAll(input => input.transform.position - transform.position);
     
-    [HideInEditorMode][ShowInInspector] 
+    [HideInEditorMode][ShowInInspector][ShowIf("@nodeType == NodeType.Corridor")]
     public CorridorNodeType CorridorNodeType{
         get{
             if (nodeType != NodeType.Corridor){
@@ -84,7 +89,7 @@ public class LevelNode : MonoBehaviour
 
 // TODO Make it detect rooms
 
-enum NodeType
+public enum NodeType
 {
     Corridor,
     Room
