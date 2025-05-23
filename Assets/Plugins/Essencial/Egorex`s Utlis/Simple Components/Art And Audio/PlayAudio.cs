@@ -1,9 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class PlayAudio : MonoBehaviour
+public sealed class PlayAudio : MonoBehaviour
 {
+    [Required][SerializeField] Sound sound;
+    
     [SerializeField] AudioSource audioSource;
-    [SerializeField] Sound sound;
 
     void Awake()
     {
@@ -18,7 +20,8 @@ public class PlayAudio : MonoBehaviour
         }
     }
 
-    public virtual void Play(){
+    [Button]
+    public void Play(){
         if (audioSource.isPlaying && !sound.canOverride){
             return;
         }

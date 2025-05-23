@@ -21,7 +21,6 @@ public class AIDoor : MonoBehaviour, IAIObject
 
     void Awake()
     {
-        door.onOpen.AddListener(OnDoorOpen);
         workingLights.ForEach(light => light.SetActive(false));
         baseDuration = door.holdDuration;
     }
@@ -43,10 +42,5 @@ public class AIDoor : MonoBehaviour, IAIObject
     public void Init(AIDirector aiDirector)
     {
         this.aiDirector = aiDirector;
-    }
-
-    void OnDoorOpen()
-    {
-        AIDirector.i.PlayerDiscovery(noticedScore);
     }
 }

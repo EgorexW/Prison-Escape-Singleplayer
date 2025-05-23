@@ -23,6 +23,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
     Collider[] colliders;
 
     [FoldoutGroup("Events")] public UnityEvent onOpen;
+    [FoldoutGroup("Events")] public UnityEvent onNoAccess;
     bool Opened => startRotation != transform.rotation;
     public float HoldDuration => holdDuration;
 
@@ -107,6 +108,7 @@ public class Door : MonoBehaviour, IDoor, IInteractive
 
     public void Interact(Player player){
         if (!CanCharacterUse(player)){
+            onNoAccess.Invoke();
             return;
         }
         ChangeState();

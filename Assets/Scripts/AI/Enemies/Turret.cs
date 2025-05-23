@@ -16,7 +16,6 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     [SerializeField] float fireRateLossPerDmg = 0.08f;
     [SerializeField] AIObjectStats stats;
     
-    AIDirector aiDirector;
     float startPosY;
 
     protected override void Awake()
@@ -27,7 +26,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
 
     void Start()
     {
-        targets = new List<GameObject>{aiDirector.Player.gameObject};
+        targets = new List<GameObject>{AIDirector.i.Player.gameObject};
     }
 
     public GameObject GameObject => gameObject;

@@ -64,24 +64,24 @@ public class MapUI : MonoBehaviour
     void DrawRooms(LevelNodes levelNodes, float trueScale)
     {
         roomsObjectPool.SetCount(levelNodes.Nodes.Count);
-        var leftUpperCorner = Vector2.one;
-        var rightLowerCorner = Vector2.one;
+        Vector2 min = new Vector2(float.MaxValue, float.MaxValue);
+        Vector2 max = new Vector2(float.MinValue, float.MinValue);
         for (var i = 0; i < levelNodes.Nodes.Count; i++)
         {
             var node = levelNodes.Nodes[i];
             var nodeBounds = node.Bounds;
-            var nodePos = new Vector3(nodeBounds.center.x, nodeBounds.center.z) * trueScale;
-            var nodeSize = new Vector3(nodeBounds.size.x, nodeBounds.size.z) * trueScale;
+            var nodePos = new Vector2(nodeBounds.center.x, nodeBounds.center.z) * trueScale;
+            var nodeSize = new Vector2(nodeBounds.size.x, nodeBounds.size.z) * trueScale;
             var obj = roomsObjectPool.GetActiveObjs()[i];
-            leftUpperCorner.x = Mathf.Min(leftUpperCorner.x, nodePos.x);
-            leftUpperCorner.y = Mathf.Max(leftUpperCorner.y, nodePos.y);
-            rightLowerCorner.x = Mathf.Max(rightLowerCorner.x, nodePos.x);
-            rightLowerCorner.y = Mathf.Min(rightLowerCorner.y, nodePos.y);
+    
+            min = Vector2.Min(min, nodePos - nodeSize / 2);
+            max = Vector2.Max(max, nodePos + nodeSize / 2);
+
             obj.transform.localPosition = nodePos;
             obj.GetComponent<RectTransform>().sizeDelta = nodeSize;
             obj.GetComponent<NodeUI>().SetNodeType(node.nodeType);
         }
-        var center = (leftUpperCorner + rightLowerCorner) / 2;
-        container.transform.localPosition = - new Vector3(center.x, center.y, 0);
+        var center = (min + max) / 2;
+        container.GetComponent<RectTransform>().anchoredPosition = -center;
     }
 }
