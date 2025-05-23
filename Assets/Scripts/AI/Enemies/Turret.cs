@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Shooting))]
@@ -21,6 +23,11 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
     {
         base.Awake();
         startPosY = transform.position.y;
+    }
+
+    void Start()
+    {
+        targets = new List<GameObject>{aiDirector.Player.gameObject};
     }
 
     public GameObject GameObject => gameObject;

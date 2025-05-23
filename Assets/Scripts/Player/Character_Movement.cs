@@ -60,7 +60,7 @@ public partial class Player{
         Collider[] colliders = new Collider[1];
         Physics.OverlapBoxNonAlloc(transform.position, 0.1f * Vector3.one, colliders, Quaternion.identity, LayerMask.GetMask("Level Node"));
         var node = General.GetComponentFromCollider<LevelNode>(colliders[0]);
-        if (node == null){
+        if (!node){
             Debug.LogWarning("Player node is null", this);
         }
         return node;

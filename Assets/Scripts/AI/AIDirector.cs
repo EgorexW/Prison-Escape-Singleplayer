@@ -10,13 +10,17 @@ public class AIDirector : SerializedMonoBehaviour
 
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     
+    public Player Player => player;
+
+    [SerializeField] bool log;
+    
     [SerializeField] float baseEnergy = 20;
     [SerializeField] float playerScoreMultiplier = 1;
     [SerializeField] float immediateUpdateThreshold = 5;
     [SerializeField] float timeBetweenObjectUpdates = 30;
 
-    float lastObjectUpdate;
-    float playerScore;
+    [ShowInInspector] float lastObjectUpdate;
+    [ShowInInspector] float playerScore;
 
     List<IAIObject> objects = new List<IAIObject>();
 
@@ -28,7 +32,7 @@ public class AIDirector : SerializedMonoBehaviour
             return;
         }
         i = this;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -41,9 +45,13 @@ public class AIDirector : SerializedMonoBehaviour
         if (Time.time - lastObjectUpdate < timeBetweenObjectUpdates){
             return;
         }
+        lastObjectUpdate = Time.time;
         LevelNode node = player.GetContainingNode();
         if (node.nodeType == NodeType.Room){
+            Log("In a room node, updating objects");
             ResolveObjects();
+        } else {
+            Log("Not in a room node, not updating objects");
         }
     }
 
@@ -59,6 +67,7 @@ public class AIDirector : SerializedMonoBehaviour
 
     public void PlayerDiscovery(Discovery discovery)
     {
+        Log("Player discovery " + discovery.score);
         playerScore += discovery.score;
         if (discovery.score > immediateUpdateThreshold){
             ResolveObjects();
@@ -87,4 +96,15 @@ public class AIDirector : SerializedMonoBehaviour
     {
         return objects.Where(aiObject => aiObject.IsActive).ToList();
     }
+
+    #region Debug
+
+    void Log(string msg)
+    {
+        if (log){
+            Debug.Log(msg, this);
+        }
+    }
+
+    #endregion
 }
