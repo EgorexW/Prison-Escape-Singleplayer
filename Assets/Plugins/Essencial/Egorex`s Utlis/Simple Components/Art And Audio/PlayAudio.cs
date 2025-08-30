@@ -1,35 +1,47 @@
+using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public sealed class PlayAudio : MonoBehaviour
 {
-    [Required][SerializeField] Sound sound;
-    
-    [SerializeField] AudioSource audioSource;
+    [GetComponent] [SerializeField] AudioSource audioSource;
 
-    void Awake()
+    [Required] [SerializeField] [InlineEditor] Sound sound;
+    
+    [SerializeField] bool playOnStart;
+    [SerializeField] float delayBetweenPlays = 0f;
+    
+    float lastPlayTime;
+
+    void Reset()
     {
-        if (audioSource == null){
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-    }
-    void Reset(){
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null){
-            audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
+
+    void Start()
+    {
+        if (playOnStart){
+            Play();
         }
     }
 
     [Button]
-    public void Play(){
+    public void Play()
+    {
+        if (Time.time - lastPlayTime < delayBetweenPlays){
+            return;
+        }
         if (audioSource.isPlaying && !sound.canOverride){
             return;
         }
+        lastPlayTime = Time.time;
         audioSource.loop = sound.loop;
-		audioSource.outputAudioMixerGroup = sound.mixerGroup;
+        audioSource.outputAudioMixerGroup = sound.mixerGroup;
         audioSource.clip = sound.GetClip();
-        audioSource.volume = sound.volume * (1f + UnityEngine.Random.Range(-sound.volumeVariance / 2f, sound.volumeVariance / 2f));
-		audioSource.pitch = sound.pitch * (1f + UnityEngine.Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
+        audioSource.volume = sound.volume * (1f + Random.Range(-sound.volumeVariance / 2f, sound.volumeVariance / 2f));
+        audioSource.pitch = sound.pitch * (1f + Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
         audioSource.Play();
     }
 }

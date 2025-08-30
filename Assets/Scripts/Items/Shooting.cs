@@ -36,9 +36,10 @@ public class Shooting : MonoBehaviour
             hitTransform = raycastHit.transform;
         }
         if (hitTransform == null) return;
-        var damagable = General.GetRootComponent<IDamagable>(hitTransform, false);
+        var damagable = hitTransform.GetComponent<IDamagable>();
         if (log) Debug.Log("Hit Object:" + hitTransform.gameObject.name, hitTransform.gameObject);
         Instantiate(damagable != null ? vfxHitGreen : vfxHitRed, hitPos, Quaternion.identity);
         damagable?.Damage(damage);
+        if (log) Debug.Log("Dealt " + damage.damage + " damage to " + damagable, hitTransform.gameObject);
     }
 }
