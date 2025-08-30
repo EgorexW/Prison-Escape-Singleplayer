@@ -29,7 +29,7 @@ public class PoweredLight : PoweredDevice, IDamagable
 
     void TryFlicker()
     {
-        if (PowerLevel != PowerLevel.MinimalPower){
+        if (GetPowerLevel() != PowerLevel.MinimalPower){
             return;
         }
         if (Time.time < nextFlickerTime){
@@ -56,13 +56,14 @@ public class PoweredLight : PoweredDevice, IDamagable
     {
         Break();
     }
-    
-    public override void SetPower(PowerLevel power)
+
+    protected override void OnPowerChanged()
     {
-        base.SetPower(power);
+        base.OnPowerChanged();
         if (broken){
             return;
         }
+        var power = GetPowerLevel();
         switch (power){
             case PowerLevel.FullPower:
                 LightOn();

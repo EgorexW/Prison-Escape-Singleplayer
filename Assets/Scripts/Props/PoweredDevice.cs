@@ -2,42 +2,32 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class PoweredDevice : MonoBehaviour, IPowerSystemDevice
+public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
 {
-    [SerializeField] bool addSelfToPowerSystem = true;
-    
-    [SerializeField] float empResistance = 1;
-    [FoldoutGroup("Events")] [SerializeField] UnityEvent<PowerLevel> onPowerChange;
-    public PowerLevel PowerLevel{ get; private set; }
-    public float EmpResistance => empResistance;
-    public UnityEvent<PowerLevel> OnPowerChange => onPowerChange;
-    public IPowerSource PowerSource{ get; set; }
+    IPowerSource powerSource;
+    public Transform Transform => transform;
+
+    [FoldoutGroup("Events")]
+    public UnityEvent onPowerChanged;
     
     protected void Start()
     {
-        if (addSelfToPowerSystem){
-            General.GetRootComponent<PowerSystem>(gameObject).AddDevice(this);
-        }
+        powerSource = General.GetRootComponent<IPowerSource>(gameObject);
+        powerSource.OnPowerChanged.AddListener(OnPowerChanged);
+        OnPowerChanged();
     }
     
-    public virtual void SetPower(PowerLevel power)
+    public PowerLevel GetPowerLevel()
     {
-        PowerLevel = power;
-        onPowerChange.Invoke(power);
-    }
-
-    public void EmpHit(float strenght)
-    {
-        SetPower(PowerLevel.NoPower);
-        General.CallAfterSeconds(ResetPower, strenght/EmpResistance);
-    }
-
-    void ResetPower()
-    {
-        if (PowerSource == null){
-            SetPower(PowerLevel.NoPower);
-            return;
+        if (powerSource == null){
+            Debug.LogError("No power source found in parent hierarchy");
+            return PowerLevel.NoPower;
         }
-        SetPower(PowerSource.GetPower(this));
+        return powerSource.GetPower(this);
+    }
+
+    protected virtual void OnPowerChanged()
+    {
+        onPowerChanged.Invoke();
     }
 }

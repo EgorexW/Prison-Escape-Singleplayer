@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.Events;
 
 public interface IElectric
@@ -7,19 +8,15 @@ public interface IElectric
     void EmpHit(float strenght);
 }
 
-public interface IPowerSystemDevice : IElectric
+public interface IPoweredDevice
 {
-    IPowerSource PowerSource{ get; set; }
-    PowerLevel PowerLevel{ get; }
-    
-    UnityEvent<PowerLevel> OnPowerChange{ get; }
-    
-    void SetPower(PowerLevel power);
+    Transform Transform{ get; }
 }
 
 public interface IPowerSource
 {
-    PowerLevel GetPower(IPowerSystemDevice powerSystemDevice);
+    PowerLevel GetPower(IPoweredDevice poweredDevice);
+    UnityEvent OnPowerChanged{ get; }
 }
 
 public enum PowerLevel
