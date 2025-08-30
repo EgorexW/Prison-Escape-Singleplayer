@@ -19,5 +19,5 @@ MonoBehaviour:
   pitch: 1
   pitchVariance: 0.1
   loop: 0
-  canOverride: 1
+  canOverride: 0
   mixerGroup: {fileID: 24300002, guid: 5191cb8a80c7b465b95762d2a2c3be3d, type: 2}

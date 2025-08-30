@@ -15477,10 +15477,8 @@ GameObject:
   - component: {fileID: 6389912274662940872}
   - component: {fileID: 2174782838524145473}
   - component: {fileID: 8997996946667749018}
-  - component: {fileID: 8997996946667749019}
   - component: {fileID: 8997996946667749020}
   - component: {fileID: 8997996946667749021}
-  - component: {fileID: 8997996946667749022}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -15751,24 +15749,6 @@ CapsuleCollider:
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &8997996946667749019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848057766947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9891255e37564941a831bd3e497dfbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onReceiveNoise:
-    m_PersistentCalls:
-      m_Calls: []
-  onReceiveDiscovery:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8997996946667749020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15789,19 +15769,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616685848057766947}
   m_Enabled: 1
---- !u!114 &8997996946667749022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848057766947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af96e5b80d93439781200fb54727192a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testClip: {fileID: 8300000, guid: 98beb48fb274e4482b0480e5d83030a4, type: 3}
 --- !u!224 &9058513276153008467
 RectTransform:
   m_ObjectHideFlags: 0
