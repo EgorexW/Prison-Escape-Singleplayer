@@ -1,9 +1,12 @@
+using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
 class KeycardReaderEffects : MonoBehaviour
 {
+    public KeycardReader keycardReader;
+    
     [BoxGroup("Text")][Required][SerializeField] TextMeshPro text;
     [BoxGroup("Text")][SerializeField] float textDisplayTime = 3;
     [BoxGroup("Text")][SerializeField] string defaultText = "<color=yellow>----</color>";
@@ -15,6 +18,16 @@ class KeycardReaderEffects : MonoBehaviour
     [BoxGroup("Audio")][SerializeField] PlayAudio accessGrantedSound;
     [BoxGroup("Audio")][SerializeField] PlayAudio accessDeniedSound;
 
+    void Start()
+    {
+        keycardReader.onPowerChanged.AddListener(OnPowerChanged);        
+    }
+
+    void OnPowerChanged()
+    {
+        bool working = keycardReader.GetPowerLevel() != PowerLevel.NoPower;
+        text.enabled = working;
+    }
 
     void Update()
     {
@@ -34,7 +47,7 @@ class KeycardReaderEffects : MonoBehaviour
     public void AccessGranted()
     {
         text.text = accessGrantedText;
-        lastTextChangeTime = Time.time;
+        defaultText = accessGrantedText;
         accessGrantedSound?.Play();
     }
 }

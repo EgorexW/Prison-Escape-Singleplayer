@@ -223,6 +223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   pickupable: 1
+  discoveryOnFirstPickup:
+    enabled: 0
+    value:
+      score: 0
   holdDuration: 1
   shooting: {fileID: 2820933438102179484}
 --- !u!114 &2820933438102179484
@@ -241,8 +245,8 @@ MonoBehaviour:
   damage:
     damage: 5
     permanentDamage: 1
-  fireRate: 20
-  ammo: 200
+  fireRate: 15
+  ammo: 100
   noisePerShot:
     intensity: 1
     source: {fileID: 0}

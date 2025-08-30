@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 
 [RequireComponent(typeof(BoxCollider))]
-class SubPowerSystem : MonoBehaviour
+public class SubPowerSystem : MonoBehaviour
 {
     [FormerlySerializedAs("bounds")] [GetComponent][SerializeField] new BoxCollider collider;
 

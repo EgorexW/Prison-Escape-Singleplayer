@@ -226,7 +226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reset Power
+  m_text: Activate Power
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.4
+  m_fontSize: 2.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -341,6 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3451122463969806805}
   - component: {fileID: 8041547407832231566}
+  - component: {fileID: 3858705220118975588}
   m_Layer: 0
   m_Name: Reset Power Button
   m_TagString: Untagged
@@ -386,6 +387,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.28827524, y: 0.14957614, z: 0.35454342}
   m_Center: {x: -0.0061273575, y: 0.070213266, z: -0.002375193}
+--- !u!114 &3858705220118975588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071446490195937244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf58b6dc0a85745998d549e924f7b66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetedSubSystem: {fileID: 0}
+  targetPowerLevel: 0
 --- !u!1 &8995199012264397833
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Door2 : MonoBehaviour, IDoor
 {
     [FoldoutGroup("BasicConfig")][SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
     [FoldoutGroup("BasicConfig")][SerializeField] float rotationAngle = -90;
-    [FoldoutGroup("BasicConfig")] public bool colliderWhenOpen = false;
+    [FoldoutGroup("BasicConfig")] public bool colliderWhileMoving = false;
     [FoldoutGroup("BasicConfig")] public float moveSpeed = 90;
     
     [Range(0, 1)][SerializeField] float beginOpenChance = 0;
@@ -49,16 +49,16 @@ public class Door2 : MonoBehaviour, IDoor
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
         foreach (var collider in colliders)
         {
-            collider.enabled = GetState() == DoorState.Closed || colliderWhenOpen;
+            collider.enabled = GetState() != DoorState.Moving || colliderWhileMoving;
         }
     }
 
-    [Button]
+    [FoldoutGroup("Debug")][Button]
     public void Open()
     {
         targetRotation = openRotation;
     }
-    [Button]
+    [FoldoutGroup("Debug")][Button]
     public void Close()
     {
         targetRotation = closedRotation;
