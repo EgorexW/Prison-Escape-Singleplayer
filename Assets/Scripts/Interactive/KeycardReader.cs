@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class KeycardReader : PoweredDevice, IInteractive
 {
-    [BoxGroup("References")][Required][SerializeField] AccessLevel accessLevel;
+    [BoxGroup("References")][Required][SerializeField] public AccessLevel accessLevel;
     [BoxGroup("References")][Required][SerializeField] DoorInteract doorToUnlock;
     
     [SerializeField] KeycardReaderEffects effects;
