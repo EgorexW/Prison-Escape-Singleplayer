@@ -102,9 +102,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   pickupable: 1
+  discoveryOnFirstPickup:
+    enabled: 0
+    value:
+      score: 0
   holdDuration: 1
-  effectPrefab: {fileID: 7714404102179766837, guid: 3539bb1fda4384a8788e7561f721b51a,
-    type: 3}
+  effectPrefab: {fileID: 163066, guid: 98a2726d426f74e99b3ee74534f6a74e, type: 3}
   timeToExplode: 3
   radius: 3
   damage:

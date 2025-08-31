@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2851956841060903381}
   - component: {fileID: 4856611922499971837}
   m_Layer: 0
-  m_Name: Base Room
+  m_Name: Small Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +846,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2075976466409310653, guid: d1b02505f78e94a6b91d31c03e9430b6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075976466409310653, guid: d1b02505f78e94a6b91d31c03e9430b6,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4658293404102124436, guid: d1b02505f78e94a6b91d31c03e9430b6,
         type: 3}
       propertyPath: nodeType
@@ -857,7 +867,9 @@ PrefabInstance:
       value: Level Node
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2032236941820845529, guid: d1b02505f78e94a6b91d31c03e9430b6, type: 3}
+    - {fileID: 5282788865264226861, guid: d1b02505f78e94a6b91d31c03e9430b6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b02505f78e94a6b91d31c03e9430b6, type: 3}
@@ -904,7 +916,7 @@ PrefabInstance:
     - target: {fileID: 8061539004898683035, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 8061539004898683035, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}

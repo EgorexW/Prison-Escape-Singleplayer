@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2713667900062176897
 Transform:
   m_ObjectHideFlags: 0
@@ -311,6 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c87ea8a937140ff9b4891a6254e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPowerChanged:
+    m_PersistentCalls:
+      m_Calls: []
   accessLevel: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
   doorToUnlock: {fileID: 9198443633173221963}
   effects: {fileID: 3528416827212876842}
@@ -382,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2192e930fec242c09007dcc2a7aca458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keycardReader: {fileID: 0}
   text: {fileID: 5125291107136780466}
   textDisplayTime: 3
   defaultText: <color=yellow>----</color>
@@ -554,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationAxis: {x: 0, y: 1, z: 0}
   rotationAngle: -90
-  colliderWhenOpen: 0
+  colliderWhileMoving: 0
   moveSpeed: 90
   beginOpenChance: 0
 --- !u!65 &3643929164873241981
@@ -607,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 5171235948492802812}
-  unlocked: 0
+  unlocked: 1
 --- !u!1001 &1423459223045869851
 PrefabInstance:
   m_ObjectHideFlags: 0
