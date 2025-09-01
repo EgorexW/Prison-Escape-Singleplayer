@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Basic Loot
   m_EditorClassIdentifier: 
-  spawnChance: 0.2
   gameObjects:
   - value: 3
     Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
@@ -27,7 +26,4 @@ MonoBehaviour:
       type: 3}
   - value: 0.5
     Object: {fileID: 7414882915481570139, guid: a287bdfe7d95f43dfbfdbfe9ae38965f,
-      type: 3}
-  - value: 1
-    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
       type: 3}

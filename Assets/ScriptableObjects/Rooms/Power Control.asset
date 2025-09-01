@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Power Control
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 2270871401134883441, guid: 17ff299cad331464eb8be9c74c399068, type: 3}
+  - {fileID: 251163510702948846, guid: d37fc6f118ab2441faa29eecacdd6452, type: 3}
   traits:
   - {fileID: 11400000, guid: e8d5e70db10464e1a9249b11c6d972d0, type: 2}

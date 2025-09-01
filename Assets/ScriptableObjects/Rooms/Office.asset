@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Office
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 2270871401134883441, guid: 23940b76b181a400291f3344bb9d1c3d, type: 3}
+  - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
   traits:
   - {fileID: 11400000, guid: 1cb28fa150d2e4577ad8149fc6bed0b0, type: 2}

@@ -14,7 +14,7 @@ public class LootSpawner : MonoBehaviour
 
     protected void SpawnGameObject()
     {
-        if (Random.value > spawnChance * spawnTable.spawnChance){
+        if (Random.value > spawnChance){
             return;
         }
         var gameObject = spawnTable.GetGameObject();
