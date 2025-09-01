@@ -20,7 +20,8 @@ class KeycardReaderEffects : MonoBehaviour
 
     void Start()
     {
-        keycardReader.onPowerChanged.AddListener(OnPowerChanged);        
+        keycardReader.onPowerChanged.AddListener(OnPowerChanged); 
+        OnPowerChanged();
     }
 
     void OnPowerChanged()

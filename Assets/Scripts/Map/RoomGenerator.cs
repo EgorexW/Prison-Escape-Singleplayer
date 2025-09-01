@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(RoomChooser))]
 public class RoomGenerator : MonoBehaviour
 {
     private const int GenerationTries = 10;
     [SerializeField] Optional<int> seed;
 
-    private void Awake()
+    public void Generate()
     {
         if (seed){
             Random.InitState(seed);
@@ -22,10 +23,10 @@ public class RoomGenerator : MonoBehaviour
         } 
         Debug.LogError("Generation Failed", this);
     }
-    void GenerateRooms(Dictionary<RoomSpawner, Room> matchedRoomWithSpawner){
+    void GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner){
         foreach (var match in matchedRoomWithSpawner)
         {
-            match.Key.SpawnRoom(match.Value.GetGameObject());
+            match.Key.SpawnRoom(match.Value);
         }
     }
 }

@@ -7,25 +7,25 @@ public class RoomChooser : SerializedMonoBehaviour
 {
     const int MAX_GENERATION_LOOPS = 1000;
 
-    [SerializeField] List<Room> necessaryRooms = new List<Room>();
-    [SerializeField] Dictionary<Room, int> optionalRooms = new();
+    [SerializeField] List<GameObject> necessaryRooms = new();
+    [SerializeField] Dictionary<GameObject, int> optionalRooms = new();
     int necessaryRoomsCount => necessaryRooms.Count;
-    int optionalRoomsCount => optionalRooms.Sum(x => x.Value);
+    int optionalRoomsCount => optionalRooms.Count != 0 ? optionalRooms.Sum(x => x.Value) : 0;
     [ShowInInspector] int allRooms => necessaryRoomsCount + optionalRoomsCount;
     
     [SerializeField][MinMaxSlider("necessaryRoomsCount", "allRooms")] Vector2Int roomsToSpawn = new(10, 15);
 
-    [SerializeField] Room fillerRoom;
+    [SerializeField] GameObject fillerRoom;
 
     [ShowInInspector] int roomSpawners => GetComponentsInChildren<RoomSpawner>().Length;
-    public Dictionary<RoomSpawner, Room> ChooseRooms()
+    public Dictionary<RoomSpawner, GameObject> ChooseRooms()
     {
         List<RoomSpawner> spawners = new(GetComponentsInChildren<RoomSpawner>());
-        List<Room> rooms = new();
-        Dictionary<RoomSpawner, Room> matchedRoomsWithSpawners = new();
+        List<GameObject> rooms = new();
+        Dictionary<RoomSpawner, GameObject> matchedRoomsWithSpawners = new();
         rooms.AddRange(necessaryRooms);
         var roomsNr = Random.Range(roomsToSpawn.x, roomsToSpawn.y);
-        var optionalRoomsLeft = new Dictionary<Room, int>(optionalRooms);
+        var optionalRoomsLeft = new Dictionary<GameObject, int>(optionalRooms);
         while (rooms.Count < roomsNr){
             var optionalRoom = optionalRoomsLeft.WeightedRandom();
             rooms.Add(optionalRoom);
@@ -43,7 +43,7 @@ public class RoomChooser : SerializedMonoBehaviour
             var matched = false;     
             foreach (var spawner in spawners.ToArray())
             {
-                if (!spawner.HasTraits(room.traits)){
+                if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
                     continue;
                 }
                 spawners.Remove(spawner);
@@ -57,7 +57,7 @@ public class RoomChooser : SerializedMonoBehaviour
             }
             foreach (var spawner in matchedRoomsWithSpawners.Keys.ToArray())
             {
-                if (!spawner.HasTraits(room.traits)){
+                if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
                     continue;
                 }
                 rooms.Add(matchedRoomsWithSpawners[spawner]);

@@ -23,6 +23,7 @@ public class LootSpawner2 : MonoBehaviour
         SpawnGameObjects();
     }
 
+    [Button][DisableInEditorMode]
     protected void SpawnGameObjects()
     {
         if (spawnTable == null){
@@ -47,6 +48,5 @@ public class LootSpawner2 : MonoBehaviour
             }
             Instantiate(spawnedObject, spawnPoint.position, rotation, transform);
         }
-        Destroy(this.gameObject);
     }
 }

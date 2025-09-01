@@ -37,7 +37,7 @@ public class RoomConfig : MonoBehaviour
 
     void Reset()
     {
-        keycardReaders = GetComponentsInChildren<KeycardReader>();
+        keycardReaders = GetComponentsInChildren<KeycardReader>(includeInactive: true);
     }
 }
 

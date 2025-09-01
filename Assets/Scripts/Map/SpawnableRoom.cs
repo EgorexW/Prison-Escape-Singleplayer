@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnableRoom : MonoBehaviour
 {
     [SerializeField] Transform joinPoint;
     [SerializeField] Transform dirPoint;
+    [SerializeField] public RoomTrait[] traits;
 
     public void SetPos(Vector3 joinPos, Vector3 dir){
         SetJoinPos(joinPos);

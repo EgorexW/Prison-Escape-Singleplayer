@@ -244,8 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf58b6dc0a85745998d549e924f7b66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetedSubSystem: {fileID: 0}
-  targetPowerLevel: 0
+  text: {fileID: 2818079407741994837}
 --- !u!1001 &2089545295640675231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,6 +327,11 @@ PrefabInstance:
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: name
+      value: Power Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: roomName
       value: Power Room
       objectReference: {fileID: 0}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,

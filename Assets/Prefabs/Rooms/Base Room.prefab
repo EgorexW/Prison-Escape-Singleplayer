@@ -51,6 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinPoint: {fileID: 3966772034959211773}
   dirPoint: {fileID: 112089464000875793}
+  traits:
+  - {fileID: 11400000, guid: e8d5e70db10464e1a9249b11c6d972d0, type: 2}
 --- !u!114 &6002658007307836836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +66,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 2298071587007408799}
-  keycardReaders: []
+  keycardReaders:
+  - {fileID: 4116062452299303202}
+  - {fileID: 1404736116640807501}
   weakDoor: {fileID: 5016415336239228042}
   strongDoor: {fileID: 3696664358433919925}
   roomName: Room
@@ -402,6 +406,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d62e153850724179a88db4c6cc9bbb0, type: 3}
+--- !u!114 &1404736116640807501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1809897331289534155, guid: 1d62e153850724179a88db4c6cc9bbb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 747786682681119878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c87ea8a937140ff9b4891a6254e5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4203842227509373204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3474421821435182482, guid: 1d62e153850724179a88db4c6cc9bbb0,
@@ -1250,3 +1266,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9211774151354512096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4116062452299303202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5100884265743416258, guid: 958c01ed82f414951bd1e15d2e206172,
+    type: 3}
+  m_PrefabInstance: {fileID: 9211774151354512096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c87ea8a937140ff9b4891a6254e5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

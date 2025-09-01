@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,35 @@ using UnityEngine.Events;
 
 public class MainPowerSystem : MonoBehaviour, IPowerSource
 {
+    [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
-    
+
+    public UnityEvent OnPowerChanged{ get; } = new UnityEvent();
+    public bool GlobalMinimalPower{ get; private set; } = false;
+
+    void Start()
+    {
+        startPowerDistribution.Shuffle();
+        for (int i = 0; i < subPowerSystems.Count; i++){
+            ChangePower(subPowerSystems[i], startPowerDistribution[i % startPowerDistribution.Count]);
+        }
+    }
+
     public PowerLevel GetPower(IPoweredDevice poweredDevice)
     {
         foreach (var subSystem in subPowerSystems){
             if (subSystem.InBounds(poweredDevice.Transform.position)){
-                return subSystem.power;
+                var subSystemPower = subSystem.power;
+                if (GlobalMinimalPower && subSystemPower == PowerLevel.NoPower){
+                    subSystemPower = PowerLevel.MinimalPower;
+                }
+                return subSystemPower;
             }
         }
         Debug.LogError("Device not in any subsystem bounds", poweredDevice.Transform);
         return PowerLevel.NoPower;
     }
 
-    public UnityEvent OnPowerChanged{ get; } = new UnityEvent();
 
     public void ChangePower(SubPowerSystem targetedSubSystem, PowerLevel fullPower)
     {
@@ -36,5 +52,11 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
         Debug.LogError("No subsystem found at position " + targetedSubSystem);
         }
         ChangePower(subSystem, targetPowerLevel);
+    }
+    
+    public void SetGlobalMinimalPower(bool minimalPower)
+    {
+        GlobalMinimalPower = minimalPower;
+        OnPowerChanged.Invoke();
     }
 }

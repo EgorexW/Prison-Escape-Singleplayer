@@ -1,13 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface IElectric
-{
-    float EmpResistance{ get; }
-    
-    void EmpHit(float strenght);
-}
-
 public interface IPoweredDevice
 {
     Transform Transform{ get; }

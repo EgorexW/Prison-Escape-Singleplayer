@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu()]
-public class RoomTrait : Trait
+public class RoomTrait : ScriptableObject
 {
 
 }
