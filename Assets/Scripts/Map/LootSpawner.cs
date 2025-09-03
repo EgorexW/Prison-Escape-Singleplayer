@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class LootSpawner2 : MonoBehaviour
+public class LootSpawner : MonoBehaviour
 { 
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] [MinMaxSlider(0, "@SpawnPoints.Count")] Vector2Int spawnNr = new Vector2Int(1, 1);

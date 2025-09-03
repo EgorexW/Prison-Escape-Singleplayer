@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class LootSpawner : MonoBehaviour
+public class LootSpawnerObsolete : MonoBehaviour
 { 
     [InlineEditor][FormerlySerializedAs("lootTable")] [FormerlySerializedAs("gameObjectCollection")] [SerializeField] SpawnTable spawnTable;
     [SerializeField][Range(0, 1)] float spawnChance = 1;

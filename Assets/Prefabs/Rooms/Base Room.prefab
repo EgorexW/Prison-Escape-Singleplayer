@@ -61,7 +61,7 @@ MonoBehaviour:
   roomName: Room
   accessLevel: {fileID: 0}
   doorType: 0
-  onUnlock:
+  onOpen:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &3478086276770758984
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ada991de47b42809828ca84b92e536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   trapConfig: {fileID: 3478086276770758984}
   roomConfig: {fileID: 6002658007307836836}
   poisonTrapPrefab: {fileID: 6370666454607343223, guid: d7ffe6c7a7630469ca69a710dfee59ea,
