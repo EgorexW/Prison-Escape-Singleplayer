@@ -40,7 +40,6 @@ Transform:
   - {fileID: 8949974598284427853}
   - {fileID: 7480092782162933025}
   - {fileID: 224940163667806229}
-  - {fileID: 840334365078485578}
   - {fileID: 7024548684190488428}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,6 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinPoint: {fileID: 3966772034959211773}
   dirPoint: {fileID: 112089464000875793}
+  traits: []
 --- !u!1 &3302826684301696424
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +446,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4432933183029582577}
+  - {fileID: 840334365078485578}
   m_Father: {fileID: 2851956841060903381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &118522059983938670
@@ -601,7 +602,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2851956841060903381}
+    m_TransformParent: {fileID: 9004464838670190443}
     m_Modifications:
     - target: {fileID: 124860, guid: 1c1071d1dd148074da4959363c7f1973, type: 3}
       propertyPath: m_Name
@@ -625,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475634, guid: 1c1071d1dd148074da4959363c7f1973, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475634, guid: 1c1071d1dd148074da4959363c7f1973, type: 3}
       propertyPath: m_LocalPosition.z

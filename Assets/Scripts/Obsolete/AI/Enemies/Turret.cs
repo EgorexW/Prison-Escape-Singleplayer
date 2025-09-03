@@ -26,7 +26,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
 
     void Start()
     {
-        targets = new List<GameObject>{AIDirector.i.Player.gameObject};
+        targets = new List<GameObject>{GameDirector.i.Player.gameObject};
     }
 
     public GameObject GameObject => gameObject;
@@ -58,7 +58,7 @@ public class Turret : TurretBase, IDamagable, IElectric, IAIObject
         if (health.Alive){
             return;
         }
-        AIDirector.i.RemoveObject(this);
+        AIDirectorObsolete.i.RemoveObject(this);
         gameObject.SetActive(false);
     }
 

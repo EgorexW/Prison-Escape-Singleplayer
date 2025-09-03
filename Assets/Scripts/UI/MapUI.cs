@@ -32,7 +32,7 @@ public class MapUI : MonoBehaviour
     [Button]
     public void GenerateMap()
     {
-        GenerateMap(baseLevelNodes, AIDirector.i.GetActiveAIObjects());
+        GenerateMap(baseLevelNodes, AIDirectorObsolete.i.GetActiveAIObjects());
     }
     public void GenerateMap(LevelNodes levelNodes, List<IAIObject> aiObjects)
     {
@@ -40,7 +40,7 @@ public class MapUI : MonoBehaviour
         var trueScale = scale * rect;
         DrawRooms(levelNodes, trueScale);
         DrawAIObjects(aiObjects, trueScale);
-        var position = AIDirector.i.Player.transform.position;
+        var position = GameDirector.i.Player.transform.position;
         var playerPos = new Vector2(position.x, position.z);
         playerPointer.localPosition = playerPos * trueScale;
         playerPointer.sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;

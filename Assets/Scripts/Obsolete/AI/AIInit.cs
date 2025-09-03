@@ -4,12 +4,12 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[RequireComponent(typeof(AIDirector))]
+[RequireComponent(typeof(GameDirector))]
 public class AIInit : MonoBehaviour
 {
     [SerializeField] float initDelay = 2;
     
-    [SerializeField][GetComponent] AIDirector aiDirector;
+    [FormerlySerializedAs("aiDirector")] [SerializeField][GetComponent] AIDirectorObsolete gameDirector;
     
     [SerializeField][Required] LevelNodes nodes;
     void Start()
@@ -22,7 +22,7 @@ public class AIInit : MonoBehaviour
         foreach (var spawner in GetComponentsInChildren<IAISpawner>()){
             spawner.Spawn(nodes.CorridorNodes.Copy());
         }
-        aiDirector.ResolveObjects();
+        gameDirector.ResolveObjects();
     }
 }
 

@@ -13,7 +13,7 @@ public class AIDoor : MonoBehaviour, IAIObject
     [SerializeField] AIObjectStats stats;
     [SerializeField] Discovery noticedScore = new Discovery(){ score = 1};
 
-    AIDirector aiDirector;
+    GameDirector gameDirector;
     float baseDuration;
 
     public GameObject GameObject => gameObject;
@@ -39,8 +39,8 @@ public class AIDoor : MonoBehaviour, IAIObject
     }
 
 
-    public void Init(AIDirector aiDirector)
+    public void Init(GameDirector gameDirector)
     {
-        this.aiDirector = aiDirector;
+        this.gameDirector = gameDirector;
     }
 }

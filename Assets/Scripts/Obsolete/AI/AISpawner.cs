@@ -27,7 +27,7 @@ public class AISpawner : MonoBehaviour, IAISpawner
             var obj = Instantiate(spawnTable.GetGameObject(), node.transform.position, rotation, transform);
             var aiObject = obj.GetComponentInChildren<IAIObject>();
             if (aiObject != null){
-                AIDirector.i.AddObject(aiObject);
+                AIDirectorObsolete.i.AddObject(aiObject);
             }
             spawnNr--;
             if (spawnNr == 0){

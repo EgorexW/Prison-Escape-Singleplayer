@@ -11,6 +11,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
 
+    public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
     public UnityEvent OnPowerChanged{ get; } = new UnityEvent();
     public bool GlobalMinimalPower{ get; private set; } = false;
 

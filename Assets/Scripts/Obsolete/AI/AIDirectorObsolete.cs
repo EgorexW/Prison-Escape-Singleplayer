@@ -4,9 +4,9 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class AIDirector : SerializedMonoBehaviour
+public class AIDirectorObsolete : SerializedMonoBehaviour
 {
-    public static AIDirector i { get; private set; }
+    public static AIDirectorObsolete i { get; private set; }
 
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     

@@ -35,7 +35,7 @@ public class FireTrap : MonoBehaviour, IAIObject
     }
     public void Activate()
     {
-        AIDirector.i.PlayerDiscovery(noticedScore);
+        GameDirector.i.PlayerDiscovery(noticedScore);
         var objectsInArea = Physics.OverlapBox(transform.position, areaSize / 2);
         var damagablesHit = General.GetUniqueRootComponents<IDamagable>(objectsInArea);
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
@@ -44,7 +44,7 @@ public class FireTrap : MonoBehaviour, IAIObject
         {
             damagable.Damage(damage);
         }
-        AIDirector.i.RemoveObject(this);
+        AIDirectorObsolete.i.RemoveObject(this);
         gameObject.SetActive(false);
     }
 }

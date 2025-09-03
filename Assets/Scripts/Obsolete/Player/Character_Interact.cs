@@ -15,6 +15,9 @@ public partial class Player
     public IInteractive GetInteractive(){
         var raycasts = new RaycastHit[10];
         Physics.RaycastNonAlloc(new Ray(aim.position, aim.forward), raycasts, maxInteractDis);
+        if (log){
+            Debug.DrawRay(aim.position, aim.forward * maxInteractDis, Color.red, 0.1f);
+        }
         IInteractive interactive = new DummyInteractive();
         foreach(var raycast in raycasts){
             if (raycast.collider == null){
@@ -35,6 +38,9 @@ public partial class Player
 
     public void Interact(float duration = 0){
         var interactive = GetInteractive();
+        if (log){
+            Debug.Log("Interactive hit: " + interactive);
+        }
         if (interactive.HoldDuration > duration){
             if (holdCoroutine != null){
                 return;

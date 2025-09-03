@@ -23,7 +23,7 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
             return;
         }
         if (discoveryOnFirstPickup){
-            AIDirector.i.PlayerDiscovery(discoveryOnFirstPickup);
+            GameDirector.i.PlayerDiscovery(discoveryOnFirstPickup);
             discoveryOnFirstPickup.Enabled = false;
         }
         player.PickupItem(this);
