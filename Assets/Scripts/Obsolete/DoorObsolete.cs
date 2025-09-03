@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Door : MonoBehaviour, IDoor, IInteractive
+public class DoorObsolete : MonoBehaviour, IDoor, IInteractive
 {
     [FoldoutGroup("BasicConfig")][SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
     [FoldoutGroup("BasicConfig")][SerializeField] float rotationAngle = -90;

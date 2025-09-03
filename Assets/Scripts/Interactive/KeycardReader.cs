@@ -2,17 +2,18 @@ using System;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class KeycardReader : PoweredDevice, IInteractive
 {
     [BoxGroup("References")][Required][SerializeField] public AccessLevel accessLevel;
-    [BoxGroup("References")][Required][SerializeField] DoorInteract doorToUnlock;
+    [BoxGroup("References")][Required][SerializeField] public DoorLock doorLock;
     
     [SerializeField] KeycardReaderEffects effects;
 
     void Awake()
     {
-        doorToUnlock.unlocked = false;
+        doorLock.unlocked = false;
         if (effects != null){
             effects.keycardReader = this;
         }
@@ -29,7 +30,7 @@ public class KeycardReader : PoweredDevice, IInteractive
             return;
         }
         effects?.AccessGranted();
-        doorToUnlock.unlocked = true;
+        doorLock.unlocked = true;
     }
 
     public float HoldDuration => 1;

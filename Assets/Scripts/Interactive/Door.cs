@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Door2 : MonoBehaviour, IDoor
+public class Door : MonoBehaviour, IDoor
 {
     [FoldoutGroup("BasicConfig")][SerializeField] Vector3 rotationAxis = new Vector3(0, 1, 0);
     [FoldoutGroup("BasicConfig")][SerializeField] float rotationAngle = -90;
@@ -16,6 +16,9 @@ public class Door2 : MonoBehaviour, IDoor
     [FoldoutGroup("Debug")][ShowInInspector] Quaternion openRotation;
     [FoldoutGroup("Debug")][ShowInInspector] Collider[] colliders;
     [FoldoutGroup("Debug")][ShowInInspector] Quaternion targetRotation;
+
+    [FoldoutGroup("Events")] public UnityEvent onOpen;
+    [FoldoutGroup("Events")] public UnityEvent onClose;
 
     void Awake(){
         colliders = GetComponentsInChildren<Collider>();
@@ -57,11 +60,13 @@ public class Door2 : MonoBehaviour, IDoor
     public void Open()
     {
         targetRotation = openRotation;
+        onOpen.Invoke();
     }
     [FoldoutGroup("Debug")][Button]
     public void Close()
     {
         targetRotation = closedRotation;
+        onClose.Invoke();
     }
 
     public void ChangeState()

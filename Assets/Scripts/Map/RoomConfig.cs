@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class RoomConfig : MonoBehaviour
 {
     [FoldoutGroup("References")][Required][SerializeField] TextMeshPro nameText;
     [FoldoutGroup("References")][Required][SerializeField] KeycardReader[] keycardReaders;
+    [FoldoutGroup("References")][Required][SerializeField] List<DoorLock> doorLocks; //unused for now
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject strongDoor;
 
@@ -16,8 +18,13 @@ public class RoomConfig : MonoBehaviour
     [SerializeField] AccessLevel accessLevel;
     [SerializeField] DoorType doorType = DoorType.Weak;
     
+    [FoldoutGroup("Events")] public UnityEvent onOpen;
+
     void Awake()
     {
+        foreach (var door in GetComponentsInChildren<Door>(true)){
+            door.onOpen.AddListener(onOpen.Invoke);
+        }
         ApplyConfig();
     }
 
@@ -38,6 +45,10 @@ public class RoomConfig : MonoBehaviour
     void Reset()
     {
         keycardReaders = GetComponentsInChildren<KeycardReader>(includeInactive: true);
+        doorLocks.Clear();
+        foreach (var keycardReader in keycardReaders){
+            doorLocks.Add(keycardReader.doorLock);
+        }
     }
 }
 

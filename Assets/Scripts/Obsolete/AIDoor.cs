@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(Door))]
+[RequireComponent(typeof(DoorObsolete))]
 public class AIDoor : MonoBehaviour, IAIObject
 {
-    [GetComponent] [SerializeField] Door door;
+    [FormerlySerializedAs("door")] [GetComponent] [SerializeField] DoorObsolete doorObsolete;
 
     [SerializeField] List<GameObject> workingLights;
 
@@ -22,7 +23,7 @@ public class AIDoor : MonoBehaviour, IAIObject
     void Awake()
     {
         workingLights.ForEach(light => light.SetActive(false));
-        baseDuration = door.holdDuration;
+        baseDuration = doorObsolete.holdDuration;
     }
 
     public AIObjectStats Stats => stats;
@@ -31,10 +32,10 @@ public class AIDoor : MonoBehaviour, IAIObject
     {
         IsActive = active;
         if (active){
-            door.Close();
+            doorObsolete.Close();
         }
         // door.SetLockState(active);
-        door.holdDuration = active ? longDurationMultiplier * baseDuration : baseDuration;
+        doorObsolete.holdDuration = active ? longDurationMultiplier * baseDuration : baseDuration;
         workingLights.ForEach(light => light.SetActive(active));
     }
 

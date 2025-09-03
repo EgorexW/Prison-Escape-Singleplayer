@@ -315,7 +315,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   accessLevel: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
-  doorToUnlock: {fileID: 9198443633173221963}
+  doorLock: {fileID: 9198443633173221963}
   effects: {fileID: 3528416827212876842}
 --- !u!65 &3340866816696786431
 BoxCollider:

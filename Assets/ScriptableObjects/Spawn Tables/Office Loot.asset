@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Office Loot
   m_EditorClassIdentifier: 
-  spawnChance: 0.9
   gameObjects:
   - value: 3
     Object: {fileID: 7414882915481570139, guid: a287bdfe7d95f43dfbfdbfe9ae38965f,
       type: 3}
-  - value: 2
+  - value: 3
     Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 1
     Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
