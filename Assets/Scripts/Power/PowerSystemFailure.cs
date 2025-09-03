@@ -26,5 +26,6 @@ public class PowerSystemFailure : MonoBehaviour
     {
         SubPowerSystem targetedSubSystem = mainPowerSystem.SubPowerSystems.Random();
         mainPowerSystem.ChangePower(targetedSubSystem, PowerLevel.NoPower);
+        lastPowerLossTime = Time.time;
     }
 }
