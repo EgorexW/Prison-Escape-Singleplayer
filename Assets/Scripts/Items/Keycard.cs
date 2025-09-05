@@ -8,9 +8,4 @@ public class Keycard : Item, IKeycard
     {
         return accessLevel.HasAccess(requestedAccessLevel);
     }
-
-    public bool CanOpenWhenHeld()
-    {
-        return true;
-    }
 }

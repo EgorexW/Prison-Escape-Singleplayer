@@ -30,7 +30,9 @@ public class RoomTraps : MonoBehaviour
 
     void CreatePoisonTrap()
     {
-        trap = Instantiate(poisonTrapPrefab, poisonTrapSpawnPoint.position, Quaternion.identity, transform).GetComponent<ITrap>();
+        var obj = Instantiate(poisonTrapPrefab, poisonTrapSpawnPoint.position, Quaternion.identity, transform);
+        obj.transform.localRotation = Quaternion.identity;
+        trap = obj.GetComponent<ITrap>();
     }
 
     void ActivateTrap()

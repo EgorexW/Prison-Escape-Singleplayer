@@ -14,5 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
   - {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
-  - {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856, type: 2}
-  - {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953, type: 2}

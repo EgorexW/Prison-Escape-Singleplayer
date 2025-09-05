@@ -5,9 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Door))]
 public class DoorLock : MonoBehaviour, IInteractive
 {
-    [GetComponent][SerializeField] Door door;
+    [GetComponent][SerializeField] public Door door;
+    
+    public float resistance = 1;
     
     public bool unlocked = false;
+
     public void Interact(Player player)
     {
         if (unlocked)
@@ -16,5 +19,5 @@ public class DoorLock : MonoBehaviour, IInteractive
         }
     }
 
-    public float HoldDuration => 0;
+public float HoldDuration => 0;
 }

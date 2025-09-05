@@ -29,7 +29,7 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
         player.PickupItem(this);
     }
 
-    public virtual void Use(Player player, bool alternative = false)
+    public virtual void Use(Player playerTmp, bool alternative = false)
     {
         // Implement item usage behavior here.
     }
@@ -46,7 +46,7 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
         // Implement hold use behavior here, if necessary
     }
 
-    public void StopUse(Player player, bool alternative = false)
+    public virtual void StopUse(Player player, bool alternative = false)
     {
         // Implement stop use behavior here, if necessary
     }

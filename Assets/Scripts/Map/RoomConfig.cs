@@ -32,11 +32,9 @@ public class RoomConfig : MonoBehaviour
     void ApplyConfig()
     {
         nameText.text = roomName;
-        if (accessLevel != null){
-            foreach (var keycardReader in keycardReaders){
-                keycardReader.gameObject.SetActive(true);
-                keycardReader.accessLevel = accessLevel;
-            }
+        foreach (var keycardReader in keycardReaders){
+            keycardReader.gameObject.SetActive(accessLevel != null);
+            keycardReader.accessLevel = accessLevel;
         }
         weakDoor.SetActive(doorType == DoorType.Weak);
         strongDoor.SetActive(doorType == DoorType.Strong);

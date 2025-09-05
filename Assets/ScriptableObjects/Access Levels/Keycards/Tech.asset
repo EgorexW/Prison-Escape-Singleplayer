@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
-  m_Name: Staff
+  m_Name: Tech
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
-  - {fileID: 11400000, guid: 855b66565622d4555ab044bad6cab919, type: 2}
+  - {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953, type: 2}

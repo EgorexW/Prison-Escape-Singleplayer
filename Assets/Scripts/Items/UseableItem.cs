@@ -20,15 +20,15 @@ public abstract class UseableItem : Item
 
     protected abstract void Apply();
 
-    public override void Use(Player player, bool alternative = false)
+    public override void Use(Player playerTmp, bool alternative = false)
     {
         if (!alternative){
-            this.player = player;
-            base.Use(player);
+            this.player = playerTmp;
+            base.Use(playerTmp);
             startUseTime = Time.time;
         } else{
-            base.StopUse(player);
-            player.onFinishInteraction.Invoke();
+            base.StopUse(playerTmp);
+            playerTmp.onFinishInteraction.Invoke();
             this.player = null;
             startUseTime = Mathf.Infinity;
         }

@@ -9,9 +9,9 @@ public class Grenade : Item
     [SerializeField] float radius = 3f;
     [SerializeField] Damage damage = new Damage(30f, 50f);
 
-    public override void Use(Player player, bool alternative = false)
+    public override void Use(Player playerTmp, bool alternative = false)
     {
-        player.ThrowItem(this);
+        playerTmp.ThrowItem(this);
         pickupable = false;
         General.CallAfterSeconds(Explode, timeToExplode);
     }
