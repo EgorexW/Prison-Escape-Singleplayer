@@ -35,4 +35,9 @@ public partial class Player
     {
         onHealthChange.Invoke();
     }
+
+    public void AddProtection(DamageType protectionType)
+    {
+        health.damagedBy &= ~protectionType;
+    }
 }

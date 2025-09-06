@@ -170,7 +170,8 @@ MonoBehaviour:
     value:
       score: 0
   holdDuration: 1
-  effectPrefab: {fileID: 6565534021384309587}
+  effectPrefab: {fileID: 7714404102179766837, guid: 3539bb1fda4384a8788e7561f721b51a,
+    type: 3}
   timeToExplode: 3
   radius: 3
   damage:

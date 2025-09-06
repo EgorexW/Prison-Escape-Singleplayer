@@ -265,6 +265,18 @@ public class General : MonoBehaviour
         var flatDefaultRotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
         return Quaternion.RotateTowards(rotation, flatDefaultRotation, delta);
     }
+
+    public static List<T> GetComponentsFromCollider<T>(Collider[] hits)
+    {
+        var components = new List<T>();
+        foreach (var hit in hits){
+            var component = GetComponentFromCollider<T>(hit);
+            if (component != null){
+                components.Add(component);
+            }
+        }
+        return components;
+    }
 }
 
 public interface INamed

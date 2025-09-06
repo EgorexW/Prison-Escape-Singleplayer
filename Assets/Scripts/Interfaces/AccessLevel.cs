@@ -17,6 +17,7 @@ public class AccessLevel : ScriptableObject
     HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
     {
         HashSet<AccessLevel> allInheretedAccessLevels = new();
+        allInheretedAccessLevels.Add(mainAccessLevel);
         foreach(var accessLevel in mainAccessLevel.GetInheretedAccessLevels()){
             if (accessLevel == null){
                 Debug.LogWarning("Access Level is null", this);

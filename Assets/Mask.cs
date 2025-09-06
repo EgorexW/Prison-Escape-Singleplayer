@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class Mask : MonoBehaviour
+public class Mask : UseableItem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] DamageType protectionType;
+    
+    protected override void Apply()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.AddProtection(protectionType);
+        player.RemoveItem(this);
+        Destroy(gameObject);
     }
 }

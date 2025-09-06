@@ -21,15 +21,18 @@ public struct Health
     public void Heal(Damage damage)
     {
         damage.Invert();
-        Damage(damage);
+        Damage(damage, true);
     }
-    public void Damage(Damage damage){
-        if (damagedBy == 0){
-            Debug.LogWarning("This entity is invulnerable");
-            return;
-        }
-        if ((damagedBy & damage.damageType) == 0){
-            return;
+    public void Damage(Damage damage, bool ignoreImmunities = false){
+        if (!ignoreImmunities){
+            if (damagedBy == 0){
+                Debug.LogWarning("This entity is invulnerable");
+                return;
+            }
+            // Debug.Log($"Damaged by {damage.damageType}, damageable by {damagedBy}");
+            if ((damagedBy & damage.damageType) == 0) {
+                return;
+            }
         }
         health -= damage.damage;
         maxHealth -= damage.permanentDamage;

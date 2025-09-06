@@ -25,7 +25,7 @@ public struct Damage{
         return new Damage(damage);
     }
     public static Damage operator *(Damage initialDamage, float value){
-        return new Damage(initialDamage.damage * value, initialDamage.permanentDamage * value);;
+        return new Damage(initialDamage.damage * value, initialDamage.permanentDamage * value, initialDamage.damageType);;
     }
     public override string ToString() => $"Damage: {damage} Permanent Damage: {permanentDamage}";
 }

@@ -23,7 +23,7 @@ public class Grenade : Item
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         effect.transform.localScale = Vector3.one * radius;
 
-        var transforms = General.GetUniqueRootComponents<Transform>(hits);
+        var transforms = General.GetComponentsFromCollider<Transform>(hits);
 
         foreach (var hitTransform in transforms)
         {

@@ -16,11 +16,16 @@ public partial class Player
         var raycasts = new RaycastHit[10];
         Physics.RaycastNonAlloc(new Ray(aim.position, aim.forward), raycasts, maxInteractDis);
         if (log){
-            Debug.DrawRay(aim.position, aim.forward * maxInteractDis, Color.red, 0.1f);
+            Debug.DrawRay(aim.position, aim.forward * maxInteractDis, Color.red, 3);
         }
         IInteractive interactive = new DummyInteractive();
+        float closestDis = float.MaxValue;
         foreach(var raycast in raycasts){
             if (raycast.collider == null){
+                continue;
+            }
+            var distance = Vector3.Distance(aim.position, raycast.point);
+            if (distance > closestDis){
                 continue;
             }
             var gameObject = raycast.collider.gameObject;
@@ -29,8 +34,8 @@ public partial class Player
             }
             gameObject.TryGetComponent<IInteractive>(out var interactiveTmp);
             if (interactiveTmp != null){
+                closestDis = distance;
                 interactive = interactiveTmp;
-                break;
             }
         }
         return interactive;

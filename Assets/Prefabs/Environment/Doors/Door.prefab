@@ -601,9 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    health: 100
-    maxHealth: 100
-    absoluteMaxHealth: 100
+    health: 70
+    maxHealth: 70
+    absoluteMaxHealth: 70
     damagedBy: 1
 --- !u!114 &9198443633173221963
 MonoBehaviour:

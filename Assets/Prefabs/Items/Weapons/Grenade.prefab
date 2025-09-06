@@ -111,8 +111,9 @@ MonoBehaviour:
   timeToExplode: 3
   radius: 3
   damage:
-    damage: 30
-    permanentDamage: 50
+    damage: 60
+    permanentDamage: 90
+    damageType: 1
 --- !u!1001 &2260331377938729045
 PrefabInstance:
   m_ObjectHideFlags: 0
