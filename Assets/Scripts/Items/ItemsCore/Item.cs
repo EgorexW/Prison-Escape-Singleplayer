@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour, IDamagable, IInteractive
+public abstract class Item : MonoBehaviour, IInteractive
 {
     public Rigidbody Rigidbody { get; private set; }
 
@@ -50,15 +50,5 @@ public abstract class Item : MonoBehaviour, IDamagable, IInteractive
     {
         // Implement stop use behavior here, if necessary
     }
-
-    public void Damage(Damage damage)
-    {
-        if (isHeld){
-            return;
-        }
-        gameObject.SetActive(false);
-    }
-
-    public Health Health => new Health(1);
     public float HoldDuration => holdDuration;
 }

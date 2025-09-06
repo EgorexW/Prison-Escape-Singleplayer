@@ -561,6 +561,12 @@ MonoBehaviour:
   colliderWhileMoving: 0
   moveSpeed: 90
   beginOpenChance: 0
+  onOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &3643929164873241981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -598,6 +604,7 @@ MonoBehaviour:
     health: 100
     maxHealth: 100
     absoluteMaxHealth: 100
+    damagedBy: 1
 --- !u!114 &9198443633173221963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 5171235948492802812}
+  resistance: 1
   unlocked: 1
 --- !u!1001 &1423459223045869851
 PrefabInstance:

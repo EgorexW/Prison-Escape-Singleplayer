@@ -244,7 +244,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: ac3e7e78595be46cabfb3c21c8209b68,
+      objectReference: {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969,
         type: 2}
     - target: {fileID: 5384760308504649842, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
@@ -836,6 +836,7 @@ MonoBehaviour:
     health: 100
     maxHealth: 100
     absoluteMaxHealth: 100
+    damagedBy: 1
 --- !u!4 &4930650271363435461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470596, guid: 8fd8f3f29fdf6cf4c9c7e1dd047bc74c,

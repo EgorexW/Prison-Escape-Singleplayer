@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Medic
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
-  - {fileID: 11400000, guid: 5557b43a770db470a90f1b7e7fb36f3a, type: 2}
   - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Light Armory Table
   m_EditorClassIdentifier: 
-  spawnChance: 1
   gameObjects:
   - value: 5
-    Object: {fileID: 7414882915481570139, guid: fb82b47959c6740a8bbb5346a1f7c1bb,
+    Object: {fileID: 5526721213140052118, guid: 49d04af4bedec4cf9a3d440a34887f12,
       type: 3}
   - value: 1
-    Object: {fileID: 7414882915481570139, guid: 83e341954b8c14810918f6f11d9c2499,
+    Object: {fileID: 5526721213140052118, guid: 176f3e937fb9b4de7a3acf9bb7ffe358,
       type: 3}

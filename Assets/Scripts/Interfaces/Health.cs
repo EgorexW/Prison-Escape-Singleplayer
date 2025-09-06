@@ -7,14 +7,16 @@ public struct Health
     public float health;
     public float maxHealth;
     public float absoluteMaxHealth;
+    public DamageType damagedBy;
     
     public bool Alive => health > 0;
     public Health(float health) : this(health, health, health) {}
-    public Health(float health, float maxHealth, float absoluteMaxHealth)
+    public Health(float health, float maxHealth, float absoluteMaxHealth, DamageType damagedBy = DamageType.Physical)
     {
         this.health = health;
         this.maxHealth = maxHealth;
         this.absoluteMaxHealth = absoluteMaxHealth;
+        this.damagedBy = damagedBy;
     }
     public void Heal(Damage damage)
     {
@@ -22,6 +24,13 @@ public struct Health
         Damage(damage);
     }
     public void Damage(Damage damage){
+        if (damagedBy == 0){
+            Debug.LogWarning("This entity is invulnerable");
+            return;
+        }
+        if ((damagedBy & damage.damageType) == 0){
+            return;
+        }
         health -= damage.damage;
         maxHealth -= damage.permanentDamage;
         maxHealth = Mathf.Clamp(maxHealth, 0, absoluteMaxHealth);

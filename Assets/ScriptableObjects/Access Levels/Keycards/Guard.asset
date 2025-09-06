@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Guard
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
-  - {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856, type: 2}
   - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}

@@ -317,8 +317,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4774661087777723013, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_IsActive
@@ -338,7 +337,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953,
+      objectReference: {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

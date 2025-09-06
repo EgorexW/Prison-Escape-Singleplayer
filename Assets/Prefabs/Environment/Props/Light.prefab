@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1534735206444989203}
   - component: {fileID: 7962882987195662129}
   - component: {fileID: 8393294447291966907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Actual Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,9 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9163c31b91f4de89046fd9ddcbbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addSelfToPowerSystem: 1
-  empResistance: 0.5
-  onPowerChange:
+  onPowerChanged:
     m_PersistentCalls:
       m_Calls: []
   meshRenderer: {fileID: 8956418541344127572}
@@ -166,6 +164,11 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
   offMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
   flickerPeriod: {x: 0.05, y: 1}
+  health:
+    health: 1
+    maxHealth: 1
+    absoluteMaxHealth: 1
+    damagedBy: 2
 --- !u!1001 &8956418541346228014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 152338, guid: 15b8f5965d061544594f36ae633a5974, type: 3}
       propertyPath: m_Name
       value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 152338, guid: 15b8f5965d061544594f36ae633a5974, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 449064, guid: 15b8f5965d061544594f36ae633a5974, type: 3}
       propertyPath: m_RootOrder

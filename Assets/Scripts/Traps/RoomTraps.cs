@@ -8,7 +8,7 @@ public class RoomTraps : MonoBehaviour
     [SerializeField] bool log;
     
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
-    [BoxGroup("References")][Required][SerializeField] RoomConfig roomConfig;
+    [FormerlySerializedAs("roomConfig")] [BoxGroup("References")][Required][SerializeField] EntryConfig entryConfig;
     
     [BoxGroup("References")][Required][SerializeField] GameObject poisonTrapPrefab;
     [BoxGroup("References")][Required][SerializeField] Transform poisonTrapSpawnPoint;
@@ -17,7 +17,7 @@ public class RoomTraps : MonoBehaviour
 
     void Start()
     {
-        roomConfig.onOpen.AddListener(ActivateTrap);
+        entryConfig.onOpen.AddListener(ActivateTrap);
         if (Random.value < trapConfig.trapChance){
             CreateATrap();
         }    

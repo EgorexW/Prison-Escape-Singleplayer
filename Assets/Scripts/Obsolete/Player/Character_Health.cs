@@ -26,7 +26,7 @@ public partial class Player
         health.Heal(damage);
         UpdateHealth();
     }
-    private void Die()
+    public void Die()
     {
         gameObject.SetActive(false);
     }

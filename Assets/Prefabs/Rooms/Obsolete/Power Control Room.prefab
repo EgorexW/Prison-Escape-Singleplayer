@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinPoint: {fileID: 3966772034959211773}
   dirPoint: {fileID: 112089464000875793}
+  traits: []
 --- !u!1 &3215613547964047055
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,8 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf58b6dc0a85745998d549e924f7b66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetedSubSystem: {fileID: 0}
-  targetPowerLevel: 0
+  text: {fileID: 0}
 --- !u!1 &8995199012264397833
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,8 +807,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: bee0420e9ec884966bf235a7be69e953,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}
       propertyPath: m_RootOrder

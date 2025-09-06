@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Basic Med
   m_EditorClassIdentifier: 
-  spawnChance: 0.3
   gameObjects:
   - value: 5
     Object: {fileID: 3882893351632694812, guid: d1775755d730143969281ada5252c380,
       type: 3}
   - value: 3
+    Object: {fileID: 5526721213140052118, guid: df5f9edb665f84107ace34be981c5245,
+      type: 3}
+  - value: 1
     Object: {fileID: 3882893351632694812, guid: 980d74fc2bf504cc081251b2b98c36b5,
       type: 3}
   - value: 1

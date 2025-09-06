@@ -1,6 +1,14 @@
 public interface IDamagable
 {
-    void Damage(Damage damage);
+    void Damage(Damage damage)
+    {
+        Health.Damage(damage);
+        if (!Health.Alive){
+            Die();
+        }
+    }
+
+    void Die();
 
     void Heal(Damage damage)
     {

@@ -921,183 +921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f0a692b162b4e909693f198ebb6094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: powerLevelDistribiution
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[PowerLevel, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[PowerLevel, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 4
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerLevelDistribiutionIncrement
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[PowerLevel, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 1
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 4
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: powerLevelDistribiutionAfterReset
-      Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[PowerLevel, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 9
-      Data: 1
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 4
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  resetTime: 30
-  timeBetweenPowerChanges: {x: 30, y: 60}
+  startPowerDistribution: 
+  subPowerSystems: []
 --- !u!4 &462139715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3802575135088560125, guid: 2868741193813461686dd7d3301e6622,
@@ -1418,6 +1243,7 @@ GameObject:
   - component: {fileID: 545099424}
   - component: {fileID: 545099422}
   - component: {fileID: 545099425}
+  - component: {fileID: 545099426}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -1438,7 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initDelay: 1
-  aiDirector: {fileID: 545099425}
+  gameDirector: {fileID: 545099425}
   nodes: {fileID: 453294468}
 --- !u!4 &545099424
 Transform:
@@ -1485,6 +1311,30 @@ MonoBehaviour:
   playerScoreMultiplier: 1
   immediateUpdateThreshold: 5
   timeBetweenObjectUpdates: 30
+--- !u!114 &545099426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545099421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a749e2d6c94266a8a8e3a6427ccc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  player: {fileID: 0}
+  log: 0
+  playerScoreMultiplier: 1
 --- !u!1 &549698525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,14 +2696,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: f1cd4eb76afaa4c0d8c65f0a19b15db8, type: 2}
-    - {fileID: 11400000, guid: 0c197712e2554409a92c03e82de4a84f, type: 2}
-    - {fileID: 11400000, guid: 1474355013cb841fab7811e22253f137, type: 2}
-    - {fileID: 11400000, guid: a0e61e53d2803492aa2bfd530210967f, type: 2}
-    - {fileID: 11400000, guid: 0959155dd8e2f4b2399b4fb5e554a373, type: 2}
-    - {fileID: 11400000, guid: a31660c65a65f4a1c8973dd1f711ee4c, type: 2}
-    - {fileID: 11400000, guid: b30211e7cb7fe430d8a87032a3a40265, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2861,102 +2704,18 @@ MonoBehaviour:
     SerializationNodes:
     - Name: optionalRooms
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Room, Assembly-CSharp],[System.Int32,
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[System.Int32,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Room, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
       Data: 0
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 2
-    - Name: $v
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 3
-    - Name: $v
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 4
-    - Name: $v
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 5
-    - Name: $v
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 6
-    - Name: $v
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -2964,18 +2723,18 @@ MonoBehaviour:
       Entry: 8
       Data: 
   necessaryRooms:
-  - {fileID: 11400000, guid: f1cd4eb76afaa4c0d8c65f0a19b15db8, type: 2}
-  - {fileID: 11400000, guid: 73564e7aa9ba149029f2c5b7a337289a, type: 2}
-  - {fileID: 11400000, guid: 0c197712e2554409a92c03e82de4a84f, type: 2}
-  - {fileID: 11400000, guid: 1474355013cb841fab7811e22253f137, type: 2}
-  - {fileID: 11400000, guid: 3aaa335f20e874ef9afead3439dbc197, type: 2}
-  - {fileID: 11400000, guid: 558fae02564484ca3b5cd71e0988b7e5, type: 2}
-  - {fileID: 11400000, guid: 558fae02564484ca3b5cd71e0988b7e5, type: 2}
-  - {fileID: 11400000, guid: a0e61e53d2803492aa2bfd530210967f, type: 2}
-  - {fileID: 11400000, guid: b30211e7cb7fe430d8a87032a3a40265, type: 2}
-  - {fileID: 11400000, guid: 953e7f83b8d7647d29fd54ffe8cbcd56, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   roomsToSpawn: {x: 20, y: 25}
-  fillerRoom: {fileID: 11400000, guid: 074c5284a85c84b47ae0155ae5fb4cfc, type: 2}
+  fillerRoom: {fileID: 0}
 --- !u!114 &965157631
 MonoBehaviour:
   m_ObjectHideFlags: 0

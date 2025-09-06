@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Power Control Room
+  m_Name: Secure Storage
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
-    Object: {fileID: 1320489578685439507, guid: 246dae85a393746ef8970f66cb1c5e8c,
+    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
       type: 3}
-  - value: 5
-    Object: {fileID: 1320489578685439507, guid: 903c48d2e63d042798b2925238719029,
-      type: 3}
-  - value: 2
-    Object: {fileID: 0}
+  - value: 3
+    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}

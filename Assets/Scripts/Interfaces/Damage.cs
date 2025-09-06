@@ -6,19 +6,17 @@ using Sirenix.OdinInspector;
 public struct Damage{
     public float damage;
     public float permanentDamage;
-
-    public Damage(float damage) : this(damage, 0) {
-
-    }
+    public DamageType damageType;
 
     public void Invert()
     {
         damage = -damage;
         permanentDamage = -permanentDamage;
     }
-    public Damage(float damage, float permanentDamage){
+    public Damage(float damage, float permanentDamage = 0, DamageType damageType = DamageType.Physical){
         this.damage = damage;
         this.permanentDamage = permanentDamage;
+        this.damageType = damageType;
     }
     public static implicit operator float(Damage damage){
         return damage.damage;
@@ -30,4 +28,12 @@ public struct Damage{
         return new Damage(initialDamage.damage * value, initialDamage.permanentDamage * value);;
     }
     public override string ToString() => $"Damage: {damage} Permanent Damage: {permanentDamage}";
+}
+
+[Flags]
+public enum DamageType
+{
+    Physical = 1 << 0,
+    Emp = 1 << 1,
+    Poison = 1 << 2,
 }

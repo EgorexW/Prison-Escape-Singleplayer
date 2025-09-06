@@ -461,8 +461,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1552,8 +1551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: d6499408b16064264a69e5910cc79856,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}
       propertyPath: m_LocalPosition.x

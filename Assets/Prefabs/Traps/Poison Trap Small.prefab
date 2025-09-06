@@ -49,6 +49,7 @@ MonoBehaviour:
   damagePerSecond:
     damage: 5
     permanentDamage: 0
+    damageType: 4
 --- !u!65 &3935352289412812471
 BoxCollider:
   m_ObjectHideFlags: 0

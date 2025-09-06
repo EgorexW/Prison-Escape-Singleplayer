@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class RoomConfig : MonoBehaviour
+public class EntryConfig : MonoBehaviour
 {
     [FoldoutGroup("References")][Required][SerializeField] TextMeshPro nameText;
     [FoldoutGroup("References")][Required][SerializeField] KeycardReader[] keycardReaders;

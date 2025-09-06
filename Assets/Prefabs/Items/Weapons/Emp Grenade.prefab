@@ -137,7 +137,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8330427161326972264}
+      addedObject: {fileID: 9066241951043917165}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!4 &5333414939796053717 stripped
 Transform:
@@ -151,7 +151,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8145630109775121858}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8330427161326972264
+--- !u!114 &9066241951043917165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,17 +160,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6565534021384309587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da24d8c96a7e14b2aaa34a125c3da076, type: 3}
+  m_Script: {fileID: 11500000, guid: b5cc45bb90f94f05979ee293cba74508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
   pickupable: 1
+  discoveryOnFirstPickup:
+    enabled: 0
+    value:
+      score: 0
   holdDuration: 1
-  effectPrefab: {fileID: 7714404102179766837, guid: 3539bb1fda4384a8788e7561f721b51a,
-    type: 3}
+  effectPrefab: {fileID: 6565534021384309587}
   timeToExplode: 3
   radius: 3
   damage:
-    damage: 0
-    permanentDamage: 0
-  empStrenght: 20
+    damage: 50
+    permanentDamage: 50
+    damageType: 2

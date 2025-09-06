@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
   m_Name: Traps Spawns
   m_EditorClassIdentifier: 
-  spawnChance: 1
   gameObjects:
   - value: 3
     Object: {fileID: 4747596184945843664, guid: 52f2b0e1a8af34143bcdf6ca5595f055,
       type: 3}
   - value: 2
-    Object: {fileID: 2787445164855969257, guid: 72a329d4cb03041428e1b8797c575b43,
-      type: 3}
+    Object: {fileID: 0}

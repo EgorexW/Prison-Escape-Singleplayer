@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinPoint: {fileID: 3966772034959211773}
   dirPoint: {fileID: 112089464000875793}
+  traits: []
 --- !u!1 &3302826684301696424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,8 +1393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: ac3e7e78595be46cabfb3c21c8209b68,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2164,8 +2164,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: ac3e7e78595be46cabfb3c21c8209b68,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7380190251520299343, guid: 0d60bff58086f4bceaf54d61af29360a,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Power Control Room
+  m_Name: Break Room
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
-    Object: {fileID: 1320489578685439507, guid: 246dae85a393746ef8970f66cb1c5e8c,
+  - value: 1
+    Object: {fileID: 3882893351632694812, guid: d1775755d730143969281ada5252c380,
       type: 3}
-  - value: 5
-    Object: {fileID: 1320489578685439507, guid: 903c48d2e63d042798b2925238719029,
+  - value: 3
+    Object: {fileID: 5526721213140052118, guid: df5f9edb665f84107ace34be981c5245,
       type: 3}
-  - value: 2
-    Object: {fileID: 0}
+  - value: 1
+    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
+      type: 3}

@@ -13,13 +13,14 @@ public class PoweredLight : PoweredDevice, IDamagable
     [FormerlySerializedAs("destroyedMaterial")] [Required][SerializeField] Material offMaterial;
 
     [SerializeField] Vector2 flickerPeriod = new Vector2(0.05f, 1f);
+    [SerializeField] Health health;
     
     bool broken = false;
     
     float nextFlickerTime;
     public bool LightIsOn => light.enabled;
 
-    public Health Health => new(1);
+    public Health Health => health;
 
 
     void Update()
@@ -45,16 +46,11 @@ public class PoweredLight : PoweredDevice, IDamagable
     }
 
 
-    void Break()
+    public void Die()
     {
         broken = true;
         gameObject.SetActive(false);
         meshRenderer.material = offMaterial;
-    }
-
-    public void Damage(Damage damage)
-    {
-        Break();
     }
 
     protected override void OnPowerChanged()

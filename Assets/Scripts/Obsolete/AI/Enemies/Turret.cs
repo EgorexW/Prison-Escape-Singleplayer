@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Shooting))]
 [RequireComponent(typeof(TargetsSeeing))]
-public class Turret : TurretBase, IDamagable, IElectric, IAIObject
+public class Turret : TurretBase, IElectric, IAIObject
 {
     const float UNDERGROUND_HIDE_OFFSET = 3;
     const float HIDE_TIME = 1f;

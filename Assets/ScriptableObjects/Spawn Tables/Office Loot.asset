@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 3
-    Object: {fileID: 7414882915481570139, guid: a287bdfe7d95f43dfbfdbfe9ae38965f,
+    Object: {fileID: 5526721213140052118, guid: 9ff99a318b2fc4d3c8f39bc6097b8dd3,
       type: 3}
-  - value: 3
+  - value: 2
     Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 1
-    Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
+    Object: {fileID: 5526721213140052118, guid: 1572842949fa2493abeba0e34561b3f2,
+      type: 3}
+  - value: 0.5
+    Object: {fileID: 5526721213140052118, guid: 32593d26722394363994e318ddb73cb7,
+      type: 3}
