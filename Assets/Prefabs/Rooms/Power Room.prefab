@@ -253,6 +253,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1404736116640807501, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: accessLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58,
+        type: 2}
     - target: {fileID: 2270871401134883441, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_Name
@@ -313,11 +319,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: trapChance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696664358433919925, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4116062452299303202, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58,
+        type: 2}
     - target: {fileID: 4774661087777723013, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_IsActive
@@ -339,6 +356,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58,
         type: 2}
+    - target: {fileID: 7503718286455595498, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8557591651961991848, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -363,7 +385,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0,
+      objectReference: {fileID: 11400000, guid: a2047066dbdac450e8bed2c7b60aefaa,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

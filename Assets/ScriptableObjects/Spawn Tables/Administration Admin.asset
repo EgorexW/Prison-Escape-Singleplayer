@@ -10,15 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Secure Storage
+  m_Name: Administration Admin
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
-    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
+    Object: {fileID: 5526721213140052118, guid: 32593d26722394363994e318ddb73cb7,
       type: 3}
-  - value: 3
-    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
-  - value: 2
-    Object: {fileID: 549374663585577441, guid: a98affc3fa15247fd8451b60e6ed8d88, type: 3}
-  - value: 1
-    Object: {fileID: 11400000, guid: 1c007281c56e74b14aacf464745ead7a, type: 2}
