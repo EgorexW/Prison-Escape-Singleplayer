@@ -47,3 +47,9 @@ public class GameDirector : SerializedMonoBehaviour
 
     #endregion
 }
+
+[Serializable]
+public class Discovery
+{
+    public float score;
+}

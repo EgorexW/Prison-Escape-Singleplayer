@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class AISpawner : MonoBehaviour, IAISpawner
+public class AISpawner : MonoBehaviour
 {
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] Vector2Int spawnCount = new(5, 10);
@@ -25,10 +25,6 @@ public class AISpawner : MonoBehaviour, IAISpawner
             }
             var rotation = Quaternion.LookRotation(node.Directions.Random());
             var obj = Instantiate(spawnTable.GetGameObject(), node.transform.position, rotation, transform);
-            var aiObject = obj.GetComponentInChildren<IAIObject>();
-            if (aiObject != null){
-                AIDirectorObsolete.i.AddObject(aiObject);
-            }
             spawnNr--;
             if (spawnNr == 0){
                 break;

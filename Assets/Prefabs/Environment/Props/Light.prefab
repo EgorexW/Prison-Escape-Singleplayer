@@ -163,12 +163,12 @@ MonoBehaviour:
   light: {fileID: 8129136385310666625}
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
   offMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
-  flickerPeriod: {x: 0.5, y: 2}
+  weakIntensity: 0.2
   health:
     health: 1
     maxHealth: 1
     absoluteMaxHealth: 1
-    damagedBy: 2
+    damagedBy: 3
 --- !u!1001 &8956418541346228014
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,38 +12,12 @@ public class PoweredLight : PoweredDevice, IDamagable
     [Required][SerializeField] Material defaultMaterial;
     [FormerlySerializedAs("destroyedMaterial")] [Required][SerializeField] Material offMaterial;
 
-    [SerializeField] Vector2 flickerPeriod = new Vector2(0.05f, 1f);
+    [SerializeField] bool onWithMinimalPower = false;
     [SerializeField] Health health;
     
     bool broken = false;
-    
-    float nextFlickerTime;
-    public bool LightIsOn => light.enabled;
 
     public Health Health => health;
-
-
-    void Update()
-    {
-        TryFlicker();
-    }
-
-    void TryFlicker()
-    {
-        if (GetPowerLevel() != PowerLevel.MinimalPower){
-            return;
-        }
-        if (Time.time < nextFlickerTime){
-            return;
-        }
-        nextFlickerTime = Time.time + General.RandomRange(flickerPeriod);
-        if (LightIsOn){
-            LightOff();
-        }
-        else{
-            LightOn();
-        }
-    }
 
 
     public void Die()
@@ -65,13 +39,23 @@ public class PoweredLight : PoweredDevice, IDamagable
                 LightOn();
                 break;
             case PowerLevel.MinimalPower:
-                LightOn();
+                LightWeak();
                 break;
             case PowerLevel.NoPower:
                 LightOff();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(power), power, null);
+        }
+    }
+
+    void LightWeak()
+    {
+        if (onWithMinimalPower){
+            LightOn();
+        }
+        else{
+            LightOff();
         }
     }
 

@@ -25,7 +25,7 @@ public class BackupPowerButton : MonoBehaviour, IInteractive
 
     public void Interact(Player player)
     {
-        powerSystem?.SetGlobalMinimalPower(!powerSystem.GlobalMinimalPower);
+        powerSystem.SetGlobalMinimalPower(!powerSystem.GlobalMinimalPower);
     }
 
     public float HoldDuration => 3;

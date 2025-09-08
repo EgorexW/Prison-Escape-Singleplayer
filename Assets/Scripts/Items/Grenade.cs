@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Grenade : Item
 {
@@ -8,6 +9,9 @@ public class Grenade : Item
     [SerializeField] float timeToExplode = 3f;
     [SerializeField] float radius = 3f;
     [SerializeField] Damage damage = new Damage(30f, 50f);
+
+    [FoldoutGroup("Events")]
+    public UnityEvent onExplode;
 
     public override void Use(Player playerTmp, bool alternative = false)
     {
@@ -29,6 +33,8 @@ public class Grenade : Item
         {
             ResolveHit(hitTransform);
         }
+        
+        onExplode.Invoke();
         
         gameObject.SetActive(false);
     }

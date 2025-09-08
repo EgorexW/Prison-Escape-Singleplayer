@@ -32,35 +32,19 @@ public class MapUI : MonoBehaviour
     [Button]
     public void GenerateMap()
     {
-        GenerateMap(baseLevelNodes, AIDirectorObsolete.i.GetActiveAIObjects());
+        GenerateMap(baseLevelNodes);
     }
-    public void GenerateMap(LevelNodes levelNodes, List<IAIObject> aiObjects)
+    public void GenerateMap(LevelNodes levelNodes)
     {
         var rect = Mathf.Min(GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
         var trueScale = scale * rect;
         DrawRooms(levelNodes, trueScale);
-        DrawAIObjects(aiObjects, trueScale);
         var position = GameDirector.i.Player.transform.position;
         var playerPos = new Vector2(position.x, position.z);
         playerPointer.localPosition = playerPos * trueScale;
         playerPointer.sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;
     }
-
-    void DrawAIObjects(List<IAIObject> aiObjects, float trueScale)
-    {
-        aiObjectPool.SetCount(aiObjects.Count);
-        for (var i = 0; i < aiObjects.Count; i++)
-        {
-            var aiObject = aiObjects[i];
-            var obj = aiObjectPool.GetActiveObjs()[i];
-            var position = aiObject.GameObject.transform.position;
-            var pos = new Vector3(position.x, position.z) * trueScale;
-            obj.transform.localPosition = pos;
-            obj.GetComponent<RectTransform>().sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;
-        }
-    }
-
-
+    
     void DrawRooms(LevelNodes levelNodes, float trueScale)
     {
         roomsObjectPool.SetCount(levelNodes.Nodes.Count);
