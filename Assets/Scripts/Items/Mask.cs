@@ -7,7 +7,7 @@ public class Mask : UseableItem
     protected override void Apply()
     {
         player.AddProtection(protectionType);
-        player.RemoveItem(this);
+        player.RemoveItem(Item);
         Destroy(gameObject);
     }
 }

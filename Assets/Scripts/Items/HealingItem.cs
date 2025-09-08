@@ -11,7 +11,7 @@ public class HealingItem : UseableItem
         if (healOvertime){
             player.AddStatusEffect(healOvertime.Value);
         }
-        player.RemoveItem(this);
+        player.RemoveItem(Item);
         Destroy(gameObject);
     }
 }

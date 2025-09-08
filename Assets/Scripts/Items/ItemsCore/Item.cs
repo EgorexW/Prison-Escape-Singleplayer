@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour, IInteractive
+public sealed class Item : MonoBehaviour, IInteractive
 {
     public Rigidbody Rigidbody { get; private set; }
+    
+    List<IItemEffect> itemEffects = new List<IItemEffect>();
 
     [ReadOnly] public bool isHeld = false;
     [ReadOnly] public bool pickupable = true;
@@ -15,6 +18,7 @@ public abstract class Item : MonoBehaviour, IInteractive
     void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
+        itemEffects.AddRange(GetComponents<IItemEffect>());
     }
 
     public void Interact(Player player)
@@ -29,26 +33,38 @@ public abstract class Item : MonoBehaviour, IInteractive
         player.PickupItem(this);
     }
 
-    public virtual void Use(Player playerTmp, bool alternative = false)
+    public void Use(Player player, bool alternative = false)
     {
-        // Implement item usage behavior here.
+        foreach (var effect in itemEffects){
+            effect.Use(player, alternative);
+        }
     }
 
-    public virtual Sprite GetPortrait()
+    public void HoldUse(Player player, bool alternative = false)
+    {
+        foreach (var effect in itemEffects){
+            effect.HoldUse(player, alternative);
+        }
+    }
+    public void StopUse(Player player, bool alternative = false)
+    {
+        foreach (var effect in itemEffects){
+            effect.StopUse(player, alternative);
+        }
+    }
+
+    public float HoldDuration => holdDuration;
+    public Sprite GetPortrait()
     {
         var tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
         var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
         return sprite;
     }
+}
 
-    public virtual void HoldUse(Player player, bool alternative = false)
-    {
-        // Implement hold use behavior here, if necessary
-    }
-
-    public virtual void StopUse(Player player, bool alternative = false)
-    {
-        // Implement stop use behavior here, if necessary
-    }
-    public float HoldDuration => holdDuration;
+interface IItemEffect
+{
+    void Use(Player player, bool alternative = false);
+    void HoldUse(Player player, bool alternative = false);
+    void StopUse(Player player, bool alternative = false);
 }

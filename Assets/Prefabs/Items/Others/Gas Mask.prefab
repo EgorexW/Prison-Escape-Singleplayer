@@ -94,13 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2fc0556961e4307a0b57343ffdcc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHeld: 0
-  pickupable: 1
-  discoveryOnFirstPickup:
-    enabled: 0
-    value:
-      score: 0
-  holdDuration: 1
+  item: {fileID: 7046415671566411326}
   useTime: 5
   protectionType: 4
 --- !u!4 &1623173358873652327 stripped
@@ -109,6 +103,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3281334526245863280}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7046415671566411326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3281334526245863280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549374663585577441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3377720315070919821
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Keycard : Item, IKeycard
+public class Keycard : MonoBehaviour, IKeycard
 {
     [SerializeField] AccessLevel accessLevel;
 

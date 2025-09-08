@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeycardEffects : MonoBehaviour
+public class KeycardVisuals : MonoBehaviour
 {
     [SerializeField] string keycardName;
     [SerializeField] Color keycardColor = Color.white;

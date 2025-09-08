@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class UseableItem : Item
+public abstract class UseableItem : ItemEffect
 {
     [SerializeField] float useTime;
     protected Player player;

@@ -13,7 +13,7 @@ public class RoomChooser : SerializedMonoBehaviour
     int optionalRoomsCount => optionalRooms.Count != 0 ? optionalRooms.Sum(x => x.Value) : 0;
     [ShowInInspector] int allRooms => necessaryRoomsCount + optionalRoomsCount;
     
-    [SerializeField][MinMaxSlider("necessaryRoomsCount", "allRooms")] Vector2Int roomsToSpawn = new(10, 15);
+    [SerializeField][MinMaxSlider("necessaryRoomsCount", "@Mathf.Min(allRooms, roomSpawners)")] Vector2Int roomsToSpawn = new(10, 15);
 
     [SerializeField] GameObject fillerRoom;
 

@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Grenade : Item
+public class Grenade : ItemEffect
 {
     [SerializeField] [Required] GameObject effectPrefab;
     
@@ -15,8 +15,8 @@ public class Grenade : Item
 
     public override void Use(Player playerTmp, bool alternative = false)
     {
-        playerTmp.ThrowItem(this);
-        pickupable = false;
+        playerTmp.ThrowItem(Item);
+        Item.pickupable = false;
         General.CallAfterSeconds(Explode, timeToExplode);
     }
 

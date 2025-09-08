@@ -1,4 +1,4 @@
-public class Flashlight : Item
+public class Flashlight : ItemEffect
 {
 
 }

@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-class KeycardReaderEffects : MonoBehaviour
+class KeycardReaderVisuals : MonoBehaviour
 {
     public KeycardReader keycardReader;
     
@@ -50,5 +50,10 @@ class KeycardReaderEffects : MonoBehaviour
         text.text = accessGrantedText;
         defaultText = accessGrantedText;
         accessGrantedSound?.Play();
+    }
+
+    public void Electrocute()
+    {
+        // TODO add sparks or something
     }
 }

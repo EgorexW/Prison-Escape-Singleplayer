@@ -10,7 +10,7 @@ public class Crowbar : UseableItem
     {
         doorLock.unlocked = true;
         doorLock.door.Open();
-        player.RemoveItem(this);
+        player.RemoveItem(Item);
         Destroy(gameObject);
     }
 

@@ -2,7 +2,7 @@ using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(Shooting))]
-public class Weapon : Item
+public class Weapon : ItemEffect
 {
     [GetComponent][SerializeField] Shooting shooting;
     

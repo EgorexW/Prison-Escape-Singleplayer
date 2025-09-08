@@ -9,13 +9,17 @@ public class KeycardReader : PoweredDevice, IInteractive
     [BoxGroup("References")][Required][SerializeField] public AccessLevel accessLevel;
     [BoxGroup("References")][Required][SerializeField] public DoorLock doorLock;
     
-    [SerializeField] KeycardReaderEffects effects;
+    [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
+
+    [BoxGroup("Electrocution")][SerializeField] public Damage electrocutionDamage;
+    [BoxGroup("Electrocution")][SerializeField] public float baseElectrocutionChance = 0f;
+    [BoxGroup("Electrocution")][SerializeField] float minimalPowerElectrocutionChance = 0.5f;
 
     void Awake()
     {
         doorLock.unlocked = false;
-        if (effects != null){
-            effects.keycardReader = this;
+        if (visuals != null){
+            visuals.keycardReader = this;
         }
     }
 
@@ -25,12 +29,24 @@ public class KeycardReader : PoweredDevice, IInteractive
             return;
         }
         var item = player.GetHeldItem();
-        if (item is not IKeycard keycard || !keycard.HasAccess(accessLevel)){
-            effects?.AccessDenied();
+        var keycard = item.GetComponent<IKeycard>();
+        if (keycard == null || !keycard.HasAccess(accessLevel)){
+            visuals?.AccessDenied();
             return;
         }
-        effects?.AccessGranted();
+        visuals?.AccessGranted();
         doorLock.unlocked = true;
+        TryElectrocute(player);
+    }
+
+    void TryElectrocute(Player player)
+    {
+        var electrocutionChance = GetPowerLevel() == PowerLevel.MinimalPower ? minimalPowerElectrocutionChance : 0;
+        electrocutionChance = baseElectrocutionChance + electrocutionChance;
+        if (UnityEngine.Random.value < electrocutionChance){
+            player.Damage(electrocutionDamage);
+            visuals?.Electrocute();
+        }
     }
 
     public float HoldDuration => 1;

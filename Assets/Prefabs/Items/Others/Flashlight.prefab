@@ -462,9 +462,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2217999c2589840d7bab7b2fcfa1f1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHeld: 0
-  pickupable: 1
-  holdDuration: 1
+  item: {fileID: 8360214341912265164}
+--- !u!114 &8360214341912265164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4054703405705418882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320489578685439507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5334062965395713174
 PrefabInstance:
   m_ObjectHideFlags: 0
