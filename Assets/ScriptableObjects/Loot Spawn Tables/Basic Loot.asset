@@ -19,11 +19,13 @@ MonoBehaviour:
   - value: 2
     Object: {fileID: 5526721213140052118, guid: 523f36fe4659f42a89b721f32cd7d86b,
       type: 3}
-  - value: 1
+  - value: 2
     Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
+  - value: 2
+    Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
   - value: 1
-    Object: {fileID: 3882893351632694812, guid: d1775755d730143969281ada5252c380,
-      type: 3}
-  - value: 0.5
     Object: {fileID: 4690771240427926488, guid: 73023eb8c288843f9bd2d8f94a8bb72b,
+      type: 3}
+  - value: 1
+    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
       type: 3}

@@ -1084,6 +1084,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'trapPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2525220935965901820, guid: 22e72592449d448dab974f7156c8a700,
+        type: 3}
     - target: {fileID: 3842563140200976106, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_LocalPosition.z

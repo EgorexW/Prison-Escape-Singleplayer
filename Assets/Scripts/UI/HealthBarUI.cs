@@ -9,7 +9,7 @@ public class HealthBarUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
 
     public void SetHealth(Health health){
-        SetHealth(health.health, health.maxHealth, health.absoluteMaxHealth);
+        SetHealth(health.currentHealth, health.maxHealth, health.absoluteMaxHealth);
     }
     public void SetHealth(float health, float maxHealth, float maxValue = -1){
         if (maxValue > 0){

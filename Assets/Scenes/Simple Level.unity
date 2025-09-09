@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   health:
-    health: 100
+    currentHealth: 100
     maxHealth: 100
     absoluteMaxHealth: 100
     damagedBy: 5
@@ -455,7 +455,7 @@ Tilemap:
       m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 10
+      m_TileObjectToInstantiateIndex: 0
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
   - first: {x: -8, y: -8, z: 0}
@@ -1752,8 +1752,9 @@ Tilemap:
   - m_RefCount: 128
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 8774157686360505019, guid: edc0169f4d17c4366b0a81014d33e957,
+      type: 3}
   - m_RefCount: 44
     m_Data: {fileID: 6477122367079942314, guid: c2feba8a2a8c24233815b1cd4cddc4e4,
       type: 3}
@@ -1779,9 +1780,6 @@ Tilemap:
       type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8774157686360505019, guid: dc2e07c033246487ebb431ab6fda3a7a,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 8774157686360505019, guid: edc0169f4d17c4366b0a81014d33e957,
       type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2183,8 +2181,6 @@ GameObject:
   - component: {fileID: 453294466}
   - component: {fileID: 453294468}
   - component: {fileID: 453294467}
-  - component: {fileID: 453294471}
-  - component: {fileID: 453294470}
   m_Layer: 0
   m_Name: 'World '
   m_TagString: Untagged
@@ -2209,6 +2205,7 @@ Transform:
   - {fileID: 1078684527}
   - {fileID: 567017148}
   - {fileID: 1323079840}
+  - {fileID: 2132428058}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &453294467
@@ -2237,156 +2234,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corridorNodes: []
   roomNodes: []
---- !u!114 &453294470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453294465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15e6fbc8bd734538ba5c96d4dce5dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seed:
-    enabled: 1
-    value: 1
---- !u!114 &453294471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453294465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5987d96671edb4b088fff1f0db409f3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
-    - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
-    - {fileID: 3418579060688718549, guid: ff5d1de21e7284b919452d347fa33fa7, type: 3}
-    - {fileID: 6038518695794579943, guid: 40fee3abc50eb45f6a64d3d1a43c447c, type: 3}
-    - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
-    - {fileID: 2826679319299725828, guid: 2fd29963f62ff48da97ec732095a5181, type: 3}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: optionalRooms
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[System.Int32,
-        mscorlib]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
-        UnityEngine.CoreModule]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 6
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 0
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 1
-    - Name: $v
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 2
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 3
-    - Name: $v
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 4
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
-      Data: 5
-    - Name: $v
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  necessaryRooms:
-  - {fileID: 5373328976349116117, guid: 1bef5240361d54cd68cf98d39c558b07, type: 3}
-  - {fileID: 251163510702948846, guid: d37fc6f118ab2441faa29eecacdd6452, type: 3}
-  - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
-  - {fileID: 5254193291477867547, guid: a63eae6698a834c21991f8bc5a85d772, type: 3}
-  - {fileID: 8371996984323067608, guid: c52bb39638ac0409cac89258be0da422, type: 3}
-  - {fileID: 3418579060688718549, guid: ff5d1de21e7284b919452d347fa33fa7, type: 3}
-  - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
-  - {fileID: 7280829844318559621, guid: 01b78cadf46e5480e9cf169ebfb1cf36, type: 3}
-  - {fileID: 2826679319299725828, guid: 2fd29963f62ff48da97ec732095a5181, type: 3}
-  - {fileID: 8419717765657594186, guid: 4782708c5bcd54a49a7344e76626c312, type: 3}
-  - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
-  - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
-  roomsToSpawn: {x: 14, y: 17}
-  fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
-    type: 3}
 --- !u!1 &465035954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2782,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567017148}
+  - component: {fileID: 567017151}
+  - component: {fileID: 567017150}
   m_Layer: 0
   m_Name: Rooms
   m_TagString: Untagged
@@ -2976,6 +2825,156 @@ Transform:
   - {fileID: 1738432586}
   m_Father: {fileID: 453294466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &567017150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567017147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15e6fbc8bd734538ba5c96d4dce5dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed:
+    enabled: 0
+    value: 1
+--- !u!114 &567017151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567017147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5987d96671edb4b088fff1f0db409f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
+    - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
+    - {fileID: 3418579060688718549, guid: ff5d1de21e7284b919452d347fa33fa7, type: 3}
+    - {fileID: 6038518695794579943, guid: 40fee3abc50eb45f6a64d3d1a43c447c, type: 3}
+    - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
+    - {fileID: 2826679319299725828, guid: 2fd29963f62ff48da97ec732095a5181, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: optionalRooms
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 3
+    - Name: $v
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 4
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 5
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  necessaryRooms:
+  - {fileID: 5373328976349116117, guid: 1bef5240361d54cd68cf98d39c558b07, type: 3}
+  - {fileID: 251163510702948846, guid: d37fc6f118ab2441faa29eecacdd6452, type: 3}
+  - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
+  - {fileID: 5254193291477867547, guid: a63eae6698a834c21991f8bc5a85d772, type: 3}
+  - {fileID: 8371996984323067608, guid: c52bb39638ac0409cac89258be0da422, type: 3}
+  - {fileID: 3418579060688718549, guid: ff5d1de21e7284b919452d347fa33fa7, type: 3}
+  - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
+  - {fileID: 7280829844318559621, guid: 01b78cadf46e5480e9cf169ebfb1cf36, type: 3}
+  - {fileID: 2826679319299725828, guid: 2fd29963f62ff48da97ec732095a5181, type: 3}
+  - {fileID: 8419717765657594186, guid: 4782708c5bcd54a49a7344e76626c312, type: 3}
+  - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
+  - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
+  roomsToSpawn: {x: 14, y: 17}
+  fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
+    type: 3}
 --- !u!1 &584881359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,8 +3180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c4a606334c94192a975e7a9e314922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomGenerator: {fileID: 453294470}
+  levelNodes: {fileID: 453294468}
+  roomGenerator: {fileID: 567017150}
   player: {fileID: 134446977}
+  corridorSpawners:
+  - {fileID: 1957501034}
+  - {fileID: 1156029363}
+  spawnDelay: 1
 --- !u!4 &893523871
 Transform:
   m_ObjectHideFlags: 0
@@ -3746,6 +3750,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1144943021}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1156029362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156029364}
+  - component: {fileID: 1156029363}
+  m_Layer: 0
+  m_Name: Loot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1156029363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156029362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb295525dc4742b79082a62bcd8e53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTable: {fileID: 11400000, guid: 4d0c557c32ba34b32958a16489a515f4, type: 2}
+  spawnCount: {x: 4, y: 5}
+  nodeTypesAllowed: 1
+  placeOnConnection: 0
+--- !u!4 &1156029364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156029362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2132428058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1182905018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5336,6 +5388,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1936408067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1957501032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957501033}
+  - component: {fileID: 1957501034}
+  m_Layer: 0
+  m_Name: Traps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1957501033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957501032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2132428058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957501034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957501032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb295525dc4742b79082a62bcd8e53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTable: {fileID: 11400000, guid: 83f1b20b868a64f9dbe55379f0f50d68, type: 2}
+  spawnCount: {x: 4, y: 5}
+  nodeTypesAllowed: 14
+  placeOnConnection: 1
 --- !u!224 &2071625440 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4716090378257042808, guid: f850c7485a670494ba64ea6773fef3c5,
@@ -5354,6 +5454,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e8338bcfdde4b129150eea8f328702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &2132428057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132428058}
+  m_Layer: 0
+  m_Name: Corridor Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2132428058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132428057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1957501033}
+  - {fileID: 1156029364}
+  m_Father: {fileID: 453294466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &488917058600334686
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Light Armory Table
+  m_Name: Corridor Loot Boxes
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 5
-    Object: {fileID: 5526721213140052118, guid: 49d04af4bedec4cf9a3d440a34887f12,
-      type: 3}
   - value: 1
-    Object: {fileID: 5526721213140052118, guid: 176f3e937fb9b4de7a3acf9bb7ffe358,
+    Object: {fileID: 3864356063617714526, guid: b5b71f351c55d475da02d2c78da45777,
       type: 3}

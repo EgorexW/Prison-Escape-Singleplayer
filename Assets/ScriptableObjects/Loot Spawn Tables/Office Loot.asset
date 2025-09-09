@@ -10,9 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Administration Admin
+  m_Name: Office Loot
   m_EditorClassIdentifier: 
   gameObjects:
+  - value: 3
+    Object: {fileID: 5526721213140052118, guid: 9ff99a318b2fc4d3c8f39bc6097b8dd3,
+      type: 3}
   - value: 2
+    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
+  - value: 1
+    Object: {fileID: 5526721213140052118, guid: 1572842949fa2493abeba0e34561b3f2,
+      type: 3}
+  - value: 0.25
     Object: {fileID: 5526721213140052118, guid: 32593d26722394363994e318ddb73cb7,
       type: 3}

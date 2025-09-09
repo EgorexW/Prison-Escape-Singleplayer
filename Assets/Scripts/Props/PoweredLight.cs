@@ -20,6 +20,10 @@ public class PoweredLight : PoweredDevice, IDamagable
     public Health Health => health;
 
 
+    public void Damage(Damage damage)
+    {
+        Die();
+    }
     public void Die()
     {
         broken = true;

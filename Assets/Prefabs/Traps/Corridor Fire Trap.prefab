@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6178723451059281684}
   - component: {fileID: 5060624307671558964}
+  - component: {fileID: 1787204385783293248}
   m_Layer: 0
   m_Name: Corridor Fire Trap
   m_TagString: Untagged
@@ -51,10 +52,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPrefab: {fileID: 7714404102179766837, guid: 43bea58b778f14d2da0cd4411b60d58a,
     type: 3}
-  areaSize: {x: 5, y: 7, z: 5}
+  boxCollider: {fileID: 1787204385783293248}
+  startActive: 1
   damage:
     damage: 50
     permanentDamage: 40
+    damageType: 1
+--- !u!65 &1787204385783293248
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4747596184945843664}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &868633462085981551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,41 +136,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5060624307671558964}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Activate
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FireTrap, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5874687137312636924, guid: 62fe311c637f748cdae00ae296b8a72c,
-        type: 3}
-      propertyPath: onActivation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9063421897856884425, guid: 62fe311c637f748cdae00ae296b8a72c,
         type: 3}

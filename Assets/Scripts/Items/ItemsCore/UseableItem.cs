@@ -33,4 +33,10 @@ public abstract class UseableItem : ItemEffect
             startUseTime = Mathf.Infinity;
         }
     }
+
+    protected void DestroyItem()
+    {
+        player.RemoveItem(Item);
+        Destroy(gameObject);
+    }
 }

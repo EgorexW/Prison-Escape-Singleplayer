@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class AISpawner : MonoBehaviour
+public class CorridorSpawner : MonoBehaviour
 {
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] Vector2Int spawnCount = new(5, 10);
 
     [BoxGroup("Spawn Conditions")] [SerializeField] CorridorNodeType nodeTypesAllowed;
-    // [BoxGroup("Spawn Conditions")] [SerializeField] bool alignWithConnections = true;
+    [BoxGroup("Spawn Conditions")] [SerializeField] bool placeOnConnection;
 
     public void Spawn(List<LevelNode> levelNodes)
     {
@@ -23,8 +23,13 @@ public class AISpawner : MonoBehaviour
             if (!nodeTypesAllowed.HasFlag(node.CorridorNodeType)){
                 continue;
             }
-            var rotation = Quaternion.LookRotation(node.Directions.Random());
-            var obj = Instantiate(spawnTable.GetGameObject(), node.transform.position, rotation, transform);
+            var connection = node.SameTypeConnections.Random();
+            var rotation = Quaternion.LookRotation(connection.normalized);
+            var spawnPosition = node.transform.position;
+            if (placeOnConnection){
+                spawnPosition += connection / 2;
+            }
+            var obj = Instantiate(spawnTable.GetGameObject(), spawnPosition, rotation, transform);
             spawnNr--;
             if (spawnNr == 0){
                 break;

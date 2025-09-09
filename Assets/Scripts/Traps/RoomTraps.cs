@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,9 +10,6 @@ public class RoomTraps : MonoBehaviour
     
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
     [FormerlySerializedAs("roomConfig")] [BoxGroup("References")][Required][SerializeField] EntryConfig entryConfig;
-    
-    [BoxGroup("References")][Required][SerializeField] GameObject poisonTrapPrefab;
-    [BoxGroup("References")][Required][SerializeField] Transform poisonTrapSpawnPoint;
     
     ITrap trap;
 
@@ -25,13 +23,9 @@ public class RoomTraps : MonoBehaviour
 
     void CreateATrap()
     {
-        CreatePoisonTrap();
-    }
-
-    void CreatePoisonTrap()
-    {
-        var obj = Instantiate(poisonTrapPrefab, poisonTrapSpawnPoint.position, Quaternion.identity, transform);
-        obj.transform.localRotation = Quaternion.identity;
+        var prefab = trapConfig.GetTrapPrefab();
+        var obj = Instantiate(prefab, transform);
+        // obj.transform.localRotation = Quaternion.identity;
         trap = obj.GetComponent<ITrap>();
     }
 

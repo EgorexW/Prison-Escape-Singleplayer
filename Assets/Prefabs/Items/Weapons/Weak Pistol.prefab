@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 2820933438102179484, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}
       propertyPath: ammo
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5328173055780108422, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}

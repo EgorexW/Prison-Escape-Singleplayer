@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MotionSensor : PoweredDevice
+public class MotionSensor : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] GameObject laser;
     
@@ -12,10 +12,9 @@ public class MotionSensor : PoweredDevice
     {
         onActivation.Invoke();
     }
-    
-    protected override void OnPowerChanged()
+
+    public void SetActive(bool active)
     {
-        base.OnPowerChanged();
-        laser.SetActive(GetPowerLevel() != PowerLevel.NoPower);
+        laser.SetActive(active);
     }
 }

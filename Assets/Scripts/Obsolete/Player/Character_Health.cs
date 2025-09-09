@@ -17,7 +17,7 @@ public partial class Player
         if (log) Debug.Log(damage, this);
         health.Damage(damage);
         UpdateHealth();
-        if (health.health == 0){
+        if (health.currentHealth == 0){
             Die();
         }
     }

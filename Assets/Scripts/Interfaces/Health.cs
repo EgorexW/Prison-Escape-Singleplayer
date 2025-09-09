@@ -1,19 +1,21 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public struct Health
 {
-    public float health;
+    [FormerlySerializedAs("health")] public float currentHealth;
     public float maxHealth;
     public float absoluteMaxHealth;
     public DamageType damagedBy;
     
-    public bool Alive => health > 0;
-    public Health(float health) : this(health, health, health) {}
-    public Health(float health, float maxHealth, float absoluteMaxHealth, DamageType damagedBy = DamageType.Physical)
+    public bool Alive => currentHealth > 0;
+    public Health(float currentHealth) : this(currentHealth, currentHealth, currentHealth) {}
+    public Health(float currentHealth, float maxHealth, float absoluteMaxHealth, DamageType damagedBy = DamageType.Physical)
     {
-        this.health = health;
+        this.currentHealth = currentHealth;
         this.maxHealth = maxHealth;
         this.absoluteMaxHealth = absoluteMaxHealth;
         this.damagedBy = damagedBy;
@@ -34,9 +36,9 @@ public struct Health
                 return;
             }
         }
-        health -= damage.damage;
+        currentHealth -= damage.damage;
         maxHealth -= damage.permanentDamage;
         maxHealth = Mathf.Clamp(maxHealth, 0, absoluteMaxHealth);
-        health = Mathf.Clamp(health, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }

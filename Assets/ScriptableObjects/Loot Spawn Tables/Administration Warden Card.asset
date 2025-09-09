@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Heavy Armory Secret
+  m_Name: Administration Warden Card
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 9
-    Object: {fileID: 5526721213140052118, guid: 176f3e937fb9b4de7a3acf9bb7ffe358,
-      type: 3}
   - value: 1
-    Object: {fileID: 5526721213140052118, guid: 8700ae19d2d9c4f3cb99ef6cc2860218,
+    Object: {fileID: 5526721213140052118, guid: 7ce2161cbe3c94fbca82e0cc8dafb912,
       type: 3}
