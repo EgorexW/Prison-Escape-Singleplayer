@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Shooting))]
 public class Weapon : ItemEffect
 {
-    [GetComponent][SerializeField] Shooting shooting;
-    
+    [GetComponent] [SerializeField] Shooting shooting;
+
     public override void HoldUse(Player player, bool alternative = false)
     {
         base.HoldUse(player, alternative);

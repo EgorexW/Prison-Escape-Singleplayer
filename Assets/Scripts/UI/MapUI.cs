@@ -1,21 +1,17 @@
-using System;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class MapUI : MonoBehaviour
 {
-    [BoxGroup("External References")][SerializeField] LevelNodes baseLevelNodes;
-    
-    [BoxGroup("Internal References")][Required][SerializeField] ObjectsUI roomsObjectPool;
-    [BoxGroup("Internal References")][Required][SerializeField] ObjectsUI aiObjectPool;
-    [BoxGroup("Internal References")][Required][SerializeField] RectTransform playerPointer;
-    [BoxGroup("Internal References")][Required][SerializeField] GameObject container;
-    
-    [SerializeField] float scale = 0.005f;
-    
     const float AI_OBJECT_SIZE = 3;
+    [BoxGroup("External References")] [SerializeField] LevelNodes baseLevelNodes;
+
+    [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI roomsObjectPool;
+    [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI aiObjectPool;
+    [BoxGroup("Internal References")] [Required] [SerializeField] RectTransform playerPointer;
+    [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
+
+    [SerializeField] float scale = 0.005f;
 
     void Start()
     {
@@ -34,6 +30,7 @@ public class MapUI : MonoBehaviour
     {
         GenerateMap(baseLevelNodes);
     }
+
     public void GenerateMap(LevelNodes levelNodes)
     {
         var rect = Mathf.Min(GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
@@ -44,20 +41,19 @@ public class MapUI : MonoBehaviour
         playerPointer.localPosition = playerPos * trueScale;
         playerPointer.sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;
     }
-    
+
     void DrawRooms(LevelNodes levelNodes, float trueScale)
     {
         roomsObjectPool.SetCount(levelNodes.Nodes.Count);
-        Vector2 min = new Vector2(float.MaxValue, float.MaxValue);
-        Vector2 max = new Vector2(float.MinValue, float.MinValue);
-        for (var i = 0; i < levelNodes.Nodes.Count; i++)
-        {
+        var min = new Vector2(float.MaxValue, float.MaxValue);
+        var max = new Vector2(float.MinValue, float.MinValue);
+        for (var i = 0; i < levelNodes.Nodes.Count; i++){
             var node = levelNodes.Nodes[i];
             var nodeBounds = node.Bounds;
             var nodePos = new Vector2(nodeBounds.center.x, nodeBounds.center.z) * trueScale;
             var nodeSize = new Vector2(nodeBounds.size.x, nodeBounds.size.z) * trueScale;
             var obj = roomsObjectPool.GetActiveObjs()[i];
-    
+
             min = Vector2.Min(min, nodePos - nodeSize / 2);
             max = Vector2.Max(max, nodePos + nodeSize / 2);
 

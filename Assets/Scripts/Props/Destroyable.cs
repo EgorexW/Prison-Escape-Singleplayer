@@ -1,10 +1,9 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Destroyable : MonoBehaviour, IDamagable
 {
     [SerializeField] Health health;
-    
+
     [SerializeField] GameObject gameObjectToDestroy;
     public Health Health => health;
 
@@ -15,10 +14,10 @@ public class Destroyable : MonoBehaviour, IDamagable
             Die();
         }
     }
+
     public void Die()
     {
-        if (gameObjectToDestroy != null)
-        {
+        if (gameObjectToDestroy != null){
             Destroy(gameObjectToDestroy);
             return;
         }

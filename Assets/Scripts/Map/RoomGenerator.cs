@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(RoomChooser))]
 public class RoomGenerator : MonoBehaviour
 {
-    private const int GenerationTries = 10;
+    const int GenerationTries = 10;
     [SerializeField] Optional<int> seed;
 
     public void Generate()
@@ -13,20 +13,18 @@ public class RoomGenerator : MonoBehaviour
             Random.InitState(seed);
         }
         var roomChooser = GetComponent<RoomChooser>();
-        for (var i = 0; i < GenerationTries; i++)
-        {
+        for (var i = 0; i < GenerationTries; i++){
             var choosenRooms = roomChooser.ChooseRooms();
             if (choosenRooms != null){
                 GenerateRooms(choosenRooms);
                 return;
             }
-        } 
+        }
         Debug.LogError("Generation Failed", this);
     }
-    void GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner){
-        foreach (var match in matchedRoomWithSpawner)
-        {
-            match.Key.SpawnRoom(match.Value);
-        }
+
+    void GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)
+    {
+        foreach (var match in matchedRoomWithSpawner) match.Key.SpawnRoom(match.Value);
     }
 }

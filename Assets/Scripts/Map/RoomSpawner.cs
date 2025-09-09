@@ -7,33 +7,55 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] Transform dir;
     [SerializeField] RoomTrait[] traits;
 
-    public void SpawnRoom(GameObject room){
+    public void SpawnRoom(GameObject room)
+    {
         room = Instantiate(room, transform.parent);
         var spawnableRoom = room.GetComponent<SpawnableRoom>();
         spawnableRoom.SetPos(transform.position, dir.position - transform.position);
         Destroy(gameObject);
     }
-    public bool HasTrait(RoomTrait trait){
+
+    public bool HasTrait(RoomTrait trait)
+    {
         return traits.Contains(trait);
     }
-    public bool HasTraits(RoomTrait[] traits){
+
+    public bool HasTraits(RoomTrait[] traits)
+    {
         foreach (var trait in traits)
-        {
             if (!HasTrait(trait)){
                 return false;
             }
-        }
         return true;
     }
-    
-    [Button][BoxGroup("Directions")]
-    public void FaceNorth(){ FaceDir(Vector3.forward); }
-    [Button][BoxGroup("Directions")]
-    public void FaceEast(){ FaceDir(Vector3.right); }
-    [Button][BoxGroup("Directions")]
-    public void FaceSouth(){ FaceDir(Vector3.back); }
-    [Button][BoxGroup("Directions")]
-    public void FaceWest(){ FaceDir(Vector3.left); }
+
+    [Button]
+    [BoxGroup("Directions")]
+    public void FaceNorth()
+    {
+        FaceDir(Vector3.forward);
+    }
+
+    [Button]
+    [BoxGroup("Directions")]
+    public void FaceEast()
+    {
+        FaceDir(Vector3.right);
+    }
+
+    [Button]
+    [BoxGroup("Directions")]
+    public void FaceSouth()
+    {
+        FaceDir(Vector3.back);
+    }
+
+    [Button]
+    [BoxGroup("Directions")]
+    public void FaceWest()
+    {
+        FaceDir(Vector3.left);
+    }
 
     void FaceDir(Vector3 targetDir)
     {

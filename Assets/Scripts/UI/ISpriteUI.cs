@@ -5,13 +5,13 @@ using UnityEngine.Events;
 [Serializable]
 public class SpriteUI : ISpriteUI
 {
-    public UnityAction callback;
     public Sprite sprite;
+    public UnityAction callback;
 
     public SpriteUI(Sprite sprite, UnityAction value)
     {
         this.sprite = sprite;
-        this.callback = value;
+        callback = value;
     }
 
     public UnityAction GetCallback()
@@ -24,6 +24,7 @@ public class SpriteUI : ISpriteUI
         return sprite;
     }
 }
+
 public interface ISpriteUI
 {
     public Sprite GetSprite();

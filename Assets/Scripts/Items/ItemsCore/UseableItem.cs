@@ -6,7 +6,8 @@ public abstract class UseableItem : ItemEffect
     protected Player player;
     float startUseTime = Mathf.Infinity;
 
-    void Update(){
+    void Update()
+    {
         if (player == null){
             return;
         }
@@ -23,13 +24,14 @@ public abstract class UseableItem : ItemEffect
     public override void Use(Player playerTmp, bool alternative = false)
     {
         if (!alternative){
-            this.player = playerTmp;
+            player = playerTmp;
             base.Use(playerTmp);
             startUseTime = Time.time;
-        } else{
+        }
+        else{
             base.StopUse(playerTmp);
             playerTmp.onFinishInteraction.Invoke();
-            this.player = null;
+            player = null;
             startUseTime = Mathf.Infinity;
         }
     }

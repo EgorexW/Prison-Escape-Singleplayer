@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Door))]
 public class DoorLock : PoweredDevice, IInteractive
 {
-    [GetComponent][SerializeField] public Door door;
-    
+    [GetComponent] [SerializeField] public Door door;
+
     public float resistance = 1;
-    [SerializeField] bool requiresPower = false;
-    [ShowIf("requiresPower")]
-    [SerializeField] public bool requiresFullPower = false;
-    
-    public bool unlocked = false;
+    [SerializeField] bool requiresPower;
+
+    [ShowIf("requiresPower")] [SerializeField] public bool requiresFullPower;
+
+    public bool unlocked;
 
     public void Interact(Player player)
     {
@@ -25,11 +25,10 @@ public class DoorLock : PoweredDevice, IInteractive
                 return;
             }
         }
-        if (unlocked)
-        {
+        if (unlocked){
             door.ChangeState();
         }
     }
 
-public float HoldDuration => 0;
+    public float HoldDuration => 0;
 }

@@ -1,19 +1,17 @@
-using System;
-using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class KeycardReader : PoweredDevice, IInteractive
 {
-    [BoxGroup("References")][Required][SerializeField] public AccessLevel accessLevel;
-    [BoxGroup("References")][Required][SerializeField] public DoorLock doorLock;
-    
+    [BoxGroup("References")] [Required] [SerializeField] public AccessLevel accessLevel;
+    [BoxGroup("References")] [Required] [SerializeField] public DoorLock doorLock;
+
     [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
 
-    [BoxGroup("Electrocution")][SerializeField] public Damage electrocutionDamage;
-    [BoxGroup("Electrocution")][SerializeField] public float baseElectrocutionChance = 0f;
-    [BoxGroup("Electrocution")][SerializeField] float minimalPowerElectrocutionChance = 0.5f;
+    [BoxGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
+    [BoxGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
+    [BoxGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
 
     void Awake()
     {
@@ -39,15 +37,15 @@ public class KeycardReader : PoweredDevice, IInteractive
         TryElectrocute(player);
     }
 
+    public float HoldDuration => 1;
+
     void TryElectrocute(Player player)
     {
         var electrocutionChance = GetPowerLevel() == PowerLevel.MinimalPower ? minimalPowerElectrocutionChance : 0;
         electrocutionChance = baseElectrocutionChance + electrocutionChance;
-        if (UnityEngine.Random.value < electrocutionChance){
+        if (Random.value < electrocutionChance){
             player.Damage(electrocutionDamage);
             visuals?.Electrocute();
         }
     }
-
-    public float HoldDuration => 1;
 }

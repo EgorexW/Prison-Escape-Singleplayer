@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,10 +8,10 @@ public class LevelNodes : MonoBehaviour
 {
     [SerializeField] List<LevelNode> corridorNodes;
     [SerializeField] List<LevelNode> roomNodes;
-    
+
     public List<LevelNode> CorridorNodes => corridorNodes;
     public List<LevelNode> RoomNodes => roomNodes;
-    public List<LevelNode> Nodes => new (CorridorNodes.Concat(RoomNodes));
+    public List<LevelNode> Nodes => new(CorridorNodes.Concat(RoomNodes));
 
     public void AddNode(LevelNode node)
     {

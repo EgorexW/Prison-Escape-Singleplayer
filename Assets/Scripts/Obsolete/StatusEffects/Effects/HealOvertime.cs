@@ -18,14 +18,11 @@ public class HealOvertime : IStatusEffect
         startTime = Time.time;
     }
 
-    public void OnRemove(Player player)
-    {
-        
-    }
+    public void OnRemove(Player player) { }
 
     public void OnUpdate(Player player)
     {
-        player.Heal(overAllHeal * Time.deltaTime * (1/totalTime));
+        player.Heal(overAllHeal * Time.deltaTime * (1 / totalTime));
         if (Time.time - startTime >= totalTime){
             player.RemoveStatusEffect(this);
         }

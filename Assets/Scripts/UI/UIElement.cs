@@ -6,7 +6,7 @@ public class UIElement : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    
+
     public void Show()
     {
         gameObject.SetActive(true);

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public sealed class Item : MonoBehaviour, IInteractive
 {
-    public Rigidbody Rigidbody { get; private set; }
-    
-    List<IItemEffect> itemEffects = new List<IItemEffect>();
-
-    [ReadOnly] public bool isHeld = false;
+    [ReadOnly] public bool isHeld;
     [ReadOnly] public bool pickupable = true;
 
     [SerializeField] Optional<Discovery> discoveryOnFirstPickup;
     public float holdDuration;
+
+    readonly List<IItemEffect> itemEffects = new();
+    public Rigidbody Rigidbody{ get; private set; }
 
 
     void Awake()
@@ -33,31 +32,28 @@ public sealed class Item : MonoBehaviour, IInteractive
         player.PickupItem(this);
     }
 
+    public float HoldDuration => holdDuration;
+
     public void Use(Player player, bool alternative = false)
     {
-        foreach (var effect in itemEffects){
-            effect.Use(player, alternative);
-        }
+        foreach (var effect in itemEffects) effect.Use(player, alternative);
     }
 
     public void HoldUse(Player player, bool alternative = false)
     {
-        foreach (var effect in itemEffects){
-            effect.HoldUse(player, alternative);
-        }
-    }
-    public void StopUse(Player player, bool alternative = false)
-    {
-        foreach (var effect in itemEffects){
-            effect.StopUse(player, alternative);
-        }
+        foreach (var effect in itemEffects) effect.HoldUse(player, alternative);
     }
 
-    public float HoldDuration => holdDuration;
+    public void StopUse(Player player, bool alternative = false)
+    {
+        foreach (var effect in itemEffects) effect.StopUse(player, alternative);
+    }
+
     public Sprite GetPortrait()
     {
         var tex = RuntimePreviewGenerator.GenerateModelPreview(transform);
-        var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2));
+        var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height),
+            new Vector2(tex.width / 2, tex.height / 2));
         return sprite;
     }
 }

@@ -7,25 +7,19 @@ using UnityEngine;
 [RequireComponent(typeof(TargetsSeeing))]
 public class TurretBase : MonoBehaviour
 {
-    [SerializeField][GetComponent] TargetsSeeing seeing;
-    [GetComponent][SerializeField] protected Shooting shooting;
-    [SerializeField][Required] Transform shootPoint;
+    [SerializeField] [GetComponent] TargetsSeeing seeing;
+    [GetComponent] [SerializeField] protected Shooting shooting;
+    [SerializeField] [Required] Transform shootPoint;
     [SerializeField] float rotationSpeed = 0.5f;
     [SerializeField] float defaultRotationSpeed = 0.5f;
     [SerializeField] float angleToStartShooting = 0.1f;
-    
-    
+
+
     [ShowIfInType(type = typeof(TurretBase))] public List<GameObject> targets;
-    
-    protected Quaternion defaultRotation;
-    State state = State.Idle;
     GameObject currentTarget;
 
-    protected enum State
-    {
-        Idle,
-        Aiming
-    }
+    protected Quaternion defaultRotation;
+    State state = State.Idle;
 
     protected virtual void Awake()
     {
@@ -34,16 +28,19 @@ public class TurretBase : MonoBehaviour
 
     protected void Update()
     {
-        if (state == TurretBase.State.Idle){
+        if (state == State.Idle){
             CheckForTargets();
             RotateToDefault();
         }
-        if (state == TurretBase.State.Aiming) Aim();
+        if (state == State.Aiming){
+            Aim();
+        }
     }
 
     void RotateToDefault()
     {
-        transform.rotation = General.RotateLeftOrRight(transform.rotation, defaultRotation, Time.deltaTime * rotationSpeed * defaultRotationSpeed);
+        transform.rotation = General.RotateLeftOrRight(transform.rotation, defaultRotation,
+            Time.deltaTime * rotationSpeed * defaultRotationSpeed);
     }
 
     void CheckForTargets()
@@ -62,7 +59,7 @@ public class TurretBase : MonoBehaviour
 
     protected virtual void StartAiming(GameObject foundTarget)
     {
-        state = TurretBase.State.Aiming;
+        state = State.Aiming;
         currentTarget = foundTarget;
         Aim();
     }
@@ -71,7 +68,7 @@ public class TurretBase : MonoBehaviour
     {
         var targetVisibility = seeing.CheckTargetVisibility(currentTarget);
         if (targetVisibility <= 0){
-            state = TurretBase.State.Idle;
+            state = State.Idle;
             return;
         }
         var direction = currentTarget.transform.position - transform.position;
@@ -80,12 +77,19 @@ public class TurretBase : MonoBehaviour
         if (Vector3.Angle(direction, transform.forward) < angleToStartShooting){
             Shoot();
         }
-        transform.rotation = General.RotateLeftOrRight(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed * targetVisibility);
+        transform.rotation = General.RotateLeftOrRight(transform.rotation, targetRotation,
+            Time.deltaTime * rotationSpeed * targetVisibility);
     }
 
     void Shoot()
     {
         var ray = new Ray(shootPoint.position, transform.forward);
         shooting.Shoot(ray);
+    }
+
+    protected enum State
+    {
+        Idle,
+        Aiming
     }
 }

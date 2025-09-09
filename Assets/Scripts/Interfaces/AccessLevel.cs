@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu]
 public class AccessLevel : ScriptableObject
 {
     [SerializeField] List<AccessLevel> inheretedAccessLevels;
@@ -14,11 +14,12 @@ public class AccessLevel : ScriptableObject
     {
         return AllAccessLevels.Contains(accessLevel);
     }
+
     HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
     {
         HashSet<AccessLevel> allInheretedAccessLevels = new();
         allInheretedAccessLevels.Add(mainAccessLevel);
-        foreach(var accessLevel in mainAccessLevel.GetInheretedAccessLevels()){
+        foreach (var accessLevel in mainAccessLevel.GetInheretedAccessLevels()){
             if (accessLevel == null){
                 Debug.LogWarning("Access Level is null", this);
                 continue;
@@ -30,7 +31,9 @@ public class AccessLevel : ScriptableObject
         }
         return allInheretedAccessLevels;
     }
-    public List<AccessLevel> GetInheretedAccessLevels(){
+
+    public List<AccessLevel> GetInheretedAccessLevels()
+    {
         return inheretedAccessLevels;
     }
 }

@@ -4,19 +4,19 @@ using UnityEngine.Events;
 
 public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
 {
-    IPowerSource powerSource;
-    public Transform Transform => transform;
+    [FoldoutGroup("Events")] public UnityEvent onPowerChanged;
 
-    [FoldoutGroup("Events")]
-    public UnityEvent onPowerChanged;
-    
+    IPowerSource powerSource;
+
     protected void Start()
     {
         powerSource = General.GetRootComponent<IPowerSource>(gameObject);
         powerSource.OnPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged();
     }
-    
+
+    public Transform Transform => transform;
+
     public PowerLevel GetPowerLevel()
     {
         if (powerSource == null){

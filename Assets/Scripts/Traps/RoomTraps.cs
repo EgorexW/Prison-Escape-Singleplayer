@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -7,10 +6,10 @@ using Random = UnityEngine.Random;
 public class RoomTraps : MonoBehaviour
 {
     [SerializeField] bool log;
-    
+
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
-    [FormerlySerializedAs("roomConfig")] [BoxGroup("References")][Required][SerializeField] EntryConfig entryConfig;
-    
+    [FormerlySerializedAs("roomConfig")] [BoxGroup("References")] [Required] [SerializeField] EntryConfig entryConfig;
+
     ITrap trap;
 
     void Start()
@@ -18,7 +17,7 @@ public class RoomTraps : MonoBehaviour
         entryConfig.onOpen.AddListener(ActivateTrap);
         if (Random.value < trapConfig.trapChance){
             CreateATrap();
-        }    
+        }
     }
 
     void CreateATrap()

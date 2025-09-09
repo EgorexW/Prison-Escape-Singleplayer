@@ -8,8 +8,8 @@ public interface IPoweredDevice
 
 public interface IPowerSource
 {
-    PowerLevel GetPower(IPoweredDevice poweredDevice);
     UnityEvent OnPowerChanged{ get; }
+    PowerLevel GetPower(IPoweredDevice poweredDevice);
 }
 
 public enum PowerLevel

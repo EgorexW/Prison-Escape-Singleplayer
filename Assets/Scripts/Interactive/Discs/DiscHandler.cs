@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class DiscHandler : PoweredDevice, IInteractive
 {
@@ -24,20 +22,26 @@ public class DiscHandler : PoweredDevice, IInteractive
             return;
         }
         // visuals?.AccessGranted();
-        player.RemoveItem(item);
-        Destroy(item.gameObject);
-        ActivateDisk(disc);
+        if (ActivateDisk(disc)){
+            player.RemoveItem(item);
+            Destroy(item.gameObject);
+        }
+        else{
+            Debug.LogWarning("Disk not activated: " + disc.name, disc);
+        }
     }
 
     public float HoldDuration => 3f;
 
-    void ActivateDisk(Disc disc)
+    bool ActivateDisk(Disc disc)
     {
-        foreach (var handler in linkedHandlers){
+        var activated = false;
+        foreach (var handler in linkedHandlers)
             if (handler.CanHandleDisk(disc)){
+                activated = true;
                 handler.HandleDisk(disc);
             }
-        }
+        return activated;
     }
 }
 

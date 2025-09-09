@@ -3,7 +3,7 @@ using UnityEngine;
 public class Crowbar : UseableItem
 {
     [SerializeField] float breakStrength = 2;
-    
+
     DoorLock doorLock;
 
     protected override void Apply()
@@ -24,7 +24,7 @@ public class Crowbar : UseableItem
             if (doorLock.resistance > breakStrength){
                 return;
             }
-            base.Use(playerTmp, false);
+            base.Use(playerTmp);
             return;
         }
         base.Use(playerTmp, true);

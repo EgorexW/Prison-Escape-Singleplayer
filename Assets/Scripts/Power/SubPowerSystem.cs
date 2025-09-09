@@ -1,16 +1,14 @@
-using System;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-
 [RequireComponent(typeof(BoxCollider))]
 public class SubPowerSystem : MonoBehaviour
 {
-    [FormerlySerializedAs("bounds")] [GetComponent][SerializeField] new BoxCollider collider;
+    [FormerlySerializedAs("bounds")] [GetComponent] [SerializeField] new BoxCollider collider;
 
     public PowerLevel power;
-    
+
     void Awake()
     {
         collider.isTrigger = true;

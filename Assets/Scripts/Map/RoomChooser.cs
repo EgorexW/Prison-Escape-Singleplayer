@@ -9,15 +9,17 @@ public class RoomChooser : SerializedMonoBehaviour
 
     [SerializeField] List<GameObject> necessaryRooms = new();
     [SerializeField] Dictionary<GameObject, int> optionalRooms = new();
+
+    [SerializeField] [MinMaxSlider("necessaryRoomsCount", "@Mathf.Min(allRooms, roomSpawners)")]
+    Vector2Int roomsToSpawn = new(10, 15);
+
+    [SerializeField] GameObject fillerRoom;
     int necessaryRoomsCount => necessaryRooms.Count;
     int optionalRoomsCount => optionalRooms.Count != 0 ? optionalRooms.Sum(x => x.Value) : 0;
     [ShowInInspector] int allRooms => necessaryRoomsCount + optionalRoomsCount;
-    
-    [SerializeField][MinMaxSlider("necessaryRoomsCount", "@Mathf.Min(allRooms, roomSpawners)")] Vector2Int roomsToSpawn = new(10, 15);
-
-    [SerializeField] GameObject fillerRoom;
 
     [ShowInInspector] int roomSpawners => GetComponentsInChildren<RoomSpawner>().Length;
+
     public Dictionary<RoomSpawner, GameObject> ChooseRooms()
     {
         List<RoomSpawner> spawners = new(GetComponentsInChildren<RoomSpawner>());
@@ -31,18 +33,14 @@ public class RoomChooser : SerializedMonoBehaviour
             rooms.Add(optionalRoom);
             optionalRoomsLeft[optionalRoom]--;
         }
-        while (rooms.Count < spawners.Count){
-            rooms.Add(fillerRoom);
-        }
+        while (rooms.Count < spawners.Count) rooms.Add(fillerRoom);
         rooms.Shuffle();
         spawners.Shuffle();
         var nr = 0;
-        while (rooms.Count > 0)
-        {   
-            var room = rooms[0];  
-            var matched = false;     
-            foreach (var spawner in spawners.ToArray())
-            {
+        while (rooms.Count > 0){
+            var room = rooms[0];
+            var matched = false;
+            foreach (var spawner in spawners.ToArray()){
                 if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
                     continue;
                 }
@@ -55,8 +53,7 @@ public class RoomChooser : SerializedMonoBehaviour
             if (matched){
                 continue;
             }
-            foreach (var spawner in matchedRoomsWithSpawners.Keys.ToArray())
-            {
+            foreach (var spawner in matchedRoomsWithSpawners.Keys.ToArray()){
                 if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
                     continue;
                 }
@@ -66,7 +63,7 @@ public class RoomChooser : SerializedMonoBehaviour
                 matchedRoomsWithSpawners.Add(spawner, room);
                 break;
             }
-            nr ++;
+            nr++;
             if (nr > MAX_GENERATION_LOOPS){
                 Debug.LogWarning("Generation looped out", this);
                 return null;

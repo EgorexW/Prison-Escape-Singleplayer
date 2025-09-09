@@ -1,14 +1,13 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class PowerSystemFailure : MonoBehaviour
 {
-    [BoxGroup("References")][Required][SerializeField] MainPowerSystem mainPowerSystem;
+    [BoxGroup("References")] [Required] [SerializeField] MainPowerSystem mainPowerSystem;
 
     [SerializeField] float timeBetweenPowerLoss = 90f;
-    
-    float lastPowerLossTime = 0f;
+
+    float lastPowerLossTime;
 
     void Start()
     {
@@ -24,7 +23,7 @@ public class PowerSystemFailure : MonoBehaviour
 
     void LosePower()
     {
-        SubPowerSystem targetedSubSystem = mainPowerSystem.SubPowerSystems.Random();
+        var targetedSubSystem = mainPowerSystem.SubPowerSystems.Random();
         mainPowerSystem.ChangePower(targetedSubSystem, PowerLevel.NoPower);
         lastPowerLossTime = Time.time;
     }

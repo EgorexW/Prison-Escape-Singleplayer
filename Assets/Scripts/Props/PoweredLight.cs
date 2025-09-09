@@ -6,16 +6,16 @@ using UnityEngine.Serialization;
 
 public class PoweredLight : PoweredDevice, IDamagable
 {
-    [Required][SerializeField] MeshRenderer meshRenderer;
     [GetComponent] [SerializeField] new Light light;
+    [Required] [SerializeField] MeshRenderer meshRenderer;
 
-    [Required][SerializeField] Material defaultMaterial;
-    [FormerlySerializedAs("destroyedMaterial")] [Required][SerializeField] Material offMaterial;
+    [Required] [SerializeField] Material defaultMaterial;
+    [FormerlySerializedAs("destroyedMaterial")] [Required] [SerializeField] Material offMaterial;
 
-    [SerializeField] bool onWithMinimalPower = false;
+    [SerializeField] bool onWithMinimalPower;
     [SerializeField] Health health;
-    
-    bool broken = false;
+
+    bool broken;
 
     public Health Health => health;
 
@@ -24,6 +24,7 @@ public class PoweredLight : PoweredDevice, IDamagable
     {
         Die();
     }
+
     public void Die()
     {
         broken = true;

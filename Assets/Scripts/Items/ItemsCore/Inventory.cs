@@ -4,14 +4,15 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    List<Item> items = new();
     [SerializeField] int size = 1;
-    UnityEvent onInventoryChange = new();
-    public UnityEvent OnInventoryChange => onInventoryChange;
+    readonly List<Item> items = new();
+    public UnityEvent OnInventoryChange{ get; } = new();
 
-    public bool CanAddItem(){
+    public bool CanAddItem()
+    {
         return items.Count < size;
     }
+
     public void AddItem(Item item)
     {
         if (!CanAddItem()){
@@ -19,20 +20,23 @@ public class Inventory : MonoBehaviour
         }
         item.isHeld = true;
         items.Add(item);
-        onInventoryChange.Invoke();
+        OnInventoryChange.Invoke();
     }
+
     public List<Item> GetItems()
     {
-        return new(items);
+        return new List<Item>(items);
     }
 
     public void RemoveItem(Item item)
     {
         item.isHeld = false;
         items.Remove(item);
-        onInventoryChange.Invoke();
+        OnInventoryChange.Invoke();
     }
-    public int GetSize(){
+
+    public int GetSize()
+    {
         return size;
     }
 }

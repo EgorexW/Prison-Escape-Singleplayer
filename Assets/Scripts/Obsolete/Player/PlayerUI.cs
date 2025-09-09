@@ -6,20 +6,19 @@ using UnityEngine.Serialization;
 
 class PlayerUI : MonoBehaviour
 {
+    [GetComponentInChildren] [SerializeField] HealthBarUI healthBarUI;
+    [GetComponentInChildren] [SerializeField] ItemsUI itemsUI;
     [FormerlySerializedAs("character")] [Required] [SerializeField] Player player;
-
-    [GetComponentInChildren][SerializeField] HealthBarUI healthBarUI;
-    [GetComponentInChildren][SerializeField] ItemsUI itemsUI;
-    [Required][SerializeField] MetricBar staminaBarUI;
-    [Required][SerializeField] MetricBar progressBarUI;
+    [Required] [SerializeField] MetricBar staminaBarUI;
+    [Required] [SerializeField] MetricBar progressBarUI;
 
     void Awake()
     {
         player.onInventoryChange.AddListener(ShowInventory);
         player.onHealthChange.AddListener(ShowHealth);
-        player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t/d));
+        player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
-        
+
         progressBarUI.Hide();
     }
 
@@ -28,18 +27,16 @@ class PlayerUI : MonoBehaviour
         staminaBarUI.Set(player.Stamina, 1);
     }
 
-    private void ShowHealth()
+    void ShowHealth()
     {
         healthBarUI.SetHealth(player.Health);
     }
 
-    void ShowInventory(){
+    void ShowInventory()
+    {
         var items = player.GetInventory().GetItems();
         List<ISpriteUI> itemUIs = new();
-        foreach (var item in items)
-        {
-            itemUIs.Add(new SpriteUI(item.GetPortrait(), () => player.EquipItem(item)));
-        }
-        itemsUI.ShowItems(items: itemUIs.ToArray());
+        foreach (var item in items) itemUIs.Add(new SpriteUI(item.GetPortrait(), () => player.EquipItem(item)));
+        itemsUI.ShowItems(itemUIs.ToArray());
     }
 }
