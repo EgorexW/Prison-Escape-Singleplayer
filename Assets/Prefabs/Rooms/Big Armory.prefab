@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 1889607792103278341, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
       propertyPath: spawnNr.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1889607792103278341, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
@@ -838,10 +838,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    health: 100
+    currentHealth: 100
     maxHealth: 100
     absoluteMaxHealth: 100
     damagedBy: 1
+  gameObjectToDestroy: {fileID: 0}
 --- !u!4 &4930650271363435461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470596, guid: 8fd8f3f29fdf6cf4c9c7e1dd047bc74c,

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Basic Med
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 5
+  - value: 6
     Object: {fileID: 3882893351632694812, guid: d1775755d730143969281ada5252c380,
       type: 3}
   - value: 2

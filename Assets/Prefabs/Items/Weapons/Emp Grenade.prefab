@@ -143,6 +143,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1728739547505233807}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
+--- !u!114 &4416719005536130188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8145630109775121858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565534021384309587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5333414939796053717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,
@@ -167,13 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc45bb90f94f05979ee293cba74508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHeld: 0
-  pickupable: 1
-  discoveryOnFirstPickup:
-    enabled: 0
-    value:
-      score: 0
-  holdDuration: 1
+  item: {fileID: 4416719005536130188}
   effectPrefab: {fileID: 7714404102179766837, guid: 3539bb1fda4384a8788e7561f721b51a,
     type: 3}
   timeToExplode: 3

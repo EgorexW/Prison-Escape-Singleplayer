@@ -2456,6 +2456,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534043826}
   m_CullTransparentMesh: 1
+--- !u!1 &559546683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559546684}
+  - component: {fileID: 559546685}
+  - component: {fileID: 559546686}
+  m_Layer: 8
+  m_Name: On Player Dead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559546684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559546683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8997996946667749017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559546685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559546683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adceb254f88b548beafc91eaa5455086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &559546686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559546683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f11cc7505b04246b8dec9302f52612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Main Menu
+  levelName:
+    enabled: 0
+    value: {fileID: 0}
+  async: 0
 --- !u!1 &565457576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,7 +2987,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -2972,7 +3034,8 @@ MonoBehaviour:
   - {fileID: 8419717765657594186, guid: 4782708c5bcd54a49a7344e76626c312, type: 3}
   - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
   - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
-  roomsToSpawn: {x: 14, y: 17}
+  - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
+  roomsToSpawn: {x: 17, y: 18}
   fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
     type: 3}
 --- !u!1 &584881359
@@ -3470,7 +3533,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1078684527}
   - component: {fileID: 1078684528}
-  - component: {fileID: 1078684529}
   m_Layer: 0
   m_Name: Main Power System
   m_TagString: Untagged
@@ -3515,19 +3577,6 @@ MonoBehaviour:
   - {fileID: 1820167181}
   - {fileID: 1432246487}
   - {fileID: 1123375711}
---- !u!114 &1078684529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078684526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7baa485969195439aba7cab0cb19c4f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPowerSystem: {fileID: 1078684528}
   timeBetweenPowerLoss: 90
 --- !u!1 &1112159467
 GameObject:
@@ -6033,9 +6082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f123100f304b94af852365abfe8055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 134446977}
   healthBarUI: {fileID: 3374533246960844035}
   itemsUI: {fileID: 1574877574143516277}
+  player: {fileID: 134446977}
   staminaBarUI: {fileID: 1634742315}
   progressBarUI: {fileID: 1112159469}
 --- !u!1 &1574877574744100524
@@ -7205,6 +7254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4135013737309117823}
+  - {fileID: 559546684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!136 &8997996946667749018

@@ -32,6 +32,7 @@ public partial class Player
 
     public void Die()
     {
+        BroadcastMessage("PlayerDead", SendMessageOptions.DontRequireReceiver);
         gameObject.SetActive(false);
     }
 

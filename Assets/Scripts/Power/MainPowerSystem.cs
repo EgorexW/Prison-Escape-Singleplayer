@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -5,13 +6,21 @@ using UnityEngine.Events;
 
 public class MainPowerSystem : MonoBehaviour, IPowerSource
 {
+    public static MainPowerSystem i { get; private set; }
+    
     [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
     [SerializeField] float timeBetweenPowerLoss = 90f;
+    
     float lastPowerLossTime;
 
     public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
     public bool GlobalMinimalPower{ get; private set; }
+
+    void Awake()
+    {
+        i = this;
+    }
 
     void Start()
     {
@@ -45,9 +54,12 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     }
 
 
-    public void ChangePower(SubPowerSystem targetedSubSystem, PowerLevel fullPower)
+    public void ChangePower(SubPowerSystem targetedSubSystem, PowerLevel targetPower)
     {
-        targetedSubSystem.power = fullPower;
+        if (targetPower != PowerLevel.NoPower){
+            lastPowerLossTime = Time.time;
+        }
+        targetedSubSystem.power = targetPower;
         OnPowerChanged.Invoke();
     }
 

@@ -26,18 +26,12 @@ public class Grenade : ItemEffect
         var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
         effect.transform.localScale = Vector3.one * radius;
 
-        var transforms = General.GetComponentsFromCollider<Transform>(hits);
+        var damageables = General.GetComponentsFromCollider<IDamagable>(hits);
 
-        foreach (var hitTransform in transforms) ResolveHit(hitTransform);
+        foreach (var damageable in damageables) damageable?.Damage(damage);
 
         onExplode.Invoke();
 
         gameObject.SetActive(false);
-    }
-
-    protected virtual void ResolveHit(Transform hitTransform)
-    {
-        var damageable = General.GetRootComponent<IDamagable>(hitTransform, false);
-        damageable?.Damage(damage);
     }
 }

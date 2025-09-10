@@ -21,8 +21,8 @@ public class LootSpawner : MonoBehaviour
         SpawnGameObjects();
     }
 
-    [Button]
-    [DisableInEditorMode]
+    // [Button]
+    // [DisableInEditorMode]
     protected void SpawnGameObjects()
     {
         if (spawnTable == null){

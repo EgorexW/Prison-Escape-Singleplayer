@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6178723451059281684}
   - component: {fileID: 5060624307671558964}
   - component: {fileID: 1787204385783293248}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Corridor Fire Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851bacbb47789454bba8213f44a0ea01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxCollider: {fileID: 1787204385783293248}
   effectPrefab: {fileID: 7714404102179766837, guid: 43bea58b778f14d2da0cd4411b60d58a,
     type: 3}
-  boxCollider: {fileID: 1787204385783293248}
   startActive: 1
   damage:
     damage: 50
