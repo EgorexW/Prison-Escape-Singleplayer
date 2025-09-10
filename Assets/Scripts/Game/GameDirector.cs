@@ -8,13 +8,8 @@ public class GameDirector : SerializedMonoBehaviour
 
     [SerializeField] bool log;
 
-    [SerializeField] float playerScoreMultiplier = 1;
-
-    [ShowInInspector] float playerScore;
     public static GameDirector i{ get; private set; }
-
     public Player Player => player;
-
 
     void Awake()
     {
@@ -27,12 +22,6 @@ public class GameDirector : SerializedMonoBehaviour
         // DontDestroyOnLoad(gameObject);
     }
 
-    public void PlayerDiscovery(Discovery discovery)
-    {
-        Log("Player discovery " + discovery.score);
-        playerScore += discovery.score;
-    }
-
     #region Debug
 
     void Log(string msg)
@@ -43,10 +32,4 @@ public class GameDirector : SerializedMonoBehaviour
     }
 
     #endregion
-}
-
-[Serializable]
-public class Discovery
-{
-    public float score;
 }

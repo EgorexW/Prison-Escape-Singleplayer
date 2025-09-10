@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -21,9 +22,13 @@ namespace StarterAssets
 
         void OnApplicationFocus(bool hasFocus)
         {
-            SetCursorState(cursorLocked);
+            SetCursorLock(cursorLocked);
         }
 
+        void OnDestroy()
+        {
+            SetCursorLock(false);
+        }
 
         public void MoveInput(Vector2 newMoveDirection)
         {
@@ -45,9 +50,9 @@ namespace StarterAssets
             sprint = newSprintState;
         }
 
-        void SetCursorState(bool newState)
+        void SetCursorLock(bool state)
         {
-            Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED

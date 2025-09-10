@@ -44,9 +44,9 @@ public class LevelNode : MonoBehaviour
                 Debug.LogWarning("Tried to get corridor type of not corridor node", this);
                 return default;
             }
-            return SameTypeConnections.Count switch{
+            return Connections.Count switch{
                 1 => CorridorNodeType.DeadEnd,
-                2 => Vector3.Dot(SameTypeConnections[0], SameTypeConnections[1]) < -0.5
+                2 => Vector3.Dot(Connections[0], Connections[1]) < -0.5
                     ? CorridorNodeType.Straight
                     : CorridorNodeType.Turn,
                 3 => CorridorNodeType.ThreeWay,
@@ -63,9 +63,9 @@ public class LevelNode : MonoBehaviour
 
     public List<LevelNode> GetNeighboringNodes()
     {
-        if (neighboringNodes != null){
-            return neighboringNodes;
-        }
+        // if (neighboringNodes != null){
+        //     return neighboringNodes;
+        // }
         GenerateNeighbours();
         return neighboringNodes;
     }

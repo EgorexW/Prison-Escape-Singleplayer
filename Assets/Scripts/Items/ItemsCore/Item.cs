@@ -6,8 +6,7 @@ public sealed class Item : MonoBehaviour, IInteractive
 {
     [ReadOnly] public bool isHeld;
     [ReadOnly] public bool pickupable = true;
-
-    [SerializeField] Optional<Discovery> discoveryOnFirstPickup;
+    
     public float holdDuration;
 
     readonly List<IItemEffect> itemEffects = new();
@@ -24,10 +23,6 @@ public sealed class Item : MonoBehaviour, IInteractive
     {
         if (!pickupable){
             return;
-        }
-        if (discoveryOnFirstPickup){
-            GameDirector.i.PlayerDiscovery(discoveryOnFirstPickup);
-            discoveryOnFirstPickup.Enabled = false;
         }
         player.PickupItem(this);
     }

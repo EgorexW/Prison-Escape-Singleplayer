@@ -19,6 +19,11 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
 
     void Awake()
     {
+        if (i != null && i != this){
+            Debug.LogWarning("There was another instance", this);
+            Destroy(gameObject);
+            return;
+        }
         i = this;
     }
 
