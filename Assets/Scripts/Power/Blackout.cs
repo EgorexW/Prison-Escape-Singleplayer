@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Blackout : MonoBehaviour
+public class Blackout : MonoBehaviour, ITrap
 {
     public void Activate()
     {

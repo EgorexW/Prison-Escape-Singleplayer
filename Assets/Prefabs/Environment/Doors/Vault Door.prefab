@@ -238,6 +238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
+      propertyPath: health.currentHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
+        type: 3}
       propertyPath: health.absoluteMaxHealth
       value: 1000
       objectReference: {fileID: 0}
@@ -310,6 +315,11 @@ PrefabInstance:
     - target: {fileID: 8061539004898683035, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198443633173221963, guid: 958c01ed82f414951bd1e15d2e206172,
+        type: 3}
+      propertyPath: unlocked
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9198443633173221963, guid: 958c01ed82f414951bd1e15d2e206172,

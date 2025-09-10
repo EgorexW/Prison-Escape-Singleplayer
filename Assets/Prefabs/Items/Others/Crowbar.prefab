@@ -100,21 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b5029f7cf5d4b71a68defb4262d552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 6613972356666955244}
   useTime: 3
   breakStrength: 2
---- !u!114 &6613972356666955244 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1696112363810245794}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4440457080533092915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3146435495052034901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,6 +113,18 @@ PrefabInstance:
     - target: {fileID: 146922, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
       propertyPath: m_Name
       value: SM_Item_Crowbar_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,6 +165,15 @@ PrefabInstance:
     - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459920, guid: adf90e96f75297942ba7b7d057dd69b4, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64961739401065730, guid: adf90e96f75297942ba7b7d057dd69b4,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

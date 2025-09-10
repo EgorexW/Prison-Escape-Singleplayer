@@ -58,7 +58,7 @@ public class LevelNode : MonoBehaviour
 
     void Start()
     {
-        General.GetObjectRoot(transform)?.GetComponent<LevelNodes>().AddNode(this);
+        LevelNodes.i.AddNode(this);
     }
 
     public List<LevelNode> GetNeighboringNodes()

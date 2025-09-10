@@ -2,16 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
-[RequireComponent(typeof(ObjectRoot))]
 public class LevelNodes : MonoBehaviour
 {
     [SerializeField] List<LevelNode> corridorNodes;
     [SerializeField] List<LevelNode> roomNodes;
+    
+    public static LevelNodes i;
 
     public List<LevelNode> CorridorNodes => corridorNodes;
     public List<LevelNode> RoomNodes => roomNodes;
     public List<LevelNode> Nodes => new(CorridorNodes.Concat(RoomNodes));
+
+    void Awake()
+    {
+        if (i != null && i != this){
+            Debug.LogWarning("Multiple LevelNodes in scene", this);
+            Destroy(this);
+            return;
+        }
+        i = this;
+    }
 
     public void AddNode(LevelNode node)
     {

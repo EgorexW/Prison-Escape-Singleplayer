@@ -1,10 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class GameTime : MonoBehaviour
 {
     [SerializeField] float gameTimeMinutes = 8f;
     [SerializeField] Damage outOfTimeDamage = new Damage(2, 1);
-    public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
+    [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
 
     void Update()
     {
@@ -16,5 +17,10 @@ public class GameTime : MonoBehaviour
     void OutOfTime()
     {
         GameDirector.i.Player.Damage(outOfTimeDamage * Time.deltaTime);
+    }
+
+    public void IncreaseTime(float gameTimeIncrease)
+    {
+        gameTimeMinutes += gameTimeIncrease / 60f;
     }
 }

@@ -19,11 +19,7 @@ namespace StarterAssets
         [Header("Mouse Cursor Settings")] public bool cursorLocked = true;
 
         public bool cursorInputForLook = true;
-
-        void OnApplicationFocus(bool hasFocus)
-        {
-            SetCursorLock(cursorLocked);
-        }
+        
 
         void OnDestroy()
         {
@@ -53,6 +49,7 @@ namespace StarterAssets
         void SetCursorLock(bool state)
         {
             Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
+            Cursor.visible = !state;
         }
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -65,6 +62,7 @@ namespace StarterAssets
             playerInput.FindAction("Jump").performed += OnJump;
             playerInput.FindAction("Sprint").performed += OnSprint;
             playerInput.FindAction("Sprint").canceled += OnSprint;
+            SetCursorLock(cursorLocked);
         }
 
         public void OnMove(InputAction.CallbackContext value)

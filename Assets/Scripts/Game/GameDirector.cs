@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameDirector : SerializedMonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] Player player;
+    [BoxGroup("References")][Required] public GameTime gameTime;
 
     [SerializeField] bool log;
 

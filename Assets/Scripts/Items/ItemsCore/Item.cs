@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public sealed class Item : MonoBehaviour, IInteractive
 {
@@ -12,6 +13,7 @@ public sealed class Item : MonoBehaviour, IInteractive
     readonly List<IItemEffect> itemEffects = new();
     public Rigidbody Rigidbody{ get; private set; }
 
+    [FoldoutGroup("Events")] public UnityEvent<Item> onPickUp;
 
     void Awake()
     {
@@ -25,6 +27,7 @@ public sealed class Item : MonoBehaviour, IInteractive
             return;
         }
         player.PickupItem(this);
+        onPickUp?.Invoke(this);
     }
 
     public float HoldDuration => holdDuration;

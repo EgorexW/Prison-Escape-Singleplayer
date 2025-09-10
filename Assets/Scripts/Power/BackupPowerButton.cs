@@ -5,18 +5,15 @@ public class BackupPowerButton : MonoBehaviour, IInteractive
 {
     [SerializeField] TextMeshPro text;
 
-    MainPowerSystem powerSystem;
-
     void Start()
     {
-        powerSystem = General.GetRootComponent<MainPowerSystem>(gameObject);
-        powerSystem.OnPowerChanged.AddListener(OnPowerChanged);
+        MainPowerSystem.i.OnPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged();
     }
 
     public void Interact(Player player)
     {
-        powerSystem.SetGlobalMinimalPower(!powerSystem.GlobalMinimalPower);
+        MainPowerSystem.i.SetGlobalMinimalPower(!MainPowerSystem.i.GlobalMinimalPower);
     }
 
     public float HoldDuration => 3;
@@ -24,7 +21,7 @@ public class BackupPowerButton : MonoBehaviour, IInteractive
     void OnPowerChanged()
     {
         if (text != null){
-            text.text = powerSystem.GlobalMinimalPower ? "Disable Backup Power" : "Enable Backup Power";
+            text.text = MainPowerSystem.i.GlobalMinimalPower ? "Disable Backup Power" : "Enable Backup Power";
         }
     }
 }

@@ -2,35 +2,45 @@ using System.Collections.Generic;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(BoxCollider))]
-public class FireTrap : MonoBehaviour, ITrap
+public class FireTrap : PoweredDevice, ITrap
 {
     [SerializeField] [GetComponent] BoxCollider boxCollider;
     [SerializeField] [Required] GameObject effectPrefab;
 
-    public bool startActive = true;
+    [FormerlySerializedAs("startActive")] public bool active = true;
 
     [SerializeField] Damage damage;
 
-    List<MotionSensor> motionSensor;
+    List<MotionSensor> motionSensor = new();
 
-    protected void Awake()
+    protected override void Start()
     {
+        base.Start();
         motionSensor = new List<MotionSensor>(GetComponentsInChildren<MotionSensor>());
         motionSensor.ForEach(sensor => sensor.onActivation.AddListener(Explode));
-        SetActive(startActive);
+        SetActive();
         boxCollider.isTrigger = true;
     }
 
     public void Activate()
     {
-        SetActive(true);
+        active = true;
+        SetActive();
     }
 
-    void SetActive(bool active)
+    void SetActive()
     {
-        motionSensor.ForEach(sensor => sensor.SetActive(active));
+        motionSensor.RemoveAll(sensor => sensor == null);
+        motionSensor.ForEach(sensor => sensor.SetActive(active && GetPowerLevel() == PowerLevel.FullPower));
+    }
+
+    protected override void OnPowerChanged()
+    {
+        base.OnPowerChanged();
+        SetActive();
     }
 
     public void Explode()

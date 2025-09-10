@@ -14,13 +14,16 @@ class KeycardReaderVisuals : MonoBehaviour
 
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessGrantedSound;
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessDeniedSound;
+    [BoxGroup("Audio")] [SerializeField] PlayAudio electrocuteSound;
+    
+    [BoxGroup("Sparks")] [SerializeField] ParticleSystem sparks;
 
     float lastTextChangeTime;
 
     void Start()
     {
         keycardReader.onPowerChanged.AddListener(OnPowerChanged);
-        OnPowerChanged();
+        OnPowerChanged(keycardReader.GetPowerLevel());
     }
 
     void Update()
@@ -30,9 +33,9 @@ class KeycardReaderVisuals : MonoBehaviour
         }
     }
 
-    void OnPowerChanged()
+    void OnPowerChanged(PowerLevel powerLevel)
     {
-        var working = keycardReader.GetPowerLevel() != PowerLevel.NoPower;
+        var working = powerLevel != PowerLevel.NoPower;
         text.enabled = working;
     }
 
@@ -52,6 +55,6 @@ class KeycardReaderVisuals : MonoBehaviour
 
     public void Electrocute()
     {
-        // TODO add sparks or something
+        sparks?.Play();
     }
 }

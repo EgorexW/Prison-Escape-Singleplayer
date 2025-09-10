@@ -27,6 +27,10 @@ public class KeycardReader : PoweredDevice, IInteractive
             return;
         }
         var item = player.GetHeldItem();
+        if (item == null){
+            visuals?.AccessDenied();
+            return;
+        }
         var keycard = item.GetComponent<IKeycard>();
         if (keycard == null || !keycard.HasAccess(accessLevel)){
             visuals?.AccessDenied();

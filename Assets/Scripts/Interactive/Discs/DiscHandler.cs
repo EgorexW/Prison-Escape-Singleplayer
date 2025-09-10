@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class DiscHandler : PoweredDevice, IInteractive
 {
-    List<IDiskHandler> linkedHandlers;
+    List<IDiscHandler> linkedHandlers;
 
     void Awake()
     {
-        linkedHandlers = new List<IDiskHandler>(GetComponentsInChildren<IDiskHandler>());
+        linkedHandlers = new List<IDiscHandler>(GetComponentsInChildren<IDiscHandler>());
     }
 
     public void Interact(Player player)
@@ -37,16 +37,16 @@ public class DiscHandler : PoweredDevice, IInteractive
     {
         var activated = false;
         foreach (var handler in linkedHandlers)
-            if (handler.CanHandleDisk(disc)){
+            if (handler.CanHandleDisc(disc)){
                 activated = true;
-                handler.HandleDisk(disc);
+                handler.HandleDisc(disc);
             }
         return activated;
     }
 }
 
-interface IDiskHandler
+interface IDiscHandler
 {
-    bool CanHandleDisk(Disc disc);
-    void HandleDisk(Disc disc);
+    bool CanHandleDisc(Disc disc);
+    void HandleDisc(Disc disc);
 }

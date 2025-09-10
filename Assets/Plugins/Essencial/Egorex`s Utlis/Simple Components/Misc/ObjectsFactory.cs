@@ -74,4 +74,9 @@ public class ObjectsFactory : MonoBehaviour
     {
         return new List<GameObject>(objects);
     }
+
+    public GameObject GetObject(int index)
+    {
+        return objects[index];
+    }
 }

@@ -15,7 +15,7 @@ public class TurretBase : MonoBehaviour
     [SerializeField] float angleToStartShooting = 0.1f;
 
 
-    [ShowIfInType(type = typeof(TurretBase))] public List<GameObject> targets;
+    public List<GameObject> targets;
     GameObject currentTarget;
 
     protected Quaternion defaultRotation;

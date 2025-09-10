@@ -4,13 +4,20 @@ using UnityEngine.Events;
 
 public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
 {
-    [FoldoutGroup("Events")] public UnityEvent onPowerChanged;
+    [FoldoutGroup("Events")] public UnityEvent<PowerLevel> onPowerChanged;
 
     IPowerSource powerSource;
 
-    protected void Start()
+    protected virtual void Start()
     {
-        powerSource = General.GetRootComponent<IPowerSource>(gameObject);
+        if (powerSource == null){
+            SetPowerSource(MainPowerSystem.i);
+        }
+    }
+
+    public void SetPowerSource(IPowerSource powerSource)
+    {
+        this.powerSource = powerSource;
         powerSource.OnPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged();
     }
@@ -20,14 +27,20 @@ public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
     public PowerLevel GetPowerLevel()
     {
         if (powerSource == null){
-            Debug.LogError("No power source found in parent hierarchy");
-            return PowerLevel.NoPower;
+            SetPowerSource(MainPowerSystem.i);
         }
         return powerSource.GetPower(this);
     }
 
     protected virtual void OnPowerChanged()
     {
-        onPowerChanged.Invoke();
+        onPowerChanged.Invoke(GetPowerLevel());
+    }
+    
+    void OnDestroy()
+    {
+        if (powerSource != null){
+            powerSource.OnPowerChanged.RemoveListener(OnPowerChanged);
+        }
     }
 }
