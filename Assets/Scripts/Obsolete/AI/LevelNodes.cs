@@ -2,14 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 public class LevelNodes : MonoBehaviour
 {
+    public static LevelNodes i;
     [SerializeField] List<LevelNode> corridorNodes;
     [SerializeField] List<LevelNode> roomNodes;
-    
-    public static LevelNodes i;
 
     public List<LevelNode> CorridorNodes => corridorNodes;
     public List<LevelNode> RoomNodes => roomNodes;

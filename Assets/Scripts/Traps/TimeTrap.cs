@@ -1,13 +1,12 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class TimeTrap : PoweredDevice, ITrap
 {
-    [BoxGroup("References")][Required][SerializeField] MotionSensor motionSensor;
-    
+    [BoxGroup("References")] [Required] [SerializeField] MotionSensor motionSensor;
+
     [SerializeField] float timePenalty = 60f;
-    
+
     [SerializeField] bool isActive;
 
     void Awake()

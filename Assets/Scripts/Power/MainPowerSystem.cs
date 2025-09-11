@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
@@ -7,16 +6,15 @@ using UnityEngine.Events;
 
 public class MainPowerSystem : MonoBehaviour, IPowerSource
 {
-    public static MainPowerSystem i { get; private set; }
-    
     [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
     [SerializeField] float timeBetweenPowerLoss = 90f;
-    
-    public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
 
-    [ShowInInspector][BoxGroup("Debug")] float lastPowerLossTime;
-    [ShowInInspector][BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
+    [ShowInInspector] [BoxGroup("Debug")] float lastPowerLossTime;
+    public static MainPowerSystem i{ get; private set; }
+
+    public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
+    [ShowInInspector] [BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
 
     void Awake()
     {

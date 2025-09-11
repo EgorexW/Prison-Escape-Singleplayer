@@ -7,13 +7,13 @@ public sealed class Item : MonoBehaviour, IInteractive
 {
     [ReadOnly] public bool isHeld;
     [ReadOnly] public bool pickupable = true;
-    
+
     public float holdDuration;
+
+    [FoldoutGroup("Events")] public UnityEvent<Item> onPickUp;
 
     readonly List<IItemEffect> itemEffects = new();
     public Rigidbody Rigidbody{ get; private set; }
-
-    [FoldoutGroup("Events")] public UnityEvent<Item> onPickUp;
 
     void Awake()
     {

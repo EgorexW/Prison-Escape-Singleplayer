@@ -7,7 +7,9 @@ class KeycardReaderVisuals : MonoBehaviour
     public KeycardReader keycardReader;
 
     [BoxGroup("Text")] [Required] [SerializeField] TextMeshPro text;
+
     [BoxGroup("Text")] [SerializeField] float textDisplayTime = 3;
+
     // [BoxGroup("Text")] [SerializeField] string defaultText = "<color=yellow>----</color>";
     [BoxGroup("Text")] [SerializeField] string accessGrantedText = "<color=green>✓</color>";
     [BoxGroup("Text")] [SerializeField] string accessDeniedText = "<color=red>X</color>";
@@ -15,9 +17,9 @@ class KeycardReaderVisuals : MonoBehaviour
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessGrantedSound;
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessDeniedSound;
     [BoxGroup("Audio")] [SerializeField] PlayAudio electrocuteSound;
-    
+
     [BoxGroup("Sparks")] [SerializeField] ParticleSystem sparks;
-    
+
     string defaultText = "<color=yellow>----</color>";
     float lastTextChangeTime;
 

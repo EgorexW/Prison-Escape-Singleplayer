@@ -15,14 +15,21 @@ public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
         }
     }
 
+    void OnDestroy()
+    {
+        if (powerSource != null){
+            powerSource.OnPowerChanged.RemoveListener(OnPowerChanged);
+        }
+    }
+
+    public Transform Transform => transform;
+
     public void SetPowerSource(IPowerSource powerSource)
     {
         this.powerSource = powerSource;
         powerSource.OnPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged();
     }
-
-    public Transform Transform => transform;
 
     public PowerLevel GetPowerLevel()
     {
@@ -35,12 +42,5 @@ public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
     protected virtual void OnPowerChanged()
     {
         onPowerChanged.Invoke(GetPowerLevel());
-    }
-    
-    void OnDestroy()
-    {
-        if (powerSource != null){
-            powerSource.OnPowerChanged.RemoveListener(OnPowerChanged);
-        }
     }
 }

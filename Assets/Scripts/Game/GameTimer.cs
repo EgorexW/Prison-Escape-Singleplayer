@@ -1,4 +1,3 @@
-using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -14,8 +13,8 @@ public class GameTimer : MonoBehaviour
             text.text = "00:00";
             return;
         }
-        int minutes = Mathf.FloorToInt(timeLeft / 60f);
-        int seconds = Mathf.FloorToInt(timeLeft % 60f);
+        var minutes = Mathf.FloorToInt(timeLeft / 60f);
+        var seconds = Mathf.FloorToInt(timeLeft % 60f);
         text.text = $"{minutes:00}:{seconds:00}";
     }
 }

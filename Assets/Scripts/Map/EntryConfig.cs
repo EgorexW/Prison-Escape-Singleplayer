@@ -40,9 +40,7 @@ public class EntryConfig : MonoBehaviour
             keycardReader.gameObject.SetActive(accessLevel != null);
             keycardReader.accessLevel = accessLevel;
         }
-        foreach (var doorLock in doorLocks){
-            doorLock.unlocked = accessLevel == null;
-        }
+        foreach (var doorLock in doorLocks) doorLock.unlocked = accessLevel == null;
         weakDoor.SetActive(doorType == DoorType.Weak);
         strongDoor.SetActive(doorType == DoorType.Strong);
     }

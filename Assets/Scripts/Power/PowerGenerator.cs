@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PowerGenerator : UseableItem
 {
     protected override void Apply()

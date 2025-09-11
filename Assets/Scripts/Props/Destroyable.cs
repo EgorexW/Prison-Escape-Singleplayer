@@ -5,7 +5,7 @@ public class Destroyable : MonoBehaviour, IDamagable
     [SerializeField] Health health;
 
     [SerializeField] GameObject gameObjectToDestroy;
-    
+
     public Health Health => health;
 
     public void Damage(Damage damage)

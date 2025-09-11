@@ -6,8 +6,7 @@ public class FacilitySwitch : MonoBehaviour
 {
     public string id;
 
-    [FoldoutGroup("Events")]
-    public UnityEvent onActivate;
+    [FoldoutGroup("Events")] public UnityEvent onActivate;
 
     public void Activate()
     {

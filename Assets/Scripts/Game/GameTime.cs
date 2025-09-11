@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameTime : MonoBehaviour
 {
     [SerializeField] float gameTimeMinutes = 8f;
-    [SerializeField] Damage outOfTimeDamage = new Damage(2, 1);
+    [SerializeField] Damage outOfTimeDamage = new(2, 1);
     [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
 
     void Update()

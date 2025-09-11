@@ -1,12 +1,11 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class GameDirector : SerializedMonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] Player player;
-    [BoxGroup("References")][Required] public GameTime gameTime;
-    [BoxGroup("References")][Required] public FacilitySwitches facilitySwitches;
+    [BoxGroup("References")] [Required] public GameTime gameTime;
+    [BoxGroup("References")] [Required] public FacilitySwitches facilitySwitches;
 
     [SerializeField] bool log;
 

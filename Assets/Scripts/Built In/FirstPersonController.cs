@@ -11,6 +11,8 @@ namespace StarterAssets
 #endif
     public class FirstPersonController : MonoBehaviour
     {
+        public delegate float Speed();
+
         const float _threshold = 0.01f;
 
         [Header("Player")] [Tooltip("Rotation speed of the character")] public float RotationSpeed = 1.0f;
@@ -80,6 +82,9 @@ namespace StarterAssets
             }
         }
 
+        public Speed MoveSpeed{ get; set; }
+        public Speed SprintSpeed{ get; set; }
+
         void Awake()
         {
             // get a reference to our main camera
@@ -135,11 +140,6 @@ namespace StarterAssets
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
         }
-        
-        public delegate float Speed();
-
-        public Speed MoveSpeed{ get; set; }
-        public Speed SprintSpeed{ get; set; }
 
         void GroundedCheck()
         {
