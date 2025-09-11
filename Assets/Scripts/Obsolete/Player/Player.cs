@@ -1,8 +1,12 @@
+using Sirenix.OdinInspector;
 using StarterAssets;
 using UnityEngine;
 
-public partial class Player : MonoBehaviour, IDamagable
+public partial class Player : MonoBehaviour
 {
+    [BoxGroup("References")] [Required] public PlayerEffects playerEffects;
+    [BoxGroup("References")] [Required] public PlayerHealth playerHealth;
+
     [SerializeField] Transform aim;
 
     void Awake()

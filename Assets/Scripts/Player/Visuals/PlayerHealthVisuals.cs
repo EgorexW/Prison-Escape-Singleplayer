@@ -1,0 +1,34 @@
+using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEngine;
+
+public class PlayerHealthVisuals : MonoBehaviour
+{
+    [BoxGroup("References")] [Required] [SerializeField] PlayerHealth playerHealth;
+
+    [BoxGroup("Particles")] [SerializeField] ParticleSystem hitParticles;
+
+    [BoxGroup("Audio")] [SerializeField] PlayAudio playAudio;
+
+    [InfoBox("If empty, will trigger on all damage types")]
+    [SerializeField] List<DamageType> damageTypes;
+
+    void Awake()
+    {
+        playerHealth.onDamage.AddListener(OnDamage);
+    }
+
+    void OnDamage(Damage damage)
+    {
+        if (!damageTypes.Contains(damage.damageType) && damageTypes.Count > 0){
+            return;
+        }
+        if (hitParticles != null){
+            if (!hitParticles.isPlaying){
+                hitParticles.Play();
+            }
+        }
+
+        playAudio?.Play();
+    }
+}

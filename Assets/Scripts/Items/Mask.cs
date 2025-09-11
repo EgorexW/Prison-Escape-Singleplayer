@@ -6,7 +6,7 @@ public class Mask : UseableItem
 
     protected override void Apply()
     {
-        player.AddProtection(protectionType);
+        player.playerHealth.AddProtection(protectionType);
         DestroyItem();
     }
 }

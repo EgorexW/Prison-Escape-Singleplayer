@@ -16,7 +16,7 @@ public class GameTime : MonoBehaviour
 
     void OutOfTime()
     {
-        GameDirector.i.Player.Damage(outOfTimeDamage * Time.deltaTime);
+        GameDirector.i.Player.playerHealth.Damage(outOfTimeDamage * Time.deltaTime);
     }
 
     public void ChangeTime(float gameTimeIncrease)

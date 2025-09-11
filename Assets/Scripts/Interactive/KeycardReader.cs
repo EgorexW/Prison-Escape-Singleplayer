@@ -48,7 +48,7 @@ public class KeycardReader : PoweredDevice, IInteractive
         var electrocutionChance = GetPowerLevel() == PowerLevel.MinimalPower ? minimalPowerElectrocutionChance : 0;
         electrocutionChance = baseElectrocutionChance + electrocutionChance;
         if (Random.value < electrocutionChance){
-            player.Damage(electrocutionDamage);
+            player.playerHealth.Damage(electrocutionDamage);
             visuals?.Electrocute();
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public partial class Player
 {
+    [SerializeField] bool log;
     [SerializeField] float maxInteractDis = 3;
 
     [FoldoutGroup("Events")] public UnityEvent<float, float> onHoldInteraction;

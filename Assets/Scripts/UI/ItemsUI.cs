@@ -13,13 +13,12 @@ public class ItemsUI : MonoBehaviour
         var itemUI = new ItemUI{
             gameObject = gameObjectTmp,
             image = gameObjectTmp.GetComponentInChildren<Image>(),
-            button = gameObjectTmp.GetComponentInChildren<Button>(),
             aspectRatioFitter = gameObjectTmp.GetComponentInChildren<AspectRatioFitter>()
         };
         itemUIs.Add(itemUI);
     }
 
-    public void ShowItems(ISpriteUI[] items)
+    public void ShowItems(SpriteUI[] items)
     {
         var i = 0;
         while (itemUIs.Count < items.Length) CreateitemUI();
@@ -29,11 +28,10 @@ public class ItemsUI : MonoBehaviour
                 continue;
             }
             item.gameObject.SetActive(true);
-            item.image.sprite = items[i].GetSprite();
+            item.image.sprite = items[i].sprite;
+            item.image.color = items[i].highlighted ? Color.yellow : Color.white;
             item.aspectRatioFitter.aspectRatio =
-                items[i].GetSprite().bounds.extents.x / items[i].GetSprite().bounds.extents.y;
-            item.button.onClick.RemoveAllListeners();
-            item.button.onClick.AddListener(items[i].GetCallback());
+                items[i].sprite.bounds.extents.x / items[i].sprite.bounds.extents.y;
             i++;
         }
     }
@@ -42,7 +40,6 @@ public class ItemsUI : MonoBehaviour
 public class ItemUI
 {
     public AspectRatioFitter aspectRatioFitter;
-    public Button button;
     public GameObject gameObject;
     public Image image;
 }

@@ -70,6 +70,7 @@ public partial class Player
         DeequipItem();
         equipedItem = item;
         equipedItem.gameObject.SetActive(true);
+        onInventoryChange.Invoke();
     }
 
     public void DeequipItem()
@@ -80,6 +81,7 @@ public partial class Player
         equipedItem.StopUse(this);
         equipedItem.gameObject.SetActive(false);
         equipedItem = null;
+        onInventoryChange.Invoke();
     }
 
     public void ThrowItem()

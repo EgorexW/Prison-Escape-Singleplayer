@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
 
 [CreateAssetMenu(menuName = "Sound")]
 public class Sound : ScriptableObject
 {
-    [SerializeField] AudioClip[] clips;
+    [SerializeField] List<AudioClip> clips;
 
     [Range(0f, 1f)] public float volume = .75f;
 
@@ -21,6 +22,6 @@ public class Sound : ScriptableObject
 
     public virtual AudioClip GetClip()
     {
-        return clips[Random.Range(0, clips.Length)];
+        return clips.Random();
     }
 }

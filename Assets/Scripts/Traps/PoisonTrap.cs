@@ -11,8 +11,8 @@ class PoisonTrap : MonoBehaviour, ITrap
 
     void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent<Player>(out var player)){
-            player.Damage(damagePerSecond * Time.deltaTime);
+        if (other.TryGetComponent<IDamagable>(out var damagable)){
+            damagable.Damage(damagePerSecond * Time.deltaTime);
         }
     }
 

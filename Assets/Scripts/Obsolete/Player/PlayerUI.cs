@@ -15,7 +15,7 @@ class PlayerUI : MonoBehaviour
     void Awake()
     {
         player.onInventoryChange.AddListener(ShowInventory);
-        player.onHealthChange.AddListener(ShowHealth);
+        player.playerHealth.onHealthChange.AddListener(ShowHealth);
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
 
@@ -29,14 +29,14 @@ class PlayerUI : MonoBehaviour
 
     void ShowHealth()
     {
-        healthBarUI.SetHealth(player.Health);
+        healthBarUI.SetHealth(player.playerHealth.Health);
     }
 
     void ShowInventory()
     {
         var items = player.GetInventory().GetItems();
-        List<ISpriteUI> itemUIs = new();
-        foreach (var item in items) itemUIs.Add(new SpriteUI(item.GetPortrait(), () => player.EquipItem(item)));
+        List<SpriteUI> itemUIs = new();
+        foreach (var item in items) itemUIs.Add(new SpriteUI(item.GetPortrait(), item == player.GetHeldItem()));
         itemsUI.ShowItems(itemUIs.ToArray());
     }
 }

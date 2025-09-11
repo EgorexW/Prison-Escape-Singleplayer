@@ -17,7 +17,7 @@ public class PlayerEffects : MonoBehaviour
                 activeEffects.RemoveAt(i);
                 continue;
             }
-            player.Heal(effect.healPerSecond * Time.deltaTime);
+            player.playerHealth.Heal(effect.healPerSecond * Time.deltaTime);
             player.AddStamina(effect.staminaPerSecond * Time.deltaTime);
         }
     }

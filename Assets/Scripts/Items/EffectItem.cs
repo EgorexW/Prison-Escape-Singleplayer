@@ -9,8 +9,8 @@ public class EffectItem : UseableItem
 
     protected override void Apply()
     {
-        player.Damage(damage);
-        player.Heal(heal);
+        player.playerHealth.Damage(damage);
+        player.playerHealth.Heal(heal);
         player.playerEffects.ApplyEffect(effect);
         player.RemoveItem(Item);
         Destroy(gameObject);
