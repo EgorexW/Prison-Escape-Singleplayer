@@ -221,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e811261358fd84cc3b59d576bc71ba9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 7129536701162719203}
   shooting: {fileID: 2820933438102179484}
 --- !u!114 &2820933438102179484
 MonoBehaviour:
@@ -237,11 +236,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   damage:
-    damage: 5
-    permanentDamage: 1
+    damage: 2.5
+    permanentDamage: 2
     damageType: 1
   fireRate: 15
-  ammo: 100
+  ammo: 200
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 841
@@ -255,15 +254,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3364596009862160045}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7129536701162719203 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3364596009862160045}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335257844892964924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

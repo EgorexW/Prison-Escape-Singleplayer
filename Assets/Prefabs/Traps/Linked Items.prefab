@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 422978, guid: 6d2a6859c7ef77f4daca729eb9d2633e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.597
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 422978, guid: 6d2a6859c7ef77f4daca729eb9d2633e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -322,7 +322,7 @@ MonoBehaviour:
     currentHealth: 50
     maxHealth: 50
     absoluteMaxHealth: 50
-    damagedBy: 1
+    damagedBy: 3
   gameObjectToDestroy: {fileID: 4502153590353648813}
 --- !u!4 &1886434104558022383 stripped
 Transform:

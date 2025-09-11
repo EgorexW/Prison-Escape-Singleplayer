@@ -14,6 +14,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 88471028627cf47bd81ac6d6fc9ad45f,
         type: 2}
+    - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5218860289774778322, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: keycardName
-      value: 05
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
@@ -88,6 +113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: keycardColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964199208718077476, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

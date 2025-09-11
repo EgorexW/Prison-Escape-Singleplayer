@@ -56,7 +56,7 @@ public class LevelNode : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
         LevelNodes.i.AddNode(this);
     }

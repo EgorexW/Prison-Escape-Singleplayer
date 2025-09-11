@@ -16,12 +16,12 @@ MonoBehaviour:
   - value: 3
     Object: {fileID: 5526721213140052118, guid: 9ff99a318b2fc4d3c8f39bc6097b8dd3,
       type: 3}
-  - value: 2
+  - value: 1
     Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 2
     Object: {fileID: 5526721213140052118, guid: 1572842949fa2493abeba0e34561b3f2,
       type: 3}
   - value: 1
     Object: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0, type: 2}
-  - value: 1
+  - value: 2
     Object: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1, type: 2}

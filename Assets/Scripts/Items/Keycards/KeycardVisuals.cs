@@ -1,33 +1,14 @@
-using System.Collections.Generic;
+using System;
 using Sirenix.OdinInspector;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class KeycardVisuals : MonoBehaviour
-{
-    [SerializeField] string keycardName;
-    [SerializeField] Color keycardColor = Color.white;
-
-    [BoxGroup("References")] [SerializeField] List<TextMeshPro> keycardTexts;
-    [BoxGroup("References")] [SerializeField] List<Image> keycardImages;
-
-    void Reset()
+public class KeycardVisuals : ItemVisuals
     {
-        keycardTexts = new List<TextMeshPro>(GetComponentsInChildren<TextMeshPro>(true));
-        keycardImages = new List<Image>(GetComponentsInChildren<Image>(true));
-    }
+        [BoxGroup("References")][Required][SerializeField] Keycard keycard;
 
-    void Start()
-    {
-        Apply();
+        void Awake()
+        {
+            displayName = keycard.accessLevel.displayName;
+            color = keycard.accessLevel.color;
+        }
     }
-
-    [Button]
-    void Apply()
-    {
-        foreach (var text in keycardTexts) text.text = keycardName;
-        // text.color = keycardColor;
-        foreach (var image in keycardImages) image.color = keycardColor;
-    }
-}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Crowbar : UseableItem
+public class Crowbar : EffectItem
 {
     [SerializeField] float breakStrength = 2;
 
@@ -8,6 +8,7 @@ public class Crowbar : UseableItem
 
     protected override void Apply()
     {
+        base.Apply();
         doorLock.unlocked = true;
         doorLock.door.Open();
         player.RemoveItem(Item);

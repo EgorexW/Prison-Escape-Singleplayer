@@ -5043,6 +5043,7 @@ MonoBehaviour:
     maxHealth: 100
     absoluteMaxHealth: 100
     damagedBy: 5
+  playerEffects: {fileID: 8997996946667749022}
   maxInteractDis: 3
   onHoldInteraction:
     m_PersistentCalls:
@@ -8981,6 +8982,7 @@ GameObject:
   - component: {fileID: 1012652404}
   - component: {fileID: 1012652403}
   - component: {fileID: 1012652405}
+  - component: {fileID: 1012652406}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -9011,6 +9013,7 @@ MonoBehaviour:
     SerializationNodes: []
   player: {fileID: 134446977}
   gameTime: {fileID: 1012652405}
+  facilitySwitches: {fileID: 1012652406}
   log: 0
 --- !u!4 &1012652404
 Transform:
@@ -9040,11 +9043,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c3dae3a5c54fd5b9b50204cd53b914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimeMinutes: 6
+  gameTimeMinutes: 7
   outOfTimeDamage:
     damage: 2
     permanentDamage: 1
     damageType: 1
+--- !u!114 &1012652406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012652402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99ae1b1a57694e098f6be8348562f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1078684526
 GameObject:
   m_ObjectHideFlags: 0
@@ -12779,6 +12794,7 @@ GameObject:
   - component: {fileID: 8997996946667749018}
   - component: {fileID: 8997996946667749020}
   - component: {fileID: 8997996946667749021}
+  - component: {fileID: 8997996946667749022}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -13082,6 +13098,19 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616685848057766947}
   m_Enabled: 1
+--- !u!114 &8997996946667749022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848057766947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a6bb77b3e64837af0a79dd51c6fd75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 134446977}
 --- !u!224 &9058513276153008467
 RectTransform:
   m_ObjectHideFlags: 0

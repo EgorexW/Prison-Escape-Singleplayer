@@ -69,6 +69,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Staff Keycard
       objectReference: {fileID: 0}
+    - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: keycardName
+      value: Staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: keycardColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: keycardColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: keycardColor.r
+      value: 0.97254896
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

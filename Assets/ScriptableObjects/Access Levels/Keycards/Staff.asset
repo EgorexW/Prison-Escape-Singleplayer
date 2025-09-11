@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Staff
   m_EditorClassIdentifier: 
   inheretedAccessLevels: []
+  color: {r: 1, g: 0.9964248, b: 0, a: 1}
+  displayName: Staff

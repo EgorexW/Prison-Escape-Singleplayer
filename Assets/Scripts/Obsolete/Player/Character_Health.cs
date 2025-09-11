@@ -9,6 +9,7 @@ public partial class Player
     [SerializeField] Health health = new(100, 100, 100);
 
     [FoldoutGroup("Events")] public readonly UnityEvent onHealthChange = new();
+    [BoxGroup("References")][Required] public PlayerEffects playerEffects;
 
     public Health Health => health;
 

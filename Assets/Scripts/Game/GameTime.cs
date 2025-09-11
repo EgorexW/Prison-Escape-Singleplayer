@@ -19,8 +19,9 @@ public class GameTime : MonoBehaviour
         GameDirector.i.Player.Damage(outOfTimeDamage * Time.deltaTime);
     }
 
-    public void IncreaseTime(float gameTimeIncrease)
+    public void ChangeTime(float gameTimeIncrease)
     {
         gameTimeMinutes += gameTimeIncrease / 60f;
+        gameTimeMinutes = Mathf.Max(gameTimeMinutes, 0);
     }
 }

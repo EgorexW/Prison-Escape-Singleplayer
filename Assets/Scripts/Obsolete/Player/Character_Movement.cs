@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using StarterAssets;
 using UnityEngine;
 
 public partial class Player
@@ -11,7 +12,7 @@ public partial class Player
     [BoxGroup("Stamina")] [SerializeField] float staminaRegenRate = 0.1f;
 
     CharacterController characterController;
-    IMover firstPersonController;
+    FirstPersonController firstPersonController;
     float speedMod = 1;
 
     [BoxGroup("Stamina")] [ShowInInspector] public float Stamina{ get; private set; } = 1;
@@ -27,8 +28,7 @@ public partial class Player
 
     public float MoveSpeed()
     {
-        Stamina += staminaRegenRate * Time.deltaTime;
-        Stamina = Mathf.Min(1, Stamina);
+        AddStamina(staminaRegenRate * Time.deltaTime);
         return moveSpeed * speedMod;
     }
 
@@ -70,5 +70,11 @@ public partial class Player
             Debug.LogWarning("Player node is null", this);
         }
         return node;
+    }
+
+    public void AddStamina(float effectStaminaPerSecond)
+    {
+        Stamina += effectStaminaPerSecond;
+        Stamina = Mathf.Min(1, Stamina);
     }
 }

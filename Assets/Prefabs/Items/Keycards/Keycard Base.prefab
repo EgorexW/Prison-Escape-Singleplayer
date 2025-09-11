@@ -743,7 +743,7 @@ PrefabInstance:
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: m_Name
-      value: Keycard
+      value: Keycard Base
       objectReference: {fileID: 0}
     - target: {fileID: 4255637542316102423, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
@@ -838,7 +838,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6632766402433431809}
+      addedObject: {fileID: 5893937894337747688}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!4 &5218860289774778322 stripped
 Transform:
@@ -864,15 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56ef2e63cd494ed8b9a7bbb17d3a2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHeld: 0
-  pickupable: 1
-  discoveryOnFirstPickup:
-    enabled: 1
-    value:
-      score: 1
-  holdDuration: 3
   accessLevel: {fileID: 0}
---- !u!114 &6632766402433431809
+--- !u!114 &5893937894337747688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -881,14 +874,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6445903414931907156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d091e340744494c94726e2b90605ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c26365120454051bda7302c678066d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keycardName: Staff
-  keycardColor: {r: 0.9733331, g: 1, b: 0, a: 1}
+  displayName: 
+  color: {r: 1, g: 1, b: 1, a: 1}
   keycardTexts:
   - {fileID: 3879103844188655026}
   - {fileID: 7964199208718077476}
   keycardImages:
   - {fileID: 4093037969403249764}
   - {fileID: 4322315969983063461}
+  keycard: {fileID: 547713961881793816}

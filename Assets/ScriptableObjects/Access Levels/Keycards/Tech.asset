@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Tech
   m_EditorClassIdentifier: 
   inheretedAccessLevels: []
+  color: {r: 0.02441454, g: 1, b: 0, a: 1}
+  displayName: Tech

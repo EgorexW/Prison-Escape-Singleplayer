@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour, IDamagable
@@ -9,13 +10,8 @@ public partial class Player : MonoBehaviour, IDamagable
         inventory = GetComponent<Inventory>();
         inventory.OnInventoryChange.AddListener(onInventoryChange.Invoke);
         characterController = GetComponent<CharacterController>();
-        firstPersonController = GetComponent<IMover>();
+        firstPersonController = GetComponent<FirstPersonController>();
         SetFirstPersonController();
-    }
-
-    public IStatusEffect[] GetStatusEffects()
-    {
-        return statusEffects.ToArray();
     }
 
     public Transform GetAimTransform()

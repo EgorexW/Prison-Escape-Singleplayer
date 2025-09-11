@@ -101,6 +101,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 3
+  damage:
+    damage: 25
+    permanentDamage: 10
+    damageType: 1
+  heal:
+    damage: 0
+    permanentDamage: 0
+    damageType: 0
+  effect:
+    duration: 0
+    healPerSecond:
+      damage: 0
+      permanentDamage: 0
+      damageType: 0
+    staminaPerSecond: 0
+    endTime: 0
   breakStrength: 2
 --- !u!1001 &3146435495052034901
 PrefabInstance:

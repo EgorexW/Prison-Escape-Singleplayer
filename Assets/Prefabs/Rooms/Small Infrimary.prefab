@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 2270871401134883441, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_Name
-      value: Small Infimary
+      value: Small Infrimary
       objectReference: {fileID: 0}
     - target: {fileID: 2851956841060903381, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: roomName
-      value: Small Infimary
+      value: Small Infirmary
       objectReference: {fileID: 0}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}

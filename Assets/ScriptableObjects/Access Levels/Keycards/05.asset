@@ -15,3 +15,5 @@ MonoBehaviour:
   inheretedAccessLevels:
   - {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969, type: 2}
   - {fileID: 11400000, guid: 4c0f80f9eb07641b0b4da897d5514dbe, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  displayName: 05

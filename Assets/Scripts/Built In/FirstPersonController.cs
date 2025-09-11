@@ -9,7 +9,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class FirstPersonController : MonoBehaviour, IMover
+    public class FirstPersonController : MonoBehaviour
     {
         const float _threshold = 0.01f;
 
@@ -135,6 +135,8 @@ namespace StarterAssets
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
         }
+        
+        public delegate float Speed();
 
         public Speed MoveSpeed{ get; set; }
         public Speed SprintSpeed{ get; set; }

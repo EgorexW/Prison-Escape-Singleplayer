@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
   - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
+  color: {r: 0, g: 0.8638587, b: 1, a: 1}
+  displayName: Guard
