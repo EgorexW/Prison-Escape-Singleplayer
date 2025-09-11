@@ -41,7 +41,7 @@ public class LevelNode : MonoBehaviour
     public CorridorNodeType CorridorNodeType{
         get{
             if (nodeType != NodeType.Corridor){
-                Debug.LogWarning("Tried to get corridor type of not corridor node", this);
+                // Debug.LogWarning("Tried to get corridor type of not corridor node", this);
                 return default;
             }
             return Connections.Count switch{

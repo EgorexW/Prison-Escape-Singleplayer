@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class EntryConfig : MonoBehaviour
+public class DoorwayConfig : MonoBehaviour
 {
     [FoldoutGroup("References")] [Required] [SerializeField] TextMeshPro nameText;
     [FoldoutGroup("References")] [Required] [SerializeField] KeycardReader[] keycardReaders;
-    [FoldoutGroup("References")] [Required] [SerializeField] List<DoorLock> doorLocks; //unused for now
+    [FoldoutGroup("References")] [Required] [SerializeField] DoorLock[] doorLocks;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject strongDoor;
 
@@ -28,8 +28,7 @@ public class EntryConfig : MonoBehaviour
     void Reset()
     {
         keycardReaders = GetComponentsInChildren<KeycardReader>(true);
-        doorLocks.Clear();
-        foreach (var keycardReader in keycardReaders) doorLocks.Add(keycardReader.doorLock);
+        doorLocks = GetComponentsInChildren<DoorLock>(true);
     }
 
     [Button]

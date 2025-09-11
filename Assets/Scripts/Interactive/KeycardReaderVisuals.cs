@@ -26,7 +26,7 @@ class KeycardReaderVisuals : MonoBehaviour
     void Start()
     {
         keycardReader.onPowerChanged.AddListener(OnPowerChanged);
-        OnPowerChanged(keycardReader.GetPowerLevel());
+        OnPowerChanged(keycardReader.IsPowered());
         defaultText = keycardReader.accessLevel.name;
         text.color = keycardReader.accessLevel.color;
     }
@@ -38,9 +38,8 @@ class KeycardReaderVisuals : MonoBehaviour
         }
     }
 
-    void OnPowerChanged(PowerLevel powerLevel)
+    void OnPowerChanged(bool working)
     {
-        var working = powerLevel != PowerLevel.NoPower;
         text.enabled = working;
     }
 

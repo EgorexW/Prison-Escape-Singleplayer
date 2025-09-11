@@ -83,7 +83,9 @@ MonoBehaviour:
   keycardReaders:
   - {fileID: 2087243170135822292}
   - {fileID: 3933595666484870331}
-  doorLocks: []
+  doorLocks:
+  - {fileID: 4326111135585472853}
+  - {fileID: 1614821769900319290}
   weakDoor: {fileID: 8783471130260362612}
   strongDoor: {fileID: 1096059138280006219}
   roomName: Room
@@ -231,6 +233,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3897979113477301624}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1614821769900319290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2337535890228578114, guid: 1d62e153850724179a88db4c6cc9bbb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3897979113477301624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ed206a456fc4eb0b4ab4c9b74da21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3933595666484870331 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 40135692368239043, guid: 1d62e153850724179a88db4c6cc9bbb0,
@@ -340,6 +354,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4876836097424966430}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4326111135585472853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9198443633173221963, guid: 958c01ed82f414951bd1e15d2e206172,
+    type: 3}
+  m_PrefabInstance: {fileID: 4876836097424966430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ed206a456fc4eb0b4ab4c9b74da21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8084529284138733556
 PrefabInstance:
   m_ObjectHideFlags: 0

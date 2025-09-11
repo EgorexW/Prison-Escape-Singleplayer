@@ -1,10 +1,13 @@
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
 {
-    [FoldoutGroup("Events")] public UnityEvent<PowerLevel> onPowerChanged;
+    [SerializeField] PowerLevel workingPower = PowerLevel.FullPower;
+    
+    [FoldoutGroup("Events")] public UnityEvent<bool> onPowerChanged;
 
     IPowerSource powerSource;
 
@@ -31,16 +34,22 @@ public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
         OnPowerChanged();
     }
 
-    public PowerLevel GetPowerLevel()
+    protected PowerLevel GetPowerLevel()
     {
         if (powerSource == null){
             SetPowerSource(MainPowerSystem.i);
         }
         return powerSource.GetPower(this);
     }
+    
+    public bool IsPowered()
+    {
+        var powerLevel = GetPowerLevel();
+        return powerLevel >= workingPower;
+    }
 
     protected virtual void OnPowerChanged()
     {
-        onPowerChanged.Invoke(GetPowerLevel());
+        onPowerChanged.Invoke(IsPowered());
     }
 }

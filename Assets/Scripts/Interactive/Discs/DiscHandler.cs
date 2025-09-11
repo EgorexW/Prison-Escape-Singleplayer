@@ -12,7 +12,7 @@ public class DiscHandler : PoweredDevice, IInteractive
 
     public void Interact(Player player)
     {
-        if (GetPowerLevel() != PowerLevel.FullPower){
+        if (!IsPowered()){
             return;
         }
         var item = player.GetHeldItem();

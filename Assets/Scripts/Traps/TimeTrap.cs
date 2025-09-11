@@ -30,6 +30,6 @@ public class TimeTrap : PoweredDevice, ITrap
     protected override void OnPowerChanged()
     {
         base.OnPowerChanged();
-        motionSensor.SetActive(GetPowerLevel() == PowerLevel.FullPower && isActive);
+        motionSensor.SetActive(IsPowered() && isActive);
     }
 }

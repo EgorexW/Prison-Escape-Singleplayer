@@ -8,13 +8,13 @@ public class RoomTraps : MonoBehaviour
     [SerializeField] bool log;
 
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
-    [FormerlySerializedAs("roomConfig")] [BoxGroup("References")] [Required] [SerializeField] EntryConfig entryConfig;
+    [FormerlySerializedAs("entryConfig")] [FormerlySerializedAs("roomConfig")] [BoxGroup("References")] [Required] [SerializeField] DoorwayConfig doorwayConfig;
 
     ITrap trap;
 
     void Start()
     {
-        entryConfig.onOpen.AddListener(ActivateTrap);
+        doorwayConfig.onOpen.AddListener(ActivateTrap);
         if (Random.value < trapConfig.trapChance){
             CreateATrap();
         }

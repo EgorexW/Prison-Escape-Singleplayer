@@ -16,14 +16,8 @@ public class DoorLock : PoweredDevice, IInteractive
 
     public void Interact(Player player)
     {
-        if (requiresPower){
-            var power = GetPowerLevel();
-            if (power == PowerLevel.NoPower){
-                return;
-            }
-            if (requiresFullPower && power != PowerLevel.FullPower){
-                return;
-            }
+        if (!IsPowered()){
+            return;
         }
         if (unlocked){
             door.ChangeState();
@@ -31,4 +25,9 @@ public class DoorLock : PoweredDevice, IInteractive
     }
 
     public float HoldDuration => 0;
+    
+    public void Unlock()
+    {
+        unlocked = true;
+    }
 }

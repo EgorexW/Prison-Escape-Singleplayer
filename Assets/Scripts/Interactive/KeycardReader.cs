@@ -1,21 +1,22 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class KeycardReader : PoweredDevice, IInteractive
 {
     [BoxGroup("References")] [Required] [SerializeField] public AccessLevel accessLevel;
-    [BoxGroup("References")] [Required] [SerializeField] public DoorLock doorLock;
 
     [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
 
-    [BoxGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
-    [BoxGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
-    [BoxGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
+    [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
+    [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
+    [FoldoutGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
+
+    [FoldoutGroup("Events")] public UnityEvent onUnlock;
 
     void Awake()
     {
-        doorLock.unlocked = false;
         if (visuals != null){
             visuals.keycardReader = this;
         }
@@ -23,7 +24,7 @@ public class KeycardReader : PoweredDevice, IInteractive
 
     public void Interact(Player player)
     {
-        if (GetPowerLevel() == PowerLevel.NoPower){
+        if (!IsPowered()){
             return;
         }
         var item = player.GetHeldItem();
@@ -36,9 +37,15 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
-        visuals?.AccessGranted();
-        doorLock.unlocked = true;
+        Unlock();
         TryElectrocute(player);
+    }
+
+    void Unlock()
+    {
+        visuals?.AccessGranted();
+        onUnlock.Invoke();
+        BroadcastMessage("Unlock", SendMessageOptions.DontRequireReceiver);
     }
 
     public float HoldDuration => 1;

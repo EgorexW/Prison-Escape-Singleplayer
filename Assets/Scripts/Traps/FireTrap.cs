@@ -34,7 +34,7 @@ public class FireTrap : PoweredDevice, ITrap
     void SetActive()
     {
         motionSensor.RemoveAll(sensor => sensor == null);
-        motionSensor.ForEach(sensor => sensor.SetActive(active && GetPowerLevel() == PowerLevel.FullPower));
+        motionSensor.ForEach(sensor => sensor.SetActive(active && IsPowered()));
     }
 
     protected override void OnPowerChanged()
@@ -52,5 +52,11 @@ public class FireTrap : PoweredDevice, ITrap
         effect.transform.localScale = bounds.size;
         foreach (var damagable in damagablesHit) damagable.Damage(damage);
         gameObject.SetActive(false);
+    }
+    
+    void Unlock()
+    {
+        active = false;
+        SetActive();
     }
 }

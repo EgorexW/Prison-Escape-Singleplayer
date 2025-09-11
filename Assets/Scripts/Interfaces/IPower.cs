@@ -14,7 +14,7 @@ public interface IPowerSource
 
 public enum PowerLevel
 {
-    FullPower,
-    MinimalPower,
-    NoPower
+    NoPower = 0,
+    MinimalPower = 1,
+    FullPower = 2
 }
