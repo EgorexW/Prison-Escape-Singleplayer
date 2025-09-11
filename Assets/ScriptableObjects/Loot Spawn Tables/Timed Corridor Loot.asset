@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Corridor Loot Boxes
+  m_Name: Timed Corridor Loot
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
-    Object: {fileID: 3864356063617714526, guid: b5b71f351c55d475da02d2c78da45777,
-      type: 3}
+    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 1
-    Object: {fileID: 633537588123231970, guid: 73eea607eaabb42a5a9b7f95341e5dfa, type: 3}
+    Object: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0, type: 2}

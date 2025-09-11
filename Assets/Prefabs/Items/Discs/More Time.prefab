@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: keycardName
-      value: Postpone Purify Protocl
+      value: Postpone Purify Protocol
       objectReference: {fileID: 0}
     - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
