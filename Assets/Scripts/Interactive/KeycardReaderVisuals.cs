@@ -50,10 +50,13 @@ class KeycardReaderVisuals : MonoBehaviour
         accessDeniedSound?.Play();
     }
 
-    public void AccessGranted()
+    public void AccessGranted(bool original)
     {
         text.text = accessGrantedText;
         defaultText = accessGrantedText;
+        if (!original){
+            return;
+        }
         accessGrantedSound?.Play();
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +9,7 @@ public class KeycardReader : PoweredDevice, IInteractive
     [BoxGroup("References")] [Required] [SerializeField] public AccessLevel accessLevel;
 
     [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
+    [SerializeField] List<KeycardReader> linkedReaders;
 
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
     [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
@@ -37,15 +39,21 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
-        Unlock();
+        AccessGranted(true);
         TryElectrocute(player);
     }
 
-    void Unlock()
+    public void AccessGranted(bool original)
     {
-        visuals?.AccessGranted();
+        visuals?.AccessGranted(original);
         onUnlock.Invoke();
         BroadcastMessage("Unlock", SendMessageOptions.DontRequireReceiver);
+        if (!original){
+            return;
+        }
+        foreach (var reader in linkedReaders){
+            reader.AccessGranted(false);
+        }
     }
 
     public float HoldDuration => 1;

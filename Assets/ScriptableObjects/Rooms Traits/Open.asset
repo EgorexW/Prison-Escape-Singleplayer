@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
-  m_Name: Tech
+  m_Script: {fileID: 11500000, guid: 51a93e71f1b5545a884dc1510b608ec2, type: 3}
+  m_Name: Open
   m_EditorClassIdentifier: 
-  inheretedAccessLevels:
-  - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
-  color: {r: 0.02441454, g: 1, b: 0, a: 1}
-  displayName: Tech

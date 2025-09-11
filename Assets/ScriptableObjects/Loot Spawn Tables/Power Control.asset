@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
-    Object: {fileID: 5526721213140052118, guid: 32593d26722394363994e318ddb73cb7,
-      type: 3}
-  - value: 3
     Object: {fileID: 2630515351599952779, guid: ec46121ff603f40fb9dfbd1b15cc108f,
       type: 3}
   - value: 1
