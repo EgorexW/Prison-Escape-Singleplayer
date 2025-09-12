@@ -28,5 +28,6 @@ public class LinkedItems : MonoBehaviour, ITrap
                 Destroy(item.gameObject);
             }
         lines.SetCount(0);
+        arg0.onPickUp.RemoveListener(OnItemPicked);
     }
 }

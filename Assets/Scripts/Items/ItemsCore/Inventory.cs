@@ -39,4 +39,14 @@ public class Inventory : MonoBehaviour
     {
         return size;
     }
+
+    public void IncreaseSize(int by)
+    {
+        if (by <= 0){
+            Debug.LogWarning("Inventory size increase must be positive", this);
+            return;
+        }
+        size += by;
+        OnInventoryChange.Invoke();
+    }
 }

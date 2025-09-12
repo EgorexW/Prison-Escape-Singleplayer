@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Timed Corridor Loot
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
-    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 1
+    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
+  - value: 2
     Object: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0, type: 2}

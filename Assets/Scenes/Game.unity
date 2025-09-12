@@ -8922,7 +8922,8 @@ MonoBehaviour:
   - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
   - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
   - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
-  roomsToSpawn: {x: 21, y: 22}
+  - {fileID: 7063043514278971131, guid: 434739ec4d0f74f3c9d3a37048cddb53, type: 3}
+  roomsToSpawn: {x: 21, y: 23}
   fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
     type: 3}
 --- !u!1 &584881359
@@ -13631,7 +13632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b4e090f7bc64a2e970f04bce7f4229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 6
+  size: 3
 --- !u!114 &2197348209846586767
 MonoBehaviour:
   m_ObjectHideFlags: 0
