@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Fire Traps
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 0
+  - value: 2
     Object: {fileID: 4747596184945843664, guid: 52f2b0e1a8af34143bcdf6ca5595f055,
+      type: 3}
+  - value: 1
+    Object: {fileID: 5251847765270986801, guid: f465f8e7b08214ba88d8307d8b8a7fcc,
       type: 3}
