@@ -9522,6 +9522,7 @@ MonoBehaviour:
   player: {fileID: 134446977}
   gameTime: {fileID: 1012652405}
   facilityObjects: {fileID: 1012652406}
+  levelNodes: {fileID: 453294468}
   log: 0
 --- !u!4 &1012652404
 Transform:

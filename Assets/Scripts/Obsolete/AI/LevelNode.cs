@@ -56,11 +56,6 @@ public class LevelNode : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        LevelNodes.i.AddNode(this);
-    }
-
     public List<LevelNode> GetNeighboringNodes()
     {
         // if (neighboringNodes != null){

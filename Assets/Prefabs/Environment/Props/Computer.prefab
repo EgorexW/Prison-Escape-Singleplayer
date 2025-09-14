@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 116236142811675332}
   - component: {fileID: 4424091878385194900}
   - component: {fileID: 5047675800057196474}
-  - component: {fileID: 4262377165039051690}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -237,18 +236,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4424091878385194900}
   m_maskType: 0
---- !u!114 &4262377165039051690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3769345279771748096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2dd6d96821424ac18a40c66f9618431, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8493012449009527402
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,12 +305,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8e77c9515f1486b9ec7e32cc14733b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workingPower: 2
   onPowerChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4262377165039051690}
-        m_TargetAssemblyTypeName: DiscHandlerDisplay, Assembly-CSharp
-        m_MethodName: OnPowerChanged
+      - m_Target: {fileID: 3555678173748331813}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

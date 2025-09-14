@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LevelNodes : MonoBehaviour
 {
-    public static LevelNodes i;
     [SerializeField] List<LevelNode> corridorNodes;
     [SerializeField] List<LevelNode> roomNodes;
 
@@ -13,14 +12,14 @@ public class LevelNodes : MonoBehaviour
     public List<LevelNode> RoomNodes => roomNodes;
     public List<LevelNode> Nodes => new(CorridorNodes.Concat(RoomNodes));
 
-    void Awake()
+    public void ResetNodes()
     {
-        if (i != null && i != this){
-            Debug.LogWarning("Multiple LevelNodes in scene", this);
-            Destroy(this);
-            return;
+        corridorNodes = new List<LevelNode>();
+        roomNodes = new List<LevelNode>();
+        var nodes = GetComponentsInChildren<LevelNode>();
+        foreach (var node in nodes){
+            AddNode(node);
         }
-        i = this;
     }
 
     public void AddNode(LevelNode node)
@@ -39,10 +38,5 @@ public class LevelNodes : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-    }
-
-    public List<Vector3> GetCorridorNodesPos()
-    {
-        return corridorNodes.ConvertAll(input => input.transform.position);
     }
 }

@@ -7,6 +7,7 @@ public class GameDirector : SerializedMonoBehaviour
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     [BoxGroup("References")] [Required] public GameTime gameTime;
     [FormerlySerializedAs("facilitySwitches")] [BoxGroup("References")] [Required] public FacilityObjects facilityObjects;
+    [BoxGroup("References")] [Required] public LevelNodes levelNodes;
 
     [SerializeField] bool log;
 

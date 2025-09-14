@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class PoweredDevice : MonoBehaviour, IPoweredDevice
+public class PoweredDevice : MonoBehaviour, IPoweredDevice
 {
     [SerializeField] PowerLevel workingPower = PowerLevel.FullPower;
     

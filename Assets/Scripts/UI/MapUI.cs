@@ -4,21 +4,11 @@ using UnityEngine;
 public class MapUI : MonoBehaviour
 {
     const float AI_OBJECT_SIZE = 3;
-    [BoxGroup("External References")] [SerializeField] LevelNodes baseLevelNodes;
-
     [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI roomsObjectPool;
-    [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI aiObjectPool;
     [BoxGroup("Internal References")] [Required] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
 
     [SerializeField] float scale = 0.005f;
-
-    void Start()
-    {
-        if (!baseLevelNodes){
-            baseLevelNodes = General.GetRootComponent<LevelNodes>(gameObject);
-        }
-    }
 
     void Update()
     {
@@ -28,7 +18,7 @@ public class MapUI : MonoBehaviour
     [Button]
     public void GenerateMap()
     {
-        GenerateMap(baseLevelNodes);
+        GenerateMap(GameDirector.i.levelNodes);
     }
 
     public void GenerateMap(LevelNodes levelNodes)

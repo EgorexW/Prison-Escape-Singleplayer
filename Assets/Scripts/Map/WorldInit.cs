@@ -23,9 +23,11 @@ public class WorldInit : MonoBehaviour
     public void Generate()
     {
         roomGenerator.Generate();
+        levelNodes.ResetNodes();
+        foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
         var spawn = FindAnyObjectByType<PlayerSpawn>();
         spawn.Spawn(player);
-        foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
+        levelNodes.ResetNodes();
         onFinish.Invoke(); 
     }
 }
