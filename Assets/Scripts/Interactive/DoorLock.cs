@@ -8,7 +8,6 @@ public class DoorLock : PoweredDevice, IInteractive
     [GetComponent] [SerializeField] public Door door;
 
     public float resistance = 1;
-    [SerializeField] bool requiresPower;
 
     [ShowIf("requiresPower")] [SerializeField] public bool requiresFullPower;
 

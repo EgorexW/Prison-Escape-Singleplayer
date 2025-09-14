@@ -400,8 +400,25 @@ PrefabInstance:
     - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: trapChance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: trapPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'trapPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3743332918423233961, guid: 550998b8ec9594bf29929b07e0393ed0,
+        type: 3}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'trapPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4502153590353648813, guid: d9e90f0258ee54153aeb6684d27f3e5f,
+        type: 3}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: roomName
@@ -411,13 +428,12 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: 168f8d896d5584246b9c16a574bcd647,
+      objectReference: {fileID: 11400000, guid: 3e2fb6d80b7704e1f8085bbff40383c9,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:

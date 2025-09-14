@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-class KeycardReaderVisuals : MonoBehaviour
+public class KeycardReaderVisuals : MonoBehaviour
 {
     public KeycardReader keycardReader;
 
@@ -27,6 +27,11 @@ class KeycardReaderVisuals : MonoBehaviour
     {
         keycardReader.onPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged(keycardReader.IsPowered());
+        UpdateAccessLevel();
+    }
+
+    public void UpdateAccessLevel()
+    {
         defaultText = keycardReader.accessLevel.name;
         text.color = keycardReader.accessLevel.color;
     }

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   trapConfig: {fileID: 3478086276770758984}
-  entryConfig: {fileID: 6002658007307836836}
+  doorwayConfig: {fileID: 6002658007307836836}
 --- !u!1 &5647092676599382500
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517069443887683840}
   m_Layer: 0
-  m_Name: Nodes
+  m_Name: Others
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

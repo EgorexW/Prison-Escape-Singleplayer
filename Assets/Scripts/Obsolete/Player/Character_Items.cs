@@ -40,6 +40,9 @@ public partial class Player
             DeequipItem();
         }
         inventory.RemoveItem(item);
+        item.gameObject.SetActive(true);
+        item.transform.SetParent(null); // Detach from character
+        item.Rigidbody.isKinematic = false; // Enable physics
     }
 
     public void ThrowItem(Item item = null)
@@ -53,9 +56,6 @@ public partial class Player
         RemoveItem(item);
 
         var force = aim.forward * THROW_POWER;
-        item.gameObject.SetActive(true);
-        item.transform.SetParent(null); // Detach from character
-        item.Rigidbody.isKinematic = false; // Enable physics
         item.Rigidbody.AddForce(force, ForceMode.Impulse); // Add force for throwing
         item.Rigidbody.collisionDetectionMode =
             CollisionDetectionMode.Continuous; // Enable continuous collision detection

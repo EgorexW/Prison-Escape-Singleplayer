@@ -17,6 +17,7 @@ public class UnlockWarden : MonoBehaviour, IDiscHandler
     public void HandleDisc(Disc disc)
     {
         wardenReader.accessLevel = newAccessLevel;
+        wardenReader.visuals?.UpdateAccessLevel();
         wardenReader.electrocutionDamage = newDamage;
         wardenReader.baseElectrocutionChance = 1;
     }

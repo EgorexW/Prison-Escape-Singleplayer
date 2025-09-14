@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
   - {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba, type: 2}
+  - {fileID: 11400000, guid: 74863092166b74c679fdab883be367a6, type: 2}
   color: {r: 0.57862663, g: 0, b: 1, a: 1}
   displayName: Warden

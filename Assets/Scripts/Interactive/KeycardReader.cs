@@ -8,7 +8,7 @@ public class KeycardReader : PoweredDevice, IInteractive
 {
     [BoxGroup("References")] [Required] [SerializeField] public AccessLevel accessLevel;
 
-    [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
+    [FormerlySerializedAs("effects")] [SerializeField] public KeycardReaderVisuals visuals;
     [SerializeField] List<KeycardReader> linkedReaders;
 
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;

@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 1889607792103278341, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
       propertyPath: spawnNr.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1889607792103278341, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
@@ -244,7 +244,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969,
+      objectReference: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f,
         type: 2}
     - target: {fileID: 5384760308504649842, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}

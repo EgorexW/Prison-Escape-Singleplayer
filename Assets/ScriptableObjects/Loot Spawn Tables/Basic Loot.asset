@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Basic Loot
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
+  - value: 1
     Object: {fileID: 5526721213140052118, guid: 57f89d7ad77894f4ab32616c7504f382,
       type: 3}
-  - value: 3
+  - value: 2
     Object: {fileID: 5526721213140052118, guid: 523f36fe4659f42a89b721f32cd7d86b,
       type: 3}
-  - value: 2
+  - value: 1
     Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
   - value: 2
     Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}

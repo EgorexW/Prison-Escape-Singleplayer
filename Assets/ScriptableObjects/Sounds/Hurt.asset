@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cc530574eed43c2abb405bfd0207a3, type: 3}
   m_Name: Hurt
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 9849ef5b597cf443091516840b760622, type: 3}
   volume: 0.75
   volumeVariance: 0.1
   pitch: 1
