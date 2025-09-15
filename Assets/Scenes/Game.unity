@@ -9234,10 +9234,10 @@ MonoBehaviour:
   onFinish:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1713058868}
-        m_TargetAssemblyTypeName: UIElement, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
+      - m_Target: {fileID: 1713058866}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9789,6 +9789,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47825a63964348c9a8f2be533964a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideOnStart: 1
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
   slider: {fileID: 1888697288}
   text: {fileID: 0}
 --- !u!1 &1123375709
@@ -11391,6 +11398,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47825a63964348c9a8f2be533964a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideOnStart: 1
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onHide:
+    m_PersistentCalls:
+      m_Calls: []
   slider: {fileID: 1240213996}
   text: {fileID: 0}
 --- !u!1 &1652520830
@@ -11558,7 +11572,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713058867}
-  - component: {fileID: 1713058868}
   m_Layer: 5
   m_Name: Loading Screen
   m_TagString: Untagged
@@ -11587,18 +11600,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1713058868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713058866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e313a219964d5db875aff450850302, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1738432585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13143,6 +13144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1189050708727125646}
   - component: {fileID: 1189050708727125647}
+  - component: {fileID: 1189050708727125874}
   m_Layer: 0
   m_Name: PlayerFollowCamera
   m_TagString: Untagged
@@ -13150,6 +13152,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1189050708727125874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189050708727125873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bb7dce4b3b59363817985bb6c59dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Axis: {x: 1, y: 1, z: 1}
+  m_DampingCurve:
+    m_Type: 11
+    m_Hash: 0
 --- !u!4 &1189050709306500938
 Transform:
   m_ObjectHideFlags: 3

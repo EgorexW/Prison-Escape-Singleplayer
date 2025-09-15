@@ -8,67 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Inventory Slot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Inventory Slot.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/05 Protocol.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/05 Protocol.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Backup Power Off.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Backup Power Off.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Backup Power On.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Backup Power On.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Purify Initiated.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Purify Initiated.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Purify Postponed 120s.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Purify Postponed 120s.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Threat Detected, Purify advanced 60s.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Threat Detected, Purify advanced 60s.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Wardens Office Open.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Wardens Office Open.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Backup Power Off.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Backup Power Off.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Backup Power On.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Backup Power On.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Purify Initiated.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Purify Initiated.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Purify Postponed 120s.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Purify Postponed 120s.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Threat Detected, Purify advanced 60s.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Threat Detected, Purify advanced 60s.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Wardens Office Open.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Wardens Office Open.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Power/PowerEffects.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Power/PowerEffects.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Simple Components/Art And Audio/PlayAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Simple Components/Art And Audio/PlayAudio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Simple Components/Art And Audio/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Simple Components/Art And Audio/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/More Time.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/More Time.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/Test Room Secret.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/Test Room Secret.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/Unlock Warden.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Discs/Unlock Warden.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Map.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Editor/EaseCurveDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Editor/EaseCurveDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/LICENSE.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Runtime.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Runtime/Ease.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Runtime/Ease.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Runtime/EaseCurve.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/Ease Kit/Runtime/EaseCurve.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/ScreenShake.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/ScreenShake/ScreenShake.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Grenade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Grenade.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Access Denied.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Access Denied.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Access Granted.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Access Granted.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameDirector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTime.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/WinGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/WinGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Disc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Disc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/LevelNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/LevelNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/MainPowerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/MainPowerSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/TimeTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/TimeTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Weapons/Grenade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Weapons/Grenade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIElement.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +145,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Traps/Corridor Fire Trap.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityObjects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameDirector.cs" root0="FORCE_HIGHLIGHTING" />
@@ -376,7 +335,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Refactor AIDirector to GameDirector and update related references; add PowerSystemFailure class and associated assets" />
     <MESSAGE value="Add new metadata files for various assets and prefabs" />
     <MESSAGE value="Traps" />
     <MESSAGE value="Refactor trap-related classes and prefabs; rename and reorganize files for clarity" />
@@ -401,7 +359,8 @@
     <MESSAGE value="Metal Detector" />
     <MESSAGE value="Add WinGame class to manage scene transition on game win; update prefab and metadata for Exit" />
     <MESSAGE value="Map in administration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map in administration" />
+    <MESSAGE value="Add FacilityAnnouncements system and integrate with power and game time events" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FacilityAnnouncements system and integrate with power and game time events" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

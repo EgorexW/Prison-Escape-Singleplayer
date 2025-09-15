@@ -33,5 +33,7 @@ public class Grenade : ItemEffect
         onExplode.Invoke();
 
         gameObject.SetActive(false);
+        
+        ScreenShake.i.Request(1f, 0.5f, transform.position);
     }
 }

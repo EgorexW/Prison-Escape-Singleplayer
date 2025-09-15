@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cc45bb90f94f05979ee293cba74508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 5827070261156081367}
   effectPrefab: {fileID: 163066, guid: 98a2726d426f74e99b3ee74534f6a74e, type: 3}
   timeToExplode: 3
   radius: 3
@@ -111,18 +110,6 @@ MonoBehaviour:
   onExplode:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5827070261156081367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2061989343469156249}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3930456545130410248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1401b0956349141c88154cdc33028c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2260331377938729045
 PrefabInstance:
   m_ObjectHideFlags: 0
