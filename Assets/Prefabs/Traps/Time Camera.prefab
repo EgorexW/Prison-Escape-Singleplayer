@@ -45,8 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431bcaeec5877445cb4a1d1d06005cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workingPower: 2
+  onPowerChanged:
+    m_PersistentCalls:
+      m_Calls: []
   motionSensor: {fileID: 7542124015383038598}
   timePenalty: 60
+  announcement:
+    enabled: 1
+    value:
+      sound: {fileID: 11400000, guid: 61a5f4e65f1ec4d208c69eee34f1f7dc, type: 2}
+  isActive: 0
 --- !u!1001 &4119690876644111738
 PrefabInstance:
   m_ObjectHideFlags: 0

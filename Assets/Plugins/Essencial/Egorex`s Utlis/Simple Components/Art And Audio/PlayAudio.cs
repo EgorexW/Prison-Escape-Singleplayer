@@ -7,12 +7,14 @@ public sealed class PlayAudio : MonoBehaviour
 {
     [GetComponent] [SerializeField] AudioSource audioSource;
 
-    [Required] [SerializeField] [InlineEditor] Sound sound;
+    [Required] [SerializeField] [InlineEditor] public Sound sound;
     
     [SerializeField] bool playOnStart;
     [SerializeField] float delayBetweenPlays = 0f;
     
     float lastPlayTime;
+    
+    public bool IsPlaying => audioSource.isPlaying;
 
     void Reset()
     {

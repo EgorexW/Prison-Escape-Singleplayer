@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2cc530574eed43c2abb405bfd0207a3, type: 3}
-  m_Name: Access Denied
+  m_Name: Wardens Office Open
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 98beb48fb274e4482b0480e5d83030a4, type: 3}
-  volume: 0.5
+  - {fileID: 8300000, guid: 0e492ead2cc3c4d748e408c60f600e83, type: 3}
+  volume: 1
   volumeVariance: 0.1
   pitch: 1
-  pitchVariance: 0.1
+  pitchVariance: 0
   loop: 0
   canOverride: 1
   mixerGroup: {fileID: 0}

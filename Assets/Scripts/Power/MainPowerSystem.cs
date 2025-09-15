@@ -42,6 +42,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     }
 
     public UnityEvent OnPowerChanged{ get; } = new();
+    public UnityEvent OnMinimalPowerChanged{ get; } = new();
 
     public PowerLevel GetPower(IPoweredDevice poweredDevice)
     {
@@ -80,6 +81,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     {
         GlobalMinimalPower = minimalPower;
         OnPowerChanged.Invoke();
+        OnMinimalPowerChanged.Invoke();
     }
 
     void LosePower()

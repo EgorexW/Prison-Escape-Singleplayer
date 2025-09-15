@@ -6,6 +6,7 @@ public class TimeTrap : PoweredDevice, ITrap
     [BoxGroup("References")] [Required] [SerializeField] MotionSensor motionSensor;
 
     [SerializeField] float timePenalty = 60f;
+    [SerializeField] Optional<FacilityAnnouncement> announcement;
 
     [SerializeField] bool isActive;
 
@@ -23,6 +24,9 @@ public class TimeTrap : PoweredDevice, ITrap
     public void OnTriggered()
     {
         GameDirector.i.gameTime.ChangeTime(-timePenalty);
+        if (announcement){
+            GameDirector.i.facilityAnnouncements.AddAnnouncement(announcement);
+        }
         isActive = false;
         OnPowerChanged();
     }

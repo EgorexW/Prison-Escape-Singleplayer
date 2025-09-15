@@ -19,6 +19,7 @@ class PlayerUI : MonoBehaviour
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
 
+        ShowInventory();
         progressBarUI.Hide();
     }
 
@@ -35,8 +36,12 @@ class PlayerUI : MonoBehaviour
     void ShowInventory()
     {
         var items = player.GetInventory().GetItems();
-        List<SpriteUI> itemUIs = new();
-        foreach (var item in items) itemUIs.Add(new SpriteUI(item.GetPortrait(), item == player.GetHeldItem()));
-        itemsUI.ShowItems(itemUIs.ToArray());
+        SpriteUI[] itemUIs = new SpriteUI[player.GetInventory().GetSize()];
+        for (var i = 0; i < itemUIs.Length; i++)
+            if (i < items.Count)
+                itemUIs[i] = new SpriteUI(items[i].GetPortrait(), items[i] == player.GetHeldItem());
+            else
+                itemUIs[i] = new SpriteUI(null, false);
+        itemsUI.ShowItems(itemUIs);
     }
 }

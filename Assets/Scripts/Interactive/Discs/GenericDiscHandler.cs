@@ -10,6 +10,9 @@ public class GenericDiscHandler : MonoBehaviour, IDiscHandler
         if (disc.unlockId){
             GameDirector.i.facilityObjects.UnlockSwitch(disc.unlockId);
         }
+        if (disc.announcement){
+            GameDirector.i.facilityAnnouncements.AddAnnouncement(disc.announcement);
+        }
     }
 
     public bool CanHandleDisc(Disc disc)
@@ -18,6 +21,9 @@ public class GenericDiscHandler : MonoBehaviour, IDiscHandler
             return true;
         }
         if (disc.gameTimeIncrease > 0){
+            return true;
+        }
+        if (disc.announcement){
             return true;
         }
         return false;

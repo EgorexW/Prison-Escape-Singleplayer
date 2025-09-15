@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -6,9 +7,17 @@ public class GameTimeEffects : MonoBehaviour
     [BoxGroup("References")] [Required] [SerializeField] GameTime gameTime;
 
     [SerializeField] GameObject outOfTimeEffect;
+    [SerializeField] FacilityAnnouncement announcement;
 
-    void Update()
+    void Awake()
     {
-        outOfTimeEffect.SetActive(gameTime.TimeLeft <= 0);
+        gameTime.onOutOfTime.AddListener(OutOfTime);
+        outOfTimeEffect.SetActive(false);
+    }
+
+    void OutOfTime()
+    {
+        GameDirector.i.facilityAnnouncements.AddAnnouncement(announcement);
+        outOfTimeEffect.SetActive(true);
     }
 }

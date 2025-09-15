@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ItemsUI : MonoBehaviour
 {
+    [SerializeField] Sprite defaultSprite;
+    
     [SerializeField] GameObject prefab;
     readonly List<ItemUI> itemUIs = new();
 
@@ -28,6 +30,9 @@ public class ItemsUI : MonoBehaviour
                 continue;
             }
             item.gameObject.SetActive(true);
+            if (items[i].sprite == null){
+                items[i].sprite = defaultSprite;
+            }
             item.image.sprite = items[i].sprite;
             item.image.color = items[i].highlighted ? Color.yellow : Color.white;
             item.aspectRatioFitter.aspectRatio =

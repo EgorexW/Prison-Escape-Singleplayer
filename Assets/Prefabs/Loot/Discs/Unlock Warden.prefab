@@ -70,6 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
+      propertyPath: color.g
+      value: 0.78736246
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
       propertyPath: keycardName
       value: Warden Missing Protocol
       objectReference: {fileID: 0}
@@ -83,6 +88,17 @@ PrefabInstance:
       propertyPath: unlockWarden
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.sound
+      value: 
+      objectReference: {fileID: 11400000, guid: 7621a18234122446297be7bca17ed7b3,
+        type: 2}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Color.g

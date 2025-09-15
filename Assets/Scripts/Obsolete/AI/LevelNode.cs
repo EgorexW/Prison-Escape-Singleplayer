@@ -16,8 +16,6 @@ public class LevelNode : MonoBehaviour
     [FormerlySerializedAs("LayerMask")] [SerializeField] LayerMask layerMask;
     public NodeType nodeType = NodeType.Corridor;
 
-    [HideInEditorMode] [ShowInInspector] List<LevelNode> neighboringNodes;
-
     public Bounds Bounds => boxCollider.bounds;
 
     public List<Vector3> SameTypeConnections => GetNeighboringNodes()
@@ -58,17 +56,7 @@ public class LevelNode : MonoBehaviour
 
     public List<LevelNode> GetNeighboringNodes()
     {
-        // if (neighboringNodes != null){
-        //     return neighboringNodes;
-        // }
-        GenerateNeighbours();
-        return neighboringNodes;
-    }
-
-    [Button]
-    void GenerateNeighbours()
-    {
-        neighboringNodes = new List<LevelNode>();
+        var neighboringNodes = new List<LevelNode>();
         foreach (var direction in General.Get4MainDirections3D()){
             // Debug.Log("Checking direction: " + direction, this);
             var raycast = Physics.Raycast(transform.position, direction, out var raycastHit, DISTANCE,
@@ -85,6 +73,7 @@ public class LevelNode : MonoBehaviour
             }
             neighboringNodes.Add(levelNode);
         }
+        return neighboringNodes;
     }
 }
 

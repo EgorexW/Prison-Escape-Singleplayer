@@ -90,6 +90,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
+      propertyPath: color.b
+      value: 0.027116776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: displayName
+      value: Postpone Purify Protocol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
       propertyPath: keycardName
       value: Postpone Purify Protocol
       objectReference: {fileID: 0}
@@ -113,6 +133,17 @@ PrefabInstance:
       propertyPath: gameTimeIncrease
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.sound
+      value: 
+      objectReference: {fileID: 11400000, guid: 56e166658ddc14e28bedb6f65451026e,
+        type: 2}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Color.b

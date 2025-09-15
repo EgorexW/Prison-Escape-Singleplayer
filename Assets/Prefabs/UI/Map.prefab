@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1125038967955854090}
   - component: {fileID: 7666096891535999326}
   m_Layer: 5
-  m_Name: Player
+  m_Name: Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,11 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e8338bcfdde4b129150eea8f328702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  baseLevelNodes: {fileID: 0}
   roomsObjectPool: {fileID: 4997481042322181522}
-  aiObjectPool: {fileID: 0}
-  playerPointer: {fileID: 8246778650629174431}
   container: {fileID: 2323080893702630972}
+  playerPointer: {fileID: 0}
+  selfPointer: {fileID: 8246778650629174431}
   scale: 0.005
 --- !u!114 &8022582336088767870
 MonoBehaviour:
