@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class PlayerHealthVisuals : MonoBehaviour
     [BoxGroup("Particles")] [SerializeField] ParticleSystem hitParticles;
 
     [BoxGroup("Audio")] [SerializeField] PlayAudio playAudio;
+    
+    [BoxGroup("Other")] [SerializeField] CinemachineImpulseSource impulseSource;
 
     [InfoBox("If empty, will trigger on all damage types")]
     [SerializeField] List<DamageType> damageTypes;
@@ -30,5 +33,7 @@ public class PlayerHealthVisuals : MonoBehaviour
         }
 
         playAudio?.Play();
+        
+        impulseSource?.GenerateImpulse();
     }
 }

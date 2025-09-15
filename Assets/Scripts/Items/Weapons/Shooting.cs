@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Shooting : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Shooting : MonoBehaviour
 
     float lastShotTime;
 
+    [FoldoutGroup("Events")] public UnityEvent onShot;
+
     public void Shoot(Ray ray)
     {
         if (Time.time - lastShotTime < 1 / fireRate){
@@ -27,6 +30,7 @@ public class Shooting : MonoBehaviour
         lastShotTime = Time.time;
         Transform hitTransform = null;
         var hitPos = Vector3.zero;
+        onShot?.Invoke();
         if (Physics.Raycast(ray, out var raycastHit, 999f, aimColliderLayerMask)){
             hitPos = raycastHit.point;
             hitTransform = raycastHit.transform;

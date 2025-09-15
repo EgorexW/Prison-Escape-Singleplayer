@@ -13161,13 +13161,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189050708727125873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1bb7dce4b3b59363817985bb6c59dad, type: 3}
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Axis: {x: 1, y: 1, z: 1}
-  m_DampingCurve:
-    m_Type: 11
-    m_Hash: 0
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 0.1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &1189050709306500938
 Transform:
   m_ObjectHideFlags: 3

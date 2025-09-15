@@ -128,6 +128,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1392714861197964755}
   hitParticles: {fileID: 756385330533389514}
   playAudio: {fileID: 966146209368189819}
+  impulseSource: {fileID: 0}
   damageTypes: 01000000
 --- !u!1 &1392188013426757902
 GameObject:
