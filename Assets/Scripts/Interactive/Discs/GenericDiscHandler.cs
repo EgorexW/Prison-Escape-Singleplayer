@@ -8,7 +8,7 @@ public class GenericDiscHandler : MonoBehaviour, IDiscHandler
             GameDirector.i.gameTime.ChangeTime(disc.gameTimeIncrease);
         }
         if (disc.unlockId){
-            GameDirector.i.facilityObjects.UnlockSwitch(disc.unlockId);
+            GameDirector.i.facilityTriggers.UnlockSwitches(disc.unlockId);
         }
         if (disc.announcement){
             GameDirector.i.facilityAnnouncements.AddAnnouncement(disc.announcement);

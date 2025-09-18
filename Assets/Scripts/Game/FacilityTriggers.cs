@@ -1,11 +1,11 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class FacilityObjects : MonoBehaviour
+public class FacilityTriggers : MonoBehaviour
 {
     [Button]
     [HideInEditorMode]
-    public void UnlockSwitch(string switchId)
+    public void UnlockSwitches(string switchId)
     {
         var switches = GetSwitches();
         foreach (var facilitySwitch in switches)
@@ -14,7 +14,7 @@ public class FacilityObjects : MonoBehaviour
             }
     }
     
-    public static FacilityObject GetSwitch(string switchId)
+    public static FacilityTrigger GetSwitch(string switchId)
     {
         var switches = GetSwitches();
         foreach (var facilitySwitch in switches)
@@ -23,8 +23,8 @@ public class FacilityObjects : MonoBehaviour
             }
         return null;
     }
-    static FacilityObject[] GetSwitches()
+    static FacilityTrigger[] GetSwitches()
     {
-        return FindObjectsByType<FacilityObject>(FindObjectsSortMode.None);
+        return FindObjectsByType<FacilityTrigger>(FindObjectsSortMode.None);
     }
 }

@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PoweredLight : PoweredDevice, IDamagable
+public class CeilingLight : PoweredDevice, IDamagable
 {
     [GetComponent] [SerializeField] new Light light;
     [Required] [SerializeField] MeshRenderer meshRenderer;

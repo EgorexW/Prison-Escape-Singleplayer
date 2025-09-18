@@ -9230,7 +9230,7 @@ MonoBehaviour:
   corridorSpawners:
   - {fileID: 1957501034}
   - {fileID: 1156029363}
-  spawnDelay: 1
+  delay: 0.5
   onFinish:
     m_PersistentCalls:
       m_Calls:
@@ -13301,7 +13301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 6bbcd1a49fe624e769a301483c010bb1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13330,6 +13330,7 @@ GameObject:
   - component: {fileID: 1574877573705973600}
   - component: {fileID: 1574877573705973602}
   - component: {fileID: 1574877573705973601}
+  - component: {fileID: 1574877573705973608}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
@@ -13337,6 +13338,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1574877573705973608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574877573705973607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240dfa7f6f0704da697ed9295fbadfdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1574877573705973601}
+  player: {fileID: 134446977}
+  notInteractableCursor: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  interactableCursor: {fileID: 21300000, guid: 6bbcd1a49fe624e769a301483c010bb1, type: 3}
 --- !u!1 &1574877574143516267
 GameObject:
   m_ObjectHideFlags: 0

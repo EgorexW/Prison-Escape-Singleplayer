@@ -29,8 +29,7 @@ public class MetalDetector : PoweredDevice
 
     void TakeItem(Item item)
     {
-        // Can stash them somewhere in the future
-        var pos = FacilityObjects.GetSwitch("Confiscated Items").transform.position; // TODO make it more error proof
+        var pos = FacilityTriggers.GetSwitch("Confiscated Items").transform.position; // TODO make it more error proof
         item.transform.position = pos;
         item.Rigidbody.linearVelocity = Vector3.zero;
     }

@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Shooting : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class Shooting : MonoBehaviour
     public int ammo = 20;
 
     [BoxGroup("Config")] [SerializeField] LayerMask aimColliderLayerMask;
-    [BoxGroup("Config")] [SerializeField] Transform vfxHitGreen;
-    [BoxGroup("Config")] [SerializeField] Transform vfxHitRed;
+    [FormerlySerializedAs("notDamaged")] [FormerlySerializedAs("vfxHitGreen")] [BoxGroup("Config")] [SerializeField] Transform notDamagedEffect;
+    [FormerlySerializedAs("vfxHitRed")] [BoxGroup("Config")] [SerializeField] Transform damagedEffect;
 
     float lastShotTime;
 
@@ -42,7 +43,7 @@ public class Shooting : MonoBehaviour
         if (log){
             Debug.Log("Hit Object:" + hitTransform.gameObject.name, hitTransform.gameObject);
         }
-        Instantiate(damagable != null ? vfxHitGreen : vfxHitRed, hitPos, Quaternion.identity);
+        Instantiate(damagable != null ? damagedEffect : notDamagedEffect, hitPos, Quaternion.identity);
         damagable?.Damage(damage);
         if (log){
             Debug.Log("Dealt " + damage.damage + " damage to " + damagable, hitTransform.gameObject);

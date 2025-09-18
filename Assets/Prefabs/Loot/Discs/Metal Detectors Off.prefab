@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8073997313372148721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 123646456454774323, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Name
+      value: Metal Detectors Off
+      objectReference: {fileID: 0}
+    - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201943253711874997, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578479806404642294, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_text
+      value: Deactivate Metal Detectors
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578479806404642294, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: color.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: color.g
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: color.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906374388586693731, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: displayName
+      value: Deactivate Metal Detectors
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: unlockId.value
+      value: Metal Detector
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: unlockId.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131151174248453385, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_text
+      value: Deactivate Metal Detectors
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131151174248453385, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 2.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04bdf630c05fe4fecb57e1cd19664677, type: 3}

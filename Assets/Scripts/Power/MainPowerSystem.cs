@@ -44,17 +44,17 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     public UnityEvent OnPowerChanged{ get; } = new();
     public UnityEvent OnMinimalPowerChanged{ get; } = new();
 
-    public PowerLevel GetPower(IPoweredDevice poweredDevice)
+    public PowerLevel GetPower(Vector3 pos)
     {
         foreach (var subSystem in subPowerSystems)
-            if (subSystem.InBounds(poweredDevice.Transform.position)){
+            if (subSystem.InBounds(pos)){
                 var subSystemPower = subSystem.power;
                 if (GlobalMinimalPower && subSystemPower == PowerLevel.NoPower){
                     subSystemPower = PowerLevel.MinimalPower;
                 }
                 return subSystemPower;
             }
-        Debug.LogError("Device not in any subsystem bounds", poweredDevice.Transform);
+        Debug.LogError($"Device not in any subsystem bounds {pos}");
         return PowerLevel.NoPower;
     }
 

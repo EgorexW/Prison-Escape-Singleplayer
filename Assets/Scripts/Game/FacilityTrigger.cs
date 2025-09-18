@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FacilityObject : MonoBehaviour
+public class FacilityTrigger : MonoBehaviour
 {
     public string id;
 

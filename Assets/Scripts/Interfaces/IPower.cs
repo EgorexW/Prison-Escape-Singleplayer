@@ -1,15 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface IPoweredDevice
-{
-    Transform Transform{ get; }
-}
-
 public interface IPowerSource
 {
     UnityEvent OnPowerChanged{ get; }
-    PowerLevel GetPower(IPoweredDevice poweredDevice);
+    PowerLevel GetPower(Vector3 pos);
 }
 
 public enum PowerLevel

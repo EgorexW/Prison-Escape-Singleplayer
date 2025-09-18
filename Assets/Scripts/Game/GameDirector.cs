@@ -7,7 +7,7 @@ public class GameDirector : SerializedMonoBehaviour
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     
     [BoxGroup("References")] [Required] public GameTime gameTime;
-    [FormerlySerializedAs("facilitySwitches")] [BoxGroup("References")] [Required] public FacilityObjects facilityObjects;
+    [FormerlySerializedAs("facilityObjects")] [FormerlySerializedAs("facilitySwitches")] [BoxGroup("References")] [Required] public FacilityTriggers facilityTriggers;
     [BoxGroup("References")] [Required] public LevelNodes levelNodes;
     [BoxGroup("References")][Required] public FacilityAnnouncements facilityAnnouncements;
 

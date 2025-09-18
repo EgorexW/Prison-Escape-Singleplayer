@@ -85,7 +85,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -156,16 +156,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9163c31b91f4de89046fd9ddcbbaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workingPower: 2
   onPowerChanged:
     m_PersistentCalls:
       m_Calls: []
-  meshRenderer: {fileID: 8956418541344127572}
   light: {fileID: 8129136385310666625}
+  meshRenderer: {fileID: 8956418541344127572}
   defaultMaterial: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
   offMaterial: {fileID: 2100000, guid: 64348fe34a51a426ab0ba77c193cd35f, type: 2}
-  weakIntensity: 0.2
+  onWithMinimalPower: 0
   health:
-    health: 1
+    currentHealth: 1
     maxHealth: 1
     absoluteMaxHealth: 1
     damagedBy: 3
