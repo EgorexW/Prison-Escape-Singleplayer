@@ -1,5 +1,4 @@
 using Nrjwolf.Tools.AttachAttributes;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(Door))]
@@ -8,8 +7,6 @@ public class DoorLock : PoweredDevice, IInteractive
     [GetComponent] [SerializeField] public Door door;
 
     public float resistance = 1;
-
-    [ShowIf("requiresPower")] [SerializeField] public bool requiresFullPower;
 
     public bool unlocked;
 

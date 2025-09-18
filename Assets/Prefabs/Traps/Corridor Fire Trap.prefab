@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851bacbb47789454bba8213f44a0ea01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workingPower: 2
   onPowerChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -58,8 +59,8 @@ MonoBehaviour:
     type: 3}
   active: 1
   damage:
-    damage: 50
-    permanentDamage: 40
+    damage: 30
+    permanentDamage: 30
     damageType: 1
 --- !u!65 &1787204385783293248
 BoxCollider:

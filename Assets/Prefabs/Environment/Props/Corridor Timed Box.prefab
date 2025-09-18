@@ -117,10 +117,60 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 35b870bc6c6724842a783e96b7155d01,
         type: 3}
+    - target: {fileID: 1511287390345156603, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511287390345156603, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511287390345156603, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
         type: 3}
       propertyPath: moveSpeed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3716215966597769336}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Highlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HighlightSprite, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773269946800081834, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3221581584832362195, guid: b5b71f351c55d475da02d2c78da45777,
         type: 3}
@@ -157,6 +207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corridor Timed Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5952087984678227545, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: workingPower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8001125285436336326, guid: b5b71f351c55d475da02d2c78da45777,
         type: 3}
       propertyPath: spawnTable
@@ -172,6 +227,18 @@ PrefabInstance:
       addedObject: {fileID: 6089531724787694251}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b71f351c55d475da02d2c78da45777, type: 3}
+--- !u!114 &3716215966597769336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1078773681113466820, guid: b5b71f351c55d475da02d2c78da45777,
+    type: 3}
+  m_PrefabInstance: {fileID: 4425407076050595772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6d26ad619804b4f81c34365a47228b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5800207968796750998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7859993163006204714, guid: b5b71f351c55d475da02d2c78da45777,

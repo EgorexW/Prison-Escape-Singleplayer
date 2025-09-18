@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerSecond:
-    damage: 5
+    damage: 4
     permanentDamage: 0
     damageType: 4
 --- !u!65 &3935352289412812471

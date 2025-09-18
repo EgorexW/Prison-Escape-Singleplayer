@@ -24,6 +24,7 @@ public class General : MonoBehaviour
     {
         if (instance == null){
             instance = new GameObject("General").AddComponent<General>();
+            DontDestroyOnLoad(instance);
         }
         return instance;
     }

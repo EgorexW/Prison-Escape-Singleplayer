@@ -32,6 +32,7 @@ public class WorldInit : MonoBehaviour
             foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
             var spawn = FindAnyObjectByType<PlayerSpawn>();
             spawn.Spawn(player);
+            levelNodes.ResetNodes();
             onFinish.Invoke();
         }
     }
