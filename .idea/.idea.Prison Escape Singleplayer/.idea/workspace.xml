@@ -8,61 +8,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Adrenaline.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Adrenaline.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Gas Mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Gas Mask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Adrenaline Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Adrenaline Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Meds Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Meds Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Posters.preset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Posters.preset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolver Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolver Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Security Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Security Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Posters.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Posters.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Adrenaline Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Adrenaline Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Exit Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Exit Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Meds Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Meds Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Power Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Power Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Revolver Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Revolver Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Security Poster.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Materials/Security Poster.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Adrenaline Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Adrenaline Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Exit Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Exit Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Meds Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Meds Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Power Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Power Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Revolver Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Revolver Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Security Poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Textures/Security Poster.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Poster.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Poster.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Others/Pipeline/Settings/Low_PipelineAsset_ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Others/Pipeline/Settings/Low_PipelineAsset_ForwardRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PowerGeneratorVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PowerGeneratorVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Timed Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Timed Box.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HighlightSprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HighlightSprite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HighlightSprite.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HighlightSprite.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerAim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerAim.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAim.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PowerGeneratorVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PowerGeneratorVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PowerGeneratorVisuals.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/PowerGeneratorVisuals.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Big Medkit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Big Medkit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Potion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Potion.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Syringe.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Syringe.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Armory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Armory.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Confiscated Item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Confiscated Item.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Poster.preset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Poster.preset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Down poster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Down poster.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolvers Poster.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolvers Poster.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Break Room.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Break Room.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Secure Storage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Secure Storage.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/DoorLock.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Keycards/KeycardVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Keycards/KeycardVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Adrenaline Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Adrenaline Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Exit Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Meds Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Meds Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Posters.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Posters.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Power Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolver Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Revolver Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Security Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Posters/Security Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SetRandomSprite.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SetRandomSprite.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +191,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/DiscHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactive/DoorLock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactive/DoorLock.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Disc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs.meta" root0="FORCE_HIGHLIGHTING" />
@@ -375,7 +376,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Keycards Rework" />
     <MESSAGE value="New Rooms and damage types" />
     <MESSAGE value="Enhance damage and health mechanics; update prefabs and add new protection features" />
     <MESSAGE value="Add new Security Room and Administration assets; update prefabs and trap configurations" />
@@ -400,7 +400,8 @@
     <MESSAGE value="Add easing functions and screen shake functionality for smoother animations" />
     <MESSAGE value="Integrate Cinemachine impulse effects for grenade and weapon interactions" />
     <MESSAGE value="Rename facility-related classes and update references; add new PlayerAim and PowerGeneratorVisuals components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename facility-related classes and update references; add new PlayerAim and PowerGeneratorVisuals components" />
+    <MESSAGE value="Posters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
