@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
   m_Name: 05
   m_EditorClassIdentifier: 
-  inheretedAccessLevels:
-  - {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969, type: 2}
-  - {fileID: 11400000, guid: 4c0f80f9eb07641b0b4da897d5514dbe, type: 2}
+  inheretedAccessLevels: []
   color: {r: 0, g: 0, b: 0, a: 1}
   displayName: 05

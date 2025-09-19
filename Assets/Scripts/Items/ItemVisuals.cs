@@ -25,7 +25,7 @@ public class ItemVisuals : MonoBehaviour
     }
 
     [Button]
-    void Apply()
+    protected virtual void Apply()
     {
         foreach (var text in keycardTexts) text.text = displayName;
         // text.color = keycardColor;

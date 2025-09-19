@@ -254,14 +254,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 0.5
+  damage:
+    damage: 0
+    permanentDamage: 0
+    damageType: 0
   heal:
     damage: 0
     permanentDamage: 0
     damageType: 0
   effect:
-    duration: 100
+    duration: 50
     healPerSecond:
-      damage: 1
-      permanentDamage: 1
+      damage: 2
+      permanentDamage: 2
       damageType: 0
     staminaPerSecond: 0
+    endTime: 0

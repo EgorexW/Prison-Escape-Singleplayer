@@ -1,16 +1,21 @@
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    [SerializeField] Slider healthSlider;
-    [SerializeField] Slider maxHealthSlider;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField][Required] Slider healthSlider;
+    [Required][SerializeField] Slider maxHealthSlider;
+    [Required][SerializeField] TextMeshProUGUI text;
+
+    [Required][SerializeField] GameObject maskIcon;
 
     public void SetHealth(Health health)
     {
         SetHealth(health.currentHealth, health.maxHealth, health.absoluteMaxHealth);
+        
+        maskIcon.SetActive(!health.damagedBy.HasFlag(DamageType.Poison)); // TODO hard coded
     }
 
     public void SetHealth(float health, float maxHealth, float maxValue = -1)

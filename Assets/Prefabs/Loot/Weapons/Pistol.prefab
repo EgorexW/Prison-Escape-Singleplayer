@@ -242,17 +242,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   damage:
-    damage: 5
+    damage: 10
     permanentDamage: 1
     damageType: 1
-  fireRate: 5
-  ammo: 30
+  fireRate: 4
+  ammo: 15
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 841
-  vfxHitGreen: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+  notDamagedEffect: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
     type: 3}
-  vfxHitRed: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,
+  damagedEffect: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,
     type: 3}
   onShot:
     m_PersistentCalls:

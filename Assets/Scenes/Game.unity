@@ -9059,6 +9059,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 748826043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &843403668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843403669}
+  - component: {fileID: 843403671}
+  - component: {fileID: 843403670}
+  m_Layer: 5
+  m_Name: Poison Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &843403669
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843403668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 3520929193604644373}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 50.5, y: -0.0000038147}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &843403670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843403668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fc72c40f37e60417e8cbd0636d99b498, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &843403671
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843403668}
+  m_CullTransparentMesh: 1
 --- !u!1 &879348449
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,7 +9706,7 @@ MonoBehaviour:
   - {fileID: 1820167181}
   - {fileID: 1432246487}
   - {fileID: 1123375711}
-  timeBetweenPowerLoss: 90
+  timeBetweenPowerLoss: 120
 --- !u!1001 &1098452062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13834,6 +13909,7 @@ MonoBehaviour:
   healthSlider: {fileID: 7738903338247443199}
   maxHealthSlider: {fileID: 2646905403622087008}
   text: {fileID: 2051448884140987102}
+  maskIcon: {fileID: 843403668}
 --- !u!224 &3520929193604644373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13850,6 +13926,7 @@ RectTransform:
   - {fileID: 5886022835431642620}
   - {fileID: 4351848930228195554}
   - {fileID: 6156111484706285261}
+  - {fileID: 843403669}
   m_Father: {fileID: 1574877574152469878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

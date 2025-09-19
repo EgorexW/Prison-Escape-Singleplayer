@@ -5,9 +5,12 @@ public class KeycardVisuals : ItemVisuals
 {
     [BoxGroup("References")] [Required] [SerializeField] Keycard keycard;
 
-    void Awake()
+    protected override void Apply()
     {
-        displayName = keycard.accessLevel.displayName;
-        color = keycard.accessLevel.color;
+        if (keycard != null){
+            displayName = keycard.accessLevel.displayName;
+            color = keycard.accessLevel.color;
+        }
+        base.Apply();
     }
 }

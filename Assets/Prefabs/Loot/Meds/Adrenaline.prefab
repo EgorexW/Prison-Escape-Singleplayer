@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: m_Name
-      value: Syringe
+      value: Adrenaline
       objectReference: {fileID: 0}
     - target: {fileID: 3842732071462702838, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
@@ -299,14 +299,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 0.5
+  damage:
+    damage: 0
+    permanentDamage: 0
+    damageType: 0
   heal:
     damage: 0
     permanentDamage: 0
     damageType: 0
   effect:
-    duration: 20
+    duration: 60
     healPerSecond:
-      damage: 1
+      damage: 0
       permanentDamage: 0
       damageType: 0
-    staminaPerSecond: 0.2
+    staminaPerSecond: 0.1
+    endTime: 0
