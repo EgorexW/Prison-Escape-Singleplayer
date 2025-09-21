@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crowbar
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: b719775aaf084462a8495f956e7cf2d8, type: 3}
+  - {fileID: 8300000, guid: 76ff0ffd3a7f34c8f82488ea1f559aa5, type: 3}
   volume: 0.75
   volumeVariance: 0.1
   pitch: 1

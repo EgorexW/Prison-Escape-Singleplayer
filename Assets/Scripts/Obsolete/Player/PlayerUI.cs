@@ -18,9 +18,11 @@ class PlayerUI : MonoBehaviour
         player.playerHealth.onHealthChange.AddListener(ShowHealth);
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
-        
-        ShowHealth();
+    }
 
+    void Start()
+    {
+        ShowHealth();
         ShowInventory();
         progressBarUI.Hide();
     }
