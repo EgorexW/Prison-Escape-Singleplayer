@@ -101,6 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 3
+  onUse:
+    m_PersistentCalls:
+      m_Calls: []
+  soundEffect: {fileID: 11400000, guid: df759e5373f264dc1830a47f31c4448f, type: 2}
   damage:
     damage: 25
     permanentDamage: 10

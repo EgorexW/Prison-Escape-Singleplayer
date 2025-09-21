@@ -228,6 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useTime: 3
+  onUse:
+    m_PersistentCalls:
+      m_Calls: []
+  soundEffect: {fileID: 11400000, guid: 7e22938ea5ba442df9c71769c1eb25a4, type: 2}
 --- !u!114 &2248880369347395524
 MonoBehaviour:
   m_ObjectHideFlags: 0

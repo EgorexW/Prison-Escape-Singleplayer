@@ -6,6 +6,7 @@ public partial class Player : MonoBehaviour
 {
     [BoxGroup("References")] [Required] public PlayerEffects playerEffects;
     [BoxGroup("References")] [Required] public PlayerHealth playerHealth;
+    [BoxGroup("References")][Required] public PlayerSoundEffects playerSoundEffects;
 
     [SerializeField] Transform aim;
 

@@ -11,8 +11,7 @@ public class Crowbar : EffectItem
         base.Apply();
         doorLock.unlocked = true;
         doorLock.door.Open();
-        player.RemoveItem(Item);
-        Destroy(gameObject);
+        DestroyItem();
     }
 
     public override void Use(Player playerTmp, bool alternative = false)

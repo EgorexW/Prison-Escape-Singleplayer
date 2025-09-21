@@ -1,10 +1,16 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class UseableItem : ItemEffect
 {
     [SerializeField] float useTime;
     protected Player player;
     float startUseTime = Mathf.Infinity;
+
+    [FoldoutGroup("Events")] public UnityEvent onUse;
+    
+    [SerializeField] Sound soundEffect;
 
     void Update()
     {
@@ -17,6 +23,14 @@ public abstract class UseableItem : ItemEffect
         }
         player.onFinishInteraction.Invoke();
         Apply();
+        OnApply();
+    }
+
+    void OnApply()
+    {
+        onUse.Invoke();
+        if (soundEffect != null)
+            player.playerSoundEffects.PlaySoundEffect(soundEffect);
     }
 
     protected abstract void Apply();
