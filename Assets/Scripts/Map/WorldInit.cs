@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class WorldInit : MonoBehaviour
 {
@@ -13,8 +12,7 @@ public class WorldInit : MonoBehaviour
 
     [SerializeField] float delay = 0.5f;
 
-    [FoldoutGroup("Events")]
-    public UnityEvent onFinish;
+    [FoldoutGroup("Events")] public UnityEvent onFinish;
 
     void Awake()
     {

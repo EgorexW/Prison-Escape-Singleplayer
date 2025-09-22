@@ -17,9 +17,7 @@ public class LevelNodes : MonoBehaviour
         corridorNodes = new List<LevelNode>();
         roomNodes = new List<LevelNode>();
         var nodes = GetComponentsInChildren<LevelNode>();
-        foreach (var node in nodes){
-            AddNode(node);
-        }
+        foreach (var node in nodes) AddNode(node);
     }
 
     public void AddNode(LevelNode node)

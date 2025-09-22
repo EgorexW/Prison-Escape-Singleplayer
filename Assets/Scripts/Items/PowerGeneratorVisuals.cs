@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PowerGeneratorVisuals : MonoBehaviour
 {
-    [BoxGroup("References")][Required][SerializeField] Light lightSource;
-    [BoxGroup("References")][Required][SerializeField] ParticleSystem particles;
-    
+    [BoxGroup("References")] [Required] [SerializeField] Light lightSource;
+    [BoxGroup("References")] [Required] [SerializeField] ParticleSystem particles;
+
     void Update()
     {
         var powerLevel = MainPowerSystem.i.GetPower(transform.position);
@@ -17,7 +17,6 @@ public class PowerGeneratorVisuals : MonoBehaviour
             }
         }
         else{
-            
             particles.Stop();
         }
     }

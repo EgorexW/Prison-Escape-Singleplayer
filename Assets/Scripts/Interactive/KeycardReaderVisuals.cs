@@ -30,17 +30,17 @@ public class KeycardReaderVisuals : MonoBehaviour
         UpdateAccessLevel();
     }
 
-    public void UpdateAccessLevel()
-    {
-        defaultText = keycardReader.accessLevel.name;
-        text.color = keycardReader.accessLevel.color;
-    }
-
     void Update()
     {
         if (Time.time - lastTextChangeTime > textDisplayTime){
             text.text = defaultText;
         }
+    }
+
+    public void UpdateAccessLevel()
+    {
+        defaultText = keycardReader.accessLevel.name;
+        text.color = keycardReader.accessLevel.color;
     }
 
     void OnPowerChanged(bool working)

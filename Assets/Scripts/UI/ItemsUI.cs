@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ItemsUI : MonoBehaviour
 {
     [SerializeField] Sprite defaultSprite;
-    
+
     [SerializeField] GameObject prefab;
     readonly List<ItemUI> itemUIs = new();
 

@@ -10,11 +10,10 @@ public class PlayerHealthVisuals : MonoBehaviour
     [BoxGroup("Particles")] [SerializeField] ParticleSystem hitParticles;
 
     [BoxGroup("Audio")] [SerializeField] PlayAudio playAudio;
-    
+
     [BoxGroup("Other")] [SerializeField] CinemachineImpulseSource impulseSource;
 
-    [InfoBox("If empty, will trigger on all damage types")]
-    [SerializeField] List<DamageType> damageTypes;
+    [InfoBox("If empty, will trigger on all damage types")] [SerializeField] List<DamageType> damageTypes;
 
     void Awake()
     {
@@ -33,7 +32,7 @@ public class PlayerHealthVisuals : MonoBehaviour
         }
 
         playAudio?.Play();
-        
+
         impulseSource?.GenerateImpulse();
     }
 }

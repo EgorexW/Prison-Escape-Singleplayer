@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class FacilityAnnouncements : MonoBehaviour
 {
-    [BoxGroup("References")][Required][SerializeField] PlayAudio audioPlayer;
-    
-    Queue<FacilityAnnouncement> announcements = new Queue<FacilityAnnouncement>();
-    
-    public void AddAnnouncement(FacilityAnnouncement announcement)
-    {
-        announcements.Enqueue(announcement);
-    }
+    [BoxGroup("References")] [Required] [SerializeField] PlayAudio audioPlayer;
+
+    readonly Queue<FacilityAnnouncement> announcements = new();
 
     void Update()
     {
@@ -25,6 +20,11 @@ public class FacilityAnnouncements : MonoBehaviour
         var announcement = announcements.Dequeue();
         audioPlayer.sound = announcement.sound;
         audioPlayer.Play();
+    }
+
+    public void AddAnnouncement(FacilityAnnouncement announcement)
+    {
+        announcements.Enqueue(announcement);
     }
 }
 

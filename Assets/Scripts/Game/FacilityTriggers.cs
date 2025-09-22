@@ -13,7 +13,7 @@ public class FacilityTriggers : MonoBehaviour
                 facilitySwitch.Activate();
             }
     }
-    
+
     public static FacilityTrigger GetSwitch(string switchId)
     {
         var switches = GetSwitches();
@@ -23,6 +23,7 @@ public class FacilityTriggers : MonoBehaviour
             }
         return null;
     }
+
     static FacilityTrigger[] GetSwitches()
     {
         return FindObjectsByType<FacilityTrigger>(FindObjectsSortMode.None);

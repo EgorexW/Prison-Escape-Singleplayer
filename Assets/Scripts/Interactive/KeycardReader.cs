@@ -43,6 +43,8 @@ public class KeycardReader : PoweredDevice, IInteractive
         TryElectrocute(player);
     }
 
+    public float HoldDuration => 1;
+
     public void AccessGranted(bool original)
     {
         visuals?.AccessGranted(original);
@@ -51,12 +53,8 @@ public class KeycardReader : PoweredDevice, IInteractive
         if (!original){
             return;
         }
-        foreach (var reader in linkedReaders){
-            reader.AccessGranted(false);
-        }
+        foreach (var reader in linkedReaders) reader.AccessGranted(false);
     }
-
-    public float HoldDuration => 1;
 
     void TryElectrocute(Player player)
     {

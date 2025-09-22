@@ -8,7 +8,13 @@ public class RoomTraps : MonoBehaviour
     [SerializeField] bool log;
 
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
-    [FormerlySerializedAs("entryConfig")] [FormerlySerializedAs("roomConfig")] [BoxGroup("References")] [Required] [SerializeField] DoorwayConfig doorwayConfig;
+
+    [FormerlySerializedAs("entryConfig")]
+    [FormerlySerializedAs("roomConfig")]
+    [BoxGroup("References")]
+    [Required]
+    [SerializeField]
+    DoorwayConfig doorwayConfig;
 
     ITrap trap;
 

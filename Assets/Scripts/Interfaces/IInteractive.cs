@@ -1,8 +1,8 @@
 public interface IInteractive
 {
     public float HoldDuration{ get; }
-    public void Interact(Player player);
     bool IsDummy => false;
+    public void Interact(Player player);
 }
 
 public struct DummyInteractive : IInteractive

@@ -53,7 +53,7 @@ public class FireTrap : PoweredDevice, ITrap
         foreach (var damagable in damagablesHit) damagable.Damage(damage);
         gameObject.SetActive(false);
     }
-    
+
     void Unlock()
     {
         active = false;

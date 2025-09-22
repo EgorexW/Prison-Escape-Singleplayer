@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    [SerializeField][Required] Slider healthSlider;
-    [Required][SerializeField] Slider maxHealthSlider;
-    [Required][SerializeField] TextMeshProUGUI text;
+    [SerializeField] [Required] Slider healthSlider;
+    [Required] [SerializeField] Slider maxHealthSlider;
+    [Required] [SerializeField] TextMeshProUGUI text;
 
-    [Required][SerializeField] GameObject maskIcon;
+    [Required] [SerializeField] GameObject maskIcon;
 
     public void SetHealth(Health health)
     {
         SetHealth(health.currentHealth, health.maxHealth, health.absoluteMaxHealth);
-        
+
         maskIcon.SetActive(!health.damagedBy.HasFlag(DamageType.Poison)); // TODO hard coded
     }
 

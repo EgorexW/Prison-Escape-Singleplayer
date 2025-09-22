@@ -1,15 +1,14 @@
-using System;
 using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class HighlightSprite : MonoBehaviour
 {
-    [GetComponent][SerializeField] SpriteRenderer spriteRenderer;
+    [GetComponent] [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] Color newColor;
     [SerializeField] Material newMaterial;
-    
+
     Color originalColor;
     Material originalMaterial;
 

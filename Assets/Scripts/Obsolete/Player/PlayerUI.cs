@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -40,12 +39,14 @@ class PlayerUI : MonoBehaviour
     void ShowInventory()
     {
         var items = player.GetInventory().GetItems();
-        SpriteUI[] itemUIs = new SpriteUI[player.GetInventory().GetSize()];
+        var itemUIs = new SpriteUI[player.GetInventory().GetSize()];
         for (var i = 0; i < itemUIs.Length; i++)
-            if (i < items.Count)
+            if (i < items.Count){
                 itemUIs[i] = new SpriteUI(items[i].GetPortrait(), items[i] == player.GetHeldItem());
-            else
+            }
+            else{
                 itemUIs[i] = new SpriteUI(null, false);
+            }
         itemsUI.ShowItems(itemUIs);
     }
 }

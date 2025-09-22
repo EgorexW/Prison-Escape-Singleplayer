@@ -5,12 +5,12 @@ using UnityEngine.Events;
 public abstract class UseableItem : ItemEffect
 {
     [SerializeField] float useTime;
-    protected Player player;
-    float startUseTime = Mathf.Infinity;
 
     [FoldoutGroup("Events")] public UnityEvent onUse;
-    
+
     [SerializeField] Sound soundEffect;
+    protected Player player;
+    float startUseTime = Mathf.Infinity;
 
     void Update()
     {
@@ -29,8 +29,9 @@ public abstract class UseableItem : ItemEffect
     void OnApply()
     {
         onUse.Invoke();
-        if (soundEffect != null)
+        if (soundEffect != null){
             player.playerSoundEffects.PlaySoundEffect(soundEffect);
+        }
     }
 
     protected abstract void Apply();

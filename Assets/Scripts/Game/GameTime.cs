@@ -6,11 +6,11 @@ public class GameTime : MonoBehaviour
 {
     [SerializeField] float gameTimeMinutes = 8f;
     [SerializeField] Damage outOfTimeDamage = new(2, 1);
-    
-    bool outOfTime = false;
-    [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
 
     [FoldoutGroup("Events")] public UnityEvent onOutOfTime;
+
+    bool outOfTime;
+    [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
 
     void Update()
     {

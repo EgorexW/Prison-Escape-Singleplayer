@@ -12,12 +12,15 @@ public class Shooting : MonoBehaviour
     public int ammo = 20;
 
     [BoxGroup("Config")] [SerializeField] LayerMask aimColliderLayerMask;
-    [FormerlySerializedAs("notDamaged")] [FormerlySerializedAs("vfxHitGreen")] [BoxGroup("Config")] [SerializeField] Transform notDamagedEffect;
+
+    [FormerlySerializedAs("notDamaged")] [FormerlySerializedAs("vfxHitGreen")] [BoxGroup("Config")] [SerializeField]
+    Transform notDamagedEffect;
+
     [FormerlySerializedAs("vfxHitRed")] [BoxGroup("Config")] [SerializeField] Transform damagedEffect;
 
-    float lastShotTime;
-
     [FoldoutGroup("Events")] public UnityEvent onShot;
+
+    float lastShotTime;
 
     public void Shoot(Ray ray)
     {

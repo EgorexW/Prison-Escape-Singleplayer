@@ -16,6 +16,9 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
     [ShowInInspector] [BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
 
+    public UnityEvent OnPowerChanged{ get; } = new();
+    public UnityEvent OnMinimalPowerChanged{ get; } = new();
+    
     void Awake()
     {
         if (i != null && i != this){
@@ -40,9 +43,6 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
             LosePower();
         }
     }
-
-    public UnityEvent OnPowerChanged{ get; } = new();
-    public UnityEvent OnMinimalPowerChanged{ get; } = new();
 
     public PowerLevel GetPower(Vector3 pos)
     {

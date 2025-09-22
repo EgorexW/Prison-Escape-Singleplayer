@@ -21,7 +21,7 @@ public class DoorLock : PoweredDevice, IInteractive
     }
 
     public float HoldDuration => 0;
-    
+
     public void Unlock()
     {
         unlocked = true;

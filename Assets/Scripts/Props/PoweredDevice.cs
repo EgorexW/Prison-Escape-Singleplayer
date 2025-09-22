@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,10 +5,12 @@ using UnityEngine.Events;
 public class PoweredDevice : MonoBehaviour
 {
     [SerializeField] PowerLevel workingPower = PowerLevel.FullPower;
-    
+
     [FoldoutGroup("Events")] public UnityEvent<bool> onPowerChanged;
 
     IPowerSource powerSource;
+
+    public Transform Transform => transform;
 
     protected virtual void Start()
     {
@@ -25,8 +26,6 @@ public class PoweredDevice : MonoBehaviour
         }
     }
 
-    public Transform Transform => transform;
-
     public void SetPowerSource(IPowerSource powerSource)
     {
         this.powerSource = powerSource;
@@ -41,7 +40,7 @@ public class PoweredDevice : MonoBehaviour
         }
         return powerSource.GetPower(transform.position);
     }
-    
+
     public bool IsPowered()
     {
         var powerLevel = GetPowerLevel();

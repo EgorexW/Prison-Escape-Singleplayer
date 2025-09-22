@@ -1,5 +1,3 @@
-using System;
-using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,6 +14,6 @@ public class Poster : MonoBehaviour
         if (Random.value < destroyChance){
             Destroy(gameObject);
         }
-        rend.material = materials[UnityEngine.Random.Range(0, materials.Length)];
+        rend.material = materials[Random.Range(0, materials.Length)];
     }
 }
