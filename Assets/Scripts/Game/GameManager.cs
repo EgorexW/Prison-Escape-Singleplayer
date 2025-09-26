@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class GameDirector : SerializedMonoBehaviour
+public class GameManager : SerializedMonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] Player player;
 
@@ -19,7 +19,7 @@ public class GameDirector : SerializedMonoBehaviour
 
     [SerializeField] bool log;
 
-    public static GameDirector i{ get; private set; }
+    public static GameManager i{ get; private set; }
     public Player Player => player;
 
     void Awake()

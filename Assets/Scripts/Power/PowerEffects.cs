@@ -16,10 +16,10 @@ public class PowerEffects : MonoBehaviour
     void OnMinimalPowerChanged()
     {
         if (MainPowerSystem.i.GlobalMinimalPower){
-            GameDirector.i.facilityAnnouncements.AddAnnouncement(minimalPowerOn);
+            GameManager.i.facilityAnnouncements.AddAnnouncement(minimalPowerOn);
         }
         else{
-            GameDirector.i.facilityAnnouncements.AddAnnouncement(minimalPowerOff);
+            GameManager.i.facilityAnnouncements.AddAnnouncement(minimalPowerOff);
         }
     }
 }

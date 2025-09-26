@@ -90,14 +90,6 @@ public class PlayerInputPresenter : MonoBehaviour
         if (!context.performed){
             return;
         }
-        var items = player.GetInventory().GetItems();
-        if (items.Count == 0){
-            return;
-        }
-        var index = items.IndexOf(player.GetHeldItem());
-        index += 1;
-        while (index < 0) index += items.Count;
-        while (index >= items.Count) index -= items.Count;
-        player.EquipItem(items[index]);
+        player.SwapItem();
     }
 }

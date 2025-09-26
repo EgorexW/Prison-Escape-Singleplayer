@@ -10,7 +10,6 @@ public class Crowbar : EffectItem
     {
         base.Apply();
         doorLock.unlocked = true;
-        doorLock.door.Open();
         DestroyItem();
     }
 

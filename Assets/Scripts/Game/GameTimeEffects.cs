@@ -16,7 +16,7 @@ public class GameTimeEffects : MonoBehaviour
 
     void OutOfTime()
     {
-        GameDirector.i.facilityAnnouncements.AddAnnouncement(announcement);
+        GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
         outOfTimeEffect.SetActive(true);
     }
 }

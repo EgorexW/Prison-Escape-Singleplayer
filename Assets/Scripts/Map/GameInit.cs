@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WorldInit : MonoBehaviour
+public class GameInit : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] LevelNodes levelNodes;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;

@@ -8,7 +8,7 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        var timeLeft = GameDirector.i.gameTime.TimeLeft;
+        var timeLeft = GameManager.i.gameTime.TimeLeft;
         if (timeLeft <= 0){
             text.text = "00:00";
             return;

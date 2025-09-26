@@ -9,6 +9,9 @@ public partial class Player
     [SerializeField] [Required] Transform itemSlot;
 
     [FoldoutGroup("Events")] public readonly UnityEvent onInventoryChange = new();
+    [FoldoutGroup("Events")] public readonly UnityEvent onSwapItem = new();
+    [FoldoutGroup("Events")] public readonly UnityEvent onThrowItem = new();
+    [FoldoutGroup("Events")] public readonly UnityEvent onUseItem = new();
 
     [ShowInInspector] Item equipedItem;
 
@@ -17,7 +20,11 @@ public partial class Player
     public void PickupItem(Item item)
     {
         if (!inventory.CanAddItem()){
-            return;
+            ThrowItem();
+            if (!inventory.CanAddItem()){
+                Debug.LogWarning("Discarded item, but still can't add", this);
+                return;
+            }
         }
         inventory.AddItem(item);
 
@@ -63,6 +70,8 @@ public partial class Player
         // Reset collision detection mode after a delay
         General.CallAfterSeconds(() => { item.Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete; },
             CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW);
+        
+        onThrowItem.Invoke();
     }
 
     public void EquipItem(Item item)
@@ -95,6 +104,7 @@ public partial class Player
             return;
         }
         equipedItem.Use(this, alternative);
+        onUseItem.Invoke();
     }
 
     public void HoldUseHeldItem(bool alternative = false)
@@ -103,6 +113,7 @@ public partial class Player
             return;
         }
         equipedItem.HoldUse(this, alternative);
+        onUseItem.Invoke();
     }
 
     public void StopUseHeldItem(bool alternative = false)
@@ -121,5 +132,19 @@ public partial class Player
     public Inventory GetInventory()
     {
         return inventory;
+    }
+    
+    public void SwapItem(int changeIndex = 1)
+    {
+        var items = GetInventory().GetItems();
+        if (items.Count == 0){
+            return;
+        }
+        var index = items.IndexOf(GetHeldItem());
+        index += changeIndex;
+        while (index < 0) index += items.Count;
+        while (index >= items.Count) index -= items.Count;
+        EquipItem(items[index]);
+        onSwapItem.Invoke();
     }
 }

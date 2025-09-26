@@ -23,9 +23,9 @@ public class TimeTrap : PoweredDevice, ITrap
 
     public void OnTriggered()
     {
-        GameDirector.i.gameTime.ChangeTime(-timePenalty);
+        GameManager.i.gameTime.ChangeTime(-timePenalty);
         if (announcement){
-            GameDirector.i.facilityAnnouncements.AddAnnouncement(announcement);
+            GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
         }
         isActive = false;
         OnPowerChanged();

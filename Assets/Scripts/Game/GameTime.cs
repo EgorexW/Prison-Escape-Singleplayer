@@ -15,7 +15,7 @@ public class GameTime : MonoBehaviour
     void Update()
     {
         if (outOfTime){
-            GameDirector.i.Player.playerHealth.Damage(outOfTimeDamage * Time.deltaTime);
+            GameManager.i.Player.playerHealth.Damage(outOfTimeDamage * Time.deltaTime);
             return;
         }
         if (TimeLeft <= 0){

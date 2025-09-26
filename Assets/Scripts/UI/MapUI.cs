@@ -19,7 +19,7 @@ public class MapUI : MonoBehaviour
     [Button]
     public void GenerateMap()
     {
-        GenerateMap(GameDirector.i.levelNodes);
+        GenerateMap(GameManager.i.levelNodes);
     }
 
     public void GenerateMap(LevelNodes levelNodes)
@@ -42,7 +42,7 @@ public class MapUI : MonoBehaviour
     void DrawPlayer(float trueScale)
     {
         if (playerPointer != null){
-            var position = GameDirector.i.Player.transform.position;
+            var position = GameManager.i.Player.transform.position;
             PlacePointer(trueScale, position, playerPointer);
         }
     }
