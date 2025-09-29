@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SettingsUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIInputHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UIInputHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +356,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Refactor code for consistency; remove unnecessary newlines and improve formatting across multiple files" />
     <MESSAGE value="Balance Pass" />
     <MESSAGE value="Refactor file structure; rename OnPlayerDead and PowerGenerator files, add new Player and GameTimeEffects meta files, and update GameTime and GameDirector logic" />
     <MESSAGE value="Add new LinkedItems class and enhance Disc handling; introduce gameTimeIncrease feature" />
@@ -384,7 +380,8 @@
     <MESSAGE value="Rename GameDirector and WorldInit classes to GameManager and GameInit; update references throughout the codebase" />
     <MESSAGE value="Add UIInputHandler to manage settings input and toggle UI state" />
     <MESSAGE value="Add SettingsUI to manage mouse sensitivity settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SettingsUI to manage mouse sensitivity settings" />
+    <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

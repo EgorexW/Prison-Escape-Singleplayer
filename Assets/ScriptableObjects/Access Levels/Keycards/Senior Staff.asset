@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
   - {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
+  - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
   color: {r: 1, g: 0.59284186, b: 0, a: 1}
   displayName: Senior Staff

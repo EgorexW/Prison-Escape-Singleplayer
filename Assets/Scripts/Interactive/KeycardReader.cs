@@ -39,6 +39,10 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
+        if (keycard.OneUse){
+            player.RemoveItem(item);
+            Destroy(item.gameObject);
+        }
         AccessGranted(true);
         TryElectrocute(player);
     }

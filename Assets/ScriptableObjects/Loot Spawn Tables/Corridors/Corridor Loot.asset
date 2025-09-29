@@ -10,14 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Break Room
+  m_Name: Corridor Loot
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1, type: 2}
-  - value: 1
-    Object: {fileID: 5526721213140052118, guid: df5f9edb665f84107ace34be981c5245,
-      type: 3}
-  - value: 2
-    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
-      type: 3}
+    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}

@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Keycard : MonoBehaviour, IKeycard
 {
-    [SerializeField] public AccessLevel accessLevel;
+    public AccessLevel accessLevel;
+    
+    public bool oneUse = false;
+    
+    public bool OneUse => oneUse;
 
     public bool HasAccess(AccessLevel requestedAccessLevel)
     {

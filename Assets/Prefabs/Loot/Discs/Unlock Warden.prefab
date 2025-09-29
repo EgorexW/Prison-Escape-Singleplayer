@@ -90,6 +90,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
+      propertyPath: unlockId.value
+      value: Unlock Warden
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: unlockId.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
       propertyPath: announcement.enabled
       value: 1
       objectReference: {fileID: 0}

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Light Armory Weapon
+  m_Name: Office Loot
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
-    Object: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be, type: 3}
-  - value: 3
-    Object: {fileID: 3930456545130410248, guid: 732b12cd8441149c395b173dac605a9a,
+    Object: {fileID: 5526721213140052118, guid: 9ff99a318b2fc4d3c8f39bc6097b8dd3,
       type: 3}
   - value: 1
-    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
+    Object: {fileID: 11400000, guid: 94a3cd87780bd4c5f8452afe6d4af29c, type: 2}
+  - value: 2
+    Object: {fileID: 5526721213140052118, guid: 1572842949fa2493abeba0e34561b3f2,
       type: 3}
   - value: 2
-    Object: {fileID: 5526721213140052118, guid: 49d04af4bedec4cf9a3d440a34887f12,
+    Object: {fileID: 4938499120341465757, guid: d7dca282487a34869a1ad5056014b1bc,
       type: 3}

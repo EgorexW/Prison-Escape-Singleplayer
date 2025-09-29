@@ -8,7 +8,7 @@ public class FacilityTrigger : MonoBehaviour
 
     [FoldoutGroup("Events")] public UnityEvent onActivate;
 
-    public void Activate()
+    public virtual void Activate()
     {
         onActivate.Invoke();
     }

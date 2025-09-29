@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
+  m_Name: Secure Loot
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - value: 2
+    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
+      type: 3}
+  - value: 2
+    Object: {fileID: 459931524417792899, guid: cbe9998e2387e43b98dbc7f3f6cfd911, type: 3}
+  - value: 1
+    Object: {fileID: 2630515351599952779, guid: ec46121ff603f40fb9dfbd1b15cc108f,
+      type: 3}
+  - value: 1
+    Object: {fileID: 11400000, guid: 43b0fe90189934a12a6f2e782ea27c78, type: 2}
+  - value: 1
+    Object: {fileID: 11400000, guid: 8d8a88cc6e3d54aaabe7bea1893fd891, type: 2}
+  - value: 1
+    Object: {fileID: 4635429409557423375, guid: e40cc3273f8c04050a5c8463465e1d5f,
+      type: 3}

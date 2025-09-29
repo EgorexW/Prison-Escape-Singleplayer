@@ -9,6 +9,9 @@ public class KeycardVisuals : ItemVisuals
     {
         if (keycard != null){
             displayName = keycard.accessLevel.displayName;
+            if (keycard.oneUse){
+                displayName += " Pass";
+            }
             color = keycard.accessLevel.color;
         }
         base.Apply();

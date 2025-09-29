@@ -737,7 +737,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1,
+      objectReference: {fileID: 11400000, guid: 8d8a88cc6e3d54aaabe7bea1893fd891,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

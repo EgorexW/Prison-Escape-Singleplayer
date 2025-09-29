@@ -669,11 +669,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
-        type: 3}
-      propertyPath: trapChance
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 3842563140199066882, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -688,7 +683,7 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba,
+      objectReference: {fileID: 11400000, guid: 11edbe4d5b1384e55a7df9b4360a57cc,
         type: 2}
     - target: {fileID: 7289807031558871901, guid: cb2172d96db4546208651350f1b99834,
         type: 3}

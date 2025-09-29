@@ -268,18 +268,18 @@ PrefabInstance:
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnNr.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnNr.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b,
+      objectReference: {fileID: 11400000, guid: cf8988136f0e4448ea0987372e77dcdd,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:

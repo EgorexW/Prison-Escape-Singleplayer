@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Disc
+  m_Name: Rare Disc
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
     Object: {fileID: 2713313887327436282, guid: 76e2f0f9175904ab9a2c3149a71dc671,
       type: 3}
-  - value: 2
-    Object: {fileID: 7416668859406209389, guid: 64c27acab6e56405494eb3b7ad727f69,
-      type: 3}
-  - value: 0.5
+  - value: 0.1
     Object: {fileID: 5335858694964001344, guid: 7bcab5ecc9c724880831b75e8bb8b54f,
       type: 3}
   - value: 1
-    Object: {fileID: 8195388087362760130, guid: 96ba0398199d04fe880e9f729534ee61,
-      type: 3}
+    Object: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1, type: 2}

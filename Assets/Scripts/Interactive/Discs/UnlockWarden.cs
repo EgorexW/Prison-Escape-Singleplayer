@@ -2,20 +2,16 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(DiscHandler))]
-public class UnlockWarden : MonoBehaviour, IDiscHandler
+public class UnlockWarden : FacilityTrigger
 {
     [BoxGroup("References")] [Required] [SerializeField] KeycardReader wardenReader;
     [BoxGroup("References")] [Required] [SerializeField] AccessLevel newAccessLevel;
 
     [SerializeField] Damage newDamage;
-
-    public bool CanHandleDisc(Disc disc)
+    
+    public override void Activate()
     {
-        return disc.unlockWarden;
-    }
-
-    public void HandleDisc(Disc disc)
-    {
+        base.Activate();
         wardenReader.accessLevel = newAccessLevel;
         wardenReader.visuals?.UpdateAccessLevel();
         wardenReader.electrocutionDamage = newDamage;

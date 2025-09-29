@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Secure Storage
+  m_Name: Basic Item
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
-    Object: {fileID: 4440457080533092915, guid: a98df77b3dec04e78ba12884ad9b063f,
-      type: 3}
-  - value: 2
-    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
-  - value: 2
-    Object: {fileID: 459931524417792899, guid: cbe9998e2387e43b98dbc7f3f6cfd911, type: 3}
   - value: 1
-    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
-      type: 3}
-  - value: 2
-    Object: {fileID: 2630515351599952779, guid: ec46121ff603f40fb9dfbd1b15cc108f,
-      type: 3}
+    Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
+  - value: 1
+    Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
   - value: 1
     Object: {fileID: 4690771240427926488, guid: 73023eb8c288843f9bd2d8f94a8bb72b,
       type: 3}
+  - value: 1
+    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
+      type: 3}
+  - value: 1
+    Object: {fileID: 2630515351599952779, guid: ec46121ff603f40fb9dfbd1b15cc108f,
+      type: 3}
+  - value: 1
+    Object: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1, type: 2}
   - value: 1
     Object: {fileID: 8018436764139619748, guid: 446e46fd9fa1b45dea73c00b424fbeef,
       type: 3}

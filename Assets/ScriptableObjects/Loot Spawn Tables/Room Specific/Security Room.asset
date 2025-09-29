@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Corridor Loot
+  m_Name: Security Room
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
-    Object: {fileID: 11400000, guid: d850f92d392bf4eb4b0f5be83a07647d, type: 2}
   - value: 1
     Object: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0, type: 2}
+  - value: 4
+    Object: {fileID: 4635429409557423375, guid: e40cc3273f8c04050a5c8463465e1d5f,
+      type: 3}
