@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Office Loot
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
+  - value: 1
     Object: {fileID: 5526721213140052118, guid: 9ff99a318b2fc4d3c8f39bc6097b8dd3,
       type: 3}
   - value: 1
     Object: {fileID: 11400000, guid: 94a3cd87780bd4c5f8452afe6d4af29c, type: 2}
-  - value: 2
+  - value: 1
     Object: {fileID: 5526721213140052118, guid: 1572842949fa2493abeba0e34561b3f2,
       type: 3}
-  - value: 2
+  - value: 1
     Object: {fileID: 4938499120341465757, guid: d7dca282487a34869a1ad5056014b1bc,
       type: 3}

@@ -8,7 +8,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Note.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Note.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Guest Access Note.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Guest Access Note.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Note Door Storage.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Note Door Storage.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Door Storage Note.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Door Storage Note.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Guest Access Note.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Guest Access Note.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Door Storage.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Door Storage.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Revolver.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Revolver.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Posters.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Posters.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Ground.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Ground.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Warden.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Warden.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Weapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Weapon.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Office Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Office Loot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Crowbar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Crowbar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +167,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Rooms/Light Armory.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Traps/Corridor Fire Trap.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab.meta" root0="FORCE_HIGHLIGHTING" />
@@ -356,7 +396,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Balance Pass" />
     <MESSAGE value="Refactor file structure; rename OnPlayerDead and PowerGenerator files, add new Player and GameTimeEffects meta files, and update GameTime and GameDirector logic" />
     <MESSAGE value="Add new LinkedItems class and enhance Disc handling; introduce gameTimeIncrease feature" />
     <MESSAGE value="Balance changes" />
@@ -381,7 +420,8 @@
     <MESSAGE value="Add UIInputHandler to manage settings input and toggle UI state" />
     <MESSAGE value="Add SettingsUI to manage mouse sensitivity settings" />
     <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
+    <MESSAGE value="Complete Rework of the progression" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Rework of the progression" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

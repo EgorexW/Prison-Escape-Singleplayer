@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    currentHealth: 50
-    maxHealth: 50
-    absoluteMaxHealth: 50
+    currentHealth: 25
+    maxHealth: 25
+    absoluteMaxHealth: 25
     damagedBy: 3
   gameObjectToDestroy: {fileID: 4502153590353648813}

@@ -256,6 +256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
+      propertyPath: doorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
       propertyPath: roomName
       value: Small Infirmary
       objectReference: {fileID: 0}

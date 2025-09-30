@@ -9,7 +9,7 @@ public class Crowbar : EffectItem
     protected override void Apply()
     {
         base.Apply();
-        doorLock.unlocked = true;
+        doorLock.Unlock();
         DestroyItem();
     }
 

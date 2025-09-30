@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    currentHealth: 50
+    currentHealth: 25
     maxHealth: 50
     absoluteMaxHealth: 50
     damagedBy: 3
