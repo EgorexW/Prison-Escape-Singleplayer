@@ -817,6 +817,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: trapChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: roomName
@@ -841,7 +846,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: 034497d325c054752b147b7457ba0455,
+      objectReference: {fileID: 11400000, guid: 9638af44c886544f5829daa9e53dbdab,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
