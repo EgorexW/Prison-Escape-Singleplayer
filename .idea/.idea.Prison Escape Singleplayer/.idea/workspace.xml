@@ -8,24 +8,356 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Settings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Settings.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Ambient.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Metal Detector.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Metal Detector.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Down.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Down.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Medkit-05.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Pickup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Pickup.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/No Ammo.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/No Ammo.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Pistol.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Pistol.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Rifle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Rifle.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_carpet_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_concrete_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_grass_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_snow_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/footstep_wood_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactBell_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGeneric_light_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_light_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactGlass_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_light_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMetal_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactMining_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlank_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_light_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPlate_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactPunch_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactSoft_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactTin_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_heavy_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_light_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_000.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_000.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_001.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_001.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_002.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_002.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_003.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_003.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_004.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Audio/impactWood_medium_004.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Kenney.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Kenney.url.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/License.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/License.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Patreon.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/kenney_impact-sounds/Patreon.url.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Medkit.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Medkit.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Metal Detector.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Metal Detector.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/No Ammo.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/No Ammo.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Pickup.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Pickup.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Pistol.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Pistol.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Down.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Down.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Rifle.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Rifle.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemAudio.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemAudio.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Others/InputSystem/PlayerInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Others/InputSystem/PlayerInput.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Others/Pipeline/Settings/Medium_PipelineAsset_ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Others/Pipeline/Settings/Medium_PipelineAsset_ForwardRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Big Medkit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Big Medkit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Medkit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Meds/Medkit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Rifle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Rifle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Metal Detector.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Metal Detector.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Crowbar.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Crowbar.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Crowbar.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Items/Crowbar.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electric Shock.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electric Shock.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electric Shock.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electric Shock.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electronic signal access denied.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electronic signal access denied.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electronic signal access denied.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electronic signal access denied.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electronic signal access granted.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electronic signal access granted.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Electronic signal access granted.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Electronic signal access granted.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Hurt.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Hurt.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Hurt.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Hurt.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Warden.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Warden.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Door Storage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Door Storage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/UseableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/UseableItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Weapons/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Weapons/Shooting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/MainPowerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/MainPowerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,7 +476,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Traps/Corridor Fire Trap.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Presentation/Sounds/Electronic Ambient.wav.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Presentation/Sounds/Ambient/Electronic Ambient.wav.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/BasicRigidBodyPush.cs" root0="FORCE_HIGHLIGHTING" />
@@ -176,6 +508,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IPower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Crowbar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Disc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/ItemAudio.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/ItemVisuals.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Items/Keycards/Keycard.cs" root0="FORCE_HIGHLIGHTING" />
@@ -187,6 +520,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/RoomTrait.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/LevelNodes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
@@ -207,25 +541,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TutorialsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap.extras@13634da7dbe0/Editor/Tiles/RuleOverrideTile/PopulateRuleOverrideTileWizard.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@91e7def251e0/Editor/UI/SceneViewOpenTilePaletteOverlay.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@91e7def251e0/Editor/UI/TilePaletteBrushPickItemElement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ai.navigation@eb5635ad590d/Tests/Runtime/OffMeshLinkTests/CurrentNextOffMeshLinkData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@59eb6f11d242/Runtime/Editor/BurstAssemblyDisable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@dcc61ebd6655/Runtime/Impulse/CinemachineImpulseSource.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13/Editor/Discovery.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@7fe8299111a7/InputSystem/Events/DeviceConfigurationEvent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@7fe8299111a7/Samples~/RebindingUI/GamepadIconsExample.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@7fe8299111a7/Samples~/UIvsGameInput/UIvsGameInputHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@8017b507cc74/Unity.Mathematics/int2.gen.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@2be5e7224a10/Runtime/Utilities/CameraCaptureBridge.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Runtime/Debug/UniversalRenderPipelineDebugDisplayStats.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@052d95cfe62a/Editor/Data/Nodes/Math/Basic/PowerNode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@052d95cfe62a/Editor/Generation/Enumerations/DisableBatching.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@052d95cfe62a/Tests/Editor/UnitTests/HeatmapTests.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@dfdbd02f5918/UnityEditor.TestRunner/TestRunner/Messages/WaitForDomainReload.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@c58b4ee65782/Runtime/Playables/DirectorControlPlayable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Editor/UGUI/UI/InterceptedEventsPreview.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13/Editor/UsageUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Editor/ShaderGraph/Nodes/UniversalSampleBufferNode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/74/3dde1d86/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/bc/25067beb/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -373,7 +691,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add new LinkedItems class and enhance Disc handling; introduce gameTimeIncrease feature" />
     <MESSAGE value="Balance changes" />
     <MESSAGE value="Refactor and enhance item handling; rename HealingItem to EffectItem, add TimeTrap and GameTimer classes, and update Disc and FacilitySwitch logic" />
     <MESSAGE value="Refactor code for consistency; remove unnecessary whitespace, streamline property declarations, and enhance readability across multiple classes" />
@@ -398,7 +715,8 @@
     <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
     <MESSAGE value="Complete Rework of the progression" />
     <MESSAGE value="Notes, and more progression changes, guard pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notes, and more progression changes, guard pass" />
+    <MESSAGE value="Builds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Builds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

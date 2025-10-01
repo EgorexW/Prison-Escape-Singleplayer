@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cc530574eed43c2abb405bfd0207a3, type: 3}
+  m_Name: Medkit
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 84df9b46f427e44429dbb317c5b14a32, type: 3}
+  - {fileID: 8300000, guid: 0f5c20c092257489d85cd27357ca4013, type: 3}
+  - {fileID: 8300000, guid: 4fbbd14fbebaa4adaa766a3263d86ccd, type: 3}
+  - {fileID: 8300000, guid: 9fd409f08c20c489a9f454697f5a39ec, type: 3}
+  - {fileID: 8300000, guid: ea3e9a19d244d4c87b23b5688da40675, type: 3}
+  volume: 0.75
+  volumeVariance: 0.1
+  pitch: 1
+  pitchVariance: 0.1
+  loop: 0
+  canOverride: 1
+  mixerGroup: {fileID: 0}

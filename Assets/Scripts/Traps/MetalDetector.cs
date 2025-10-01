@@ -1,7 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MetalDetector : PoweredDevice
 {
+[FoldoutGroup("Events")] public UnityEvent<Item> onItemTaken;
+    
     public void OnTriggerEnter(Collider other)
     {
         if (!IsPowered()){
@@ -32,5 +36,6 @@ public class MetalDetector : PoweredDevice
         var pos = FacilityTriggers.GetSwitch("Confiscated Items").transform.position; // TODO make it more error proof
         item.transform.position = pos;
         item.Rigidbody.linearVelocity = Vector3.zero;
+        onItemTaken.Invoke(item);
     }
 }

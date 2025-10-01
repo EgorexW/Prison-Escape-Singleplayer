@@ -20,6 +20,9 @@ public class Shooting : MonoBehaviour
 
     [FoldoutGroup("Events")] public UnityEvent onShot;
 
+    [FoldoutGroup("Events")]
+    public UnityEvent onNoAmmo;
+
     float lastShotTime;
 
     public void Shoot(Ray ray)
@@ -28,6 +31,7 @@ public class Shooting : MonoBehaviour
             return;
         }
         if (ammo < 1){
+            onNoAmmo.Invoke();
             return;
         }
         ammo--;

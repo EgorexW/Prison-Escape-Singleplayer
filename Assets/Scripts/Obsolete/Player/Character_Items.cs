@@ -8,10 +8,13 @@ public partial class Player
     const float CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW = 2f;
     [SerializeField] [Required] Transform itemSlot;
 
-    [FoldoutGroup("Events")] public readonly UnityEvent onInventoryChange = new();
-    [FoldoutGroup("Events")] public readonly UnityEvent onSwapItem = new();
-    [FoldoutGroup("Events")] public readonly UnityEvent onThrowItem = new();
-    [FoldoutGroup("Events")] public readonly UnityEvent onUseItem = new();
+    [FoldoutGroup("Events")] public UnityEvent onInventoryChange = new();
+    [FoldoutGroup("Events")] public UnityEvent onSwapItem = new();
+    [FoldoutGroup("Events")] public UnityEvent onThrowItem = new();
+    [FoldoutGroup("Events")] public UnityEvent onUseItem = new();
+
+    [FoldoutGroup("Events")]
+    public UnityEvent onPickUpItem = new();
 
     [ShowInInspector] Item equipedItem;
 
@@ -26,6 +29,7 @@ public partial class Player
                 return;
             }
         }
+        onPickUpItem.Invoke();
         inventory.AddItem(item);
 
         item.gameObject.SetActive(false);
