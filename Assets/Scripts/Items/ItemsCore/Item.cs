@@ -15,7 +15,9 @@ public sealed class Item : MonoBehaviour, IInteractive
     readonly List<IItemEffect> itemEffects = new();
     public Rigidbody Rigidbody{ get; private set; }
 
-    public string Name => gameObject.name;
+    public string Name;
+    [Button]
+    void StealNameFromGameObject() => Name = gameObject.name;
 
     void Awake()
     {

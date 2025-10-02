@@ -15,17 +15,14 @@ public class Crowbar : EffectItem
 
     public override void Use(Player playerTmp, bool alternative = false)
     {
-        if (!alternative){
-            if (playerTmp.GetInteractive() is not DoorLock){
-                return;
-            }
-            doorLock = playerTmp.GetInteractive() as DoorLock;
-            if (doorLock.resistance > breakStrength){
-                return;
-            }
-            base.Use(playerTmp);
+        if (playerTmp.GetInteractive() is not DoorLock){
             return;
         }
-        base.Use(playerTmp, true);
+        doorLock = playerTmp.GetInteractive() as DoorLock;
+        Debug.Assert(doorLock != null, nameof(doorLock) + " != null");
+        if (doorLock.resistance > breakStrength){
+            return;
+        }
+        base.Use(playerTmp);
     }
 }

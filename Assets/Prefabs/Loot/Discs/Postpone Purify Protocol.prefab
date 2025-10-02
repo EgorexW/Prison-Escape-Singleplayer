@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 123646456454774323, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Name
-      value: More Time
+      value: Postpone Purify Protocol
       objectReference: {fileID: 0}
     - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
@@ -144,6 +144,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 56e166658ddc14e28bedb6f65451026e,
         type: 2}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.message
+      value: Purify Protocol postponed by 120s
+      objectReference: {fileID: 0}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Color.b

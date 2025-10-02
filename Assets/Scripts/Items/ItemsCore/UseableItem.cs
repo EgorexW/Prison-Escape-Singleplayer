@@ -33,23 +33,23 @@ public abstract class UseableItem : ItemEffect
         if (soundEffect != null){
             player.playerSoundEffects.PlaySoundEffect(soundEffect);
         }
+        StopUse(player);
     }
 
     protected abstract void Apply();
 
     public override void Use(Player playerTmp, bool alternative = false)
     {
-        if (!alternative){
-            player = playerTmp;
-            base.Use(playerTmp);
-            startUseTime = Time.time;
-        }
-        else{
-            base.StopUse(playerTmp);
-            playerTmp.onFinishInteraction.Invoke();
-            player = null;
-            startUseTime = Mathf.Infinity;
-        }
+        player = playerTmp;
+        base.Use(playerTmp);
+        startUseTime = Time.time;
+    }
+    
+    public override void StopUse(Player playerTmp, bool alternative = false)
+    {
+        playerTmp.onFinishInteraction.Invoke();
+        player = null;
+        startUseTime = Mathf.Infinity;
     }
 
     protected void DestroyItem()

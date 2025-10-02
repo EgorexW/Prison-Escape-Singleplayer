@@ -56,14 +56,14 @@ public partial class Player
         item.Rigidbody.isKinematic = false; // Enable physics
     }
 
-    public void ThrowItem(Item item = null)
+    public void ThrowItem(Item item)
     {
-        if (item == null){
-            item = GetHeldItem();
             if (item == null){
+                Debug.LogWarning("Can't throw null item", this);
                 return;
             }
-        }
+        
+        item.StopUse(this);
         RemoveItem(item);
 
         var force = aim.forward * THROW_POWER;

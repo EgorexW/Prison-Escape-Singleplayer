@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 123646456454774323, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Name
-      value: Unlock Warden
+      value: Warden MIssing Protocol
       objectReference: {fileID: 0}
     - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
@@ -109,6 +109,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7621a18234122446297be7bca17ed7b3,
         type: 2}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.message
+      value: Admins can now access the wardens office
+      objectReference: {fileID: 0}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Color.g

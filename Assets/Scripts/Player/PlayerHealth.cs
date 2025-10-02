@@ -37,8 +37,7 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        BroadcastMessage("PlayerDead", SendMessageOptions.DontRequireReceiver);
-        gameObject.SetActive(false);
+        GameManager.i.gameEnder.LoseGame();
     }
 
     void UpdateHealth()

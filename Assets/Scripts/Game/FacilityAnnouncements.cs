@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FacilityAnnouncements : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] PlayAudio audioPlayer;
 
     readonly Queue<FacilityAnnouncement> announcements = new();
+
+    [FoldoutGroup("Events")]
+    public UnityEvent<FacilityAnnouncement> onAnnouncement;
 
     void Update()
     {
@@ -18,6 +22,7 @@ public class FacilityAnnouncements : MonoBehaviour
             return;
         }
         var announcement = announcements.Dequeue();
+        onAnnouncement.Invoke(announcement);
         audioPlayer.sound = announcement.sound;
         audioPlayer.Play();
     }
@@ -31,6 +36,6 @@ public class FacilityAnnouncements : MonoBehaviour
 [Serializable]
 public struct FacilityAnnouncement
 {
+    public string message;
     public Sound sound;
-    // public string message;
 }

@@ -98,6 +98,11 @@ PrefabInstance:
       propertyPath: <AssetPathHash>k__BackingField
       value: 2174333951728468228
       objectReference: {fileID: 0}
+    - target: {fileID: 7129536701162719203, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
+        type: 3}
+      propertyPath: Name
+      value: Revolver
+      objectReference: {fileID: 0}
     - target: {fileID: 7419262105431511422, guid: 6ea9897e95e5f4fef80f0850e70bf8be,
         type: 3}
       propertyPath: ammo

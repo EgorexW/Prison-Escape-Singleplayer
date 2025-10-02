@@ -7,17 +7,14 @@ public class GameManager : SerializedMonoBehaviour
     [BoxGroup("References")] [Required] [SerializeField] Player player;
 
     [BoxGroup("References")] [Required] public GameTime gameTime;
-
     [FormerlySerializedAs("facilityObjects")]
     [FormerlySerializedAs("facilitySwitches")]
     [BoxGroup("References")]
     [Required]
     public FacilityTriggers facilityTriggers;
-
     [BoxGroup("References")] [Required] public LevelNodes levelNodes;
     [BoxGroup("References")] [Required] public FacilityAnnouncements facilityAnnouncements;
-
-    [SerializeField] bool log;
+    [BoxGroup("References")][Required] public GameEnder gameEnder;
 
     public static GameManager i{ get; private set; }
     public Player Player => player;
@@ -32,15 +29,4 @@ public class GameManager : SerializedMonoBehaviour
         i = this;
         // DontDestroyOnLoad(gameObject);
     }
-
-    #region Debug
-
-    void Log(string msg)
-    {
-        if (log){
-            Debug.Log(msg, this);
-        }
-    }
-
-    #endregion
 }
