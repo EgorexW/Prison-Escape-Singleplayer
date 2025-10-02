@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 592542e739dba43bf97371374177151f, type: 3}
-  volume: 0.75
+  volume: 1
   volumeVariance: 0.1
   pitch: 1
-  pitchVariance: 0.1
+  pitchVariance: 0.2
   loop: 0
   canOverride: 1
   mixerGroup: {fileID: 0}

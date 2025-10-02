@@ -291,7 +291,7 @@ MonoBehaviour:
   audioSource: {fileID: 8008393654804844239}
   sound: {fileID: 11400000, guid: dafbbb31da47a40e8b8c9bcd7c15ae50, type: 2}
   playOnStart: 0
-  delayBetweenPlays: 0
+  delayBetweenPlays: 0.5
 --- !u!1001 &411290648767494730
 PrefabInstance:
   m_ObjectHideFlags: 0

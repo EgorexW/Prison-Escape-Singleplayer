@@ -83,7 +83,12 @@ public class Tutorials : MonoBehaviour
         if (PlayerPrefs.GetInt("Tutorial/Use", 0) == 1){
             return;
         }
-        tutorialsUI.UseTutorial = player.GetHeldItem() != null; // TODO more nuanced check
+        var heldItem = player.GetHeldItem();
+        if (heldItem == null || heldItem.GetComponent<Keycard>() != null || heldItem.GetComponent<Disc>() != null){
+            tutorialsUI.UseTutorial = false;
+            return;
+        }
+        tutorialsUI.UseTutorial = true;
     }
 
     void ResolveThrowTutorial()

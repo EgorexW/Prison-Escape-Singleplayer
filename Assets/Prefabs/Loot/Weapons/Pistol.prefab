@@ -192,8 +192,8 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: d03a1ebdc730e44d889bfa6eb9d84fb3, type: 3}
   m_Resource: {fileID: 8300000, guid: d03a1ebdc730e44d889bfa6eb9d84fb3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7873008
-  m_Pitch: 0.9887626
+  m_Volume: 0.7724516
+  m_Pitch: 1.0043002
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   audioSource: {fileID: 1941613998968848137}
   sound: {fileID: 11400000, guid: dafbbb31da47a40e8b8c9bcd7c15ae50, type: 2}
   playOnStart: 0
-  delayBetweenPlays: 0
+  delayBetweenPlays: 0.5
 --- !u!1001 &87734558384835319
 PrefabInstance:
   m_ObjectHideFlags: 0

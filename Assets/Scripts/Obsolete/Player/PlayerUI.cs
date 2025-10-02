@@ -1,5 +1,6 @@
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,7 @@ class PlayerUI : MonoBehaviour
     [FormerlySerializedAs("character")] [Required] [SerializeField] Player player;
     [Required] [SerializeField] MetricBar staminaBarUI;
     [Required] [SerializeField] MetricBar progressBarUI;
+    [Required] [SerializeField] TextMeshProUGUI itemName;
 
     void Awake()
     {
@@ -29,6 +31,11 @@ class PlayerUI : MonoBehaviour
     void Update()
     {
         staminaBarUI.Set(player.Stamina, 1);
+        var heldItem = player.GetHeldItem();
+        if (heldItem != null)
+            itemName.text = heldItem.Name;
+        else
+            itemName.text = "";
     }
 
     void ShowHealth()
