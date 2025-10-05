@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 3643929164873241981}
   - component: {fileID: 4229562753460253290}
   - component: {fileID: 9198443633173221963}
+  - component: {fileID: 8914720916878691581}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -184,6 +185,9 @@ MonoBehaviour:
     maxHealth: 70
     absoluteMaxHealth: 70
     damagedBy: 1
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
   gameObjectToDestroy: {fileID: 0}
 --- !u!114 &9198443633173221963
 MonoBehaviour:
@@ -203,8 +207,23 @@ MonoBehaviour:
       m_Calls: []
   door: {fileID: 5171235948492802812}
   resistance: 1
-  requiresFullPower: 0
   unlocked: 1
+--- !u!114 &8914720916878691581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7012100719898281584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af3524df3544ae9aec6bde04b7e7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedDestroyable: {fileID: 4229562753460253290}
+  intensity: 0.2
+  duration: 0.2
+  chaos: 10
 --- !u!1001 &6111110855735137651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,8 +300,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5323290661157089626, guid: ba3ceb7ddb58b44de858362322f535b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7345854798529814092}
   m_SourcePrefab: {fileID: 100100000, guid: ba3ceb7ddb58b44de858362322f535b1, type: 3}
+--- !u!1 &2102941706198213673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5323290661157089626, guid: ba3ceb7ddb58b44de858362322f535b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6111110855735137651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7345854798529814092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102941706198213673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ffa6002fca4f5780268c7d914699a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedDestroyable: {fileID: 4229562753460253290}
 --- !u!4 &2713667900062176897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8171751159228679154, guid: ba3ceb7ddb58b44de858362322f535b1,

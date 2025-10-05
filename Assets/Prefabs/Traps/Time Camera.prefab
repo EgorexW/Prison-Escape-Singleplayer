@@ -124,7 +124,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
+      objectReference: {fileID: 2100000, guid: 023b3afc9447d45c883fbf87fa5249fb, type: 2}
     - target: {fileID: 5437764989230989877, guid: 62fe311c637f748cdae00ae296b8a72c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -276,6 +276,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5402281764058368304}
+    - targetCorrespondingSourceObject: {fileID: 129204, guid: 0b8af7e870623f646b531181ce423ae6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1267378248135279454}
   m_SourcePrefab: {fileID: 100100000, guid: 0b8af7e870623f646b531181ce423ae6, type: 3}
 --- !u!4 &7874545949468597557 stripped
 Transform:
@@ -327,4 +331,23 @@ MonoBehaviour:
     maxHealth: 25
     absoluteMaxHealth: 25
     damagedBy: 3
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
   gameObjectToDestroy: {fileID: 4502153590353648813}
+--- !u!114 &1267378248135279454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874545949468923747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af3524df3544ae9aec6bde04b7e7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedDestroyable: {fileID: 5402281764058368304}
+  intensity: 0.1
+  duration: 0.2
+  chaos: 10

@@ -8,30 +8,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Power Generator Note.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Power Generator Note.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Power Generator Note.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Power Generator Note.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Breakable Wall.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Breakable Wall.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/PolygonHeist/Materials/Emission_Dark.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/PolygonHeist/Materials/Emission_Dark.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/EMP Grenade.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/EMP Grenade.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Grenade.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Grenade.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/EMP Grenade.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/EMP Grenade.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Grenade.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Grenade.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Powerfull Flashlight.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Powerfull Flashlight.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Emp Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Emp Explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Fire Trap Effect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Fire Trap Effect.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Grenade Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Grenade Explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Infirmary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Infirmary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Heavy Armory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Heavy Armory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Motion Sensor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Motion Sensor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/PlayerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/PlayerSpawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/Enemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/Enemies/TargetsSeeing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/Enemies/TargetsSeeing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/Enemies/TurretBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/Enemies/TurretBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +228,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Power/PowerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Power/PowerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/CeilingLight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/PoweredDevice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/WobbleEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedItems.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -384,7 +394,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Refactor player health management; introduce PlayerHealth class, update references in various scripts, and add PlayerHealthVisuals for damage feedback" />
     <MESSAGE value="A change to powered device I should have made a long time ago" />
     <MESSAGE value="Add new prefab and asset metadata for various door types and vault components" />
     <MESSAGE value="Add new Bag class and associated prefab metadata; implement inventory size increase on interaction" />
@@ -409,7 +418,8 @@
     <MESSAGE value="Sound design" />
     <MESSAGE value="SE Playtest" />
     <MESSAGE value="Add GameStats and PlayerStats classes for tracking game progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GameStats and PlayerStats classes for tracking game progress" />
+    <MESSAGE value="Stamina, and other playtest feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stamina, and other playtest feedback" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

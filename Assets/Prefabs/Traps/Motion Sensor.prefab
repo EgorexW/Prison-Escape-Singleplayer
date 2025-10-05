@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58513367f47b545f793944a569afae9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPowerChanged:
-    m_PersistentCalls:
-      m_Calls: []
   laser: {fileID: 5437764989231154315}
   onActivation:
     m_PersistentCalls:
@@ -250,4 +247,7 @@ MonoBehaviour:
     maxHealth: 1
     absoluteMaxHealth: 1
     damagedBy: 3
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
   gameObjectToDestroy: {fileID: 9063421897856884425}

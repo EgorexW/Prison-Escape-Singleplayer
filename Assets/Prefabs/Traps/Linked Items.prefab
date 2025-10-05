@@ -299,6 +299,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3542648470591906575}
+    - targetCorrespondingSourceObject: {fileID: 126152, guid: 6d2a6859c7ef77f4daca729eb9d2633e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1980806905355191202}
   m_SourcePrefab: {fileID: 100100000, guid: 6d2a6859c7ef77f4daca729eb9d2633e, type: 3}
 --- !u!1 &1886434104557925989 stripped
 GameObject:
@@ -323,7 +327,26 @@ MonoBehaviour:
     maxHealth: 50
     absoluteMaxHealth: 50
     damagedBy: 3
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
   gameObjectToDestroy: {fileID: 4502153590353648813}
+--- !u!114 &1980806905355191202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886434104557925989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af3524df3544ae9aec6bde04b7e7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedDestroyable: {fileID: 3542648470591906575}
+  intensity: 0.1
+  duration: 0.2
+  chaos: 10
 --- !u!4 &1886434104558022383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422978, guid: 6d2a6859c7ef77f4daca729eb9d2633e,

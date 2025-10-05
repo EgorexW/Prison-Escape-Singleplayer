@@ -11159,6 +11159,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939109269}
   m_CullTransparentMesh: 1
+--- !u!1 &960348815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5323290661157089626, guid: ba3ceb7ddb58b44de858362322f535b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104647918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &969275002
 GameObject:
   m_ObjectHideFlags: 0
@@ -15006,6 +15012,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1738432585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763932346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
+    type: 3}
+  m_PrefabInstance: {fileID: 1145475226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd8d347110fd44eebd8887e07c9d2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1764858008
 GameObject:
   m_ObjectHideFlags: 0
@@ -17169,6 +17187,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5323290661157089626, guid: ba3ceb7ddb58b44de858362322f535b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2104647923}
     - targetCorrespondingSourceObject: {fileID: 323605340856351333, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       insertIndex: -1
@@ -17186,12 +17208,25 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2104647918}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 960348815}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2c87ea8a937140ff9b4891a6254e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2104647923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960348815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ffa6002fca4f5780268c7d914699a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedDestroyable: {fileID: 1763932346}
 --- !u!1 &2124108912
 GameObject:
   m_ObjectHideFlags: 0
@@ -17540,7 +17575,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 70.56204
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -18502,6 +18537,8 @@ MonoBehaviour:
   sprintSpeedMod: 1.5
   staminaUseRate: 0.15
   staminaRegenRate: 0.05
+  normalFov: 70
+  sprintFov: 90
   playerEffects: {fileID: 2831056598105544328}
   playerHealth: {fileID: 5979843613610568409}
   playerSoundEffects: {fileID: 2767234994548322115}
@@ -19144,6 +19181,9 @@ MonoBehaviour:
     maxHealth: 100
     absoluteMaxHealth: 100
     damagedBy: 5
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5980020831691083268
 GameObject:
   m_ObjectHideFlags: 0
@@ -19201,8 +19241,6 @@ MonoBehaviour:
   TopClamp: 89
   BottomClamp: -89
   virtualCamera: {fileID: 1189050708727125647}
-  normalFov: 70
-  sprintFov: 90
   fovTransitionSpeed: 20
 --- !u!224 &6156111484706285261
 RectTransform:
@@ -19387,7 +19425,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 70
+  field of view: 70.56204
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
