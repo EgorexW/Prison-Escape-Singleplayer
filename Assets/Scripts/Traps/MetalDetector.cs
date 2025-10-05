@@ -33,7 +33,13 @@ public class MetalDetector : PoweredDevice
 
     void TakeItem(Item item)
     {
-        var pos = FacilityTriggers.GetSwitch("Confiscated Items").transform.position; // TODO make it more error proof
+        var facilityTrigger = FacilityTriggers.GetSwitch("Confiscated Items");
+        if (facilityTrigger == null){
+            Debug.LogWarning("No facility trigger named 'Confiscated Items' found, destroying item", this);
+            Destroy(item);
+            return;
+        }
+        var pos = facilityTrigger.transform.position;
         item.transform.position = pos;
         item.Rigidbody.linearVelocity = Vector3.zero;
         onItemTaken.Invoke(item);

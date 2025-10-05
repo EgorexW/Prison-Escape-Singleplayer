@@ -11536,7 +11536,7 @@ MonoBehaviour:
   - {fileID: 1820167181}
   - {fileID: 1432246487}
   - {fileID: 1123375711}
-  timeBetweenPowerLoss: 150
+  timeBetweenPowerLoss: 999999
   onPowerChanged:
     m_PersistentCalls:
       m_Calls:
@@ -19200,6 +19200,10 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 5404240995170318770}
   TopClamp: 89
   BottomClamp: -89
+  virtualCamera: {fileID: 1189050708727125647}
+  normalFov: 70
+  sprintFov: 90
+  fovTransitionSpeed: 20
 --- !u!224 &6156111484706285261
 RectTransform:
   m_ObjectHideFlags: 0

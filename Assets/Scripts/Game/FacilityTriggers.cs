@@ -21,6 +21,7 @@ public class FacilityTriggers : MonoBehaviour
             if (facilitySwitch.id == switchId){
                 return facilitySwitch;
             }
+        Debug.LogWarning("No switch found with id " + switchId);
         return null;
     }
 

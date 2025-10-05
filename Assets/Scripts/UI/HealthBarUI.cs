@@ -15,7 +15,7 @@ public class HealthBarUI : MonoBehaviour
     {
         SetHealth(health.currentHealth, health.maxHealth, health.absoluteMaxHealth);
 
-        maskIcon.SetActive(!health.damagedBy.HasFlag(DamageType.Poison)); // TODO hard coded
+        maskIcon.SetActive(!health.damagedBy.HasFlag(DamageType.Poison));
     }
 
     public void SetHealth(float health, float maxHealth, float maxValue = -1)

@@ -10,9 +10,10 @@ public class MotionSensor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")){
+        var player = General.GetComponentFromCollider<Player>(other);
+        if (player == null){
             return;
-        } // TODO make it cleaner
+        }
         onActivation.Invoke();
     }
 

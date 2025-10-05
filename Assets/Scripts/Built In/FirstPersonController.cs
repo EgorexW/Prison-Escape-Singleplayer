@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using Sirenix.OdinInspector;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -11,7 +13,7 @@ namespace StarterAssets
 #endif
     public class FirstPersonController : MonoBehaviour
     {
-        public delegate float Speed();
+        public delegate MoveData GetMoveData(bool sprint);
 
         const float _threshold = 0.01f;
 
@@ -61,6 +63,9 @@ namespace StarterAssets
         // timeout deltatime
         float _jumpTimeoutDelta;
         GameObject _mainCamera;
+        
+        [BoxGroup("References")][Required][SerializeField] CinemachineVirtualCamera virtualCamera;
+        [SerializeField] float fovTransitionSpeed = 20f;
 
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -82,8 +87,7 @@ namespace StarterAssets
             }
         }
 
-        public Speed MoveSpeed{ get; set; }
-        public Speed SprintSpeed{ get; set; }
+        public GetMoveData getMoveData;
 
         void Awake()
         {
@@ -155,14 +159,14 @@ namespace StarterAssets
             // if there is an input
             if (_input.look.sqrMagnitude >= _threshold){
                 //Don't multiply mouse input by Time.deltaTime
-                var deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+                var deltaTimeMultiplier = Time.timeScale * (IsCurrentDeviceMouse ? 1.0f : Time.deltaTime);
 
                 _cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
                 _rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
                 // clamp our pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
+ 
                 // Update Cinemachine camera target pitch
                 CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
@@ -173,15 +177,17 @@ namespace StarterAssets
 
         void Move()
         {
-            // set target speed based on move speed, sprint speed and if sprint is pressed
-            var targetSpeed = _input.sprint ? SprintSpeed() : MoveSpeed();
-
-            // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+            var moveData = this.getMoveData(_input.sprint);
+            
+            var currentFov = virtualCamera.m_Lens.FieldOfView;
+            if (Mathf.Abs(currentFov - moveData.fov) > 0f){
+                virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(currentFov, moveData.fov, fovTransitionSpeed * Time.deltaTime);
+            }
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
             if (_input.move == Vector2.zero){
-                targetSpeed = 0.0f;
+                moveData.speed = 0.0f;
             }
 
             // a reference to the players current horizontal velocity
@@ -191,18 +197,18 @@ namespace StarterAssets
             var inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
             // accelerate or decelerate to target speed
-            if (currentHorizontalSpeed < targetSpeed - speedOffset ||
-                currentHorizontalSpeed > targetSpeed + speedOffset){
+            if (currentHorizontalSpeed < moveData.speed - speedOffset ||
+                currentHorizontalSpeed > moveData.speed + speedOffset){
                 // creates curved result rather than a linear one giving a more organic speed change
                 // note T in Lerp is clamped, so we don't need to clamp our speed
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
+                _speed = Mathf.Lerp(currentHorizontalSpeed, moveData.speed * inputMagnitude,
                     Time.deltaTime * SpeedChangeRate);
 
                 // round speed to 3 decimal places
                 _speed = Mathf.Round(_speed * 1000f) / 1000f;
             }
             else{
-                _speed = targetSpeed;
+                _speed = moveData.speed;
             }
 
             // normalise input direction
@@ -271,5 +277,11 @@ namespace StarterAssets
             }
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
+    }
+
+    public struct MoveData
+    {
+        public float speed;
+        public float fov;
     }
 }

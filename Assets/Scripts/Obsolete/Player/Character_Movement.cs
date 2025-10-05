@@ -11,6 +11,9 @@ public partial class Player
     [BoxGroup("Stamina")] [SerializeField] float staminaUseRate = 0.15f;
     [BoxGroup("Stamina")] [SerializeField] float staminaRegenRate = 0.1f;
 
+    [BoxGroup("Fov")][SerializeField] float normalFov = 70;
+    [BoxGroup("Fov")][SerializeField] float sprintFov = 90f;
+    
     CharacterController characterController;
     FirstPersonController firstPersonController;
     float speedMod = 1;
@@ -22,24 +25,25 @@ public partial class Player
         if (firstPersonController == null){
             return;
         }
-        firstPersonController.MoveSpeed = MoveSpeed;
-        firstPersonController.SprintSpeed = SprintSpeed;
+        firstPersonController.getMoveData = GetMoveData;
     }
 
-    public float MoveSpeed()
+    MoveData GetMoveData(bool sprint)
     {
-        AddStamina(staminaRegenRate * Time.deltaTime);
-        return moveSpeed * speedMod;
-    }
-
-    public float SprintSpeed()
-    {
-        var canSprint = Stamina > 0;
-        if (!canSprint){
-            return moveSpeed * speedMod;
+        var moveData = new MoveData();
+        moveData.speed = moveSpeed * speedMod;
+        moveData.fov = normalFov;
+        if (!sprint){
+            AddStamina(staminaRegenRate * Time.deltaTime);
+            return moveData;
         }
-        Stamina -= staminaUseRate * Time.deltaTime;
-        return moveSpeed * speedMod * sprintSpeedMod;
+        var canSprint = Stamina > 0;
+        if (canSprint){
+            moveData.speed *= sprintSpeedMod;
+            moveData.fov = sprintFov;
+            Stamina -= staminaUseRate * Time.deltaTime;
+        }
+        return moveData;
     }
 
     public Transform GetTransform()
