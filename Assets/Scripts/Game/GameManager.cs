@@ -6,7 +6,7 @@ public class GameManager : SerializedMonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] Player player;
 
-    [BoxGroup("References")] [Required] public GameTime gameTime;
+    [FormerlySerializedAs("gameTime")] [BoxGroup("References")] [Required] public GameTimeManager gameTimeManager;
     [FormerlySerializedAs("facilityObjects")]
     [FormerlySerializedAs("facilitySwitches")]
     [BoxGroup("References")]

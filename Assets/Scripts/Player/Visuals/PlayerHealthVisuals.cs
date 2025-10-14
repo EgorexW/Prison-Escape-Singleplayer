@@ -15,7 +15,7 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     void Awake()
     {
-        playerHealth.onDamage.AddListener(OnDamage);
+        playerHealth.Health.onDamage.AddListener(OnDamage);
     }
 
     void OnDamage(Damage damage)

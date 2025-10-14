@@ -23,7 +23,7 @@ class PlayerUI : MonoBehaviour
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
         announcementText.gameObject.SetActive(false);
-        player.playerHealth.onDamage.AddListener(ShowDamage);
+        player.playerHealth.Health.onDamage.AddListener(ShowDamage);
     }
 
     void ShowDamage(Damage damage)

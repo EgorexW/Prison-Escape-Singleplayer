@@ -5,7 +5,7 @@ public class FacilityTriggers : MonoBehaviour
 {
     [Button]
     [HideInEditorMode]
-    public void UnlockSwitches(string switchId)
+    public void UnlockTriggers(string switchId)
     {
         var switches = GetSwitches();
         foreach (var facilitySwitch in switches)

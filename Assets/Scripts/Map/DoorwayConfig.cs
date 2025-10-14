@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class DoorwayConfig : MonoBehaviour
 {
-    [FoldoutGroup("References")] [Required] [SerializeField] TextMeshPro nameText;
+    [FoldoutGroup("References")] [SerializeField] TextMeshPro nameText;
     [FoldoutGroup("References")] [Required] [SerializeField] KeycardReader[] keycardReaders;
     [FoldoutGroup("References")] [Required] [SerializeField] DoorLock[] doorLocks;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
@@ -33,7 +33,9 @@ public class DoorwayConfig : MonoBehaviour
     [Button]
     void ApplyConfig()
     {
-        nameText.text = roomName;
+        if (nameText != null){
+            nameText.text = roomName;
+        }
         foreach (var keycardReader in keycardReaders){
             keycardReader.gameObject.SetActive(accessLevel != null);
             keycardReader.accessLevel = accessLevel;

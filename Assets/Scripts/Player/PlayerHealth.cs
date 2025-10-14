@@ -7,8 +7,6 @@ public class PlayerHealth : MonoBehaviour, IDamagable
     [SerializeField] bool log;
 
     [SerializeField] Health health = new(100, 100, 100);
-    [FoldoutGroup("Events")] public readonly UnityEvent<Damage> onDamage = new();
-    [FoldoutGroup("Events")] public readonly UnityEvent<Damage> onHeal = new();
 
     [FoldoutGroup("Events")] public readonly UnityEvent onHealthChange = new();
 
@@ -21,7 +19,6 @@ public class PlayerHealth : MonoBehaviour, IDamagable
             Debug.Log(damage, this);
         }
         health.Damage(damage);
-        onDamage.Invoke(damage);
         UpdateHealth();
         if (health.currentHealth == 0){
             Die();
@@ -31,7 +28,6 @@ public class PlayerHealth : MonoBehaviour, IDamagable
     public void Heal(Damage damage)
     {
         health.Heal(damage);
-        onHeal.Invoke(damage);
         UpdateHealth();
     }
 

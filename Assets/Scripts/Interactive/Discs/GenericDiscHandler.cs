@@ -5,10 +5,10 @@ public class GenericDiscHandler : MonoBehaviour, IDiscHandler
     public void HandleDisc(Disc disc)
     {
         if (disc.gameTimeIncrease > 0){
-            GameManager.i.gameTime.ChangeTime(disc.gameTimeIncrease);
+            GameManager.i.gameTimeManager.ChangeTime(disc.gameTimeIncrease);
         }
         if (disc.unlockId){
-            GameManager.i.facilityTriggers.UnlockSwitches(disc.unlockId);
+            GameManager.i.facilityTriggers.UnlockTriggers(disc.unlockId);
         }
         if (disc.announcement){
             GameManager.i.facilityAnnouncements.AddAnnouncement(disc.announcement);

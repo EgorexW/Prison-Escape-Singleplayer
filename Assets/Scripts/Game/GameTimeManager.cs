@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameTime : MonoBehaviour
+public class GameTimeManager : MonoBehaviour
 {
     [SerializeField] float gameTimeMinutes = 8f;
     [SerializeField] Damage outOfTimeDamage = new(2, 1);
@@ -10,7 +10,9 @@ public class GameTime : MonoBehaviour
     [FoldoutGroup("Events")] public UnityEvent onOutOfTime;
 
     bool outOfTime;
-    [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - Time.timeSinceLevelLoad;
+    public float startTime;
+    [ShowInInspector] public float GameTime => Time.time - startTime;
+    [ShowInInspector] public float TimeLeft => gameTimeMinutes * 60 - GameTime;
 
     void Update()
     {
@@ -32,6 +34,5 @@ public class GameTime : MonoBehaviour
     public void ChangeTime(float gameTimeIncrease)
     {
         gameTimeMinutes += gameTimeIncrease / 60f;
-        gameTimeMinutes = Mathf.Max(gameTimeMinutes, 0);
     }
 }

@@ -8010,7 +8010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933f69bc750140b8a3a39b05b303764f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: {fileID: 1012652405}
+  gameTimeManager: {fileID: 1012652405}
   outOfTimeEffect: {fileID: 46982816}
   announcement:
     message: Purify Protocol ... INITIATED!
@@ -9831,7 +9831,7 @@ MonoBehaviour:
   - {fileID: 5373328976349116117, guid: 1bef5240361d54cd68cf98d39c558b07, type: 3}
   - {fileID: 251163510702948846, guid: d37fc6f118ab2441faa29eecacdd6452, type: 3}
   - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
-  - {fileID: 5254193291477867547, guid: a63eae6698a834c21991f8bc5a85d772, type: 3}
+  - {fileID: 3196497198892252612, guid: dbc61d73c01094a509e445faa957ac57, type: 3}
   - {fileID: 8371996984323067608, guid: c52bb39638ac0409cac89258be0da422, type: 3}
   - {fileID: 3418579060688718549, guid: ff5d1de21e7284b919452d347fa33fa7, type: 3}
   - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
@@ -11333,7 +11333,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   player: {fileID: 3097095111899513422}
-  gameTime: {fileID: 1012652405}
+  gameTimeManager: {fileID: 1012652405}
   facilityTriggers: {fileID: 1012652406}
   levelNodes: {fileID: 453294468}
   facilityAnnouncements: {fileID: 1281685159}
@@ -11372,11 +11372,12 @@ MonoBehaviour:
   gameTimeMinutes: 10
   outOfTimeDamage:
     damage: 2
-    permanentDamage: 1
+    pernamentDamage: 1
     damageType: 1
   onOutOfTime:
     m_PersistentCalls:
       m_Calls: []
+  startTime: 0
 --- !u!114 &1012652406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11403,11 +11404,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseScene: Lose Screen
   winScene: Win Screen
-  winDelay: 2
   beforeLoseGame:
     m_PersistentCalls:
       m_Calls: []
   beforeWinGame:
+    m_PersistentCalls:
+      m_Calls: []
+  beforeEndGame:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1029292703
@@ -12517,7 +12520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTable: {fileID: 11400000, guid: 4d0c557c32ba34b32958a16489a515f4, type: 2}
-  spawnCount: {x: 4, y: 5}
+  spawnCount: {x: 6, y: 7}
   nodeTypesAllowed: 1
   placeOnConnection: 0
 --- !u!4 &1156029364
@@ -17318,6 +17321,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedDestroyable: {fileID: 1763932346}
+--- !u!1 &2111391416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111391418}
+  - component: {fileID: 2111391417}
+  m_Layer: 0
+  m_Name: Game Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2111391417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111391416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b8290f36d241ff9944c87a85011ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTime: 0
+  normalDamageTaken: 0
+  pernamentDamageTaken: 0
+  metersWalked: 0
+--- !u!4 &2111391418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111391416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124108912
 GameObject:
   m_ObjectHideFlags: 0
@@ -18651,6 +18702,9 @@ MonoBehaviour:
   staminaRegenRate: 0.05
   normalFov: 70
   sprintFov: 90
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
   playerEffects: {fileID: 2831056598105544328}
   playerHealth: {fileID: 5979843613610568409}
   playerSoundEffects: {fileID: 2767234994548322115}
@@ -19355,6 +19409,9 @@ MonoBehaviour:
   BottomClamp: -89
   virtualCamera: {fileID: 1189050708727125647}
   fovTransitionSpeed: 20
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &6156111484706285261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20093,3 +20150,4 @@ SceneRoots:
   - {fileID: 893523871}
   - {fileID: 1012652404}
   - {fileID: 1075663164}
+  - {fileID: 2111391418}

@@ -84,14 +84,14 @@ public class Tutorials : MonoBehaviour
 
     void ResolveUseTutorial()
     {
-        if (Time.timeSinceLevelLoad <= useTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= useTutorialDelay){
             return;
         }
         if (PlayerPrefs.GetInt("Tutorial/Use", 0) == 1){
             return;
         }
         var heldItem = player.GetHeldItem();
-        if (heldItem.Name == ""){
+        if (heldItem == null || heldItem.Name == ""){
             tutorialsUI.UseTutorial = false;
             return;
         }
@@ -100,7 +100,7 @@ public class Tutorials : MonoBehaviour
 
     void ResolveThrowTutorial()
     {
-        if (Time.timeSinceLevelLoad <= throwTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= throwTutorialDelay){
             return;
         }
         if (PlayerPrefs.GetInt("Tutorial/Throw", 0) == 1){
@@ -111,7 +111,7 @@ public class Tutorials : MonoBehaviour
 
     void ResolveSwapItemTutorial()
     {
-        if (Time.timeSinceLevelLoad <= swapItemTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= swapItemTutorialDelay){
             return;
         }
         if (PlayerPrefs.GetInt("Tutorial/Swap", 0) == 1){
@@ -122,7 +122,7 @@ public class Tutorials : MonoBehaviour
 
     void ResolveSprintTutorial()
     {
-        if (Time.timeSinceLevelLoad <= sprintTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= sprintTutorialDelay){
             return;
         }
         if (PlayerPrefs.GetInt("Tutorial/Sprint", 0) == 1){
@@ -142,7 +142,7 @@ public class Tutorials : MonoBehaviour
     void ResolveInteractTutorial()
     {
         ResolveReminderInteractTutorial();
-        if (Time.timeSinceLevelLoad <= interactTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= interactTutorialDelay){
             return;
         }
         if (PlayerPrefs.GetInt("Tutorial/Interact", 0) == 1){
@@ -178,7 +178,7 @@ public class Tutorials : MonoBehaviour
 
     void ResolveMovementTutorial()
     {
-        if (Time.timeSinceLevelLoad <= movementTutorialDelay){
+        if (GameManager.i.gameTimeManager.GameTime <= movementTutorialDelay){
             return;
         }
         var playerPos = player.transform.position;

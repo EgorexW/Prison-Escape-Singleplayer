@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,11 +10,17 @@ public class GameEnder : MonoBehaviour
     [SerializeField] string loseScene = "Lose Screen";
     
     [SerializeField] string winScene = "Win Screen";
-    [SerializeField] int winDelay = 2;
 
     [FoldoutGroup("Events")] public UnityEvent beforeLoseGame;
     [FoldoutGroup("Events")] public UnityEvent beforeWinGame;
-    
+    [FoldoutGroup("Events")] public UnityEvent beforeEndGame;
+
+    void Awake()
+    {
+        beforeLoseGame.AddListener(beforeEndGame.Invoke);
+        beforeWinGame.AddListener(beforeEndGame.Invoke);
+    }
+
     public void LoseGame()
     {
         beforeLoseGame.Invoke();
@@ -23,6 +30,6 @@ public class GameEnder : MonoBehaviour
     public void WinGame()
     {
         beforeWinGame.Invoke();
-        General.CallAfterSeconds(() => SceneManager.LoadSceneAsync(winScene), winDelay);
+        SceneManager.LoadSceneAsync(winScene);
     }
 }

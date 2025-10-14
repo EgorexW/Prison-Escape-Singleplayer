@@ -1,6 +1,7 @@
 ﻿using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -88,6 +89,7 @@ namespace StarterAssets
         }
 
         public GetMoveData getMoveData;
+        [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
 
         void Awake()
         {
@@ -222,8 +224,10 @@ namespace StarterAssets
             }
 
             // move the player
-            _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) +
-                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            var moveVector = inputDirection.normalized * (_speed * Time.deltaTime) +
+                                           new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+            _controller.Move(moveVector);
+            onMove.Invoke(moveVector);
         }
 
         void JumpAndGravity()

@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.Events;
 
 public partial class Player
 {
@@ -17,6 +18,7 @@ public partial class Player
     CharacterController characterController;
     FirstPersonController firstPersonController;
     float speedMod = 1;
+    [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
 
     [BoxGroup("Stamina")] [ShowInInspector] public float Stamina{ get; private set; } = 1;
 
@@ -25,6 +27,7 @@ public partial class Player
         if (firstPersonController == null){
             return;
         }
+        firstPersonController.onMove.AddListener(onMove.Invoke);
         firstPersonController.getMoveData = GetMoveData;
     }
 

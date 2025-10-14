@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
   m_Name: 05
   m_EditorClassIdentifier: 
-  inheretedAccessLevels: []
+  inheretedAccessLevels:
+  - {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba, type: 2}
+  - {fileID: 11400000, guid: 11edbe4d5b1384e55a7df9b4360a57cc, type: 2}
+  - {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
+  - {fileID: 11400000, guid: d7ab6ca6684d54ff2b9c928216ba40b0, type: 2}
+  - {fileID: 11400000, guid: f06c2f74b25784fa4bc1266bfa31b1d4, type: 2}
+  - {fileID: 11400000, guid: ce200b530641b48a6997c0ea4e0297ec, type: 2}
+  - {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969, type: 2}
+  - {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
+  - {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58, type: 2}
+  - {fileID: 11400000, guid: 4c0f80f9eb07641b0b4da897d5514dbe, type: 2}
+  - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
   color: {r: 0, g: 0, b: 0, a: 1}
   displayName: 05

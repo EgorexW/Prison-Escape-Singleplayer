@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Corridor Loot Boxes
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
+  - value: 1
     Object: {fileID: 3864356063617714526, guid: b5b71f351c55d475da02d2c78da45777,
       type: 3}
   - value: 1

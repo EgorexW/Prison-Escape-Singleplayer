@@ -7,6 +7,7 @@ public class Destroyable : MonoBehaviour, IDamagable
 
     [SerializeField] GameObject gameObjectToDestroy;
 
+    public GameObject GameObjectToDestroy => gameObjectToDestroy != null ? gameObjectToDestroy : gameObject;
     public Health Health => health;
 
     public void Damage(Damage damage)
@@ -19,10 +20,6 @@ public class Destroyable : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        if (gameObjectToDestroy != null){
-            Destroy(gameObjectToDestroy);
-            return;
-        }
-        Destroy(gameObject);
+        Destroy(GameObjectToDestroy);
     }
 }

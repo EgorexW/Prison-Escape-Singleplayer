@@ -3,19 +3,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public PlayerStats i;
-
-    void Awake()
-    {
-        if (i == null){
-            i = this;
-        }
-        else{
-            Debug.LogWarning("Multiple instances of PlayerStats detected. Destroying duplicate.");
-            Destroy(gameObject);
-        }
-    }
-
     void Start()
     {
         OnStartGame();

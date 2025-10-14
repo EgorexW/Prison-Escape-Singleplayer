@@ -16,27 +16,31 @@ public class GameInit : MonoBehaviour
 
     void Awake()
     {
-        General.CallAfterSeconds(Generate, DELAY);
+        Invoke(nameof(Generate), DELAY);
+        Debug.Log("GameInit Awake, will generate in " + DELAY + " seconds", this);
     }
 
     public void Generate()
     {
         roomGenerator.Generate();
-        General.CallAfterSeconds(Generate2, DELAY);
+        Invoke(nameof(Generate2), DELAY);
+        Debug.Log("Room generated, will generate corridors in " + DELAY + " seconds", this);
+    }
 
-        void Generate2()
-        {
-            levelNodes.ResetNodes();
-            foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
-            var spawn = FindAnyObjectByType<PlayerSpawn>();
-            if (spawn == null){
-                Debug.LogWarning("No PlayerSpawn found in scene", this);
-                General.CallAfterSeconds(Generate2, DELAY);
-                return;
-            }
-            spawn.Spawn(player);
-            levelNodes.ResetNodes();
-            onFinish.Invoke();
+    void Generate2()
+    {
+        levelNodes.ResetNodes();
+        foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
+        var spawn = FindAnyObjectByType<PlayerSpawn>();
+        if (spawn == null){
+            Debug.LogWarning("No PlayerSpawn found in scene", this);
+            Invoke(nameof(Generate2), DELAY);
+            return;
         }
+        spawn.Spawn(player);
+        levelNodes.ResetNodes();
+        onFinish.Invoke();
+        GameManager.i.gameTimeManager.startTime = Time.time;
+        Debug.Log("Corridors generated, player spawned, game init finished", this);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,11 @@ public class HealthBarUI : MonoBehaviour
     [Required] [SerializeField] TextMeshProUGUI text;
 
     [Required] [SerializeField] GameObject maskIcon;
+
+    void Awake()
+    {
+        maskIcon.SetActive(false);
+    }
 
     public void SetHealth(Health health)
     {

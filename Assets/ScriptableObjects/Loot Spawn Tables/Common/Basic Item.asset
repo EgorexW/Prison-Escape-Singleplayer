@@ -15,7 +15,7 @@ MonoBehaviour:
   gameObjects:
   - value: 1
     Object: {fileID: 11400000, guid: b832896251e3f4c91885ddf294faa8d7, type: 2}
-  - value: 1
+  - value: 2
     Object: {fileID: 11400000, guid: 11fcc243fc5434ac2b2cee0010f58a8b, type: 2}
   - value: 1
     Object: {fileID: 4690771240427926488, guid: 73023eb8c288843f9bd2d8f94a8bb72b,

@@ -54,7 +54,7 @@ public abstract class UseableItem : ItemEffect
 
     protected void DestroyItem()
     {
-        player.RemoveItem(Item);
+        player?.RemoveItem(Item);
         Destroy(gameObject);
     }
 }

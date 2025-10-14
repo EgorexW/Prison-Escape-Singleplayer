@@ -1,24 +1,25 @@
 using System;
 using Sirenix.OdinInspector;
+using UnityEngine.Serialization;
 
 [Serializable]
 [InlineProperty]
 public struct Damage
 {
     public float damage;
-    public float permanentDamage;
+    [FormerlySerializedAs("permanentDamage")] public float pernamentDamage;
     public DamageType damageType;
 
     public void Invert()
     {
         damage = -damage;
-        permanentDamage = -permanentDamage;
+        pernamentDamage = -pernamentDamage;
     }
 
-    public Damage(float damage, float permanentDamage = 0, DamageType damageType = DamageType.Physical)
+    public Damage(float damage, float pernamentDamage = 0, DamageType damageType = DamageType.Physical)
     {
         this.damage = damage;
-        this.permanentDamage = permanentDamage;
+        this.pernamentDamage = pernamentDamage;
         this.damageType = damageType;
     }
 
@@ -34,14 +35,14 @@ public struct Damage
 
     public static Damage operator *(Damage initialDamage, float value)
     {
-        return new Damage(initialDamage.damage * value, initialDamage.permanentDamage * value,
+        return new Damage(initialDamage.damage * value, initialDamage.pernamentDamage * value,
             initialDamage.damageType);
         ;
     }
 
     public override string ToString()
     {
-        return $"Damage: {damage} Permanent Damage: {permanentDamage}";
+        return $"Damage: {damage} Permanent Damage: {pernamentDamage}";
     }
 }
 

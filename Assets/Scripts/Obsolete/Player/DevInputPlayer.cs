@@ -27,5 +27,8 @@ public class DevInputPlayer : MonoBehaviour
         map.GenerateMap();
     }
 
-    void UseDevKey3(InputAction.CallbackContext context) { }
+    void UseDevKey3(InputAction.CallbackContext context)
+    {
+        player.playerHealth.Damage(new Damage(95));
+    }
 }

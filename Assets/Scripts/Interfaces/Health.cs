@@ -52,11 +52,11 @@ public struct Health
                 return;
             }
         }
-        onDamage.Invoke(damage);
         currentHealth -= damage.damage;
-        maxHealth -= damage.permanentDamage;
+        maxHealth -= damage.pernamentDamage;
         maxHealth = Mathf.Clamp(maxHealth, 0, absoluteMaxHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        onDamage.Invoke(damage);
     }
 }
 

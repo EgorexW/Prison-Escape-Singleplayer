@@ -22,7 +22,7 @@ MonoBehaviour:
   - value: 1
     Object: {fileID: 5526721213140052118, guid: df5f9edb665f84107ace34be981c5245,
       type: 3}
-  - value: 1
+  - value: 0.5
     Object: {fileID: 4938499120341465757, guid: 19fe96bdf79bd4b6ba578e3c4e307c30,
       type: 3}
   - value: 0.5

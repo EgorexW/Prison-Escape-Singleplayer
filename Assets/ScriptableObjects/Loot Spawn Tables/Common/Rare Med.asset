@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Rare Med
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
+  - value: 1
     Object: {fileID: 3882893351632694812, guid: b5767e7e4804843efb03043532e08380,
       type: 3}
-  - value: 3
+  - value: 1
     Object: {fileID: 3882893351632694812, guid: 58e0b6b3cb50b4ef2b1af3703fef788b,
       type: 3}
   - value: 1

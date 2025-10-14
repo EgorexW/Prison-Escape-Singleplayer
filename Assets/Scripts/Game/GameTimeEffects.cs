@@ -1,16 +1,17 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameTimeEffects : MonoBehaviour
 {
-    [BoxGroup("References")] [Required] [SerializeField] GameTime gameTime;
+    [FormerlySerializedAs("gameTime")] [BoxGroup("References")] [Required] [SerializeField] GameTimeManager gameTimeManager;
 
     [SerializeField] GameObject outOfTimeEffect;
     [SerializeField] FacilityAnnouncement announcement;
 
     void Awake()
     {
-        gameTime.onOutOfTime.AddListener(OutOfTime);
+        gameTimeManager.onOutOfTime.AddListener(OutOfTime);
         outOfTimeEffect.SetActive(false);
     }
 

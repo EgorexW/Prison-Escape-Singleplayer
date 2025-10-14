@@ -23,7 +23,7 @@ public class TimeTrap : PoweredDevice, ITrap
 
     public void OnTriggered()
     {
-        GameManager.i.gameTime.ChangeTime(-timePenalty);
+        GameManager.i.gameTimeManager.ChangeTime(-timePenalty);
         if (announcement){
             GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
         }
