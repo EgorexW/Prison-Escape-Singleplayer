@@ -13,6 +13,8 @@ class PlayerUI : MonoBehaviour
     [Required] [SerializeField] MetricBar progressBarUI;
     [Required] [SerializeField] TextMeshProUGUI itemName;
     [Required][SerializeField] TextMeshProUGUI announcementText;
+    
+    [SerializeField] float announcmentShowTime = 5f;
 
     void Awake()
     {
@@ -21,6 +23,12 @@ class PlayerUI : MonoBehaviour
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
         announcementText.gameObject.SetActive(false);
+        player.playerHealth.onDamage.AddListener(ShowDamage);
+    }
+
+    void ShowDamage(Damage damage)
+    {
+        healthBarUI.ShowDamage(damage, player.playerHealth.Health);
     }
 
     void Start()
@@ -35,13 +43,8 @@ class PlayerUI : MonoBehaviour
     {
         announcementText.text = announcement.message;
         announcementText.gameObject.SetActive(true);
-        LeanTween.alphaText(announcementText.rectTransform, 1, 0.5f).setOnComplete(() =>
-        {
-            LeanTween.alphaText(announcementText.rectTransform, 0, 0.5f).setDelay(2f).setOnComplete(() =>
-            {
-                announcementText.gameObject.SetActive(false);
-            });
-        });
+        LeanTween.delayedCall(announcmentShowTime, () => announcementText.gameObject.SetActive(false));
+
     }
 
     void Update()
@@ -50,8 +53,10 @@ class PlayerUI : MonoBehaviour
         var heldItem = player.GetHeldItem();
         if (heldItem != null)
             itemName.text = heldItem.Name;
+        
         else
             itemName.text = "";
+        itemName.gameObject.SetActive(itemName.text != "");
     }
 
     void ShowHealth()

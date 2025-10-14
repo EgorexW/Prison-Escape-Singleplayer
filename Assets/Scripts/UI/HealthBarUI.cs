@@ -14,8 +14,6 @@ public class HealthBarUI : MonoBehaviour
     public void SetHealth(Health health)
     {
         SetHealth(health.currentHealth, health.maxHealth, health.absoluteMaxHealth);
-
-        maskIcon.SetActive(!health.damagedBy.HasFlag(DamageType.Poison));
     }
 
     public void SetHealth(float health, float maxHealth, float maxValue = -1)
@@ -27,5 +25,18 @@ public class HealthBarUI : MonoBehaviour
         healthSlider.value = health;
         maxHealthSlider.value = maxValue - maxHealth;
         text.text = Mathf.Round(health).ToString();
+    }
+
+    public void ShowDamage(Damage damage, Health health)
+    {
+        // TODO Hardcoded!
+        maskIcon.SetActive(false);
+        if (health.damagedBy.HasFlag(DamageType.Poison)){
+            return;
+        }
+        if (damage.damageType != DamageType.Poison){
+            return;
+        }
+        maskIcon.SetActive(true);
     }
 }

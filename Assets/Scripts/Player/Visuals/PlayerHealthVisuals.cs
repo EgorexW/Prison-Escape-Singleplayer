@@ -13,8 +13,6 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     [BoxGroup("Other")] [SerializeField] CinemachineImpulseSource impulseSource;
 
-    [InfoBox("If empty, will trigger on all damage types")] [SerializeField] List<DamageType> damageTypes;
-
     void Awake()
     {
         playerHealth.onDamage.AddListener(OnDamage);
@@ -22,9 +20,6 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     void OnDamage(Damage damage)
     {
-        if (!damageTypes.Contains(damage.damageType) && damageTypes.Count > 0){
-            return;
-        }
         if (hitParticles != null){
             if (!hitParticles.isPlaying){
                 hitParticles.Play();

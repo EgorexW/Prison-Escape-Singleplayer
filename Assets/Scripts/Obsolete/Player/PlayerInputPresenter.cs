@@ -33,6 +33,9 @@ public class PlayerInputPresenter : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         if (context.performed){
             player.Interact();
         }
@@ -48,11 +51,17 @@ public class PlayerInputPresenter : MonoBehaviour
 
     void Use(InputAction.CallbackContext context)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         player.UseHeldItem();
     }
 
     void HoldUse(InputAction action)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         if (!action.IsPressed()){
             return;
         }
@@ -66,11 +75,17 @@ public class PlayerInputPresenter : MonoBehaviour
 
     void AlternativeUse(InputAction.CallbackContext context)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         player.UseHeldItem(true);
     }
 
     void AlternativeHoldUse(InputAction action)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         if (!action.IsPressed()){
             return;
         }
@@ -79,6 +94,9 @@ public class PlayerInputPresenter : MonoBehaviour
 
     void DropEquipedItem(InputAction.CallbackContext context)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         if (!context.performed){
             return;
         }
@@ -87,6 +105,9 @@ public class PlayerInputPresenter : MonoBehaviour
 
     void ChangeItem(InputAction.CallbackContext context)
     {
+        if (Time.timeScale <= 0){
+            return;
+        }
         if (!context.performed){
             return;
         }

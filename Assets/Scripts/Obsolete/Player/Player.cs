@@ -9,6 +9,8 @@ public partial class Player : MonoBehaviour
     [BoxGroup("References")] [Required] public PlayerSoundEffects playerSoundEffects;
 
     [SerializeField] Transform aim;
+    
+    [BoxGroup("References")][Required][SerializeField] GameObject map;
 
     void Awake()
     {
@@ -22,5 +24,10 @@ public partial class Player : MonoBehaviour
     public Transform GetAimTransform()
     {
         return aim;
+    }
+
+    public void MapSetActive(bool active)
+    {
+        map.SetActive(active);
     }
 }

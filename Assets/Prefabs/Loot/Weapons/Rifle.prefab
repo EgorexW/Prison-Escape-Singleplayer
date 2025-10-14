@@ -548,7 +548,7 @@ MonoBehaviour:
     damage: 2.5
     permanentDamage: 2
     damageType: 1
-  fireRate: 15
+  fireRate: 20
   ammo: 200
   aimColliderLayerMask:
     serializedVersion: 2

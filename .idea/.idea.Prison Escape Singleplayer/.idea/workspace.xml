@@ -8,38 +8,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Breakable Wall.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Breakable Wall.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/PolygonHeist/Materials/Emission_Dark.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/PolygonHeist/Materials/Emission_Dark.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/EMP Grenade.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/EMP Grenade.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Grenade.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Weapons/Grenade.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/EMP Grenade.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/EMP Grenade.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Grenade.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Grenade.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirstGamePoster.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirstGamePoster.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Closed Box.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Closed Box.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Secure Wing Keycard.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Secure Wing Keycard.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/kenney_minimap-pack/Tiles/Style C/tile_0014 White.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/kenney_minimap-pack/Tiles/Style C/tile_0014 White.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Secure Wing.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Secure Wing.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Card.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Card.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Map.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Map.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Admin.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Admin.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Power Control.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Power Control.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/MapItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/MapItem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Emp Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Emp Explosion.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Fire Trap Effect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Fire Trap Effect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Grenade Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Grenade Explosion.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Infirmary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Infirmary.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Heavy Armory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Heavy Armory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Config/AutomationConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Config/AutomationConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Strong Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Strong Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Vault Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Vault Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Timed Box.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Timed Box.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Guest Keycard.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Guest Keycard.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Flashlight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Powerful Flashlight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Powerful Flashlight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Emp Grenade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Emp Grenade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Grenade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Grenade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Pistol.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Rifle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Rifle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Linked Items.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Motion Sensor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Motion Sensor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Time Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Servers.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/kenney_minimap-pack/Tiles/Style C/tile_0014.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Art/kenney_minimap-pack/Tiles/Style C/tile_0014.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Guest Access Note.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Guest Access Note.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Guest Access Note.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Guest Access Note.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guest.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guest.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Secure Wing.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Secure Wing.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Loot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Admin Keycard.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Administration Admin Keycard.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Power Control.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Power Control.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Basic.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Basic.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Break Room.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Break Room.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/SpawnableRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/SpawnableRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/LevelNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/AI/LevelNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerInputPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerInputPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Visuals/PlayerHealthVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Visuals/PlayerHealthVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NodeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/NodeUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +193,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/MapItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/Pipeline/UniversalRenderPipelineGlobalSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/PlayAudio.cs" root0="FORCE_HIGHLIGHTING" />
@@ -165,6 +209,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Sounds/Ambient/Electronic Ambient.wav.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RoomDiscovery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/BasicRigidBodyPush.cs" root0="FORCE_HIGHLIGHTING" />
@@ -230,7 +275,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/CeilingLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/PoweredDevice.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/WobbleEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedItems.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -394,7 +439,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="A change to powered device I should have made a long time ago" />
     <MESSAGE value="Add new prefab and asset metadata for various door types and vault components" />
     <MESSAGE value="Add new Bag class and associated prefab metadata; implement inventory size increase on interaction" />
     <MESSAGE value="Metal Detector" />
@@ -419,7 +463,8 @@
     <MESSAGE value="SE Playtest" />
     <MESSAGE value="Add GameStats and PlayerStats classes for tracking game progress" />
     <MESSAGE value="Stamina, and other playtest feedback" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stamina, and other playtest feedback" />
+    <MESSAGE value="Sound and Feel design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sound and Feel design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -12,8 +12,33 @@ PrefabInstance:
         type: 3}
       propertyPath: accessLevel
       value: 
-      objectReference: {fileID: 11400000, guid: 16f3aa84099044ac48369e3e2ac26567,
+      objectReference: {fileID: 11400000, guid: f06c2f74b25784fa4bc1266bfa31b1d4,
         type: 2}
+    - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: Secure Wing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5218860289774778322, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,10 +89,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5893937894337747688, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: displayName
+      value: Secure Wing
+      objectReference: {fileID: 0}
     - target: {fileID: 6445903414931907156, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_Name
-      value: Guest Keycard
+      value: Secure Wing Keycard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964199208718077476, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: Secure Wing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

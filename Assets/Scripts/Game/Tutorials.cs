@@ -13,9 +13,15 @@ public class Tutorials : MonoBehaviour
     [BoxGroup("Config")][SerializeField] float swapItemTutorialDelay = 45f;
     [BoxGroup("Config")][SerializeField] float throwTutorialDelay = 90f;
     [BoxGroup("Config")][SerializeField] float useTutorialDelay = 30f;
+    [BoxGroup("Config")][SerializeField] float reminderInteractCooldown = 30f;
+    [BoxGroup("Config")][SerializeField] float reminderInteractPlayerDelay = 3f;
         
     Vector3 playerStartPos;
     Player player;
+
+    float playerInteractAimStartTime;
+    float lastInteractTime;
+    IInteractive lastInteractive;
 
     public void Activate()
     {
@@ -55,6 +61,7 @@ public class Tutorials : MonoBehaviour
 
     void OnInteractionFinished()
     {
+        lastInteractTime = Time.time;
         if (!tutorialsUI.InteractTutorial){
             return;
         }
@@ -84,7 +91,7 @@ public class Tutorials : MonoBehaviour
             return;
         }
         var heldItem = player.GetHeldItem();
-        if (heldItem == null || heldItem.GetComponent<Keycard>() != null || heldItem.GetComponent<Disc>() != null){
+        if (heldItem.Name == ""){
             tutorialsUI.UseTutorial = false;
             return;
         }
@@ -134,6 +141,7 @@ public class Tutorials : MonoBehaviour
 
     void ResolveInteractTutorial()
     {
+        ResolveReminderInteractTutorial();
         if (Time.timeSinceLevelLoad <= interactTutorialDelay){
             return;
         }
@@ -141,6 +149,31 @@ public class Tutorials : MonoBehaviour
             return;
         }
         tutorialsUI.InteractTutorial = !player.GetInteractive().IsDummy;
+    }
+
+    void ResolveReminderInteractTutorial()
+    {
+        if (PlayerPrefs.GetInt("Tutorial/Interact", 0) == 0){
+            return;
+        }
+        tutorialsUI.InteractTutorial = false;
+        if (Time.time - lastInteractTime < reminderInteractCooldown && !tutorialsUI.InteractTutorial){
+            return;
+        }
+        var currentInteractive = player.GetInteractive();
+        if (currentInteractive.IsDummy){
+            lastInteractive = null;
+            return;
+        }
+        if (lastInteractive != currentInteractive){
+            lastInteractive = currentInteractive;
+            playerInteractAimStartTime = Time.time;
+            return;
+        }
+        if (Time.time - playerInteractAimStartTime < reminderInteractPlayerDelay){
+            return;
+        }
+        tutorialsUI.InteractTutorial = true;
     }
 
     void ResolveMovementTutorial()

@@ -12,8 +12,8 @@ public class DoorwayConfig : MonoBehaviour
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject strongDoor;
 
-    [FormerlySerializedAs("name")] [SerializeField] string roomName = "Room";
-    [SerializeField] AccessLevel accessLevel;
+    [FormerlySerializedAs("name")] [SerializeField] public string roomName = "Room";
+    [SerializeField] public AccessLevel accessLevel;
     [SerializeField] DoorType doorType = DoorType.Weak;
 
     [FoldoutGroup("Events")] public UnityEvent onOpen;

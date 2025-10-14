@@ -1,22 +1,35 @@
+using System;
+using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MapUI : MonoBehaviour
 {
     const float AI_OBJECT_SIZE = 3;
+    
+    [FormerlySerializedAs("rect")] [GetComponent][SerializeField] RectTransform rectTransform;
+    
     [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI roomsObjectPool;
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
     [BoxGroup("Internal References")] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [SerializeField] RectTransform selfPointer;
 
     [SerializeField] float scale = 0.005f;
+    
+    float Rect => Mathf.Min(rectTransform.rect.width, rectTransform.rect.height);
+    float TrueScale => scale * Rect;
 
-    void Awake()
+    void OnEnable()
     {
-        General.CallAfterSeconds(GenerateMap, 5f);
+        GenerateMap();
     }
 
-    [Button]
+    void Update()
+    {
+        DrawPlayer();
+    }
+
     public void GenerateMap()
     {
         GenerateMap(GameManager.i.levelNodes);
@@ -24,37 +37,34 @@ public class MapUI : MonoBehaviour
 
     public void GenerateMap(LevelNodes levelNodes)
     {
-        var rect = Mathf.Min(GetComponent<RectTransform>().rect.width, GetComponent<RectTransform>().rect.height);
-        var trueScale = scale * rect;
-        DrawRooms(levelNodes, trueScale);
-        DrawPlayer(trueScale);
-        DrawSelf(trueScale);
+        DrawRooms(levelNodes);
+        DrawSelf();
     }
 
-    void DrawSelf(float trueScale)
+    void DrawSelf()
     {
         if (selfPointer != null){
             var position = transform.position;
-            PlacePointer(trueScale, position, selfPointer);
+            PlacePointer(position, selfPointer);
         }
     }
 
-    void DrawPlayer(float trueScale)
+    void DrawPlayer()
     {
         if (playerPointer != null){
             var position = GameManager.i.Player.transform.position;
-            PlacePointer(trueScale, position, playerPointer);
+            PlacePointer(position, playerPointer);
         }
     }
 
-    void PlacePointer(float trueScale, Vector3 position, RectTransform pointer)
+    void PlacePointer(Vector3 position, RectTransform pointer)
     {
         var playerPos = new Vector2(position.x, position.z);
-        pointer.localPosition = playerPos * trueScale;
-        pointer.sizeDelta = Vector2.one * AI_OBJECT_SIZE * trueScale;
+        pointer.localPosition = playerPos * TrueScale;
+        pointer.sizeDelta = Vector2.one * AI_OBJECT_SIZE * TrueScale;
     }
 
-    void DrawRooms(LevelNodes levelNodes, float trueScale)
+    void DrawRooms(LevelNodes levelNodes)
     {
         roomsObjectPool.SetCount(levelNodes.Nodes.Count);
         var min = new Vector2(float.MaxValue, float.MaxValue);
@@ -62,8 +72,8 @@ public class MapUI : MonoBehaviour
         for (var i = 0; i < levelNodes.Nodes.Count; i++){
             var node = levelNodes.Nodes[i];
             var nodeBounds = node.Bounds;
-            var nodePos = new Vector2(nodeBounds.center.x, nodeBounds.center.z) * trueScale;
-            var nodeSize = new Vector2(nodeBounds.size.x, nodeBounds.size.z) * trueScale;
+            var nodePos = new Vector2(nodeBounds.center.x, nodeBounds.center.z) * TrueScale;
+            var nodeSize = new Vector2(nodeBounds.size.x, nodeBounds.size.z) * TrueScale;
             var obj = roomsObjectPool.GetActiveObjs()[i];
 
             min = Vector2.Min(min, nodePos - nodeSize / 2);
@@ -71,7 +81,8 @@ public class MapUI : MonoBehaviour
 
             obj.transform.localPosition = nodePos;
             obj.GetComponent<RectTransform>().sizeDelta = nodeSize;
-            obj.GetComponent<NodeUI>().SetNodeType(node.nodeType);
+            var nodeUI = obj.GetComponent<NodeUI>();
+            nodeUI.SetNode(node);
         }
         var center = (min + max) / 2;
         container.GetComponent<RectTransform>().anchoredPosition = -center;

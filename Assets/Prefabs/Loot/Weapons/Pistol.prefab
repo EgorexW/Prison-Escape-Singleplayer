@@ -547,11 +547,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: 0
   damage:
-    damage: 11
+    damage: 25
     permanentDamage: 1
     damageType: 1
-  fireRate: 3
-  ammo: 9
+  fireRate: 1
+  ammo: 5
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 841

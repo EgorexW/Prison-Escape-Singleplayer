@@ -1,10 +1,15 @@
+using Nrjwolf.Tools.AttachAttributes;
 using UnityEngine;
 
 public class SpawnableRoom : MonoBehaviour
 {
+    [GetComponent][SerializeField] public DoorwayConfig doorway;
+    
     [SerializeField] Transform joinPoint;
     [SerializeField] Transform dirPoint;
     [SerializeField] public RoomTrait[] traits;
+    public bool discovered;
+    public string Name => doorway.roomName;
 
     public void SetPos(Vector3 joinPos, Vector3 dir)
     {

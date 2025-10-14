@@ -234,17 +234,17 @@ PrefabInstance:
     - target: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: health.maxHealth
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: health.currentHealth
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4229562753460253290, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: health.absoluteMaxHealth
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4437676477429014629, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}

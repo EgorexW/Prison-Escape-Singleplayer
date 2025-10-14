@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Administration Basic
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 1
+  - value: 2
     Object: {fileID: 5526721213140052118, guid: 57f89d7ad77894f4ab32616c7504f382,
       type: 3}
-  - value: 2
+  - value: 3
     Object: {fileID: 5526721213140052118, guid: 523f36fe4659f42a89b721f32cd7d86b,
       type: 3}
+  - value: 1
+    Object: {fileID: 11400000, guid: 6d5bb73efee3a405f820c4b9686d44be, type: 2}

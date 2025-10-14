@@ -181,8 +181,8 @@ MonoBehaviour:
   timeToExplode: 3
   radius: 3
   damage:
-    damage: 50
-    permanentDamage: 50
+    damage: 100
+    permanentDamage: 100
     damageType: 2
   onExplode:
     m_PersistentCalls:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef12969e41e1a4e519fe9904673b8fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeGlobalMinimalPower: 1
+  removeGlobalMinimalPower: 0
 --- !u!114 &1241949657232173141
 MonoBehaviour:
   m_ObjectHideFlags: 0

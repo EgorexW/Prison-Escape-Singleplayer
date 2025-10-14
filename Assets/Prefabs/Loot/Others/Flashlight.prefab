@@ -240,7 +240,7 @@ PrefabInstance:
     - target: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: Name
-      value: Flashlight
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2807556966842638723, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}

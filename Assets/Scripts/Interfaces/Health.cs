@@ -1,6 +1,11 @@
 using System;
-using Sirenix.OdinInspector;using UnityEditor;
+using Sirenix.OdinInspector;
+
+#if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.UIElements;
+#endif
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;

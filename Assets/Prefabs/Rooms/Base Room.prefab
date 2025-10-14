@@ -98,10 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a78c8e152d94fa5b908fdea842328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorway: {fileID: 6002658007307836836}
   joinPoint: {fileID: 3966772034959211773}
   dirPoint: {fileID: 112089464000875793}
   traits:
   - {fileID: 11400000, guid: e8d5e70db10464e1a9249b11c6d972d0, type: 2}
+  discovered: 0
 --- !u!114 &-4208774426602653737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,6 +1058,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4658293404102124436, guid: d1b02505f78e94a6b91d31c03e9430b6,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 4856611922499971837}
     - target: {fileID: 4658293404102124436, guid: d1b02505f78e94a6b91d31c03e9430b6,
         type: 3}
       propertyPath: nodeType

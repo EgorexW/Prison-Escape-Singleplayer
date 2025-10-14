@@ -1,7 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[RequireComponent(typeof(DiscHandler))]
 public class UnlockWarden : FacilityTrigger
 {
     [BoxGroup("References")] [Required] [SerializeField] KeycardReader wardenReader;
