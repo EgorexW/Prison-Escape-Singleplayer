@@ -9,7 +9,7 @@ public abstract class UseableItem : ItemEffect
     [FoldoutGroup("Events")] public UnityEvent onUse;
 
     [SerializeField] Sound soundEffect;
-    
+
     protected Player player;
     float startUseTime = Mathf.Infinity;
 
@@ -44,7 +44,7 @@ public abstract class UseableItem : ItemEffect
         base.Use(playerTmp);
         startUseTime = Time.time;
     }
-    
+
     public override void StopUse(Player playerTmp, bool alternative = false)
     {
         playerTmp.onFinishInteraction.Invoke();

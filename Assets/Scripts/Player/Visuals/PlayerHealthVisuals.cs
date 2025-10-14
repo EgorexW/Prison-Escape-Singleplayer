@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Cinemachine;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -20,6 +19,10 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     void OnDamage(Damage damage)
     {
+        if (damage.IsDamage){
+            return;
+        }
+
         if (hitParticles != null){
             if (!hitParticles.isPlaying){
                 hitParticles.Play();

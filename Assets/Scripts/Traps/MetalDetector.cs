@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class MetalDetector : PoweredDevice
 {
-[FoldoutGroup("Events")] public UnityEvent<Item> onItemTaken;
-    
+    [FoldoutGroup("Events")] public UnityEvent<Item> onItemTaken;
+
     public void OnTriggerEnter(Collider other)
     {
         if (!IsPowered()){

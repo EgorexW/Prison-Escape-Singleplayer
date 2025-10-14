@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayAudio))]
 public class PlayerSoundEffects : MonoBehaviour
 {
-    [GetComponent][SerializeField] PlayAudio playAudio;
-    
+    [GetComponent] [SerializeField] PlayAudio playAudio;
+
     public void PlaySoundEffect(Sound sound)
     {
         if (sound == null){

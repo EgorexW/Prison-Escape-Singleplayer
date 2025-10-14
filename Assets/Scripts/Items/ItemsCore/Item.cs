@@ -12,12 +12,10 @@ public sealed class Item : MonoBehaviour, IInteractive
 
     [FoldoutGroup("Events")] public UnityEvent<Item> onPickUp;
 
+    public string Name;
+
     readonly List<IItemEffect> itemEffects = new();
     public Rigidbody Rigidbody{ get; private set; }
-
-    public string Name;
-    [Button]
-    void StealNameFromGameObject() => Name = gameObject.name;
 
     void Awake()
     {
@@ -35,6 +33,12 @@ public sealed class Item : MonoBehaviour, IInteractive
     }
 
     public float HoldDuration => holdDuration;
+
+    [Button]
+    void StealNameFromGameObject()
+    {
+        Name = gameObject.name;
+    }
 
     public void Use(Player player, bool alternative = false)
     {

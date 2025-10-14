@@ -1,5 +1,3 @@
-using UnityEngine.Events;
-
 public interface IDamagable
 {
     Health Health{ get; }

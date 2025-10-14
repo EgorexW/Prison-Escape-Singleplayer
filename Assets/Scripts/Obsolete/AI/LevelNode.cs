@@ -15,7 +15,7 @@ public class LevelNode : MonoBehaviour
 
     [FormerlySerializedAs("LayerMask")] [SerializeField] LayerMask layerMask;
     public NodeType nodeType = NodeType.Corridor;
-    [BoxGroup("References")][ShowIf("@nodeType == NodeType.Corridor")][SerializeField] public SpawnableRoom room;
+    [BoxGroup("References")] [ShowIf("@nodeType == NodeType.Corridor")] [SerializeField] public SpawnableRoom room;
 
     public Bounds Bounds => boxCollider.bounds;
 
@@ -55,6 +55,20 @@ public class LevelNode : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (nodeType != NodeType.Room){
+            return;
+        }
+        if (room == null){
+            Debug.LogWarning("Room node has no room assigned", this);
+            return;
+        }
+        if (other.GetComponent<Player>() != null){
+            room.discovered = true;
+        }
+    }
+
     public List<LevelNode> GetNeighboringNodes()
     {
         var neighboringNodes = new List<LevelNode>();
@@ -75,18 +89,6 @@ public class LevelNode : MonoBehaviour
             neighboringNodes.Add(levelNode);
         }
         return neighboringNodes;
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (nodeType != NodeType.Room) return;
-        if (room == null){
-            Debug.LogWarning("Room node has no room assigned", this);
-            return;
-        }
-        if (other.GetComponent<Player>() != null){
-            room.discovered = true;
-        }
     }
 }
 

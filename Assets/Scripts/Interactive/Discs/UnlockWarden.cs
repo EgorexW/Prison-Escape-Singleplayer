@@ -7,7 +7,7 @@ public class UnlockWarden : FacilityTrigger
     [BoxGroup("References")] [Required] [SerializeField] AccessLevel newAccessLevel;
 
     [SerializeField] Damage newDamage;
-    
+
     public override void Activate()
     {
         base.Activate();

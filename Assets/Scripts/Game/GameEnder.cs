@@ -1,14 +1,12 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class GameEnder : MonoBehaviour
 {
     [SerializeField] string loseScene = "Lose Screen";
-    
+
     [SerializeField] string winScene = "Win Screen";
 
     [FoldoutGroup("Events")] public UnityEvent beforeLoseGame;

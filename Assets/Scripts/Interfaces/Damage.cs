@@ -10,6 +10,9 @@ public struct Damage
     [FormerlySerializedAs("permanentDamage")] public float pernamentDamage;
     public DamageType damageType;
 
+    public bool IsDamage => damage > 0 || pernamentDamage > 0;
+    public bool IsHeal => damage < 0 || pernamentDamage < 0;
+
     public void Invert()
     {
         damage = -damage;

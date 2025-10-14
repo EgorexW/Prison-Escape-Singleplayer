@@ -1,17 +1,16 @@
 using System;
 using Sirenix.OdinInspector;
-
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.UIElements;
 #endif
 
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
-
-[Serializable][BoxGroup("Health")]
+[Serializable]
+[BoxGroup("Health")]
 public struct Health
 {
     [FormerlySerializedAs("health")] public float currentHealth;
@@ -22,8 +21,8 @@ public struct Health
     public bool Alive => currentHealth > 0;
     public Health(float currentHealth) : this(currentHealth, currentHealth, currentHealth) { }
 
-    [FoldoutGroup("Events")]
-    public UnityEvent<Damage> onDamage;
+    [FoldoutGroup("Events")] public UnityEvent<Damage> onDamage;
+
     public Health(float currentHealth, float maxHealth, float absoluteMaxHealth,
         DamageType damagedBy = DamageType.Physical)
     {
@@ -77,7 +76,7 @@ public class HealthDrawer : PropertyDrawer
         allHealthFoldout.text = "Health";
 
 // Create the FloatField
-        var allHealthField = new FloatField("Quick Health") { value = current.floatValue };
+        var allHealthField = new FloatField("Quick Health"){ value = current.floatValue };
         allHealthField.RegisterValueChangedCallback(evt =>
         {
             current.floatValue = evt.newValue;

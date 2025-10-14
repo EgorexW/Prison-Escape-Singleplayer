@@ -8,72 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit Old.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit Old.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Secret Button.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Secret Button.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Materials/EMP Poster.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Materials/EMP Poster.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/EMP Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/EMP Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/Secret05.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/Secret05.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/WinGameItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DestroyLootSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Props/DestroyLootSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StatsUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StatsUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Closed Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Corridor Closed Box.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/Props/Poster.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Card.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Rare Med.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Rare Med.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Card.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Card.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/World Spawn Tables/Corridor Loot Boxes.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/World Spawn Tables/Corridor Loot Boxes.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FirstGamePoster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FirstGamePoster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FirstGamePoster.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FirstGamePoster.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTime.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/WinGame.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/WinGame.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/WinGameItem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Damage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Damage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/UseableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/UseableItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/LootSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/LootSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Visuals/PlayerHealthVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Visuals/PlayerHealthVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/TimeTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/TimeTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Settings.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -432,7 +371,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add new Bag class and associated prefab metadata; implement inventory size increase on interaction" />
     <MESSAGE value="Metal Detector" />
     <MESSAGE value="Add WinGame class to manage scene transition on game win; update prefab and metadata for Exit" />
     <MESSAGE value="Map in administration" />
@@ -457,7 +395,8 @@
     <MESSAGE value="Stamina, and other playtest feedback" />
     <MESSAGE value="Sound and Feel design" />
     <MESSAGE value="SZSZ Playtest" />
-    <option name="LAST_COMMIT_MESSAGE" value="SZSZ Playtest" />
+    <MESSAGE value="v 0.1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

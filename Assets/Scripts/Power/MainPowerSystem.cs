@@ -10,20 +10,17 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     [SerializeField] List<SubPowerSystem> subPowerSystems;
     [SerializeField] float timeBetweenPowerLoss = 90f;
 
+    [FoldoutGroup("Events")] public UnityEvent onPowerChanged = new();
+
+    [FoldoutGroup("Events")] public UnityEvent onMinimalPowerChanged = new();
+
     [ShowInInspector] [BoxGroup("Debug")] float lastPowerLossTime;
     public static MainPowerSystem i{ get; private set; }
 
     public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
     [ShowInInspector] [BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
-
-    [FoldoutGroup("Events")]
-    public UnityEvent onPowerChanged = new();
-    [FoldoutGroup("Events")]
-    public UnityEvent onMinimalPowerChanged = new();
-
-    public UnityEvent OnPowerChanged => onPowerChanged;
     public UnityEvent OnMinimalPowerChanged => onMinimalPowerChanged;
-    
+
     void Awake()
     {
         if (i != null && i != this){
@@ -48,6 +45,8 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
             LosePower();
         }
     }
+
+    public UnityEvent OnPowerChanged => onPowerChanged;
 
     public PowerLevel GetPower(Vector3 pos)
     {

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class GameStats : MonoBehaviour
@@ -8,9 +7,9 @@ public class GameStats : MonoBehaviour
     public float gameTime;
     public float normalDamageTaken;
     public float pernamentDamageTaken;
-    
+
     public float metersWalked;
-    
+
     void Awake()
     {
         if (i != null && i != this){

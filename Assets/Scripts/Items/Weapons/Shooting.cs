@@ -20,8 +20,7 @@ public class Shooting : MonoBehaviour
 
     [FoldoutGroup("Events")] public UnityEvent onShot;
 
-    [FoldoutGroup("Events")]
-    public UnityEvent onNoAmmo;
+    [FoldoutGroup("Events")] public UnityEvent onNoAmmo;
 
     float lastShotTime;
 

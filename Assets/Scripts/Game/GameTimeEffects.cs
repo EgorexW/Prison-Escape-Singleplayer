@@ -4,7 +4,8 @@ using UnityEngine.Serialization;
 
 public class GameTimeEffects : MonoBehaviour
 {
-    [FormerlySerializedAs("gameTime")] [BoxGroup("References")] [Required] [SerializeField] GameTimeManager gameTimeManager;
+    [FormerlySerializedAs("gameTime")] [BoxGroup("References")] [Required] [SerializeField]
+    GameTimeManager gameTimeManager;
 
     [SerializeField] GameObject outOfTimeEffect;
     [SerializeField] FacilityAnnouncement announcement;

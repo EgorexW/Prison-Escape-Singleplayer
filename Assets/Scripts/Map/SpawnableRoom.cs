@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SpawnableRoom : MonoBehaviour
 {
-    [GetComponent][SerializeField] public DoorwayConfig doorway;
-    
+    [GetComponent] [SerializeField] public DoorwayConfig doorway;
+
     [SerializeField] Transform joinPoint;
     [SerializeField] Transform dirPoint;
     [SerializeField] public RoomTrait[] traits;

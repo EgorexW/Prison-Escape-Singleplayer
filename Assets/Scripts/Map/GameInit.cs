@@ -5,12 +5,11 @@ using UnityEngine.Events;
 
 public class GameInit : MonoBehaviour
 {
+    const float DELAY = 1f;
     [BoxGroup("References")] [Required] [SerializeField] LevelNodes levelNodes;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;
     [BoxGroup("References")] [Required] [SerializeField] Player player;
     [BoxGroup("References")] [SerializeField] List<CorridorSpawner> corridorSpawners;
-
-    const float DELAY = 1f;
 
     [FoldoutGroup("Events")] public UnityEvent onFinish;
 

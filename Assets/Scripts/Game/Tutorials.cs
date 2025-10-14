@@ -1,37 +1,50 @@
-using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Tutorials : MonoBehaviour
 {
-    [FormerlySerializedAs("tutorialUI")] [BoxGroup("References")][Required][SerializeField] TutorialsUI tutorialsUI;
-    
-    [BoxGroup("Config")][SerializeField] float movementTutorialDelay = 5f;
-    [BoxGroup("Config")][SerializeField] float interactTutorialDelay = 10f;
-    [BoxGroup("Config")][SerializeField] float sprintTutorialDelay = 60f;
-    [BoxGroup("Config")][SerializeField] float swapItemTutorialDelay = 45f;
-    [BoxGroup("Config")][SerializeField] float throwTutorialDelay = 90f;
-    [BoxGroup("Config")][SerializeField] float useTutorialDelay = 30f;
-    [BoxGroup("Config")][SerializeField] float reminderInteractCooldown = 30f;
-    [BoxGroup("Config")][SerializeField] float reminderInteractPlayerDelay = 3f;
-        
-    Vector3 playerStartPos;
+    [FormerlySerializedAs("tutorialUI")] [BoxGroup("References")] [Required] [SerializeField] TutorialsUI tutorialsUI;
+
+    [BoxGroup("Config")] [SerializeField] float movementTutorialDelay = 5f;
+    [BoxGroup("Config")] [SerializeField] float interactTutorialDelay = 10f;
+    [BoxGroup("Config")] [SerializeField] float sprintTutorialDelay = 60f;
+    [BoxGroup("Config")] [SerializeField] float swapItemTutorialDelay = 45f;
+    [BoxGroup("Config")] [SerializeField] float throwTutorialDelay = 90f;
+    [BoxGroup("Config")] [SerializeField] float useTutorialDelay = 30f;
+    [BoxGroup("Config")] [SerializeField] float reminderInteractCooldown = 30f;
+    [BoxGroup("Config")] [SerializeField] float reminderInteractPlayerDelay = 3f;
+    IInteractive lastInteractive;
+    float lastInteractTime;
     Player player;
 
     float playerInteractAimStartTime;
-    float lastInteractTime;
-    IInteractive lastInteractive;
+
+    Vector3 playerStartPos;
+
+    void Update()
+    {
+        if (player == null){
+            return;
+        }
+        ResolveMovementTutorial();
+        ResolveInteractTutorial();
+        ResolveSprintTutorial();
+        ResolveSwapItemTutorial();
+        ResolveThrowTutorial();
+        ResolveUseTutorial();
+    }
 
     public void Activate()
     {
         player = GameManager.i.Player;
-        playerStartPos = player.transform.position; 
+        playerStartPos = player.transform.position;
         player.onFinishInteraction.AddListener(OnInteractionFinished);
         player.onSwapItem.AddListener(OnSwapItem);
         player.onThrowItem.AddListener(OnThrowItem);
         player.onUseItem.AddListener(OnUseItem);
     }
+
     void OnUseItem()
     {
         if (!tutorialsUI.UseTutorial){
@@ -67,19 +80,6 @@ public class Tutorials : MonoBehaviour
         }
         PlayerPrefs.SetInt("Tutorial/Interact", 1);
         tutorialsUI.InteractTutorial = false;
-    }
-
-    void Update()
-    {
-        if (player == null){
-            return;
-        }
-        ResolveMovementTutorial();
-        ResolveInteractTutorial();
-        ResolveSprintTutorial();
-        ResolveSwapItemTutorial();
-        ResolveThrowTutorial();
-        ResolveUseTutorial();
     }
 
     void ResolveUseTutorial()

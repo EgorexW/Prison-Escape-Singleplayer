@@ -9,8 +9,8 @@ public partial class Player : MonoBehaviour
     [BoxGroup("References")] [Required] public PlayerSoundEffects playerSoundEffects;
 
     [SerializeField] Transform aim;
-    
-    [BoxGroup("References")][Required][SerializeField] GameObject map;
+
+    [BoxGroup("References")] [Required] [SerializeField] GameObject map;
 
     void Awake()
     {

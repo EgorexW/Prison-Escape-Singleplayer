@@ -13,8 +13,7 @@ public partial class Player
     [FoldoutGroup("Events")] public UnityEvent onThrowItem = new();
     [FoldoutGroup("Events")] public UnityEvent onUseItem = new();
 
-    [FoldoutGroup("Events")]
-    public UnityEvent onPickUpItem = new();
+    [FoldoutGroup("Events")] public UnityEvent onPickUpItem = new();
 
     [ShowInInspector] Item equipedItem;
 
@@ -58,11 +57,11 @@ public partial class Player
 
     public void ThrowItem(Item item)
     {
-            if (item == null){
-                Debug.LogWarning("Can't throw null item", this);
-                return;
-            }
-        
+        if (item == null){
+            Debug.LogWarning("Can't throw null item", this);
+            return;
+        }
+
         item.StopUse(this);
         RemoveItem(item);
 
@@ -74,7 +73,7 @@ public partial class Player
         // Reset collision detection mode after a delay
         General.CallAfterSeconds(() => { item.Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete; },
             CONTINUOUS_COLLISION_DETECTION_TIME_ON_THROW);
-        
+
         onThrowItem.Invoke();
     }
 
@@ -137,7 +136,7 @@ public partial class Player
     {
         return inventory;
     }
-    
+
     public void SwapItem(int changeIndex = 1)
     {
         var items = GetInventory().GetItems();

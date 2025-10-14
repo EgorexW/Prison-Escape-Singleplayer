@@ -12,8 +12,8 @@ class PlayerUI : MonoBehaviour
     [Required] [SerializeField] MetricBar staminaBarUI;
     [Required] [SerializeField] MetricBar progressBarUI;
     [Required] [SerializeField] TextMeshProUGUI itemName;
-    [Required][SerializeField] TextMeshProUGUI announcementText;
-    
+    [Required] [SerializeField] TextMeshProUGUI announcementText;
+
     [SerializeField] float announcmentShowTime = 5f;
 
     void Awake()
@@ -26,11 +26,6 @@ class PlayerUI : MonoBehaviour
         player.playerHealth.Health.onDamage.AddListener(ShowDamage);
     }
 
-    void ShowDamage(Damage damage)
-    {
-        healthBarUI.ShowDamage(damage, player.playerHealth.Health);
-    }
-
     void Start()
     {
         GameManager.i.facilityAnnouncements.onAnnouncement.AddListener(ShowAnnouncement);
@@ -39,24 +34,30 @@ class PlayerUI : MonoBehaviour
         progressBarUI.Hide();
     }
 
+    void Update()
+    {
+        staminaBarUI.Set(player.Stamina, 1);
+        var heldItem = player.GetHeldItem();
+        if (heldItem != null){
+            itemName.text = heldItem.Name;
+        }
+
+        else{
+            itemName.text = "";
+        }
+        itemName.gameObject.SetActive(itemName.text != "");
+    }
+
+    void ShowDamage(Damage damage)
+    {
+        healthBarUI.ShowDamage(damage, player.playerHealth.Health);
+    }
+
     void ShowAnnouncement(FacilityAnnouncement announcement)
     {
         announcementText.text = announcement.message;
         announcementText.gameObject.SetActive(true);
         LeanTween.delayedCall(announcmentShowTime, () => announcementText.gameObject.SetActive(false));
-
-    }
-
-    void Update()
-    {
-        staminaBarUI.Set(player.Stamina, 1);
-        var heldItem = player.GetHeldItem();
-        if (heldItem != null)
-            itemName.text = heldItem.Name;
-        
-        else
-            itemName.text = "";
-        itemName.gameObject.SetActive(itemName.text != "");
     }
 
     void ShowHealth()

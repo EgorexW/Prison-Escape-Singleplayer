@@ -12,13 +12,13 @@ public partial class Player
     [BoxGroup("Stamina")] [SerializeField] float staminaUseRate = 0.15f;
     [BoxGroup("Stamina")] [SerializeField] float staminaRegenRate = 0.1f;
 
-    [BoxGroup("Fov")][SerializeField] float normalFov = 70;
-    [BoxGroup("Fov")][SerializeField] float sprintFov = 90f;
-    
+    [BoxGroup("Fov")] [SerializeField] float normalFov = 70;
+    [BoxGroup("Fov")] [SerializeField] float sprintFov = 90f;
+    [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
+
     CharacterController characterController;
     FirstPersonController firstPersonController;
     float speedMod = 1;
-    [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
 
     [BoxGroup("Stamina")] [ShowInInspector] public float Stamina{ get; private set; } = 1;
 

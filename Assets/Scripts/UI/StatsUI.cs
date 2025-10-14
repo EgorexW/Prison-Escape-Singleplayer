@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class StatsUI : UIElement
 {
-    [BoxGroup("References")][Required][SerializeField] TextMeshProUGUI text;
-    
+    [BoxGroup("References")] [Required] [SerializeField] TextMeshProUGUI text;
+
     public override void Show()
     {
         base.Show();

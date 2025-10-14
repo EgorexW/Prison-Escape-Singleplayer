@@ -3,8 +3,9 @@ using UnityEngine;
 public class Secret05 : MonoBehaviour, IInteractive
 {
     public string triggerId;
-    
+
     public float HoldDuration => 0;
+
     public void Interact(Player player)
     {
         var roundToInt = Mathf.RoundToInt(player.playerHealth.Health.currentHealth);

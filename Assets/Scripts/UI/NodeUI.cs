@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -7,8 +6,8 @@ using UnityEngine.UI;
 
 public class NodeUI : SerializedMonoBehaviour
 {
-    [BoxGroup("References")][Required][SerializeField] Image image;
-    [BoxGroup("References")][Required][SerializeField] TextMeshProUGUI text;
+    [BoxGroup("References")] [Required] [SerializeField] Image image;
+    [BoxGroup("References")] [Required] [SerializeField] TextMeshProUGUI text;
 
     [SerializeField] Dictionary<NodeType, Sprite> nodeSprites = new();
     [SerializeField] Sprite discoveredSprite;
@@ -26,8 +25,8 @@ public class NodeUI : SerializedMonoBehaviour
             image.color = node.room.doorway.accessLevel.color;
             return;
         }
-        Color bgColor = image.color;
-        float brightness = (bgColor.r * 0.299f + bgColor.g * 0.587f + bgColor.b * 0.114f);
+        var bgColor = image.color;
+        var brightness = bgColor.r * 0.299f + bgColor.g * 0.587f + bgColor.b * 0.114f;
         text.color = brightness > 0.5f ? Color.black : Color.white;
     }
 }

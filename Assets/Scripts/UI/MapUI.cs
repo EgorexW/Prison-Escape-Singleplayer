@@ -1,4 +1,3 @@
-using System;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,27 +6,27 @@ using UnityEngine.Serialization;
 public class MapUI : MonoBehaviour
 {
     const float AI_OBJECT_SIZE = 3;
-    
-    [FormerlySerializedAs("rect")] [GetComponent][SerializeField] RectTransform rectTransform;
-    
+
+    [FormerlySerializedAs("rect")] [GetComponent] [SerializeField] RectTransform rectTransform;
+
     [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI roomsObjectPool;
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
     [BoxGroup("Internal References")] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [SerializeField] RectTransform selfPointer;
 
     [SerializeField] float scale = 0.005f;
-    
+
     float Rect => Mathf.Min(rectTransform.rect.width, rectTransform.rect.height);
     float TrueScale => scale * Rect;
-
-    void OnEnable()
-    {
-        GenerateMap();
-    }
 
     void Update()
     {
         DrawPlayer();
+    }
+
+    void OnEnable()
+    {
+        GenerateMap();
     }
 
     public void GenerateMap()

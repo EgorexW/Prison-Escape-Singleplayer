@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using StarterAssets;
@@ -9,10 +7,10 @@ using UnityEngine.UI;
 
 public class SettingsUI : MonoBehaviour
 {
-    [BoxGroup("External References")][Required][SerializeField] FirstPersonController firstPersonController;
-    
-    [BoxGroup("Internal References")][Required][SerializeField] Slider sensitivitySlider;
-    [BoxGroup("Internal References")][Required][SerializeField] TMP_Dropdown qualityDropdown;
+    [BoxGroup("External References")] [Required] [SerializeField] FirstPersonController firstPersonController;
+
+    [BoxGroup("Internal References")] [Required] [SerializeField] Slider sensitivitySlider;
+    [BoxGroup("Internal References")] [Required] [SerializeField] TMP_Dropdown qualityDropdown;
 
     void Awake()
     {
@@ -25,14 +23,14 @@ public class SettingsUI : MonoBehaviour
         qualityDropdown.options = options;
     }
 
-    void SetQuality(int index)
-    {
-        QualitySettings.SetQualityLevel(index);
-    }
-
     void Start()
     {
         gameObject.SetActive(false);
+    }
+
+    void SetQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
     }
 
     public void SetSensitivity(float sensitivity)

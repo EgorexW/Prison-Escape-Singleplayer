@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -8,7 +7,7 @@ using Random = UnityEngine.Random;
 public class RoomGenerator : MonoBehaviour
 {
     const int GenerationTries = 10;
-    [SerializeField][HideIf("setSeedBasedOnGameNr")] Optional<int> seed;
+    [SerializeField] [HideIf("setSeedBasedOnGameNr")] Optional<int> seed;
     [SerializeField] bool setSeedBasedOnGameNr = true;
 
     public void Generate()
@@ -16,7 +15,8 @@ public class RoomGenerator : MonoBehaviour
         if (setSeedBasedOnGameNr){
             var seedValue = PlayerPrefs.GetInt("Games Started", 0);
             Random.InitState(seedValue);
-        } else if (seed){
+        }
+        else if (seed){
             Random.InitState(seed);
         }
         var roomChooser = GetComponent<RoomChooser>();

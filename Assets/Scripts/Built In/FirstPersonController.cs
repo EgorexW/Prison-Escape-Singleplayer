@@ -53,6 +53,10 @@ namespace StarterAssets
 
         [Tooltip("How far in degrees can you move the camera down")] public float BottomClamp = -90.0f;
 
+        [BoxGroup("References")] [Required] [SerializeField] CinemachineVirtualCamera virtualCamera;
+        [SerializeField] float fovTransitionSpeed = 20f;
+        [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
+
         readonly float _terminalVelocity = 53.0f;
 
         // cinemachine
@@ -64,9 +68,6 @@ namespace StarterAssets
         // timeout deltatime
         float _jumpTimeoutDelta;
         GameObject _mainCamera;
-        
-        [BoxGroup("References")][Required][SerializeField] CinemachineVirtualCamera virtualCamera;
-        [SerializeField] float fovTransitionSpeed = 20f;
 
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -78,6 +79,8 @@ namespace StarterAssets
         float _speed;
         float _verticalVelocity;
 
+        public GetMoveData getMoveData;
+
         bool IsCurrentDeviceMouse{
             get{
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -87,9 +90,6 @@ namespace StarterAssets
 #endif
             }
         }
-
-        public GetMoveData getMoveData;
-        [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
 
         void Awake()
         {
@@ -168,7 +168,7 @@ namespace StarterAssets
 
                 // clamp our pitch rotation
                 _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
- 
+
                 // Update Cinemachine camera target pitch
                 CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
@@ -179,11 +179,12 @@ namespace StarterAssets
 
         void Move()
         {
-            var moveData = this.getMoveData(_input.sprint);
-            
+            var moveData = getMoveData(_input.sprint);
+
             var currentFov = virtualCamera.m_Lens.FieldOfView;
             if (Mathf.Abs(currentFov - moveData.fov) > 0f){
-                virtualCamera.m_Lens.FieldOfView = Mathf.Lerp(currentFov, moveData.fov, fovTransitionSpeed * Time.deltaTime);
+                virtualCamera.m_Lens.FieldOfView =
+                    Mathf.Lerp(currentFov, moveData.fov, fovTransitionSpeed * Time.deltaTime);
             }
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
@@ -225,7 +226,7 @@ namespace StarterAssets
 
             // move the player
             var moveVector = inputDirection.normalized * (_speed * Time.deltaTime) +
-                                           new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
             _controller.Move(moveVector);
             onMove.Invoke(moveVector);
         }

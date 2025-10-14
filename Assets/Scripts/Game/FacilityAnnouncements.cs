@@ -8,10 +8,9 @@ public class FacilityAnnouncements : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] PlayAudio audioPlayer;
 
-    readonly Queue<FacilityAnnouncement> announcements = new();
+    [FoldoutGroup("Events")] public UnityEvent<FacilityAnnouncement> onAnnouncement;
 
-    [FoldoutGroup("Events")]
-    public UnityEvent<FacilityAnnouncement> onAnnouncement;
+    readonly Queue<FacilityAnnouncement> announcements = new();
 
     void Update()
     {

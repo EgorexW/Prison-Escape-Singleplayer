@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class MapItem : ItemEffect
 {
     public override void Use(Player player, bool alternative = false)
