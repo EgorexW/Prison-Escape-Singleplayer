@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = System.Diagnostics.Debug;
 
 public class NodeUI : SerializedMonoBehaviour
 {
@@ -14,15 +15,20 @@ public class NodeUI : SerializedMonoBehaviour
 
     public void SetNode(LevelNode node)
     {
-        if (node.room == null || !node.room.discovered){
-            image.sprite = nodeSprites[node.nodeType];
-            text.text = "";
+        image.sprite = nodeSprites[node.type];
+        text.text = "";
+        if (node.type == NodeType.Corridor){
+            return;
+        }
+        var roomNode = node as RoomNode;
+        Debug.Assert(roomNode != null, nameof(roomNode) + " != null");
+        if (!roomNode.room.discovered){
             return;
         }
         image.sprite = discoveredSprite;
-        text.text = node.room.Name;
-        if (node.room.doorway != null && node.room.doorway.accessLevel != null){
-            image.color = node.room.doorway.accessLevel.color;
+        text.text = roomNode.room.Name;
+        if (roomNode.room.doorway != null && roomNode.room.doorway.accessLevel != null){
+            image.color = roomNode.room.doorway.accessLevel.color;
             return;
         }
         var bgColor = image.color;

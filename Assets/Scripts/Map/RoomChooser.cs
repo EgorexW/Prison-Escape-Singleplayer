@@ -41,7 +41,7 @@ public class RoomChooser : SerializedMonoBehaviour
             var room = rooms[0];
             var matched = false;
             foreach (var spawner in spawners.ToArray()){
-                if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
+                if (!spawner.HasTraits(room.GetComponent<Room>().traits)){
                     continue;
                 }
                 spawners.Remove(spawner);
@@ -54,7 +54,7 @@ public class RoomChooser : SerializedMonoBehaviour
                 continue;
             }
             foreach (var spawner in matchedRoomsWithSpawners.Keys.ToArray()){
-                if (!spawner.HasTraits(room.GetComponent<SpawnableRoom>().traits)){
+                if (!spawner.HasTraits(room.GetComponent<Room>().traits)){
                     continue;
                 }
                 rooms.Add(matchedRoomsWithSpawners[spawner]);

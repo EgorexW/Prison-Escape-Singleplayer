@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3278751528054187581}
   - component: {fileID: 1795075259698400865}
+  - component: {fileID: 6592088616064679851}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -109,6 +110,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a78c8e152d94fa5b908fdea842328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomSpawnConfig: {fileID: 6592088616064679851}
+  doorway: {fileID: 0}
+  lootSpawners: []
+  traits: []
+  discovered: 0
+--- !u!114 &6592088616064679851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994038156301474601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1363529e6c9548cc8bfa688044450a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCenter: {fileID: 3278751528054187581}
   joinPoint: {fileID: 4653159459774589494}
   dirPoint: {fileID: 6048487396877637167}
 --- !u!1001 &2720415353027917498

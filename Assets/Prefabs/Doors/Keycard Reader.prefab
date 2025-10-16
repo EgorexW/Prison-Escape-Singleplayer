@@ -666,9 +666,10 @@ MonoBehaviour:
       m_Calls: []
   accessLevel: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
   visuals: {fileID: 3499988669474318744}
+  linkedReaders: []
   electrocutionDamage:
     damage: 20
-    permanentDamage: 10
+    pernamentDamage: 10
     damageType: 1
   baseElectrocutionChance: 0
   minimalPowerElectrocutionChance: 0.5
@@ -793,11 +794,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c0810155c8b48400d8b856f01e56194c, type: 3}
+  m_Resource: {fileID: 8300000, guid: c0810155c8b48400d8b856f01e56194c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.75621194
+  m_Pitch: 1.0046074
   Loop: 0
   Mute: 0
   Spatialize: 0

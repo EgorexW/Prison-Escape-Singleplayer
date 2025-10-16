@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] [HideIf("setSeedBasedOnGameNr")] Optional<int> seed;
     [SerializeField] bool setSeedBasedOnGameNr = true;
 
-    public void Generate()
+    public List<Room> GenerateRooms()
     {
         if (setSeedBasedOnGameNr){
             var seedValue = PlayerPrefs.GetInt("Games Started", 0);
@@ -23,15 +24,21 @@ public class RoomGenerator : MonoBehaviour
         for (var i = 0; i < GenerationTries; i++){
             var choosenRooms = roomChooser.ChooseRooms();
             if (choosenRooms != null){
-                GenerateRooms(choosenRooms);
-                return;
+                return GenerateRooms(choosenRooms);
+            }
+            else{
+                Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GenerationTries + ")", this);
             }
         }
-        Debug.LogError("Generation Failed", this);
+        throw new Exception("Failed to generate rooms after " + GenerationTries + " tries");
     }
 
-    void GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)
+    List<Room> GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)
     {
-        foreach (var match in matchedRoomWithSpawner) match.Key.SpawnRoom(match.Value);
+        var spawnedRooms = new List<Room>();
+        foreach (var match in matchedRoomWithSpawner){
+            spawnedRooms.Add(match.Key.SpawnRoom(match.Value));
+        }
+        return spawnedRooms;
     }
 }

@@ -6,7 +6,6 @@ public class LootSpawner : MonoBehaviour
 {
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] [MinMaxSlider(0, "@SpawnPoints.Count")] Vector2Int spawnNr = new(1, 1);
-    [SerializeField] public bool spawnOnAwake = true;
     [SerializeField] bool randomRotation = true;
 
     List<Transform> SpawnPoints{
@@ -14,13 +13,6 @@ public class LootSpawner : MonoBehaviour
             var points = new List<Transform>(GetComponentsInChildren<Transform>());
             points.Remove(transform);
             return points;
-        }
-    }
-
-    protected virtual void Awake()
-    {
-        if (spawnOnAwake){
-            SpawnGameObjects();
         }
     }
 

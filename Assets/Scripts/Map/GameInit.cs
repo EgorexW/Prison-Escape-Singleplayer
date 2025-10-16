@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -5,7 +7,7 @@ using UnityEngine.Events;
 
 public class GameInit : MonoBehaviour
 {
-    const float DELAY = 1f;
+    const float DELAY = 0.5f;
     [BoxGroup("References")] [Required] [SerializeField] LevelNodes levelNodes;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;
     [BoxGroup("References")] [Required] [SerializeField] Player player;
@@ -13,33 +15,43 @@ public class GameInit : MonoBehaviour
 
     [FoldoutGroup("Events")] public UnityEvent onFinish;
 
-    void Awake()
+    IEnumerator Start()
     {
-        Invoke(nameof(Generate), DELAY);
-        Debug.Log("GameInit Awake, will generate in " + DELAY + " seconds", this);
+        Debug.Log("GameInit Start, starting generation coroutine", this);
+        yield return GenerateRoutine();
     }
 
-    public void Generate()
+    IEnumerator GenerateRoutine()
     {
-        roomGenerator.Generate();
-        Invoke(nameof(Generate2), DELAY);
-        Debug.Log("Room generated, will generate corridors in " + DELAY + " seconds", this);
-    }
+        yield return new WaitForSeconds(DELAY);
+        var rooms = roomGenerator.GenerateRooms();
+        Debug.Log("Room generated, waiting to generate corridors", this);
 
-    void Generate2()
-    {
-        levelNodes.ResetNodes();
-        foreach (var corridorSpawner in corridorSpawners) corridorSpawner.Spawn(levelNodes.CorridorNodes);
-        var spawn = FindAnyObjectByType<PlayerSpawn>();
-        if (spawn == null){
-            Debug.LogWarning("No PlayerSpawn found in scene", this);
-            Invoke(nameof(Generate2), DELAY);
-            return;
+        yield return new WaitForSeconds(DELAY);
+        foreach (var room in rooms){
+            room.Activate();
         }
+        levelNodes.ResetNodes();
+
+        foreach (var corridorSpawner in corridorSpawners)
+            corridorSpawner.Spawn(levelNodes.CorridorNodes);
+
+        PlayerSpawn spawn = null;
+        while (spawn == null)
+        {
+            spawn = FindAnyObjectByType<PlayerSpawn>();
+            if (spawn != null){
+                continue;
+            }
+            Debug.LogWarning("No PlayerSpawn found in scene, retrying...", this);
+            yield return null;
+        }
+
         spawn.Spawn(player);
         levelNodes.ResetNodes();
         onFinish.Invoke();
         GameManager.i.gameTimeManager.startTime = Time.time;
+
         Debug.Log("Corridors generated, player spawned, game init finished", this);
     }
 }

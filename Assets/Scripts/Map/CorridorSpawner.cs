@@ -10,7 +10,7 @@ public class CorridorSpawner : MonoBehaviour
     [BoxGroup("Spawn Conditions")] [SerializeField] CorridorNodeType nodeTypesAllowed;
     [BoxGroup("Spawn Conditions")] [SerializeField] bool placeOnConnection;
 
-    public void Spawn(List<LevelNode> levelNodes)
+    public void Spawn(List<CorridorNode> levelNodes)
     {
         var spawnNr = Random.Range(spawnCount.x, spawnCount.y);
         while (true){
@@ -23,7 +23,7 @@ public class CorridorSpawner : MonoBehaviour
             if (!nodeTypesAllowed.HasFlag(node.CorridorNodeType)){
                 continue;
             }
-            var connection = node.SameTypeConnections.Random();
+            var connection = node.SameTypeConnections().Random();
             var rotation = Quaternion.LookRotation(connection.normalized);
             var spawnPosition = node.transform.position;
             if (placeOnConnection){

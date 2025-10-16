@@ -15,13 +15,6 @@ public class DestroyLootSpawner : MonoBehaviour
         transform.localScale = Vector3.one;
     }
 
-    void OnValidate()
-    {
-        if (lootSpawner != null){
-            lootSpawner.spawnOnAwake = false;
-        }
-    }
-
     void OnDamage(Damage arg0)
     {
         if (!destroyable.Health.Alive){

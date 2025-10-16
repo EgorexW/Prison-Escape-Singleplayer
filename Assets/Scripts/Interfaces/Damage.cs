@@ -12,6 +12,7 @@ public struct Damage
 
     public bool IsDamage => damage > 0 || pernamentDamage > 0;
     public bool IsHeal => damage < 0 || pernamentDamage < 0;
+    public bool IsZero => damage == 0 && pernamentDamage == 0;
 
     public void Invert()
     {

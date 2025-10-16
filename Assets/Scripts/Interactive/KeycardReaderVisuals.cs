@@ -68,5 +68,6 @@ public class KeycardReaderVisuals : MonoBehaviour
     public void Electrocute()
     {
         sparks?.Play();
+        electrocuteSound?.Play();
     }
 }

@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     public void Damage(Damage damage)
     {
+        if (damage.IsZero){
+            return;
+        }
         if (log){
             Debug.Log(damage, this);
         }
@@ -27,6 +30,9 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     public void Heal(Damage damage)
     {
+        if (damage.IsZero){
+            return;
+        }
         health.Heal(damage);
         UpdateHealth();
     }
