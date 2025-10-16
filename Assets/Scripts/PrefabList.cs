@@ -9,7 +9,7 @@ public class PrefabList : ScriptableObject
     public int GetPrefabIndex(GameObject prefab)
     {
         for (int i = 0; i < prefabs.Length; i++){
-            if (prefab.GetInstanceID() == prefabs[i].GetInstanceID()){
+            if (prefab.name == prefabs[i].name){
                 return i;
             }
         }

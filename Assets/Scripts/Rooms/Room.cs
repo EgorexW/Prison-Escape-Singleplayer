@@ -61,6 +61,6 @@ public class Room : MonoBehaviour
     [Button]
     void CopyGameobjectName()
     {
-        gameObject.name = roomName;
+        roomName = gameObject.name;
     }
 }

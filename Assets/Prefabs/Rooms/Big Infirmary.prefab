@@ -341,6 +341,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 3335068998611854170, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
+      propertyPath: roomName
+      value: Big Infirmary
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335068998611854170, guid: b537e82eaad9b40a28773bc20362040b,
+        type: 3}
       propertyPath: lootSpawners.Array.size
       value: 2
       objectReference: {fileID: 0}

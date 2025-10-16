@@ -261,6 +261,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.24000001
       objectReference: {fileID: 0}
+    - target: {fileID: 3335068998611854170, guid: b537e82eaad9b40a28773bc20362040b,
+        type: 3}
+      propertyPath: roomName
+      value: Heavy Armory
+      objectReference: {fileID: 0}
     - target: {fileID: 4495459930150016003, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
       propertyPath: doorType

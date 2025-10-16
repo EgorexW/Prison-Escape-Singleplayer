@@ -591,7 +591,7 @@ PrefabInstance:
     - target: {fileID: 2270871401134883441, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_Name
-      value: Storage Room
+      value: Storage
       objectReference: {fileID: 0}
     - target: {fileID: 2851956841060903381, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
@@ -642,6 +642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: roomName
+      value: Storage
       objectReference: {fileID: 0}
     - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
         type: 3}

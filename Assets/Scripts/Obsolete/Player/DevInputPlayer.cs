@@ -23,6 +23,10 @@ public class DevInputPlayer : MonoBehaviour
 
     void UseDevKey2(InputAction.CallbackContext context)
     {
+        var rooms = FindObjectsByType<Room>(FindObjectsSortMode.None);
+        foreach (var room in rooms){
+            room.discovered = true;
+        }
         map.gameObject.SetActive(!map.gameObject.activeSelf);
         map.GenerateMap();
     }

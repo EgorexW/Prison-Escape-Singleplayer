@@ -19,7 +19,7 @@ public class PlayerHealthVisuals : MonoBehaviour
 
     void OnDamage(Damage damage)
     {
-        if (damage.IsDamage){
+        if (!damage.IsDamage){
             return;
         }
 

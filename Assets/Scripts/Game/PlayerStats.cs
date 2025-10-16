@@ -14,12 +14,12 @@ public class PlayerStats : MonoBehaviour
 
     void OnPlayerEnteredRoom(Room room)
     {
-        var originReferenceHolder = room.GetComponent<OriginReferenceHolder>();
+        var originReferenceHolder = room.GetComponent<PrefabListIndexHolder>();
         if (originReferenceHolder == null){
             Debug.LogWarning("Room origin reference holder is null", room);
             return;
         }
-        var roomIndex = roomsList.GetPrefabIndex(originReferenceHolder.origin);
+        var roomIndex = originReferenceHolder.prefabListIndex;
         PlayerPrefs.SetInt("Last Room Entered", roomIndex);
     }
 

@@ -11339,7 +11339,7 @@ MonoBehaviour:
   levelNodes: {fileID: 453294468}
   facilityAnnouncements: {fileID: 1281685159}
   gameEnder: {fileID: 1012652407}
-  roomsManager: {fileID: 0}
+  roomsManager: {fileID: 1012652408}
 --- !u!4 &1012652404
 Transform:
   m_ObjectHideFlags: 0
@@ -11652,7 +11652,9 @@ MonoBehaviour:
   - {fileID: 1820167181}
   - {fileID: 1432246487}
   - {fileID: 1123375711}
-  defaultPower: 0
+  defaultPower:
+    enabled: 0
+    value: 0
   onPowerChanged:
     m_PersistentCalls:
       m_Calls:

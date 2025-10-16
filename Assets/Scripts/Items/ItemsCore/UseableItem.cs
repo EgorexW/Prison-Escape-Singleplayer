@@ -10,12 +10,12 @@ public abstract class UseableItem : ItemEffect
 
     [SerializeField] Sound soundEffect;
 
-    protected Player player;
+    bool charging = false;
     float startUseTime = Mathf.Infinity;
 
     void Update()
     {
-        if (player == null){
+        if (!charging){
             return;
         }
         if (Time.time - startUseTime < useTime){
@@ -26,6 +26,8 @@ public abstract class UseableItem : ItemEffect
         Apply();
         OnApply();
     }
+
+    protected Player player => GameManager.i.Player;
 
     void OnApply()
     {
@@ -40,15 +42,15 @@ public abstract class UseableItem : ItemEffect
 
     public override void Use(Player playerTmp, bool alternative = false)
     {
-        player = playerTmp;
         base.Use(playerTmp);
+        charging = true;
         startUseTime = Time.time;
     }
 
     public override void StopUse(Player playerTmp, bool alternative = false)
     {
+        charging = false;
         playerTmp.onFinishInteraction.Invoke();
-        player = null;
         startUseTime = Mathf.Infinity;
     }
 

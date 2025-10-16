@@ -8,7 +8,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
 {
     [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
-    [SerializeField] PowerLevel defaultPower = PowerLevel.NoPower;
+    [SerializeField] Optional<PowerLevel> defaultPower = PowerLevel.NoPower;
 
     [FoldoutGroup("Events")] public UnityEvent onPowerChanged = new();
 
@@ -48,7 +48,9 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
                 }
                 return subSystemPower;
             }
-        Debug.LogWarning($"Device not in any subsystem bounds {pos}");
+        if (!defaultPower.Enabled){
+            Debug.LogWarning($"Device not in any subsystem bounds {pos}");
+        }
         return defaultPower;
     }
 
