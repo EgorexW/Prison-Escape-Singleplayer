@@ -11304,6 +11304,7 @@ GameObject:
   - component: {fileID: 1012652405}
   - component: {fileID: 1012652406}
   - component: {fileID: 1012652407}
+  - component: {fileID: 1012652408}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -11338,6 +11339,7 @@ MonoBehaviour:
   levelNodes: {fileID: 453294468}
   facilityAnnouncements: {fileID: 1281685159}
   gameEnder: {fileID: 1012652407}
+  roomsManager: {fileID: 0}
 --- !u!4 &1012652404
 Transform:
   m_ObjectHideFlags: 0
@@ -11411,6 +11413,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   beforeEndGame:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1012652408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012652402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924b61854d334ce7af3864ecbc7d1b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayerEnteredRoom:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1029292703
@@ -11635,7 +11652,7 @@ MonoBehaviour:
   - {fileID: 1820167181}
   - {fileID: 1432246487}
   - {fileID: 1123375711}
-  timeBetweenPowerLoss: 999999
+  defaultPower: 0
   onPowerChanged:
     m_PersistentCalls:
       m_Calls:
@@ -13586,11 +13603,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 39165037045694233, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 39165037045694233, guid: 0307f6484fa014a548658b2deafc21dc,
-        type: 3}
       propertyPath: m_LocalScale.x
       value: 0.20000003
       objectReference: {fileID: 0}
@@ -13659,19 +13671,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
       propertyPath: m_text
-      value: 'Open Zone
-
-'
+      value: Open Zone
       objectReference: {fileID: 0}
-    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
+      propertyPath: m_fontSize
+      value: 10.35
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8250834460057395385, guid: 0307f6484fa014a548658b2deafc21dc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -16936,6 +16947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12dcf2f3daca3422fb14646643083622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsList: {fileID: 11400000, guid: 3e9fed4ea53044f2d904b0904fb2706d, type: 2}
 --- !u!1 &2014609239
 GameObject:
   m_ObjectHideFlags: 0
@@ -17398,6 +17410,7 @@ MonoBehaviour:
   normalDamageTaken: 0
   pernamentDamageTaken: 0
   metersWalked: 0
+  uniqueRoomsEntered: 0
 --- !u!4 &2111391418
 Transform:
   m_ObjectHideFlags: 0
@@ -17781,7 +17794,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70.00002
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -19626,7 +19639,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 70.00002
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -19733,11 +19746,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 39165037045694233, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 39165037045694233, guid: 0307f6484fa014a548658b2deafc21dc,
-        type: 3}
       propertyPath: m_LocalScale.x
       value: 0.20000003
       objectReference: {fileID: 0}
@@ -19801,17 +19809,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
-    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
       propertyPath: m_text
       value: Secure Wing
       objectReference: {fileID: 0}
-    - target: {fileID: 6029946330345280661, guid: 0307f6484fa014a548658b2deafc21dc,
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
-      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
-      value: 1801810542
+      propertyPath: m_fontSize
+      value: 10.35
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8250834460057395385, guid: 0307f6484fa014a548658b2deafc21dc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class RoomBackground : MonoBehaviour
 {
+    [BoxGroup("References")] [Required] [SerializeField] PrefabList roomsList;
+    
     [BoxGroup("References")] [Required] [SerializeField] GameObject defaultRoomToSpawn;
     [BoxGroup("References")][Required][SerializeField] RoomSpawner roomSpawner;
         
@@ -18,7 +20,12 @@ public class RoomBackground : MonoBehaviour
 
     IEnumerator Activate()
     {
-        var room = roomSpawner.SpawnRoom(defaultRoomToSpawn);
+        var lastRoomIndex = PlayerPrefs.GetInt("Last Room Entered", -1);
+        var roomToSpawn = defaultRoomToSpawn;
+        if (lastRoomIndex >= 0){
+            roomToSpawn = roomsList.prefabs[lastRoomIndex];
+        }
+        var room = roomSpawner.SpawnRoom(roomToSpawn);
         yield return new WaitForSeconds(doorOpenWait);
         room.doorway.GetDoor().Open();
     }

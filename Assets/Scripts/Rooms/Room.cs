@@ -37,7 +37,7 @@ public class Room : MonoBehaviour
     public void Activate()
     {
         SpawnLoot();
-        roomTraps.Activate();
+        roomTraps?.Activate();
         foreach (var obj in gameObjectsToActivate){
             obj.SetActive(true);
         }
@@ -54,7 +54,13 @@ public class Room : MonoBehaviour
     void OnValidate()
     {
         if (roomName.IsNullOrWhitespace()){
-            roomName = gameObject.name;
+            CopyGameobjectName();
         }
+    }
+
+    [Button]
+    void CopyGameobjectName()
+    {
+        gameObject.name = roomName;
     }
 }

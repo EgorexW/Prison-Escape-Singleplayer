@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class PrefabList : MonoBehaviour
+
+[CreateAssetMenu(menuName = "Prefab List", fileName = "Prefab List", order = 0)]
+public class PrefabList : ScriptableObject
 {
     public GameObject[] prefabs;
 
     public int GetPrefabIndex(GameObject prefab)
     {
         for (int i = 0; i < prefabs.Length; i++){
-            if (prefab == prefabs[i]){
+            if (prefab.GetInstanceID() == prefabs[i].GetInstanceID()){
                 return i;
             }
         }

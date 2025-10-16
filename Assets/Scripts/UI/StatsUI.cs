@@ -22,6 +22,7 @@ public class StatsUI : UIElement
         lines.Add($"Normal Damage Taken: {Mathf.Round(stats.normalDamageTaken)}");
         lines.Add($"Pernament Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}");
         lines.Add($"Meters Walked: {Mathf.Round(stats.metersWalked)}");
+        lines.Add($"Unique Rooms Entered: {stats.uniqueRoomsEntered}");
         text.text = string.Join("\n", lines);
     }
 }

@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290317b8ab0ec40d48886e4c21322868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsList: {fileID: 11400000, guid: 3e9fed4ea53044f2d904b0904fb2706d, type: 2}
   defaultRoomToSpawn: {fileID: 5373328976349116117, guid: 1bef5240361d54cd68cf98d39c558b07,
     type: 3}
   roomSpawner: {fileID: 1551404146}

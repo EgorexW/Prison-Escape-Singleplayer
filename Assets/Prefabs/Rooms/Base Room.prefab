@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8832223609097871125}
   - component: {fileID: 7098217685295605735}
-  - component: {fileID: 9162758491901375537}
   - component: {fileID: 6747668267694923291}
   m_Layer: 11
   m_Name: Level Node
@@ -55,19 +54,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 3, z: 5}
   m_Center: {x: 0, y: 1.5, z: 0}
---- !u!114 &9162758491901375537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992461393303870044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e587f8836f07475288c69de4a28a64c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 4856611922499971837}
 --- !u!114 &6747668267694923291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +81,7 @@ GameObject:
   - component: {fileID: 3478086276770758984}
   - component: {fileID: 4856611922499971837}
   - component: {fileID: -4208774426602653737}
+  - component: {fileID: 4033194923736956025}
   m_Layer: 0
   m_Name: Base Room
   m_TagString: Untagged
@@ -202,6 +189,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b858b3dc7fa4bbb847f280c73c540e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4033194923736956025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270871401134883441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed42b0c7ac543d6a6fc38a1a06510db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  origin: {fileID: 2270871401134883441}
 --- !u!1 &3302826684301696424
 GameObject:
   m_ObjectHideFlags: 0

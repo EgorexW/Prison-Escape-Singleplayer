@@ -2,11 +2,25 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] PrefabList roomsList;
+    
     void Start()
     {
         OnStartGame();
         GameManager.i.gameEnder.beforeLoseGame.AddListener(BeforeLoseGame);
         GameManager.i.gameEnder.beforeWinGame.AddListener(BeforeWinGame);
+        GameManager.i.roomsManager.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
+    }
+
+    void OnPlayerEnteredRoom(Room room)
+    {
+        var originReferenceHolder = room.GetComponent<OriginReferenceHolder>();
+        if (originReferenceHolder == null){
+            Debug.LogWarning("Room origin reference holder is null", room);
+            return;
+        }
+        var roomIndex = roomsList.GetPrefabIndex(originReferenceHolder.origin);
+        PlayerPrefs.SetInt("Last Room Entered", roomIndex);
     }
 
     void BeforeWinGame()

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStats : MonoBehaviour
@@ -7,8 +8,10 @@ public class GameStats : MonoBehaviour
     public float gameTime;
     public float normalDamageTaken;
     public float pernamentDamageTaken;
-
     public float metersWalked;
+    public int uniqueRoomsEntered;
+
+    HashSet<Room> roomsList = new HashSet<Room>();
 
     void Awake()
     {
@@ -24,6 +27,15 @@ public class GameStats : MonoBehaviour
         GameManager.i.gameEnder.beforeEndGame.AddListener(BeforeEndGame);
         GameManager.i.Player.playerHealth.Health.onDamage.AddListener(OnDamage);
         GameManager.i.Player.onMove.AddListener(OnMove);
+        GameManager.i.roomsManager.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
+    }
+
+    void OnPlayerEnteredRoom(Room arg0)
+    {
+        if (!roomsList.Add(arg0)){
+            return;
+        }
+        uniqueRoomsEntered++;
     }
 
     void OnMove(Vector3 arg0)
