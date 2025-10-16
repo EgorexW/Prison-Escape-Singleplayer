@@ -16891,7 +16891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12dcf2f3daca3422fb14646643083622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: {fileID: 0}
 --- !u!1 &2014609239
 GameObject:
   m_ObjectHideFlags: 0
@@ -17737,7 +17736,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 88.15776
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -19595,7 +19594,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 70
+  field of view: 88.15776
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
