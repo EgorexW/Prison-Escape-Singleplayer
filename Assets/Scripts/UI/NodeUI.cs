@@ -26,7 +26,7 @@ public class NodeUI : SerializedMonoBehaviour
             return;
         }
         image.sprite = discoveredSprite;
-        text.text = roomNode.room.Name;
+        text.text = roomNode.room.roomName;
         if (roomNode.room.doorway != null && roomNode.room.doorway.accessLevel != null){
             image.color = roomNode.room.doorway.accessLevel.color;
             return;

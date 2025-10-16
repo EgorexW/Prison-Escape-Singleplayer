@@ -1631,6 +1631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
+      propertyPath: roomName
+      value: Test Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
       propertyPath: traits.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1646,6 +1651,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bdb4157231a9a4999b9a4289163f3ad2,
         type: 2}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: lootSpawners.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'lootSpawners.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2658212848479667855}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: gameObjectsToActivate.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'gameObjectsToActivate.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5835558173946617069}
+    - target: {fileID: 4856611922499971837, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: 'gameObjectsToActivate.Array.data[1]'
+      value: 
+      objectReference: {fileID: 9084814270181696621}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: roomName
@@ -1912,6 +1942,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67da5399d537440d4b7c4f3e6bdfe631, type: 3}
+--- !u!114 &2658212848479667855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4994304845324640538, guid: 67da5399d537440d4b7c4f3e6bdfe631,
+    type: 3}
+  m_PrefabInstance: {fileID: 7038153475243698069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d02858a8244dcfa08e7e2977dc67ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2986270102173155675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5250589813214701262, guid: 67da5399d537440d4b7c4f3e6bdfe631,

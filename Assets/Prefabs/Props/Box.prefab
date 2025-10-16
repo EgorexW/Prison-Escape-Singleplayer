@@ -735,6 +735,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 4994304845324640538, guid: 67da5399d537440d4b7c4f3e6bdfe631,
         type: 3}
+      propertyPath: spawnOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994304845324640538, guid: 67da5399d537440d4b7c4f3e6bdfe631,
+        type: 3}
       propertyPath: randomRotation
       value: 0
       objectReference: {fileID: 0}

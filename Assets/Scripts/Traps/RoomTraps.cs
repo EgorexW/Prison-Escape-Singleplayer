@@ -18,7 +18,7 @@ public class RoomTraps : MonoBehaviour
 
     ITrap trap;
 
-    void Start()
+    public void Activate()
     {
         doorwayConfig.onOpen.AddListener(ActivateTrap);
         if (Random.value < trapConfig.trapChance){

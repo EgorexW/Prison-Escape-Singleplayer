@@ -1,3 +1,4 @@
+using System;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -6,13 +7,11 @@ using UnityEngine.Serialization;
 
 public class DoorwayConfig : MonoBehaviour
 {
-    [FoldoutGroup("References")] [SerializeField] TextMeshPro nameText;
     [FoldoutGroup("References")] [Required] [SerializeField] KeycardReader[] keycardReaders;
     [FoldoutGroup("References")] [Required] [SerializeField] DoorLock[] doorLocks;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject strongDoor;
-
-    [FormerlySerializedAs("name")] [SerializeField] public string roomName = "Room";
+    
     [SerializeField] public AccessLevel accessLevel;
     [SerializeField] DoorType doorType = DoorType.Weak;
 
@@ -33,9 +32,6 @@ public class DoorwayConfig : MonoBehaviour
     [Button]
     void ApplyConfig()
     {
-        if (nameText != null){
-            nameText.text = roomName;
-        }
         foreach (var keycardReader in keycardReaders){
             keycardReader.gameObject.SetActive(accessLevel != null);
             keycardReader.accessLevel = accessLevel;
@@ -43,6 +39,15 @@ public class DoorwayConfig : MonoBehaviour
         foreach (var doorLock in doorLocks) doorLock.unlocked = accessLevel == null;
         weakDoor.SetActive(doorType == DoorType.Weak);
         strongDoor.SetActive(doorType == DoorType.Strong);
+    }
+
+    public Door GetDoor()
+    {
+        return doorType switch{
+            DoorType.Weak => weakDoor.GetComponentInChildren<Door>(),
+            DoorType.Strong => strongDoor.GetComponentInChildren<Door>(),
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 }
 

@@ -111,9 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomSpawnConfig: {fileID: 6592088616064679851}
+  lootSpawnersParent: {fileID: 5994038156301474601}
   doorway: {fileID: 0}
-  lootSpawners: []
   traits: []
+  onActivate:
+    m_PersistentCalls:
+      m_Calls: []
   discovered: 0
 --- !u!114 &6592088616064679851
 MonoBehaviour:

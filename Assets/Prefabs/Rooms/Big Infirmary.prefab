@@ -339,6 +339,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cf8988136f0e4448ea0987372e77dcdd,
         type: 2}
+    - target: {fileID: 3335068998611854170, guid: b537e82eaad9b40a28773bc20362040b,
+        type: 3}
+      propertyPath: lootSpawners.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335068998611854170, guid: b537e82eaad9b40a28773bc20362040b,
+        type: 3}
+      propertyPath: 'lootSpawners.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7021299028120680475}
     - target: {fileID: 4495459930150016003, guid: b537e82eaad9b40a28773bc20362040b,
         type: 3}
       propertyPath: roomName
@@ -703,6 +713,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67da5399d537440d4b7c4f3e6bdfe631, type: 3}
+--- !u!114 &7021299028120680475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4994304845324640538, guid: 67da5399d537440d4b7c4f3e6bdfe631,
+    type: 3}
+  m_PrefabInstance: {fileID: 2612087301722593537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d02858a8244dcfa08e7e2977dc67ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7845877560629641167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5250589813214701262, guid: 67da5399d537440d4b7c4f3e6bdfe631,

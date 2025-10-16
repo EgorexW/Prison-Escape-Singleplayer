@@ -10,7 +10,7 @@ public class PowerEffects : MonoBehaviour
 
     void Awake()
     {
-        mainPowerSystem.OnMinimalPowerChanged.AddListener(OnMinimalPowerChanged);
+        mainPowerSystem.onMinimalPowerChanged.AddListener(OnMinimalPowerChanged);
     }
 
     void OnMinimalPowerChanged()

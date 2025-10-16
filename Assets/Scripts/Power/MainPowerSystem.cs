@@ -8,18 +8,16 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
 {
     [SerializeField] List<PowerLevel> startPowerDistribution;
     [SerializeField] List<SubPowerSystem> subPowerSystems;
-    [SerializeField] float timeBetweenPowerLoss = 90f;
+    [SerializeField] PowerLevel defaultPower = PowerLevel.NoPower;
 
     [FoldoutGroup("Events")] public UnityEvent onPowerChanged = new();
 
     [FoldoutGroup("Events")] public UnityEvent onMinimalPowerChanged = new();
 
-    [ShowInInspector] [BoxGroup("Debug")] float lastPowerLossTime;
     public static MainPowerSystem i{ get; private set; }
 
     public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
     [ShowInInspector] [BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
-    public UnityEvent OnMinimalPowerChanged => onMinimalPowerChanged;
 
     void Awake()
     {
@@ -33,17 +31,9 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
 
     void Start()
     {
-        lastPowerLossTime = Time.time;
         startPowerDistribution.Shuffle();
         for (var i = 0; i < subPowerSystems.Count; i++)
             ChangePower(subPowerSystems[i], startPowerDistribution[i % startPowerDistribution.Count]);
-    }
-
-    void Update()
-    {
-        if (Time.time - lastPowerLossTime > timeBetweenPowerLoss){
-            LosePower();
-        }
     }
 
     public UnityEvent OnPowerChanged => onPowerChanged;
@@ -58,25 +48,23 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
                 }
                 return subSystemPower;
             }
-        Debug.LogError($"Device not in any subsystem bounds {pos}");
-        return PowerLevel.NoPower;
+        Debug.LogWarning($"Device not in any subsystem bounds {pos}");
+        return defaultPower;
     }
 
 
     public void ChangePower(SubPowerSystem targetedSubSystem, PowerLevel targetPower)
     {
-        if (targetPower != PowerLevel.NoPower){
-            lastPowerLossTime = Time.time;
-        }
         targetedSubSystem.power = targetPower;
         onPowerChanged.Invoke();
     }
 
-    public void ChangePower(Vector3 targetedSubSystem, PowerLevel targetPowerLevel)
+    public void ChangePower(Vector3 targetedPos, PowerLevel targetPowerLevel)
     {
-        var subSystem = subPowerSystems.FirstOrDefault(subSystem => subSystem.InBounds(targetedSubSystem));
+        var subSystem = subPowerSystems.FirstOrDefault(subSystem => subSystem.InBounds(targetedPos));
         if (subSystem == null){
-            Debug.LogError("No subsystem found at position " + targetedSubSystem);
+            Debug.LogWarning("No subsystem found at position " + targetedPos);
+            return;
         }
         ChangePower(subSystem, targetPowerLevel);
     }
@@ -86,12 +74,5 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
         GlobalMinimalPower = minimalPower;
         onPowerChanged.Invoke();
         onMinimalPowerChanged.Invoke();
-    }
-
-    void LosePower()
-    {
-        var targetedSubSystem = SubPowerSystems.Random();
-        ChangePower(targetedSubSystem, PowerLevel.NoPower);
-        lastPowerLossTime = Time.time;
     }
 }

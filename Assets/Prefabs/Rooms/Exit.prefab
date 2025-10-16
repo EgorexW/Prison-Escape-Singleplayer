@@ -677,11 +677,6 @@ PrefabInstance:
       objectReference: {fileID: 1997650875718029746}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
-      propertyPath: 'doorLocks.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
-        type: 3}
       propertyPath: keycardReaders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -690,11 +685,6 @@ PrefabInstance:
       propertyPath: 'keycardReaders.Array.data[0]'
       value: 
       objectReference: {fileID: 4271412809592114995}
-    - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
-        type: 3}
-      propertyPath: 'keycardReaders.Array.data[1]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7098217685295605735, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_Size.x
@@ -726,7 +716,6 @@ PrefabInstance:
     - {fileID: 6243429390251162788, guid: cb2172d96db4546208651350f1b99834, type: 3}
     - {fileID: 5530960989700522317, guid: cb2172d96db4546208651350f1b99834, type: 3}
     - {fileID: 1972970463970247978, guid: cb2172d96db4546208651350f1b99834, type: 3}
-    - {fileID: 6708807260275625954, guid: cb2172d96db4546208651350f1b99834, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4596076005008082806, guid: cb2172d96db4546208651350f1b99834,
         type: 3}

@@ -3,48 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Room : MonoBehaviour
 {
     [BoxGroup("References")][Required][SerializeField] RoomSpawnConfig roomSpawnConfig;
-    [SerializeField] public DoorwayConfig doorway;
+    [BoxGroup("References")] [Required] [SerializeField] GameObject lootSpawnersParent;
     
-    [SerializeField] List<LootSpawner> lootSpawners;
+    [SerializeField] public DoorwayConfig doorway;
+    [SerializeField] public RoomTraps roomTraps;
+
+    [SerializeField] List<GameObject> gameObjectsToActivate;
+
+    List<LootSpawner> LootSpawners => new(lootSpawnersParent.GetComponentsInChildren<LootSpawner>());
     
     [SerializeField] public RoomTrait[] traits;
     
     [FoldoutGroup("Events")] public UnityEvent onActivate;
     
     public bool discovered;
-    public string Name => doorway.roomName;
+    public string roomName;
 
     public void Spawn(Vector3 position, Vector3 dir)
     {
         roomSpawnConfig.Spawn(position, dir);
+            foreach (var obj in gameObjectsToActivate){
+                obj.SetActive(false);
+            }
     }
 
     public void Activate()
     {
         SpawnLoot();
+        roomTraps.Activate();
+        foreach (var obj in gameObjectsToActivate){
+            obj.SetActive(true);
+        }
         onActivate?.Invoke();
     }
 
     void SpawnLoot()
     {
-        var foundLootSpawners = GetComponentsInChildren<LootSpawner>().ToList();
-        if (lootSpawners.Count != foundLootSpawners.Count){
-            Debug.LogWarning("Found different amount of LootSpawners than assigned in inspector, updating list", this);
-            lootSpawners = foundLootSpawners;
-        }
-        foreach (var spawner in lootSpawners){
+        foreach (var spawner in LootSpawners){
             spawner.SpawnGameObjects();
         }
     }
 
-    void Reset()
+    void OnValidate()
     {
-        lootSpawners = GetComponentsInChildren<LootSpawner>().ToList();
+        if (roomName.IsNullOrWhitespace()){
+            roomName = gameObject.name;
+        }
     }
 }

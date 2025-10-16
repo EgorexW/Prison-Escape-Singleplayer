@@ -1,18 +1,27 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LootSpawner : MonoBehaviour
 {
     [SerializeField] SpawnTable spawnTable;
-    [SerializeField] [MinMaxSlider(0, "@SpawnPoints.Count")] Vector2Int spawnNr = new(1, 1);
+    [SerializeField] [MinMaxSlider(0, "@GetSpawnPoints().Count")] Vector2Int spawnNr = new(1, 1);
     [SerializeField] bool randomRotation = true;
+    [SerializeField] bool spawnOnStart = false;
 
-    List<Transform> SpawnPoints{
-        get{
-            var points = new List<Transform>(GetComponentsInChildren<Transform>());
-            points.Remove(transform);
-            return points;
+    List<Transform> GetSpawnPoints()
+    {
+        var points = new List<Transform>(GetComponentsInChildren<Transform>());
+        points.Remove(transform);
+        return points;
+    }
+
+    void Start()
+    {
+        if (spawnOnStart){
+            SpawnGameObjects();
         }
     }
 
@@ -23,8 +32,8 @@ public class LootSpawner : MonoBehaviour
             return;
         }
         var roll = General.RandomRange(spawnNr);
-        roll = Mathf.Min(roll, SpawnPoints.Count);
-        var availibleSpawnPoints = SpawnPoints;
+        roll = Mathf.Min(roll, GetSpawnPoints().Count);
+        var availibleSpawnPoints = GetSpawnPoints();
         for (var i = 0; i < roll; i++){
             var spawnedObject = spawnTable.GetGameObject();
             var spawnPoint = availibleSpawnPoints.Random();
