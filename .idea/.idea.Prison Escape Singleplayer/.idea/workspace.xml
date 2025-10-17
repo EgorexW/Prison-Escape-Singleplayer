@@ -9,9 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Emp Grenade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Weapons/Emp Grenade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/PlayerSpawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/PlayerSpawn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Basic.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Administration Basic.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +385,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
     <MESSAGE value="Complete Rework of the progression" />
     <MESSAGE value="Notes, and more progression changes, guard pass" />
     <MESSAGE value="Builds" />
@@ -407,7 +409,8 @@
     <MESSAGE value="Fixed grenade double door damage" />
     <MESSAGE value="Keycard stealing seems to work" />
     <MESSAGE value="Ascensions mostly working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ascensions mostly working" />
+    <MESSAGE value="Sounds don't play while loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sounds don't play while loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

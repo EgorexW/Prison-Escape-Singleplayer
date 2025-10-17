@@ -52,7 +52,7 @@ public class GameInit : MonoBehaviour
         spawn.Spawn(player);
         levelNodes.ResetNodes();
         onFinish.Invoke();
-        GameManager.i.gameTimeManager.startTime = Time.time;
+        GameManager.i.gameTimeManager.StartGame();
 
         Debug.Log("Corridors generated, player spawned, game init finished", this);
     }

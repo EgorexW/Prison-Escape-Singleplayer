@@ -8,7 +8,7 @@ public class GameTimeManager : MonoBehaviour
     [SerializeField] Damage outOfTimeDamage = new(2, 1);
 
     [FoldoutGroup("Events")] public UnityEvent onOutOfTime;
-    public float startTime;
+    float startTime = Mathf.Infinity;
 
     bool outOfTime;
     [ShowInInspector] public float GameTime => Time.time - startTime;
@@ -34,5 +34,10 @@ public class GameTimeManager : MonoBehaviour
     public void ChangeTime(float gameTimeIncrease)
     {
         gameTimeMinutes += gameTimeIncrease / 60f;
+    }
+
+    public void StartGame()
+    {
+        startTime = Time.time;
     }
 }

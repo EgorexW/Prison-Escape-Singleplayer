@@ -181,8 +181,8 @@ MonoBehaviour:
   timeToExplode: 3
   radius: 3
   damage:
-    damage: 100
-    permanentDamage: 100
+    lightDamage: 50
+    heavyDamage: 50
     damageType: 2
   onExplode:
     m_PersistentCalls:
