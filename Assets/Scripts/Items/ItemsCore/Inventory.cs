@@ -49,4 +49,14 @@ public class Inventory : MonoBehaviour
         size += by;
         OnInventoryChange.Invoke();
     }
+
+    public void SetSize(int newSize)
+    {
+        if (newSize <= items.Count){
+            Debug.LogWarning("Can't change the size", this);
+            return;
+        }
+        size = newSize;
+        OnInventoryChange.Invoke();
+    }
 }

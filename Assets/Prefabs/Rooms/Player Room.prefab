@@ -1626,6 +1626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
+      propertyPath: trapNrMod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
       propertyPath: trapChance
       value: 0
       objectReference: {fileID: 0}

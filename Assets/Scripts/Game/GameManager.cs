@@ -18,6 +18,7 @@ public class GameManager : SerializedMonoBehaviour
     [BoxGroup("References")] [Required] public FacilityAnnouncements facilityAnnouncements;
     [BoxGroup("References")] [Required] public GameEnder gameEnder;
     [BoxGroup("References")][Required] public RoomsManager roomsManager;
+    [BoxGroup("References")][Required] public TrapsManager trapsManager;
 
     public static GameManager i{ get; private set; }
     public Player Player => player;

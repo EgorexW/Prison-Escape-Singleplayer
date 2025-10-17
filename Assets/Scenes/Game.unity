@@ -10834,6 +10834,7 @@ MonoBehaviour:
   levelNodes: {fileID: 453294468}
   roomGenerator: {fileID: 567017150}
   player: {fileID: 3097095111899513422}
+  ascensions: {fileID: 1485665985}
   corridorSpawners:
   - {fileID: 1957501034}
   - {fileID: 1156029363}
@@ -10876,7 +10877,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1485665984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &895719621
@@ -11305,6 +11307,7 @@ GameObject:
   - component: {fileID: 1012652406}
   - component: {fileID: 1012652407}
   - component: {fileID: 1012652408}
+  - component: {fileID: 1012652409}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -11340,6 +11343,7 @@ MonoBehaviour:
   facilityAnnouncements: {fileID: 1281685159}
   gameEnder: {fileID: 1012652407}
   roomsManager: {fileID: 1012652408}
+  trapsManager: {fileID: 1012652409}
 --- !u!4 &1012652404
 Transform:
   m_ObjectHideFlags: 0
@@ -11430,6 +11434,19 @@ MonoBehaviour:
   onPlayerEnteredRoom:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1012652409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012652402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004af11d8c1b4163bcf3c93c00d9b878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trapChance: 0.5
 --- !u!1 &1029292703
 GameObject:
   m_ObjectHideFlags: 0
@@ -14056,6 +14073,117 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1466414871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1485665983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1485665984}
+  - component: {fileID: 1485665985}
+  m_Layer: 0
+  m_Name: Ascensions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1485665984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485665983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1831443281}
+  m_Father: {fileID: 893523871}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1485665985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485665983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06de5db863a9b4ed3863b4d31ff0f10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effects:
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0.25
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 5
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 1831443280}
+  - gameTimeMinutesReduction: 4
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 99
+      heavyDamage: 49
+      damageType: 1
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 2
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 0
+    inventorySizeReduction: 0
+    trapChanceIncrease: 5
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  corridorTrapsSpawner: {fileID: 1957501034}
+  tmpAscensionsNr: 7
 --- !u!1 &1529457905
 GameObject:
   m_ObjectHideFlags: 0
@@ -15771,6 +15899,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1823938947}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1831443279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831443281}
+  - component: {fileID: 1831443280}
+  m_Layer: 0
+  m_Name: Power Loss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1831443280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831443279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1117efff8f994c97b1be673f2952ee1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenPowerLoss: 90
+--- !u!4 &1831443281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831443279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1485665984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1851931022
 PrefabInstance:
   m_ObjectHideFlags: 0

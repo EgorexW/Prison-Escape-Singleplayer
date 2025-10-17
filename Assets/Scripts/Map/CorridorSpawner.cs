@@ -5,7 +5,7 @@ using UnityEngine;
 public class CorridorSpawner : MonoBehaviour
 {
     [SerializeField] SpawnTable spawnTable;
-    [SerializeField] Vector2Int spawnCount = new(5, 10);
+    [SerializeField] public Vector2Int spawnCount = new(5, 10);
 
     [BoxGroup("Spawn Conditions")] [SerializeField] CorridorNodeType nodeTypesAllowed;
     [BoxGroup("Spawn Conditions")] [SerializeField] bool placeOnConnection;

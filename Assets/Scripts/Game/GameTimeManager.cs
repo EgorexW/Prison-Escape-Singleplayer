@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class GameTimeManager : MonoBehaviour
 {
-    [SerializeField] float gameTimeMinutes = 8f;
+    [SerializeField] public float gameTimeMinutes = 8f;
     [SerializeField] Damage outOfTimeDamage = new(2, 1);
 
     [FoldoutGroup("Events")] public UnityEvent onOutOfTime;

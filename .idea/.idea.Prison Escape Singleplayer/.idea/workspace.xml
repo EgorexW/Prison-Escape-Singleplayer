@@ -8,36 +8,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Steal Card Trap.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Steal Card Trap.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menus.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/Ascensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/Ascensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraMenuMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraMenuMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomNameDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RoomNameDisplay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Player Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Storage.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTriggers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTriggers.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabListIndexHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabListIndexHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/ItemsCore/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/CorridorSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/CorridorSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/GameInit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/SpawnTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SpawnTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/SpawnTable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SpawnTable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Interact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Interact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Interact.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Interact.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Items.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Items.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/DevInputPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/DevInputPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Player.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerInputPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerInputPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerInputPresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerInputPresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabList.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabListIndexHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabListIndexHolder.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/RoomTraps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/RoomTraps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/TrapsConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/TrapsConfig.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,13 +166,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/CameraMenuMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/Pipeline/UniversalRenderPipelineGlobalSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/PlayAudio.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/CallbackTriggerCollider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabListIndexHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI/UIElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RuntimePreviewGenerator/RuntimePreviewGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -165,24 +183,23 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Traps/Corridor Fire Trap.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RoomBackground.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RoomNameDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/BasicRigidBodyPush.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/PlayerControllerInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityTrigger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityTriggers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTriggers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/Secret05.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/WinGameItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" root0="FORCE_HIGHLIGHTING" />
@@ -220,12 +237,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/RoomGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Items.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Character_Movement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/DevInputPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerInputPresenter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player/PlayerUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Items.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/DevInputPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerInputPresenter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerSoundEffects.cs" root0="FORCE_HIGHLIGHTING" />
@@ -233,12 +252,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Power/MainPowerSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Power/PowerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Power/PowerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PrefabListIndexHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/CeilingLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/DestroyLootSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/PoweredDevice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomTrait.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedItems.cs" root0="FORCE_HIGHLIGHTING" />
@@ -407,7 +426,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add UIInputHandler to manage settings input and toggle UI state" />
     <MESSAGE value="Add SettingsUI to manage mouse sensitivity settings" />
     <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
     <MESSAGE value="Complete Rework of the progression" />
@@ -432,7 +450,8 @@
     <MESSAGE value="Prefab list reference holders hopefully work now" />
     <MESSAGE value="v 0.3.0" />
     <MESSAGE value="Fixed grenade double door damage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed grenade double door damage" />
+    <MESSAGE value="Keycard stealing seems to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keycard stealing seems to work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
