@@ -16,7 +16,7 @@ class PlayerUI : MonoBehaviour
 
     [SerializeField] float announcmentShowTime = 5f;
 
-    void Awake()
+    void Start()
     {
         player.onInventoryChange.AddListener(ShowInventory);
         player.playerHealth.onHealthChange.AddListener(ShowHealth);
@@ -24,10 +24,6 @@ class PlayerUI : MonoBehaviour
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
         announcementText.gameObject.SetActive(false);
         player.playerHealth.Health.onDamage.AddListener(ShowDamage);
-    }
-
-    void Start()
-    {
         GameManager.i.facilityAnnouncements.onAnnouncement.AddListener(ShowAnnouncement);
         ShowHealth();
         ShowInventory();

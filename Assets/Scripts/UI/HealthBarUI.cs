@@ -51,7 +51,8 @@ public class HealthBarUI : MonoBehaviour
 
     public void ShowDamage(Damage damage, Health health)
     {
-        if (health.damagedBy.HasFlag(damage.damageType)){
+        if (health.damagedBy.HasFlag(damage.damageType))
+        {
             return;
         }
         var icon = resistanceIcons.Find(ui => ui.damageType == damage.damageType);

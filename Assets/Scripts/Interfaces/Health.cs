@@ -44,18 +44,18 @@ public struct Health
         if (!ignoreImmunities){
             if (damagedBy == 0){
                 Debug.LogWarning("This entity is invulnerable");
-                return;
+                damage.SetZero();
             }
             // Debug.Log($"Damaged by {damage.damageType}, damageable by {damagedBy}");
-            if ((damagedBy & damage.damageType) == 0){
-                return;
+            else if ((damagedBy & damage.damageType) == 0){
+                damage.SetZero();
             }
         }
-        currentHealth -= damage.damage;
-        maxHealth -= damage.pernamentDamage;
+        onDamage.Invoke(damage);
+        currentHealth -= damage.lightDamage;
+        maxHealth -= damage.heavyDamage;
         maxHealth = Mathf.Clamp(maxHealth, 0, absoluteMaxHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        onDamage.Invoke(damage);
     }
 }
 

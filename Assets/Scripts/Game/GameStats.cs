@@ -45,8 +45,8 @@ public class GameStats : MonoBehaviour
 
     void OnDamage(Damage damage)
     {
-        normalDamageTaken += Mathf.Max(damage.damage, 0);
-        pernamentDamageTaken += Mathf.Max(damage.pernamentDamage, 0);
+        normalDamageTaken += Mathf.Max(damage.lightDamage, 0);
+        pernamentDamageTaken += Mathf.Max(damage.heavyDamage, 0);
     }
 
     void BeforeEndGame()

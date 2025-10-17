@@ -52,7 +52,7 @@ public class Shooting : MonoBehaviour
         Instantiate(damagable != null ? damagedEffect : notDamagedEffect, hitPos, Quaternion.identity);
         damagable?.Damage(damage);
         if (log){
-            Debug.Log("Dealt " + damage.damage + " damage to " + damagable, hitTransform.gameObject);
+            Debug.Log("Dealt " + damage.lightDamage + " damage to " + damagable, hitTransform.gameObject);
         }
     }
 }

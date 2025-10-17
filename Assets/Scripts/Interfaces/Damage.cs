@@ -6,30 +6,30 @@ using UnityEngine.Serialization;
 [InlineProperty]
 public struct Damage
 {
-    public float damage;
-    [FormerlySerializedAs("permanentDamage")] public float pernamentDamage;
+    [FormerlySerializedAs("damage")] public float lightDamage;
+    [FormerlySerializedAs("pernamentDamage")] [FormerlySerializedAs("permanentDamage")] public float heavyDamage;
     public DamageType damageType;
 
-    public bool IsDamage => damage > 0 || pernamentDamage > 0;
-    public bool IsHeal => damage < 0 || pernamentDamage < 0;
-    public bool IsZero => damage == 0 && pernamentDamage == 0;
+    public bool IsDamage => lightDamage > 0 || heavyDamage > 0;
+    public bool IsHeal => lightDamage < 0 || heavyDamage < 0;
+    public bool IsZero => lightDamage == 0 && heavyDamage == 0;
 
     public void Invert()
     {
-        damage = -damage;
-        pernamentDamage = -pernamentDamage;
+        lightDamage = -lightDamage;
+        heavyDamage = -heavyDamage;
     }
 
-    public Damage(float damage, float pernamentDamage = 0, DamageType damageType = DamageType.Physical)
+    public Damage(float lightDamage, float heavyDamage = 0, DamageType damageType = DamageType.Physical)
     {
-        this.damage = damage;
-        this.pernamentDamage = pernamentDamage;
+        this.lightDamage = lightDamage;
+        this.heavyDamage = heavyDamage;
         this.damageType = damageType;
     }
 
     public static implicit operator float(Damage damage)
     {
-        return damage.damage;
+        return damage.lightDamage;
     }
 
     public static implicit operator Damage(float damage)
@@ -39,14 +39,20 @@ public struct Damage
 
     public static Damage operator *(Damage initialDamage, float value)
     {
-        return new Damage(initialDamage.damage * value, initialDamage.pernamentDamage * value,
+        return new Damage(initialDamage.lightDamage * value, initialDamage.heavyDamage * value,
             initialDamage.damageType);
         ;
     }
 
     public override string ToString()
     {
-        return $"Damage: {damage} Permanent Damage: {pernamentDamage}";
+        return $"Light Damage: {lightDamage}, Heavy Damage: {heavyDamage}";
+    }
+
+    public void SetZero()
+    {
+        lightDamage = 0;
+        heavyDamage = 0;
     }
 }
 
