@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Administration Admin
+  m_Name: Mask
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: 92e00a110ae894a5e8706f4f667994d1, type: 2}
+    Object: {fileID: 459931524417792899, guid: cbe9998e2387e43b98dbc7f3f6cfd911, type: 3}
   - value: 1
-    Object: {fileID: 11400000, guid: a06579107cbf0413281b31bf89b2f7a0, type: 2}
-  - value: 2
-    Object: {fileID: 11400000, guid: 3ed76247c3ce54455aeadcaeab4120b9, type: 2}
+    Object: {fileID: 5076881193181250594, guid: 8ecd79fc8c189472fae3d562924b43af,
+      type: 3}

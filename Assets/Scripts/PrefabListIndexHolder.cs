@@ -9,7 +9,8 @@ public class PrefabListIndexHolder : MonoBehaviour
     
     public int prefabListIndex;
 
-    void OnValidate()
+    [Button]
+    void SaveIndex()
     {
         prefabListIndex = prefabList.GetPrefabIndex(gameObject);
     }

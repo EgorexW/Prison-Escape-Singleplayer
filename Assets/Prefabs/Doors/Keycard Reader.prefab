@@ -670,7 +670,7 @@ MonoBehaviour:
   electrocutionDamage:
     damage: 20
     pernamentDamage: 10
-    damageType: 1
+    damageType: 2
   baseElectrocutionChance: 0
   minimalPowerElectrocutionChance: 0.5
   onUnlock:

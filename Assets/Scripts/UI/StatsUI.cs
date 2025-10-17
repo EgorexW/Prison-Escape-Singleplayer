@@ -19,8 +19,8 @@ public class StatsUI : UIElement
         }
         var lines = new List<string>();
         lines.Add($"Game Time: {TimeSpan.FromSeconds(stats.gameTime):hh\\:mm\\:ss}");
-        lines.Add($"Normal Damage Taken: {Mathf.Round(stats.normalDamageTaken)}");
-        lines.Add($"Pernament Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}");
+        lines.Add($"Light Damage Taken: {Mathf.Round(stats.normalDamageTaken)}");
+        lines.Add($"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}");
         lines.Add($"Meters Walked: {Mathf.Round(stats.metersWalked)}");
         lines.Add($"Unique Rooms Entered: {stats.uniqueRoomsEntered}");
         text.text = string.Join("\n", lines);

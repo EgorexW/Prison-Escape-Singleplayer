@@ -277,17 +277,17 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   damage:
     damage: 0
-    permanentDamage: 0
+    pernamentDamage: 0
     damageType: 0
   heal:
-    damage: 40
-    permanentDamage: 0
+    damage: 50
+    pernamentDamage: 0
     damageType: 0
   effect:
     duration: 0
     healPerSecond:
       damage: 0
-      permanentDamage: 0
+      pernamentDamage: 0
       damageType: 0
     staminaPerSecond: 0
     endTime: 0

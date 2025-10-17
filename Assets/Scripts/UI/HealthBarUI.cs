@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
@@ -9,11 +13,24 @@ public class HealthBarUI : MonoBehaviour
     [Required] [SerializeField] Slider maxHealthSlider;
     [Required] [SerializeField] TextMeshProUGUI text;
 
-    [Required] [SerializeField] GameObject maskIcon;
+    [Required] [SerializeField] Image resistanceIcon;
+
+    [SerializeField] List<ResistanceUI> resistanceIcons;
+    
+    [SerializeField] float showIconTime = 1;
+
+    float lastResistanceSpriteTime;
 
     void Awake()
     {
-        maskIcon.SetActive(false);
+        resistanceIcon.enabled = false;
+    }
+
+    void Update()
+    {
+        if (Time.time - lastResistanceSpriteTime > showIconTime){
+            resistanceIcon.enabled = false;
+        }
     }
 
     public void SetHealth(Health health)
@@ -34,14 +51,25 @@ public class HealthBarUI : MonoBehaviour
 
     public void ShowDamage(Damage damage, Health health)
     {
-        // TODO Hardcoded!
-        maskIcon.SetActive(false);
-        if (health.damagedBy.HasFlag(DamageType.Poison)){
+        if (health.damagedBy.HasFlag(damage.damageType)){
             return;
         }
-        if (damage.damageType != DamageType.Poison){
+        var icon = resistanceIcons.Find(ui => ui.damageType == damage.damageType);
+        var resistanceIconEnabled = icon != null;
+        if (!resistanceIconEnabled){
             return;
         }
-        maskIcon.SetActive(true);
+        resistanceIcon.enabled = true;
+        resistanceIcon.sprite = icon.sprite;
+        resistanceIcon.color = icon.color;
+        lastResistanceSpriteTime = Time.time;
     }
+}
+
+[Serializable]
+class ResistanceUI
+{
+    public DamageType damageType;
+    public Sprite sprite;
+    public Color color;
 }

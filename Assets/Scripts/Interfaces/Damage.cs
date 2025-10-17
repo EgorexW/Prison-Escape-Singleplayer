@@ -54,6 +54,6 @@ public struct Damage
 public enum DamageType
 {
     Physical = 1 << 0,
-    Emp = 1 << 1,
+    Electric = 1 << 1,
     Poison = 1 << 2
 }

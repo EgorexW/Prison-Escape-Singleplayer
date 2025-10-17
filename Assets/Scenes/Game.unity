@@ -10481,7 +10481,7 @@ GameObject:
   - component: {fileID: 843403671}
   - component: {fileID: 843403670}
   m_Layer: 5
-  m_Name: Poison Shield
+  m_Name: Resistance Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18785,7 +18785,15 @@ MonoBehaviour:
   healthSlider: {fileID: 7738903338247443199}
   maxHealthSlider: {fileID: 2646905403622087008}
   text: {fileID: 2051448884140987102}
-  maskIcon: {fileID: 843403668}
+  resistanceIcon: {fileID: 843403670}
+  resistanceIcons:
+  - damageType: 4
+    sprite: {fileID: 21300000, guid: fc72c40f37e60417e8cbd0636d99b498, type: 3}
+    color: {r: 0.17254902, g: 0.99607843, b: 0.30588236, a: 1}
+  - damageType: 2
+    sprite: {fileID: 21300000, guid: d02e45fb7a27c476885dd741510f0301, type: 3}
+    color: {r: 0, g: 0.879385, b: 1, a: 1}
+  showIconTime: 1
 --- !u!224 &3520929193604644373
 RectTransform:
   m_ObjectHideFlags: 0

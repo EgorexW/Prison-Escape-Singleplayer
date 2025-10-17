@@ -3,11 +3,11 @@ using UnityEngine;
 
 class TrapsConfig : MonoBehaviour
 {
-    [Range(0, 1)] public float trapChance = 0.3f;
-    [SerializeField] List<GameObject> trapPrefabs;
+    [Range(0, 1)] public float trapChance = 0.5f;
+    [SerializeField] SpawnTable spawnTable;
 
     public GameObject GetTrapPrefab()
     {
-        return trapPrefabs.Random();
+        return spawnTable.GetGameObject();
     }
 }

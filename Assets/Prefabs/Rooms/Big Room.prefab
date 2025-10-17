@@ -1111,6 +1111,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 279d758c52e874a10bcf3b852c10f007,
+        type: 2}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
       propertyPath: 'trapPrefabs.Array.data[0]'
       value: 
       objectReference: {fileID: 2525220935965901820, guid: 22e72592449d448dab974f7156c8a700,
