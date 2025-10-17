@@ -54,11 +54,13 @@ public partial class Player
         return transform;
     }
 
-    public void SetPos(Vector3 position)
+    public void Spawn(Vector3 position, Quaternion rotation)
     {
         // Debug.Log("SetPosLocal pos " + position);
         characterController.enabled = false;
         transform.position = position;
+        transform.rotation = rotation;
+        GetComponent<AudioListener>().enabled = true;
         characterController.enabled = true;
     }
 
