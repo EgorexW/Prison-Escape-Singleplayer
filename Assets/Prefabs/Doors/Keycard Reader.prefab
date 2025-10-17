@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 8171751159228679154}
   - component: {fileID: 834968016499202489}
   - component: {fileID: 9054909614210783226}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Keycard Reader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,8 +668,8 @@ MonoBehaviour:
   visuals: {fileID: 3499988669474318744}
   linkedReaders: []
   electrocutionDamage:
-    damage: 20
-    pernamentDamage: 10
+    lightDamage: 20
+    heavyDamage: 10
     damageType: 2
   baseElectrocutionChance: 0
   minimalPowerElectrocutionChance: 0.5
