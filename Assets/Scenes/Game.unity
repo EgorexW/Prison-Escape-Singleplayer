@@ -11373,8 +11373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTimeMinutes: 10
   outOfTimeDamage:
-    damage: 2
-    pernamentDamage: 1
+    lightDamage: 2
+    heavyDamage: 1
     damageType: 1
   onOutOfTime:
     m_PersistentCalls:
@@ -19401,7 +19401,7 @@ MonoBehaviour:
     currentHealth: 100
     maxHealth: 100
     absoluteMaxHealth: 100
-    damagedBy: 5
+    damagedBy: -1
     onDamage:
       m_PersistentCalls:
         m_Calls: []

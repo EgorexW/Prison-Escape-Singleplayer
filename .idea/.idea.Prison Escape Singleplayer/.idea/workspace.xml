@@ -8,10 +8,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Steal Card Trap.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Steal Card Trap.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menus.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CameraMenuMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CameraMenuMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomNameDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RoomNameDisplay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/DoorwayConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabList.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabListIndexHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PrefabListIndexHolder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/PrefabListIndexHolder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Traps/RoomTraps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Traps/RoomTraps.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +244,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedItems.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/TimeTrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HighlightSprite.cs" root0="FORCE_HIGHLIGHTING" />
@@ -380,7 +407,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Rename GameDirector and WorldInit classes to GameManager and GameInit; update references throughout the codebase" />
     <MESSAGE value="Add UIInputHandler to manage settings input and toggle UI state" />
     <MESSAGE value="Add SettingsUI to manage mouse sensitivity settings" />
     <MESSAGE value="Move SettingsUI and UIInputHandler scripts to the Scripts/UI directory; update workspace configuration" />
@@ -405,7 +431,8 @@
     <MESSAGE value="Renamed Damage and fixedup resistanceIcon" />
     <MESSAGE value="Prefab list reference holders hopefully work now" />
     <MESSAGE value="v 0.3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.3.0" />
+    <MESSAGE value="Fixed grenade double door damage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed grenade double door damage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class RoomTraps : MonoBehaviour
 {
-    [SerializeField] bool log;
+    [BoxGroup("References")] [Required] [SerializeField] Room room;
 
     [BoxGroup("References")] [Required] [SerializeField] TrapsConfig trapConfig;
 
@@ -32,24 +32,25 @@ public class RoomTraps : MonoBehaviour
         var obj = Instantiate(prefab, transform);
         // obj.transform.localRotation = Quaternion.identity;
         trap = obj.GetComponent<ITrap>();
+        trap.SetRoom(room);
     }
 
     void ActivateTrap()
     {
-        Log("Activating trap");
         trap?.Activate();
-    }
-
-    void Log(string message)
-    {
-        if (log){
-            Debug.Log(message, this);
-        }
     }
 }
 
 
 interface ITrap
 {
-    void Activate();
+    void Activate()
+    {
+        
+    }
+
+    void SetRoom(Room room)
+    {
+        
+    }
 }

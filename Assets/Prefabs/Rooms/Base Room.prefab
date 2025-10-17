@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ada991de47b42809828ca84b92e536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
+  room: {fileID: 4856611922499971837}
   trapConfig: {fileID: 3478086276770758984}
   doorwayConfig: {fileID: 6002658007307836836}
 --- !u!1 &5647092676599382500

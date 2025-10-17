@@ -11,6 +11,8 @@ public class KeycardReader : PoweredDevice, IInteractive
     [FormerlySerializedAs("effects")] [SerializeField] public KeycardReaderVisuals visuals;
     [SerializeField] List<KeycardReader> linkedReaders;
 
+    public bool stealCard;
+    
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
     [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
     [FoldoutGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
@@ -39,7 +41,7 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
-        if (keycard.OneUse){
+        if (keycard.OneUse || stealCard){
             player.RemoveItem(item);
             Destroy(item.gameObject);
         }

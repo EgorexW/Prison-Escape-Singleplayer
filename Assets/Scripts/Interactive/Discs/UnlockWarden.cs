@@ -12,7 +12,7 @@ public class UnlockWarden : FacilityTrigger
     {
         base.Activate();
         wardenReader.accessLevel = newAccessLevel;
-        wardenReader.visuals?.UpdateAccessLevel();
+        wardenReader.visuals?.UpdateVisual();
         wardenReader.electrocutionDamage = newDamage;
         wardenReader.baseElectrocutionChance = 1;
     }

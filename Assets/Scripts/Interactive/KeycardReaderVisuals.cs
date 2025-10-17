@@ -20,14 +20,16 @@ public class KeycardReaderVisuals : MonoBehaviour
 
     [BoxGroup("Sparks")] [SerializeField] ParticleSystem sparks;
 
+    [BoxGroup("Icons")] [SerializeField] GameObject stealCardIcon;
+
     string defaultText = "<color=yellow>----</color>";
-    float lastTextChangeTime;
+    float lastTextChangeTime = Mathf.NegativeInfinity;
 
     void Start()
     {
         keycardReader.onPowerChanged.AddListener(OnPowerChanged);
         OnPowerChanged(keycardReader.IsPowered());
-        UpdateAccessLevel();
+        UpdateVisual();
     }
 
     void Update()
@@ -37,15 +39,17 @@ public class KeycardReaderVisuals : MonoBehaviour
         }
     }
 
-    public void UpdateAccessLevel()
+    public void UpdateVisual()
     {
         defaultText = keycardReader.accessLevel.name;
         text.color = keycardReader.accessLevel.color;
+        stealCardIcon.SetActive(keycardReader.stealCard & keycardReader.IsPowered());
     }
 
     void OnPowerChanged(bool working)
     {
         text.enabled = working;
+        stealCardIcon.SetActive(keycardReader.stealCard && working);
     }
 
     public void AccessDenied()

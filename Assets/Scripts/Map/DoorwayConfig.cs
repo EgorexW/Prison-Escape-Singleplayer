@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -48,6 +49,11 @@ public class DoorwayConfig : MonoBehaviour
             DoorType.Strong => strongDoor.GetComponentInChildren<Door>(),
             _ => throw new ArgumentOutOfRangeException()
         };
+    }
+
+    public List<KeycardReader> GetKeycardReaders()
+    {
+        return new List<KeycardReader>(keycardReaders);
     }
 }
 
