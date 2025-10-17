@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
             return;
         }
         var roomIndex = originReferenceHolder.prefabListIndex;
-        Debug.Log($"Saving last room entered index: {roomIndex}", this);
+        // Debug.Log($"Saving last room entered index: {roomIndex}", this);
         PlayerPrefs.SetInt("Last Room Entered", roomIndex);
     }
 
