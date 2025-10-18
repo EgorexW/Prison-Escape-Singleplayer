@@ -7,7 +7,7 @@ public class RoomChooser : SerializedMonoBehaviour
 {
     const int MAX_GENERATION_LOOPS = 1000;
 
-    [SerializeField] List<GameObject> necessaryRooms = new();
+    [SerializeField] public List<GameObject> necessaryRooms = new();
     [SerializeField] Dictionary<GameObject, int> optionalRooms = new();
 
     [SerializeField] [MinMaxSlider("necessaryRoomsCount", "@Mathf.Min(allRooms, roomSpawners)")]

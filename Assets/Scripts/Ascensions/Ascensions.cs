@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 
 public class Ascensions : MonoBehaviour
 {
+    const int MAX_UNLOCKED_ASCENSION = 7;
+    
     public List<AscensionEffect> effects;
 
     [BoxGroup("References")] [Required] [SerializeField] CorridorSpawner corridorTrapsSpawner;
@@ -21,7 +23,7 @@ public class Ascensions : MonoBehaviour
     {
         if (GetUnlockedAscension() < AscensionLevel){
             Debug.Log($"Ascension {AscensionLevel} unlocked");
-            PlayerPrefs.SetInt(PlayerPrefsKeys.UnlockedAscension, AscensionLevel);
+            PlayerPrefs.SetInt(PlayerPrefsKeys.UnlockedAscension, Mathf.Min(AscensionLevel, MAX_UNLOCKED_ASCENSION));
         }
     }
 
@@ -32,13 +34,8 @@ public class Ascensions : MonoBehaviour
 
     public void SetupAscensions()
     {
-        
-        for (int i = 0; i < AscensionLevel; i++){
-            if (effects.Count <= i){
-                Debug.LogWarning("Run out of ascensions", this);
-                break;
-            }
-            ApplyEffect(effects[i]);
+        foreach (var effect in GetActiveEffects()){
+            ApplyEffect(effect);
         }
     }
 
@@ -51,6 +48,25 @@ public class Ascensions : MonoBehaviour
         corridorTrapsSpawner.spawnCount.x += effect.corridorTrapsIncrease;
         corridorTrapsSpawner.spawnCount.y += effect.corridorTrapsIncrease;
         effect.specialEffect?.Apply();
+        Debug.Log($"Ascension Effect applied: {effect.GetEffectDescription()}");
+    }
+
+    public List<AscensionEffect> GetActiveEffects()
+    {
+        var list = new List<AscensionEffect>();
+        for (int i = 0; i <= AscensionLevel - 1; i++){
+            if (effects.Count <= i){
+                Debug.LogWarning("Run out of ascensions", this);
+                break;
+            }
+            list.Add(effects[i]);
+        }
+        return list;
+    }
+
+    public static void SetAscensionLevel(int newLevel)
+    {
+        AscensionLevel = newLevel;
     }
 }
 

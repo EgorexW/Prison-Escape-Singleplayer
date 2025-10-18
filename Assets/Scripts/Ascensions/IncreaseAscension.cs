@@ -4,6 +4,6 @@ public class IncreaseAscension : MonoBehaviour
 {
     public void Increase()
     {
-        Ascensions.AscensionLevel += 1;
+        Ascensions.SetAscensionLevel(Ascensions.AscensionLevel + 1);
     }
 }

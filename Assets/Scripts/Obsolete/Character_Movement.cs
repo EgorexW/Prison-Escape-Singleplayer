@@ -60,7 +60,7 @@ public partial class Player
         characterController.enabled = false;
         transform.position = position;
         transform.rotation = rotation;
-        GetComponent<AudioListener>().enabled = true;
+        AudioListener.pause = false;
         characterController.enabled = true;
     }
 

@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using Sirenix.Utilities;
 using UnityEngine;
 
 public static class Descriptions
@@ -15,7 +16,12 @@ public static class Descriptions
                 lines.Add("Lower item capacity");
             }
             if (effect.trapChanceIncrease > 0){
-                lines.Add("More traps inside rooms");
+                if (effect.trapChanceIncrease > 1){
+                    lines.Add("Way more traps inside rooms");
+                }
+                else{
+                    lines.Add("More traps inside rooms");
+                }
             }
             if (!effect.startDamage.IsZero){
                 lines.Add("Start damaged");
@@ -24,20 +30,24 @@ public static class Descriptions
                 lines.Add("More obstacles in the corridors");
             }
             if (effect.specialEffect != null){
-                lines.Add(effect.specialEffect.GetEffectDescription());
+                var effectDescription = effect.specialEffect.GetEffectDescription();
+                if (!effectDescription.IsNullOrWhitespace()){
+                    lines.Add(effectDescription);
+                }
             }
             return string.Join(", ", lines);
         }
 
         public static string GetStatsDescription(this GameStats stats)
         {
-            var lines = new List<string>();
-            lines.Add($"Floor Nr: {Ascensions.AscensionLevel}");
-            lines.Add($"Game Time: {TimeSpan.FromSeconds(stats.gameTime):hh\\:mm\\:ss}");
-            lines.Add($"Light Damage Taken: {Mathf.Round(stats.normalDamageTaken)}");
-            lines.Add($"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}");
-            lines.Add($"Meters Walked: {Mathf.Round(stats.metersWalked)}");
-            lines.Add($"Unique Rooms Entered: {stats.uniqueRoomsEntered}");
+            var lines = new List<string>{
+                $"Floor Nr: {Ascensions.AscensionLevel}",
+                $"Game Time: {TimeSpan.FromSeconds(stats.gameTime):hh\\:mm\\:ss}",
+                $"Light Damage Taken: {Mathf.Round(stats.normalDamageTaken)}",
+                $"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}",
+                $"Meters Walked: {Mathf.Round(stats.metersWalked)}",
+                $"Unique Rooms Entered: {stats.uniqueRoomsEntered}"
+            };
             return string.Join("\n", lines);
         }
     }

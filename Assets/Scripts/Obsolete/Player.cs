@@ -19,6 +19,7 @@ public partial class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         firstPersonController = GetComponent<FirstPersonController>();
         SetFirstPersonController();
+        AudioListener.pause = true;
     }
 
     public Transform GetAimTransform()

@@ -8,52 +8,61 @@ using UnityEngine.Events;
 public class GameInit : MonoBehaviour
 {
     const float DELAY = 0.5f;
-    [BoxGroup("References")] [Required] [SerializeField] LevelNodes levelNodes;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;
-    [BoxGroup("References")] [Required] [SerializeField] Player player;
-    [BoxGroup("References")] [Required] [SerializeField] Ascensions ascensions;
     [BoxGroup("References")] [SerializeField] List<CorridorSpawner> corridorSpawners;
 
     [FoldoutGroup("Events")] public UnityEvent onFinish;
 
     IEnumerator Start()
     {
-        Debug.Log("GameInit Start, starting generation coroutine", this);
+        // Debug.Log("GameInit Start, starting generation coroutine", this);
         yield return GenerateRoutine();
     }
 
     IEnumerator GenerateRoutine()
     {
-        ascensions.SetupAscensions();
+        GameManager.i.ascensions.SetupAscensions();
         yield return new WaitForSeconds(DELAY);
         var rooms = roomGenerator.GenerateRooms();
-        Debug.Log("Room generated, waiting to generate corridors", this);
+        // Debug.Log("Room generated, waiting to generate corridors", this);
 
         yield return new WaitForSeconds(DELAY);
         foreach (var room in rooms){
             room.Activate();
         }
-        levelNodes.ResetNodes();
+        GameManager.i.levelNodes.ResetNodes();
 
         foreach (var corridorSpawner in corridorSpawners)
-            corridorSpawner.Spawn(levelNodes.CorridorNodes);
+            corridorSpawner.Spawn(GameManager.i.levelNodes.CorridorNodes);
 
-        PlayerSpawn spawn = null;
-        while (spawn == null)
-        {
-            spawn = FindAnyObjectByType<PlayerSpawn>();
-            if (spawn != null){
-                continue;
-            }
-            Debug.LogWarning("No PlayerSpawn found in scene, retrying...", this);
-            yield return null;
-        }
-
-        spawn.Spawn(player);
-        levelNodes.ResetNodes();
+        yield return SpawnPlayer();
+        
+        GameManager.i.levelNodes.ResetNodes();
         onFinish.Invoke();
         GameManager.i.gameTimeManager.StartGame();
 
-        Debug.Log("Corridors generated, player spawned, game init finished", this);
+        // Debug.Log("Corridors generated, player spawned, game init finished", this);
+    }
+
+    IEnumerator SpawnPlayer()
+    {
+        PlayerSpawn spawn = null;
+        while (spawn == null){
+            var spawns = FindObjectsByType<PlayerSpawn>(FindObjectsSortMode.None);
+            foreach (var playerSpawn in spawns){
+                if (!playerSpawn.CanSpawn()){
+                    continue;
+                }
+                spawn = playerSpawn;
+                break;
+            }
+            if (spawn != null){
+                continue;
+            }
+            Debug.LogWarning("No PlayerSpawn can spawn the player, retrying...", this);
+            yield return null;
+        }
+
+        spawn.Spawn(GameManager.i.Player);
     }
 }
