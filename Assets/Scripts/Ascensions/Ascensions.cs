@@ -67,5 +67,12 @@ public class AscensionEffect
 
 public abstract class AscensionEffectSpecial : MonoBehaviour
 {
+    [SerializeField] string effectDescription;
+    
     public abstract void Apply();
+
+    public virtual string GetEffectDescription()
+    {
+        return effectDescription;
+    }
 }

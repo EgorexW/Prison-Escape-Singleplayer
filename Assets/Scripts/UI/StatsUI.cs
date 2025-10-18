@@ -17,13 +17,6 @@ public class StatsUI : UIElement
             Debug.LogWarning("No GameStats instance found.", this);
             return;
         }
-        var lines = new List<string>();
-        lines.Add($"Floor Nr: {Ascensions.AscensionLevel}");
-        lines.Add($"Game Time: {TimeSpan.FromSeconds(stats.gameTime):hh\\:mm\\:ss}");
-        lines.Add($"Light Damage Taken: {Mathf.Round(stats.normalDamageTaken)}");
-        lines.Add($"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}");
-        lines.Add($"Meters Walked: {Mathf.Round(stats.metersWalked)}");
-        lines.Add($"Unique Rooms Entered: {stats.uniqueRoomsEntered}");
-        text.text = string.Join("\n", lines);
+        text.text = stats.GetStatsDescription();
     }
 }
