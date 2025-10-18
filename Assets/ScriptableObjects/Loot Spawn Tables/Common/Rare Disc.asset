@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rare Disc
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 1
+  - value: 2
     Object: {fileID: 2713313887327436282, guid: 76e2f0f9175904ab9a2c3149a71dc671,
       type: 3}
   - value: 1

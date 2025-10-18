@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class Ascensions : MonoBehaviour
 {
-    const int MAX_UNLOCKED_ASCENSION = 7;
+    int maxUnlockedAscension => effects.Count; 
     
     public List<AscensionEffect> effects;
 
@@ -21,10 +21,12 @@ public class Ascensions : MonoBehaviour
 
     void OnWin()
     {
-        if (GetUnlockedAscension() < AscensionLevel){
-            Debug.Log($"Ascension {AscensionLevel} unlocked");
-            PlayerPrefs.SetInt(PlayerPrefsKeys.UnlockedAscension, Mathf.Min(AscensionLevel, MAX_UNLOCKED_ASCENSION));
+        var unlockedAscension = Mathf.Min(AscensionLevel, maxUnlockedAscension);
+        if (GetUnlockedAscension() >= unlockedAscension){
+            return;
         }
+        Debug.Log($"Ascension {unlockedAscension} unlocked");
+        PlayerPrefs.SetInt(PlayerPrefsKeys.UnlockedAscension, unlockedAscension);
     }
 
     public static int GetUnlockedAscension()

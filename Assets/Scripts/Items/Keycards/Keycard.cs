@@ -1,8 +1,9 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Keycard : MonoBehaviour, IKeycard
 {
-    public AccessLevel accessLevel;
+    [BoxGroup("References")][Required] public AccessLevel accessLevel;
 
     public bool oneUse;
 

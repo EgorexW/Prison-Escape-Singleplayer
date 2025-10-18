@@ -28,6 +28,6 @@ public class RoomBackground : MonoBehaviour
         var room = roomSpawner.SpawnRoom(roomToSpawn);
         Debug.Log($"Background room spawned: {room.roomName}");
         yield return new WaitForSeconds(doorOpenWait);
-        room.doorway.GetDoor().Open();
+        room.doorway?.GetDoor().Open();
     }
 }

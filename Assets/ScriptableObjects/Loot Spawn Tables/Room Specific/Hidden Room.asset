@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Common Disc
+  m_Name: Hidden Room
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 2
-    Object: {fileID: 7416668859406209389, guid: 64c27acab6e56405494eb3b7ad727f69,
-      type: 3}
   - value: 1
-    Object: {fileID: 8195388087362760130, guid: 96ba0398199d04fe880e9f729534ee61,
-      type: 3}
-  - value: 1
-    Object: {fileID: 8303997851180881152, guid: 3bb79253892e348459536b1c368b3b06,
-      type: 3}
+    Object: {fileID: 11400000, guid: 297051d5939394954baf65d4fc1d46a0, type: 2}

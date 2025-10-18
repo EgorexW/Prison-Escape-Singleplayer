@@ -14,6 +14,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f,
         type: 2}
+    - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: Guard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8638587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093037969403249764, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8638587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322315969983063461, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5218860289774778322, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +99,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5893937894337747688, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893937894337747688, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: color.g
+      value: 0.8638587
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893937894337747688, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893937894337747688, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: displayName
+      value: Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 6445903414931907156, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_Name
@@ -88,6 +143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: keycardColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964199208718077476, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_text
+      value: Guard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

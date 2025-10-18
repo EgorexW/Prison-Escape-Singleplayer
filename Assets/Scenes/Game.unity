@@ -9633,6 +9633,7 @@ GameObject:
   - component: {fileID: 567017148}
   - component: {fileID: 567017151}
   - component: {fileID: 567017150}
+  - component: {fileID: 567017152}
   m_Layer: 0
   m_Name: Rooms
   m_TagString: Untagged
@@ -9714,6 +9715,7 @@ MonoBehaviour:
     - {fileID: 7063043514278971131, guid: 13625602c63754dd9b080402ed214b52, type: 3}
     - {fileID: 2826679319299725828, guid: 2fd29963f62ff48da97ec732095a5181, type: 3}
     - {fileID: 2405442029735464219, guid: 6c2caa4351f2847eea9607a87188ab91, type: 3}
+    - {fileID: 7880495156113163952, guid: 6d61ec6d2d917404bbb3de9e7334ff93, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -9732,7 +9734,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -9818,6 +9820,18 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 7
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -9841,6 +9855,22 @@ MonoBehaviour:
   roomsToSpawn: {x: 21, y: 23}
   fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
     type: 3}
+--- !u!114 &567017152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567017147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38df7a33ac2f545beb63c6a7eed2f453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Discover All Rooms
+  onActivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &571710582
 GameObject:
   m_ObjectHideFlags: 0
@@ -18010,7 +18040,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70.00001
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -19863,7 +19893,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 70.00001
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
