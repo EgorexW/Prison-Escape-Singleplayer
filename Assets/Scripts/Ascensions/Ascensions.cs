@@ -10,12 +10,30 @@ public class Ascensions : MonoBehaviour
 
     [BoxGroup("References")] [Required] [SerializeField] CorridorSpawner corridorTrapsSpawner;
 
-    [SerializeField] float tmpAscensionsNr = 7;
+    [ShowInInspector] public static int AscensionLevel = 0;
+
+    void Start()
+    {
+        GameManager.i.gameEnder.beforeWinGame.AddListener(OnWin);
+    }
+
+    void OnWin()
+    {
+        if (GetUnlockedAscension() < AscensionLevel){
+            Debug.Log($"Ascension {AscensionLevel} unlocked");
+            PlayerPrefs.SetInt(PlayerPrefsKeys.UnlockedAscension, AscensionLevel);
+        }
+    }
+
+    public static int GetUnlockedAscension()
+    {
+        return PlayerPrefs.GetInt(PlayerPrefsKeys.UnlockedAscension, 0);
+    }
 
     public void SetupAscensions()
     {
-        var activeAscensions = tmpAscensionsNr;
-        for (int i = 0; i < activeAscensions; i++){
+        
+        for (int i = 0; i < AscensionLevel; i++){
             if (effects.Count <= i){
                 Debug.LogWarning("Run out of ascensions", this);
                 break;

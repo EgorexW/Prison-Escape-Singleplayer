@@ -21,25 +21,25 @@ public class PlayerStats : MonoBehaviour
         }
         var roomIndex = originReferenceHolder.prefabListIndex;
         // Debug.Log($"Saving last room entered index: {roomIndex}", this);
-        PlayerPrefs.SetInt("Last Room Entered", roomIndex);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.LastRoomEntered, roomIndex);
     }
 
     void BeforeWinGame()
     {
-        AddToPlayerPref("Games Won", 1);
-        Debug.Log("Games Won: " + PlayerPrefs.GetInt("Games Won", 0));
+        AddToPlayerPref(PlayerPrefsKeys.GamesWon, 1);
+        Debug.Log("Games Won: " + PlayerPrefs.GetInt(PlayerPrefsKeys.GamesWon, 0));
     }
 
     void BeforeLoseGame()
     {
-        AddToPlayerPref("Games Lost", 1);
-        Debug.Log("Games Lost: " + PlayerPrefs.GetInt("Games Lost", 0));
+        AddToPlayerPref(PlayerPrefsKeys.GamesLost, 1);
+        Debug.Log("Games Lost: " + PlayerPrefs.GetInt(PlayerPrefsKeys.GamesLost, 0));
     }
 
     void OnStartGame()
     {
-        AddToPlayerPref("Games Started", 1);
-        Debug.Log("Games Started: " + PlayerPrefs.GetInt("Games Started", 0));
+        AddToPlayerPref(PlayerPrefsKeys.GamesStarted, 1);
+        Debug.Log("Games Started: " + PlayerPrefs.GetInt(PlayerPrefsKeys.GamesStarted, 0));
     }
 
     public void AddToPlayerPref(string key, int value, int defaultValue = 0)

@@ -7,30 +7,21 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(RoomChooser))]
 public class RoomGenerator : MonoBehaviour
 {
-    const int GenerationTries = 10;
-    [SerializeField] [HideIf("setSeedBasedOnGameNr")] Optional<int> seed;
-    [SerializeField] bool setSeedBasedOnGameNr = true;
+    const int GENERATION_TRIES = 10;
 
     public List<Room> GenerateRooms()
     {
-        if (setSeedBasedOnGameNr){
-            var seedValue = PlayerPrefs.GetInt("Games Started", 0);
-            Random.InitState(seedValue);
-        }
-        else if (seed){
-            Random.InitState(seed);
-        }
         var roomChooser = GetComponent<RoomChooser>();
-        for (var i = 0; i < GenerationTries; i++){
+        for (var i = 0; i < GENERATION_TRIES; i++){
             var choosenRooms = roomChooser.ChooseRooms();
             if (choosenRooms != null){
                 return GenerateRooms(choosenRooms);
             }
             else{
-                Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GenerationTries + ")", this);
+                Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GENERATION_TRIES + ")", this);
             }
         }
-        throw new Exception("Failed to generate rooms after " + GenerationTries + " tries");
+        throw new Exception("Failed to generate rooms after " + GENERATION_TRIES + " tries");
     }
 
     List<Room> GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)
