@@ -15,7 +15,7 @@ public class Tutorials : MonoBehaviour
     [BoxGroup("Config")] [SerializeField] float reminderInteractCooldown = 30f;
     [BoxGroup("Config")] [SerializeField] float reminderInteractPlayerDelay = 3f;
     IInteractive lastInteractive;
-    float lastInteractTime;
+    float lastInteractTime = Mathf.NegativeInfinity;
     Player player;
 
     float playerInteractAimStartTime;
