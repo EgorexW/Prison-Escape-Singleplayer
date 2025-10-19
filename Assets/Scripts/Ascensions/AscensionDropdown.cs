@@ -17,7 +17,7 @@ public class AscensionDropdown : UIElement
         }
         dropdown.options.Clear();
         for (int i = 0; i <= unlockedAscensions; i++){
-            dropdown.options.Add(new TMP_Dropdown.OptionData($"Ascension {i}"));
+            dropdown.options.Add(new TMP_Dropdown.OptionData($"Level {i}"));
         }
         dropdown.value = -1;
         // Debug.Log($"Ascension Level: {Ascensions.AscensionLevel}", this);
