@@ -181,9 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    currentHealth: 70
-    maxHealth: 70
-    absoluteMaxHealth: 70
+    currentHealth: 50
+    maxHealth: 50
+    absoluteMaxHealth: 50
     damagedBy: 1
     onDamage:
       m_PersistentCalls:

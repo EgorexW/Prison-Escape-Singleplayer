@@ -21,8 +21,8 @@ public class AscensionDropdown : UIElement
         }
         dropdown.value = -1;
         // Debug.Log($"Ascension Level: {Ascensions.AscensionLevel}", this);
-        dropdown.value = Ascensions.AscensionLevel;
         dropdown.onValueChanged.AddListener(OnValueChanged);
+        dropdown.value = Ascensions.AscensionLevel;
     }
 
     void OnValueChanged(int arg0)

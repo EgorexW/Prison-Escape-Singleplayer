@@ -22,7 +22,7 @@ public class AscensionEffectsDisplay : PoweredDevice
         var effects = GameManager.i.ascensions.GetActiveEffects();
         var texts = new string[effects.Count];
         for (int i = 0; i < effects.Count; i++){
-            texts[i] = $"Level {i+1}" + effects[i].GetEffectDescription();
+            texts[i] = $"Level {i+1} " + effects[i].GetEffectDescription();
         }
         displayText = string.Join("\n", texts);
         text.text = displayText;
