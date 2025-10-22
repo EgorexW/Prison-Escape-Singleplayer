@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Administration Admin Secret
+  m_Name: Light Weapon
   m_EditorClassIdentifier: 
   gameObjects:
+  - value: 3
+    Object: {fileID: 335257844892964924, guid: 6ea9897e95e5f4fef80f0850e70bf8be, type: 3}
+  - value: 2
+    Object: {fileID: 3930456545130410248, guid: 732b12cd8441149c395b173dac605a9a,
+      type: 3}
   - value: 1
-    Object: {fileID: 11400000, guid: ea951c312fd2c47e4b8314552f32bdc1, type: 2}
+    Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
+      type: 3}

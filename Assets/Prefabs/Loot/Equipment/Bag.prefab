@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3e7aa4d85e46f5b15e805f4d0b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  holdDuration: 3
   sizeIncrease: 1
 --- !u!54 &-4085648689644332566
 Rigidbody:

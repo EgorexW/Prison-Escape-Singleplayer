@@ -11,6 +11,7 @@ public partial class Player : MonoBehaviour
     [SerializeField] Transform aim;
 
     [BoxGroup("References")] [Required] [SerializeField] GameObject map;
+    [BoxGroup("References")][Required] public Headlight headlight;
 
     void Awake()
     {

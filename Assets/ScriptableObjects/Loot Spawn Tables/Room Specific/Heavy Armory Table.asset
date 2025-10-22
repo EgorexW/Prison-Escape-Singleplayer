@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Heavy Armory Weapon
+  m_Name: Heavy Armory Table
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 3
-    Object: {fileID: 335257844892964924, guid: d02c5e0ce8cb1485490f0b88694e8a30, type: 3}
-  - value: 2
-    Object: {fileID: 3930456545130410248, guid: 732b12cd8441149c395b173dac605a9a,
-      type: 3}
+  - value: 5
+    Object: {fileID: 11400000, guid: 1e146f4b68e174a7b975d09d7601649f, type: 2}
   - value: 1
     Object: {fileID: 5526721213140052118, guid: 176f3e937fb9b4de7a3acf9bb7ffe358,
       type: 3}
