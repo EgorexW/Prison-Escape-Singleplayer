@@ -25,13 +25,17 @@ public class AccessLevel : ScriptableObject
         return AllAccessLevels.Contains(accessLevel);
     }
 
-    HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
+    public HashSet<AccessLevel> GetAllAccessLevels()
+    {
+        return GetAllAccessLevels(this);
+    }
+    public static HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
     {
         HashSet<AccessLevel> allInheretedAccessLevels = new();
         allInheretedAccessLevels.Add(mainAccessLevel);
         foreach (var accessLevel in mainAccessLevel.GetInheretedAccessLevels()){
             if (accessLevel == null){
-                Debug.LogWarning("Access Level is null", this);
+                Debug.LogWarning("Access Level is null", mainAccessLevel);
                 continue;
             }
             if (!allInheretedAccessLevels.Add(accessLevel)){

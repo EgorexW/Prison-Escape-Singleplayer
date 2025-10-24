@@ -278,6 +278,25 @@ public class General : MonoBehaviour
         }
         return components;
     }
+
+    public static Collider[] OverlapBounds(Bounds bounds)
+    {
+        Collider[] result = new Collider[100];
+        Physics.OverlapBoxNonAlloc(bounds.center, bounds.size, result);
+        return result;
+    }
+
+    public static List<T> GetComponentsFromColliders<T>(Collider[] colliders)
+    {
+        var components = new List<T>();
+        foreach (var collider in colliders){
+            var component = GetComponentFromCollider<T>(collider);
+            if (component != null){
+                components.Add(component);
+            }
+        }
+        return components;
+    }
 }
 
 public interface INamed

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class BackupPowerButton : MonoBehaviour, IInteractive
+public class BackupPowerButton : Button
 {
     [SerializeField] TextMeshPro text;
 
@@ -11,12 +11,11 @@ public class BackupPowerButton : MonoBehaviour, IInteractive
         OnPowerChanged();
     }
 
-    public void Interact(Player player)
+    public override void OnClick(Player player)
     {
+        base.OnClick(player);
         MainPowerSystem.i.SetGlobalMinimalPower(!MainPowerSystem.i.GlobalMinimalPower);
     }
-
-    public float HoldDuration => 3;
 
     void OnPowerChanged()
     {

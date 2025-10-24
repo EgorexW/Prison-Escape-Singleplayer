@@ -8,12 +8,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Poison Room.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Poison Room.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Room Traps.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Room Traps.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/KeycardCombiner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/KeycardCombiner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/KeycardRecipes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/KeycardRecipes.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Keycard Combiner.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Keycard Combiner.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Archcustodian.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Archcustodian.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Broken.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Broken.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Chief Guard.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Chief Guard.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Safety Inspector.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Safety Inspector.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Keycard Recipes.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Keycard Recipes.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Ground.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Ground.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Admin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Admin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Room Prefabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Room Prefabs.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/AccessLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/AccessLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +173,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Keycard Recipes.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ascensions/AddRoomAscensionEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs" root0="FORCE_HIGHLIGHTING" />
@@ -220,7 +251,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rooms/RoomTrait.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedItems.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/LinkedLoot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MetalDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/MotionSensor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Traps/StealCardTrap.cs" root0="FORCE_HIGHLIGHTING" />
@@ -386,7 +417,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.1.0" />
     <MESSAGE value="v 0.1.1" />
     <MESSAGE value="Taking screenshots" />
     <MESSAGE value="Cleaned up level Nodes" />
@@ -411,7 +441,8 @@
     <MESSAGE value="Update ascension dropdown labels and adjust breakable wall health values" />
     <MESSAGE value="v 0.4.1" />
     <MESSAGE value="Equipment and loot added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Equipment and loot added" />
+    <MESSAGE value="Big Poison Room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Big Poison Room" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

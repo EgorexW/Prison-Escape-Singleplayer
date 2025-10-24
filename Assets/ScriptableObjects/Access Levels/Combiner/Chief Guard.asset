@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
-  m_Name: Guard
+  m_Name: Chief Guard
   m_EditorClassIdentifier: 
   inheretedAccessLevels:
-  - {fileID: 11400000, guid: f06c2f74b25784fa4bc1266bfa31b1d4, type: 2}
-  - {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
-  color: {r: 0, g: 0.8638587, b: 1, a: 1}
-  displayName: Guard
+  - {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
+  - {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba, type: 2}
+  color: {r: 0, g: 1, b: 0.81838536, a: 1}
+  displayName: Chief Guard

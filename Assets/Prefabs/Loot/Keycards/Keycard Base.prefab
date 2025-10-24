@@ -787,7 +787,6 @@ GameObject:
   - component: {fileID: 2948278109148270533}
   - component: {fileID: 2068014366719121771}
   - component: {fileID: 7870462591393121154}
-  - component: {fileID: 417427740622370882}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -863,27 +862,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &417427740622370882
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4778758376555581936}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1001 &8314227671726531781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -991,6 +969,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5893937894337747688}
+    - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1071806937180412954}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!4 &5218860289774778322 stripped
 Transform:
@@ -1042,3 +1024,24 @@ MonoBehaviour:
   oneUseIcons:
   - {fileID: 555472317083430906}
   - {fileID: 6560832762741541950}
+--- !u!65 &1071806937180412954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445903414931907156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3333333, y: 0.2, z: 0.00625}
+  m_Center: {x: 0, y: 0, z: 0}
