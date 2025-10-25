@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class KeycardVisuals : ItemVisuals
 {
     [BoxGroup("References")] [Required] [SerializeField] Keycard keycard;
-    
+
     [BoxGroup("References")] [SerializeField] List<Image> oneUseIcons;
 
     protected override void Apply()
@@ -18,9 +18,7 @@ public class KeycardVisuals : ItemVisuals
                 displayName += pass;
             }
             color = keycard.accessLevel.color;
-            foreach (var oneUseIcon in oneUseIcons){
-                oneUseIcon.gameObject.SetActive(keycard.oneUse);
-            }
+            foreach (var oneUseIcon in oneUseIcons) oneUseIcon.gameObject.SetActive(keycard.oneUse);
         }
         base.Apply();
     }

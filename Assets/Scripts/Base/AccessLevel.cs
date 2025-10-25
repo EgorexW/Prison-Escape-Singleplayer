@@ -29,6 +29,7 @@ public class AccessLevel : ScriptableObject
     {
         return GetAllAccessLevels(this);
     }
+
     public static HashSet<AccessLevel> GetAllAccessLevels(AccessLevel mainAccessLevel)
     {
         HashSet<AccessLevel> allInheretedAccessLevels = new();

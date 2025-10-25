@@ -7,8 +7,9 @@ public static class LevelNodeExtension
 {
     const float DISTANCE = 7;
     static LayerMask LevelNodeLayerMask => LayerMask.GetMask("Level Node");
-    
-    public static List<Vector3> SameTypeConnections(this LevelNode node){
+
+    public static List<Vector3> SameTypeConnections(this LevelNode node)
+    {
         return node.GetNeighboringNodes()
             .Where(input => input.type == node.type)
             .Select(input => input.transform.position - node.transform.position)

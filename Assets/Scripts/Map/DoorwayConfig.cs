@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class DoorwayConfig : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class DoorwayConfig : MonoBehaviour
     [FoldoutGroup("References")] [Required] [SerializeField] DoorLock[] doorLocks;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject weakDoor;
     [BoxGroup("References/Doors")] [Required] [SerializeField] GameObject strongDoor;
-    
+
     [SerializeField] public AccessLevel accessLevel;
     [SerializeField] DoorType doorType = DoorType.Weak;
 

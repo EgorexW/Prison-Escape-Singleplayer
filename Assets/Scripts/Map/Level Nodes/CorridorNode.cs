@@ -3,25 +3,25 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class CorridorNode : LevelNode
-    {
-        [HideInEditorMode]
-        [ShowInInspector]
-        public CorridorNodeType CorridorNodeType{
-            get{
-                return this.Connections().Count switch{
-                    1 => CorridorNodeType.DeadEnd,
-                    2 => Vector3.Dot(this.Connections()[0], this.Connections()[1]) < -0.5
-                        ? CorridorNodeType.Straight
-                        : CorridorNodeType.Turn,
-                    3 => CorridorNodeType.ThreeWay,
-                    4 => CorridorNodeType.FourWay,
-                    _ => default
-                };
-            }
+{
+    [HideInEditorMode]
+    [ShowInInspector]
+    public CorridorNodeType CorridorNodeType{
+        get{
+            return this.Connections().Count switch{
+                1 => CorridorNodeType.DeadEnd,
+                2 => Vector3.Dot(this.Connections()[0], this.Connections()[1]) < -0.5
+                    ? CorridorNodeType.Straight
+                    : CorridorNodeType.Turn,
+                3 => CorridorNodeType.ThreeWay,
+                4 => CorridorNodeType.FourWay,
+                _ => default
+            };
         }
-        public override NodeType type => NodeType.Corridor;
     }
-    
+    public override NodeType type => NodeType.Corridor;
+}
+
 [Flags]
 public enum CorridorNodeType
 {

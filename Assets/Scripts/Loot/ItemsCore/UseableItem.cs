@@ -10,8 +10,10 @@ public abstract class UseableItem : ItemEffect
 
     [SerializeField] Sound soundEffect;
 
-    bool charging = false;
+    bool charging;
     float startUseTime = Mathf.Infinity;
+
+    protected Player player => GameManager.i.Player;
 
     void Update()
     {
@@ -26,8 +28,6 @@ public abstract class UseableItem : ItemEffect
         Apply();
         OnApply();
     }
-
-    protected Player player => GameManager.i.Player;
 
     void OnApply()
     {

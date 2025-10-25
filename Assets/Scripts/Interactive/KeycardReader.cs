@@ -12,7 +12,7 @@ public class KeycardReader : PoweredDevice, IInteractive
     [SerializeField] List<KeycardReader> linkedReaders;
 
     public bool stealCard;
-    
+
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
     [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
     [FoldoutGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Keycard : MonoBehaviour, IKeycard
 {
-    [BoxGroup("References")][Required] public AccessLevel accessLevel;
+    [BoxGroup("References")] [Required] public AccessLevel accessLevel;
 
     public bool oneUse;
 

@@ -8,7 +8,7 @@ public class AddRoomAscensionEffect : AscensionEffectSpecial
     [BoxGroup("References")] [Required] [SerializeField] GameObject room;
 
     public override void Apply()
-        {
-            roomChooser.necessaryRooms.Add(room);
-        }
+    {
+        roomChooser.necessaryRooms.Add(room);
     }
+}

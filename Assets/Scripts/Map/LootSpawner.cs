@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,20 +8,20 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] SpawnTable spawnTable;
     [SerializeField] [MinMaxSlider(0, "@GetSpawnPoints().Count")] Vector2Int spawnNr = new(1, 1);
     [SerializeField] bool randomRotation = true;
-    [SerializeField] bool spawnOnStart = false;
-
-    List<Transform> GetSpawnPoints()
-    {
-        var points = new List<Transform>(GetComponentsInChildren<Transform>());
-        points.Remove(transform);
-        return points;
-    }
+    [SerializeField] bool spawnOnStart;
 
     void Start()
     {
         if (spawnOnStart){
             SpawnGameObjects();
         }
+    }
+
+    List<Transform> GetSpawnPoints()
+    {
+        var points = new List<Transform>(GetComponentsInChildren<Transform>());
+        points.Remove(transform);
+        return points;
     }
 
     public void SpawnGameObjects()

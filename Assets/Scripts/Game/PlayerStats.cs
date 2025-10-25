@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] PrefabList roomsList;
-    
+
     void Start()
     {
         OnStartGame();

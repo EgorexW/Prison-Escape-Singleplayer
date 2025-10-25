@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
@@ -16,7 +14,7 @@ public class HealthBarUI : MonoBehaviour
     [Required] [SerializeField] Image resistanceIcon;
 
     [SerializeField] List<ResistanceUI> resistanceIcons;
-    
+
     [SerializeField] float showIconTime = 1;
 
     float lastResistanceSpriteTime;
@@ -51,8 +49,7 @@ public class HealthBarUI : MonoBehaviour
 
     public void ShowDamage(Damage damage, Health health)
     {
-        if (health.damagedBy.HasFlag(damage.damageType))
-        {
+        if (health.damagedBy.HasFlag(damage.damageType)){
             return;
         }
         var icon = resistanceIcons.Find(ui => ui.damageType == damage.damageType);

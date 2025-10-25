@@ -11,7 +11,7 @@ public class GameStats : MonoBehaviour
     public float metersWalked;
     public int uniqueRoomsEntered;
 
-    HashSet<Room> roomsList = new HashSet<Room>();
+    readonly HashSet<Room> roomsList = new();
 
     void Awake()
     {

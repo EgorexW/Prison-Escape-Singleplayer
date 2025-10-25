@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public sealed class Item : Loot
 {
@@ -62,7 +61,7 @@ public sealed class Item : Loot
 public class Loot : MonoBehaviour, IInteractive
 {
     [FoldoutGroup("Events")] public UnityEvent<Loot> onInteract;
-    
+
     public float holdDuration;
     public float HoldDuration => holdDuration;
 

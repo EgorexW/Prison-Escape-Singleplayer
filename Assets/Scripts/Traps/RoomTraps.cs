@@ -21,7 +21,7 @@ public class RoomTraps : MonoBehaviour
     public void Activate()
     {
         doorwayConfig.onOpen.AddListener(ActivateTrap);
-        if (Random.value < (trapConfig.trapNrMod * GameManager.i.trapsManager.trapChance)){
+        if (Random.value < trapConfig.trapNrMod * GameManager.i.trapsManager.trapChance){
             CreateATrap();
         }
     }
@@ -44,13 +44,7 @@ public class RoomTraps : MonoBehaviour
 
 interface ITrap
 {
-    void Activate()
-    {
-        
-    }
+    void Activate() { }
 
-    void SetRoom(Room room)
-    {
-        
-    }
+    void SetRoom(Room room) { }
 }

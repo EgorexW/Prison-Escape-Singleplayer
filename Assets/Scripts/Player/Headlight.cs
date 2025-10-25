@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Headlight : MonoBehaviour
 {
-    [BoxGroup("References")][Required][SerializeField] Light headlightLight;
+    [BoxGroup("References")] [Required] [SerializeField] Light headlightLight;
 
     void Awake()
     {

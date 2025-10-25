@@ -13,7 +13,7 @@ public class GameEnder : MonoBehaviour
     [FoldoutGroup("Events")] public UnityEvent beforeWinGame;
     [FoldoutGroup("Events")] public UnityEvent beforeEndGame;
 
-    bool endGameCalled = false;
+    bool endGameCalled;
 
     void Awake()
     {

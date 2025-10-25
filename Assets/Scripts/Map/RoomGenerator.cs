@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(RoomChooser))]
 public class RoomGenerator : MonoBehaviour
@@ -17,9 +15,7 @@ public class RoomGenerator : MonoBehaviour
             if (choosenRooms != null){
                 return GenerateRooms(choosenRooms);
             }
-            else{
-                Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GENERATION_TRIES + ")", this);
-            }
+            Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GENERATION_TRIES + ")", this);
         }
         throw new Exception("Failed to generate rooms after " + GENERATION_TRIES + " tries");
     }
@@ -27,9 +23,7 @@ public class RoomGenerator : MonoBehaviour
     List<Room> GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)
     {
         var spawnedRooms = new List<Room>();
-        foreach (var match in matchedRoomWithSpawner){
-            spawnedRooms.Add(match.Key.SpawnRoom(match.Value));
-        }
+        foreach (var match in matchedRoomWithSpawner) spawnedRooms.Add(match.Key.SpawnRoom(match.Value));
         return spawnedRooms;
     }
 }

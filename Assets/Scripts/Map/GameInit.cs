@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
@@ -27,16 +26,14 @@ public class GameInit : MonoBehaviour
         // Debug.Log("Room generated, waiting to generate corridors", this);
 
         yield return new WaitForSeconds(DELAY);
-        foreach (var room in rooms){
-            room.Activate();
-        }
+        foreach (var room in rooms) room.Activate();
         GameManager.i.levelNodes.ResetNodes();
 
         foreach (var corridorSpawner in corridorSpawners)
             corridorSpawner.Spawn(GameManager.i.levelNodes.CorridorNodes);
 
         yield return SpawnPlayer();
-        
+
         GameManager.i.levelNodes.ResetNodes();
         onFinish.Invoke();
         GameManager.i.gameTimeManager.StartGame();
