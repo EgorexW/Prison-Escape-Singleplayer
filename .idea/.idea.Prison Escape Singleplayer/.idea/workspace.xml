@@ -8,240 +8,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Keycard Combiner Note.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Keycard Combiner Note.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Keycard Combiner Note.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Keycard Combiner Note.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/AccessLevel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/AccessLevel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Base.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Base.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Damage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Damage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Health.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/Health.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IDamagable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IDamagable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IDoor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IDoor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IKeycard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IKeycard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IPower.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/IPower.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/AddRoomAscensionEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/AddRoomAscensionEffect.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/Ascensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/Ascensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/IncreaseAscension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/IncreaseAscension.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/PowerLossAscension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Ascensions/PowerLossAscension.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/Door.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/Door.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/DoorLock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/DoorLock.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/KeycardReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/KeycardReader.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/KeycardReaderVisuals.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Doors/KeycardReaderVisuals.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/AscensionEffectsDisplay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/AscensionEffectsDisplay.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/DamagePropagator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/DamagePropagator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/DestroyLootSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/DestroyLootSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Destroyable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Destroyable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/DiscHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/DiscHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/GenericDiscHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/GenericDiscHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/UnlockWarden.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Disc Props/UnlockWarden.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/GameTimer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/GameTimer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Poster.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/Poster.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/PoweredDevice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/PoweredDevice.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/ShakeDamageEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/ShakeDamageEffect.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/Room.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/Room.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNameDisplay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNameDisplay.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomSpawnConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomSpawnConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomTrait.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomTrait.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Descriptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Descriptions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/DevInputPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Other/DevInputPlayer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/BasicRigidBodyPush.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/BasicRigidBodyPush.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/FirstPersonController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/FirstPersonController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/PlayerControllerInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Built In/PlayerControllerInput.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Interactive.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Interactive/IInteractive.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Interactive/IInteractive.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Interact.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Interact.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Items.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Items.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Movement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Movement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Player.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/PlayerInputPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/PlayerInputPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AscensionDropdown.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AscensionDropdown.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownClearPlayerPrefs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownClearPlayerPrefs.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownOpenDebug.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownOpenDebug.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownTrigger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/KeycardCombiner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/KeycardCombiner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/KeycardRecipes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/KeycardRecipes.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Props/Keycard Combiner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Keycard Combiner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Props/Note.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Note.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDown.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownQuit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownQuit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownQuit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownQuit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownRestart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownRestart.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Essencial.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Essencial.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Secure Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Secure Storage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Keycard Recipes.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Keycard Recipes.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Room Prefabs.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Room Prefabs.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AddRoomAscensionEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AddRoomAscensionEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionEffectsDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionEffectsDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/Ascensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/Ascensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/IncreaseAscension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/IncreaseAscension.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/PowerLossAscension.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/BasicRigidBodyPush.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/BasicRigidBodyPush.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/PlayerControllerInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Built In/PlayerControllerInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameTimer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/DiscHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/DiscHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/GenericDiscHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Discs/UnlockWarden.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Door.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/Door.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/DoorLock.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/DoorLock.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactive/KeycardReaderVisuals.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/AccessLevel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/AccessLevel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Damage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Damage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Descriptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Descriptions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/Health.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamagable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDoor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDoor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInteractive.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IInteractive.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IKeycard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IKeycard.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IPower.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IPower.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SpawnTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/SpawnTable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/EffectItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/EffectItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Menus.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Menus/CameraMenuMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/CameraMenuMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Menus/CameraMenuMove.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Menus/RoomBackground.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Menus/RoomBackground.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Interact.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Interact.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Items.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Items.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Character_Movement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/DevInputPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/DevInputPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerInputPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerInputPresenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Obsolete/PlayerUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/CeilingLight.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/CeilingLight.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/DamagePropagator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/DestroyLootSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/DestroyLootSpawner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Destroyable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Poster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Poster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/PoweredDevice.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/PoweredDevice.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/ShakeDamageEffect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/Room.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/Room.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNameDisplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomNode.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomSpawnConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomSpawnConfig.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomTrait.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rooms/RoomTrait.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Table.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Table.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,6 +150,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/PlayAudio.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownClearPlayerPrefs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownOpenDebug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/CallbackTriggerCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabListIndexHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RuntimePreviewGenerator/RuntimePreviewGenerator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -368,10 +163,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Traps/Corridor Fire Trap.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Keycard Combiner Note.mat.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Keycard Combiner Note.png.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -405,8 +205,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/RoomGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Other/Menus/CameraMenuMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Other/Menus/RoomBackground.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerSoundEffects.cs" root0="FORCE_HIGHLIGHTING" />
@@ -454,24 +252,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Standalone Player.Standalone Player.executor": "Debug",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+}]]></component>
+  <component name="RunManager" selected="Standalone Player.Standalone Player">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../Builds/Prison Escape.app/Contents/MacOS/Prison Escape" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Builds/Prison 2.0.app/Contents/MacOS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Builds/Prison Escape.app/Contents/MacOS" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="ENV_FILE_PATHS" value="" />
@@ -518,13 +317,15 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7733">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="7733" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list />
+        <list>
+          <MonoRuntime />
+        </list>
       </option>
       <option name="selectedOptions">
         <list />
@@ -580,7 +381,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Taking screenshots" />
     <MESSAGE value="Cleaned up level Nodes" />
     <MESSAGE value="Menu Test Room background Working" />
     <MESSAGE value="Prefab List not working yet" />
@@ -605,7 +405,8 @@
     <MESSAGE value="Equipment and loot added" />
     <MESSAGE value="Big Poison Room" />
     <MESSAGE value="Keycard Combiner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycard Combiner" />
+    <MESSAGE value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,6 +13,8 @@ public class GameEnder : MonoBehaviour
     [FoldoutGroup("Events")] public UnityEvent beforeWinGame;
     [FoldoutGroup("Events")] public UnityEvent beforeEndGame;
 
+    bool endGameCalled = false;
+
     void Awake()
     {
         beforeLoseGame.AddListener(beforeEndGame.Invoke);
@@ -21,12 +23,20 @@ public class GameEnder : MonoBehaviour
 
     public void LoseGame()
     {
+        if (endGameCalled){
+            return;
+        }
+        endGameCalled = true;
         beforeLoseGame.Invoke();
         SceneManager.LoadSceneAsync(loseScene);
     }
 
     public void WinGame()
     {
+        if (endGameCalled){
+            return;
+        }
+        endGameCalled = true;
         beforeWinGame.Invoke();
         SceneManager.LoadSceneAsync(winScene);
     }

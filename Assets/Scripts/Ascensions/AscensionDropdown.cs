@@ -10,7 +10,7 @@ public class AscensionDropdown : UIElement
     {
         base.Show();
         var unlockedAscensions = Ascensions.GetUnlockedAscension();
-        Debug.Log($"Unlocked Ascension {unlockedAscensions}", this);
+        // Debug.LogError($"Unlocked Ascension {unlockedAscensions}", this);
         if (unlockedAscensions <= 0){
             Hide();
             return;

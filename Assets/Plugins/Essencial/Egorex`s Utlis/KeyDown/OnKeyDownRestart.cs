@@ -1,16 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OnKeyDownRestart : OnKeyDown
+public class OnKeyDownRestart : OnKeyDownTrigger
 {
     [SerializeField] protected bool async;
-
-    protected override void Awake()
-    {
-        onKeyDown.AddListener(Restart);
-    }
-
-    public void Restart()
+    
+    protected override void Trigger()
     {
         var sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
         if (async){

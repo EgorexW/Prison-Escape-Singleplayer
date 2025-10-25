@@ -1,14 +1,8 @@
 using UnityEngine;
 
-public class OnKeyDownQuit : OnKeyDown
+public class OnKeyDownQuit : OnKeyDownTrigger
 {
-    protected override void Awake()
-    {
-        base.Awake();
-        onKeyDown.AddListener(CloseGame);
-    }
-
-    public static void CloseGame()
+    protected override void Trigger()
     {
 #if !UNITY_WEBGL && !UNITY_EDITOR
         Application.Quit();

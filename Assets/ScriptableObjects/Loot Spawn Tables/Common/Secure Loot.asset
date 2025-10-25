@@ -24,5 +24,5 @@ MonoBehaviour:
   - value: 2
     Object: {fileID: 4635429409557423375, guid: e40cc3273f8c04050a5c8463465e1d5f,
       type: 3}
-  - value: 2
+  - value: 3
     Object: {fileID: 11400000, guid: 04278e6765bcf44d383db6b4c713202c, type: 2}

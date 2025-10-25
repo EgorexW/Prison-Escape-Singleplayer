@@ -709,12 +709,12 @@ PrefabInstance:
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnNr.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: spawnNr.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
