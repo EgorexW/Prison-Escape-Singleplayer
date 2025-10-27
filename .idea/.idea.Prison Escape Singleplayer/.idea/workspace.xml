@@ -8,19 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.mtl.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.obj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/TabletMat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/TabletMat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Contaminated Room.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Contaminated Room.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Big Infirmary Secret Note.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Big Infirmary Secret Note.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Big Infirmary Secret Note.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Big Infirmary Secret Note.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +153,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Heavy Armory Card.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
@@ -367,7 +366,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Prefab List not working yet" />
     <MESSAGE value="v 0.2.0" />
     <MESSAGE value="Trap Spawn Tables" />
     <MESSAGE value="Removed A* Pathfinding" />
@@ -392,7 +390,8 @@
     <MESSAGE value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
     <MESSAGE value="Added debug keybinds" />
     <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
+    <MESSAGE value="Tablet model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tablet model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
