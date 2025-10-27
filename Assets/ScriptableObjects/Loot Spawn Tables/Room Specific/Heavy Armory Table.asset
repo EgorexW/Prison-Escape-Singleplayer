@@ -15,6 +15,3 @@ MonoBehaviour:
   gameObjects:
   - value: 5
     Object: {fileID: 11400000, guid: 1e146f4b68e174a7b975d09d7601649f, type: 2}
-  - value: 1
-    Object: {fileID: 5526721213140052118, guid: 176f3e937fb9b4de7a3acf9bb7ffe358,
-      type: 3}

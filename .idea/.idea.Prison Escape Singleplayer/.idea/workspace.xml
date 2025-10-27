@@ -8,33 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownClearPlayerPrefs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownClearPlayerPrefs.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownOpenDebug.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownOpenDebug.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.mtl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/1350 Tablet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/TabletMat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Items/Tablet/TabletMat.mat.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDown.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownQuit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownQuit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownQuit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownQuit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownRestart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownRestart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/KeyDown/OnKeyDownRestart.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/KeyDown/OnKeyDownRestart.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Essencial.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Essencial.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Keycard Combiner Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Secure Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Secure Storage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Smart Map.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Table.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Light Armory Table.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ascensions/AscensionDropdown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,8 +367,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Cleaned up level Nodes" />
-    <MESSAGE value="Menu Test Room background Working" />
     <MESSAGE value="Prefab List not working yet" />
     <MESSAGE value="v 0.2.0" />
     <MESSAGE value="Trap Spawn Tables" />
@@ -406,7 +390,9 @@
     <MESSAGE value="Big Poison Room" />
     <MESSAGE value="Keycard Combiner" />
     <MESSAGE value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
+    <MESSAGE value="Added debug keybinds" />
+    <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

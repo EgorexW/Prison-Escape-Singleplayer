@@ -9705,8 +9705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 01010d0000006f007000740069006f006e0061006c0052006f006f006d0073002f00000000017c000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e00440069006300740069006f006e00610072007900600032005b005b0055006e0069007400790045006e00670069006e0065002e00470061006d0065004f0062006a006500630074002c00200055006e0069007400790045006e00670069006e0065002e0043006f00720065004d006f00640075006c0065005d002c005b00530079007300740065006d002e0049006e007400330032002c0020006d00730063006f0072006c00690062005d005d002c0020006d00730063006f0072006c00690062000000000001010800000063006f006d00700061007200650072002f01000000016f000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004f0062006a0065006300740045007100750061006c0069007400790043006f006d0070006100720065007200600031005b005b0055006e0069007400790045006e00670069006e0065002e00470061006d0065004f0062006a006500630074002c00200055006e0069007400790045006e00670069006e0065002e0043006f00720065004d006f00640075006c0065005d005d002c0020006d00730063006f0072006c00690062000100000005060a00000000000000042e0b010200000024006b0000000000170102000000240076000100000005042e0b010200000024006b0001000000170102000000240076000200000005042e0b010200000024006b0002000000170102000000240076000100000005042e0b010200000024006b0003000000170102000000240076000100000005042e0b010200000024006b0004000000170102000000240076000100000005042e0b010200000024006b0005000000170102000000240076000100000005042e0b010200000024006b0006000000170102000000240076000100000005042e0b010200000024006b0007000000170102000000240076000100000005042e0b010200000024006b0008000000170102000000240076000100000005042e0b010200000024006b00090000001701020000002400760001000000050705
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1061074235132394150, guid: c7d9065872d0d43d8a68a55f3a60661b, type: 3}
     - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
@@ -9722,7 +9722,147 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: optionalRooms
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UnityEngine.GameObject, UnityEngine.CoreModule],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 10
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 1
+    - Name: $v
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 2
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 3
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 4
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 5
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 6
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 7
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 8
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 9
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   necessaryRooms:
   - {fileID: 5373328976349116117, guid: 1bef5240361d54cd68cf98d39c558b07, type: 3}
   - {fileID: 251163510702948846, guid: d37fc6f118ab2441faa29eecacdd6452, type: 3}
@@ -11372,7 +11512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -18061,7 +18201,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 70.00001
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 500
@@ -19916,7 +20056,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 70
+  field of view: 70.00001
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
