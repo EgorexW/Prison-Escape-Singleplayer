@@ -9,6 +9,7 @@ public class SettingsUI : MonoBehaviour
 {
     [BoxGroup("External References")] [Required] [SerializeField] FirstPersonController firstPersonController;
 
+    [BoxGroup("Internal References")] [Required] [SerializeField] Slider volumeSlider;
     [BoxGroup("Internal References")] [Required] [SerializeField] Slider sensitivitySlider;
     [BoxGroup("Internal References")] [Required] [SerializeField] TMP_Dropdown qualityDropdown;
 
@@ -21,6 +22,8 @@ public class SettingsUI : MonoBehaviour
         qualityDropdown.onValueChanged.AddListener(SetQuality);
         var options = QualitySettings.names.Select(quality => new TMP_Dropdown.OptionData(quality)).ToList();
         qualityDropdown.options = options;
+        volumeSlider.value = AudioListener.volume;
+        volumeSlider.onValueChanged.AddListener(volume => { AudioListener.volume = volume; });
     }
 
     void Start()
