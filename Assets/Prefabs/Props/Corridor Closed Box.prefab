@@ -165,6 +165,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a84027b3d46754e609c6ac1e0fa8c49b,
         type: 2}
+    - target: {fileID: 8202988667215969604, guid: b5b71f351c55d475da02d2c78da45777,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 92eb64d9ab10fcb4ba51ea1aad131523, type: 2}
     m_RemovedComponents:
     - {fileID: 4837971436158005492, guid: b5b71f351c55d475da02d2c78da45777, type: 3}
     m_RemovedGameObjects:
@@ -221,6 +226,11 @@ PrefabInstance:
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       propertyPath: electrocutionDamage.damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
+        type: 3}
+      propertyPath: electrocutionDamage.lightDamage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,

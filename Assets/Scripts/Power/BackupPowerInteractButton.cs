@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class BackupPowerButton : Button
+public class BackupPowerInteractButton : InteractButton
 {
     [SerializeField] TextMeshPro text;
 

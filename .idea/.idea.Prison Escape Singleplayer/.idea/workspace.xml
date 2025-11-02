@@ -8,17 +8,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Contaminated Room.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Contaminated Room.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Big Infirmary Secret Note.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Big Infirmary Secret Note.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Big Infirmary Secret Note.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Big Infirmary Secret Note.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/Discord.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/Discord.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/DiscordManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/DiscordManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor/DiscordPartnerSdkDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor/DiscordPartnerSdkDependencies.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/License-Notices.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/License-Notices.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.Sdk.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.Sdk.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/discord_partner_sdk.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/discord_partner_sdk.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/cdiscord.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/discord_partner_sdk.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/discordpp.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Modules/module.modulemap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/discord_partner_sdk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/libdiscord_partner_sdk.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/libdiscord_partner_sdk.dylib.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/discord_partner_sdk.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/discord_partner_sdk.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.dbg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.dbg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/package.json.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Poison Room.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardCombiner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardCombiner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardRecipes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardRecipes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerInteractButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerInteractButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/InteractButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/InteractButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +199,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Discord/DiscordManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" root0="FORCE_HIGHLIGHTING" />
@@ -170,6 +212,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/WinGameItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardCombiner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Crowbar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Disc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
@@ -215,6 +258,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13/Editor/UsageUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Editor/ShaderGraph/Nodes/UniversalSampleBufferNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/74/3dde1d86/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/bc/25067beb/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/e2/d2092c76/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -237,20 +281,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Standalone Player.Standalone Player.executor": "Debug",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Standalone Player.Standalone Player.executor&quot;: &quot;Debug&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Standalone Player.Standalone Player">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../Builds/Prison Escape.app/Contents/MacOS/Prison Escape" />
@@ -302,15 +346,13 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7733">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7733" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -366,7 +408,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.2.0" />
     <MESSAGE value="Trap Spawn Tables" />
     <MESSAGE value="Removed A* Pathfinding" />
     <MESSAGE value="Renamed Damage and fixedup resistanceIcon" />
@@ -391,7 +432,8 @@
     <MESSAGE value="Added debug keybinds" />
     <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
     <MESSAGE value="Tablet model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tablet model" />
+    <MESSAGE value="v 0.5.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 0.5.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
