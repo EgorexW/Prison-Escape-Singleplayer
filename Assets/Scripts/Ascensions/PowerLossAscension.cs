@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PowerLossAscension : AscensionEffectSpecial
+public class PowerLossAscension : GameModifierSpecial
 {
     [SerializeField] float timeBetweenPowerLoss = 90f;
 

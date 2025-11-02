@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class AddRoomAscensionEffect : AscensionEffectSpecial
+public class AddRoomGameModifier : GameModifierSpecial
 {
     [BoxGroup("References")] [Required] [SerializeField] RoomChooser roomChooser;
 

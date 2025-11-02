@@ -19,7 +19,7 @@ public class GameManager : SerializedMonoBehaviour
     [BoxGroup("References")] [Required] public GameEnder gameEnder;
     [BoxGroup("References")] [Required] public RoomsManager roomsManager;
     [BoxGroup("References")] [Required] public TrapsManager trapsManager;
-    [BoxGroup("References")] [Required] public Ascensions ascensions;
+    [BoxGroup("References")][Required] public GameModifiers gameModifiers;
 
     public static GameManager i{ get; private set; }
     public Player Player => player;

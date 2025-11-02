@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class Descriptions
 {
-    public static string GetEffectDescription(this AscensionEffect effect)
+    public static string GetEffectDescription(this GameModifier effect)
     {
         var lines = new List<string>();
         if (effect.gameTimeMinutesReduction > 0){

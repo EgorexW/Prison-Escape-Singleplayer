@@ -8,6 +8,7 @@ public class GameInit : MonoBehaviour
 {
     const float DELAY = 0.5f;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;
+    [BoxGroup("References")] [Required] [SerializeField] Ascensions ascensions;
     [BoxGroup("References")] [SerializeField] List<CorridorSpawner> corridorSpawners;
 
     [FoldoutGroup("Events")] public UnityEvent onFinish;
@@ -20,7 +21,7 @@ public class GameInit : MonoBehaviour
 
     IEnumerator GenerateRoutine()
     {
-        GameManager.i.ascensions.SetupAscensions();
+        ascensions.SetupAscensions();
         yield return new WaitForSeconds(DELAY);
         var rooms = roomGenerator.GenerateRooms();
         // Debug.Log("Room generated, waiting to generate corridors", this);

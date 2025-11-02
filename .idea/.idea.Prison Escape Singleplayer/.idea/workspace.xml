@@ -7,60 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/Discord.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/Discord.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/DiscordManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Discord/DiscordManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor/DiscordPartnerSdkDependencies.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Editor/DiscordPartnerSdkDependencies.xml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/License-Notices.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/License-Notices.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.Sdk.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.Sdk.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Discord.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/discord_partner_sdk.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/discord_partner_sdk.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/cdiscord.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/discord_partner_sdk.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Headers/discordpp.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/Modules/module.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/iOS/discord_partner_sdk.framework/discord_partner_sdk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/libdiscord_partner_sdk.dylib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/libdiscord_partner_sdk.dylib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/discord_partner_sdk.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/discord_partner_sdk.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.dbg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.dbg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/Runtime/Plugins/x86_64/libdiscord_partner_sdk.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.discord.partnersdk/package.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardCombiner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardCombiner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardCombiner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardRecipes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KeycardRecipes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactive/Keycard Combiner/KeycardRecipes.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerInteractButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/BackupPowerInteractButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/InteractButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Power/Button.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Power/InteractButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -408,7 +355,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Trap Spawn Tables" />
     <MESSAGE value="Removed A* Pathfinding" />
     <MESSAGE value="Renamed Damage and fixedup resistanceIcon" />
     <MESSAGE value="Prefab list reference holders hopefully work now" />
@@ -433,7 +379,8 @@
     <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
     <MESSAGE value="Tablet model" />
     <MESSAGE value="v 0.5.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 0.5.0" />
+    <MESSAGE value="New posters" />
+    <option name="LAST_COMMIT_MESSAGE" value="New posters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

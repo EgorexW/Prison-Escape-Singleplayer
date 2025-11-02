@@ -18,7 +18,7 @@ public class AscensionEffectsDisplay : PoweredDevice
             return;
         }
         Destroy(objToRemove);
-        var effects = GameManager.i.ascensions.GetActiveEffects();
+        var effects = GameManager.i.gameModifiers.GetActiveModifiers();
         var texts = new string[effects.Count];
         for (var i = 0; i < effects.Count; i++) texts[i] = $"Level {i + 1} " + effects[i].GetEffectDescription();
         displayText = string.Join("\n", texts);

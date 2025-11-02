@@ -7,9 +7,7 @@ public class Ascensions : MonoBehaviour
 {
     [ShowInInspector] public static int AscensionLevel;
 
-    public List<AscensionEffect> effects;
-
-    [BoxGroup("References")] [Required] [SerializeField] CorridorSpawner corridorTrapsSpawner;
+    public List<GameModifier> effects;
     int maxUnlockedAscension => effects.Count;
 
     void Start()
@@ -34,25 +32,12 @@ public class Ascensions : MonoBehaviour
 
     public void SetupAscensions()
     {
-        foreach (var effect in GetActiveEffects()) ApplyEffect(effect);
+        GameManager.i.gameModifiers.ApplyEffects(GetActiveEffects());
     }
 
-    void ApplyEffect(AscensionEffect effect)
+    public List<GameModifier> GetActiveEffects()
     {
-        GameManager.i.gameTimeManager.gameTimeMinutes -= effect.gameTimeMinutesReduction;
-        GameManager.i.Player.GetInventory()
-            .SetSize(GameManager.i.Player.GetInventory().GetSize() - effect.inventorySizeReduction);
-        GameManager.i.trapsManager.trapChance += effect.trapChanceIncrease;
-        GameManager.i.Player.playerHealth.Damage(effect.startDamage);
-        corridorTrapsSpawner.spawnCount.x += effect.corridorTrapsIncrease;
-        corridorTrapsSpawner.spawnCount.y += effect.corridorTrapsIncrease;
-        effect.specialEffect?.Apply();
-        Debug.Log($"Ascension Effect applied: {effect.GetEffectDescription()}");
-    }
-
-    public List<AscensionEffect> GetActiveEffects()
-    {
-        var list = new List<AscensionEffect>();
+        var list = new List<GameModifier>();
         for (var i = 0; i <= AscensionLevel - 1; i++){
             if (effects.Count <= i){
                 Debug.LogWarning("Run out of ascensions", this);
@@ -66,29 +51,5 @@ public class Ascensions : MonoBehaviour
     public static void SetAscensionLevel(int newLevel)
     {
         AscensionLevel = newLevel;
-    }
-}
-
-[Serializable]
-[FoldoutGroup("Ascension Effect")]
-public class AscensionEffect
-{
-    public float gameTimeMinutesReduction;
-    public int inventorySizeReduction;
-    public float trapChanceIncrease;
-    public Damage startDamage;
-    public int corridorTrapsIncrease;
-    public AscensionEffectSpecial specialEffect;
-}
-
-public abstract class AscensionEffectSpecial : MonoBehaviour
-{
-    [SerializeField] string effectDescription;
-
-    public abstract void Apply();
-
-    public virtual string GetEffectDescription()
-    {
-        return effectDescription;
     }
 }
