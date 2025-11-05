@@ -11,13 +11,14 @@ public class MapUI : MonoBehaviour
 
     [FormerlySerializedAs("rect")] [GetComponent] [SerializeField] RectTransform rectTransform;
 
-    [BoxGroup("Internal References")] [Required] [SerializeField] ObjectsUI roomsObjectPool;
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
+    [BoxGroup("Internal References")] [SerializeField] ObjectsUI roomsObjectPool;
     [BoxGroup("Internal References")] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [SerializeField] RectTransform selfPointer;
     [BoxGroup("Internal References")] [SerializeField] ObjectsUI powerSystemsPool;
 
     [SerializeField] float scale = 0.005f;
+    [SerializeField] bool showDiscoveredRooms = true;
 
     float Rect => Mathf.Min(rectTransform.rect.width, rectTransform.rect.height);
     float TrueScale => scale * Rect;
@@ -37,6 +38,7 @@ public class MapUI : MonoBehaviour
         GenerateMap();
     }
 
+    [Button][HideInEditorMode]
     public void GenerateMap()
     {
         GenerateMap(GameManager.i.levelNodes);
@@ -98,6 +100,9 @@ public class MapUI : MonoBehaviour
 
     void DrawRooms(LevelNodes levelNodes)
     {
+        if (roomsObjectPool == null){
+            return;
+        }
         roomsObjectPool.SetCount(levelNodes.Nodes.Count);
         var min = new Vector2(float.MaxValue, float.MaxValue);
         var max = new Vector2(float.MinValue, float.MinValue);
@@ -114,7 +119,7 @@ public class MapUI : MonoBehaviour
             obj.transform.localPosition = nodePos;
             obj.GetComponent<RectTransform>().sizeDelta = nodeSize;
             var nodeUI = obj.GetComponent<NodeUI>();
-            nodeUI.SetNode(node);
+            nodeUI.SetNode(node, showDiscoveredRooms);
         }
         var center = (min + max) / 2;
         container.GetComponent<RectTransform>().anchoredPosition = -center;

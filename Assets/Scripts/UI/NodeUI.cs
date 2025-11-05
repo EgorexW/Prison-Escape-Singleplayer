@@ -13,7 +13,7 @@ public class NodeUI : SerializedMonoBehaviour
     [SerializeField] Dictionary<NodeType, Sprite> nodeSprites = new();
     [SerializeField] Sprite discoveredSprite;
 
-    public void SetNode(LevelNode node)
+    public void SetNode(LevelNode node, bool showDiscoveredRooms)
     {
         image.sprite = nodeSprites[node.type];
         text.text = "";
@@ -22,7 +22,7 @@ public class NodeUI : SerializedMonoBehaviour
         }
         var roomNode = node as RoomNode;
         Debug.Assert(roomNode != null, nameof(roomNode) + " != null");
-        if (!roomNode.room.discovered){
+        if (!roomNode.room.discovered || !showDiscoveredRooms){
             return;
         }
         image.sprite = discoveredSprite;

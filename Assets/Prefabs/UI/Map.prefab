@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rectTransform: {fileID: 4716090378257042808}
-  roomsObjectPool: {fileID: 4997481042322181522}
   container: {fileID: 2323080893702630972}
+  roomsObjectPool: {fileID: 4997481042322181522}
   playerPointer: {fileID: 8246778650629174431}
   selfPointer: {fileID: 0}
   powerSystemsPool: {fileID: 2097019356772844887}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 2
+  m_fontSizeMin: 0.01
   m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
