@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Hidden Room
+  m_Name: The Conduit
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 4
-    Object: {fileID: 11400000, guid: 1e146f4b68e174a7b975d09d7601649f, type: 2}
   - value: 1
-    Object: {fileID: 5335858694964001344, guid: 7bcab5ecc9c724880831b75e8bb8b54f,
+    Object: {fileID: 5526721213140052118, guid: 523f36fe4659f42a89b721f32cd7d86b,
+      type: 3}
+  - value: 1
+    Object: {fileID: 4938499120341465757, guid: d7dca282487a34869a1ad5056014b1bc,
+      type: 3}
+  - value: 1
+    Object: {fileID: 1797106733064383118, guid: 27aa845d56631468ebbc05f3927818f3,
       type: 3}

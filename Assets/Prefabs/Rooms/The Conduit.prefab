@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2270871401134883441, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_Name
-      value: Keycard Combiner Room
+      value: The Conduit
       objectReference: {fileID: 0}
     - target: {fileID: 2851956841060903381, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
@@ -78,6 +78,27 @@ PrefabInstance:
       propertyPath: accessLevel
       value: 
       objectReference: {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd,
+        type: 2}
+    - target: {fileID: 8557591651961991848, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557591651961991848, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.593
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557591651961991848, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.485
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: d050207c778a4443bacf884e27f20e10,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
