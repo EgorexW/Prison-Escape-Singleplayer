@@ -18,8 +18,8 @@ public class KeycardReader : PoweredDevice, IInteractive
     [FoldoutGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
 
     [FoldoutGroup("Events")] public UnityEvent onUnlock;
-    
-    bool corrupted;
+
+    public bool corrupted;
 
     void Awake()
     {

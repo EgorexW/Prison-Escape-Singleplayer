@@ -8,13 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Map.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Map.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Terminal.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Terminal.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Status Terminal.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Status Terminal.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Map.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Map.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReaderVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReaderVisuals.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,7 +371,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fixed grenade double door damage" />
     <MESSAGE value="Keycard stealing seems to work" />
     <MESSAGE value="Ascensions mostly working" />
     <MESSAGE value="Sounds don't play while loading" />
@@ -393,7 +395,8 @@
     <MESSAGE value="Volume Setting" />
     <MESSAGE value="Refactor file structure and rename key components for clarity" />
     <MESSAGE value="Adjust keycard hold duration and enhance power zone visualization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust keycard hold duration and enhance power zone visualization" />
+    <MESSAGE value="Status Terminal Room" />
+    <option name="LAST_COMMIT_MESSAGE" value="Status Terminal Room" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

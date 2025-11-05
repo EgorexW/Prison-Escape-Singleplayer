@@ -46,6 +46,9 @@ public class KeycardReaderVisuals : MonoBehaviour
         if (keycardReader == null){
             return;
         }
+        if (keycardReader.corrupted){
+            return;
+        }
         defaultText = keycardReader.accessLevel.name;
         text.color = keycardReader.accessLevel.color;
         stealCardIcon.SetActive(keycardReader.stealCard & keycardReader.IsPowered());
