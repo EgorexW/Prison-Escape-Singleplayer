@@ -50,11 +50,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   motionSensor: {fileID: 7542124015383038598}
-  timePenalty: 60
+  timePenalty: 120
   announcement:
     enabled: 1
     value:
-      message: Threat Detected! Purify Protocol advanced by 60s
+      message: Threat Detected! Purify Protocol advanced by 120s
       sound: {fileID: 11400000, guid: 61a5f4e65f1ec4d208c69eee34f1f7dc, type: 2}
   isActive: 0
 --- !u!1001 &4119690876644111738

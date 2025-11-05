@@ -13,10 +13,12 @@ public class KeycardReaderVisuals : MonoBehaviour
     // [BoxGroup("Text")] [SerializeField] string defaultText = "<color=yellow>----</color>";
     [BoxGroup("Text")] [SerializeField] string accessGrantedText = "<color=green>✓</color>";
     [BoxGroup("Text")] [SerializeField] string accessDeniedText = "<color=red>X</color>";
+    [BoxGroup("Text")] [SerializeField] string corruptedText = "<color=red>ERR</color>";
 
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessGrantedSound;
     [BoxGroup("Audio")] [SerializeField] PlayAudio accessDeniedSound;
     [BoxGroup("Audio")] [SerializeField] PlayAudio electrocuteSound;
+    [BoxGroup("Audio")] [SerializeField] PlayAudio corruptedSound;
 
     [BoxGroup("Sparks")] [SerializeField] ParticleSystem sparks;
 
@@ -64,7 +66,6 @@ public class KeycardReaderVisuals : MonoBehaviour
 
     public void AccessGranted(bool original)
     {
-        text.text = accessGrantedText;
         defaultText = accessGrantedText;
         if (!original){
             return;
@@ -76,5 +77,11 @@ public class KeycardReaderVisuals : MonoBehaviour
     {
         sparks?.Play();
         electrocuteSound?.Play();
+    }
+
+    public void Corrupted()
+    {
+        corruptedSound?.Play();
+        defaultText = corruptedText;
     }
 }

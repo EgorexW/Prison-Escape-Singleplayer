@@ -7,7 +7,7 @@ using UnityEngine;
 class KeycardRecipes : ScriptableObject
 {
     [BoxGroup("References")][Required][SerializeField] GameObject baseKeycardPrefab;
-    [BoxGroup("References")][Required][SerializeField] AccessLevel defaultAccessLevel;
+    [BoxGroup("References")][Required][SerializeField] GameObject defaultPrefab;
     
     [SerializeField] List<KeycardRecipe> recipes;
     
@@ -32,7 +32,13 @@ class KeycardRecipes : ScriptableObject
             }
         }
         Debug.LogWarning("No recipe found for keycards: " + keycard1.accessLevel + " + " + keycard2.accessLevel);
-        return CreateKeycard(defaultAccessLevel, false);
+        return CreateDefault();
+    }
+
+    Keycard CreateDefault()
+    {
+        var result = Instantiate(defaultPrefab).GetComponent<Keycard>();
+        return result;
     }
 
     Keycard CreateKeycard(AccessLevel accessLevel, bool oneUse)

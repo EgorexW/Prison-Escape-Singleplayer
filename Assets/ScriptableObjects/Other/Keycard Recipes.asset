@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseKeycardPrefab: {fileID: 6445903414931907156, guid: c2c92265f68aa459782313f7b229b958,
     type: 3}
-  defaultAccessLevel: {fileID: 11400000, guid: db2091b6621974861a096816b7d8f463, type: 2}
+  defaultPrefab: {fileID: 1797106733064383118, guid: 27aa845d56631468ebbc05f3927818f3,
+    type: 3}
   recipes:
   - options1:
     - {fileID: 11400000, guid: 4c0f80f9eb07641b0b4da897d5514dbe, type: 2}

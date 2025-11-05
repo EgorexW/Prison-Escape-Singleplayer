@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-public class AscensionEffectsDisplay : PoweredDevice
+public class GameModifiersDisplay : PoweredDevice
 {
     [BoxGroup("References")] [Required] [SerializeField] TextMeshPro text;
 

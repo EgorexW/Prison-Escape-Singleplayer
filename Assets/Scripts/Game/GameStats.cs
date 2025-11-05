@@ -1,17 +1,25 @@
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class GameStats : MonoBehaviour
+public class Stats
 {
-    public static GameStats i;
-
     public float gameTime;
     public float normalDamageTaken;
     public float pernamentDamageTaken;
     public float metersWalked;
     public int uniqueRoomsEntered;
+    public int objectsDestroyed;
+}
+
+public class GameStats : MonoBehaviour
+{
+    public static GameStats i;
 
     readonly HashSet<Room> roomsList = new();
+    
+    
+    [ShowInInspector] Stats stats = new();
 
     void Awake()
     {
@@ -35,22 +43,32 @@ public class GameStats : MonoBehaviour
         if (!roomsList.Add(arg0)){
             return;
         }
-        uniqueRoomsEntered++;
+        stats.uniqueRoomsEntered++;
     }
 
     void OnMove(Vector3 arg0)
     {
-        metersWalked += arg0.magnitude;
+        stats.metersWalked += arg0.magnitude;
     }
 
     void OnDamage(Damage damage)
     {
-        normalDamageTaken += Mathf.Max(damage.lightDamage, 0);
-        pernamentDamageTaken += Mathf.Max(damage.heavyDamage, 0);
+        stats.normalDamageTaken += Mathf.Max(damage.lightDamage, 0);
+        stats.pernamentDamageTaken += Mathf.Max(damage.heavyDamage, 0);
     }
 
     void BeforeEndGame()
     {
-        gameTime = GameManager.i.gameTimeManager.GameTime;
+        stats.gameTime = GameManager.i.gameTimeManager.GameTime;
+    }
+
+    public void OnObjectDestroyed(Destroyable destroyable)
+    {
+        stats.objectsDestroyed ++;
+    }
+
+    public Stats GetStats()
+    {
+        return stats;
     }
 }

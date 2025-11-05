@@ -9,12 +9,12 @@ public class StatsUI : UIElement
     public override void Show()
     {
         base.Show();
-        var stats = GameStats.i;
+        var stats = GameStats.i.GetStats();
         if (stats == null){
             text.text = "";
-            Debug.LogWarning("No GameStats instance found.", this);
+            Debug.LogWarning("No Stats got", this);
             return;
         }
-        text.text = stats.GetStatsDescription();
+        text.text = Descriptions.GetStatsDescription(stats);
     }
 }

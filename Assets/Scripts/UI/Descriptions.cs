@@ -37,7 +37,7 @@ public static class Descriptions
         return string.Join(", ", lines);
     }
 
-    public static string GetStatsDescription(this GameStats stats)
+    public static string GetStatsDescription(Stats stats)
     {
         var lines = new List<string>{
             $"Floor Nr: {Ascensions.AscensionLevel}",
@@ -45,7 +45,8 @@ public static class Descriptions
             $"Light Damage Taken: {Mathf.Round(stats.normalDamageTaken)}",
             $"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}",
             $"Meters Walked: {Mathf.Round(stats.metersWalked)}",
-            $"Unique Rooms Entered: {stats.uniqueRoomsEntered}"
+            $"Unique Rooms Entered: {stats.uniqueRoomsEntered}",
+            $"Objects Destroyed: {stats.objectsDestroyed}"
         };
         return string.Join("\n", lines);
     }

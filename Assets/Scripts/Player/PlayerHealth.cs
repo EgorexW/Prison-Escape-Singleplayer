@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour, IDamagable
         if (damage.IsZero){
             return;
         }
+        if (!health.Alive){
+            return;
+        }
         if (log){
             Debug.Log(damage, this);
         }

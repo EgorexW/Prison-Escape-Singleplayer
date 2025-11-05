@@ -309,18 +309,18 @@ MonoBehaviour:
       m_Calls: []
   soundEffect: {fileID: 0}
   damage:
-    damage: 0
-    pernamentDamage: 0
+    lightDamage: 0
+    heavyDamage: 0
     damageType: 0
   heal:
-    damage: 0
-    pernamentDamage: 0
+    lightDamage: 0
+    heavyDamage: 0
     damageType: 0
   effect:
     duration: 60
     healPerSecond:
-      damage: 0.5
-      pernamentDamage: 0
+      lightDamage: 0.5
+      heavyDamage: 0
       damageType: 0
-    staminaPerSecond: 0.1
+    staminaPerSecond: 0.05
     endTime: 0

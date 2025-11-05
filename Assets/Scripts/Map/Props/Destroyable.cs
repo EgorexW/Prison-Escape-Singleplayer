@@ -11,6 +11,9 @@ public class Destroyable : MonoBehaviour, IDamagable
 
     public void Damage(Damage damage)
     {
+        if (!health.Alive){
+            return;
+        }
         health.Damage(damage);
         if (!health.Alive){
             Die();
@@ -19,6 +22,7 @@ public class Destroyable : MonoBehaviour, IDamagable
 
     public void Die()
     {
+        GameStats.i.OnObjectDestroyed(this);
         Destroy(GameObjectToDestroy);
     }
 }

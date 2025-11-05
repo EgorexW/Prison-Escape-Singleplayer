@@ -18,6 +18,8 @@ public class KeycardReader : PoweredDevice, IInteractive
     [FoldoutGroup("Electrocution")] [SerializeField] float minimalPowerElectrocutionChance = 0.5f;
 
     [FoldoutGroup("Events")] public UnityEvent onUnlock;
+    
+    bool corrupted;
 
     void Awake()
     {
@@ -28,6 +30,11 @@ public class KeycardReader : PoweredDevice, IInteractive
 
     public void Interact(Player player)
     {
+        if (corrupted){
+            visuals?.Corrupted();
+            TryElectrocute(player);
+            return;
+        }
         if (!IsPowered()){
             return;
         }
@@ -36,12 +43,23 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
-        var keycard = item.GetComponent<IKeycard>();
-        if (keycard == null || !keycard.HasAccess(accessLevel)){
+        var keycard = item.GetComponent<Keycard>();
+        if (keycard == null){
             visuals?.AccessDenied();
             return;
         }
-        if (keycard.OneUse || stealCard){
+        if (keycard.hackChance){
+            if (!(Random.value < keycard.hackChance)){
+                visuals?.Corrupted();
+                corrupted = true;
+                return;
+            }
+        }
+        else if (!keycard.ReadKeycard(accessLevel)){
+            visuals?.AccessDenied();
+            return;
+        }
+        if (keycard.oneUse || stealCard){
             player.RemoveItem(item);
             Destroy(item.gameObject);
         }

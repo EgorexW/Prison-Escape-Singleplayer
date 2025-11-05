@@ -360,6 +360,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keycard Combiner
       objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9327481
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.58873284
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.9226211
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.003973365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.4551952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308356595593410427, guid: a7f71aaa15ec64a78b721e51eb8e8345,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.008007228
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

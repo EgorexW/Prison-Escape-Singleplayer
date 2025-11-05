@@ -24,9 +24,9 @@ public class KeycardCombiner : PoweredDevice
         var resultKeycard = recipes.CreateAndGetResult(keycards[0], keycards[1]);
         Destroy(keycards[0].gameObject);
         Destroy(keycards[1].gameObject);
-        resultKeycard.transform.parent = spawnPoint;
-        resultKeycard.transform.localPosition = Vector3.zero;
-        resultKeycard.transform.localRotation = Quaternion.identity;
+        resultKeycard.gameObject.transform.parent = spawnPoint;
+        resultKeycard.gameObject.transform.localPosition = Vector3.zero;
+        resultKeycard.gameObject.transform.localRotation = Quaternion.identity;
         if (Random.value < losePowerChance){
             MainPowerSystem.i.ChangePower(transform.position, PowerLevel.NoPower);
         }

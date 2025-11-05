@@ -232,9 +232,11 @@ MonoBehaviour:
   textDisplayTime: 3
   accessGrantedText: <color=green>Access Granted</color>
   accessDeniedText: <color=red>X</color>
+  corruptedText: <color=red>ERR</color>
   accessGrantedSound: {fileID: 5231284974382515679}
   accessDeniedSound: {fileID: 4166550288247946445}
   electrocuteSound: {fileID: 8226645980608176966}
+  corruptedSound: {fileID: 0}
   sparks: {fileID: 5540131036056089034}
   stealCardIcon: {fileID: 7913657409360277712}
 --- !u!1 &1112279777777873392
@@ -642,7 +644,7 @@ Transform:
   m_GameObject: {fileID: 5323290661157089626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.787, y: 1.245, z: 0.058}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
