@@ -118,6 +118,22 @@ PrefabInstance:
       propertyPath: unlockId.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.sound
+      value: 
+      objectReference: {fileID: 11400000, guid: c28f3888cdcc14231bcf585785a8c67f,
+        type: 2}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.message
+      value: Smart Maps updated
+      objectReference: {fileID: 0}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Color.b

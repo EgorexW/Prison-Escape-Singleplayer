@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 123646456454774323, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: m_Name
-      value: Metal Detectors Off
+      value: Metal Detectors Off Disc
       objectReference: {fileID: 0}
     - target: {fileID: 512059738835479207, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
@@ -117,6 +117,22 @@ PrefabInstance:
         type: 3}
       propertyPath: unlockId.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.sound
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a28a3485ade4e47a82d6ab6f61cef4,
+        type: 2}
+    - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
+        type: 3}
+      propertyPath: announcement.value.message
+      value: Metal Detectors off
       objectReference: {fileID: 0}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}

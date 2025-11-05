@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 2918961090484064871, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}
       propertyPath: announcement.value.message
-      value: Purify Protocol postponed by 180s
+      value: Purify Protocol postponed by <color=yellow>180s
       objectReference: {fileID: 0}
     - target: {fileID: 5874116266648935067, guid: 04bdf630c05fe4fecb57e1cd19664677,
         type: 3}

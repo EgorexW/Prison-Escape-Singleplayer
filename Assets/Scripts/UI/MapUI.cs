@@ -64,7 +64,7 @@ public class MapUI : MonoBehaviour
             rect.sizeDelta = new Vector2(subPowerSystem.Bounds.size.x, subPowerSystem.Bounds.size.z) * TrueScale;
             var center = subPowerSystem.Bounds.center;
             rect.localPosition = new Vector2(center.x, center.z) * TrueScale;
-            Color color = subPowerSystem.power switch
+            Color color = MainPowerSystem.i.GetPower(subPowerSystem) switch
             {
                 PowerLevel.NoPower => Color.red,
                 PowerLevel.MinimalPower => Color.yellow,

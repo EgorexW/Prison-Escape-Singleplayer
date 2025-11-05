@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2cc530574eed43c2abb405bfd0207a3, type: 3}
-  m_Name: Threat Detected, Purify advanced 60s
+  m_Name: Metal Detectors Off
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 7dd5676eac4574bbcbd849899b4afcfd, type: 3}
+  - {fileID: 8300000, guid: e7d1d53ae528546ffb470ee39d9cab48, type: 3}
   volume: 0.75
   volumeVariance: 0
   pitch: 1

@@ -42,16 +42,21 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     {
         foreach (var subSystem in subPowerSystems)
             if (subSystem.InBounds(pos)){
-                var subSystemPower = subSystem.power;
-                if (GlobalMinimalPower && subSystemPower == PowerLevel.NoPower){
-                    subSystemPower = PowerLevel.MinimalPower;
-                }
-                return subSystemPower;
+                return GetPower(subSystem);
             }
         if (!defaultPower.Enabled){
             Debug.LogWarning($"Device not in any subsystem bounds {pos}");
         }
         return defaultPower;
+    }
+
+    public PowerLevel GetPower(SubPowerSystem subSystem)
+    {
+        var subSystemPower = subSystem.power;
+        if (GlobalMinimalPower && subSystemPower == PowerLevel.NoPower){
+            subSystemPower = PowerLevel.MinimalPower;
+        }
+        return subSystemPower;
     }
 
 

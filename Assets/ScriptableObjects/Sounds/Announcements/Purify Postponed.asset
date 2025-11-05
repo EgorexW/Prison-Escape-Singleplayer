@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2cc530574eed43c2abb405bfd0207a3, type: 3}
-  m_Name: Purify Postponed 120s
+  m_Name: Purify Postponed
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 189e7da456b344d979f4418ec9e4ea6c, type: 3}

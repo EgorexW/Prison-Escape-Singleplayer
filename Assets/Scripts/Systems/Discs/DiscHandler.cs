@@ -27,7 +27,7 @@ public class DiscHandler : PoweredDevice, IInteractive
             Destroy(item.gameObject);
         }
         else{
-            Debug.LogWarning("Disk not activated: " + disc.name, disc);
+            Debug.LogWarning("Disk not activated: " + disc, disc);
         }
     }
 

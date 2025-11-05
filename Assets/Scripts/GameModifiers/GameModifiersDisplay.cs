@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-public class GameModifiersDisplay : PoweredDevice
+public class GameModifiersDisplay: MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] TextMeshPro text;
 
@@ -10,9 +10,8 @@ public class GameModifiersDisplay : PoweredDevice
 
     string displayText;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         if (Ascensions.AscensionLevel == 0){
             Destroy(gameObject);
             return;
@@ -23,12 +22,5 @@ public class GameModifiersDisplay : PoweredDevice
         for (var i = 0; i < effects.Count; i++) texts[i] = $"Level {i + 1} " + effects[i].GetEffectDescription();
         displayText = string.Join("\n", texts);
         text.text = displayText;
-        OnPowerChanged();
-    }
-
-    protected override void OnPowerChanged()
-    {
-        base.OnPowerChanged();
-        text.gameObject.SetActive(IsPowered());
     }
 }

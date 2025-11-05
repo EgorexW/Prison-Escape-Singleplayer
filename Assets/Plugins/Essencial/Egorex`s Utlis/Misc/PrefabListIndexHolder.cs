@@ -15,20 +15,20 @@ public class PrefabListIndexHolder : MonoBehaviour
     [Button]
     void SaveIndex()
     {
-        AddToPrefabList();
+        // AddToPrefabList();
         prefabListIndex = prefabList.GetPrefabIndex(gameObject);
     }
 
-    void AddToPrefabList()
-    {
-        if (!prefabList.prefabs.Contains(gameObject))
-        {
-            prefabList.prefabs.Add(gameObject);
-
-#if UNITY_EDITOR
-            EditorUtility.SetDirty(prefabList);
-            AssetDatabase.SaveAssets();
-#endif
-        }
-    }
+//     void AddToPrefabList()
+//     {
+//         if (!prefabList.prefabs.Contains(gameObject))
+//         {
+//             prefabList.prefabs.Add(gameObject);
+//
+// #if UNITY_EDITOR
+//             EditorUtility.SetDirty(prefabList);
+//             AssetDatabase.SaveAssets();
+// #endif
+//         }
+//     }
 }
