@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 public class SubPowerSystem : MonoBehaviour
 {
     [FormerlySerializedAs("bounds")] [GetComponent] [SerializeField] new BoxCollider collider;
+    public Bounds Bounds => collider.bounds;
 
     public PowerLevel power;
 
@@ -16,6 +17,6 @@ public class SubPowerSystem : MonoBehaviour
 
     public bool InBounds(Vector3 transformPosition)
     {
-        return collider.bounds.Contains(transformPosition);
+        return Bounds.Contains(transformPosition);
     }
 }

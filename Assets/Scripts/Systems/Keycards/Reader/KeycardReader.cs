@@ -67,7 +67,7 @@ public class KeycardReader : PoweredDevice, IInteractive
         TryElectrocute(player);
     }
 
-    public float HoldDuration => 1;
+    public float HoldDuration => 0.5f;
 
     public void AccessGranted(bool original)
     {

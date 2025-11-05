@@ -1,7 +1,9 @@
+using System;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class MapUI : MonoBehaviour
 {
@@ -13,11 +15,17 @@ public class MapUI : MonoBehaviour
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
     [BoxGroup("Internal References")] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [SerializeField] RectTransform selfPointer;
+    [BoxGroup("Internal References")] [SerializeField] ObjectsUI powerSystemsPool;
 
     [SerializeField] float scale = 0.005f;
 
     float Rect => Mathf.Min(rectTransform.rect.width, rectTransform.rect.height);
     float TrueScale => scale * Rect;
+
+    void Start()
+    {
+        MainPowerSystem.i.OnPowerChanged.AddListener(DrawPowerZones);
+    }
 
     void Update()
     {
@@ -38,6 +46,31 @@ public class MapUI : MonoBehaviour
     {
         DrawRooms(levelNodes);
         DrawSelf();
+        DrawPowerZones();
+    }
+
+    void DrawPowerZones()
+    {
+        if (powerSystemsPool == null){
+            return;
+        }
+        var subPowerSystems = MainPowerSystem.i.SubPowerSystems;
+        powerSystemsPool.SetCount(subPowerSystems.Count);
+        for (int i = 0; i < subPowerSystems.Count; i++){
+            var rect = powerSystemsPool.GetActiveObjs()[i].GetComponent<RectTransform>();
+            var subPowerSystem = subPowerSystems[i];
+            rect.sizeDelta = new Vector2(subPowerSystem.Bounds.size.x, subPowerSystem.Bounds.size.z) * TrueScale;
+            var center = subPowerSystem.Bounds.center;
+            rect.localPosition = new Vector2(center.x, center.z) * TrueScale;
+            Color color = subPowerSystem.power switch
+            {
+                PowerLevel.NoPower => Color.red,
+                PowerLevel.MinimalPower => Color.yellow,
+                PowerLevel.FullPower => Color.green,
+                _ => Color.gray
+            };
+            powerSystemsPool.GetActiveObjs()[i].GetComponent<Image>().color = color;
+        }
     }
 
     void DrawSelf()
