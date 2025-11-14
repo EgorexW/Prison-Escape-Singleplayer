@@ -236,7 +236,7 @@ MonoBehaviour:
   accessGrantedSound: {fileID: 5231284974382515679}
   accessDeniedSound: {fileID: 4166550288247946445}
   electrocuteSound: {fileID: 8226645980608176966}
-  corruptedSound: {fileID: 0}
+  corruptedSound: {fileID: 4166550288247946445}
   sparks: {fileID: 5540131036056089034}
   stealCardIcon: {fileID: 7913657409360277712}
 --- !u!1 &1112279777777873392
@@ -693,6 +693,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  corrupted: 0
 --- !u!65 &9054909614210783226
 BoxCollider:
   m_ObjectHideFlags: 0
