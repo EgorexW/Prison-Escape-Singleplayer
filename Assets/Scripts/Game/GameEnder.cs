@@ -37,7 +37,6 @@ public class GameEnder : MonoBehaviour
             return;
         }
         endGameCalled = true;
-        beforeWinGame.Invoke();
         SceneManager.LoadSceneAsync(winScene);
     }
 }
