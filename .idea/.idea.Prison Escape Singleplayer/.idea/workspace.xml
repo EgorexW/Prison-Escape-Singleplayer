@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +156,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameTimeEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameTimeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/PlayerPrefsKeys.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/FacilityTriggers.cs" root0="FORCE_HIGHLIGHTING" />
@@ -163,6 +164,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Triggers/WinGameItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Tutorials.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameModifiers/Ascensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Crowbar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Disc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loot/Equipment.cs" root0="FORCE_HIGHLIGHTING" />
@@ -206,6 +208,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Editor/ShaderGraph/Nodes/UniversalSampleBufferNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/16/a53cf764/PlayerPrefs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/46/107027ca/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/74/3dde1d86/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/bc/25067beb/GameObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e49b2f47e114f6f975c62e372f36fab1dfc00/e2/d2092c76/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -355,9 +358,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Selecting and unlocking ascension works" />
-    <MESSAGE value="Will try to keep all script text generation in one class/place" />
-    <MESSAGE value="v 0.4.0" />
     <MESSAGE value="v 0.4.0 fixes" />
     <MESSAGE value="Hidden Room, 05 tip, Discover All Rooms disc" />
     <MESSAGE value="Update ascension dropdown labels and adjust breakable wall health values" />
@@ -380,7 +380,10 @@
     <MESSAGE value="v 0.6.0" />
     <MESSAGE value="Conduit and Status Terminal Loot, EMP Blackout lower to minimal" />
     <MESSAGE value="Achievement Icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Achievement Icons" />
+    <MESSAGE value="Metal detector cooldown" />
+    <MESSAGE value="05 Room" />
+    <MESSAGE value="Lockers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lockers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
