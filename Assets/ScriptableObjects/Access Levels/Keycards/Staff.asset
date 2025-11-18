@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
-  inheretedAccessLevels: []
+  inheretedAccessLevels:
+  - {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
   color: {r: 1, g: 0.9964248, b: 0, a: 1}
   displayName: Staff

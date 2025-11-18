@@ -11,8 +11,7 @@ public class UnlockWarden : FacilityTrigger
     public override void Activate()
     {
         base.Activate();
-        wardenReader.accessLevel = newAccessLevel;
-        wardenReader.visuals?.UpdateVisual();
+        wardenReader.AccessLevel = newAccessLevel;
         wardenReader.electrocutionDamage = newDamage;
         wardenReader.baseElectrocutionChance = 1;
     }

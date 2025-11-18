@@ -49,15 +49,15 @@ public class KeycardReaderVisuals : MonoBehaviour
         if (keycardReader.corrupted){
             return;
         }
-        defaultText = keycardReader.accessLevel.name;
-        text.color = keycardReader.accessLevel.color;
-        stealCardIcon.SetActive(keycardReader.stealCard & keycardReader.IsPowered());
+        defaultText = keycardReader.AccessLevel.name;
+        text.color = keycardReader.AccessLevel.color;
+        stealCardIcon.SetActive(keycardReader.StealKeycard & keycardReader.IsPowered());
     }
 
     void OnPowerChanged(bool working)
     {
         text.enabled = working;
-        stealCardIcon.SetActive(keycardReader.stealCard && working);
+        stealCardIcon.SetActive(keycardReader.StealKeycard && working);
     }
 
     public void AccessDenied()

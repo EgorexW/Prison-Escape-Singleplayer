@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
-  m_Name: Secure Wing
+  m_Name: Any
   m_EditorClassIdentifier: 
-  inheretedAccessLevels:
-  - {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
+  inheretedAccessLevels: []
   color: {r: 1, g: 1, b: 1, a: 1}
-  displayName: Secure Wing
+  displayName: Any

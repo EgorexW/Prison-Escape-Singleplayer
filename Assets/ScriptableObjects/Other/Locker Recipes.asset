@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6860f9b85b4718b94c42311c21a7f5, type: 3}
+  m_Name: Locker Recipes
+  m_EditorClassIdentifier: 
+  lockerRecipes:
+  - accessLevel: {fileID: 11400000, guid: 11edbe4d5b1384e55a7df9b4360a57cc, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: 04278e6765bcf44d383db6b4c713202c, type: 2}
+  - accessLevel: {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58, type: 2}
+    stealKeycard: 0
+    loot: {fileID: 11400000, guid: a2047066dbdac450e8bed2c7b60aefaa, type: 2}
+  - accessLevel: {fileID: 11400000, guid: 9b81b548cec544d1797789b0d7c7d751, type: 2}
+    stealKeycard: 0
+    loot: {fileID: 11400000, guid: 797d1041ce5ed473c9d2ecde3039ca38, type: 2}
+  - accessLevel: {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: 6d5bb73efee3a405f820c4b9686d44be, type: 2}
+  - accessLevel: {fileID: 11400000, guid: d7ab6ca6684d54ff2b9c928216ba40b0, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: a9d1acf42b49e4af5b24a8bf17a0f4a7, type: 2}
+  - accessLevel: {fileID: 11400000, guid: d7ab6ca6684d54ff2b9c928216ba40b0, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: cf8988136f0e4448ea0987372e77dcdd, type: 2}
+  - accessLevel: {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
+    stealKeycard: 0
+    loot: {fileID: 11400000, guid: 8d8a88cc6e3d54aaabe7bea1893fd891, type: 2}
+  - accessLevel: {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba, type: 2}
+    stealKeycard: 0
+    loot: {fileID: 11400000, guid: ea951c312fd2c47e4b8314552f32bdc1, type: 2}
+  - accessLevel: {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: 3ed76247c3ce54455aeadcaeab4120b9, type: 2}
+  - accessLevel: {fileID: 11400000, guid: 955da5e33845f401d8ff9f34763681fd, type: 2}
+    stealKeycard: 1
+    loot: {fileID: 11400000, guid: 9638af44c886544f5829daa9e53dbdab, type: 2}

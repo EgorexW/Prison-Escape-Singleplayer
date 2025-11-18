@@ -33,7 +33,7 @@ public class DoorwayConfig : MonoBehaviour
     {
         foreach (var keycardReader in keycardReaders){
             keycardReader.gameObject.SetActive(accessLevel != null);
-            keycardReader.accessLevel = accessLevel;
+            keycardReader.AccessLevel = accessLevel;
         }
         foreach (var doorLock in doorLocks) doorLock.unlocked = accessLevel == null;
         weakDoor.SetActive(doorType == DoorType.Weak);

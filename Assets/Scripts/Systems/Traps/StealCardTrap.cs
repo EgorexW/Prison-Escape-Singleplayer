@@ -6,8 +6,7 @@ public class StealCardTrap : MonoBehaviour, ITrap
     {
         var readers = room.doorway.GetKeycardReaders();
         foreach (var reader in readers){
-            reader.stealCard = true;
-            reader.visuals.UpdateVisual();
+            reader.StealKeycard = true;
         }
     }
 }

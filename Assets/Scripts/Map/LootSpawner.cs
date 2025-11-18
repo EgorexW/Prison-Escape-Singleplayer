@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class LootSpawner : MonoBehaviour
 {
-    [SerializeField] SpawnTable spawnTable;
+    [SerializeField] public SpawnTable spawnTable;
     [SerializeField] [MinMaxSlider(0, "@GetSpawnPoints().Count")] Vector2Int spawnNr = new(1, 1);
     [SerializeField] bool randomRotation = true;
     [SerializeField] bool spawnOnStart;

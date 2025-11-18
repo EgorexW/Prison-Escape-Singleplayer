@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7da8928fe7664751b77f3f22fbc577d, type: 3}
-  m_Name: Secure Wing
+  m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
+  m_Name: Field Medic Locker
   m_EditorClassIdentifier: 
-  inheretedAccessLevels:
-  - {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
-  displayName: Secure Wing
+  gameObjects:
+  - value: 1
+    Object: {fileID: 4263078333564357350, guid: c921778fda88b484aaa1a35417b35f02,
+      type: 3}

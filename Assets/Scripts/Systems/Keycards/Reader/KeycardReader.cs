@@ -6,12 +6,12 @@ using UnityEngine.Serialization;
 
 public class KeycardReader : PoweredDevice, IInteractive
 {
-    [BoxGroup("References")] [Required] [SerializeField] public AccessLevel accessLevel;
+    [BoxGroup("References")] [Required] [SerializeField] AccessLevel accessLevel;
 
-    [FormerlySerializedAs("effects")] [SerializeField] public KeycardReaderVisuals visuals;
+    [FormerlySerializedAs("effects")] [SerializeField] KeycardReaderVisuals visuals;
     [SerializeField] List<KeycardReader> linkedReaders;
 
-    public bool stealCard;
+    [SerializeField] [FormerlySerializedAs("stealCard")] bool stealKeycard;
 
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
     [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
@@ -20,6 +20,22 @@ public class KeycardReader : PoweredDevice, IInteractive
     [FoldoutGroup("Events")] public UnityEvent onUnlock;
 
     public bool corrupted;
+    
+    public AccessLevel AccessLevel{
+        set{
+            accessLevel = value;
+            visuals?.UpdateVisual();
+        }
+        get => accessLevel;
+    }
+
+    public bool StealKeycard{
+        get => stealKeycard;
+        set{
+            stealKeycard = value;
+            visuals?.UpdateVisual();
+        }
+    }
 
     void Awake()
     {
@@ -48,18 +64,18 @@ public class KeycardReader : PoweredDevice, IInteractive
             visuals?.AccessDenied();
             return;
         }
-        if (keycard.hackChance){
-            if (!(Random.value < keycard.hackChance)){
-                visuals?.Corrupted();
-                corrupted = true;
-                return;
+        if (!keycard.ReadKeycard(accessLevel)){
+            if (keycard.hackChance){
+                if (!(Random.value < keycard.hackChance)){
+                    visuals?.Corrupted();
+                    corrupted = true;
+                    return;
+                }
             }
-        }
-        else if (!keycard.ReadKeycard(accessLevel)){
             visuals?.AccessDenied();
             return;
         }
-        if (keycard.oneUse || stealCard){
+        if (keycard.oneUse || stealKeycard){
             player.RemoveItem(item);
             Destroy(item.gameObject);
         }
