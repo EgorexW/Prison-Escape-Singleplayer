@@ -8,7 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Lockers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AscensionsWonStar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/AscensionsWonStar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AscensionsWonStar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/AscensionsWonStar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LockerRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockerRecipes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LockerRecipes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockerRecipes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LockersRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockersRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LockersRoom.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockersRoom.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Materials/Meds Poster.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Materials/Meds Poster.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarCondition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +146,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RuntimePreviewGenerator/RuntimePreviewGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Props/Keycard Combiner.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Props/Sign.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Rooms/05 Room.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -183,6 +198,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/RoomGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerSoundEffects.cs" root0="FORCE_HIGHLIGHTING" />
@@ -203,7 +219,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StatsUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TutorialsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/StarCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13/Editor/UsageUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Editor/ShaderGraph/Nodes/UniversalSampleBufferNode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
@@ -358,7 +373,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.4.0 fixes" />
     <MESSAGE value="Hidden Room, 05 tip, Discover All Rooms disc" />
     <MESSAGE value="Update ascension dropdown labels and adjust breakable wall health values" />
     <MESSAGE value="v 0.4.1" />
@@ -383,7 +397,8 @@
     <MESSAGE value="Metal detector cooldown" />
     <MESSAGE value="05 Room" />
     <MESSAGE value="Lockers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lockers" />
+    <MESSAGE value="SpawnTable utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpawnTable utils" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
