@@ -1,14 +1,35 @@
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class MetalDetector : PoweredDevice
 {
-    [FoldoutGroup("Events")] public UnityEvent<Item> onItemTaken;
+    [SerializeField] float cooldown = 15;
+    
+    float lastStealTime;
+    
+    [FoldoutGroup("Events")] public UnityEvent beep;
+
+    void Update()
+    {
+        if (!IsPowered()){
+            return;
+        }
+        if (lastStealTime + cooldown <= Time.time && lastStealTime + cooldown > Time.time - Time.deltaTime){
+            // Debug.Log("Metal detector is ready to steal again", this);
+            beep.Invoke();
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         if (!IsPowered()){
+            return;
+        }
+        if (Time.time - lastStealTime < cooldown){
+            // Debug.Log("Metal detector on cooldown", this);
             return;
         }
         var gameObject = other.gameObject;
@@ -42,6 +63,7 @@ public class MetalDetector : PoweredDevice
         var pos = facilityTrigger.transform.position;
         item.transform.position = pos;
         item.Rigidbody.linearVelocity = Vector3.zero;
-        onItemTaken.Invoke(item);
+        beep.Invoke();
+        lastStealTime = Time.time;
     }
 }

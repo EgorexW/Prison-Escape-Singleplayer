@@ -8,27 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/AscensionsWonStar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AscensionsWonStar.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Achevement Icons.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Achevement Icons.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Boss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Boss.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Heart.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Mage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Mage.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Player.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Achievements/Player.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StarCondition.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/StarCondition.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lose Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lose Screen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerPrefsKeys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerPrefsKeys.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +355,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.3.1" />
     <MESSAGE value="Selecting and unlocking ascension works" />
     <MESSAGE value="Will try to keep all script text generation in one class/place" />
     <MESSAGE value="v 0.4.0" />
@@ -400,7 +379,8 @@
     <MESSAGE value="Status Terminal Loot" />
     <MESSAGE value="v 0.6.0" />
     <MESSAGE value="Conduit and Status Terminal Loot, EMP Blackout lower to minimal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Conduit and Status Terminal Loot, EMP Blackout lower to minimal" />
+    <MESSAGE value="Achievement Icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Achievement Icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
