@@ -547,17 +547,22 @@ PrefabInstance:
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       propertyPath: workingPower
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       propertyPath: baseElectrocutionChance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       propertyPath: electrocutionDamage.damage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
+        type: 3}
+      propertyPath: electrocutionDamage.heavyDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
@@ -567,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}
       propertyPath: minimalPowerElectrocutionChance
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 834968016499202489, guid: ba3ceb7ddb58b44de858362322f535b1,
         type: 3}

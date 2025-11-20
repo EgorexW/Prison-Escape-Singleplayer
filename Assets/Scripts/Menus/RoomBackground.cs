@@ -8,24 +8,40 @@ public class RoomBackground : MonoBehaviour
 
     [BoxGroup("References")] [Required] [SerializeField] GameObject defaultRoomToSpawn;
     [BoxGroup("References")] [Required] [SerializeField] RoomSpawner roomSpawner;
+    [BoxGroup("References")][Required][SerializeField] CameraMenuMove cameraMenuMove;
 
     [SerializeField] float doorOpenWait = 0.5f;
 
-    IEnumerator Start()
+    Room spawnedRoom;
+    void Start()
     {
-        yield return Activate();
+        Activate();
     }
 
-    IEnumerator Activate()
+    void Activate()
     {
         var lastRoomIndex = PlayerPrefs.GetInt("Last Room Entered", -1);
         var roomToSpawn = defaultRoomToSpawn;
         if (lastRoomIndex >= 0){
             roomToSpawn = roomsList.prefabs[lastRoomIndex];
         }
-        var room = roomSpawner.SpawnRoom(roomToSpawn);
-        Debug.Log($"Background room spawned: {room.roomName}");
+        SpawnRoom(roomToSpawn);
+    }
+
+    public void SpawnRoom(GameObject roomToSpawn)
+    {
+        StartCoroutine(SpawnRoomCoroutine(roomToSpawn));
+    }
+
+    IEnumerator SpawnRoomCoroutine(GameObject roomToSpawn)
+    {
+        if (spawnedRoom != null){
+            Destroy(spawnedRoom.gameObject);
+        }
+        spawnedRoom = roomSpawner.SpawnRoom(roomToSpawn);
+        cameraMenuMove.StartSequence();
+        Debug.Log($"Background room spawned: {spawnedRoom.roomName}");
         yield return new WaitForSeconds(doorOpenWait);
-        room.doorway?.GetDoor().Open();
+        spawnedRoom.doorway?.GetDoor().Open();
     }
 }

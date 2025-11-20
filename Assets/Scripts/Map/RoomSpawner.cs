@@ -12,7 +12,7 @@ public class RoomSpawner : MonoBehaviour
         room = Instantiate(room, transform.parent);
         var spawnableRoom = room.GetComponent<Room>();
         spawnableRoom.Spawn(transform.position, dir.position - transform.position);
-        Destroy(gameObject);
+        // Destroy(gameObject);
         return spawnableRoom;
     }
 

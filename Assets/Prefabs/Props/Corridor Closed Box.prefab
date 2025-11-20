@@ -90,6 +90,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5716413872361694435, guid: 805dfd43878094d8f9e43492ab8ea228,
+        type: 3}
+      propertyPath: workingPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716413872361694435, guid: 805dfd43878094d8f9e43492ab8ea228,
+        type: 3}
+      propertyPath: baseElectrocutionChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716413872361694435, guid: 805dfd43878094d8f9e43492ab8ea228,
+        type: 3}
+      propertyPath: minimalPowerElectrocutionChance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6199965201734350599, guid: 805dfd43878094d8f9e43492ab8ea228,
         type: 3}
       propertyPath: m_Name

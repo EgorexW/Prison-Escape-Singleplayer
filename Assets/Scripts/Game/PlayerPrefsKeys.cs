@@ -6,4 +6,5 @@ public static class PlayerPrefsKeys
     public const string GamesStarted = "Games Started";
     public const string UnlockedAscension = "Unlocked Ascension";
     public const string SecretCompleted05 = "Secret Completed 05";
+    public const string RoomDiscoveredPrefix = "Room Discovered ";
 }

@@ -22,6 +22,7 @@ public class PlayerStats : MonoBehaviour
         var roomIndex = originReferenceHolder.prefabListIndex;
         // Debug.Log($"Saving last room entered index: {roomIndex}", this);
         PlayerPrefs.SetInt(PlayerPrefsKeys.LastRoomEntered, roomIndex);
+        PlayerPrefs.SetInt(PlayerPrefsKeys.RoomDiscoveredPrefix + roomIndex, 1);
     }
 
     void BeforeWinGame()
