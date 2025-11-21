@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Security Room
+  m_Name: Mid Pass
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: 04278e6765bcf44d383db6b4c713202c, type: 2}
-  - value: 4
-    Object: {fileID: 4395555702313024741, guid: e40cc3273f8c04050a5c8463465e1d5f,
+    Object: {fileID: 4279481625559318044, guid: b2364ae85c542482ebf6fe0e941c2b7c,
+      type: 3}
+  - value: 1
+    Object: {fileID: 4451562385789363624, guid: 877a1b30c9c6a4eb198ffa3f82a68de2,
+      type: 3}
+  - value: 1
+    Object: {fileID: 2871858367170057041, guid: f08fd7553feff402a9b3257344ce2b82,
       type: 3}

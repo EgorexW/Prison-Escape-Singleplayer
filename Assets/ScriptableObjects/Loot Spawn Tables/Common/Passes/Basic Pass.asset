@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
+  m_Name: Basic Pass
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - value: 2
+    Object: {fileID: 1494948710525433944, guid: 82bd6c837e65541cb928d33e78884cfd,
+      type: 3}
+  - value: 2
+    Object: {fileID: 1366380483015342637, guid: 80e24770ca7ca462088974e2db706181,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3771479250462020156, guid: 255716a7ce81b45ce92b90cfd6e5b53d,
+      type: 3}
+  - value: 0.5
+    Object: {fileID: 6967394277400742596, guid: 48960a152ad8148bfa46f49d682cb4d5,
+      type: 3}

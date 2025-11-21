@@ -27,7 +27,7 @@ public class LootSpawner : MonoBehaviour
     public void SpawnGameObjects()
     {
         if (spawnTable == null){
-            Debug.LogWarning("SpawnTable is null", this);
+            // Debug.LogWarning("SpawnTable is null", this);
             return;
         }
         var roll = General.RandomRange(spawnNr);

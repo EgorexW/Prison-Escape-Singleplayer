@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Security Room
+  m_Name: Secure Pass
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: 04278e6765bcf44d383db6b4c713202c, type: 2}
-  - value: 4
     Object: {fileID: 4395555702313024741, guid: e40cc3273f8c04050a5c8463465e1d5f,
       type: 3}
+  - value: 1
+    Object: {fileID: 928723440435383006, guid: 5f734ecb7bfe84354845f697953d57d7, type: 3}
