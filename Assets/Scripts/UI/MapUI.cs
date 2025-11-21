@@ -41,6 +41,9 @@ public class MapUI : MonoBehaviour
     [Button][HideInEditorMode]
     public void GenerateMap()
     {
+        if (!isActiveAndEnabled){
+            return;
+        }
         GenerateMap(GameManager.i.levelNodes);
     }
 

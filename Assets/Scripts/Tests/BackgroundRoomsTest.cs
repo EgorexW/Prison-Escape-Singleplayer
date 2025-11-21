@@ -53,7 +53,7 @@ public class BackgroundRoomsTest
             }
 
             // Wait a few frames to catch runtime errors
-            int framesToWait = 20;
+            int framesToWait = 300;
             for (int i = 0; i < framesToWait; i++)
                 yield return null;
     }
