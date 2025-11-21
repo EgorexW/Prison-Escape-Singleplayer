@@ -12,6 +12,10 @@ public class LinkedLoot : MonoBehaviour, ITrap
     public void Activate()
     {
         loots = General.GetObjectRoot(transform).GetComponentsInChildren<Loot>();
+        if (loots.Length < 2){
+            Destroy(gameObject);
+            return;
+        }
         lines.SetCount(loots.Length);
         for (var i = 0; i < loots.Length; i++){
             var item = loots[i];

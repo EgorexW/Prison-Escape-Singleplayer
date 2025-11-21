@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,6 +150,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Trap.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" root0="FORCE_HIGHLIGHTING" />
@@ -350,7 +349,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Equipment and loot added" />
     <MESSAGE value="Big Poison Room" />
     <MESSAGE value="Keycard Combiner" />
     <MESSAGE value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
@@ -375,7 +373,8 @@
     <MESSAGE value="New Meds Poster" />
     <MESSAGE value="Rooms catalogue" />
     <MESSAGE value="Keycard Detector" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycard Detector" />
+    <MESSAGE value="Removed Laser Door trap (deemed uninteresting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Laser Door trap (deemed uninteresting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

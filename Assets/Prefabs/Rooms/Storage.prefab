@@ -648,6 +648,12 @@ PrefabInstance:
       propertyPath: trapNrMod
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b7143ef398d041f0a9cbaabac2ed40d,
+        type: 2}
     - target: {fileID: 4033194923736956025, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: prefabListIndex
