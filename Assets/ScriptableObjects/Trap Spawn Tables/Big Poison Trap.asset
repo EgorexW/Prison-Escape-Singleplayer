@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Power Room Traps
+  m_Name: Big Poison Trap
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: ff0fdd0bcca8045dd8d154172a03b65f, type: 2}
-  - value: 4
-    Object: {fileID: 3743332918423233961, guid: 550998b8ec9594bf29929b07e0393ed0,
+    Object: {fileID: 2525220935965901820, guid: 22e72592449d448dab974f7156c8a700,
       type: 3}
