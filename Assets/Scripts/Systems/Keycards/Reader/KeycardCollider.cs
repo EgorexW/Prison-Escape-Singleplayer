@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class KeycardDetector : MonoBehaviour
+public class KeycardCollider : MonoBehaviour
 {
     [BoxGroup("References")][Required][SerializeField] KeycardReader keycardReader;
     

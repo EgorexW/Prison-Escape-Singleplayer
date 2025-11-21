@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Map
+  m_Name: Overlays
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 2
     Object: {fileID: 3146134882725412028, guid: f7cb0eb4a835249f2a8f3ac5035e3b05,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3146134882725412028, guid: 7567703dc197c4db09018762ef524b57,
       type: 3}

@@ -7,11 +7,11 @@ public partial class Player : MonoBehaviour
     [BoxGroup("References")] [Required] public PlayerEffects playerEffects;
     [BoxGroup("References")] [Required] public PlayerHealth playerHealth;
     [BoxGroup("References")] [Required] public PlayerSoundEffects playerSoundEffects;
-
-    [SerializeField] Transform aim;
-
-    [BoxGroup("References")] [Required] [SerializeField] GameObject map;
+    [BoxGroup("References")][Required] public PlayerOverlays playerOverlays;
     [BoxGroup("References")] [Required] public Headlight headlight;
+    
+    [SerializeField] Transform aim;
+    
 
     void Awake()
     {
@@ -26,10 +26,5 @@ public partial class Player : MonoBehaviour
     public Transform GetAimTransform()
     {
         return aim;
-    }
-
-    public void MapSetActive(bool active)
-    {
-        map.SetActive(active);
     }
 }

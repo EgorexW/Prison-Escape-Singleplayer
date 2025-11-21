@@ -7,6 +7,7 @@ public class Keycard : MonoBehaviour
 
     public bool oneUse;
     public Optional<float> hackChance;
+    public bool ignoreDetectorOverlay;
 
     public bool ReadKeycard(AccessLevel requestedAccessLevel)
     {

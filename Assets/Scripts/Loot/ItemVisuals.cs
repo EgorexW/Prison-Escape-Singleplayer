@@ -11,6 +11,7 @@ public class ItemVisuals : MonoBehaviour
     [FormerlySerializedAs("keycardColor")] public Color color = Color.white;
 
     [BoxGroup("References")] [SerializeField] List<TextMeshPro> keycardTexts;
+    [BoxGroup("References")] [SerializeField] List<TextMeshProUGUI> keycardTextUGUIs;
     [BoxGroup("References")] [SerializeField] List<Image> keycardImages;
 
     void Reset()
@@ -25,10 +26,10 @@ public class ItemVisuals : MonoBehaviour
     }
 
     [Button]
-    protected virtual void Apply()
+    public virtual void Apply()
     {
         foreach (var text in keycardTexts) text.text = displayName;
-        // text.color = keycardColor;
+        foreach (var text in keycardTextUGUIs) text.text = displayName;
         foreach (var image in keycardImages) image.color = color;
     }
 }

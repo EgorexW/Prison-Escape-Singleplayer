@@ -15,8 +15,8 @@ public class SpawnTable : ScriptableObject
     [SerializeField] List<ObjectWithValue<Object>> gameObjects;
     
 #if UNITY_EDITOR
-    [ShowInInspector][ReadOnly] List<GameObject> possibleGameObjects;
-    [ShowInInspector][ReadOnly] List<SpawnTable> referencedByTables;
+    [ShowInInspector][ReadOnly] List<GameObject> possibleGameObjects = new();
+    [ShowInInspector][ReadOnly] List<SpawnTable> referencedByTables = new();
 #endif
 
     public GameObject GetGameObject()

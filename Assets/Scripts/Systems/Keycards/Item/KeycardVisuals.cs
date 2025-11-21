@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class KeycardVisuals : ItemVisuals
 {
-    [BoxGroup("References")] [Required] [SerializeField] Keycard keycard;
+    [BoxGroup("References")] [Required] public Keycard keycard;
 
     [BoxGroup("References")] [SerializeField] List<Image> oneUseIcons;
 
-    protected override void Apply()
+    public override void Apply()
     {
         if (keycard != null){
             displayName = keycard.accessLevel.displayName;
