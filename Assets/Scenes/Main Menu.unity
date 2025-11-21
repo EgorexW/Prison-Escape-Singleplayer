@@ -679,6 +679,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &886439224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886439226}
+  - component: {fileID: 886439225}
+  m_Layer: 0
+  m_Name: Tests
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &886439225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886439224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56bb84b42de0437093394e80a6947f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomPrefabs: {fileID: 11400000, guid: 3e9fed4ea53044f2d904b0904fb2706d, type: 2}
+  roomBackground: {fileID: 946631301}
+--- !u!4 &886439226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886439224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946631300
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 54.99994, y: 0}
+  m_AnchoredPosition: {x: 55, y: 0}
   m_SizeDelta: {x: -210.00012, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022725213
@@ -2953,7 +2999,7 @@ PrefabInstance:
     - target: {fileID: 4272888290204478644, guid: 277f3b2f2b79b48099fe378d1cae8929,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000005722046
+      value: 0.000017166138
       objectReference: {fileID: 0}
     - target: {fileID: 7095840395398849897, guid: 277f3b2f2b79b48099fe378d1cae8929,
         type: 3}
@@ -3173,3 +3219,4 @@ SceneRoots:
   - {fileID: 480956940}
   - {fileID: 946631302}
   - {fileID: 2040039171}
+  - {fileID: 886439226}

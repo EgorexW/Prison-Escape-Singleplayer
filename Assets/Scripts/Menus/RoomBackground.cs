@@ -40,7 +40,7 @@ public class RoomBackground : MonoBehaviour
         }
         spawnedRoom = roomSpawner.SpawnRoom(roomToSpawn);
         cameraMenuMove.StartSequence();
-        Debug.Log($"Background room spawned: {spawnedRoom.roomName}");
+        // Debug.Log($"Background room spawned: {spawnedRoom.roomName}");
         yield return new WaitForSeconds(doorOpenWait);
         spawnedRoom.doorway?.GetDoor().Open();
     }

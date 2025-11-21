@@ -8,47 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Admin Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Admin Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Custodian Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Custodian Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Guard Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Guard Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Medic Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Medic Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Secure Wing Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Secure Wing Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Senior Staff Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Senior Staff Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Staff Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Staff Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Tech Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Tech Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Worker Pass.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Passes/Worker Pass.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Guests Management.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Guests Management.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Basic Pass.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Basic Pass.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Mid Pass.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Mid Pass.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Secure Pass.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Passes/Secure Pass.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Guests Management.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Guests Management.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/BackgroundRoomsTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/BackgroundRoomsTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/MainMenuTestHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/MainMenuTestHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Tests.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Tests.asmdef.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Guard Pass.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Guard Pass.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Security Room.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Security Room.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Room Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Small Room Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/LootSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/LootSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardDetectorOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KeycardDetectorOverlay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Terminal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Status Terminal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Used/Props/Medical/SM_Prop_MarketTable_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Used/Props/Medical/SM_Prop_MarketTable_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/RoomBackground.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +134,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/KeycardDetectorOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/DefaultVolumeProfile.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Others/Pipeline/UniversalRenderPipelineGlobalSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/PlayAudio.cs" root0="FORCE_HIGHLIGHTING" />
@@ -239,6 +213,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HealthBarUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HighlightSprite.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemsUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/NodeUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerAim.cs" root0="FORCE_HIGHLIGHTING" />
@@ -391,7 +366,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Keycard Combiner" />
     <MESSAGE value="Add interfaces for doors, keycards, and damageable entities; implement spawn table functionality" />
     <MESSAGE value="Added debug keybinds" />
     <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
@@ -416,7 +390,8 @@
     <MESSAGE value="Keycard Detector" />
     <MESSAGE value="Removed Laser Door trap (deemed uninteresting" />
     <MESSAGE value="Linked loot is removed when there is only 1 or 0 loot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linked loot is removed when there is only 1 or 0 loot" />
+    <MESSAGE value="Guests Management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Guests Management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
