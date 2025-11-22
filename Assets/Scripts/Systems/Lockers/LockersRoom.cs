@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class LockersRoom : MonoBehaviour
 {
-    [BoxGroup("References")] [Required] [SerializeField] Room room;
+    // [BoxGroup("References")] [Required] [SerializeField] Room room;
     
     [BoxGroup("References")][Required][SerializeField] LockerRecipes lockerRecipes;
     
@@ -17,12 +18,14 @@ public class LockersRoom : MonoBehaviour
 
     void Activate()
     {
-        foreach (GameObject locker in lockers){
-            ActivateLocker(locker);
+        var recipes = lockerRecipes.GetRandomRecipes(lockers.Length);
+        for (int i = 0; i < lockers.Length; i++)
+        {
+            ActivateLocker(lockers[i], recipes[i]);
         }
     }
 
-    void ActivateLocker(GameObject locker)
+    void ActivateLocker(GameObject locker, LockerRecipe recipe)
     {
         var keycardReader = locker.GetComponentInChildren<KeycardReader>();
         var lootSpawner = locker.GetComponentInChildren<LootSpawner>();
@@ -30,15 +33,9 @@ public class LockersRoom : MonoBehaviour
             Debug.LogError($"Locker {locker.name} is missing KeycardReader or LootSpawner component.", locker);
             return;
         }
-        var choosenLockerType = ChooseLockerType();
-        keycardReader.AccessLevel = choosenLockerType.accessLevel;
-        keycardReader.StealKeycard = choosenLockerType.stealKeycard;
-        lootSpawner.spawnTable = choosenLockerType.loot;
-    }
-
-    LockerRecipe ChooseLockerType()
-    {
-        return lockerRecipes.GetRandomRecipe();
+        keycardReader.AccessLevel = recipe.accessLevel;
+        keycardReader.StealKeycard = recipe.stealKeycard;
+        lootSpawner.spawnTable = recipe.loot;
     }
 }
 

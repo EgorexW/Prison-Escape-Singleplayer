@@ -14,4 +14,15 @@ class LockerRecipes : ScriptableObject
         }
         return lockerRecipes.Random();
     }
+
+    public List<LockerRecipe> GetRandomRecipes(int length)
+    {
+        var recipes = lockerRecipes.Copy();
+        recipes.Shuffle();
+        while (recipes.Count < length){
+            Debug.LogWarning("Requested more locker recipes than available. Some recipes will be duplicated.");
+            recipes.AddRange(lockerRecipes);
+        }
+        return recipes.GetRange(0, length);
+    }
 }

@@ -23,6 +23,7 @@ class RoomMenuObject : MonoBehaviour
     {
         if (room == null){
             Debug.LogWarning("Room is null, cannot select.", this);
+            return;
         }
         roomsMenu.RoomSelected(room);
     }
