@@ -8,7 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +353,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added debug keybinds" />
     <MESSAGE value="Refactor code for consistency and readability; remove unnecessary line breaks and improve formatting" />
     <MESSAGE value="Tablet model" />
     <MESSAGE value="v 0.5.0" />
@@ -376,7 +377,8 @@
     <MESSAGE value="Linked loot is removed when there is only 1 or 0 loot" />
     <MESSAGE value="Guests Management" />
     <MESSAGE value="Background Rooms Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background Rooms Tests" />
+    <MESSAGE value="Status Terminal Works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Status Terminal Works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

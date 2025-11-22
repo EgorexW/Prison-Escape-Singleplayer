@@ -840,7 +840,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 202696b23fdb34906b142b9e2a777149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1000,6 +1000,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessLevel: {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
   oneUse: 0
+  hackChance:
+    enabled: 0
+    value: 0
+  ignoreDetectorOverlay: 0
 --- !u!114 &5893937894337747688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,6 +1021,7 @@ MonoBehaviour:
   keycardTexts:
   - {fileID: 3879103844188655026}
   - {fileID: 7964199208718077476}
+  keycardTextUGUIs: []
   keycardImages:
   - {fileID: 4093037969403249764}
   - {fileID: 4322315969983063461}
