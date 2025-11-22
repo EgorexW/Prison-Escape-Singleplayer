@@ -7,7 +7,8 @@ public sealed class Item : Loot
 {
     [ReadOnly] public bool isHeld;
     [ReadOnly] public bool pickupable = true;
-
+    
+    public bool beenPickedUp = false;
     public string Name;
 
     readonly List<IItemEffect> itemEffects = new();

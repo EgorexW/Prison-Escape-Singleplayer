@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57521bc3a04f4068b178b3b38fcb5465, type: 3}
+  m_Name: Tasks
+  m_EditorClassIdentifier: 
+  tasks:
+  - normalDamageToTake: 100
+    pernamentDamageToTake: 0
+    uniqueRoomsToEnter: 0
+    objectsToDestroy: 0
+    uniqueItemsPickedUp: 0
+  - normalDamageToTake: 0
+    pernamentDamageToTake: 80
+    uniqueRoomsToEnter: 0
+    objectsToDestroy: 0
+    uniqueItemsPickedUp: 0
+  - normalDamageToTake: 0
+    pernamentDamageToTake: 0
+    uniqueRoomsToEnter: 10
+    objectsToDestroy: 0
+    uniqueItemsPickedUp: 0
+  - normalDamageToTake: 0
+    pernamentDamageToTake: 0
+    uniqueRoomsToEnter: 0
+    objectsToDestroy: 4
+    uniqueItemsPickedUp: 0
+  - normalDamageToTake: 0
+    pernamentDamageToTake: 0
+    uniqueRoomsToEnter: 0
+    objectsToDestroy: 0
+    uniqueItemsPickedUp: 15

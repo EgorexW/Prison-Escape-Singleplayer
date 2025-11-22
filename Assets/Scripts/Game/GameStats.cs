@@ -10,6 +10,7 @@ public class Stats
     public float metersWalked;
     public int uniqueRoomsEntered;
     public int objectsDestroyed;
+    public int uniqueItemsPickedUp;
 }
 
 public class GameStats : MonoBehaviour
@@ -36,6 +37,15 @@ public class GameStats : MonoBehaviour
         GameManager.i.Player.playerHealth.Health.onDamage.AddListener(OnDamage);
         GameManager.i.Player.onMove.AddListener(OnMove);
         GameManager.i.roomsManager.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
+        GameManager.i.Player.onPickUpItem.AddListener(OnPickupItem);
+    }
+
+    void OnPickupItem(Item item)
+    {
+        if (item.beenPickedUp){
+            return;
+        }        
+        stats.uniqueItemsPickedUp++;
     }
 
     void OnPlayerEnteredRoom(Room arg0)

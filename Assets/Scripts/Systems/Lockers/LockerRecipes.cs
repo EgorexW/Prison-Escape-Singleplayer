@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Locker Recipes", fileName = "Locker Recipes", order = 0)]
+[CreateAssetMenu(menuName = "Others/Locker Recipes", fileName = "Locker Recipes", order = 0)]
 class LockerRecipes : ScriptableObject
 {
     [SerializeField] List<LockerRecipe> lockerRecipes;

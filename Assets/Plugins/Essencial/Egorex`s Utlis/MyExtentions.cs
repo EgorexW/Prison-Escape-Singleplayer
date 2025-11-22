@@ -17,6 +17,7 @@ public static class MyExtentions
     public static T Random<T>(this List<T> list, bool pop = false)
     {
         if (list.Count < 1){
+            Debug.LogWarning("Trying to get random element from empty list");
             return default;
         }
         var i = UnityEngine.Random.Range(0, list.Count);

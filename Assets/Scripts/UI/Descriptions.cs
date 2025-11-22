@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Sirenix.Utilities;
+using TMPro;
 using UnityEngine;
 
 public static class Descriptions
@@ -46,8 +47,30 @@ public static class Descriptions
             $"Heavy Damage Taken: {Mathf.Round(stats.pernamentDamageTaken)}",
             $"Meters Walked: {Mathf.Round(stats.metersWalked)}",
             $"Unique Rooms Entered: {stats.uniqueRoomsEntered}",
-            $"Objects Destroyed: {stats.objectsDestroyed}"
+            $"Objects Destroyed: {stats.objectsDestroyed}",
+            $"Unique Items Picked Up: {stats.uniqueItemsPickedUp}"
         };
         return string.Join("\n", lines);
+    }
+
+    public static string GetTaskDescription(Task task)
+    {
+        var lines = new List<string>();
+        if (task.normalDamageToTake > 0){
+            lines.Add($"Take {task.normalDamageToTake} light damage");
+        }
+        if (task.pernamentDamageToTake > 0){
+            lines.Add($"Take {task.pernamentDamageToTake} heavy damage");
+        }
+        if (task.uniqueRoomsToEnter > 0){
+            lines.Add($"Enter {task.uniqueRoomsToEnter} unique rooms");
+        }
+        if (task.objectsToDestroy > 0){
+            lines.Add($"Destroy {task.objectsToDestroy} objects");
+        }
+        if (task.uniqueItemsToPickUp > 0){
+            lines.Add($"Pick up {task.uniqueItemsToPickUp} unique items");
+        }
+        return string.Join(",\n ", lines);
     }
 }

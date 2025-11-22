@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Keycard Recipes", fileName = "Keycard Recipes", order = 0)]
+[CreateAssetMenu(menuName = "Others/Keycard Recipes", fileName = "Keycard Recipes", order = 0)]
 class KeycardRecipes : ScriptableObject
 {
     [BoxGroup("References")][Required][SerializeField] GameObject baseKeycardPrefab;

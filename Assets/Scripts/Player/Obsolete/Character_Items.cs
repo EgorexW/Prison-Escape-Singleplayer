@@ -13,7 +13,7 @@ public partial class Player
     [FoldoutGroup("Events")] public UnityEvent onThrowItem = new();
     [FoldoutGroup("Events")] public UnityEvent onUseItem = new();
 
-    [FoldoutGroup("Events")] public UnityEvent onPickUpItem = new();
+    [FoldoutGroup("Events")] public UnityEvent<Item> onPickUpItem = new();
 
     [ShowInInspector] Item equipedItem;
 
@@ -28,7 +28,7 @@ public partial class Player
                 return;
             }
         }
-        onPickUpItem.Invoke();
+        onPickUpItem.Invoke(item);
         inventory.AddItem(item);
 
         item.gameObject.SetActive(false);
@@ -38,6 +38,8 @@ public partial class Player
         item.transform.SetParent(itemSlot);
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
+
+        item.beenPickedUp = true;
 
         if (equipedItem == null){
             EquipItem(item);
