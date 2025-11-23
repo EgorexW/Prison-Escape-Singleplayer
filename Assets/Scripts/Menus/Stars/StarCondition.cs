@@ -7,6 +7,7 @@ public class StarCondition : MonoBehaviour
 
     void Awake()
     {
+        // Debug.Log("Games Won: " + PlayerPrefs.GetInt(PlayerPrefsKeys.GamesWon, 0));
         gameObject.SetActive(type switch
         {
             StarConditionType.Floor0Won => PlayerPrefs.GetInt(PlayerPrefsKeys.GamesWon, 0) > 0,

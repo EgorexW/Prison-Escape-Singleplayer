@@ -10,6 +10,7 @@ public class AscensionsWonStar : MonoBehaviour
     void Awake()
     {
         float ascensionsWon = Ascensions.GetUnlockedAscension();
+        // Debug.Log(ascensionsWon);
         var percent = Mathf.Clamp01(ascensionsWon / ascensionsCount);
         var topPadding = (1 - percent) * mask.rectTransform.sizeDelta.y;
         mask.padding = new Vector4(0, 0, 0, topPadding);

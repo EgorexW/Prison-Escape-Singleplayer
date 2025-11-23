@@ -2653,6 +2653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stars
       objectReference: {fileID: 0}
+    - target: {fileID: 4800738940930082494, guid: 20754eae47c174a1287bafed978f236d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5947620194578388985, guid: 20754eae47c174a1287bafed978f236d,
         type: 3}
       propertyPath: m_AnchorMax.y

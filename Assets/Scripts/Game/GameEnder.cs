@@ -21,6 +21,7 @@ public class GameEnder : MonoBehaviour
         beforeWinGame.AddListener(beforeEndGame.Invoke);
     }
 
+    [Button]
     public void LoseGame()
     {
         if (endGameCalled){
@@ -31,12 +32,14 @@ public class GameEnder : MonoBehaviour
         SceneManager.LoadSceneAsync(loseScene);
     }
 
+    [Button]
     public void WinGame()
     {
         if (endGameCalled){
             return;
         }
         endGameCalled = true;
+        beforeWinGame.Invoke();
         SceneManager.LoadSceneAsync(winScene);
     }
 }
