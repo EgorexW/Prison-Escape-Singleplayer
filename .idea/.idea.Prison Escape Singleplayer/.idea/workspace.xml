@@ -7,16 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Achievement Icons.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Achievement Icons.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/AscensionsWonStar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/AscensionsWonStar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -360,7 +351,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Made game modifiers system more flexible" />
     <MESSAGE value="Volume Setting" />
     <MESSAGE value="Refactor file structure and rename key components for clarity" />
     <MESSAGE value="Adjust keycard hold duration and enhance power zone visualization" />
@@ -385,7 +375,8 @@
     <MESSAGE value="Task Room" />
     <MESSAGE value="Lockers don't repeat" />
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="Achievement Stars Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Achievement Stars Fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
