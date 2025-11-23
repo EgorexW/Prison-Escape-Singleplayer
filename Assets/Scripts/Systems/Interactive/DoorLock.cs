@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Door))]
 public class DoorLock : PoweredDevice, IInteractive
 {
-    [GetComponent] [SerializeField] Door door;
+    [GetComponent] public Door door;
 
     public float resistance = 1;
 

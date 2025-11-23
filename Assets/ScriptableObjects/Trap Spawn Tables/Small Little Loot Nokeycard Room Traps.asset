@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
-  m_Name: Blackout Trap Favored
+  m_Name: Small Little Loot Nokeycard Room Traps
   m_EditorClassIdentifier: 
   gameObjects:
   - value: 1
-    Object: {fileID: 11400000, guid: ff0fdd0bcca8045dd8d154172a03b65f, type: 2}
-  - value: 4
+    Object: {fileID: 6370666454607343223, guid: d7ffe6c7a7630469ca69a710dfee59ea,
+      type: 3}
+  - value: 1
     Object: {fileID: 3743332918423233961, guid: 550998b8ec9594bf29929b07e0393ed0,
+      type: 3}
+  - value: 1
+    Object: {fileID: 4502153590353648813, guid: d9e90f0258ee54153aeb6684d27f3e5f,
       type: 3}

@@ -397,6 +397,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 54a25afa44691439f92b3c8ca54ca068,
+        type: 2}
     - target: {fileID: 4033194923736956025, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: prefabListIndex

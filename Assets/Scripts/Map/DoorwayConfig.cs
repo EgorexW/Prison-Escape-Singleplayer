@@ -18,7 +18,7 @@ public class DoorwayConfig : MonoBehaviour
 
     void Awake()
     {
-        foreach (var door in GetComponentsInChildren<Door>(true)) door.onOpen.AddListener(onOpen.Invoke);
+        foreach (var doorLock in doorLocks) doorLock.door.onOpen.AddListener(onOpen.Invoke);
         ApplyConfig();
     }
 

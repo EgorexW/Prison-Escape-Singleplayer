@@ -652,7 +652,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnTable
       value: 
-      objectReference: {fileID: 11400000, guid: 7b7143ef398d041f0a9cbaabac2ed40d,
+      objectReference: {fileID: 11400000, guid: d48e1684d9a6943a29cd824cc24fe346,
         type: 2}
     - target: {fileID: 4033194923736956025, guid: cb2172d96db4546208651350f1b99834,
         type: 3}

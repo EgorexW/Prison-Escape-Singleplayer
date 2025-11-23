@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KeycardCombiner : PoweredDevice
 {
@@ -8,6 +9,12 @@ public class KeycardCombiner : PoweredDevice
     [BoxGroup("References")] [Required] [SerializeField] BoxCollider trigger;
     [BoxGroup("References")][Required][SerializeField] KeycardRecipes recipes;
     [BoxGroup("References")][Required][SerializeField] Transform spawnPoint;
+
+    [FoldoutGroup("Events")]
+    public UnityEvent onSuccesfullyCombined;
+
+    [FoldoutGroup("Events")]
+    public UnityEvent onFailedCombine;
 
     [Button]
     public void Combine()
@@ -19,6 +26,7 @@ public class KeycardCombiner : PoweredDevice
         var keycards = General.GetComponentsFromColliders<Keycard>(colliders);
         if (keycards.Count != 2){
             Debug.LogWarning("Keycard count not supported: " + keycards.Count);
+            onFailedCombine.Invoke();
             return;
         }
         var resultKeycard = recipes.CreateAndGetResult(keycards[0], keycards[1]);
@@ -27,6 +35,7 @@ public class KeycardCombiner : PoweredDevice
         resultKeycard.gameObject.transform.parent = spawnPoint;
         resultKeycard.gameObject.transform.localPosition = Vector3.zero;
         resultKeycard.gameObject.transform.localRotation = Quaternion.identity;
+        onSuccesfullyCombined.Invoke();
         if (Random.value < losePowerChance){
             MainPowerSystem.i.ChangePower(transform.position, PowerLevel.NoPower);
         }

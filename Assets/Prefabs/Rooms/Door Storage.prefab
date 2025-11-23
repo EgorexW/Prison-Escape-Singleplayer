@@ -820,8 +820,14 @@ PrefabInstance:
     - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: trapNrMod
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
+      propertyPath: spawnTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 16912eac7ff5a4ac68ec6ed46ce27c6f,
+        type: 2}
     - target: {fileID: 3478086276770758984, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: trapChance
