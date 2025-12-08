@@ -8740,6 +8740,15 @@ MonoBehaviour:
   announcement:
     message: Purify Protocol ... INITIATED!
     sound: {fileID: 11400000, guid: feb6913ed96db41a4873de798c9f5576, type: 2}
+  timeLeftAnnouncements:
+  - value: 2
+    Object:
+      message: Purify Protocol activates in T-2 minutes
+      sound: {fileID: 0}
+  - value: 5
+    Object:
+      message: Purify Protocol activates in T-5 minutes
+      sound: {fileID: 0}
 --- !u!1 &382959136
 GameObject:
   m_ObjectHideFlags: 0
@@ -21112,7 +21121,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70.00001
+    FieldOfView: 70
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 100
@@ -23013,7 +23022,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 100
-  field of view: 70.00001
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1

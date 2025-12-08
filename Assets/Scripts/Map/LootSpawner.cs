@@ -13,7 +13,7 @@ public class LootSpawner : MonoBehaviour
     void Start()
     {
         if (spawnOnStart){
-            SpawnGameObjects();
+            Spawn();
         }
     }
 
@@ -24,7 +24,7 @@ public class LootSpawner : MonoBehaviour
         return points;
     }
 
-    public void SpawnGameObjects()
+    public void Spawn()
     {
         if (spawnTable == null){
             // Debug.LogWarning("SpawnTable is null", this);
@@ -45,7 +45,7 @@ public class LootSpawner : MonoBehaviour
             if (randomRotation){
                 rotation = Random.rotationUniform;
             }
-            Instantiate(spawnedObject, spawnPoint.position, rotation, transform);
+            Instantiate(spawnedObject, spawnPoint.position, rotation, transform.parent);
         }
     }
 }

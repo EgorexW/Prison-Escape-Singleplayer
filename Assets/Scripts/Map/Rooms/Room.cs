@@ -46,7 +46,7 @@ public class Room : MonoBehaviour
 
     void SpawnLoot()
     {
-        foreach (var spawner in LootSpawners) spawner.SpawnGameObjects();
+        foreach (var spawner in LootSpawners) spawner.Spawn();
     }
 
     [Button]

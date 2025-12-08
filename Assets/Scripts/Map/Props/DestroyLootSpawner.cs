@@ -18,7 +18,7 @@ public class DestroyLootSpawner : MonoBehaviour
     void OnDamage(Damage arg0)
     {
         if (!destroyable.Health.Alive){
-            lootSpawner.SpawnGameObjects();
+            lootSpawner.Spawn();
         }
     }
 }
