@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4b3cddc528b409fb019dd8cfe16849, type: 3}
+  m_Name: Corridor Decor
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: ee5b59d29a6444037a063f0359b43052,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: 09178abe3402b4eb99aa9754c64e1788,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: 8ecf12b648a3a4c3f8ee2ef935a70390,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: ecf823eb04c614f78a04094f27d85053,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: 77fe6f496591a4d81a7c6602523322d0,
+      type: 3}
+  - value: 1
+    Object: {fileID: 3579996558577776815, guid: 79898e55473254125a730b782f113067,
+      type: 3}

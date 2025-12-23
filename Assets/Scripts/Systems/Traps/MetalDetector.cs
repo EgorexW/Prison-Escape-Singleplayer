@@ -8,7 +8,7 @@ public class MetalDetector : PoweredDevice
 {
     [SerializeField] float cooldown = 15;
     
-    float lastStealTime;
+    float lastStealTime = -Mathf.Infinity;
     
     [FoldoutGroup("Events")] public UnityEvent beep;
 
