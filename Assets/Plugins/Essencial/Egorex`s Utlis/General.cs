@@ -281,8 +281,7 @@ public class General : MonoBehaviour
 
     public static Collider[] OverlapBounds(Bounds bounds)
     {
-        Collider[] result = new Collider[100];
-        Physics.OverlapBoxNonAlloc(bounds.center, bounds.size, result);
+        var result = Physics.OverlapBox(bounds.center, bounds.extents);
         return result;
     }
 

@@ -75,4 +75,11 @@ public class CeilingLight : PoweredDevice, IDamagable
         meshRenderer.material = defaultMaterial;
         light.enabled = true;
     }
+
+    public void SetLight(Material material, Color lightColor)
+    {
+        defaultMaterial = material;
+        light.color = lightColor;
+        OnPowerChanged();
+    }
 }

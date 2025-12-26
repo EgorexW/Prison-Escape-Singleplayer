@@ -15316,6 +15316,7 @@ Transform:
   - {fileID: 802799517744396041}
   - {fileID: 2034856954}
   - {fileID: 1909840801}
+  - {fileID: 1892193859}
   m_Father: {fileID: 453294466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1332387631
@@ -18957,6 +18958,76 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1892193858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1892193859}
+  - component: {fileID: 1892193861}
+  - component: {fileID: 1892193860}
+  m_Layer: 0
+  m_Name: Secure Wing Light Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1892193859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892193858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1323079840}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892193860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892193858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8823f7e1e8027413aa6525fdffd75fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameInit: {fileID: 893523870}
+  boxCollider: {fileID: 1892193861}
+  material: {fileID: 2100000, guid: 43661ff2635bdc947b87d5d0f816367e, type: 2}
+  color: {r: 1, g: 0.525686, b: 0.3254717, a: 1}
+--- !u!65 &1892193861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892193858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 98.027695, y: 10, z: 59.230804}
+  m_Center: {x: -4.1404266, y: 0, z: 59.744637}
 --- !u!1 &1896117874
 GameObject:
   m_ObjectHideFlags: 0
@@ -21171,7 +21242,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 2208397069917077670}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 70.00002
     OrthographicSize: 10
     NearClipPlane: 0.2
     FarClipPlane: 100
@@ -23072,7 +23143,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 100
-  field of view: 70
+  field of view: 70.00002
   orthographic: 0
   orthographic size: 10
   m_Depth: -1

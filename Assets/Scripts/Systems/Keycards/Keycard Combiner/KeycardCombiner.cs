@@ -25,9 +25,14 @@ public class KeycardCombiner : PoweredDevice
         var colliders = General.OverlapBounds(trigger.bounds);
         var keycards = General.GetComponentsFromColliders<Keycard>(colliders);
         if (keycards.Count != 2){
-            Debug.LogWarning("Keycard count not supported: " + keycards.Count);
+            Debug.Log("Keycard count not supported: " + keycards.Count);
             onFailedCombine.Invoke();
             return;
+        }
+        if (keycards[0].accessLevel == keycards[1].accessLevel){
+            Debug.Log("Keycards have the same access level: " + keycards[0].accessLevel);
+            onFailedCombine.Invoke();
+            return; 
         }
         var resultKeycard = recipes.CreateAndGetResult(keycards[0], keycards[1]);
         Destroy(keycards[0].gameObject);
