@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 3696664358433919925, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4033194923736956025, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 5016415336239228042, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5231068887093011878, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
@@ -318,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
       propertyPath: doorType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6002658007307836836, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
