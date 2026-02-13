@@ -10,11 +10,17 @@ public class Settings : MonoBehaviour
     {
         var inputActions = GetComponent<PlayerInput>().actions.FindActionMap("Player");
         inputActions.FindAction("Settings").performed += ToggleSettings;
+        HideCursor();
     }
 
     void OnDisable()
     {
         Time.timeScale = 1f;
+        ShowCursor();
+    }
+
+    static void ShowCursor()
+    {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -36,6 +42,11 @@ public class Settings : MonoBehaviour
     {
         settingsMenu.SetActive(false);
         Time.timeScale = 1f;
+        HideCursor();
+    }
+
+    static void HideCursor()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -44,7 +55,6 @@ public class Settings : MonoBehaviour
     {
         settingsMenu.SetActive(true);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowCursor();
     }
 }

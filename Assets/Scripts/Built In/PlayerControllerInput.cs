@@ -20,10 +20,10 @@ namespace StarterAssets
         public bool cursorInputForLook = true;
 
 
-        void OnDestroy()
-        {
-            SetCursorLock(false);
-        }
+        // void OnDestroy()
+        // {
+        //     SetCursorLock(false);
+        // }
 
         public void MoveInput(Vector2 newMoveDirection)
         {
@@ -45,11 +45,11 @@ namespace StarterAssets
             sprint = newSprintState;
         }
 
-        void SetCursorLock(bool state)
-        {
-            Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !state;
-        }
+        // void SetCursorLock(bool state)
+        // {
+        //     Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.None;
+        //     Cursor.visible = !state;
+        // }
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 
@@ -61,7 +61,7 @@ namespace StarterAssets
             playerInput.FindAction("Jump").performed += OnJump;
             playerInput.FindAction("Sprint").performed += OnSprint;
             playerInput.FindAction("Sprint").canceled += OnSprint;
-            SetCursorLock(cursorLocked);
+            // SetCursorLock(cursorLocked);
         }
 
         public void OnMove(InputAction.CallbackContext value)
