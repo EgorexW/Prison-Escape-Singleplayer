@@ -18,12 +18,22 @@ public class SettingsUI : MonoBehaviour
         firstPersonController.RotationSpeed = PlayerPrefs.GetFloat("MouseSensitivity", 1);
         sensitivitySlider.value = firstPersonController.RotationSpeed;
         sensitivitySlider.onValueChanged.AddListener(SetSensitivity);
+        
+        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("QualityLevel", QualitySettings.GetQualityLevel()));
         qualityDropdown.value = QualitySettings.GetQualityLevel();
         qualityDropdown.onValueChanged.AddListener(SetQuality);
         var options = QualitySettings.names.Select(quality => new TMP_Dropdown.OptionData(quality)).ToList();
         qualityDropdown.options = options;
+        
+        AudioListener.volume = PlayerPrefs.GetFloat("Volume", 1);
         volumeSlider.value = AudioListener.volume;
-        volumeSlider.onValueChanged.AddListener(volume => { AudioListener.volume = volume; });
+        volumeSlider.onValueChanged.AddListener(SetVolume);
+    }
+
+    void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("Volume", volume);
     }
 
     void Start()
@@ -34,6 +44,7 @@ public class SettingsUI : MonoBehaviour
     void SetQuality(int index)
     {
         QualitySettings.SetQualityLevel(index);
+        PlayerPrefs.SetInt("QualityLevel", index);
     }
 
     public void SetSensitivity(float sensitivity)

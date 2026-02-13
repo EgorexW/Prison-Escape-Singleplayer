@@ -7,7 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +21,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="255" />
+    <option name="cachedIndexableFilesCount" value="1847" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -138,6 +140,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabListIndexHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/MyExtentions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/Tooltip System/Tooltip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RuntimePreviewGenerator/RuntimePreviewGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Corridors/Tiles/Rotated/3 way Tile 270.prefab.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Staff Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -162,7 +165,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/05 Protocol.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Trap.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/Damage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/IPower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Built In/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameEnder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -245,10 +250,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/SettingsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/StatsUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TutorialsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@59eb6f11d242/Runtime/BurstExecutionEnvironment.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13/Editor/UsageUtility.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@a55da47cc43f/Editor/ShaderGraph/Nodes/UniversalSampleBufferNode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@a0f5d16b3c82/Runtime/TMP/TMP_Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NamedScopeManager">
@@ -390,8 +392,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.6.0" />
-    <MESSAGE value="Conduit and Status Terminal Loot, EMP Blackout lower to minimal" />
     <MESSAGE value="Achievement Icons" />
     <MESSAGE value="Metal detector cooldown" />
     <MESSAGE value="05 Room" />
@@ -415,7 +415,9 @@
     <MESSAGE value="Corridor Decor" />
     <MESSAGE value="Light colors" />
     <MESSAGE value="0.8.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.8.0" />
+    <MESSAGE value="Update material properties and adjust cursor visibility settings" />
+    <MESSAGE value="FIXED UI NOT CLICKABLE, FINALLY AFTER AN HOUR" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIXED UI NOT CLICKABLE, FINALLY AFTER AN HOUR" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
