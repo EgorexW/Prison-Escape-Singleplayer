@@ -8,12 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Garden.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Garden.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Valves/ValvesTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Valves/ValvesTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -397,7 +392,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="SpawnTable utils" />
     <MESSAGE value="New Meds Poster" />
     <MESSAGE value="Rooms catalogue" />
     <MESSAGE value="Keycard Detector" />
@@ -422,7 +416,8 @@
     <MESSAGE value="Add new meta files for various assets and implement PowerHolder class" />
     <MESSAGE value="Power Holder" />
     <MESSAGE value="Garden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Garden" />
+    <MESSAGE value="Garden Polish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Garden Polish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

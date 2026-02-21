@@ -22,6 +22,9 @@ public class FacilityAnnouncements : MonoBehaviour
         }
         var announcement = announcements.Dequeue();
         onAnnouncement.Invoke(announcement);
+        if (announcement.sound == null){
+            return;
+        }
         audioPlayer.sound = announcement.sound;
         audioPlayer.Play();
     }
