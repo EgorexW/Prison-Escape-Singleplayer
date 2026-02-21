@@ -8,13 +8,13 @@ using System.Linq;
 
 public class SoundCreator
 {
-    [MenuItem("Assets/Create/Sound from AudioClip", true)]
+    [MenuItem("Assets/Create/Egorex/Sound from AudioClip", true)]
     private static bool ValidateCreateSound()
     {
         return Selection.objects.All(obj => obj is AudioClip) && Selection.objects.Length > 0;
     }
 
-    [MenuItem("Assets/Create/Sound from AudioClip")]
+    [MenuItem("Assets/Create/Egorex/Sound from AudioClip")]
     private static void CreateSound()
     {
         AudioClip[] clips = Selection.objects.OfType<AudioClip>().ToArray();

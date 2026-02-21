@@ -1,7 +1,11 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 class PoisonTrap : MonoBehaviour, ITrap
 {
+    [BoxGroup("References")][Required][SerializeField] BoxCollider collider;
+    [SerializeField] ParticleSystem particles;
+    
     [SerializeField] Damage damagePerSecond = new(2f);
 
     void Awake()
@@ -19,5 +23,24 @@ class PoisonTrap : MonoBehaviour, ITrap
     public void Activate()
     {
         gameObject.SetActive(true);
+    }
+
+    public void SetRoom(Room room)
+    {
+        var bounds = room.roomNode.Bounds;
+        collider.size = bounds.size;
+        var particlesShape = particles.shape;
+        particlesShape.scale = new Vector3(bounds.size.x, bounds.size.z, 1f);
+        var particlesEmission = particles.emission;
+        var particlesEmissionRateOverTime = particlesEmission.rateOverTime;
+        particlesEmissionRateOverTime.constant = bounds.size.x * bounds.size.z * particlesEmission.rateOverTime.constant;
+        particlesEmission.rateOverTime = particlesEmissionRateOverTime;
+        transform.position = bounds.center;
+        transform.rotation = room.roomNode.transform.rotation;
+    }
+
+    public bool Eligable(Room room)
+    {
+        return true;
     }
 }

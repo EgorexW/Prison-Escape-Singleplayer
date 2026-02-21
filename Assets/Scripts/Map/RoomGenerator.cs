@@ -5,19 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(RoomChooser))]
 public class RoomGenerator : MonoBehaviour
 {
-    const int GENERATION_TRIES = 10;
-
     public List<Room> GenerateRooms()
     {
         var roomChooser = GetComponent<RoomChooser>();
-        for (var i = 0; i < GENERATION_TRIES; i++){
+        for (var i = 0; i < General.Iterationlimit; i++){
             var choosenRooms = roomChooser.ChooseRooms();
             if (choosenRooms != null){
                 return GenerateRooms(choosenRooms);
             }
-            Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + GENERATION_TRIES + ")", this);
+            Debug.LogWarning("Room generation failed, retrying... (" + (i + 1) + "/" + General.Iterationlimit + ")", this);
         }
-        throw new Exception("Failed to generate rooms after " + GENERATION_TRIES + " tries");
+        throw new Exception("Failed to generate rooms after " + General.Iterationlimit + " tries");
     }
 
     List<Room> GenerateRooms(Dictionary<RoomSpawner, GameObject> matchedRoomWithSpawner)

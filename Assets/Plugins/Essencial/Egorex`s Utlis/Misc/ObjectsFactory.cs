@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class ObjectsFactory : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
+    
+    [SerializeField] bool sendMessageInsteadOfDestroy = false;
 
     [FoldoutGroup("Events")] public UnityEvent<GameObject> onCreateObject = new();
     [FoldoutGroup("Events")] public UnityEvent<GameObject> onRemoveObject = new();
@@ -46,6 +48,7 @@ public class ObjectsFactory : MonoBehaviour
         obj.SetActive(true);
         objects.Add(obj);
         onCreateObject.Invoke(obj);
+        obj.SendMessage("OnFactoryAdd", SendMessageOptions.DontRequireReceiver);
         return obj;
     }
 
@@ -61,7 +64,12 @@ public class ObjectsFactory : MonoBehaviour
             return;
         }
         onRemoveObject.Invoke(obj);
-        Destroy(obj);
+        if (sendMessageInsteadOfDestroy){
+            obj.SendMessage("OnFactoryRemove", SendMessageOptions.RequireReceiver);
+        }
+        else{
+            Destroy(obj);
+        }
         objects.Remove(obj);
     }
 

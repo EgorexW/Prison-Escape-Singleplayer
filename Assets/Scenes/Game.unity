@@ -23274,10 +23274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2062d398baf34060ae5629748bfec4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   prefab: {fileID: 1727569506}
+  sendMessageInsteadOfDeactivate: 0
   onCreateObject:
     m_PersistentCalls:
       m_Calls: []

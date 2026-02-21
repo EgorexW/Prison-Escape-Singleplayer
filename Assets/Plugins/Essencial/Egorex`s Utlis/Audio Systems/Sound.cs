@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-[CreateAssetMenu(menuName = "Sound")]
+[CreateAssetMenu(menuName = "Egorex/Sound")]
 public class Sound : ScriptableObject
 {
     [SerializeField] public List<AudioClip> clips;

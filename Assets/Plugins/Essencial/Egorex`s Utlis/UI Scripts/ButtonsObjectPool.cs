@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ButtonsUI<T> : ObjectsUI
+public class ButtonsObjectPool<T> : ObjectsPool
 {
     UnityAction<T> callback;
 

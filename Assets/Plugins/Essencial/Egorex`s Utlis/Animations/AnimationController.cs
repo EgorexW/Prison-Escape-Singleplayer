@@ -1,21 +1,48 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] Animation[] animations;
-    [SerializeField] bool startAnimationOnAwake = true;
-    [SerializeField] UnityEvent onNewFrame;
-    Animation activeAnimation;
-    protected SpriteRenderer spriteRenderer;
+    [HideIf("@image != null")][BoxGroup("References")][Required][SerializeField] protected SpriteRenderer spriteRenderer;
+    [HideIf("@spriteRenderer != null")] [BoxGroup("References")][Required][SerializeField] Image image;
 
+    [SerializeField] Optional<Animation> animationOnAwake; 
+
+    Animation activeAnimation;
+    float timePlaying;
+    
+    [FoldoutGroup("Events")] public UnityEvent onNewFrame;
+    
+    public Sprite GetSprite(){
+        if (spriteRenderer != null){
+            return spriteRenderer.sprite;
+        }
+        if (image != null){
+            return image.sprite;
+        }
+        throw new Exception("No SpriteRenderer or Image assigned");
+    }
+    
+    public void SetSprite(Sprite sprite){
+        if (spriteRenderer != null){
+            spriteRenderer.sprite = sprite;
+            return;
+        }
+        if (image != null){
+            image.sprite = sprite;
+            return;
+        }
+        throw new Exception("No SpriteRenderer or Image assigned");
+    }
+    
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (startAnimationOnAwake){
-            activeAnimation = animations[0];
+        if (animationOnAwake){
+            SetAnimation(animationOnAwake);
         }
     }
 
@@ -24,37 +51,24 @@ public class AnimationController : MonoBehaviour
         if (activeAnimation == null){
             return;
         }
-        var prevSprite = spriteRenderer.sprite;
-        var newSprite = activeAnimation.GetNextFrame(Time.deltaTime);
+        timePlaying += Time.deltaTime;
+        var prevSprite = GetSprite();
+        var newSprite = activeAnimation.GetSprite(timePlaying);
         if (prevSprite != newSprite){
             onNewFrame.Invoke();
         }
-        spriteRenderer.sprite = newSprite;
+        SetSprite(newSprite);
     }
 
-    public void SetAnimation(string animationName)
+    public void SetAnimation(Animation animation)
     {
-        if (activeAnimation != null && activeAnimation.name == animationName){
-            return;
-        }
-        var animation = Array.Find(animations, x => x.name == animationName);
-        if (animation == null){
-            Debug.LogWarning("Animation" + animationName + "does not exist");
-            return;
-        }
         activeAnimation = animation;
-        activeAnimation.Restart();
+        timePlaying = 0;
     }
 
     public Animation GetAnimation()
     {
         return activeAnimation;
-    }
-
-    public Animation GetSetAnimation(string animationName)
-    {
-        SetAnimation(animationName);
-        return GetAnimation();
     }
 
     public void StopAnimation()

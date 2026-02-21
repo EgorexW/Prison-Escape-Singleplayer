@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class KeycardDetectorOverlay : UIElement
 {
-    [BoxGroup("References")][Required][SerializeField] ObjectsUI objectsUI;
+    [BoxGroup("References")][Required][SerializeField] ObjectsPool objectsUI;
     [BoxGroup("References")][Required][SerializeField] RectTransform container;
 
     [SerializeField] float innerRange = 2f;

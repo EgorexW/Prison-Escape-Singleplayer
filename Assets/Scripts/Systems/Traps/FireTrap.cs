@@ -31,6 +31,11 @@ public class FireTrap : PoweredDevice, ITrap
         SetActive();
     }
 
+    public bool Eligable(Room room)
+    {
+        return true;
+    }
+
     void SetActive()
     {
         motionSensor.RemoveAll(sensor => sensor == null);

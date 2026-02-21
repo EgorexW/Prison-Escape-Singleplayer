@@ -9,4 +9,9 @@ public class StealCardTrap : MonoBehaviour, ITrap
             reader.StealKeycard = true;
         }
     }
+
+    public bool Eligable(Room room)
+    {
+        return room.doorway.accessLevel != null;
+    }
 }

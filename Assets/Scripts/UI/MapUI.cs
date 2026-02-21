@@ -12,10 +12,10 @@ public class MapUI : MonoBehaviour
     [FormerlySerializedAs("rect")] [GetComponent] [SerializeField] RectTransform rectTransform;
 
     [BoxGroup("Internal References")] [Required] [SerializeField] GameObject container;
-    [BoxGroup("Internal References")] [SerializeField] ObjectsUI roomsObjectPool;
+    [BoxGroup("Internal References")] [SerializeField] ObjectsPool roomsObjectPool;
     [BoxGroup("Internal References")] [SerializeField] RectTransform playerPointer;
     [BoxGroup("Internal References")] [SerializeField] RectTransform selfPointer;
-    [BoxGroup("Internal References")] [SerializeField] ObjectsUI powerSystemsPool;
+    [BoxGroup("Internal References")] [SerializeField] ObjectsPool powerSystemsPool;
 
     [SerializeField] float scale = 0.005f;
     [SerializeField] bool showDiscoveredRooms = true;

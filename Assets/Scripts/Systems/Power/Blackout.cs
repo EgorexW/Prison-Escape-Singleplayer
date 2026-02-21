@@ -16,4 +16,9 @@ public class Blackout : MonoBehaviour, ITrap
         }
         powerSystem.ChangePower(transform.position, targetPowerLevel);
     }
+
+    public bool Eligable(Room room)
+    {
+        return true;
+    }
 }

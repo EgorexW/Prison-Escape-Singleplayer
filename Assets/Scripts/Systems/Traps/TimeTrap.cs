@@ -21,6 +21,11 @@ public class TimeTrap : PoweredDevice, ITrap
         OnPowerChanged();
     }
 
+    public bool Eligable(Room room)
+    {
+        return true;
+    }
+
     public void OnTriggered()
     {
         GameManager.i.gameTimeManager.ChangeTime(-timePenalty);

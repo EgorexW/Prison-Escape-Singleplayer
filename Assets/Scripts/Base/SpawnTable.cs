@@ -24,7 +24,7 @@ public class SpawnTable : ScriptableObject
         if (gameObjects.Count == 0){
             return null;
         }
-        var rolledObj = WeightedChance.GetWeightedRoll(gameObjects);
+        var rolledObj = gameObjects.GetWeightedRoll();
         if (rolledObj.Object is GameObject){
             return rolledObj.Object as GameObject;
         }

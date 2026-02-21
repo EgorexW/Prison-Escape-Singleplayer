@@ -12,18 +12,11 @@ public struct Optional<T>
         set => enabled = value;
     }
     public T Value => value;
-
+    
     public Optional(T initialValue)
     {
         enabled = true;
         value = initialValue;
-
-        // Value state based toggling approach: 
-        // if (value == null) {
-        //     enabled = false;
-        // } else {
-        //     enabled = !value.Equals(default(T));
-        // }
     }
 
     public Optional(T initialValue, bool enabled)

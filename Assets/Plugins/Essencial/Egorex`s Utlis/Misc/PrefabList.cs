@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Prefab List", fileName = "Prefab List", order = 0)]
+[CreateAssetMenu(menuName = "Egorex/Prefab List", fileName = "Prefab List")]
 public class PrefabList : ScriptableObject
 {
     public List<GameObject> prefabs;

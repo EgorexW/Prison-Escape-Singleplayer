@@ -28,9 +28,15 @@ public class RoomTraps : MonoBehaviour
 
     void CreateATrap()
     {
-        var prefab = trapConfig.GetTrapPrefab();
+        GameObject prefab = null;
+        for (int i = 0; i < General.Iterationlimit; i++){
+            prefab = trapConfig.GetTrapPrefab();
+            var trapTmp = prefab.GetComponent<ITrap>();
+            if (trapTmp.Eligable(room)){
+                break;
+            }
+        }
         var obj = Instantiate(prefab, transform);
-        // obj.transform.localRotation = Quaternion.identity;
         trap = obj.GetComponent<ITrap>();
         trap.SetRoom(room);
     }
@@ -47,4 +53,5 @@ interface ITrap
     void Activate() { }
 
     void SetRoom(Room room) { }
+    bool Eligable(Room room);
 }

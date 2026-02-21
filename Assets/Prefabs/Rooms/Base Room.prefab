@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b46d9b4a4344c79e15b9d1d79bca5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapChance: 0.5
+  trapNrMod: 1
   spawnTable: {fileID: 11400000, guid: ff0fdd0bcca8045dd8d154172a03b65f, type: 2}
 --- !u!114 &4856611922499971837
 MonoBehaviour:
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomSpawnConfig: {fileID: 2984528885158629048}
   lootSpawnersParent: {fileID: 6708807260275625954}
+  roomNode: {fileID: 6747668267694923291}
   doorway: {fileID: 6002658007307836836}
   roomTraps: {fileID: 1490884410790689243}
   gameObjectsToActivate: []

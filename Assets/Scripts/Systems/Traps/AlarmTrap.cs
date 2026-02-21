@@ -44,6 +44,11 @@ public class AlarmTrap : MonoBehaviour, ITrap
         this.room = room;
     }
 
+    public bool Eligable(Room room)
+    {
+        return true;
+    }
+
     public float GetLockTime()
     {
         return lockTime;

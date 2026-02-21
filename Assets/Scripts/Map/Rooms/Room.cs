@@ -8,9 +8,11 @@ public class Room : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] RoomSpawnConfig roomSpawnConfig;
     [BoxGroup("References")] [Required] [SerializeField] GameObject lootSpawnersParent;
+    
+    public RoomNode roomNode;
 
-    [SerializeField] public DoorwayConfig doorway;
-    [SerializeField] public RoomTraps roomTraps;
+    public DoorwayConfig doorway;
+    public RoomTraps roomTraps;
 
     [SerializeField] List<GameObject> gameObjectsToActivate;
 
