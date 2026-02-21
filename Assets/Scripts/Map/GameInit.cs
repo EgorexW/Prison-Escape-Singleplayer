@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class GameInit : MonoBehaviour
 {
-    const float DELAY = 0.5f;
+    const float DELAY = 0.25f;
     [BoxGroup("References")] [Required] [SerializeField] RoomGenerator roomGenerator;
     [BoxGroup("References")] [Required] [SerializeField] Ascensions ascensions;
     [BoxGroup("References")] [SerializeField] List<CorridorSpawner> corridorSpawners;
@@ -32,6 +32,10 @@ public class GameInit : MonoBehaviour
 
         foreach (var corridorSpawner in corridorSpawners)
             corridorSpawner.Spawn(GameManager.i.levelNodes.CorridorNodes);
+
+        yield return new WaitForSeconds(DELAY);
+        
+        GameManager.i.valvesManager.Setup();
 
         yield return SpawnPlayer();
 

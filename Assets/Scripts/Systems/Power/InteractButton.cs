@@ -10,7 +10,7 @@ public class InteractButton : MonoBehaviour, IInteractive
         OnClick(player);
     }
 
-    public float HoldDuration => 3;
+    public virtual float HoldDuration => 3;
 
     public virtual void OnClick(Player player)
     {

@@ -10657,6 +10657,7 @@ MonoBehaviour:
     - {fileID: 5272344036457778287, guid: 18b01ae2c1d4f41688e633152c73c1df, type: 3}
     - {fileID: 3104565879822579608, guid: 36e25088655314a2c8c76d525bfb28c6, type: 3}
     - {fileID: 2708915167775627994, guid: 801cd61c487064ed6a57fcc0f5cf646a, type: 3}
+    - {fileID: 1470520080513967606, guid: 0433d144e3d0c42978b5731552104f13, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -10675,7 +10676,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 13
+      Data: 14
     - Name: 
       Entry: 7
       Data: 
@@ -10833,6 +10834,18 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 10
+      Data: 13
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -10853,6 +10866,7 @@ MonoBehaviour:
   - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
   - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
   - {fileID: 7063043514278971131, guid: 434739ec4d0f74f3c9d3a37048cddb53, type: 3}
+  - {fileID: 1470520080513967606, guid: 0433d144e3d0c42978b5731552104f13, type: 3}
   roomsToSpawn: {x: 21, y: 23}
   fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
     type: 3}
@@ -12960,6 +12974,7 @@ GameObject:
   - component: {fileID: 1012652407}
   - component: {fileID: 1012652408}
   - component: {fileID: 1012652409}
+  - component: {fileID: 1012652410}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -12997,6 +13012,7 @@ MonoBehaviour:
   roomsManager: {fileID: 1012652408}
   trapsManager: {fileID: 1012652409}
   gameModifiers: {fileID: 437096337}
+  valvesManager: {fileID: 1012652410}
 --- !u!4 &1012652404
 Transform:
   m_ObjectHideFlags: 0
@@ -13100,6 +13116,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trapChance: 0.5
+--- !u!114 &1012652410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012652402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e4688845cb4db1856506e7ffad2aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::ValvesManager
+  valvesSpawnMult: 1.5
+  valves: []
+  triggers: []
+  activatedValves: 0
 --- !u!1 &1029292703
 GameObject:
   m_ObjectHideFlags: 0

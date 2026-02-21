@@ -24,6 +24,12 @@ MonoBehaviour:
       [\n        ]\n    },\n    \"ExcludedNamespaces\": {\n        \"$id\": 2,\n       
       \"$type\": 1,\n        \"$rlength\": 0,\n        \"$rcontent\": [\n       
       ]\n    }\n}"
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.MaterialValidator, Sirenix.OdinValidator.Editor
+    Override: "{\n    \"$id\": 0,\n    \"$type\": \"0|Sirenix.OdinValidator.Editor.Validators.MaterialValidator,
+      Sirenix.OdinValidator.Editor\",\n    \"MissingShaderSeverity\": 0,\n    \"BrokenShaderSeverity\":
+      0,\n    \"WrongRenderPipelineSeverity\": 0\n}"
   - Enabled: 1
     EnabledOverridden: 1
     Type: Sirenix.OdinValidator.Editor.Validators.ListNullElementValidator, Sirenix.OdinValidator.Editor
