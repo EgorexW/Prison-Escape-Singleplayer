@@ -8,10 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Power Generator.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Power Generator.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/PowerHolderVisuals.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/PowerHolderVisuals.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/ObjectWithValue/WeightedChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/ObjectWithValue/WeightedChance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Movement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Movement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Power Generator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Power Generator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Power Holder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Others/Power Holder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Secure Loot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Power Generator.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Guaranted/Power Generator.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Status Terminal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Status Terminal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/ItemVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/ItemVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/ItemVisuals.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/ItemVisuals.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/PowerGeneratorVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/PowerGeneratorVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/PowerGeneratorVisuals.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Visuals/PowerGeneratorVisuals.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/PowerHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/PowerHolder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +38,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1840" />
+    <option name="cachedIndexableFilesCount" value="1847" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -398,7 +412,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Metal detector cooldown" />
     <MESSAGE value="05 Room" />
     <MESSAGE value="Lockers" />
     <MESSAGE value="SpawnTable utils" />
@@ -423,7 +436,8 @@
     <MESSAGE value="Update material properties and adjust cursor visibility settings" />
     <MESSAGE value="FIXED UI NOT CLICKABLE, FINALLY AFTER AN HOUR" />
     <MESSAGE value="Settings save" />
-    <option name="LAST_COMMIT_MESSAGE" value="Settings save" />
+    <MESSAGE value="Add new meta files for various assets and implement PowerHolder class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new meta files for various assets and implement PowerHolder class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
