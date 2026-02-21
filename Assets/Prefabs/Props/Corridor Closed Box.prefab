@@ -102,6 +102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716413872361694435, guid: 805dfd43878094d8f9e43492ab8ea228,
         type: 3}
+      propertyPath: electrocutionDamage.heavyDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716413872361694435, guid: 805dfd43878094d8f9e43492ab8ea228,
+        type: 3}
       propertyPath: minimalPowerElectrocutionChance
       value: 0
       objectReference: {fileID: 0}

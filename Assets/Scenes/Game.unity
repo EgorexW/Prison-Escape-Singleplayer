@@ -16195,15 +16195,6 @@ MonoBehaviour:
       damageType: 0
     corridorTrapsIncrease: 0
     specialEffect: {fileID: 1831443280}
-  - gameTimeMinutesReduction: 9
-    inventorySizeReduction: 0
-    trapChanceIncrease: 0
-    startDamage:
-      lightDamage: 0
-      heavyDamage: 0
-      damageType: 0
-    corridorTrapsIncrease: 0
-    specialEffect: {fileID: 0}
   - gameTimeMinutesReduction: 0
     inventorySizeReduction: 0
     trapChanceIncrease: 0
@@ -16211,6 +16202,15 @@ MonoBehaviour:
       lightDamage: 99
       heavyDamage: 49
       damageType: 1
+    corridorTrapsIncrease: 0
+    specialEffect: {fileID: 0}
+  - gameTimeMinutesReduction: 7
+    inventorySizeReduction: 0
+    trapChanceIncrease: 0
+    startDamage:
+      lightDamage: 0
+      heavyDamage: 0
+      damageType: 0
     corridorTrapsIncrease: 0
     specialEffect: {fileID: 0}
   - gameTimeMinutesReduction: 0
@@ -21987,8 +21987,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Height: 2.2
+  m_Radius: 0.3
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &2197348209846586767
@@ -22906,7 +22906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b4e090f7bc64a2e970f04bce7f4229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 4
+  size: 5
 --- !u!224 &5886022835431642620
 RectTransform:
   m_ObjectHideFlags: 0

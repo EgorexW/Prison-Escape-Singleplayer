@@ -11,41 +11,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 1434321088, guid: afbf832bc46149f5a291e87cab63e46d, type: 3}
   m_Name: RuleConfig
-  m_EditorClassIdentifier: 
-  projectRules:
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.ReferenceRequiredByDefaultValidator,
-      Sirenix.OdinValidator.Editor
-    Override: "{\n    \"$id\": 0,\n    \"$type\": \"0|Sirenix.OdinValidator.Editor.Validators.ReferenceRequiredByDefaultValidator,
-      Sirenix.OdinValidator.Editor\",\n    \"ValidatorSeverity\": 1,\n    \"IncludeAllByDefault\":
-      false,\n    \"IncludedNamespaces\": {\n        \"$id\": 1,\n        \"$type\":
-      \"1|System.String[], mscorlib\",\n        \"$rlength\": 0,\n        \"$rcontent\":
-      [\n        ]\n    },\n    \"ExcludedNamespaces\": {\n        \"$id\": 2,\n       
-      \"$type\": 1,\n        \"$rlength\": 0,\n        \"$rcontent\": [\n       
-      ]\n    }\n}"
-  - Enabled: 0
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.MaterialValidator, Sirenix.OdinValidator.Editor
-    Override: "{\n    \"$id\": 0,\n    \"$type\": \"0|Sirenix.OdinValidator.Editor.Validators.MaterialValidator,
-      Sirenix.OdinValidator.Editor\",\n    \"MissingShaderSeverity\": 0,\n    \"BrokenShaderSeverity\":
-      0,\n    \"WrongRenderPipelineSeverity\": 0\n}"
-  - Enabled: 1
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.ListNullElementValidator, Sirenix.OdinValidator.Editor
-    Override: 
-  - Enabled: 1
-    EnabledOverridden: 1
-    Type: Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator, Sirenix.OdinValidator.Editor
-    Override: "{\n    \"$id\": 0,\n    \"$type\": \"0|Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator,
-      Sirenix.OdinValidator.Editor\",\n    \"Severity\": 1,\n    \"TypeExceptions\":
-      {\n        \"$id\": 1,\n        \"$type\": \"1|System.Type[], mscorlib\",\n       
-      \"$rlength\": 2,\n        \"$rcontent\": [\n            {\n               
-      \"$id\": 2,\n                \"$type\": \"2|System.RuntimeType, mscorlib\",\n               
-      \"UnityEngine.BoxCollider, UnityEngine.PhysicsModule\"\n            },\n           
-      {\n                \"$id\": 3,\n                \"$type\": 2,\n               
-      \"UnityEngine.MeshCollider, UnityEngine.PhysicsModule\"\n            }\n       
-      ]\n    },\n    \"PrefabExceptions\": {\n        \"$id\": 4,\n        \"$type\":
-      \"3|System.Collections.Generic.List`1[[Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator+PrefabException,
-      Sirenix.OdinValidator.Editor]], mscorlib\",\n        \"$rlength\": 0,\n       
-      \"$rcontent\": [\n        ]\n    }\n}"
+  m_EditorClassIdentifier: Sirenix.OdinValidator.Editor.dll::Sirenix.OdinValidator.Editor.RuleConfig
+  projectRules: []
