@@ -10866,7 +10866,6 @@ MonoBehaviour:
   - {fileID: 7687735848944752987, guid: 0caa8bd3882a64a12874c75578e4bdba, type: 3}
   - {fileID: 7063043514278971131, guid: f85ef1038140a4d4ab75a073325c1a3b, type: 3}
   - {fileID: 7063043514278971131, guid: 434739ec4d0f74f3c9d3a37048cddb53, type: 3}
-  - {fileID: 1470520080513967606, guid: 0433d144e3d0c42978b5731552104f13, type: 3}
   roomsToSpawn: {x: 21, y: 23}
   fillerRoom: {fileID: 5994038156301474601, guid: e70bf9db1ab41492aae9cacf9f3a1407,
     type: 3}
