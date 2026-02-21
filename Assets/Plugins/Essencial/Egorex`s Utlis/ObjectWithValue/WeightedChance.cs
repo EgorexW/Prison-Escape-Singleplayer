@@ -19,7 +19,11 @@ public static class WeightedChance
             }
             roll -= weightedChance.value;
         }
-
+        
+        if (win == null){
+            Debug.LogError("WeightedChance: No winner was selected. Check if the total weight is greater than 0.");
+        }
+        
         return win;
     }
 }
