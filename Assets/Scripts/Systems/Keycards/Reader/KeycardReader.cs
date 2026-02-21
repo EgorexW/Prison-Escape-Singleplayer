@@ -19,8 +19,15 @@ public class KeycardReader : PoweredDevice, IInteractive
 
     [FoldoutGroup("Events")] public UnityEvent onUnlock;
 
-    public bool corrupted;
-    
+    bool corrupted;
+
+    public bool Corrupted{
+        get => corrupted;
+        set{
+            corrupted = value;
+            visuals?.UpdateVisual();
+        }
+    }
     public AccessLevel AccessLevel{
         set{
             accessLevel = value;

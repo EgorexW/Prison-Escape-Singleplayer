@@ -8,14 +8,14 @@ public class DoorLock : PoweredDevice, IInteractive
 
     public float resistance = 1;
 
-    public bool unlocked;
+    public DoorLockState state;
 
     public void Interact(Player player)
     {
         if (!IsPowered()){
             return;
         }
-        if (unlocked){
+        if (state == DoorLockState.Unlocked){
             door.ChangeState();
         }
     }
@@ -24,7 +24,29 @@ public class DoorLock : PoweredDevice, IInteractive
 
     public void Unlock()
     {
-        unlocked = true;
+        state = DoorLockState.Unlocked;
         door.Open();
     }
+
+    public void Break()
+    {
+        state = DoorLockState.Broken;
+        door.Open();
+    }
+
+    public void Lock()
+    {
+        if (state == DoorLockState.Broken){
+            return;
+        }
+        state = DoorLockState.Locked;
+        door.Close();
+    }
+}
+
+public enum DoorLockState
+{
+    Locked,
+    Unlocked,
+    Broken
 }

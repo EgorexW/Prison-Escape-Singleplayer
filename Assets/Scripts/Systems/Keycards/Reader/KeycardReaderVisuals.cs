@@ -46,7 +46,8 @@ public class KeycardReaderVisuals : MonoBehaviour
         if (keycardReader == null){
             return;
         }
-        if (keycardReader.corrupted){
+        if (keycardReader.Corrupted){
+            defaultText = corruptedText;
             return;
         }
         defaultText = keycardReader.AccessLevel.name;

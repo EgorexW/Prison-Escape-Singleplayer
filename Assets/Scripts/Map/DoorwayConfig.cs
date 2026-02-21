@@ -35,7 +35,7 @@ public class DoorwayConfig : MonoBehaviour
             keycardReader.gameObject.SetActive(accessLevel != null);
             keycardReader.AccessLevel = accessLevel;
         }
-        foreach (var doorLock in doorLocks) doorLock.unlocked = accessLevel == null;
+        foreach (var doorLock in doorLocks) doorLock.state = accessLevel == null ? DoorLockState.Unlocked : DoorLockState.Locked;
         weakDoor.SetActive(doorType == DoorType.Weak);
         strongDoor.SetActive(doorType == DoorType.Strong);
     }
@@ -52,6 +52,11 @@ public class DoorwayConfig : MonoBehaviour
     public List<KeycardReader> GetKeycardReaders()
     {
         return new List<KeycardReader>(keycardReaders);
+    }
+
+    public List<DoorLock> GetDoorLocks()
+    {
+        return new List<DoorLock>(doorLocks);
     }
 }
 

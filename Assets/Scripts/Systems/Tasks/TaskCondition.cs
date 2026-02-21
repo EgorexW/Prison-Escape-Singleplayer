@@ -25,6 +25,6 @@ public class TaskCondition : MonoBehaviour
             return;
         }
         completed = true;
-        room.doorway.GetDoor().Open();
+        room.doorway.GetDoorLocks().ForEach(doorLock => doorLock.Unlock());
     }
 }
