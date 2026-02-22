@@ -8,60 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/EditorOnlyGameObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/EditorOnlyGameObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/ObjectsPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/ObjectsPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/ButtonsObjectPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/ButtonsObjectPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Poison Trap.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Poison Trap.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Animations/Animation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Animations/Animation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Animations/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Animations/AnimationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Audio Systems/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Editor/SoundCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/ObjectsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/ObjectsFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Misc/PrefabList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/ObjectWithValue/WeightedChance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/ObjectWithValue/WeightedChance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Optional/Optional.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/Optional/Optional.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/ButtonsUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/ButtonsUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/CountUI/ObjectsUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/UI Scripts/CountUI/ObjectsUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Effects/Poison.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Effects/Poison.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Administration.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Base Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Big Room.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Door Storage.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Security.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Security.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/The Conduit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/The Conduit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap Big.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap Big.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap Small.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap Small.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Props/Corridor Box.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Corridor Box.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Trap.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Big Poison Trap.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Power Room Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Power Room Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Storage Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Storage Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/RoomGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/RoomGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Power/Blackout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Power/Blackout.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/AlarmTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/AlarmTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/FireTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/FireTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/LinkedLoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/LinkedLoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/StealCardTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/StealCardTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/TimeTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/TimeTrap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MapUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -449,7 +398,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Removed Laser Door trap (deemed uninteresting" />
     <MESSAGE value="Linked loot is removed when there is only 1 or 0 loot" />
     <MESSAGE value="Guests Management" />
     <MESSAGE value="Background Rooms Tests" />
@@ -474,7 +422,8 @@
     <MESSAGE value="Fix audio announcement handling and update Garden prefab properties" />
     <MESSAGE value="Add new meta files, update prefab properties, and improve Valve initialization" />
     <MESSAGE value="Alarm Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alarm Added" />
+    <MESSAGE value="Cleaned Up Traps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned Up Traps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

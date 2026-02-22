@@ -86,8 +86,8 @@ public class KeycardReader : PoweredDevice, IInteractive
             player.RemoveItem(item);
             Destroy(item.gameObject);
         }
-        AccessGranted(true);
         TryElectrocute(player);
+        AccessGranted(true);
     }
 
     public float HoldDuration => 0.5f;
