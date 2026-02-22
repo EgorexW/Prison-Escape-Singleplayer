@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
         OnStartGame();
         GameManager.i.gameEnder.beforeLoseGame.AddListener(BeforeLoseGame);
         GameManager.i.gameEnder.beforeWinGame.AddListener(BeforeWinGame);
-        GameManager.i.roomsManager.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
+        GameManager.i.levelNodes.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
     }
 
     void OnPlayerEnteredRoom(Room room)

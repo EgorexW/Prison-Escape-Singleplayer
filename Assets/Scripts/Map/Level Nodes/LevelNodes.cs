@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelNodes : MonoBehaviour
 {
     [SerializeField] List<CorridorNode> corridorNodes;
     [SerializeField] List<RoomNode> roomNodes;
+    
+    [FoldoutGroup("Events")] public UnityEvent<Room> onPlayerEnteredRoom;
 
     public List<CorridorNode> CorridorNodes => corridorNodes;
     public List<RoomNode> RoomNodes => roomNodes;

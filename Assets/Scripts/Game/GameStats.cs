@@ -36,7 +36,7 @@ public class GameStats : MonoBehaviour
         GameManager.i.gameEnder.beforeEndGame.AddListener(BeforeEndGame);
         GameManager.i.Player.playerHealth.Health.onDamage.AddListener(OnDamage);
         GameManager.i.Player.onMove.AddListener(OnMove);
-        GameManager.i.roomsManager.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
+        GameManager.i.levelNodes.onPlayerEnteredRoom.AddListener(OnPlayerEnteredRoom);
         GameManager.i.Player.onPickUpItem.AddListener(OnPickupItem);
     }
 

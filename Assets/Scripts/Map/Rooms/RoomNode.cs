@@ -14,7 +14,8 @@ public class RoomNode : LevelNode
             return;
         }
         if (other.GetComponent<Player>() != null){
-            GameManager.i.roomsManager.PlayerEnteredRoom(room);
+            room.discovered = true;
+            GameManager.i.levelNodes.onPlayerEnteredRoom.Invoke(room);
         }
     }
 }

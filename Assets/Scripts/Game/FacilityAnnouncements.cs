@@ -23,6 +23,7 @@ public class FacilityAnnouncements : MonoBehaviour
         var announcement = announcements.Dequeue();
         onAnnouncement.Invoke(announcement);
         if (announcement.sound == null){
+            Debug.LogWarning("Announcement has no sound assigned", this);
             return;
         }
         audioPlayer.sound = announcement.sound;

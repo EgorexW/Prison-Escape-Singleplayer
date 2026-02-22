@@ -20,7 +20,7 @@ MonoBehaviour:
   - value: 2
     Object: {fileID: 4690771240427926488, guid: 73023eb8c288843f9bd2d8f94a8bb72b,
       type: 3}
-  - value: 2
+  - value: 1
     Object: {fileID: 6565534021384309587, guid: ba442b26cd54f41fc924fae61706a2fb,
       type: 3}
   - value: 1
@@ -31,4 +31,7 @@ MonoBehaviour:
     Object: {fileID: 11400000, guid: a199126ed02da40cf98fdb3207d67f80, type: 2}
   - value: 0.5
     Object: {fileID: 9067416573311521506, guid: 3fe764b6292ae4cc9a4752af837a3b26,
+      type: 3}
+  - value: 0.5
+    Object: {fileID: 8018436764139619748, guid: 64a4d925dbd8f49599061152f1c0dae9,
       type: 3}

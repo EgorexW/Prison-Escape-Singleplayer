@@ -9610,6 +9610,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corridorNodes: []
   roomNodes: []
+  onPlayerEnteredRoom:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &465035954
 GameObject:
   m_ObjectHideFlags: 0
@@ -13008,7 +13011,6 @@ MonoBehaviour:
   levelNodes: {fileID: 453294468}
   facilityAnnouncements: {fileID: 1281685159}
   gameEnder: {fileID: 1012652407}
-  roomsManager: {fileID: 1012652408}
   trapsManager: {fileID: 1012652409}
   gameModifiers: {fileID: 437096337}
   valvesManager: {fileID: 1012652410}
@@ -13102,6 +13104,7 @@ MonoBehaviour:
   onPlayerEnteredRoom:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
 --- !u!114 &1012652409
 MonoBehaviour:
   m_ObjectHideFlags: 0
