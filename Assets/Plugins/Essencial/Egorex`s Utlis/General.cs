@@ -18,7 +18,7 @@ public enum Direction
 
 public class General : MonoBehaviour
 {
-    public const int Iterationlimit = 1000;
+    public const int Iterationlimit = 10;
     
     static General instance;
 

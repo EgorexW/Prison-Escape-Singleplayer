@@ -8,23 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Equipment/Keycard Uploader.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Equipment/Keycard Uploader.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Recovery.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Basic Item.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Default Traps.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Trap Spawn Tables/Default Traps.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/RoomsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/RoomsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/Equipment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/Equipment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameModifiers/GameModifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameModifiers/GameModifiers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Descriptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Descriptions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -412,7 +407,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Guests Management" />
     <MESSAGE value="Background Rooms Tests" />
     <MESSAGE value="Status Terminal Works" />
     <MESSAGE value="New Keycard Material" />
@@ -437,7 +431,8 @@
     <MESSAGE value="Alarm Added" />
     <MESSAGE value="Cleaned Up Traps" />
     <MESSAGE value="Refactor KeycardReader logic and update Corridor Box prefab properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor KeycardReader logic and update Corridor Box prefab properties" />
+    <MESSAGE value="Keycard Uploader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Keycard Uploader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

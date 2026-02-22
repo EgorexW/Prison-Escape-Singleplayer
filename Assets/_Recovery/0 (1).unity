@@ -13100,8 +13100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004af11d8c1b4163bcf3c93c00d9b878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapChance: 0.5
-  maxTrapAmount: 1
+  trapChance: 5
+  maxTrapAmount: 5
 --- !u!114 &1012652410
 MonoBehaviour:
   m_ObjectHideFlags: 0

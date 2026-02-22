@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,13 +17,18 @@ public class RoomTraps : MonoBehaviour
     [SerializeField]
     DoorwayConfig doorwayConfig;
 
-    ITrap trap;
+    List<ITrap> traps = new List<ITrap>();
+    
+    List<GameObject> trapPrefabsUsed = new List<GameObject>();
 
     public void Activate()
     {
         doorwayConfig.onOpen.AddListener(ActivateTrap);
-        if (Random.value < trapConfig.trapNrMod * GameManager.i.trapsManager.trapChance){
+        var chance = trapConfig.trapNrMod * GameManager.i.trapsManager.trapChance;
+        chance = Mathf.Min(chance, GameManager.i.trapsManager.maxTrapAmount);
+        while (Random.value < chance){
             CreateATrap();
+            chance--;
         }
     }
 
@@ -31,19 +37,26 @@ public class RoomTraps : MonoBehaviour
         GameObject prefab = null;
         for (int i = 0; i < General.Iterationlimit; i++){
             prefab = trapConfig.GetTrapPrefab();
+            if (trapPrefabsUsed.Contains(prefab)){
+                continue;
+            }
             var trapTmp = prefab.GetComponent<ITrap>();
             if (trapTmp.Eligable(room)){
                 break;
             }
         }
+        trapPrefabsUsed.Add(prefab);
         var obj = Instantiate(prefab, transform);
-        trap = obj.GetComponent<ITrap>();
+        var trap = obj.GetComponent<ITrap>();
         trap.SetRoom(room);
+        traps.Add(trap);
     }
 
     void ActivateTrap()
     {
-        trap?.Activate();
+        foreach (var trap in traps){
+            trap.Activate();
+        }
     }
 }
 

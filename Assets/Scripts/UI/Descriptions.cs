@@ -23,6 +23,9 @@ public static class Descriptions
                 lines.Add("More traps inside rooms");
             }
         }
+        if (effect.maxTrapAmountIncrease > 0){
+            lines.Add("More traps can spawn inside the same room");
+        }
         if (!effect.startDamage.IsZero){
             lines.Add("Start damaged");
         }

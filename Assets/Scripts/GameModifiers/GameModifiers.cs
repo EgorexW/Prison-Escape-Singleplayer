@@ -15,6 +15,7 @@ public class GameModifiers : MonoBehaviour
         GameManager.i.Player.GetInventory()
             .SetSize(GameManager.i.Player.GetInventory().GetSize() - effect.inventorySizeReduction);
         GameManager.i.trapsManager.trapChance += effect.trapChanceIncrease;
+        GameManager.i.trapsManager.maxTrapAmount += effect.maxTrapAmountIncrease;
         GameManager.i.Player.playerHealth.Damage(effect.startDamage);
         corridorTrapsSpawner.spawnCount.x += effect.corridorTrapsIncrease;
         corridorTrapsSpawner.spawnCount.y += effect.corridorTrapsIncrease;
@@ -43,6 +44,7 @@ public class GameModifier
     public float gameTimeMinutesReduction;
     public int inventorySizeReduction;
     public float trapChanceIncrease;
+    public int maxTrapAmountIncrease;
     public Damage startDamage;
     public int corridorTrapsIncrease;
     public GameModifierSpecial specialEffect;
