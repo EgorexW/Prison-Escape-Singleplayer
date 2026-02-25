@@ -8,18 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Recovery/0.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/Visuals/BlackoutVisuals.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/Visuals/BlackoutVisuals.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/Egorex`s Utlis/General.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/TrapsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameModifiers/GameModifiers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameModifiers/GameModifiers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/RoomTraps.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Descriptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Descriptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Blackout.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Blackout.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Rooms/RoomNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Power/Blackout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Power/Blackout.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Recovery.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Recovery/0 (1).unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Recovery/0.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Recovery/0.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +167,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Notes/Materials/Keycard Combiner Note.mat.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Keycard Combiner Note.png.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Smart Maps Updated.wav.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
@@ -238,6 +237,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReaderVisuals.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockerRecipes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Lockers/LockersRoom.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Power/Blackout.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Power/MainPowerSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Power/SubPowerSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/Tasks/TaskCondition.cs" root0="FORCE_HIGHLIGHTING" />
@@ -407,7 +407,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Background Rooms Tests" />
     <MESSAGE value="Status Terminal Works" />
     <MESSAGE value="New Keycard Material" />
     <MESSAGE value="Task Room" />
@@ -432,7 +431,8 @@
     <MESSAGE value="Cleaned Up Traps" />
     <MESSAGE value="Refactor KeycardReader logic and update Corridor Box prefab properties" />
     <MESSAGE value="Keycard Uploader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Keycard Uploader" />
+    <MESSAGE value="Multiple traps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple traps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

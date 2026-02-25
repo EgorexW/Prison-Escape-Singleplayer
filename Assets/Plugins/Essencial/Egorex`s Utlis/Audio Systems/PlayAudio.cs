@@ -46,4 +46,9 @@ public sealed class PlayAudio : MonoBehaviour
         audioSource.pitch = sound.pitch * (1f + Random.Range(-sound.pitchVariance / 2f, sound.pitchVariance / 2f));
         audioSource.Play();
     }
+
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
 }

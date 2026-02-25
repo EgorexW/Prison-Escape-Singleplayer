@@ -18,6 +18,6 @@ MonoBehaviour:
   volumeVariance: 0
   pitch: 1
   pitchVariance: 0
-  loop: 0
+  loop: 1
   canOverride: 0
   mixerGroup: {fileID: 0}
