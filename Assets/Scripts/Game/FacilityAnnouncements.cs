@@ -7,13 +7,20 @@ using UnityEngine.Events;
 public class FacilityAnnouncements : MonoBehaviour
 {
     [BoxGroup("References")] [Required] [SerializeField] PlayAudio audioPlayer;
+    
+    [SerializeField] float minTimeBetweenAnnouncements = 3;
 
     [FoldoutGroup("Events")] public UnityEvent<FacilityAnnouncement> onAnnouncement;
 
     readonly Queue<FacilityAnnouncement> announcements = new();
 
+    float nextAnnouncementTime = -Mathf.Infinity;
+
     void Update()
     {
+        if (Time.time < nextAnnouncementTime){
+            return;
+        }
         if (audioPlayer.IsPlaying){
             return;
         }
@@ -22,8 +29,9 @@ public class FacilityAnnouncements : MonoBehaviour
         }
         var announcement = announcements.Dequeue();
         onAnnouncement.Invoke(announcement);
+        nextAnnouncementTime = Time.time + minTimeBetweenAnnouncements;
         if (announcement.sound == null){
-            Debug.LogWarning("Announcement has no sound assigned", this);
+            Debug.Log("Announcement has no sound assigned", this);
             return;
         }
         audioPlayer.sound = announcement.sound;
