@@ -24,10 +24,12 @@ public class PlayerInputPresenter : MonoBehaviour
         alternativeUseAction.canceled += AlternativeStopUse;
         inputActions.FindAction("Interact").performed += OnInteract;
         inputActions.FindAction("Interact").canceled += OnInteract;
+        inputActions.FindAction("Flashlight").performed += OnFlashlight;
         inputActions.FindAction("Settings").performed += ToggleSettings;
         playerInput.actions.FindActionMap("UI").FindAction("Cancel").performed += ToggleSettings;
         HideCursor();
     }
+
 
     void OnDestroy()
     {
@@ -56,6 +58,10 @@ public class PlayerInputPresenter : MonoBehaviour
         AlternativeHoldUse(alternativeUseAction);
     }
 
+    void OnFlashlight(InputAction.CallbackContext obj)
+    {
+        player.headlight.Toggle();
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (Time.timeScale <= 0){

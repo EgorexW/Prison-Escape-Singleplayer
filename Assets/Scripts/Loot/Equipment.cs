@@ -1,6 +1,6 @@
 public abstract class Equipment : Loot
 {
-    protected bool destroyOnUse = false;
+    protected bool destroyOnUse = true;
     
     public override void Interact(Player player)
     {
