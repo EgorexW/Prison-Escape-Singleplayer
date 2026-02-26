@@ -21,7 +21,7 @@ public class PowerLossGameModifier : GameModifierSpecial
         MainPowerSystem.i.ChangePower(MainPowerSystem.i.SubPowerSystems.Random(), PowerLevel.NoPower);
     }
 
-    public override void Apply()
+    public override void ApplyAfterInit()
     {
         active = true;
     }

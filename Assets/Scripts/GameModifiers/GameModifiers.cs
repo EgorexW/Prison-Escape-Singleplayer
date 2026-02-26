@@ -9,7 +9,7 @@ public class GameModifiers : MonoBehaviour
 
     List<GameModifier> activeModifiers = new List<GameModifier>();
     
-    void ApplyEffect(GameModifier effect)
+    void ApplyEffectBeforeInit(GameModifier effect)
     {
         GameManager.i.gameTimeManager.gameTimeMinutes -= effect.gameTimeMinutesReduction;
         GameManager.i.Player.GetInventory()
@@ -19,15 +19,19 @@ public class GameModifiers : MonoBehaviour
         GameManager.i.Player.playerHealth.Damage(effect.startDamage);
         corridorTrapsSpawner.spawnCount.x += effect.corridorTrapsIncrease;
         corridorTrapsSpawner.spawnCount.y += effect.corridorTrapsIncrease;
-        effect.specialEffect?.Apply();
-        activeModifiers.Add(effect);
-        Debug.Log($"Game Modifier applied: {effect.GetEffectDescription()}");
+        effect.specialEffect?.ApplyBeforeInit();
+        // Debug.Log($"Game Modifier applied: {effect.GetEffectDescription()}");
     }
 
-    public void ApplyEffects(List<GameModifier> gameModifiers)
+    void ApplyEffectAfterInit(GameModifier effect)
     {
-        foreach (var effect in gameModifiers){
-            ApplyEffect(effect);
+        effect.specialEffect?.ApplyAfterInit();
+    }
+    
+    public void ApplyEffectsBeforeInit()
+    {
+        foreach (var effect in activeModifiers){
+            ApplyEffectBeforeInit(effect);
         }
     }
 
@@ -35,6 +39,26 @@ public class GameModifiers : MonoBehaviour
     {
         return activeModifiers.Copy();
     }
+
+    public void AddEffects(List<GameModifier> effects)
+    {
+        foreach (var effect in effects){
+            AddEffect(effect);
+        }
+    }
+
+    void AddEffect(GameModifier effect)
+    {
+        activeModifiers.Add(effect);
+    }
+
+    public void ApplyEffectsAfterInit()
+    {
+        foreach (var effect in activeModifiers){
+            ApplyEffectAfterInit(effect);
+        }
+    }
+
 }
 
 [Serializable]
@@ -54,7 +78,15 @@ public abstract class GameModifierSpecial : MonoBehaviour
 {
     [SerializeField] string effectDescription;
 
-    public abstract void Apply();
+    public virtual void ApplyBeforeInit()
+    {
+        
+    }
+
+    public virtual void ApplyAfterInit()
+    {
+        
+    }
 
     public virtual string GetEffectDescription()
     {

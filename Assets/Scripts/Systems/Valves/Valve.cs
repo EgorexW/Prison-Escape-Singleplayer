@@ -9,7 +9,7 @@ public class Valve : InteractButton
     void Start()
     {
         if (GameManager.i == null){
-            Debug.LogWarning("No Valves Manager found in the scene.");
+            Debug.LogWarning("No GameManager found in the scene.");
             Destroy(gameObject);
             return;
         }

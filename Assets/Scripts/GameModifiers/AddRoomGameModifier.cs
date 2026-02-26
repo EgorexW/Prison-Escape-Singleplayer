@@ -7,7 +7,7 @@ public class AddRoomGameModifier : GameModifierSpecial
 
     [BoxGroup("References")] [Required] [SerializeField] GameObject room;
 
-    public override void Apply()
+    public override void ApplyBeforeInit()
     {
         roomChooser.necessaryRooms.Add(room);
     }

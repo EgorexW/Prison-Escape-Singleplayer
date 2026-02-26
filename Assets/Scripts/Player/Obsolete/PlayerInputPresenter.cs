@@ -1,3 +1,4 @@
+using System;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -26,6 +27,27 @@ public class PlayerInputPresenter : MonoBehaviour
         inputActions.FindAction("Settings").performed += ToggleSettings;
         playerInput.actions.FindActionMap("UI").FindAction("Cancel").performed += ToggleSettings;
         HideCursor();
+    }
+
+    void OnDestroy()
+    {
+        var inputActions = playerInput.actions.FindActionMap("Player");
+        inputActions.FindAction("DropItem").performed -= DropEquipedItem;
+        inputActions.FindAction("ChangeItem").performed -= ChangeItem;
+        useAction = inputActions.FindAction("Use");
+        useAction.performed -= Use;
+        useAction.canceled -= StopUse;
+        alternativeUseAction = inputActions.FindAction("AlternativeUse");
+        alternativeUseAction.performed -= AlternativeUse;
+        alternativeUseAction.canceled -= AlternativeStopUse;
+        inputActions.FindAction("Interact").performed -= OnInteract;
+        inputActions.FindAction("Interact").canceled -= OnInteract;
+        inputActions.FindAction("Settings").performed -= ToggleSettings;
+        playerInput.actions.FindActionMap("UI").FindAction("Cancel").performed -= ToggleSettings;
+        
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void Update()
@@ -119,13 +141,6 @@ public class PlayerInputPresenter : MonoBehaviour
     
     [BoxGroup("References")] [Required] [SerializeField] GameObject settingsMenu;
     [BoxGroup("References")][Required][SerializeField] PlayerInput playerInput;
-
-    void OnDisable()
-    {
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
 
     void ShowCursor()
     {

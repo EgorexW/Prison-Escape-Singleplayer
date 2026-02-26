@@ -3,7 +3,7 @@ using UnityEngine;
 
 class PoisonTrap : MonoBehaviour, ITrap
 {
-    [BoxGroup("References")][Required][SerializeField] BoxCollider collider;
+    [BoxGroup("References")][Required][SerializeField] new BoxCollider collider;
     [SerializeField] ParticleSystem particles;
     
     [SerializeField] Damage damagePerSecond = new(2f);

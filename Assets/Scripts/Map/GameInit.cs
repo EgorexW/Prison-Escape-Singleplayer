@@ -22,6 +22,7 @@ public class GameInit : MonoBehaviour
     IEnumerator GenerateRoutine()
     {
         ascensions.SetupAscensions();
+        GameManager.i.gameModifiers.ApplyEffectsBeforeInit();
         yield return new WaitForSeconds(DELAY);
         var rooms = roomGenerator.GenerateRooms();
         // Debug.Log("Room generated, waiting to generate corridors", this);
@@ -41,6 +42,7 @@ public class GameInit : MonoBehaviour
 
         GameManager.i.levelNodes.ResetNodes();
         onFinish.Invoke();
+        GameManager.i.gameModifiers.ApplyEffectsAfterInit();
         GameManager.i.gameTimeManager.StartGame();
 
         // Debug.Log("Corridors generated, player spawned, game init finished", this);

@@ -32,7 +32,7 @@ public class Ascensions : MonoBehaviour
 
     public void SetupAscensions()
     {
-        GameManager.i.gameModifiers.ApplyEffects(GetActiveEffects());
+        GameManager.i.gameModifiers.AddEffects(GetActiveEffects());
     }
 
     public List<GameModifier> GetActiveEffects()

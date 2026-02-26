@@ -53,7 +53,7 @@ namespace StarterAssets
 
         [Tooltip("How far in degrees can you move the camera down")] public float BottomClamp = -90.0f;
 
-        [BoxGroup("References")] [Required] [SerializeField] CinemachineVirtualCamera virtualCamera;
+        [BoxGroup("References")] [Required] [SerializeField] CinemachineCamera virtualCamera;
         [SerializeField] float fovTransitionSpeed = 20f;
         [FoldoutGroup("Events")] public UnityEvent<Vector3> onMove;
 
@@ -181,9 +181,9 @@ namespace StarterAssets
         {
             var moveData = getMoveData(_input.sprint);
 
-            var currentFov = virtualCamera.m_Lens.FieldOfView;
+            var currentFov = virtualCamera.Lens.FieldOfView;
             if (Mathf.Abs(currentFov - moveData.fov) > 0f){
-                virtualCamera.m_Lens.FieldOfView =
+                virtualCamera.Lens.FieldOfView =
                     Mathf.Lerp(currentFov, moveData.fov, fovTransitionSpeed * Time.deltaTime);
             }
 
