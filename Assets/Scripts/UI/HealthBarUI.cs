@@ -21,13 +21,13 @@ public class HealthBarUI : MonoBehaviour
 
     void Awake()
     {
-        resistanceIcon.enabled = false;
+        resistanceIcon.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (Time.time - lastResistanceSpriteTime > showIconTime){
-            resistanceIcon.enabled = false;
+            resistanceIcon.gameObject.SetActive(false);
         }
     }
 
@@ -57,7 +57,7 @@ public class HealthBarUI : MonoBehaviour
         if (!resistanceIconEnabled){
             return;
         }
-        resistanceIcon.enabled = true;
+        resistanceIcon.gameObject.SetActive(true);
         resistanceIcon.sprite = icon.sprite;
         resistanceIcon.color = icon.color;
         lastResistanceSpriteTime = Time.time;

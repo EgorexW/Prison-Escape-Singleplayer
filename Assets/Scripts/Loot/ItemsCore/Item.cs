@@ -10,6 +10,9 @@ public sealed class Item : Loot
     
     public bool beenPickedUp = false;
     public string Name;
+    [SerializeField] float weight = 0;
+    
+    public  float Weight => weight;
 
     readonly List<IItemEffect> itemEffects = new();
     public Rigidbody Rigidbody{ get; private set; }

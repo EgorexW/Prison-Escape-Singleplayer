@@ -7,6 +7,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] int size = 1;
     readonly List<Item> items = new();
     public UnityEvent OnInventoryChange{ get; } = new();
+    
+    public float weightReduction = 0;
+    public float weight = 0;
 
     public bool CanAddItem()
     {
@@ -19,6 +22,7 @@ public class Inventory : MonoBehaviour
             return;
         }
         item.isHeld = true;
+        weight += item.Weight;
         items.Add(item);
         OnInventoryChange.Invoke();
     }
@@ -31,6 +35,7 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(Item item)
     {
         item.isHeld = false;
+        weight -= item.Weight;
         items.Remove(item);
         OnInventoryChange.Invoke();
     }
@@ -59,4 +64,6 @@ public class Inventory : MonoBehaviour
         size = newSize;
         OnInventoryChange.Invoke();
     }
+
+    public float Weight => Mathf.Max(weight - weightReduction, 0);
 }

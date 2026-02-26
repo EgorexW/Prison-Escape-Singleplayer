@@ -44,7 +44,8 @@ public partial class Player
         if (canSprint){
             moveData.speed *= sprintSpeedMod;
             moveData.fov = sprintFov;
-            Stamina -= staminaUseRate * Time.deltaTime;
+            var useRate = staminaUseRate * (1 + inventory.Weight);
+            Stamina -= useRate * Time.deltaTime;
         }
         return moveData;
     }

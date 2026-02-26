@@ -8,6 +8,7 @@ class PlayerUI : MonoBehaviour
 {
     [GetComponentInChildren] [SerializeField] HealthBarUI healthBarUI;
     [GetComponentInChildren] [SerializeField] ItemsUI itemsUI;
+    [GetComponentInChildren] [SerializeField] WeightUI weightUI;
     [FormerlySerializedAs("character")] [Required] [SerializeField] Player player;
     [Required] [SerializeField] MetricBar staminaBarUI;
     [Required] [SerializeField] MetricBar progressBarUI;
@@ -73,5 +74,6 @@ class PlayerUI : MonoBehaviour
                 itemUIs[i] = new SpriteUI(null, false);
             }
         itemsUI.ShowItems(itemUIs);
+        weightUI.ShowWeight(player.GetInventory());
     }
 }
