@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,18 +11,22 @@ public class GameTimeEffects : MonoBehaviour
 
     [SerializeField] GameObject outOfTimeEffect;
     [SerializeField] FacilityAnnouncement announcement;
-    [SerializeField] List<ObjectWithValue<FacilityAnnouncement>> timeLeftAnnouncements; 
+    [SerializeField] List<TimeLeftAnnouncement> timeLeftAnnouncements; 
 
     void Awake()
     {
         gameTimeManager.onOutOfTime.AddListener(OutOfTime);
         outOfTimeEffect.SetActive(false);
+    }
+
+    void Update()
+    {
         foreach (var item in timeLeftAnnouncements){
-            if (!(gameTimeManager.TimeLeft <= item.value)){
+            if (gameTimeManager.TimeLeft > item.timeLeft){
                 continue;
             }
-            GameManager.i.facilityAnnouncements.AddAnnouncement(item.Object);
             timeLeftAnnouncements.Remove(item);
+            GameManager.i.facilityAnnouncements.AddAnnouncement(item.announcement);
             break;
         }
     }
@@ -31,4 +36,11 @@ public class GameTimeEffects : MonoBehaviour
         GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
         outOfTimeEffect.SetActive(true);
     }
+}
+
+[Serializable]
+class TimeLeftAnnouncement
+{
+    public float timeLeft;
+    public FacilityAnnouncement announcement;
 }

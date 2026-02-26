@@ -8791,21 +8791,21 @@ MonoBehaviour:
     message: Purify Protocol ... INITIATED!
     sound: {fileID: 11400000, guid: feb6913ed96db41a4873de798c9f5576, type: 2}
   timeLeftAnnouncements:
-  - value: 0.5
-    Object:
-      message: Purify Protocol activates in T-30 seconds
+  - timeLeft: 30
+    announcement:
+      message: Purify Protocol in T-30s
       sound: {fileID: 0}
-  - value: 2
-    Object:
-      message: Purify Protocol activates in T-2 minutes
+  - timeLeft: 120
+    announcement:
+      message: Purify Protocol in T-2min
       sound: {fileID: 0}
-  - value: 5
-    Object:
-      message: Purify Protocol activates in T-5 minutes
+  - timeLeft: 300
+    announcement:
+      message: Purify Protocol in T-5min
       sound: {fileID: 0}
-  - value: 10
-    Object:
-      message: Purify Protocol activates in T-10 minutes
+  - timeLeft: 600
+    announcement:
+      message: Purify Protocol in T-10min
       sound: {fileID: 0}
 --- !u!1 &382959136
 GameObject:
