@@ -8,16 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Annoucement Chime.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Annoucement Chime.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Annoucement Chime.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Announcements/Annoucement Chime.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/AnnoucementsUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/AnnoucementsUI.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/FacilityAnnouncements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemUIContainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ItemUIContainer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/PlayerUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/PlayerUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/WeightUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/WeightUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SpriteUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SpriteUI.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -408,7 +406,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Portable Portal" />
     <MESSAGE value="Corridor Decor" />
     <MESSAGE value="Light colors" />
     <MESSAGE value="0.8.0" />
@@ -433,7 +430,8 @@
     <MESSAGE value="Time left annoucmentes now work" />
     <MESSAGE value="Add minimum time between facility announcements and adjust announcement timings" />
     <MESSAGE value="Effect for adrenaline" />
-    <option name="LAST_COMMIT_MESSAGE" value="Effect for adrenaline" />
+    <MESSAGE value="Annoucement Chime" />
+    <option name="LAST_COMMIT_MESSAGE" value="Annoucement Chime" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,15 +4,14 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-class WeightUI : MonoBehaviour
+public class WeightUI : MonoBehaviour
 {
     [Required] [SerializeField] Image weightIcon;
     
     [SerializeField] List<WeightIconUI> weightIcons;
     
-    public void ShowWeight(Inventory inventory)
+    public void ShowWeight(float weight)
     {
-        var weight = inventory.Weight;
         WeightIconUI icon = null;
         foreach (var iconTmp in weightIcons){
             if (!(weight >= iconTmp.threshold)){

@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 class PlayerUI : MonoBehaviour
 {
     [GetComponentInChildren] [SerializeField] HealthBarUI healthBarUI;
-    [GetComponentInChildren] [SerializeField] ItemsUI itemsUI;
+    [FormerlySerializedAs("itemsUI")] [GetComponentInChildren] [SerializeField] InventoryUI inventoryUI;
     [GetComponentInChildren] [SerializeField] WeightUI weightUI;
     [FormerlySerializedAs("character")] [Required] [SerializeField] Player player;
     [Required] [SerializeField] MetricBar staminaBarUI;
@@ -52,16 +52,7 @@ class PlayerUI : MonoBehaviour
 
     void ShowInventory()
     {
-        var items = player.GetInventory().GetItems();
-        var itemUIs = new SpriteUI[player.GetInventory().GetSize()];
-        for (var i = 0; i < itemUIs.Length; i++)
-            if (i < items.Count){
-                itemUIs[i] = new SpriteUI(items[i].GetPortrait(), items[i] == player.GetHeldItem());
-            }
-            else{
-                itemUIs[i] = new SpriteUI(null, false);
-            }
-        itemsUI.ShowItems(itemUIs);
-        weightUI.ShowWeight(player.GetInventory());
+        inventoryUI.ShowInventory(player);
+        weightUI.ShowWeight(player.GetInventory().Weight);
     }
 }
