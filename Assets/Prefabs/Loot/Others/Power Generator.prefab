@@ -173,6 +173,11 @@ PrefabInstance:
       propertyPath: Name
       value: Power Generator
       objectReference: {fileID: 0}
+    - target: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      propertyPath: weight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: m_Name

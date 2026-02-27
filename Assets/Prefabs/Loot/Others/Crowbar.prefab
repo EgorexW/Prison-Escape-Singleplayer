@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: Name
       value: Crowbar
       objectReference: {fileID: 0}
+    - target: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      propertyPath: weight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: m_Name
@@ -111,18 +116,18 @@ MonoBehaviour:
       m_Calls: []
   soundEffect: {fileID: 11400000, guid: df759e5373f264dc1830a47f31c4448f, type: 2}
   damage:
-    damage: 25
-    permanentDamage: 10
+    lightDamage: 25
+    heavyDamage: 10
     damageType: 1
   heal:
-    damage: 0
-    permanentDamage: 0
+    lightDamage: 0
+    heavyDamage: 0
     damageType: 0
   effect:
     duration: 0
     healPerSecond:
-      damage: 0
-      permanentDamage: 0
+      lightDamage: 0
+      heavyDamage: 0
       damageType: 0
     staminaPerSecond: 0
     endTime: 0

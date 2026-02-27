@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: Name
       value: Potion
       objectReference: {fileID: 0}
+    - target: {fileID: -3728908037353776818, guid: 587a029206b6d4bccbdfca11e16e072a,
+        type: 3}
+      propertyPath: weight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       propertyPath: m_Name
@@ -221,6 +226,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -242,9 +249,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2651549631243637105
 MonoBehaviour:
@@ -264,18 +273,18 @@ MonoBehaviour:
       m_Calls: []
   soundEffect: {fileID: 0}
   damage:
-    damage: 0
-    pernamentDamage: 0
+    lightDamage: 0
+    heavyDamage: 0
     damageType: 0
   heal:
-    damage: 0
-    pernamentDamage: 0
+    lightDamage: 0
+    heavyDamage: 0
     damageType: 0
   effect:
     duration: 40
     healPerSecond:
-      damage: 2
-      pernamentDamage: 1
+      lightDamage: 2
+      heavyDamage: 1
       damageType: 0
     staminaPerSecond: 0
     endTime: 0
