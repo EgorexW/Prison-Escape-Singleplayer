@@ -13,9 +13,6 @@ class PlayerUI : MonoBehaviour
     [Required] [SerializeField] MetricBar staminaBarUI;
     [Required] [SerializeField] MetricBar progressBarUI;
     [Required] [SerializeField] TextMeshProUGUI itemName;
-    [Required] [SerializeField] TextMeshProUGUI announcementText;
-
-    [SerializeField] float announcmentShowTime = 5f;
 
     void Start()
     {
@@ -23,9 +20,7 @@ class PlayerUI : MonoBehaviour
         player.playerHealth.onHealthChange.AddListener(ShowHealth);
         player.onHoldInteraction.AddListener((t, d) => progressBarUI.Set(t / d));
         player.onFinishInteraction.AddListener(() => progressBarUI.Hide());
-        announcementText.gameObject.SetActive(false);
         player.playerHealth.Health.onDamage.AddListener(ShowDamage);
-        GameManager.i.facilityAnnouncements.onAnnouncement.AddListener(ShowAnnouncement);
         ShowHealth();
         ShowInventory();
         progressBarUI.Hide();
@@ -48,13 +43,6 @@ class PlayerUI : MonoBehaviour
     void ShowDamage(Damage damage)
     {
         healthBarUI.ShowDamage(damage, player.playerHealth.Health);
-    }
-
-    void ShowAnnouncement(FacilityAnnouncement announcement)
-    {
-        announcementText.text = announcement.message;
-        announcementText.gameObject.SetActive(true);
-        LeanTween.delayedCall(announcmentShowTime, () => announcementText.gameObject.SetActive(false));
     }
 
     void ShowHealth()

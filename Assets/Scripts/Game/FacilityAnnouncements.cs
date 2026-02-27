@@ -9,6 +9,7 @@ public class FacilityAnnouncements : MonoBehaviour
     [BoxGroup("References")] [Required] [SerializeField] PlayAudio audioPlayer;
     
     [SerializeField] float minTimeBetweenAnnouncements = 3;
+    [SerializeField] Sound defaultSound;
 
     [FoldoutGroup("Events")] public UnityEvent<FacilityAnnouncement> onAnnouncement;
 
@@ -30,11 +31,16 @@ public class FacilityAnnouncements : MonoBehaviour
         var announcement = announcements.Dequeue();
         onAnnouncement.Invoke(announcement);
         nextAnnouncementTime = Time.time + minTimeBetweenAnnouncements;
-        if (announcement.sound == null){
-            Debug.Log("Announcement has no sound assigned", this);
-            return;
+        var sound = announcement.sound;
+        if (sound == null){
+            // Debug.Log("Announcement has no sound assigned", this);
+            sound = defaultSound;
+            if (sound == null){
+                Debug.LogWarning("No default sound assigned for announcements", this);
+                return;
+            }
         }
-        audioPlayer.sound = announcement.sound;
+        audioPlayer.sound = sound;
         audioPlayer.Play();
     }
 

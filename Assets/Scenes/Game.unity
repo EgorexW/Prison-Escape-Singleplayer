@@ -15222,7 +15222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPlayer: {fileID: 1281685160}
-  minTimeBetweenAnnouncements: 3
+  minTimeBetweenAnnouncements: 5
+  defaultSound: {fileID: 11400000, guid: 315de5b904d86452b901e1e2344dec6a, type: 2}
   onAnnouncement:
     m_PersistentCalls:
       m_Calls: []
@@ -17456,6 +17457,7 @@ GameObject:
   - component: {fileID: 1649399135}
   - component: {fileID: 1649399137}
   - component: {fileID: 1649399136}
+  - component: {fileID: 1649399138}
   m_Layer: 5
   m_Name: Announcement
   m_TagString: Untagged
@@ -17479,8 +17481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835.4999, y: -80}
-  m_SizeDelta: {x: 1577.1, y: 88.586}
+  m_AnchoredPosition: {x: 835.4999, y: -111.22168}
+  m_SizeDelta: {x: 1577.1, y: 151.0294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649399136
 MonoBehaviour:
@@ -17529,12 +17531,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 72
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 50
+  m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -17582,6 +17584,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649399134}
   m_CullTransparentMesh: 1
+--- !u!114 &1649399138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649399134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fce6a996e541f09b09ab013c022436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::AnnoucementsUI
+  announcementText: {fileID: 1649399136}
+  announcementShowTime: 5
+  timePerLetter: 0.05
 --- !u!1 &1652520830
 GameObject:
   m_ObjectHideFlags: 0
@@ -22009,8 +22026,6 @@ MonoBehaviour:
   staminaBarUI: {fileID: 1634742315}
   progressBarUI: {fileID: 1112159469}
   itemName: {fileID: 712139476}
-  announcementText: {fileID: 1649399136}
-  announcmentShowTime: 5
 --- !u!1 &1574877574744100524
 GameObject:
   m_ObjectHideFlags: 0
