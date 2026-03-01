@@ -12495,7 +12495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1839214308
 Transform:
   m_ObjectHideFlags: 0
@@ -13767,8 +13767,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Effective workers, don't carry weights. They know that it would drain their
-    <i>Stamina</i> faster.
+  m_text: 'Effective workers, don''t carry weights. They know that it would drain
+    their <i>Stamina</i> faster.
+
+    <size=10>*Bags reduce the pressure on your
+    shoulders'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7140a505e8db4c129ef18906a71b768, type: 2}
   m_sharedMaterial: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
@@ -13796,8 +13799,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -8,17 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/One use Icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/One use Icon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Weights Poster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Weights Poster.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Steal Card Icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/PermanentMarker-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,7 +399,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="0.8.0" />
     <MESSAGE value="Update material properties and adjust cursor visibility settings" />
     <MESSAGE value="FIXED UI NOT CLICKABLE, FINALLY AFTER AN HOUR" />
     <MESSAGE value="Settings save" />
@@ -434,7 +423,8 @@
     <MESSAGE value="Annoucement Chime" />
     <MESSAGE value="Rename ItemsUI to InventoryUI and update item display logic to include weight" />
     <MESSAGE value="Added weight to items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added weight to items" />
+    <MESSAGE value="Posters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
