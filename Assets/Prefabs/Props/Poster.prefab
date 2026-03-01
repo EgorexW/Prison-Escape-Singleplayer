@@ -60,6 +60,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 82bc02bab5b1e49ba8b37ef33339827b, type: 2}
   - {fileID: 2100000, guid: a2ce25bf3e7384c3cb047aa547e25160, type: 2}
   - {fileID: 2100000, guid: 1438e29885e71497486e3b6e772395e5, type: 2}
+  - {fileID: 2100000, guid: 6a19e4e986f144f8b876ed782eb3b806, type: 2}
+  - {fileID: 2100000, guid: f0eda5267886244379e34f0eab831d98, type: 2}
 --- !u!1 &4187089840606003797
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +125,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -144,9 +148,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1061663468849394865
 BoxCollider:
