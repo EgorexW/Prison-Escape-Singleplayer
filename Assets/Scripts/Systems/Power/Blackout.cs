@@ -20,7 +20,7 @@ public class Blackout : MonoBehaviour, ITrap
         active = true;
     }
 
-    void ActivateBlackout()
+    public void ActivateBlackout()
     {
         if (!active){
             return;
