@@ -18,6 +18,3 @@ MonoBehaviour:
       type: 3}
   - value: 2
     Object: {fileID: 11400000, guid: a20419cc4cb8e47c29e22296776bbab1, type: 2}
-  - value: 0.5
-    Object: {fileID: 7460383753733087728, guid: 50e271a9247e14020a2b2b2653e96298,
-      type: 3}

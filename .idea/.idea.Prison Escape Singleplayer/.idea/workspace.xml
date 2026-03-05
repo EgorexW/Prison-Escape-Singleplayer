@@ -9,6 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Power Room.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Texture Creation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Equipment.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Equipment.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Flashlight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Common/Flashlight.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/SpawnTable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,7 +404,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Update material properties and adjust cursor visibility settings" />
     <MESSAGE value="FIXED UI NOT CLICKABLE, FINALLY AFTER AN HOUR" />
     <MESSAGE value="Settings save" />
     <MESSAGE value="Add new meta files for various assets and implement PowerHolder class" />
@@ -424,7 +428,8 @@
     <MESSAGE value="Rename ItemsUI to InventoryUI and update item display logic to include weight" />
     <MESSAGE value="Added weight to items" />
     <MESSAGE value="Posters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Posters" />
+    <MESSAGE value="Fixed Posters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Posters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

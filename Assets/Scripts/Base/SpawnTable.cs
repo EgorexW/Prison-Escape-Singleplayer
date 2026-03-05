@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
-using UnityEditor;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 [CreateAssetMenu]
 [InlineEditor]
@@ -40,13 +35,18 @@ public class SpawnTable : ScriptableObject
     {
         possibleGameObjects.Clear();
         Queue<ObjectWithValue<Object>> toProcess = new(gameObjects);
+        foreach (var objectWithValue in toProcess){
+            if (objectWithValue.Object is not SpawnTable table){
+                return;
+            }
+            if (!table.referencedByTables.Contains(this)){
+                table.referencedByTables.Add(this);
+            }
+        }
         while (toProcess.Count > 0){
             var item = toProcess.Dequeue();
             switch (item.Object){
                 case SpawnTable getGameObject:
-                    if (!getGameObject.referencedByTables.Contains(this)){
-                        getGameObject.referencedByTables.Add(this);
-                    }
                     foreach (var obj in getGameObject.gameObjects){
                         toProcess.Enqueue(obj);
                     }
