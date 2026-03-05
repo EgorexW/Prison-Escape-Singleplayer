@@ -7,7 +7,7 @@ public class PowerHolderVisuals : MonoBehaviour
 {
     [BoxGroup("References")][GetComponent][SerializeField] PowerHolder powerHolder;
     
-    [BoxGroup("References")] [Required] [SerializeField] Light lightSource;
+    [BoxGroup("References")] [Required] [SerializeField] GameObject effectObject;
     [BoxGroup("References")] [Required] [SerializeField] ParticleSystem particles;
 
     void Awake()
@@ -22,7 +22,7 @@ public class PowerHolderVisuals : MonoBehaviour
 
     void OnChargeChange(bool charged)
     {
-        lightSource.enabled = charged;
+        effectObject.SetActive(charged);
         if (charged){
             if (!particles.isPlaying){
                 particles.Play();
