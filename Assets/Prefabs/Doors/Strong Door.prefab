@@ -104,6 +104,11 @@ PrefabInstance:
       propertyPath: health.absoluteMaxHealth
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 6870628316775124170, guid: 958c01ed82f414951bd1e15d2e206172,
+        type: 3}
+      propertyPath: hackResistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7012100719898281584, guid: 958c01ed82f414951bd1e15d2e206172,
         type: 3}
       propertyPath: m_Name

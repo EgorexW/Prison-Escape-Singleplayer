@@ -681,6 +681,16 @@ MonoBehaviour:
   visuals: {fileID: 3499988669474318744}
   linkedReaders: []
   stealKeycard: 0
+  health:
+    currentHealth: 1
+    maxHealth: 1
+    absoluteMaxHealth: 1
+    damagedBy: 2
+    onDamage:
+      m_PersistentCalls:
+        m_Calls: []
+  chanceToUnlockOnDestroy: 0.2
+  hackResistance: 1
   electrocutionDamage:
     lightDamage: 20
     heavyDamage: 10
@@ -702,7 +712,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  corrupted: 0
 --- !u!65 &9054909614210783226
 BoxCollider:
   m_ObjectHideFlags: 0

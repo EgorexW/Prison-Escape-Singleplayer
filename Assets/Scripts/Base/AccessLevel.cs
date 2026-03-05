@@ -10,7 +10,7 @@ public class AccessLevel : ScriptableObject
 
     [BoxGroup("Visuals")] public Color color = Color.white;
     [BoxGroup("Visuals")] public string displayName;
-
+    
     [ShowInInspector] HashSet<AccessLevel> AllAccessLevels => GetAllAccessLevels(this);
 
     void OnValidate()

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class KeycardReader : PoweredDevice, IInteractive
+public class KeycardReader : PoweredDevice, IInteractive, IDamagable
 {
     [BoxGroup("References")] [Required] [SerializeField] AccessLevel accessLevel;
 
@@ -12,6 +12,12 @@ public class KeycardReader : PoweredDevice, IInteractive
     [SerializeField] List<KeycardReader> linkedReaders;
 
     [SerializeField] [FormerlySerializedAs("stealCard")] bool stealKeycard;
+    
+    [SerializeField][FoldoutGroup("Health")] Health health = new Health(1){
+        damagedBy = DamageType.Electric
+    };
+    [SerializeField] float chanceToUnlockOnDestroy = 0.1f;
+    [SerializeField] float hackResistance = 1;
 
     [FoldoutGroup("Electrocution")] [SerializeField] public Damage electrocutionDamage;
     [FoldoutGroup("Electrocution")] [SerializeField] public float baseElectrocutionChance;
@@ -72,15 +78,17 @@ public class KeycardReader : PoweredDevice, IInteractive
             return;
         }
         if (!keycard.ReadKeycard(accessLevel)){
-            if (keycard.hackChance){
-                if (!(Random.value < keycard.hackChance)){
+            if (keycard.hackStrenght){
+                if (Random.value > keycard.hackStrenght/hackResistance){
                     visuals?.Corrupted();
                     corrupted = true;
                     return;
                 }
             }
-            visuals?.AccessDenied();
-            return;
+            else{
+                visuals?.AccessDenied();
+                return;
+            }
         }
         if (keycard.oneUse || stealKeycard){
             player.RemoveItem(item);
@@ -111,5 +119,26 @@ public class KeycardReader : PoweredDevice, IInteractive
             player.playerHealth.Damage(electrocutionDamage);
             visuals?.Electrocute();
         }
+    }
+
+    public Health Health => health;
+    public void Damage(Damage damage)
+    {
+        health.Damage(damage);
+        visuals?.Electrocute();
+        if (health.Alive){
+            return;
+        }
+        OnDie();
+    }
+
+    void OnDie()
+    {
+        if (Random.value > chanceToUnlockOnDestroy/hackResistance){
+            visuals?.Corrupted();
+            corrupted = true;
+            return;
+        }
+        AccessGranted(true);
     }
 }

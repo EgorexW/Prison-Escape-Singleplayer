@@ -24,6 +24,16 @@ PrefabInstance:
       propertyPath: hackChance.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 547713961881793816, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: hackStrenght.value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 547713961881793816, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: hackStrenght.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_text
