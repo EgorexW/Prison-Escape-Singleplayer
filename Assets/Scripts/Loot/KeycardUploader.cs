@@ -43,7 +43,7 @@ public class KeycardUploader : Equipment
             // Debug.Log($"Unlocked doors with access level {accessLevel} in room {roomNode.room.name}", roomNode.room);
         }
         var annoucement = new FacilityAnnouncement(){
-            message = "Unlocked " + count + " doors with access level " + keycardLevel
+            message = "Unlocked " + count + " doors with access level: " + keycardLevel.displayName
         };
         GameManager.i.facilityAnnouncements.AddAnnouncement(annoucement);
     }

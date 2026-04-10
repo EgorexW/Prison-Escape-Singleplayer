@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Blackout : MonoBehaviour, ITrap
+public class Blackout : MonoBehaviour, ITrap //TODO Seperate EMP blackout, from blackout trap
 {
     [SerializeField] PowerLevel targetPowerLevel = PowerLevel.NoPower;
     [SerializeField] bool removeGlobalMinimalPower = true;
@@ -12,24 +12,20 @@ public class Blackout : MonoBehaviour, ITrap
     [FoldoutGroup("Events")]
     public UnityEvent onBlackout;
     
-    bool active;
+    bool trapActive;
 
     public void Activate()
     {
         onActivate.Invoke();
-        active = true;
+        trapActive = true;
     }
 
     public void ActivateBlackout()
     {
-        if (!active){
-            return;
-        }
         var powerSystem = MainPowerSystem.i;
         if (removeGlobalMinimalPower){
             powerSystem.SetGlobalMinimalPower(false);
         }
-        active = false;
         onBlackout.Invoke();
         if (powerSystem.GetPower(transform.position) <= targetPowerLevel){
             return;
@@ -49,6 +45,10 @@ public class Blackout : MonoBehaviour, ITrap
 
     void ActivateBlackout(Room arg0)
     {
+        if (!trapActive){
+            return;
+        }
+        trapActive = false;
         ActivateBlackout();
     }
 }
