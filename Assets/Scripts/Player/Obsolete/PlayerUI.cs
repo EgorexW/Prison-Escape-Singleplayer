@@ -53,6 +53,6 @@ class PlayerUI : MonoBehaviour
     void ShowInventory()
     {
         inventoryUI.ShowInventory(player);
-        weightUI.ShowWeight(player.GetInventory().Weight);
+        weightUI.ShowWeight(player.GetInventory().GetWeight());
     }
 }

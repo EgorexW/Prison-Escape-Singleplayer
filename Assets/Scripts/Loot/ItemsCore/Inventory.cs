@@ -5,11 +5,14 @@ using UnityEngine.Events;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] int size = 1;
+    
+    [SerializeField] bool weightSystemActive;
     readonly List<Item> items = new();
     public UnityEvent OnInventoryChange{ get; } = new();
     
     public float weightReduction = 0;
     public float weight = 0;
+    public bool WeightSystemActive => weightSystemActive;
 
     public bool CanAddItem()
     {
@@ -65,5 +68,10 @@ public class Inventory : MonoBehaviour
         OnInventoryChange.Invoke();
     }
 
-    public float Weight => Mathf.Max(weight - weightReduction, 0);
+    public float GetWeight() {
+        if (!WeightSystemActive){
+            return 0;
+        }
+        return Mathf.Max(weight - weightReduction, 0);
+    }
 }

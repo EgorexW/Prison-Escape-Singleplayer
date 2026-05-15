@@ -26,11 +26,12 @@ public class InventoryUI : MonoBehaviour
 
     public void ShowInventory(Player player)
     {
-        var i = 0;
-        var items = player.GetInventory().GetItems();
-        var count = player.GetInventory().GetSize();
+        var inventory = player.GetInventory();
+        var items = inventory.GetItems();
+        var count = inventory.GetSize();
         var itemsCount = items.Count;
         while (itemUIs.Count < count) CreateitemUI();
+        var i = 0;
         foreach (var itemUI in itemUIs){
             if (count <= i){
                 itemUI.gameObject.SetActive(false);
@@ -44,6 +45,9 @@ public class InventoryUI : MonoBehaviour
                 sprite = item.GetPortrait();
                 highlighted = player.GetHeldItem() == item;
                 weight = item.Weight;
+                if (!inventory.WeightSystemActive){
+                    weight = 0f;
+                }
             }
             itemUI.gameObject.SetActive(true);
             itemUI.image.sprite = sprite;
