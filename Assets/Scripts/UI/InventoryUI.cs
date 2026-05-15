@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] Sprite defaultSprite;
+    [FormerlySerializedAs("defaultSprite")] [SerializeField] Sprite inventorySlotSprite;
 
     [SerializeField] GameObject prefab;
     readonly List<ItemUI> itemUIs = new();
@@ -27,25 +28,29 @@ public class InventoryUI : MonoBehaviour
     {
         var i = 0;
         var items = player.GetInventory().GetItems();
-        var count = items.Count;
+        var count = player.GetInventory().GetSize();
+        var itemsCount = items.Count;
         while (itemUIs.Count < count) CreateitemUI();
         foreach (var itemUI in itemUIs){
             if (count <= i){
                 itemUI.gameObject.SetActive(false);
                 continue;
             }
-            var item = items[i];
-            var sprite = item.GetPortrait();
-            itemUI.gameObject.SetActive(true);
-            if (sprite == null){
-                sprite = defaultSprite;
+            var sprite = inventorySlotSprite;
+            bool highlighted = false;
+            var weight = 0f;
+            if (i < itemsCount){
+                var item = items[i];
+                sprite = item.GetPortrait();
+                highlighted = player.GetHeldItem() == item;
+                weight = item.Weight;
             }
+            itemUI.gameObject.SetActive(true);
             itemUI.image.sprite = sprite;
-            bool highlighted = player.GetHeldItem() == item;
             itemUI.image.color = highlighted ? Color.yellow : Color.white;
             itemUI.aspectRatioFitter.aspectRatio =
                 sprite.bounds.extents.x / sprite.bounds.extents.y;
-            itemUI.weightUI.ShowWeight(item.Weight);
+            itemUI.weightUI.ShowWeight(weight);
             i++;
         }
     }
