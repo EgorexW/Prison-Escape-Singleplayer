@@ -25,18 +25,21 @@ public class CeilingLight : PoweredDevice, IDamagable
     bool broken;
     float defaultIntensity;
     bool LightEnabled => light.enabled;
+    float nextRoll;
 
     public Health Health => health;
 
     void Awake(){
         defaultIntensity = light.intensity;
+        nextRoll = Time.time + 1f;
     }
 
     void Update(){
         if (!LightEnabled){
             return;
         }
-        if (Time.time % 1 - Time.deltaTime < 0){
+        if (Time.time > nextRoll){
+            nextRoll = Time.time + 1f;
             if (Random.value < flickerChancePerSecond){
                 Flicker();
             }

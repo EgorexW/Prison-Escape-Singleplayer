@@ -28,7 +28,7 @@ public class LinkedLoot : MonoBehaviour, ITrap
     public bool Eligable(Room room)
     {
         var loot = General.GetObjectRoot(room.transform).GetComponentsInChildren<Loot>();
-        Debug.Log("Found " + loot.Length + " loot in room " + room.name, room);
+        // Debug.Log("Found " + loot.Length + " loot in room " + room.name, room);
         return loot.Length > 1;
     }
 

@@ -8,8 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrapSpread.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrapSpread.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Traps/Poison Trap.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/LinkedLoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/LinkedLoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Traps/PoisonTrap.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,6 +281,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TutorialsUI.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@d6dfd1e235d5/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ac7440922e348fbb08970d48cebc0b2212200/0e/fb6c8563/Bounds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -422,8 +427,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix audio announcement handling and update Garden prefab properties" />
-    <MESSAGE value="Add new meta files, update prefab properties, and improve Valve initialization" />
     <MESSAGE value="Alarm Added" />
     <MESSAGE value="Cleaned Up Traps" />
     <MESSAGE value="Refactor KeycardReader logic and update Corridor Box prefab properties" />
@@ -447,7 +450,9 @@
     <MESSAGE value="0.9.0" />
     <MESSAGE value="Inventory Slots visible" />
     <MESSAGE value="Weight System Toogle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weight System Toogle" />
+    <MESSAGE value="Flickering" />
+    <MESSAGE value="Vents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vents" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
