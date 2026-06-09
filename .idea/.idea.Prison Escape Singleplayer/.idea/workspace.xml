@@ -9,8 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Props/CeilingLight.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,8 +422,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Garden" />
-    <MESSAGE value="Garden Polish" />
     <MESSAGE value="Fix audio announcement handling and update Garden prefab properties" />
     <MESSAGE value="Add new meta files, update prefab properties, and improve Valve initialization" />
     <MESSAGE value="Alarm Added" />
@@ -448,7 +445,9 @@
     <MESSAGE value="EMPs Damage keycard readers" />
     <MESSAGE value="EMP does blackout again" />
     <MESSAGE value="0.9.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.9.0" />
+    <MESSAGE value="Inventory Slots visible" />
+    <MESSAGE value="Weight System Toogle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weight System Toogle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

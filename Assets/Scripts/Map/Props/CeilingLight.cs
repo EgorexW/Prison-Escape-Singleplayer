@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using Nrjwolf.Tools.AttachAttributes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CeilingLight : PoweredDevice, IDamagable
 {
@@ -15,10 +17,47 @@ public class CeilingLight : PoweredDevice, IDamagable
     [SerializeField] bool onWithMinimalPower;
     [SerializeField] Health health;
 
+    [BoxGroup("Flickering")][SerializeField] float flickerChancePerSecond = 0.01f;
+    [BoxGroup("Flickering")][SerializeField] float flickerTime = 0.5f;
+    [BoxGroup("Flickering")][SerializeField] float flickerFrequency = 0.01f;
+    [BoxGroup("Flickering")][SerializeField] float flickerStrenght = 5;
+
     bool broken;
+    float defaultIntensity;
+    bool LightEnabled => light.enabled;
 
     public Health Health => health;
 
+    void Awake(){
+        defaultIntensity = light.intensity;
+    }
+
+    void Update(){
+        if (!LightEnabled){
+            return;
+        }
+        if (Time.time % 1 - Time.deltaTime < 0){
+            if (Random.value < flickerChancePerSecond){
+                Flicker();
+            }
+        }
+    }
+
+    void Flicker(){
+        StartCoroutine(FlickerCoroutine());
+    }
+
+    IEnumerator FlickerCoroutine(){
+        float time = flickerTime;
+        while (time > 0){
+            time -= Time.deltaTime;
+            if (Random.value < flickerFrequency){
+                light.intensity = Random.value * flickerStrenght;
+            }
+            yield return null;
+        }
+        light.intensity = defaultIntensity;
+    }
 
     public void Damage(Damage damage)
     {
