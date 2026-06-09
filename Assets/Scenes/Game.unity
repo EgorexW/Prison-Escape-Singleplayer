@@ -11694,6 +11694,54 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!1 &704639620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704639621}
+  - component: {fileID: 704639622}
+  m_Layer: 0
+  m_Name: Vents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &704639621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704639620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2132428058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &704639622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704639620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb295525dc4742b79082a62bcd8e53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTable: {fileID: 11400000, guid: f37702ae3d00c4ed1b99485ad4a08da7, type: 2}
+  spawnCount: {x: 10, y: 15}
+  nodeTypesAllowed: 17
+  placeOnConnection: 0
 --- !u!1 &712139474
 GameObject:
   m_ObjectHideFlags: 0
@@ -12499,6 +12547,7 @@ MonoBehaviour:
   roomGenerator: {fileID: 567017150}
   ascensions: {fileID: 1485665985}
   corridorSpawners:
+  - {fileID: 704639622}
   - {fileID: 1957501034}
   - {fileID: 1156029363}
   - {fileID: 626357619}
@@ -18072,7 +18121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessLevel: {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
   oneUse: 0
-  hackChance:
+  hackStrenght:
     enabled: 0
     value: 0
   ignoreDetectorOverlay: 0
@@ -21224,6 +21273,7 @@ Transform:
   - {fileID: 1957501033}
   - {fileID: 1156029364}
   - {fileID: 626357618}
+  - {fileID: 704639621}
   m_Father: {fileID: 453294466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140638380
@@ -21936,7 +21986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff16e301bb6043f0922afc5dbea5ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSprite: {fileID: 21300000, guid: cdd8430fca50240c190fdf23504e7485, type: 3}
+  inventorySlotSprite: {fileID: 21300000, guid: cdd8430fca50240c190fdf23504e7485,
+    type: 3}
   prefab: {fileID: 9142232021669099234, guid: b588ce2987bdd4a629899dff5ed41f05, type: 3}
 --- !u!114 &1574877574143516278
 MonoBehaviour:
@@ -22020,7 +22071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarUI: {fileID: 3374533246960844035}
-  itemsUI: {fileID: 1574877574143516277}
+  inventoryUI: {fileID: 1574877574143516277}
   weightUI: {fileID: 1154328847}
   player: {fileID: 3097095111899513422}
   staminaBarUI: {fileID: 1634742315}
@@ -23216,6 +23267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 5
+  weightSystemActive: 0
   weightReduction: 0
   weight: 0
 --- !u!224 &5886022835431642620
