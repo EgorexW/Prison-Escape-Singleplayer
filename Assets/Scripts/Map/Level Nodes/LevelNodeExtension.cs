@@ -52,4 +52,19 @@ public static class LevelNodeExtension
         }
         return neighboringNodes;
     }
+
+    public static LevelNode GetNode(Vector3 position)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(position, 0.1f, LevelNodeLayerMask);
+    
+        if (hitColliders.Length > 0)
+        {
+            if (hitColliders.Length > 1){
+                Debug.LogWarning($"Multiple colliders hit at position {position}, returning the first one.", hitColliders[0]);
+            }
+            return hitColliders[0].GetComponent<LevelNode>();
+        }
+    
+        return null;
+    }
 }

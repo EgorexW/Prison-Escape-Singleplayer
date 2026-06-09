@@ -17,7 +17,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
     public static MainPowerSystem i{ get; private set; }
 
     public List<SubPowerSystem> SubPowerSystems => subPowerSystems.Copy();
-    [ShowInInspector] [BoxGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
+    [ShowInInspector] [FoldoutGroup("Debug")] public bool GlobalMinimalPower{ get; private set; }
 
     void Awake()
     {
@@ -59,7 +59,7 @@ public class MainPowerSystem : MonoBehaviour, IPowerSource
         return subSystemPower;
     }
 
-
+    [Button][FoldoutGroup("Debug")]
     public void ChangePower(SubPowerSystem targetedSubSystem, PowerLevel targetPower)
     {
         targetedSubSystem.power = targetPower;

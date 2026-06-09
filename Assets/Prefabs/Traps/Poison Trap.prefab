@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   thisPoisonTrap: {fileID: 8840609229310460989}
   poisonPrefab: {fileID: 11400000, guid: 5b030ba127c144816bc137ba49175914, type: 2}
-  rollInterval: 60
+  rollInterval: 30
   spreadChance: 0.5
 --- !u!1001 &765731789231474612
 PrefabInstance:

@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PoisonTrapSpread : MonoBehaviour
+public class PoisonSpread : MonoBehaviour
 {
     [BoxGroup("References")][Required][SerializeField] PoisonTrap thisPoisonTrap;
     [BoxGroup("References")][Required][SerializeField] SpawnTable poisonPrefab;
@@ -36,6 +36,10 @@ public class PoisonTrapSpread : MonoBehaviour
         foreach (var neighboringNode in neighboringNodes){
             if (poisonTrapsByNode.ContainsKey(neighboringNode) && poisonTrapsByNode[neighboringNode].Count != 0){
                 Debug.Log($"Not spreading to {neighboringNode.name} because it already has a poison trap");
+                continue;
+            }
+            if (PoisonSpreadBlocker.LevelNodesBlocked.Contains(neighboringNode)){
+                Debug.Log($"Not spreading to {neighboringNode.name} because it is blocked by a poison spread blocker");
                 continue;
             }
             if (Random.value < spreadChance){
