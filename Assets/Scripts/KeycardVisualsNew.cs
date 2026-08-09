@@ -5,6 +5,7 @@ public class KeycardVisualsNew : MonoBehaviour
 {
     [BoxGroup("References")] [Required] public Keycard keycard;
     [SerializeField] private Renderer stripeRenderer;
+    [SerializeField] private GameObject oneUseIcon;
 
     private static readonly int BaseColorID = Shader.PropertyToID("_BaseColor");
 
@@ -18,6 +19,7 @@ public class KeycardVisualsNew : MonoBehaviour
     private void Start()
     {
         SetStripeColor(keycard.accessLevel.color);
+        oneUseIcon.SetActive(keycard.oneUse);
     }
 
     public void SetStripeColor(Color color)
