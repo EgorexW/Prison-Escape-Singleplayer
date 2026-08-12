@@ -15834,6 +15834,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2073966619468174045, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
+        type: 2}
     - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
       propertyPath: m_text
@@ -15844,6 +15850,12 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 10.35
       objectReference: {fileID: 0}
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 8250834460057395385, guid: 0307f6484fa014a548658b2deafc21dc, type: 3}
     m_RemovedGameObjects: []
@@ -23794,6 +23806,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 2073966619468174045, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
+        type: 2}
     - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
         type: 3}
       propertyPath: m_text
@@ -23804,6 +23822,12 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 10.35
       objectReference: {fileID: 0}
+    - target: {fileID: 2683589732520013636, guid: 0307f6484fa014a548658b2deafc21dc,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 8250834460057395385, guid: 0307f6484fa014a548658b2deafc21dc, type: 3}
     m_RemovedGameObjects: []

@@ -9,7 +9,7 @@ public class AccessLevel : ScriptableObject
     [SerializeField] List<AccessLevel> inheretedAccessLevels;
 
     [BoxGroup("Visuals")] public Color color = Color.white;
-    [BoxGroup("Visuals")] public string displayName;
+    [BoxGroup("Visuals")] public string  displayName;
     
     [ShowInInspector] HashSet<AccessLevel> AllAccessLevels => GetAllAccessLevels(this);
 
