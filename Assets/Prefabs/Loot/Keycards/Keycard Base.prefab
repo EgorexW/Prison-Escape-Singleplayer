@@ -177,10 +177,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5893937894337747688}
-    - targetCorrespondingSourceObject: {fileID: 3032718074483951249, guid: 587a029206b6d4bccbdfca11e16e072a,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1071806937180412954}
   m_SourcePrefab: {fileID: 100100000, guid: 587a029206b6d4bccbdfca11e16e072a, type: 3}
 --- !u!4 &5218860289774778322 stripped
@@ -213,31 +209,6 @@ MonoBehaviour:
     enabled: 0
     value: 0
   ignoreDetectorOverlay: 0
---- !u!114 &5893937894337747688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6445903414931907156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c26365120454051bda7302c678066d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: Staff
-  color: {r: 1, g: 0.9964248, b: 0, a: 1}
-  keycardTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  keycardTextUGUIs: []
-  keycardImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  keycard: {fileID: 547713961881793816}
-  oneUseIcons:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!65 &1071806937180412954
 BoxCollider:
   m_ObjectHideFlags: 0

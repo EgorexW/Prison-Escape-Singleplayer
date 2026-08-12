@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class KeycardVisualsNew : MonoBehaviour
+public class KeycardModelVisuals : MonoBehaviour
 {
     [BoxGroup("References")] [SerializeField] Keycard keycard;
     

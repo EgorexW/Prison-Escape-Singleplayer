@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeycardVisuals : ItemVisuals
+public class KeycardUIVisuals : ItemVisuals
 {
     [BoxGroup("References")] [Required] public Keycard keycard;
 

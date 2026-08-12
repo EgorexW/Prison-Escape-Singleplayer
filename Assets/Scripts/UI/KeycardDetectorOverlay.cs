@@ -59,7 +59,7 @@ public class KeycardDetectorOverlay : UIElement
             // Debug.LogFormat("[KeycardOverlay] keycardWorldPos={0} playerPos={1} dir={2} dotRight={3:F2} dotForward={4:F2} clampedDistance={5:F2} scale={6:F2} uiPos=({7:F2},{8:F2}) screenSize=({9:F0},{10:F0})",
             //     keycard.transform.position, playerPos, dir, Vector3.Dot(dir, new Vector3(player.transform.right.x,0f,player.transform.right.z).normalized), Vector3.Dot(dir, new Vector3(player.transform.forward.x,0f,player.transform.forward.z).normalized), clampedDistance, Scale, vector2.x, vector2.y, container.rect.width, container.rect.height);
             
-            var keycardVisuals = keycardObj.GetComponent<KeycardVisuals>();
+            var keycardVisuals = keycardObj.GetComponent<KeycardUIVisuals>();
             keycardVisuals.keycard = keycard;
             keycardVisuals.Apply();
         }
