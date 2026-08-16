@@ -19,6 +19,10 @@ public class KeycardUploader : Equipment
             // Debug.Log("Held item is not a keycard, cannot upload.");
             return;
         }
+        if (keycard.Status == KeycardStatus.UseInactive){
+            Debug.Log("Keycard is not active, cannot upload.");
+            return;
+        }
         destroyOnUse = true;
         UploadKeycard(keycard);
         // player.RemoveItem(heldItem);

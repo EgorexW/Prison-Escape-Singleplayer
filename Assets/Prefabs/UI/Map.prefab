@@ -246,6 +246,7 @@ MonoBehaviour:
   selfPointer: {fileID: 0}
   powerSystemsPool: {fileID: 2097019356772844887}
   scale: 0.008
+  showDiscoveredRooms: 1
 --- !u!114 &8022582336088767870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +328,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Storage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f7140a505e8db4c129ef18906a71b768, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dd4af82c957f84f1cb2c0e9fa802ee45, type: 2}
   m_sharedMaterial: {fileID: -2233582756888142090, guid: f7140a505e8db4c129ef18906a71b768,
     type: 2}
   m_fontSharedMaterials: []
@@ -364,6 +365,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -394,7 +396,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6106384163531403060
@@ -521,10 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2062d398baf34060ae5629748bfec4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Essencial::ObjectsUI
-  onUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   prefab: {fileID: 8191368943111687479}
+  sendMessageInsteadOfDeactivate: 0
   onCreateObject:
     m_PersistentCalls:
       m_Calls: []
@@ -577,10 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2062d398baf34060ae5629748bfec4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   prefab: {fileID: 3730387185906623317}
+  sendMessageInsteadOfDeactivate: 0
   onCreateObject:
     m_PersistentCalls:
       m_Calls: []
@@ -656,11 +654,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: nodeSprites
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[NodeType, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 0|System.Collections.Generic.Dictionary`2[[NodeType, Scripts],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[NodeType, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[NodeType, Scripts]],
         mscorlib
     - Name: 
       Entry: 12
