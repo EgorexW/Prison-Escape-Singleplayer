@@ -7,16 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Equipment/Keycard Reactivating.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Equipment/Keycard Reactivating.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardReactivater.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardReactivater.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -463,7 +454,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added weight to items" />
     <MESSAGE value="Posters" />
     <MESSAGE value="Fixed Posters" />
     <MESSAGE value="Update equipment values and adjust prefab properties" />
@@ -488,7 +478,8 @@
     <MESSAGE value="Add visual flags to access levels and update Keycard model materials for enhanced visual representation" />
     <MESSAGE value="Add visual flags to access level assets for improved clarity and organization" />
     <MESSAGE value="Update materials and Keycard model for enhanced visual consistency and functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update materials and Keycard model for enhanced visual consistency and functionality" />
+    <MESSAGE value="Add Keycard reactivation functionality and update related assets for improved gameplay" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Keycard reactivation functionality and update related assets for improved gameplay" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

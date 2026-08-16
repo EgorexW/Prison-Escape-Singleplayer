@@ -2119,6 +2119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
         type: 3}
+      propertyPath: spawnNr.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581487164590952098, guid: cb2172d96db4546208651350f1b99834,
+        type: 3}
       propertyPath: spawnTable
       value: 
       objectReference: {fileID: 11400000, guid: 00c644948d05d47c69436ced38d82b16,
