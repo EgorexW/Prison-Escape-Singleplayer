@@ -33,11 +33,11 @@ MonoBehaviour:
     uniqueRoomsToEnter: 0
     objectsToDestroy: 4
     uniqueItemsToPickUp: 0
-  - normalDamageToTake: 50
-    pernamentDamageToTake: 40
-    uniqueRoomsToEnter: 5
-    objectsToDestroy: 1
-    uniqueItemsToPickUp: 8
+  - normalDamageToTake: 0
+    pernamentDamageToTake: 0
+    uniqueRoomsToEnter: 0
+    objectsToDestroy: 0
+    uniqueItemsToPickUp: 15
   - normalDamageToTake: 50
     pernamentDamageToTake: 40
     uniqueRoomsToEnter: 5

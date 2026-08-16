@@ -29,8 +29,8 @@ public class KeycardCombiner : PoweredDevice
             onFailedCombine.Invoke();
             return;
         }
-        if (keycards[0].accessLevel == keycards[1].accessLevel){
-            Debug.Log("Keycards have the same access level: " + keycards[0].accessLevel);
+        if (keycards[0].AccessLevel == keycards[1].AccessLevel){
+            Debug.Log("Keycards have the same access level: " + keycards[0].AccessLevel);
             onFailedCombine.Invoke();
             return; 
         }

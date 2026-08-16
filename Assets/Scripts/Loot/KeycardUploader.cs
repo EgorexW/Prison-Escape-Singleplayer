@@ -27,7 +27,7 @@ public class KeycardUploader : Equipment
 
     void UploadKeycard(Keycard keycard)
     {
-        var keycardLevel = keycard.accessLevel;
+        var keycardLevel = keycard.AccessLevel;
         int count = 0;
         foreach (var roomNode in GameManager.i.levelNodes.RoomNodes){
             var accessLevel = roomNode.room.doorway?.accessLevel;

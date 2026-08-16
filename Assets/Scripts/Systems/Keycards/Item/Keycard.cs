@@ -1,51 +1,43 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Keycard : MonoBehaviour, ISerializationCallbackReceiver
+public class Keycard : MonoBehaviour
 {
-    [BoxGroup("References")] [Required] public AccessLevel accessLevel;
+    [BoxGroup("References")] [Required] AccessLevel accessLevel;
 
-    public KeycardStatus status = KeycardStatus.Permanent;
+    KeycardStatus status = KeycardStatus.Permanent;
     [FormerlySerializedAs("hackChance")] public Optional<float> hackStrenght;
     public bool ignoreDetectorOverlay;
     
+    public KeycardStatus Status => status;
+    public AccessLevel AccessLevel => accessLevel;
     public bool OneUse => status == KeycardStatus.UseActive || status == KeycardStatus.UseInactive;
+
+    [FoldoutGroup("Events")] public UnityEvent<Keycard> onChanged = new();
 
     public bool ReadKeycard(AccessLevel requestedAccessLevel)
     {
         if (status == KeycardStatus.UseInactive){
             return false;
         }
-        return accessLevel.HasAccess(requestedAccessLevel);
-    }
-    
-// 1. Keep the old serialized field hidden from Odin/Inspector
-    [HideInInspector]
-    [SerializeField]
-    private bool useCase;
-
-    // 2. Track whether migration is required
-    [HideInInspector]
-    [SerializeField]
-    private bool isMigrated = false;
-    
-    public void OnBeforeSerialize() { }
-
-    public void OnAfterDeserialize()
-    {
-        // 3. Migrate only once when legacy data exists
-        if (!isMigrated)
-        {
-            // Define your bool-to-enum mapping logic:
-            status = useCase ? KeycardStatus.UseActive : KeycardStatus.Permanent;
-            isMigrated = true;
-        }
+        return AccessLevel.HasAccess(requestedAccessLevel);
     }
 
+    public void SetStatus(KeycardStatus statusTmp){
+        this.status = statusTmp;
+        onChanged.Invoke(this);
+    }
+    
+    public void SetAccessLevel(AccessLevel accessLevelTmp){
+        this.accessLevel = accessLevelTmp;
+        onChanged.Invoke(this);
+    }
+    
     public void OnAccessGranted(){
         if (status == KeycardStatus.UseActive){
-            status = KeycardStatus.UseInactive;
+            SetStatus(KeycardStatus.UseInactive);
         }
     }
 }

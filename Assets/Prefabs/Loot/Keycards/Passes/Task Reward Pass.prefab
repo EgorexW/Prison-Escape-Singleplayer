@@ -15,6 +15,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 547713961881793816, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 547713961881793816, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
       propertyPath: accessLevel
       value: 
       objectReference: {fileID: 11400000, guid: f243dff697818421f86d282fa986c6aa,

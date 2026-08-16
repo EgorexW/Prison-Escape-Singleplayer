@@ -21,18 +21,26 @@ public class KeycardModelVisuals : MonoBehaviour
     private void Awake()
     {
         _propBlock = new MaterialPropertyBlock();
+        keycard.onChanged.AddListener(UpdateModel);
     }
 
-    private void Start()
-    {
-        SetStripeColor(keycard.accessLevel.color);
-        SetStatus(keycard.status, keycard.accessLevel.color);
+    void UpdateModel(Keycard arg0){
+        UpdateModel();
+    }
+
+    private void Start(){
+        UpdateModel();
+    }
+
+    void UpdateModel(){
+        SetStripeColor(keycard.AccessLevel.color);
+        SetStatus(keycard.Status, keycard.AccessLevel.color);
         var displayName = ModifyName();
         SetText(displayName);
     }
 
     string ModifyName(){
-        var displayName = keycard.accessLevel.displayName;
+        var displayName = keycard.AccessLevel.displayName;
         if (keycard.OneUse){
             displayName += " Pass";
         }

@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: oneUse
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1901855205206142417, guid: 19fe96bdf79bd4b6ba578e3c4e307c30,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4938499120341465757, guid: 19fe96bdf79bd4b6ba578e3c4e307c30,
         type: 3}
       propertyPath: m_Name

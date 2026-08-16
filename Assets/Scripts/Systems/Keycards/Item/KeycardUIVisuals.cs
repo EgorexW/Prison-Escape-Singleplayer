@@ -12,12 +12,12 @@ public class KeycardUIVisuals : ItemVisuals
     public override void Apply()
     {
         if (keycard != null){
-            displayName = keycard.accessLevel.displayName;
+            displayName = keycard.AccessLevel.displayName;
             if (keycard.OneUse){
                 var pass = " Pass";
                 displayName += pass;
             }
-            color = keycard.accessLevel.color;
+            color = keycard.AccessLevel.color;
             foreach (var oneUseIcon in oneUseIcons) oneUseIcon.gameObject.SetActive(keycard.OneUse);
         }
         base.Apply();

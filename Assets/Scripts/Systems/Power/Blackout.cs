@@ -31,6 +31,8 @@ public class Blackout : MonoBehaviour, ITrap //TODO Seperate EMP blackout, from 
             return;
         }
         powerSystem.ChangePower(transform.position, targetPowerLevel);
+        // Debug.Log("Blackout activated at " + transform.position + " to power level: " + targetPowerLevel);
+        // Debug.Log("Current power level at " + transform.position + ": " + powerSystem.GetPower(transform.position));
     }
 
     public bool Eligable(Room room)
