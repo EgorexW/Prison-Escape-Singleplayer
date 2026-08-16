@@ -1723,6 +1723,12 @@ MonoBehaviour:
   modelRenderer: {fileID: 3213264726368597935}
   cheapMaterial: {fileID: 2100000, guid: 5b002ecb5a5634c2ba28702327a166cb, type: 2}
   expensiveMaterial: {fileID: 2100000, guid: e3bc1ee6937fb46b5a50562bbf92f479, type: 2}
+  defaultStripeMaterial: {fileID: 2100000, guid: f7846d87687df4e1395e55119974094f,
+    type: 2}
+  weaponsStripeMaterial: {fileID: 2100000, guid: 182c77265cb1745a0b863aeb6350e853,
+    type: 2}
+  leadershipStripeMaterial: {fileID: 2100000, guid: ed81bf3b69caa4ac2ab16df1e647de17,
+    type: 2}
 --- !u!1 &8102370763740124592
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,29 +21,31 @@ public class KeycardUploader : Equipment
         }
         destroyOnUse = true;
         UploadKeycard(keycard);
-        player.RemoveItem(heldItem);
-        Destroy(heldItem.gameObject);
+        // player.RemoveItem(heldItem);
+        // Destroy(heldItem.gameObject);
     }
 
     void UploadKeycard(Keycard keycard)
     {
-        var keycardLevel = keycard.AccessLevel;
         int count = 0;
-        foreach (var roomNode in GameManager.i.levelNodes.RoomNodes){
+        var levelNodesRoomNodes = GameManager.i.levelNodes.RoomNodes.Copy();
+        levelNodesRoomNodes.Shuffle();
+        foreach (var roomNode in levelNodesRoomNodes){
             var accessLevel = roomNode.room.doorway?.accessLevel;
             if (accessLevel == null){
                 continue;
             }
-            if (!keycardLevel.HasAccess(accessLevel))
+            if (!keycard.ReadKeycard(accessLevel))
             {
                 continue;
             }
             roomNode.room.doorway.GetDoorLocks().ForEach(doorLock => doorLock.Unlock());
             count++;
+            keycard.OnAccessGranted();
             // Debug.Log($"Unlocked doors with access level {accessLevel} in room {roomNode.room.name}", roomNode.room);
         }
         var annoucement = new FacilityAnnouncement(){
-            message = "Unlocked " + count + " doors with access level: " + keycardLevel.displayName
+            message = "Unlocked " + count + " doors with access level: " + keycard.AccessLevel.displayName
         };
         GameManager.i.facilityAnnouncements.AddAnnouncement(annoucement);
     }
