@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Status Terminal
   m_EditorClassIdentifier: 
   gameObjects:
-  - value: 0.5
+  - value: 1
     Object: {fileID: 3146134882725412028, guid: f7cb0eb4a835249f2a8f3ac5035e3b05,
       type: 3}
   - value: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
       type: 3}
   - value: 1
     Object: {fileID: 11400000, guid: a2047066dbdac450e8bed2c7b60aefaa, type: 2}
-  - value: 0.5
+  - value: 1
     Object: {fileID: 8303997851180881152, guid: 3bb79253892e348459536b1c368b3b06,
       type: 3}
   - value: 1
