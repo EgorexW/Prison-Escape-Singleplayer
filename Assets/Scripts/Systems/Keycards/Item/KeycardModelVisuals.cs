@@ -8,7 +8,7 @@ public class KeycardModelVisuals : MonoBehaviour
     [BoxGroup("References")] [SerializeField] Keycard keycard;
     
     [SerializeField][Required] private Renderer stripeRenderer;
-    [SerializeField][Required] private GameObject oneUseIcon;
+    [SerializeField] private GameObject oneUseIcon;
     [SerializeField][Required] GameObject textParent;
     [SerializeField][Required] GameObject useStatusParent;
     [SerializeField][Required] Renderer modelRenderer;
@@ -59,9 +59,9 @@ public class KeycardModelVisuals : MonoBehaviour
 
     string ModifyName(){
         var displayName = keycard.AccessLevel.displayName;
-        if (keycard.OneUse){
-            displayName += " Pass";
-        }
+        // if (keycard.OneUse){
+        //     displayName += " Pass";
+        // }
         return displayName;
     }
 
@@ -69,19 +69,21 @@ public class KeycardModelVisuals : MonoBehaviour
     {
         if (status == KeycardStatus.UseActive || status == KeycardStatus.UseInactive)
         {
-            oneUseIcon.SetActive(true);
+            if (oneUseIcon != null){
+                oneUseIcon.SetActive(true);
 
-            // 1. Calculate luminance (perceived brightness) of the stripe color
-            float luminance = (0.299f * stripeColor.r) + (0.587f * stripeColor.g) + (0.114f * stripeColor.b);
+                // 1. Calculate luminance (perceived brightness) of the stripe color
+                float luminance = (0.299f * stripeColor.r) + (0.587f * stripeColor.g) + (0.114f * stripeColor.b);
 
-            // 2. Choose white for dark backgrounds, black for light backgrounds
-            Color contrastColor = luminance < 0.5f ? Color.white : Color.black;
+                // 2. Choose white for dark backgrounds, black for light backgrounds
+                Color contrastColor = luminance < 0.5f ? Color.white : Color.black;
 
-            // 3. Apply to property block
-            foreach (var iconRenderer in oneUseIcon.GetComponentsInChildren<Renderer>()){
-                iconRenderer.GetPropertyBlock(_propBlock);
-                _propBlock.SetColor(BaseColorID, contrastColor);
-                iconRenderer.SetPropertyBlock(_propBlock);
+                // 3. Apply to property block
+                foreach (var iconRenderer in oneUseIcon.GetComponentsInChildren<Renderer>()){
+                    iconRenderer.GetPropertyBlock(_propBlock);
+                    _propBlock.SetColor(BaseColorID, contrastColor);
+                    iconRenderer.SetPropertyBlock(_propBlock);
+                }
             }
 
             foreach (var textMesh in useStatusParent.GetComponentsInChildren<TextMeshPro>()){
@@ -97,7 +99,7 @@ public class KeycardModelVisuals : MonoBehaviour
         } 
         else 
         {
-            oneUseIcon.SetActive(false);
+            oneUseIcon?.SetActive(false);
             useStatusParent.SetActive(false);
         }
     }

@@ -8,29 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/admin_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/admin_icon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/chevron_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/chevron_icon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Medic.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Medic.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Secure Wing.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Secure Wing.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Senior Staff.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Senior Staff.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Staff.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Staff.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Task Reward.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Task Reward.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Worker.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Worker.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loot/KeycardUploader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -477,7 +462,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Annoucement Chime" />
     <MESSAGE value="Rename ItemsUI to InventoryUI and update item display logic to include weight" />
     <MESSAGE value="Added weight to items" />
     <MESSAGE value="Posters" />
@@ -502,7 +486,8 @@
     <MESSAGE value="Refactor Keycard system to improve access level handling and update status management" />
     <MESSAGE value="Add new texture and material assets for improved visual fidelity" />
     <MESSAGE value="Add visual flags to access levels and update Keycard model materials for enhanced visual representation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add visual flags to access levels and update Keycard model materials for enhanced visual representation" />
+    <MESSAGE value="Add visual flags to access level assets for improved clarity and organization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add visual flags to access level assets for improved clarity and organization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
