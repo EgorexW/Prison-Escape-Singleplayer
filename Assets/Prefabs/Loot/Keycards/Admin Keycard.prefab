@@ -14,6 +14,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba,
         type: 2}
+    - target: {fileID: 1060544822797071608, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 5993422609416498003}
     - target: {fileID: 5218860289774778322, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,3 +99,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c92265f68aa459782313f7b229b958, type: 3}
+--- !u!23 &5993422609416498003 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5109970066082554257, guid: c2c92265f68aa459782313f7b229b958,
+    type: 3}
+  m_PrefabInstance: {fileID: 1569126961281387202}
+  m_PrefabAsset: {fileID: 0}

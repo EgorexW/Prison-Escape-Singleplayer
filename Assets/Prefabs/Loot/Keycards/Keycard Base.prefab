@@ -58,6 +58,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4659004197202867103, guid: 1294907d492d040c6a9da08d47a94734,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 5109970066082554257}
     - target: {fileID: 8032109702071464817, guid: 1294907d492d040c6a9da08d47a94734,
         type: 3}
       propertyPath: m_Name
@@ -73,6 +78,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1294907d492d040c6a9da08d47a94734, type: 3}
+--- !u!23 &5109970066082554257 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 645588097318037238, guid: 1294907d492d040c6a9da08d47a94734,
+    type: 3}
+  m_PrefabInstance: {fileID: 5629451463637223271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8281802769462081197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4391304283786867146, guid: 1294907d492d040c6a9da08d47a94734,
@@ -204,11 +215,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accessLevel: {fileID: 11400000, guid: 3c5476a84295543eeb5977150f455041, type: 2}
-  oneUse: 0
+  status: 0
   hackStrenght:
     enabled: 0
     value: 0
   ignoreDetectorOverlay: 0
+  useCase: 0
+  isMigrated: 1
 --- !u!65 &1071806937180412954
 BoxCollider:
   m_ObjectHideFlags: 0

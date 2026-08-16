@@ -27,7 +27,7 @@ class KeycardRecipes : ScriptableObject
             //           option1Keycard2Match + "," + option2Keycard1Match);
             if (option1Keycard1Match && option2Keycard2Match ||
                 option1Keycard2Match && option2Keycard1Match){
-                var oneUse = keycard1.oneUse || keycard2.oneUse || recipe.oneUse;
+                var oneUse = keycard1.OneUse || keycard2.OneUse || recipe.oneUse;
                 return CreateKeycard(recipe.result, oneUse);
             }
         }
@@ -45,7 +45,7 @@ class KeycardRecipes : ScriptableObject
     {
         var result = Instantiate(baseKeycardPrefab).GetComponent<Keycard>();
         result.accessLevel = accessLevel;
-        result.oneUse = oneUse;
+        result.status = oneUse ? KeycardStatus.UseActive : KeycardStatus.Permanent;
         return result;
     }
 }

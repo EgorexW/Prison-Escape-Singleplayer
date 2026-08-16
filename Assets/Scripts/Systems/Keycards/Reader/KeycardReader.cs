@@ -90,12 +90,13 @@ public class KeycardReader : PoweredDevice, IInteractive, IDamagable
                 return;
             }
         }
-        if (keycard.oneUse || stealKeycard){
+        if (stealKeycard){
             player.RemoveItem(item);
             Destroy(item.gameObject);
         }
         TryElectrocute(player);
         AccessGranted(true);
+        keycard.OnAccessGranted();
     }
 
     public float HoldDuration => 0.5f;

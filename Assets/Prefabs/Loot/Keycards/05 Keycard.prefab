@@ -19,6 +19,11 @@ PrefabInstance:
       propertyPath: ignoreDetectorOverlay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1060544822797071608, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 5993422609416498003}
     - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_text
@@ -129,3 +134,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c92265f68aa459782313f7b229b958, type: 3}
+--- !u!23 &5993422609416498003 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5109970066082554257, guid: c2c92265f68aa459782313f7b229b958,
+    type: 3}
+  m_PrefabInstance: {fileID: 1569126961281387202}
+  m_PrefabAsset: {fileID: 0}

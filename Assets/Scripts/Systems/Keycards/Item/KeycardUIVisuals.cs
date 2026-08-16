@@ -13,12 +13,12 @@ public class KeycardUIVisuals : ItemVisuals
     {
         if (keycard != null){
             displayName = keycard.accessLevel.displayName;
-            if (keycard.oneUse){
+            if (keycard.OneUse){
                 var pass = " Pass";
                 displayName += pass;
             }
             color = keycard.accessLevel.color;
-            foreach (var oneUseIcon in oneUseIcons) oneUseIcon.gameObject.SetActive(keycard.oneUse);
+            foreach (var oneUseIcon in oneUseIcons) oneUseIcon.gameObject.SetActive(keycard.OneUse);
         }
         base.Apply();
     }

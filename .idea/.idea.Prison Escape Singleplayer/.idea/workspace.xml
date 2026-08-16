@@ -8,17 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Doto_Rounded-Medium.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Black.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Black.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardMigration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardMigration.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Keycard Reader.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Base.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Essencial/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Essencial/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeycardVisualsNew.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeycardVisualsNew.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardUIVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardVisuals.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardUIVisuals.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/KeycardDetectorOverlay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Logo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Logo.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Stripe.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Stripe.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/Keycard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/Keycard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardUIVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardUIVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Keycard Combiner/KeycardRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Keycard Combiner/KeycardRecipes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +59,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1845" />
+    <option name="cachedIndexableFilesCount" value="1846" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -294,6 +304,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@57d0e36f6123/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@d6dfd1e235d5/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ac7440922e348fbb08970d48cebc0b2212200/0e/fb6c8563/Bounds.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ac7440922e348fbb08970d48cebc0b2212200/15/b6945403/Debug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -332,7 +343,7 @@
     "com.codeium.enabled": "true",
     "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "project.scopes"
+    "settings.editor.selected.configurable": "preferences.build.unityPlugin"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -445,8 +456,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Flashlight on and off" />
-    <MESSAGE value="Weight System" />
     <MESSAGE value="Time left annoucmentes now work" />
     <MESSAGE value="Add minimum time between facility announcements and adjust announcement timings" />
     <MESSAGE value="Effect for adrenaline" />
@@ -470,7 +479,9 @@
     <MESSAGE value="LIGHTNING TEXT WORKS!!!" />
     <MESSAGE value="Remove unused reference from Poster prefab" />
     <MESSAGE value="Update Sign prefab and add new material assets for improved visuals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Sign prefab and add new material assets for improved visuals" />
+    <MESSAGE value="Refactor KeycardVisuals to improve functionality and update prefab references" />
+    <MESSAGE value="Enhance KeycardModelVisuals by modifying name handling and improving text and color settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance KeycardModelVisuals by modifying name handling and improving text and color settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

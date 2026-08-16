@@ -34,6 +34,11 @@ PrefabInstance:
       propertyPath: hackStrenght.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1060544822797071608, guid: c2c92265f68aa459782313f7b229b958,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 535553146526067019}
     - target: {fileID: 3879103844188655026, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_text
@@ -159,6 +164,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c92265f68aa459782313f7b229b958, type: 3}
+--- !u!23 &535553146526067019 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5109970066082554257, guid: c2c92265f68aa459782313f7b229b958,
+    type: 3}
+  m_PrefabInstance: {fileID: 4721153449117190362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5052254821810306498 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 547713961881793816, guid: c2c92265f68aa459782313f7b229b958,

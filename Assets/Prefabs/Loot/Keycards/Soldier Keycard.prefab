@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 6445903414931907156, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}
       propertyPath: m_Name
-      value: Soilder Keycard
+      value: Soldier Keycard
       objectReference: {fileID: 0}
     - target: {fileID: 6632766402433431809, guid: c2c92265f68aa459782313f7b229b958,
         type: 3}

@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class KeycardModelVisuals : MonoBehaviour
@@ -9,6 +10,7 @@ public class KeycardModelVisuals : MonoBehaviour
     [SerializeField] private Renderer stripeRenderer;
     [SerializeField] private GameObject oneUseIcon;
     [SerializeField] GameObject textParent;
+    [SerializeField] GameObject useStatusParent;
 
     private static readonly int BaseColorID = Shader.PropertyToID("_BaseColor");
     private static readonly int EmissionColorID = Shader.PropertyToID("_EmissionColor");
@@ -24,22 +26,22 @@ public class KeycardModelVisuals : MonoBehaviour
     private void Start()
     {
         SetStripeColor(keycard.accessLevel.color);
-        SetOneUse(keycard.oneUse, keycard.accessLevel.color);
+        SetStatus(keycard.status, keycard.accessLevel.color);
         var displayName = ModifyName();
         SetText(displayName);
     }
 
     string ModifyName(){
         var displayName = keycard.accessLevel.displayName;
-        if (keycard.oneUse){
+        if (keycard.OneUse){
             displayName += " Pass";
         }
         return displayName;
     }
 
-    void SetOneUse(bool oneUse, Color stripeColor)
+    void SetStatus(KeycardStatus status, Color stripeColor)
     {
-        if (oneUse)
+        if (status == KeycardStatus.UseActive || status == KeycardStatus.UseInactive)
         {
             oneUseIcon.SetActive(true);
 
@@ -55,10 +57,22 @@ public class KeycardModelVisuals : MonoBehaviour
                 _propBlock.SetColor(BaseColorID, contrastColor);
                 iconRenderer.SetPropertyBlock(_propBlock);
             }
+
+            foreach (var textMesh in useStatusParent.GetComponentsInChildren<TextMeshPro>()){
+                var statusText = "Active";
+                var color = Color.green;
+                if (status == KeycardStatus.UseInactive){
+                    statusText = "Inactive";
+                    color = Color.red;
+                }
+                textMesh.text = statusText;
+                textMesh.color = color;
+            }
         } 
         else 
         {
             oneUseIcon.SetActive(false);
+            useStatusParent.SetActive(false);
         }
     }
 
