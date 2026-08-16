@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5965977b991334a15b9f98d0f9dcae58, type: 2}
   color: {r: 0.6611066, g: 1, b: 0, a: 1}
   displayName: Senior Tech
+  visualFlags: 2

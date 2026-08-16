@@ -8,103 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664.mtlx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664.mtlx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_AmbientOcclusion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_AmbientOcclusion.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_BaseColor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_BaseColor.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Displacement.tiff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Displacement.tiff.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Metallic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Metallic.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Roughness.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Bright Plastic/Poliigon_PlasterPainted_7664_Roughness.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037.mtlx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037.mtlx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Displacement.tiff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Displacement.tiff.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Metallic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Metallic.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Normal.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Roughness.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Roughness.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/New Material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/New Material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/tile_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/tile_background.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/Chevrons.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/Keycards.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/Keycards.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_ao_1k.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_ao_1k.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_color_1k.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_color_1k.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_height_1k.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_height_1k.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_normal_directx_1k.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_normal_directx_1k.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_normal_opengl_1k.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_normal_opengl_1k.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_roughness_1k.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Before Card Model/fabric_0007_roughness_1k.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Bright Plastic.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Bright Plastic.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664.mtlx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664.mtlx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_AmbientOcclusion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_AmbientOcclusion.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_BaseColor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_BaseColor.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Displacement.tiff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Displacement.tiff.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Metallic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Metallic.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Roughness.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Bright Plastic/Poliigon_PlasterPainted_7664_Roughness.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Dark Plastic.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Dark Plastic.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037.mtlx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037.mtlx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_AmbientOcclusion.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_BaseColor.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Displacement.tiff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Displacement.tiff.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Metallic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Metallic.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Roughness.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Dark Plastic/Poliigon_MetalPaintedMatte_7037_Roughness.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/New Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/tile_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Textures/tile_background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Archcustodian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Archcustodian.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Chief Guard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Chief Guard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Field Medic.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Safety Inspector.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Safety Inspector.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/05.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Field Medic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Field Medic.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Admin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Admin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Custodian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Custodian.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Guard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Soldier.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Soldier.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Tech.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Tech.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Warden.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Keycards/Warden.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Base/AccessLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Base/AccessLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/Keycard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/Keycard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,6 +223,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Notes/Textures/Keycard Combiner Note.png.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Presentation/Sounds/Annoucements/Smart Maps Updated.wav.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Win Screen.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Archcustodian.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
@@ -549,7 +479,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Add minimum time between facility announcements and adjust announcement timings" />
     <MESSAGE value="Effect for adrenaline" />
     <MESSAGE value="Annoucement Chime" />
     <MESSAGE value="Rename ItemsUI to InventoryUI and update item display logic to include weight" />
@@ -574,7 +503,8 @@
     <MESSAGE value="Refactor KeycardVisuals to improve functionality and update prefab references" />
     <MESSAGE value="Enhance KeycardModelVisuals by modifying name handling and improving text and color settings" />
     <MESSAGE value="Refactor Keycard system to improve access level handling and update status management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Keycard system to improve access level handling and update status management" />
+    <MESSAGE value="Add new texture and material assets for improved visual fidelity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new texture and material assets for improved visual fidelity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

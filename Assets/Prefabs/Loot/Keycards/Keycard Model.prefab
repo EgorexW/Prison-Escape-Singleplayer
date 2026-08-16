@@ -247,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7846d87687df4e1395e55119974094f, type: 2}
+  - {fileID: 2100000, guid: 182c77265cb1745a0b863aeb6350e853, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1720,6 +1720,9 @@ MonoBehaviour:
   oneUseIcon: {fileID: 2350133554350810197}
   textParent: {fileID: 7341053877543232419}
   useStatusParent: {fileID: 1890552220022835359}
+  modelRenderer: {fileID: 3213264726368597935}
+  cheapMaterial: {fileID: 2100000, guid: 5b002ecb5a5634c2ba28702327a166cb, type: 2}
+  expensiveMaterial: {fileID: 2100000, guid: e3bc1ee6937fb46b5a50562bbf92f479, type: 2}
 --- !u!1 &8102370763740124592
 GameObject:
   m_ObjectHideFlags: 0

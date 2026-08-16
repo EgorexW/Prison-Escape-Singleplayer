@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1cb6c83ad79b419f90460d2f6e25a3f, type: 2}
   color: {r: 0.94275093, g: 0, b: 1, a: 1}
   displayName: Field Medic
+  visualFlags: 6

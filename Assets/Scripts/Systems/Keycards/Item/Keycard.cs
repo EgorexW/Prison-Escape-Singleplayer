@@ -5,9 +5,9 @@ using UnityEngine.Serialization;
 
 public class Keycard : MonoBehaviour
 {
-    [BoxGroup("References")] [Required] AccessLevel accessLevel;
+    [BoxGroup("References")] [SerializeField][Required] AccessLevel accessLevel;
 
-    KeycardStatus status = KeycardStatus.Permanent;
+    [SerializeField] KeycardStatus status = KeycardStatus.Permanent;
     [FormerlySerializedAs("hackChance")] public Optional<float> hackStrenght;
     public bool ignoreDetectorOverlay;
     

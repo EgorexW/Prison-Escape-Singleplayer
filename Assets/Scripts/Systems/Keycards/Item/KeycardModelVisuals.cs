@@ -7,10 +7,19 @@ public class KeycardModelVisuals : MonoBehaviour
 {
     [BoxGroup("References")] [SerializeField] Keycard keycard;
     
-    [SerializeField] private Renderer stripeRenderer;
-    [SerializeField] private GameObject oneUseIcon;
-    [SerializeField] GameObject textParent;
-    [SerializeField] GameObject useStatusParent;
+    [SerializeField][Required] private Renderer stripeRenderer;
+    [SerializeField][Required] private GameObject oneUseIcon;
+    [SerializeField][Required] GameObject textParent;
+    [SerializeField][Required] GameObject useStatusParent;
+    [SerializeField][Required] Renderer modelRenderer;
+    
+    [SerializeField][Required][BoxGroup("Model Materials")] Material cheapMaterial;
+    [SerializeField][Required][BoxGroup("Model Materials")] Material expensiveMaterial;
+    
+    [SerializeField][Required][BoxGroup("Stripe Materials")] Material defaultStripeMaterial;
+    [SerializeField][Required][BoxGroup("Stripe Materials")] Material weaponsStripeMaterial;
+    [SerializeField][Required][BoxGroup("Stripe Materials")] Material leadershipStripeMaterial;
+    
 
     private static readonly int BaseColorID = Shader.PropertyToID("_BaseColor");
     private static readonly int EmissionColorID = Shader.PropertyToID("_EmissionColor");
@@ -37,6 +46,15 @@ public class KeycardModelVisuals : MonoBehaviour
         SetStatus(keycard.Status, keycard.AccessLevel.color);
         var displayName = ModifyName();
         SetText(displayName);
+        SetModel();
+    }
+
+    void SetModel(){
+        var material = cheapMaterial;
+        if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.Expensive)){
+            material = expensiveMaterial;
+        }
+        modelRenderer.material = material;
     }
 
     string ModifyName(){
@@ -106,5 +124,13 @@ public class KeycardModelVisuals : MonoBehaviour
         _propBlock.SetColor(EmissionColorID, emissionColor);
     
         stripeRenderer.SetPropertyBlock(_propBlock);
+        
+        if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.WeaponsAccess)){
+            stripeRenderer.material = weaponsStripeMaterial;
+        } else if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.Leadership)){
+            stripeRenderer.material = leadershipStripeMaterial;
+        } else {
+            stripeRenderer.material = defaultStripeMaterial;
+        }
     }
 }

@@ -18131,14 +18131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56ef2e63cd494ed8b9a7bbb17d3a2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accessLevel: {fileID: 11400000, guid: c8584dd60d4bf46b5b22c233e785fdb4, type: 2}
-  status: 0
   hackStrenght:
     enabled: 0
     value: 0
   ignoreDetectorOverlay: 0
-  useCase: 0
-  isMigrated: 1
+  onChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1727569509
 MonoBehaviour:
   m_ObjectHideFlags: 0

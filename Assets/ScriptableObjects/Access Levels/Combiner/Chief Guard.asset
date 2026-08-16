@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d2ca4473dcc244c383f4208bc750aba, type: 2}
   color: {r: 0, g: 1, b: 0.81838536, a: 1}
   displayName: Chief Guard
+  visualFlags: 14

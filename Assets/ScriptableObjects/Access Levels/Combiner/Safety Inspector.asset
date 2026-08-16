@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f74d6850df5a44bd7b65fd2f89e4c969, type: 2}
   color: {r: 1, g: 0, b: 0, a: 1}
   displayName: Safety Inspector
+  visualFlags: 6

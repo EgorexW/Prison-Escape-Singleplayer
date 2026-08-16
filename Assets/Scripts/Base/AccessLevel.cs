@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
@@ -10,6 +11,7 @@ public class AccessLevel : ScriptableObject
 
     [BoxGroup("Visuals")] public Color color = Color.white;
     [BoxGroup("Visuals")] public string  displayName;
+    [BoxGroup("Visuals")] public AccessLevelVisualFlags visualFlags;
     
     [ShowInInspector] HashSet<AccessLevel> AllAccessLevels => GetAllAccessLevels(this);
 
@@ -51,4 +53,12 @@ public class AccessLevel : ScriptableObject
     {
         return inheretedAccessLevels;
     }
+}
+
+[Flags]
+public enum AccessLevelVisualFlags{
+    Cheap = 1 << 0,
+    Expensive = 1 << 1,
+    WeaponsAccess = 1 << 2,
+    Leadership = 1 << 3,
 }

@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f243dff697818421f86d282fa986c6aa, type: 2}
   color: {r: 0, g: 0, b: 0, a: 1}
   displayName: 05
+  visualFlags: 14
