@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Admins
+  m_Name: Admins and Chevrons
   m_Shader: {fileID: -6465566751694194690, guid: c1c50c9e1a5d04401a5c6f46086d2d07,
     type: 3}
   m_Parent: {fileID: 0}
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Icons:
-        m_Texture: {fileID: 18700000, guid: 2929343effd8641e484b7f98a86c8939, type: 2}
+        m_Texture: {fileID: 18700000, guid: 34811b05a8d2d4070b580e44e594b3b9, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:

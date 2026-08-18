@@ -247,7 +247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 182c77265cb1745a0b863aeb6350e853, type: 2}
+  - {fileID: 2100000, guid: 93a25cb323d384d74aee94aa176c7374, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1639,7 +1639,8 @@ MonoBehaviour:
     type: 2}
   leadershipStripeMaterial: {fileID: 2100000, guid: ed81bf3b69caa4ac2ab16df1e647de17,
     type: 2}
-  weaponsAndLeadershipStripeMaterial: {fileID: 0}
+  weaponsAndLeadershipStripeMaterial: {fileID: 2100000, guid: 93a25cb323d384d74aee94aa176c7374,
+    type: 2}
 --- !u!1 &8536989834609442966
 GameObject:
   m_ObjectHideFlags: 0
