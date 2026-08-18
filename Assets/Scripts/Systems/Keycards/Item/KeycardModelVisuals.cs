@@ -19,7 +19,7 @@ public class KeycardModelVisuals : MonoBehaviour
     [SerializeField][Required][BoxGroup("Stripe Materials")] Material defaultStripeMaterial;
     [SerializeField][Required][BoxGroup("Stripe Materials")] Material weaponsStripeMaterial;
     [SerializeField][Required][BoxGroup("Stripe Materials")] Material leadershipStripeMaterial;
-    
+    [SerializeField] [Required] [BoxGroup("Stripe Materials")] Material weaponsAndLeadershipStripeMaterial;
 
     private static readonly int BaseColorID = Shader.PropertyToID("_BaseColor");
     private static readonly int EmissionColorID = Shader.PropertyToID("_EmissionColor");
@@ -127,12 +127,22 @@ public class KeycardModelVisuals : MonoBehaviour
     
         stripeRenderer.SetPropertyBlock(_propBlock);
         
+        SetStripeMaterial();
+    }
+
+    void SetStripeMaterial(){
         if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.WeaponsAccess)){
+            if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.Leadership)){
+                stripeRenderer.material = weaponsAndLeadershipStripeMaterial;
+                return;
+            }
             stripeRenderer.material = weaponsStripeMaterial;
-        } else if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.Leadership)){
-            stripeRenderer.material = leadershipStripeMaterial;
-        } else {
-            stripeRenderer.material = defaultStripeMaterial;
+            return;
         }
+        if (keycard.AccessLevel.visualFlags.HasFlag(AccessLevelVisualFlags.Leadership)){
+            stripeRenderer.material = leadershipStripeMaterial;
+            return;
+        }
+        stripeRenderer.material = defaultStripeMaterial;
     }
 }

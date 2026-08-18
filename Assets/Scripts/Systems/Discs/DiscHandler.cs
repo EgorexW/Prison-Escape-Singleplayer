@@ -16,6 +16,9 @@ public class DiscHandler : PoweredDevice, IInteractive
             return;
         }
         var item = player.GetHeldItem();
+        if (item == null){
+            return;
+        }
         var disc = item.GetComponent<Disc>();
         if (disc == null){
             // visuals?.AccessDenied();

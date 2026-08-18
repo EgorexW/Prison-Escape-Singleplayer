@@ -7,7 +7,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="" />
+    <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Logo.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Logo.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Props/Computer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Props/Computer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Egsiman.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Art/Icons/Egsiman.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Adrenaline Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Adrenaline Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Bins Poster AI.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Bins Poster AI.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Bins Poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Bins Poster.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/EMP Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/EMP Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Exit Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Exit Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Lasers Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Lasers Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Meds Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/One use Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/One use Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Power Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Power Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Revolver Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Revolver Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Secure Wing Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Secure Wing Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Security Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Security Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Senior Staff Poster.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Posters/Textures/Senior Staff Poster.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Discs/DiscHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Discs/DiscHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Item/KeycardModelVisuals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/Keycards/Reader/KeycardReader.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +189,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Essencial/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/RuntimePreviewGenerator/RuntimePreviewGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Corridors/Tiles/Rotated/3 way Tile 270.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Doors/Door.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Equipment/Keycard Reactivating.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/05 Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Admin Keycard.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -201,7 +228,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Combiner/Senior Tech.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Access Levels/Locks/Exit.asset.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Loot Spawn Tables/Room Specific/Heavy Armory Card.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Keycard Recipes.asset.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Other/Room Prefabs.asset" root0="FORCE_HIGHLIGHTING" />
@@ -454,8 +480,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Posters" />
-    <MESSAGE value="Fixed Posters" />
     <MESSAGE value="Update equipment values and adjust prefab properties" />
     <MESSAGE value="EMPs Damage keycard readers" />
     <MESSAGE value="EMP does blackout again" />
@@ -479,7 +503,9 @@
     <MESSAGE value="Add visual flags to access level assets for improved clarity and organization" />
     <MESSAGE value="Update materials and Keycard model for enhanced visual consistency and functionality" />
     <MESSAGE value="Add Keycard reactivation functionality and update related assets for improved gameplay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Keycard reactivation functionality and update related assets for improved gameplay" />
+    <MESSAGE value="Refactor asset files for Administration Warden and Heavy Armory Card, updating metadata and structure for consistency" />
+    <MESSAGE value="Update Status Terminal asset values for improved consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Status Terminal asset values for improved consistency" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

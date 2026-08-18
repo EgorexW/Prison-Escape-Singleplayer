@@ -13,7 +13,7 @@ public class KeycardReader : PoweredDevice, IInteractive, IDamagable
 
     [SerializeField] [FormerlySerializedAs("stealCard")] bool stealKeycard;
     
-    [SerializeField][FoldoutGroup("Health")] Health health = new Health(1){
+    [SerializeField] Health health = new Health(1){
         damagedBy = DamageType.Electric
     };
     [SerializeField] float chanceToUnlockOnDestroy = 0.1f;
