@@ -8,23 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/PatternIconList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/PatternIconList.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/PatternIcons.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/PatternIcons.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Loot/Keycards/Keycard Model.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Chevrons.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Pattern Tiler.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,6 +267,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/RoomMenuObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/Stars/AscensionsWonStar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menus/Stars/StarCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Music Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/Character_Items.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Obsolete/DevInputPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerEffects.cs" root0="FORCE_HIGHLIGHTING" />
@@ -321,6 +313,7 @@
     <setting file="file://$PROJECT_DIR$/Temp/GeneratedFromGraph-WorldScalePattern.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ac7440922e348fbb08970d48cebc0b2212200/0e/fb6c8563/Bounds.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4ac7440922e348fbb08970d48cebc0b2212200/15/b6945403/Debug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f480f9c572d94f65a3e314381583c27422800/b7/c86bc57b/AudioClip.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
@@ -472,7 +465,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="EMPs Damage keycard readers" />
     <MESSAGE value="EMP does blackout again" />
     <MESSAGE value="0.9.0" />
     <MESSAGE value="Inventory Slots visible" />
@@ -497,7 +489,8 @@
     <MESSAGE value="Refactor asset files for Administration Warden and Heavy Armory Card, updating metadata and structure for consistency" />
     <MESSAGE value="Update Status Terminal asset values for improved consistency" />
     <MESSAGE value="Add Logo prefab and update Keycard model visuals for improved asset organization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Logo prefab and update Keycard model visuals for improved asset organization" />
+    <MESSAGE value="Add PatternIconList and related asset metadata for improved icon management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PatternIconList and related asset metadata for improved icon management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

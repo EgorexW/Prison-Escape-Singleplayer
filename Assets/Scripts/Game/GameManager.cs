@@ -35,3 +35,13 @@ public class GameManager : SerializedMonoBehaviour
         // DontDestroyOnLoad(gameObject);
     }
 }
+
+public static class GameManagerHelpers{
+    public static bool IsPlayerInSecureWing(){
+ return       GameManager.i.levelNodes.IsInSecureWing(GameManager.i.Player.transform.position);
+    }
+    public static PowerLevel GetPlayerPower()
+    {
+        return MainPowerSystem.i.GetPower(GameManager.i.Player.transform.position);
+    }
+}

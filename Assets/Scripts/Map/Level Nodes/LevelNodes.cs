@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class LevelNodes : MonoBehaviour
 {
+    [BoxGroup("References")][Required][SerializeField] BoxCollider secureWingCollider;
     [SerializeField] List<CorridorNode> corridorNodes;
     [SerializeField] List<RoomNode> roomNodes;
     
@@ -40,5 +41,10 @@ public class LevelNodes : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+    
+    public bool IsInSecureWing(Vector3 position)
+    {
+        return secureWingCollider.bounds.Contains(position);
     }
 }
