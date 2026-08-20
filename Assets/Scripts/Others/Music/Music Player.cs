@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AmbienceMusic : MonoBehaviour
 {
@@ -7,10 +8,9 @@ public class AmbienceMusic : MonoBehaviour
     [SerializeField][BoxGroup("Sounds")] AudioSource lackOfPower;
     [SerializeField][BoxGroup("Sounds")] AudioSource secureWing;
 
-    // [SerializeField] [UnityEngine.Range(0f, 1f)] float masterVolume = 1f;
-    [SerializeField] float defaultFadeSpeed = 0.5f;
+    public float maxVolume = 1f;
+    [SerializeField] float fadeTime = 5f;
     
-    float TimeLeft => GameManager.i.gameTimeManager.TimeLeft;
     bool IsInSecureWing => GameManagerHelpers.IsPlayerInSecureWing();
     bool IsPowerOn => GameManagerHelpers.GetPlayerPower() == PowerLevel.FullPower;
     
@@ -20,13 +20,13 @@ public class AmbienceMusic : MonoBehaviour
     void Update()
     {
         float targetPower = IsPowerOn ? 1f : 0f;
-        powerBlend = Mathf.MoveTowards(powerBlend, targetPower, defaultFadeSpeed * Time.deltaTime);
+        powerBlend = Mathf.MoveTowards(powerBlend, targetPower, 1f/fadeTime * Time.deltaTime);
         
-        lackOfPower.volume = Mathf.Cos(powerBlend * Mathf.PI * 0.5f);
-        power.volume       = Mathf.Sin(powerBlend * Mathf.PI * 0.5f);
+        lackOfPower.volume = Mathf.Cos(powerBlend * Mathf.PI * 0.5f) * maxVolume;
+        power.volume       = Mathf.Sin(powerBlend * Mathf.PI * 0.5f) * maxVolume;
         
         float targetSecure = IsInSecureWing ? 1f : 0f;
-        secureWingBlend = Mathf.MoveTowards(secureWingBlend, targetSecure, defaultFadeSpeed * Time.deltaTime);
-        secureWing.volume = Mathf.Sin(secureWingBlend * Mathf.PI * 0.5f);
+        secureWingBlend = Mathf.MoveTowards(secureWingBlend, targetSecure, 1f/fadeTime * Time.deltaTime);
+        secureWing.volume = Mathf.Sin(secureWingBlend * Mathf.PI * 0.5f) * maxVolume;
     }
 }
