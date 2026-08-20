@@ -8,14 +8,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e53e016b-314c-40bf-8f89-50ba791f13bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Music.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Music.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/179123__klangstrand__resonance.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/179123__klangstrand__resonance.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/345554__anoesj__woody-industrial-bass-loop-115bpm.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/345554__anoesj__woody-industrial-bass-loop-115bpm.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/866213__licaredmoth__cars-driving-over-bridge-joints.flac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Others/866213__licaredmoth__cars-driving-over-bridge-joints.flac.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Power On.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Power On.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Power Out.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Power Out.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Secure Wing.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Music/Secure Wing.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Switch.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Switch.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Switch.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Switch.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Prison Escape Singleplayer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Small Infrimary.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Materials/Keycards/Admins and Chevrons.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Presentation/Fonts/Electrolize-Regular SDF Unlit.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Down.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Presentation/Sounds/Effects/Power Down.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Level Nodes/LevelNodes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Down.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Power Down.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Music Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -465,7 +485,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="EMP does blackout again" />
     <MESSAGE value="0.9.0" />
     <MESSAGE value="Inventory Slots visible" />
     <MESSAGE value="Weight System Toogle" />
@@ -490,7 +509,8 @@
     <MESSAGE value="Update Status Terminal asset values for improved consistency" />
     <MESSAGE value="Add Logo prefab and update Keycard model visuals for improved asset organization" />
     <MESSAGE value="Add PatternIconList and related asset metadata for improved icon management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PatternIconList and related asset metadata for improved icon management" />
+    <MESSAGE value="Add AdaptiveMusic component for dynamic audio management based on player power and location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AdaptiveMusic component for dynamic audio management based on player power and location" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
