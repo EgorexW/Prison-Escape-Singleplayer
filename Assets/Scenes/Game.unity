@@ -6170,6 +6170,52 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &229930811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229930812}
+  - component: {fileID: 229930813}
+  m_Layer: 0
+  m_Name: Pause Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229930812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229930811}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1574877574744100525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229930813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229930811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89144eb0e6749379c377e86767eb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::PauseMenu
+  settingsMenu: {fileID: 101379261}
+  playerInput: {fileID: 9035801257044630763}
 --- !u!1 &238059755
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,8 +8932,10 @@ MonoBehaviour:
   gameTimeManager: {fileID: 1012652405}
   outOfTimeEffect: {fileID: 46982816}
   announcement:
-    message: Purify Protocol ... INITIATED!
-    sound: {fileID: 11400000, guid: feb6913ed96db41a4873de798c9f5576, type: 2}
+    enabled: 0
+    value:
+      message: Purify Protocol... INITIATED!
+      sound: {fileID: 11400000, guid: feb6913ed96db41a4873de798c9f5576, type: 2}
   timeLeftAnnouncements:
   - timeLeft: 600
     announcement:
@@ -8900,10 +8948,6 @@ MonoBehaviour:
   - timeLeft: 120
     announcement:
       message: Purify Protocol in T-2min
-      sound: {fileID: 0}
-  - timeLeft: 30
-    announcement:
-      message: Purify Protocol in T-30s
       sound: {fileID: 0}
 --- !u!1 &382959136
 GameObject:
@@ -13396,7 +13440,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 16047e7eeaabf45199f1e12e8adfc7e7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6b3057a3b3bc84a67a470c2ef1bbd8a7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -17623,7 +17667,7 @@ MonoBehaviour:
   lackOfPower: {fileID: 996053773}
   secureWing: {fileID: 575784737}
   maxVolume: 1
-  defaultFadeSpeed: 0.2
+  fadeTime: 5
 --- !u!114 &1576402525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17638,8 +17682,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   warheadMusic: {fileID: 983530648}
   ambienceMusic: {fileID: 1576402524}
-  fadeInTime: 5
-  maxVolume: 1
+  backgroundFadeTime: 5
+  backgroundMaxVolume: 1
+  startPlayingTime: 66
 --- !u!1 &1607019075
 GameObject:
   m_ObjectHideFlags: 0
@@ -22475,8 +22520,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3097095111899513422}
-  settingsMenu: {fileID: 101379261}
   playerInput: {fileID: 9035801257044630763}
+  pauseMenu: {fileID: 229930813}
 --- !u!224 &1574877573705973600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22742,6 +22787,7 @@ Transform:
   - {fileID: 1189050708727125646}
   - {fileID: 1574877574847338231}
   - {fileID: 272936704}
+  - {fileID: 229930812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1574877574847338224
@@ -23807,6 +23853,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19808544, guid: 78e1c8c5b281b8b439229473779ac9aa, type: 3}
+      propertyPath: lengthInSec
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 19808544, guid: 78e1c8c5b281b8b439229473779ac9aa, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -23981,7 +24031,6 @@ GameObject:
   - component: {fileID: 1852330399760684491}
   - component: {fileID: 5979843613610568409}
   - component: {fileID: 3111180547012856643}
-  - component: {fileID: 9035801257044630764}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -24829,18 +24878,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &9035801257044630764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5980020831691083268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 993e289fd86f4c2ab31e2709a597a7d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &9058513276153008467
 RectTransform:
   m_ObjectHideFlags: 0

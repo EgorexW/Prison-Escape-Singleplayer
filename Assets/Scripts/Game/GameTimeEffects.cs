@@ -10,7 +10,7 @@ public class GameTimeEffects : MonoBehaviour
     GameTimeManager gameTimeManager;
 
     [SerializeField] GameObject outOfTimeEffect;
-    [SerializeField] FacilityAnnouncement announcement;
+    [SerializeField] Optional<FacilityAnnouncement> announcement;
     [SerializeField] List<TimeLeftAnnouncement> timeLeftAnnouncements; 
 
     void Awake()
@@ -33,7 +33,9 @@ public class GameTimeEffects : MonoBehaviour
 
     void OutOfTime()
     {
-        GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
+        if (announcement){
+            GameManager.i.facilityAnnouncements.AddAnnouncement(announcement);
+        }
         outOfTimeEffect.SetActive(true);
     }
 }

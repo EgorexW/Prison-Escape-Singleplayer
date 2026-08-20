@@ -27,7 +27,6 @@ public class PlayerInputPresenter : MonoBehaviour
         inputActions.FindAction("Flashlight").performed += OnFlashlight;
         inputActions.FindAction("Settings").performed += ToggleSettings;
         playerInput.actions.FindActionMap("UI").FindAction("Cancel").performed += ToggleSettings;
-        HideCursor();
     }
 
 
@@ -145,47 +144,13 @@ public class PlayerInputPresenter : MonoBehaviour
         player.SwapItem();
     }
     
-    [BoxGroup("References")] [Required] [SerializeField] GameObject settingsMenu;
     [BoxGroup("References")][Required][SerializeField] PlayerInput playerInput;
+    [BoxGroup("References")][Required][SerializeField] PauseMenu pauseMenu;
 
-    void ShowCursor()
-    {
-        playerInput.SwitchCurrentActionMap("UI");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    void ToggleSettings(InputAction.CallbackContext obj)
-    {
+    void ToggleSettings(InputAction.CallbackContext obj){
         if (!obj.performed){
             return;
         }
-        if (settingsMenu.activeSelf){
-            Unpause();
-        }
-        else{
-            Pause();
-        }
-    }
-
-    void Unpause()
-    {
-        settingsMenu.SetActive(false);
-        Time.timeScale = 1f;
-        HideCursor();
-    }
-
-    void HideCursor()
-    {
-        playerInput.SwitchCurrentActionMap("Player");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    void Pause()
-    {
-        settingsMenu.SetActive(true);
-        Time.timeScale = 0f;
-        ShowCursor();
+        pauseMenu.ToggleSettings();
     }
 }

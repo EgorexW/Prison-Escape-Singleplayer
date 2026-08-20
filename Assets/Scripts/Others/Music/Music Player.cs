@@ -8,8 +8,8 @@ public class AmbienceMusic : MonoBehaviour
     [SerializeField][BoxGroup("Sounds")] AudioSource lackOfPower;
     [SerializeField][BoxGroup("Sounds")] AudioSource secureWing;
 
-    public float maxVolume = 1f;
-    [SerializeField] float fadeTime = 5f;
+    [Range(0, 1)] public float maxVolume = 1f;
+    [SerializeField][Min(0.01f)] float fadeTime = 5f;
     
     bool IsInSecureWing => GameManagerHelpers.IsPlayerInSecureWing();
     bool IsPowerOn => GameManagerHelpers.GetPlayerPower() == PowerLevel.FullPower;
