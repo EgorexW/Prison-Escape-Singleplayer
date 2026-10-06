@@ -1,3 +1,6 @@
+# Version 0.11.0:
+## Internal:
+- Poster generation is automatic now!
 # Version 0.10.0:
 ## Features:
 - Signs work with lightning
