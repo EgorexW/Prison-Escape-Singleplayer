@@ -1,0 +1,2 @@
+[Text to speech](https://ttsmp3.com) - set to US Matthew
+[Filter](https://voicechanger.io/voicemaker/#!/{"effects":[{"name":"distopianPA","params":{"distortion":90,"lowPassFreq":10030,"wetGain":2}}],"version":1})

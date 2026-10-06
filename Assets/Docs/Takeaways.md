@@ -1,0 +1,1 @@
+- Avoid needless randomness, where it doesn't make the game interesing, just increases the luck impact

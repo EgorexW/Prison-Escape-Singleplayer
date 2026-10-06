@@ -1,0 +1,2 @@
+- EMP does not lower power (again)
+- 

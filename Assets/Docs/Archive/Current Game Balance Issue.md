@@ -1,0 +1,12 @@
+- **Problem:** The game is currently unwinnable due to loot distribution, not player mistakes.
+- **Cause:** Too few loot items spawn per run, making survival impossible regardless of player choices.
+- **Implication:** Players are forced to “give up” rather than lose due to strategic or tactical mistakes.
+- **Desired Behavior:** Death or failure should occur because of **player decisions** — e.g.,
+	- Over-trading health for loot.
+	- Choosing a risky path.
+	- Mismanaging limited resources.
+- **Observation:** Currently, there is little opportunity to actually take damage or fail due to HP; the player only dies due to lack of progression options, not risk/reward decisions.
+- **Next Steps / Ideas:**
+	- Increase loot frequency or variety to ensure minimum survival chances.
+	- Add meaningful hazards that can damage the player (environment, traps, enemies).
+	- Ensure resource trade-offs feel impactful — make bad choices punishable but winnable if they plan carefully.

@@ -1,0 +1,4 @@
+- Winning requires 2 wins in a row, second try is in hard mode.
+- Hard mode:
+	- Less time
+	- No map

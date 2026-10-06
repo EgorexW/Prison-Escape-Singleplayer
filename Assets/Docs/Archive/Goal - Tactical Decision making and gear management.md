@@ -1,0 +1,1 @@
+One approach - [[Main enemy - Evil AI]] 

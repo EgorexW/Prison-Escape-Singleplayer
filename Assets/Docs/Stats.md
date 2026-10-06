@@ -1,0 +1,5 @@
+- Unique Items picked up
+- Doors opened
+- Damage taken
+- Time Spent
+- Steps taken
